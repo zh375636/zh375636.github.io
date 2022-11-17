@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="IntroductionCompleted100 XP  3 minutes  You work as a support engineer supporting Azure Platform as a service (PaaS). If there are connectivity issues, you need to be able to identify the cause of the">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AZ-720-Troubleshoot-platform-as-a-service-issues-in-Microsoft-Azure-4">
+<meta property="og:url" content="https://example.com/2022/11/14/AZ-720-Troubleshoot-platform-as-a-service-issues-in-Microsoft-Azure-4/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="IntroductionCompleted100 XP  3 minutes  You work as a support engineer supporting Azure Platform as a service (PaaS). If there are connectivity issues, you need to be able to identify the cause of the">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/2-storage-accounts.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/3-private-endpoints.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/6-deny-outbound-traffic.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/6-private-link-center.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/6-private-endpoint-metrics.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/7-exercise-1-connect.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/7-exercise-1-test-connection.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/7-exercise-1-network-rule-allow.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/7-exercise-1-network-rule-deny.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/8-exercise-1-settings-networking.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/8-exercise-1-add-inbound-port-rule.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/8-exercise-1-test-connection-button.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/8-exercise-1-network-connectivity-allowed.png">
+<meta property="article:published_time" content="2022-11-14T17:36:34.000Z">
+<meta property="article:modified_time" content="2022-11-14T20:37:18.000Z">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/2-storage-accounts.png">
+
+<link rel="canonical" href="https://example.com/2022/11/14/AZ-720-Troubleshoot-platform-as-a-service-issues-in-Microsoft-Azure-4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>AZ-720-Troubleshoot-platform-as-a-service-issues-in-Microsoft-Azure-4 | Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AZ-720-Troubleshoot-platform-as-a-service-issues-in-Microsoft-Azure-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AZ-720-Troubleshoot-platform-as-a-service-issues-in-Microsoft-Azure-4
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-14 13:36:34 / Modified: 16:37:18" itemprop="dateCreated datePublished" datetime="2022-11-14T13:36:34-04:00">2022-11-14</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/AZ-720-Troubleshoot-platform-as-a-service-issues-in-Microsoft-Azure-4/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AZ-720-Troubleshoot-platform-as-a-service-issues-in-Microsoft-Azure-4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Completed100 XP</p>
+<ul>
+<li>3 minutes</li>
+</ul>
+<p>You work as a support engineer supporting Azure Platform as a service (PaaS). If there are connectivity issues, you need to be able to identify the cause of the issue quickly and accurately. Furthermore, where possible, you need to resolve the issue and re-establish connectivity.</p>
+<p>Azure PaaS services, such as Azure virtual machines, supply scalable, on-demand resources without the costs of buying and managing computer hardware. To benefit from Azure PaaS services, you must be able to troubleshoot connectivity issues quickly and effectively both from on-premises user to an Azure PaaS service and between PaaS services.</p>
+<p>In this module we will look at how to monitor and troubleshoot PaaS services, together with PaaS integration issues.</p>
+<h2 id="Learning-objectives"><a href="#Learning-objectives" class="headerlink" title="Learning objectives"></a>Learning objectives</h2><p>After completing this module, you’ll be able to:</p>
+<ul>
+<li>Troubleshoot Azure Storage.</li>
+<li>Troubleshoot Azure Private Link connectivity problems and Firewalls for PaaS services.</li>
+<li>Troubleshoot Content Delivery Network issues.</li>
+<li>Troubleshoot connections between a VM and a PaaS service.</li>
+<li>Troubleshoot integration of PaaS services with virtual networks</li>
+</ul>
+<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
+<li>Demonstrate an understanding of the OSI model</li>
+<li>Demonstrate an understanding of PowerShell</li>
+<li>Demonstrate an understanding of Azure CLI</li>
+</ul>
+<h1 id="Troubleshoot-Azure-Storage"><a href="#Troubleshoot-Azure-Storage" class="headerlink" title="Troubleshoot Azure Storage"></a>Troubleshoot Azure Storage</h1><p>Completed100 XP</p>
+<ul>
+<li>3 minutes</li>
+</ul>
+<p>Troubleshooting Azure Storage issues is complex, and it’s advisable to proactively monitor and log Azure Storage to detect any unexpected changes.</p>
+<p>Your application might use one or more storage systems including Microsoft Azure Storage Tables, Blobs, Queues, or Files. Furthermore, data might be stored in relational or non-relational databases.</p>
+<p>You should aim to remove the need for retrospectively troubleshooting problems with Azure Storage by proactively monitoring and reviewing logs for Storage services. Metrics such as slow response times would lead to a review of logs which can then determine the nature of the issue and allow for focused troubleshooting.</p>
+<p>To monitor your Storage services, you can use Azure Monitor for Storage accounts to view key Storage metrics for performance, capacity, and availability without any further configuration. Azure Monitor for Storage accounts provides a selection of dashboards and charts to give you detailed monitoring data for your Storage services. You can also enable storage metrics. The counters for storage metrics can be aggregated by hour or by minute and you can choose to display key metrics in the Azure portal. Storage metrics aren’t in preview, but it does require configuration.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/2-storage-accounts.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/2-storage-accounts.png" alt="Screenshot of Azure Monitor Storage account."></a></p>
+<p>For more information on troubleshooting Azure Storage, see <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/storage/common/storage-monitoring-diagnosing-troubleshooting?tabs=dotnet">Monitor, diagnose, and troubleshoot Microsoft Azure Storage</a>.</p>
+<h1 id="Troubleshoot-Azure-Private-Link-connectivity-problems-and-firewalls-for-virtual-machines"><a href="#Troubleshoot-Azure-Private-Link-connectivity-problems-and-firewalls-for-virtual-machines" class="headerlink" title="Troubleshoot Azure Private Link connectivity problems and firewalls for virtual machines"></a>Troubleshoot Azure Private Link connectivity problems and firewalls for virtual machines</h1><p>Completed100 XP</p>
+<ul>
+<li>4 minutes</li>
+</ul>
+<p>Connectivity between your private network and an Azure Platform as a Service (PaaS) could be blocked by a misconfigured private link or misconfigured firewall.</p>
+<h2 id="Troubleshoot-Azure-Private-Link-connectivity-problems"><a href="#Troubleshoot-Azure-Private-Link-connectivity-problems" class="headerlink" title="Troubleshoot Azure Private Link connectivity problems"></a>Troubleshoot Azure Private Link connectivity problems</h2><p>Azure Private Link provides a link from your virtual network to the Azure PaaS services over the Microsoft backbone network rather than over the public Internet.</p>
+<h2 id="Deployment-troubleshooting"><a href="#Deployment-troubleshooting" class="headerlink" title="Deployment troubleshooting"></a>Deployment troubleshooting</h2><p>To choose the source IP address for the Private Link service, you must first disable private link service network policies.</p>
+<p>When creating a Private Link service using the Azure portal the privateLinkServiceNetworkPolicies setting is automatically disabled. If this is manually enabled, you should disable it using Azure PowerShell or Azure CLI before selecting the source IP address.</p>
+<p>Azure CLICopy</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">az network vnet subnet update \</span><br><span class="line"></span><br><span class="line">  --name default \</span><br><span class="line"></span><br><span class="line">  --resource-group demoResourceGroup \</span><br><span class="line"></span><br><span class="line">  --vnet-name demoVirtualNetwork \</span><br><span class="line"></span><br><span class="line">  --disable-private-link-service-network-policies true</span><br></pre></td></tr></table></figure>
+
+<h3 id="Connectivity-troubleshooting"><a href="#Connectivity-troubleshooting" class="headerlink" title="Connectivity troubleshooting"></a>Connectivity troubleshooting</h3><p>In your browser navigate to the <a target="_blank" rel="noopener" href="https://portal.azure.com/">Private Link Center</a> in the Azure portal.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/3-private-endpoints.png" alt="Screenshot of Private endpoints."></p>
+<ul>
+<li>Verify that the <strong>Alias</strong> and <strong>Resource ID</strong> for the private link service are correct.</li>
+<li>Verify that the <strong>Visibility</strong> of the private link service is correct.</li>
+<li>Verify that the <strong>Load balancer</strong> for the private link service is correct, select the load balance, and verify the <strong>Frontend IP configuration</strong>, the <strong>Backend pools</strong>, and the <strong>Load balancing rules</strong> are correct.</li>
+<li>In the private link service, select <strong>Metrics</strong> and verify that data is moving when you attempt to connect to the private link service.</li>
+</ul>
+<p>For more information on troubleshooting Azure Private Link connectivity problems, see <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/private-link/troubleshoot-private-link-connectivity">Troubleshoot Azure Private Link connectivity problems</a>.</p>
+<h2 id="Troubleshoot-firewalls-for-Platform-as-a-Service-PaaS"><a href="#Troubleshoot-firewalls-for-Platform-as-a-Service-PaaS" class="headerlink" title="Troubleshoot firewalls for Platform as a Service (PaaS)"></a>Troubleshoot firewalls for Platform as a Service (PaaS)</h2><p>Azure firewall is intended to filter network traffic to protect your resources. A misconfigured firewall can lead to legitimate traffic also being blocked.</p>
+<p>When troubleshooting firewall issues ensure that you include the following steps:</p>
+<ul>
+<li>Review the <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/firewall/firewall-faq">Azure firewall</a> FAQ and ensure that firewalls are correctly configured.</li>
+<li>For Azure storage firewalls review any error messages and also download and review the storage diagnostics logs and resolve any issues.</li>
+</ul>
+<h1 id="Troubleshoot-Content-Delivery-Network-issues-with-Microsoft-Azure"><a href="#Troubleshoot-Content-Delivery-Network-issues-with-Microsoft-Azure" class="headerlink" title="Troubleshoot Content Delivery Network issues with Microsoft Azure"></a>Troubleshoot Content Delivery Network issues with Microsoft Azure</h1><p>Completed100 XP</p>
+<ul>
+<li>4 minutes</li>
+</ul>
+<p>Content Delivery Networks (CDNs) have particular troubleshooting steps as well as connectivity issues. It is important to consider specific CDN issues, such as the amount of time it takes to create some CDN services and compression issues.</p>
+<h2 id="404-status"><a href="#404-status" class="headerlink" title="404 status"></a>404 status</h2><p>If an HTTP 404 error is returned, you should complete the following troubleshooting steps:</p>
+<ul>
+<li>Wait 90 minutes after CDN creation.<ul>
+<li>Depending on the type of CDN, it can take up to 90 minutes to be available.</li>
+</ul>
+</li>
+<li>Verify that the origin file is available.<ul>
+<li>Open a private or incognito browsing session and browse directly to the file to ensure that it is available.</li>
+</ul>
+</li>
+<li>Check endpoint settings.<ul>
+<li>Browse to the CDN profile in the Azure portal, select the relevant endpoint, and select the origin.</li>
+<li>Verify the origin type, hostname, HTTP port, and HTTPS port.</li>
+<li>For the endpoint page, select <strong>Configure</strong>, and verify the <strong>Origin host header</strong> and <strong>Origin path</strong>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Compression-errors"><a href="#Compression-errors" class="headerlink" title="Compression errors"></a>Compression errors</h2><p>If compression is enabled for the endpoint, but files are returned uncompressed, perform the following troubleshooting steps:</p>
+<ul>
+<li>In the browser’s developer tools, verify that the request is being sent to the endpoint URL and the request contains an <strong>Accept-Encoding</strong> header which contains <strong>gzip</strong>, <strong>deflate</strong>, or <strong>bzip2</strong>.</li>
+<li>Verify that compression is enabled and the relevant file types are included.</li>
+<li>For Verizon CDN profiles, use your browser’s developer tools to verify that the file is cached in the same region as the request.</li>
+<li>For Verizon CDN profiles, verify that the file is between 128 bytes and 3 MB.</li>
+<li>Check for a <strong>Via</strong> header in the request at the origin server. A <strong>Via</strong> HTTP header signifies that the request is going through a proxy server. By default, Microsoft IIS servers do not compress responses that contain a <strong>Via</strong> header. To override this, you would need to reconfigure your IIS server.</li>
+</ul>
+<h2 id="CA-certificates"><a href="#CA-certificates" class="headerlink" title="CA certificates"></a>CA certificates</h2><p>Verify that the CA certificate is in the <strong>Included CA Certificate list</strong> at the <strong>Common CA Database</strong> (CCADB).</p>
+<h2 id="Subscription-type"><a href="#Subscription-type" class="headerlink" title="Subscription type"></a>Subscription type</h2><p>Check the subscription type because <strong>Free</strong>, <strong>Trial</strong>, and <strong>Pay-as-you-go</strong> subscriptions will limit the CDN services available and might apply bandwidth throttling.</p>
+<h1 id="Troubleshoot-connections-between-virtual-machines-in-Microsoft-Azure"><a href="#Troubleshoot-connections-between-virtual-machines-in-Microsoft-Azure" class="headerlink" title="Troubleshoot connections between virtual machines in Microsoft Azure"></a>Troubleshoot connections between virtual machines in Microsoft Azure</h1><p>Completed100 XP</p>
+<ul>
+<li>5 minutes</li>
+</ul>
+<p>When troubleshooting connections between a virtual machine (VM) and a Platform as a Service (PaaS), it is important to assess whether a problem is due to the VM, the PaaS service, a network issue, or an issue with a specific service, such as email or Microsoft Graph.</p>
+<h2 id="Connecting-to-an-application-running-on-an-Azure-virtual-machine"><a href="#Connecting-to-an-application-running-on-an-Azure-virtual-machine" class="headerlink" title="Connecting to an application running on an Azure virtual machine"></a>Connecting to an application running on an Azure virtual machine</h2><p>To troubleshoot connectivity to an application running in an Azure VM, perform the following steps:</p>
+<ul>
+<li>Access the application on the target VM.<ul>
+<li>If you cannot access the application check that it is running and listening on the correct TCP and UDP ports.</li>
+</ul>
+</li>
+<li>Access the application from another VM in the same virtual network.<ul>
+<li>If this fails, check anything that could be filtering traffic such as a firewall, a load balancer, network monitoring, or intrusion detection.</li>
+</ul>
+</li>
+<li>Access the application from another VM on another virtual network.<ul>
+<li>If you have implemented load-balancing, verify that the probe protocol and port number are correct and are not being blocked by firewalls.</li>
+<li>If you cannot access the application verify that incoming traffic is allowed by endpoint configuration, Access Control Lists (ACLs), inbound NAT rules, and Network Security Groups (NSGs).</li>
+<li>If you can access the application, verify that your Internet edge device allows traffic from the Azure VM and to the client computer.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Sending-outbound-email-messages"><a href="#Sending-outbound-email-messages" class="headerlink" title="Sending outbound email messages"></a>Sending outbound email messages</h2><p>Outbound email messages on TCP port 25 are blocked by Azure platform for the following subscriptions:</p>
+<ul>
+<li>Pay-as-you go</li>
+<li>MSDN</li>
+<li>Azure Pass</li>
+<li>Azure in Open</li>
+<li>Education</li>
+<li>Azure for Students</li>
+<li>Free Trial</li>
+<li>Any Visual Studio subscription</li>
+<li>Cloud Solution Provider</li>
+<li>Microsoft Partner Network (MPN)</li>
+<li>BizSpark Plus</li>
+<li>Azure Sponsorship</li>
+</ul>
+<p>VMs using Enterprise Agreement subscriptions do not have outgoing port 25 email messages blocked by the Azure Service but might be blocked by the external domain.</p>
+<p>It is recommended that you use authenticated SMTP relay services in your VM which will minimize the likelihood of your messages being blocked or moved to a SPAM folder regardless of the type of subscription.</p>
+<h2 id="Azure-cloud-service"><a href="#Azure-cloud-service" class="headerlink" title="Azure cloud service"></a>Azure cloud service</h2><p>Cloud service applications can have a wide range of connectivity problems. To resolve Azure cloud services, you should use the relevant scenario in the <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/troubleshoot/azure/cloud-services/dev-troubleshoot-series">Azure Cloud Service Troubleshooting Series</a>.</p>
+<h2 id="Determine-root-cause-for-throttling-at-service-level"><a href="#Determine-root-cause-for-throttling-at-service-level" class="headerlink" title="Determine root cause for throttling at service level"></a>Determine root cause for throttling at service level</h2><p>Microsoft Graph has a limit of 2000 requests per second. Furthermore, Azure Active Directory (Azure AD) has a limit of requests against resource units after which traffic is throttle. For more information, see Throttling and service limits to consider for testing.</p>
+<h1 id="Troubleshoot-integration-of-virtual-machines-with-virtual-networks-in-Microsoft-Azure"><a href="#Troubleshoot-integration-of-virtual-machines-with-virtual-networks-in-Microsoft-Azure" class="headerlink" title="Troubleshoot integration of virtual machines with virtual networks in Microsoft Azure"></a>Troubleshoot integration of virtual machines with virtual networks in Microsoft Azure</h1><p>Completed100 XP</p>
+<ul>
+<li>6 minutes</li>
+</ul>
+<h2 id="Troubleshoot-subnet-delegation-issues"><a href="#Troubleshoot-subnet-delegation-issues" class="headerlink" title="Troubleshoot subnet delegation issues"></a>Troubleshoot subnet delegation issues</h2><p>When you delegate a subnet to an Azure service, you allow that service to perform basic configuration of the subnet. This would allow a customer to integrate your Azure service into their virtual network.</p>
+<p>If a customer cannot configure a particular property, it is likely that the deployment model for that Azure service has been defined to not support changes to that property.</p>
+<h2 id="Integration-of-platform-as-a-service-services-with-virtual-networks"><a href="#Integration-of-platform-as-a-service-services-with-virtual-networks" class="headerlink" title="Integration of platform-as-a-service services with virtual networks"></a>Integration of platform-as-a-service services with virtual networks</h2><p>Azure services can have their network access limited to your virtual network infrastructure including peered virtual networks and on-premises networks. This is defined per Azure service.</p>
+<p>If the Azure service is not accessible, consider the following points:</p>
+<ul>
+<li><p>If the instance of the service is deployed inside the virtual network, it can only be accessed from the virtual network or from on-premises networks.</p>
+</li>
+<li><p>If you are using a private endpoint, the instance of the service is effectively part of your virtual network and only accessible to the virtual network.</p>
+</li>
+<li><p>Virtual network service tags allow you to deny traffic to your Azure service to or from public endpoints. In the following diagram all traffic to Azure Storage and Azure SQL Database is allowed, but any other outbound traffic is denied.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/6-deny-outbound-traffic.png" alt="Diagram showing the deny outbound traffic settings."></p>
+</li>
+</ul>
+<h2 id="Troubleshoot-Azure-Private-Endpoint-connectivity-problems"><a href="#Troubleshoot-Azure-Private-Endpoint-connectivity-problems" class="headerlink" title="Troubleshoot Azure Private Endpoint connectivity problems"></a>Troubleshoot Azure Private Endpoint connectivity problems</h2><p>Perform the following steps to Troubleshoot Azure Private Endpoint connectivity problems:</p>
+<ul>
+<li><p>In <a target="_blank" rel="noopener" href="https://portal.azure.com/">Private Link Center</a>, select <strong>Private endpoints</strong>, and select the endpoint that you want to troubleshoot.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/6-private-link-center.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/6-private-link-center.png" alt="Screenshot of the private Link Center."></a></p>
+</li>
+<li><p>Verify that the connection is approved and that the IP address and DNS settings are correct.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/6-private-endpoint-metrics.png" alt="Screenshot showing the private endpoint metrics."></p>
+</li>
+<li><p>Select <strong>Metrics</strong> and verify that data is moving in and out.</p>
+</li>
+<li><p>Select the client VM, select <strong>Connection troubleshoot</strong>, select the <strong>Outbound connections</strong> tab, and select <strong>Test by FQDN</strong>.</p>
+</li>
+<li><p>In the test results, verify the DNS settings and the network security group (NSG) outbound rules.</p>
+</li>
+<li><p>If the Private Endpoint and source VM are on different, non-peered, VNETs, check connectivity between the VNETs.</p>
+</li>
+<li><p>Check the configuration of the private link and, if necessary, run through the steps in <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/private-link/troubleshoot-private-link-connectivity">Troubleshoot Azure Private Link connectivity problems</a>.</p>
+</li>
+<li><p>Try to find the specific issue by trying to connect from inside and outside the VNET with different virtual machines and connecting to different services.</p>
+</li>
+<li><p>If using a load balancer, check if the backend pool is healthy.</p>
+</li>
+<li><p>If the connection is unresolved, contact <a target="_blank" rel="noopener" href="https://portal.azure.com/">Azure Support</a>.</p>
+</li>
+</ul>
+<h1 id="Exercise-Troubleshoot-virtual-machine-connection"><a href="#Exercise-Troubleshoot-virtual-machine-connection" class="headerlink" title="Exercise: Troubleshoot virtual machine connection"></a>Exercise: Troubleshoot virtual machine connection</h1><p>Completed100 XP</p>
+<ul>
+<li>9 minutes</li>
+</ul>
+<p>This module requires a sandbox to complete.</p>
+<p>A <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/support/faq?pivots=sandbox">sandbox</a> gives you access to free resources. Your personal subscription will not be charged. The sandbox may only be used to complete training on Microsoft Learn. Use for any other reason is prohibited, and may result in permanent loss of access to the sandbox.</p>
+<p>Microsoft provides this lab experience and related content for educational purposes. All presented information is owned by Microsoft and intended solely for learning about the covered products and services in this Microsoft Learn module.</p>
+<p>Activate sandbox</p>
+<p>In this exercise you’ll troubleshoot connection issues between virtual machines running in Azure.</p>
+<h2 id="Create-the-exercise-environment"><a href="#Create-the-exercise-environment" class="headerlink" title="Create the exercise environment"></a>Create the exercise environment</h2><p>Using the Cloud Shell on the right, run these commands to create the example topology. The environment will take approximately 5 minutes to build.</p>
+<ol>
+<li><p>Clone the setup script from GitHub.</p>
+<p>BashCopy</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/MicrosoftDocs/mslearn-troubleshoot-platform-as-service-issues networking</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Run the setup script.</p>
+<p>BashCopy</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash networking/setup.sh</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Exercise"><a href="#Exercise" class="headerlink" title="Exercise"></a>Exercise</h2><p>You need to find the causes of connectivity problems to an Azure virtual machine using SSH.</p>
+<p>Sign in to the <a target="_blank" rel="noopener" href="https://portal.azure.com/learn.docs.microsoft.com">Azure portal</a> with the same credentials you used to start the sandbox.</p>
+<ol>
+<li><p>In the resource menu, select All <strong>Resources</strong>.</p>
+</li>
+<li><p>Select <strong>LabClientVM</strong>.</p>
+</li>
+<li><p>On the top row of the <strong>LabClientVM Overview</strong> page, select <strong>Connect</strong> and select <strong>SSH</strong>.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/7-exercise-1-connect.png" alt="screen shot showing the connect option for a virtual machine."></p>
+</li>
+<li><p>Notice that there is a <strong>Test your connection</strong> link. This provides a troubleshooter to test connections between resources, but this functionality is not available in this sandbox and we will view the settings manually.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/7-exercise-1-test-connection.png" alt="Screen shot showing the test your connection option."></p>
+</li>
+<li><p>Select <strong>Networking</strong>.</p>
+</li>
+<li><p>In the <strong>Network security group</strong> section, notice that there is a rule at the top of the priority list that will allow TCP connections on port 22.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/7-exercise-1-network-rule-allow.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/7-exercise-1-network-rule-allow.png" alt="Screenshot of rule to allow SSH"></a></p>
+</li>
+<li><p>At the top of the screen, select <strong>All resources</strong>.</p>
+</li>
+<li><p>Select <strong>LabVM</strong>.</p>
+</li>
+<li><p>Select <strong>Networking</strong>.</p>
+</li>
+<li><p>In the <strong>Network security group</strong> section, notice that there is not a rule at the top of the priority list that will allow TCP connections on port 22.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/7-exercise-1-network-rule-deny.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/7-exercise-1-network-rule-deny.png" alt="Screenshot showing that there is no rule to allow SSH connections."></a></p>
+</li>
+<li><p>Notice that, except for load balancers and virtual networks, the highest priority rule will deny all inbound traffic. This will cause connectivity problems.</p>
+</li>
+<li><p>Keep the tab open to the Azure portal for the next exercise.</p>
+</li>
+</ol>
+<h1 id="Exercise-Resolve-virtual-machine-connection"><a href="#Exercise-Resolve-virtual-machine-connection" class="headerlink" title="Exercise: Resolve virtual machine connection"></a>Exercise: Resolve virtual machine connection</h1><p>Completed100 XP</p>
+<ul>
+<li>8 minutes</li>
+</ul>
+<p>This module requires a sandbox to complete.</p>
+<p>A <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/support/faq?pivots=sandbox">sandbox</a> gives you access to free resources. Your personal subscription will not be charged. The sandbox may only be used to complete training on Microsoft Learn. Use for any other reason is prohibited, and may result in permanent loss of access to the sandbox.</p>
+<p>Microsoft provides this lab experience and related content for educational purposes. All presented information is owned by Microsoft and intended solely for learning about the covered products and services in this Microsoft Learn module.</p>
+<p>Activate sandbox</p>
+<p>After going through the troubleshooting exercise you now know how to resolve the issues. Follow these steps in the Azure portal:</p>
+<ol>
+<li><p>Select <strong>Home</strong> to return to the Azure portal home screen.</p>
+</li>
+<li><p>In the resource menu, select All <strong>Resources</strong>.</p>
+</li>
+<li><p>Select <strong>LabVM</strong>.</p>
+</li>
+<li><p>In Settings, <strong>select Networking</strong>.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/8-exercise-1-settings-networking.png" alt="Screen shot showing the networking option."></p>
+</li>
+<li><p>Select <strong>Add inbound port rule</strong>.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/8-exercise-1-add-inbound-port-rule.png" alt="Screen shot showing the add inbound rule button."></p>
+</li>
+<li><p>On the Add inbound security rule tab, type or select the following values:</p>
+<ol>
+<li><strong>Destination port ranges: 22</strong></li>
+<li><strong>Action: Allow</strong></li>
+<li><strong>Priority: 100</strong></li>
+<li><strong>Name: SSH_port_22</strong></li>
+</ol>
+</li>
+<li><p>Select <strong>Add</strong>.</p>
+</li>
+<li><p>Wait until the security rule has been deployed.</p>
+</li>
+<li><p>In <strong>Settings</strong>, select <strong>Connect</strong>.</p>
+</li>
+<li><p>Select <strong>Test your connection</strong>.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/8-exercise-1-test-connection-button.png" alt="screen shot showing the test connection button."></p>
+</li>
+<li><p>Select <strong>Test connection</strong>.</p>
+</li>
+<li><p>Notice that connectivity is now allowed and you’ve resolved the connectivity issue.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-platform-service-issues/media/8-exercise-1-network-connectivity-allowed.png" alt="Screen shot showing that connectivity is now allowed."></p>
+</li>
+</ol>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>Completed100 XP</p>
+<ul>
+<li>3 minutes</li>
+</ul>
+<p>You work as a support engineer supporting Azure Platform as a Service (PaaS). If there are connectivity issues, you should now be able to identify the cause of the issue quickly and accurately. Furthermore, where possible, you should be able to resolve the issue and re-establish connectivity.</p>
+<p>Now that you’ve completed this module, you should be able to:</p>
+<ul>
+<li>Troubleshoot Azure Storage.</li>
+<li>Troubleshoot Azure Private Link connectivity problems and Firewalls for PaaS services.</li>
+<li>Troubleshoot Content Delivery Network issues.</li>
+<li>Troubleshoot connections between a virtual machine (VM) and a PaaS service.</li>
+<li>Troubleshoot integration of PaaS services with virtual networks.</li>
+</ul>
+<h2 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h2><p>Use these resources to discover more.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/storage/common/storage-monitoring-diagnosing-troubleshooting?tabs=dotnet">Monitor, diagnose, and troubleshoot Microsoft Azure Storage</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/private-link/troubleshoot-private-link-connectivity">Troubleshoot Azure Private Link connectivity problems</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/firewall/firewall-faq">Azure Firewall</a> FAQ</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/cdn/">Azure CDN Documentation</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/troubleshoot/azure/cloud-services/dev-troubleshoot-series">Azure Cloud Service Troubleshooting Series</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/troubleshoot-app-connection">Troubleshoot application connectivity issues on virtual machines in Azure</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/troubleshoot-outbound-smtp-connectivity">Troubleshoot outbound SMTP connectivity problems in Azure</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/vnet-integration-for-azure-services">Integrate Azure services with virtual networks for network isolation</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/14/AZ-720-Troubleshoot-cloud-and-hybrid-connectivity-in-Microsoft-Azure-3/" rel="prev" title="AZ-720-Troubleshoot-cloud-and-hybrid-connectivity-in-Microsoft-Azure-3">
+      <i class="fa fa-chevron-left"></i> AZ-720-Troubleshoot-cloud-and-hybrid-connectivity-in-Microsoft-Azure-3
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/11/14/AZ-720-Troubleshoot-authentication-and-access-control-issues-in-Microsoft-Azure-5/" rel="next" title="AZ-720-Troubleshoot-authentication-and-access-control-issues-in-Microsoft-Azure-5">
+      AZ-720-Troubleshoot-authentication-and-access-control-issues-in-Microsoft-Azure-5 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Learning-objectives"><span class="nav-number">1.1.</span> <span class="nav-text">Learning objectives</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Prerequisites"><span class="nav-number">1.2.</span> <span class="nav-text">Prerequisites</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Troubleshoot-Azure-Storage"><span class="nav-number">2.</span> <span class="nav-text">Troubleshoot Azure Storage</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Troubleshoot-Azure-Private-Link-connectivity-problems-and-firewalls-for-virtual-machines"><span class="nav-number">3.</span> <span class="nav-text">Troubleshoot Azure Private Link connectivity problems and firewalls for virtual machines</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshoot-Azure-Private-Link-connectivity-problems"><span class="nav-number">3.1.</span> <span class="nav-text">Troubleshoot Azure Private Link connectivity problems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deployment-troubleshooting"><span class="nav-number">3.2.</span> <span class="nav-text">Deployment troubleshooting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Connectivity-troubleshooting"><span class="nav-number">3.2.1.</span> <span class="nav-text">Connectivity troubleshooting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshoot-firewalls-for-Platform-as-a-Service-PaaS"><span class="nav-number">3.3.</span> <span class="nav-text">Troubleshoot firewalls for Platform as a Service (PaaS)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Troubleshoot-Content-Delivery-Network-issues-with-Microsoft-Azure"><span class="nav-number">4.</span> <span class="nav-text">Troubleshoot Content Delivery Network issues with Microsoft Azure</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#404-status"><span class="nav-number">4.1.</span> <span class="nav-text">404 status</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compression-errors"><span class="nav-number">4.2.</span> <span class="nav-text">Compression errors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CA-certificates"><span class="nav-number">4.3.</span> <span class="nav-text">CA certificates</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subscription-type"><span class="nav-number">4.4.</span> <span class="nav-text">Subscription type</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Troubleshoot-connections-between-virtual-machines-in-Microsoft-Azure"><span class="nav-number">5.</span> <span class="nav-text">Troubleshoot connections between virtual machines in Microsoft Azure</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Connecting-to-an-application-running-on-an-Azure-virtual-machine"><span class="nav-number">5.1.</span> <span class="nav-text">Connecting to an application running on an Azure virtual machine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sending-outbound-email-messages"><span class="nav-number">5.2.</span> <span class="nav-text">Sending outbound email messages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Azure-cloud-service"><span class="nav-number">5.3.</span> <span class="nav-text">Azure cloud service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Determine-root-cause-for-throttling-at-service-level"><span class="nav-number">5.4.</span> <span class="nav-text">Determine root cause for throttling at service level</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Troubleshoot-integration-of-virtual-machines-with-virtual-networks-in-Microsoft-Azure"><span class="nav-number">6.</span> <span class="nav-text">Troubleshoot integration of virtual machines with virtual networks in Microsoft Azure</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshoot-subnet-delegation-issues"><span class="nav-number">6.1.</span> <span class="nav-text">Troubleshoot subnet delegation issues</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Integration-of-platform-as-a-service-services-with-virtual-networks"><span class="nav-number">6.2.</span> <span class="nav-text">Integration of platform-as-a-service services with virtual networks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshoot-Azure-Private-Endpoint-connectivity-problems"><span class="nav-number">6.3.</span> <span class="nav-text">Troubleshoot Azure Private Endpoint connectivity problems</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Exercise-Troubleshoot-virtual-machine-connection"><span class="nav-number">7.</span> <span class="nav-text">Exercise: Troubleshoot virtual machine connection</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-the-exercise-environment"><span class="nav-number">7.1.</span> <span class="nav-text">Create the exercise environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exercise"><span class="nav-number">7.2.</span> <span class="nav-text">Exercise</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Exercise-Resolve-virtual-machine-connection"><span class="nav-number">8.</span> <span class="nav-text">Exercise: Resolve virtual machine connection</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary"><span class="nav-number">9.</span> <span class="nav-text">Summary</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Resources"><span class="nav-number">9.1.</span> <span class="nav-text">Resources</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1986</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

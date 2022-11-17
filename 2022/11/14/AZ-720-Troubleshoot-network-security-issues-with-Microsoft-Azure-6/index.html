@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="IntroductionCompleted100 XP  3 minutes  You work as an engineer who supports Azure infrastructure. Users within and outside your organization access various web services and applications hosted on you">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AZ-720-Troubleshoot-network-security-issues-with-Microsoft-Azure-6">
+<meta property="og:url" content="https://example.com/2022/11/14/AZ-720-Troubleshoot-network-security-issues-with-Microsoft-Azure-6/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="IntroductionCompleted100 XP  3 minutes  You work as an engineer who supports Azure infrastructure. Users within and outside your organization access various web services and applications hosted on you">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/2-rule-exclusion.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/2-firewall-gateway.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/2-web-application-firewall-policy.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/2-point-to-site.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/3-azure-load-balancer.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/3-ip-flow-verify.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/3-application-security-groups.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/4-azure-firewall-manager.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-topology.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-website-not-responding.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-search-nsg.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-no-network-security-groups.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-search-virtual-machine-scale-sets.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-inbound-outbound-port-rules.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-instances.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-network.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-load-balancer.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-front-end-ip-configuration.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-load-balancing-rules.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-no-connectivity.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-no-connectivity-back-end-pool.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-topology.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-website-not-responding.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-search-nsg.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-no-network-security-groups.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-check-inbound-traffic-allowed.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-check-virtual-machine-networking.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-search-load-balancers.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-front-end-ip-configuration.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-load-balancing-rules.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-no-connectivity.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-no-connectivity-back-end-pool.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/7-load-balancers.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-load-balancing-rules.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/7-my-load-balancer-rule-web.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/7-successful-rule.png">
+<meta property="og:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/7-hello-world.png">
+<meta property="article:published_time" content="2022-11-14T17:38:11.000Z">
+<meta property="article:modified_time" content="2022-11-14T21:05:00.000Z">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/2-rule-exclusion.png">
+
+<link rel="canonical" href="https://example.com/2022/11/14/AZ-720-Troubleshoot-network-security-issues-with-Microsoft-Azure-6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>AZ-720-Troubleshoot-network-security-issues-with-Microsoft-Azure-6 | Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AZ-720-Troubleshoot-network-security-issues-with-Microsoft-Azure-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AZ-720-Troubleshoot-network-security-issues-with-Microsoft-Azure-6
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-14 13:38:11 / Modified: 17:05:00" itemprop="dateCreated datePublished" datetime="2022-11-14T13:38:11-04:00">2022-11-14</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/AZ-720-Troubleshoot-network-security-issues-with-Microsoft-Azure-6/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AZ-720-Troubleshoot-network-security-issues-with-Microsoft-Azure-6/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Completed100 XP</p>
+<ul>
+<li>3 minutes</li>
+</ul>
+<p>You work as an engineer who supports Azure infrastructure. Users within and outside your organization access various web services and applications hosted on your virtual network. They sometimes come across various network issues. Also, from a security point of view, you need to ensure the optimum health of your virtual network.</p>
+<p>Within the Azure portal, resources such as Azure Firewall, Network Watcher, Azure Web Application Firewall, and Azure DDoS Protection, help you manage and monitor virtual network security.</p>
+<p>In this module, you’ll learn how to troubleshoot network security, configuration, latency, bandwidth, and Azure Firewall issues.</p>
+<h2 id="Learning-objectives"><a href="#Learning-objectives" class="headerlink" title="Learning objectives"></a>Learning objectives</h2><p>After completing this module, you’ll be able to:</p>
+<ul>
+<li>Troubleshoot network security issues.</li>
+<li>Troubleshoot network security group (NSG).</li>
+<li>Troubleshoot Azure Firewall.</li>
+<li>Troubleshoot latency issues within a virtual network.</li>
+</ul>
+<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
+<li>Experience with the OSI model.</li>
+<li>Demonstrate an awareness of Azure Bastion.</li>
+<li>Experience with PowerShell and Azure CLI.</li>
+<li>Know how to get to Cloud Shell to run commands.</li>
+<li>Experience with Visual Studio Code.</li>
+<li>Demonstrate an understanding of JSON.</li>
+</ul>
+<h1 id="Setup-troubleshooting-environment"><a href="#Setup-troubleshooting-environment" class="headerlink" title="Setup troubleshooting environment"></a>Setup troubleshooting environment</h1><p>Completed100 XP</p>
+<ul>
+<li>3 minutes</li>
+</ul>
+<p>This module requires a sandbox to complete.</p>
+<p>A <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/support/faq?pivots=sandbox">sandbox</a> gives you access to free resources. Your personal subscription will not be charged. The sandbox may only be used to complete training on Microsoft Learn. Use for any other reason is prohibited, and may result in permanent loss of access to the sandbox.</p>
+<p>Microsoft provides this lab experience and related content for educational purposes. All presented information is owned by Microsoft and intended solely for learning about the covered products and services in this Microsoft Learn module.</p>
+<p>Activate sandbox</p>
+<p>You’ll troubleshoot a virtual machine connection problem in a later exercise. Use the following instructions and the Azure Cloud Shell on the right of the screen to create the environment.</p>
+<h2 id="Create-the-exercise-environment"><a href="#Create-the-exercise-environment" class="headerlink" title="Create the exercise environment"></a>Create the exercise environment</h2><p>Use the Cloud Shell on the right run these commands to create the example topology.</p>
+<ol>
+<li><p>Copy and paste this command on the right to clone the setup script from GitHub.</p>
+<p>BashCopy</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/MicrosoftDocs/mslearn-troubleshoot-network-security-issues networking</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Run the setup script with this command.</p>
+<p>BashCopy</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash networking/setup.sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>You can continue to the next unit as this command runs in the background.</p>
+</li>
+</ol>
+<h1 id="Troubleshoot-network-security-issues"><a href="#Troubleshoot-network-security-issues" class="headerlink" title="Troubleshoot network security issues"></a>Troubleshoot network security issues</h1><p>Completed100 XP</p>
+<ul>
+<li>9 minutes</li>
+</ul>
+<h2 id="Determine-why-Web-Application-Firewall-WAF-is-blocking-wanted-traffic"><a href="#Determine-why-Web-Application-Firewall-WAF-is-blocking-wanted-traffic" class="headerlink" title="Determine why Web Application Firewall (WAF) is blocking wanted traffic"></a>Determine why Web Application Firewall (WAF) is blocking wanted traffic</h2><p>Occasionally, requests that should pass through your Web Application Firewall (WAF) are blocked.</p>
+<p>To tune the strict Open Web Application Security Project (OWASP) regulations for the needs of an application or organization, WAF helps you to customize, or disable the rules, or create exclusions, that may be causing issues or false positives. This is done on a per-site and per-URI basis. That is, changes to the policies will only affect specific sites&#x2F;URIs and wouldn’t concern other sites that might not have the same issues.</p>
+<p>The following articles will help you understand how the WAF functions and how its rule and logs work:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/ag-overview">WAF overview</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-waf-configuration">WAF configuration</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/application-gateway/application-gateway-diagnostics">WAF monitoring</a></li>
+</ul>
+<h2 id="Understanding-WAF-logs"><a href="#Understanding-WAF-logs" class="headerlink" title="Understanding WAF logs"></a>Understanding WAF logs</h2><p>WAF logs work as a statement of all evaluated requests that are matched or blocked. If you notice a false positive, when the WAF blocks a request that it shouldn’t, you can do the following steps:</p>
+<ol>
+<li>Find the specific request.</li>
+<li>Examine the logs to find the specific URI, timestamp, or transaction ID of the request.</li>
+<li>Fix the false positives.</li>
+</ol>
+<h2 id="Viewing-WAF-logs"><a href="#Viewing-WAF-logs" class="headerlink" title="Viewing WAF logs"></a>Viewing WAF logs</h2><p>To view WAF logs, complete the following steps:</p>
+<ol>
+<li>In the Azure portal, select <strong>All resources</strong>, and select the <strong>Application Gateway WAF policy</strong>.</li>
+<li>Select <strong>Activity log</strong>.</li>
+<li>Select individual operations for more information.</li>
+<li>You can download the Activity log by selecting <strong>Download as CSV</strong>.</li>
+<li>To stream the Activity log events to another service, select <strong>Export Activity Logs</strong>.</li>
+</ol>
+<p>In Export Activity Logs:</p>
+<ol>
+<li>Select <strong>Add diagnostic setting</strong>.</li>
+<li>Type a <strong>Diagnostic setting name</strong>.</li>
+<li>Select the relevant log categories to stream in <strong>Categories</strong>. For example, select <strong>Security</strong>, <strong>Policy</strong>, and <strong>Alert</strong>.</li>
+<li>Select the streaming destination in <strong>Destination details</strong>. For example, select <strong>Send to Log Analytics workspace</strong>.</li>
+<li>Enter additional destination details. For example, the relevant <strong>Subscription</strong> and <strong>Log Analytics workspace</strong>.</li>
+<li>Select <strong>Save</strong>.</li>
+</ol>
+<h2 id="Anomaly-Scoring-mode"><a href="#Anomaly-Scoring-mode" class="headerlink" title="Anomaly Scoring mode"></a>Anomaly Scoring mode</h2><p>Anomaly Scoring mode is used by OWASP to decide whether to block traffic. In Anomaly Scoring mode, traffic that matches any rule isn’t instantly blocked when the firewall is in Prevention mode. Rules have a certain criterion: Critical, Error, Warning, or Notice. Each of these has a numeric value associated with it, called Anomaly Score. The numeric value indicates the severity of a request.</p>
+<p>For more information, see <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/ag-overview">Anomaly Scoring mode</a>.</p>
+<h2 id="Fixing-false-positives"><a href="#Fixing-false-positives" class="headerlink" title="Fixing false positives"></a>Fixing false positives</h2><p>To fix false positives and avoid the issues of blocked traffic, you can use an exclusion list. Using an exclusion list is only applicable to a specific part of a request, or a rule set that is being disabled. You can decide to exclude either body, headers, or cookies for a certain condition instead of excluding the whole request. In a global setting environment, the specific exclusion applies to all traffic passing through your WAF.</p>
+<p>Refer to <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-waf-configuration">WAF configuration</a> for more information about exclusion lists.</p>
+<h3 id="To-configure-exclusion-lists-using-the-Azure-portal"><a href="#To-configure-exclusion-lists-using-the-Azure-portal" class="headerlink" title="To configure exclusion lists using the Azure portal"></a>To configure exclusion lists using the Azure portal</h3><ol>
+<li>Go to the WAF portal.</li>
+<li>Select <strong>Manage exclusions</strong> under <strong>Managed rules</strong>.</li>
+</ol>
+<p>An example exclusion list:</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/2-rule-exclusion.png" alt="Screenshot displaying an example exclusion list."></p>
+<ul>
+<li><strong>Disable the rule</strong>: Disabling a rule allows you to treat a certain condition as a non-threat that would otherwise be flagged as malicious and be blocked. In a global setting environment, disabling a rule for the entire WAF is a risk and can weaken your security.</li>
+</ul>
+<h3 id="To-disable-rule-groups-or-specific-rules"><a href="#To-disable-rule-groups-or-specific-rules" class="headerlink" title="To disable rule groups or specific rules"></a>To disable rule groups or specific rules</h3><ol>
+<li><p>Browse to the application gateway, and then select <strong>Web application firewall</strong>.</p>
+</li>
+<li><p>Select your <strong>WAF Policy</strong>.</p>
+</li>
+<li><p>Select <strong>Managed Rules</strong>.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/2-firewall-gateway.png" alt="Screenshot showing Web application firewall gateway."></p>
+</li>
+<li><p>Search for the rules or rule groups that you want to disable.</p>
+</li>
+<li><p>Select the check boxes for the rules that you want to disable.</p>
+</li>
+<li><p>Select the action at the top of the page (<strong>Enable</strong>&#x2F;<strong>Disable</strong>) for the selected rules.</p>
+</li>
+<li><p>Select <strong>Save</strong>.</p>
+</li>
+</ol>
+<p>A third-party tool called Fiddler can provide additional information. Fiddler will help you to:</p>
+<ul>
+<li><strong>Find request attribute names</strong>: Review individual requests and determine what specific fields of a webpage are called. It also helps to exclude certain fields from inspection using exclusion lists.</li>
+<li><strong>Find request header names</strong>: View request and response headers inside the developer tools of Chrome, or see the headers for the GET request.</li>
+<li><strong>Find request cookie names</strong>: View cookies by selecting the Cookies tab in Fiddler.</li>
+</ul>
+<h2 id="Restrict-global-parameters-to-eliminate-false-positives"><a href="#Restrict-global-parameters-to-eliminate-false-positives" class="headerlink" title="Restrict global parameters to eliminate false positives"></a>Restrict global parameters to eliminate false positives</h2><ul>
+<li><p><strong>Disable request body inspection</strong>: Certain bodies that are not a threat to your application can be prevented from being evaluated by your WAF by setting <strong>Inspect request body</strong> to off. This way, only the request body is not inspected. The headers and cookies will still be inspected, unless they’re on the exclusion list.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/2-web-application-firewall-policy.png" alt="Screenshot showing WAF policy. The option of Inspect request body to off."></p>
+</li>
+<li><p><strong>File size limits</strong>: The possibility of an attack to web servers and applications can be reduced by limiting the file size for your WAF. Permitting large files increases the risk of your back end being exhausted. To prevent attacks, it is advisable to limit the file size to a typical case for your application.</p>
+</li>
+</ul>
+<p> Note</p>
+<p>Firewall Metrics (WAF_v1 only) For v1 Web Application Firewalls, the following metrics are now available in the portal:</p>
+<ul>
+<li><strong>Web Application Firewall Blocked Request Count</strong> - the number of requests that were blocked.</li>
+<li><strong>Web Application Firewall Blocked Rule Count</strong> - all rules that were matched and the request was blocked.</li>
+<li><strong>Web Application Firewall Total Rule Distribution</strong> - all rules that were matched during evaluation</li>
+</ul>
+<p>To enable metrics, select the <strong>Metrics</strong> tab in the portal, and select one of the three metrics.</p>
+<h2 id="Determine-which-version-of-TLS-a-customer-is-running"><a href="#Determine-which-version-of-TLS-a-customer-is-running" class="headerlink" title="Determine which version of TLS a customer is running"></a>Determine which version of TLS a customer is running</h2><p>If the client is using a version of Transport Layer Security (TLS) that is lower than the minimum required version, all calls to Azure Storage will fail. Therefore, from the security point of view, an Azure Storage account might require that clients use a minimum version of TLS to send requests. For example, a request sent by a client who is using TLS 1.1 will fail, if a storage account requires TLS 1.2.</p>
+<p>The article <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-minimum-version?tabs=portal">Configure minimum required version of Transport Layer Security (TLS) for a storage account</a> explains how to configure the minimum TLS version for an Azure Storage account that might affect client applications.</p>
+<h2 id="Configure-the-client-TLS-version"><a href="#Configure-the-client-TLS-version" class="headerlink" title="Configure the client TLS version"></a>Configure the client TLS version</h2><p>For the client, sending a request with a particular version of TLS is only possible if the operating system and the .NET Framework used by the client supports that version.</p>
+<p>To enable TLS 1.2 in a PowerShell client:</p>
+<p>PowerShellCopy</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Set the TLS version used by the PowerShell client to TLS 1.2.</span></span><br><span class="line"></span><br><span class="line">[<span class="type">System.Net.ServicePointManager</span>]::SecurityProtocol = [<span class="type">System.Net.SecurityProtocolType</span>]::Tls12;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a new container.</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$storageAccount</span> = <span class="built_in">Get-AzStorageAccount</span> <span class="literal">-ResourceGroupName</span> <span class="variable">$rgName</span> <span class="literal">-Name</span> <span class="variable">$accountName</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$ctx</span> = <span class="variable">$storageAccount</span>.Context</span><br><span class="line"></span><br><span class="line"><span class="built_in">New-AzStorageContainer</span> <span class="literal">-Name</span> <span class="string">&quot;sample-container&quot;</span> <span class="literal">-Context</span> <span class="variable">$ctx</span></span><br></pre></td></tr></table></figure>
+
+<p>To enable TLS 1.2 in a .NET client using version 12 of the Azure Storage client library:</p>
+<p>C#Copy</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">async</span> Task <span class="title">ConfigureTls12</span>()</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Enable TLS 1.2 before connecting to Azure Storage</span></span><br><span class="line"></span><br><span class="line">    System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Add your connection string here.</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">string</span> connectionString = <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Create a new container with Shared Key authorization.</span></span><br><span class="line"></span><br><span class="line">    BlobContainerClient containerClient = <span class="keyword">new</span> BlobContainerClient(connectionString, <span class="string">&quot;sample-container&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">await</span> containerClient.CreateIfNotExistsAsync();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>To enable TLS 1.2 in a .NET client using version 11 of the Azure Storage client library:</p>
+<p>C#Copy</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">EnableTls12</span>()</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Enable TLS 1.2 before connecting to Azure Storage</span></span><br><span class="line"></span><br><span class="line">    System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Add your connection string here.</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">string</span> connectionString = <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Connect to Azure Storage and create a new container.</span></span><br><span class="line"></span><br><span class="line">    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(connectionString);</span><br><span class="line"></span><br><span class="line">    CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();</span><br><span class="line"></span><br><span class="line">    CloudBlobContainer container = blobClient.GetContainerReference(<span class="string">&quot;sample-container&quot;</span>);</span><br><span class="line"></span><br><span class="line">    container.CreateIfNotExists();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>For more information, refer to <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls">Support for TLS 1.2</a>.</p>
+<p> Note</p>
+<p>Fiddler or a similar tool can help you verify that the specified version of TLS was used by the client to send a request.</p>
+<h2 id="Troubleshoot-encryption-x2F-certificate-related-issues-for-point-to-site-scenarios"><a href="#Troubleshoot-encryption-x2F-certificate-related-issues-for-point-to-site-scenarios" class="headerlink" title="Troubleshoot encryption&#x2F;certificate-related issues for point-to-site scenarios"></a>Troubleshoot encryption&#x2F;certificate-related issues for point-to-site scenarios</h2><p>A point-to-site (P2S) VPN connection is initiated by a single endpoint and is useful when you want to connect to your VNet from a remote location. Point-to-site is a better option when you have only a few clients that need to connect to a VNet. P2S connections do not require a VPN device, or a public network or IP address.</p>
+<p>P2S VPN supports Secure Socket Tunneling Protocol (SSTP), and IKEv2. You can securely connect different clients running Windows, Linux, or macOS to an Azure VNet through point-to-site connection.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/2-point-to-site.png" alt="Diagram showing point-to-site VPN connection."></p>
+<h2 id="Generate-certificates"><a href="#Generate-certificates" class="headerlink" title="Generate certificates"></a>Generate certificates</h2><ul>
+<li><p>Generate a root certificate</p>
+<p>First, obtain the public key (.cer file) for a root certificate. After creating the root certificate, export the public certificate (not the private key). Then this file is uploaded to Azure. The root certificate acts as a trusted source by Azure for connection over P2S to the virtual network. There are two ways to generate a root certificate, enterprise certificate, or self-signed certificate. To create a self-signed root certificate, consider the following steps:</p>
+</li>
+</ul>
+<ol>
+<li><p>Open a Windows PowerShell console.</p>
+</li>
+<li><p>The following example creates a self-signed root certificate named “P2SRootCert” that is automatically installed in “Certificates-Current User\Personal\Certificates”. You can view the certificate by opening <strong>certmgr.msc</strong>, or <strong>Manage User Certificates</strong>.</p>
+<p>You can modify and run the following command:</p>
+<p>PowerShellCopy</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$cert</span> = <span class="built_in">New-SelfSignedCertificate</span> <span class="literal">-Type</span> Custom <span class="literal">-KeySpec</span> Signature `</span><br><span class="line"></span><br><span class="line"><span class="literal">-Subject</span> <span class="string">&quot;CN=P2SRootCert&quot;</span> <span class="literal">-KeyExportPolicy</span> Exportable `</span><br><span class="line"></span><br><span class="line"><span class="literal">-HashAlgorithm</span> sha256 <span class="literal">-KeyLength</span> <span class="number">2048</span> `</span><br><span class="line"></span><br><span class="line"><span class="literal">-CertStoreLocation</span> <span class="string">&quot;Cert:\CurrentUser\My&quot;</span> <span class="literal">-KeyUsageProperty</span> Sign <span class="literal">-KeyUsage</span> CertSign</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Leave the PowerShell console open and proceed with the next steps to generate a client certificate.</p>
+<ul>
+<li><p>Generate client certificates</p>
+<p>A client certificate is automatically installed on the computer where it is generated from a self-signed root certificate. For installing a client certificate on another client computer, you need to export it as a .pfx file, along with the entire certificate chain. The .pfx file will contain the root certificate information required for client authentication. There are two methods to create client certificates, enterprise certificate, or self-signed root certificate.</p>
+<p>It is recommended to generate a unique certificate for each client instead of using the same certificate. This is because, if you want to revoke a particular client certificate, you don’t need to generate and install a new one for every client that uses the same certificate. To generate client certificate, consider the following steps:</p>
+</li>
+</ul>
+</li>
+<li><p>Use the following example if the PowerShell console session is still open:</p>
+<p>PowerShellCopy</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">New-SelfSignedCertificate</span> <span class="literal">-Type</span> Custom <span class="literal">-DnsName</span> P2SChildCert <span class="literal">-KeySpec</span> Signature `</span><br><span class="line"></span><br><span class="line"><span class="literal">-Subject</span> <span class="string">&quot;CN=P2SChildCert&quot;</span> <span class="literal">-KeyExportPolicy</span> Exportable `</span><br><span class="line"></span><br><span class="line"><span class="literal">-HashAlgorithm</span> sha256 <span class="literal">-KeyLength</span> <span class="number">2048</span> `</span><br><span class="line"></span><br><span class="line"><span class="literal">-CertStoreLocation</span> <span class="string">&quot;Cert:\CurrentUser\My&quot;</span> `</span><br><span class="line"></span><br><span class="line"><span class="literal">-Signer</span> <span class="variable">$cert</span> <span class="literal">-TextExtension</span> <span class="selector-tag">@</span>(<span class="string">&quot;2.5.29.37=&#123;text&#125;1.3.6.1.5.5.7.3.2&quot;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>If it’s a new PowerShell console session, consider the following steps:</p>
+<ul>
+<li>Identify the self-signed root certificate that is installed on the computer. This cmdlet returns a list of certificates that are installed on your computer.</li>
+</ul>
+<p>PowerShellCopy</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-ChildItem</span> <span class="literal">-Path</span> <span class="string">&quot;Cert:\CurrentUser\My&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>Locate the subject name from the returned list, then copy the thumbprint that is located next to it to a text file. In this case “P2SRootCert”.</p>
+<p>ConsoleCopy</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Thumbprint                                Subject</span><br><span class="line"></span><br><span class="line">----------                                -------</span><br><span class="line"></span><br><span class="line">7181AA8C1B4D34EEDB2F3D3BEC5839F3FE52D655  CN=P2SRootCert</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Declare a variable for the root certificate using the thumbprint from the previous step.</p>
+<p>PowerShellCopy</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$cert</span> = <span class="built_in">Get-ChildItem</span> <span class="literal">-Path</span> <span class="string">&quot;Cert:\CurrentUser\My\&lt;THUMBPRINT&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Replace THUMBPRINT with the thumbprint of the root certificate from which you want to generate a child certificate.</p>
+<p>PowerShellCopy</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$cert</span> = <span class="built_in">Get-ChildItem</span> <span class="literal">-Path</span> <span class="string">&quot;Cert:\CurrentUser\My\7181AA8C1B4D34EEDB2F3D3BEC5839F3FE52D655&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>In this example, a client certificate named “P2SChildCert” is generated. The client certificate that you generate is automatically installed in “Certificates - Current User\Personal\Certificates” on your computer.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>You can modify and run the following command to generate a client certificate:</p>
+<p>PowerShellCopy</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">New-SelfSignedCertificate</span> <span class="literal">-Type</span> Custom <span class="literal">-DnsName</span> P2SChildCert <span class="literal">-KeySpec</span> Signature `</span><br><span class="line"></span><br><span class="line"><span class="literal">-Subject</span> <span class="string">&quot;CN=P2SChildCert&quot;</span> <span class="literal">-KeyExportPolicy</span> Exportable `</span><br><span class="line"></span><br><span class="line"><span class="literal">-HashAlgorithm</span> sha256 <span class="literal">-KeyLength</span> <span class="number">2048</span> `</span><br><span class="line"></span><br><span class="line"><span class="literal">-CertStoreLocation</span> <span class="string">&quot;Cert:\CurrentUser\My&quot;</span> `</span><br><span class="line"></span><br><span class="line"><span class="literal">-Signer</span> <span class="variable">$cert</span> <span class="literal">-TextExtension</span> <span class="selector-tag">@</span>(<span class="string">&quot;2.5.29.37=&#123;text&#125;1.3.6.1.5.5.7.3.2&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>To learn about exporting the root certificate and the client certificate, see <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-wan/certificates-point-to-site">Generate and export certificates for User VPN connections</a>.</p>
+<p>To configure a point-to-site connection using Azure certificate, you need to:</p>
+<ol>
+<li>Add the VPN client address pool.</li>
+<li>Specify tunnel type and authentication type.</li>
+<li>Upload root certificate public key information.</li>
+<li>Install exported client certificate.</li>
+<li>Configure settings for VPN clients.</li>
+<li>Connect to Azure.</li>
+</ol>
+<p>For detailed steps to configure a point-to-site connection using Azure certificate, refer to <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal">Connect to a VNet using P2S VPN &amp; certificate authentication: portal - Azure VPN Gateway</a>.</p>
+<p>To verify your VPN connection is active (Windows clients), open an elevated command prompt, and run <strong>ipconfig&#x2F;all</strong>.</p>
+<p>To connect to a virtual machine (Windows clients):</p>
+<ol>
+<li>Locate the private IP address.</li>
+<li>Verify that you’re connected to your VNet.</li>
+<li>Open Remote Desktop Connection by typing “RDP” or “Remote Desktop Connection” in the search box on the taskbar, then select <strong>Remote Desktop Connection</strong>. You can also open Remote Desktop Connection using the “mstsc” command in PowerShell.</li>
+<li>In Remote Desktop Connection, enter the private IP address of the VM. Select <strong>Show Options</strong> to adjust additional settings, then connect.</li>
+</ol>
+<h2 id="Troubleshoot-a-connection"><a href="#Troubleshoot-a-connection" class="headerlink" title="Troubleshoot a connection"></a>Troubleshoot a connection</h2><p>If you’re having trouble connecting to a virtual machine over your VPN connection, read the following:</p>
+<ul>
+<li>Check that your VPN connection is successful.</li>
+<li>Ensure that you’re connecting to the private IP address for the VM.</li>
+<li>If you can connect to the VM using the private IP address, but not the computer name, check DNS configuration.</li>
+<li>For more information about RDP connections, see <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/troubleshoot-rdp-connection">Troubleshoot Remote Desktop connections to a VM</a>.</li>
+<li>Verify that the VPN client configuration package was generated after the DNS server IP addresses were specified for the VNet. If you updated the DNS server IP addresses, generate and install a new VPN client configuration package.</li>
+<li>Ensure that there is no overlapping address space. For example, if the IP address is within the address range of the VNet that you are connecting to, or within the address range of your VPNClientAddressPool. Use “ipconfig” to check the IPv4 address assigned to the Ethernet adapter on the computer from which you are connecting.</li>
+</ul>
+<p>To add a trusted root certificate, refer to <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal">Upload a trusted root certificate</a>.</p>
+<p>To remove a trusted root certificate:</p>
+<ol>
+<li>Go to the point-to-site configuration page for your virtual network gateway.</li>
+<li>In the root certificate section of the page, locate the certificate that you want to remove.</li>
+<li>Select the ellipsis next to the certificate, and then select <strong>Remove</strong>.</li>
+</ol>
+<h2 id="Revoke-a-client-certificate"><a href="#Revoke-a-client-certificate" class="headerlink" title="Revoke a client certificate"></a>Revoke a client certificate</h2><p>Revoking a client certificate is different from removing a trusted root certificate. Removing a trusted root certificate .cer file from Azure revokes all the client certificates generated&#x2F;authenticated by the root certificate. Revoking a client certificate allows other certificates associated with the same root certificate to continue working.</p>
+<p>To revoke a client certificate, add the thumbprint to the revocation list.</p>
+<ul>
+<li>Retrieve the client certificate thumbprint. See <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/dotnet/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate">How to retrieve the Thumbprint of a Certificate</a>.</li>
+<li>Copy the information to a text editor and remove all spaces so that it is a continuous string.</li>
+<li>Go to the virtual network gateway point-to-site-configuration page. This is the same page that you used to upload a trusted root certificate.</li>
+<li>In the <strong>Revoked certificates</strong> section, input a friendly name for the certificate.</li>
+<li>Copy and paste the thumbprint string to the <strong>Thumbprint</strong> field.</li>
+<li>The thumbprint validates and is automatically added to the revocation list. A message appears on the screen that the list is updating.</li>
+<li>After updating has completed, the certificate can no longer be used to connect. Clients that try to connect using this certificate receive a message saying that the certificate is no longer valid.</li>
+</ul>
+<h2 id="Troubleshoot-connectivity-to-secure-endpoints"><a href="#Troubleshoot-connectivity-to-secure-endpoints" class="headerlink" title="Troubleshoot connectivity to secure endpoints"></a>Troubleshoot connectivity to secure endpoints</h2><p>Azure Private Endpoint is a network interface that uses a private IP address from a virtual network and connects you privately and securely to a private link service.</p>
+<p>The following are the connectivity scenarios available with Private Endpoint:</p>
+<ul>
+<li>Virtual network from the same region.</li>
+<li>Regionally peered virtual networks.</li>
+<li>Globally peered virtual networks.</li>
+<li>Customer on-premises over VPN or Azure ExpressRoute circuits.</li>
+</ul>
+<h2 id="Diagnose-connectivity-problems"><a href="#Diagnose-connectivity-problems" class="headerlink" title="Diagnose connectivity problems"></a>Diagnose connectivity problems</h2><p>The following steps will guide you to ensure that all the required configurations are in place, to resolve connectivity problems with your private endpoint setup. For detailed steps, see <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/private-link/troubleshoot-private-endpoint-connectivity">Diagnose connectivity problems</a>.</p>
+<ol>
+<li>Review Private Endpoint configuration by browsing the resource.</li>
+<li>Use Azure Monitor to see if data is flowing.</li>
+<li>Use VM Connection troubleshoot from Azure Network Watcher.</li>
+<li>DNS resolution from the test results must have the same private IP address assigned to the private endpoint.</li>
+<li>Source virtual machine should have the route to Private Endpoint IP next hop as InterfaceEndpoints in the NIC Effective Routes.</li>
+<li>If the connection has validated results, the connectivity problem might be related to other aspects like secrets, tokens, and passwords at the application layer.</li>
+<li>Narrow down before raising the support ticket.</li>
+<li>If the Private Endpoint is linked to a Private Link Service which is linked to a load balancer, check if the backend pool is reporting healthy. Fixing the load balancer health will resolve the issue with connecting to the Private Endpoint.</li>
+<li>Contact the Azure Support team if your problem is unresolved and a connectivity problem still exists.</li>
+</ol>
+<h2 id="Troubleshoot-encryption-x2F-certificate-related-issues-for-site-to-site-scenarios"><a href="#Troubleshoot-encryption-x2F-certificate-related-issues-for-site-to-site-scenarios" class="headerlink" title="Troubleshoot encryption&#x2F;certificate-related issues for site-to-site scenarios"></a>Troubleshoot encryption&#x2F;certificate-related issues for site-to-site scenarios</h2><h3 id="IPsec-and-IKE-policy-parameters-for-VPN-gateways"><a href="#IPsec-and-IKE-policy-parameters-for-VPN-gateways" class="headerlink" title="IPsec and IKE policy parameters for VPN gateways"></a>IPsec and IKE policy parameters for VPN gateways</h3><p>The IPsec and IKE protocol standard supports a wide range of cryptographic algorithms in various combinations. The article <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure-stack/user/azure-stack-vpn-gateway-settings">IPsec&#x2F;IKE parameters</a> explains which parameters are supported in Azure Stack Hub to meet your compliance or security requirements.</p>
+<p>Note the following important considerations when using these policies:</p>
+<ul>
+<li>The IPsec&#x2F;IKE policy only works on the Standard and HighPerformance (route-based) gateway SKUs.</li>
+<li>You can only specify one policy combination for a given connection.</li>
+<li>You must specify all algorithms and parameters for both IKE (Main Mode) and IPsec (Quick Mode). Partial policy specification is not allowed.</li>
+<li>Check with your VPN device vendor specifications if the policy is supported on your on-premises VPN devices.</li>
+</ul>
+<p>The following steps show how to create and configure an IPsec&#x2F;IKE policy, and apply it to a new or existing connection. For detailed step-by-step instructions, follow <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure-stack/user/azure-stack-vpn-s2s">Steps to configure an IPsec&#x2F;IKE policy for site-to-site (S2S) VPN connections in Azure Stack Hub</a>.</p>
+<ol>
+<li>Create and set IPsec&#x2F;IKE policy.</li>
+<li>Create a new site-to-site VPN connection with IPsec&#x2F;IKE policy:<ol>
+<li>Step 1 - Create the virtual network, VPN gateway, and local network gateway.</li>
+<li>Step 2 - Create a site-to-site VPN connection with an IPsec&#x2F;IKE policy.</li>
+</ol>
+</li>
+<li>Update IPsec&#x2F;IKE policy for a connection.</li>
+</ol>
+<h1 id="Troubleshoot-NSGs"><a href="#Troubleshoot-NSGs" class="headerlink" title="Troubleshoot NSGs"></a>Troubleshoot NSGs</h1><p>Completed100 XP</p>
+<ul>
+<li>8 minutes</li>
+</ul>
+<h2 id="Demonstrate-an-understanding-of-network-security-group-NSG-configuration-data-including-ports-service-tags-and-priority-numbers"><a href="#Demonstrate-an-understanding-of-network-security-group-NSG-configuration-data-including-ports-service-tags-and-priority-numbers" class="headerlink" title="Demonstrate an understanding of network security group (NSG) configuration data including ports, service tags, and priority numbers"></a>Demonstrate an understanding of network security group (NSG) configuration data including ports, service tags, and priority numbers</h2><h3 id="Network-security-groups"><a href="#Network-security-groups" class="headerlink" title="Network security groups"></a>Network security groups</h3><p>An Azure network security group filters network traffic to and from resources in an Azure virtual network. A network security group comprises of security rules that allow or deny inbound and outbound network traffic, to and from, several types of Azure resource. For each rule, you can specify source and destination, port, and protocol.</p>
+<p>In this unit, you will learn about:</p>
+<ul>
+<li>Properties of a network security group rule, and the default security rules that are applied.</li>
+<li>The rule properties that you can modify to create an augmented security rule.</li>
+</ul>
+<h3 id="Security-rules"><a href="#Security-rules" class="headerlink" title="Security rules"></a>Security rules</h3><p>A network security group can contain rules from zero, or as many as required, within Azure subscription limits. Each rule specifies the following properties:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Property</th>
+<th align="left">Explanation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Name</td>
+<td align="left">A unique name within the network security group.</td>
+</tr>
+<tr>
+<td align="left">Priority</td>
+<td align="left">Rules with lower numbers are processed before higher numbers because lower numbers have higher priority. A number can be between 100 and 4096.</td>
+</tr>
+<tr>
+<td align="left">Source or destination</td>
+<td align="left">If you specify an address for an Azure resource, you must specify the private IP address, a range, a service tag, or application security group assigned to the resource.</td>
+</tr>
+<tr>
+<td align="left">Protocol</td>
+<td align="left">TCP, UDP, ICMP, ESP, AH, or Any.</td>
+</tr>
+<tr>
+<td align="left">Direction</td>
+<td align="left">Whether the rule applies to inbound, or outbound traffic.</td>
+</tr>
+<tr>
+<td align="left">Port range</td>
+<td align="left">Specifying ranges enables you to create fewer security rules. You can specify an individual or range of ports. For example, 80 or 10000-10005.</td>
+</tr>
+<tr>
+<td align="left">Action</td>
+<td align="left">Allow or deny.</td>
+</tr>
+</tbody></table>
+<p>There are limits to the number of security rules you can create in a network security group. For details, see <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits?toc=/azure/virtual-network/toc.json">Azure limits</a>.</p>
+<h3 id="Default-security-rules"><a href="#Default-security-rules" class="headerlink" title="Default security rules"></a>Default security rules</h3><p>Azure creates the following default rules in each of your network security groups:</p>
+<p><strong>Inbound</strong></p>
+<p>AllowVNetInBound</p>
+<table>
+<thead>
+<tr>
+<th align="left">Priority</th>
+<th align="left">Source</th>
+<th align="left">Source ports</th>
+<th align="left">Destination</th>
+<th align="left">Destination ports</th>
+<th align="left">Protocol</th>
+<th align="left">Access</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">65000</td>
+<td align="left">VirtualNetwork</td>
+<td align="left">0-65535</td>
+<td align="left">VirtualNetwork</td>
+<td align="left">0-65535</td>
+<td align="left">Any</td>
+<td align="left">Allow</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>AllowAzureLoadBalancerInBound</p>
+<table>
+<thead>
+<tr>
+<th align="left">Priority</th>
+<th align="left">Source</th>
+<th align="left">Source ports</th>
+<th align="left">Destination</th>
+<th align="left">Destination ports</th>
+<th align="left">Protocol</th>
+<th align="left">Access</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">65001</td>
+<td align="left">AzureLoadBalancer</td>
+<td align="left">0-65535</td>
+<td align="left">0.0.0.0&#x2F;0</td>
+<td align="left">0-65535</td>
+<td align="left">Any</td>
+<td align="left">Allow</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>DenyAllInbound</p>
+<table>
+<thead>
+<tr>
+<th align="left">Priority</th>
+<th align="left">Source</th>
+<th align="left">Source ports</th>
+<th align="left">Destination</th>
+<th align="left">Destination ports</th>
+<th align="left">Protocol</th>
+<th align="left">Access</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">65500</td>
+<td align="left">0.0.0.0&#x2F;0</td>
+<td align="left">0-65535</td>
+<td align="left">0.0.0.0&#x2F;0</td>
+<td align="left">0-65535</td>
+<td align="left">Any</td>
+<td align="left">Allow</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p><strong>Outbound</strong></p>
+<p>AllowVnetOutBound</p>
+<table>
+<thead>
+<tr>
+<th align="left">Priority</th>
+<th align="left">Source</th>
+<th align="left">Source ports</th>
+<th align="left">Destination</th>
+<th align="left">Destination ports</th>
+<th align="left">Protocol</th>
+<th align="left">Access</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">65000</td>
+<td align="left">VirtualNetwork</td>
+<td align="left">0-65535</td>
+<td align="left">VirtualNetwork</td>
+<td align="left">0-65535</td>
+<td align="left">Any</td>
+<td align="left">Allow</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>AllowInternetOutBound</p>
+<table>
+<thead>
+<tr>
+<th align="left">Priority</th>
+<th align="left">Source</th>
+<th align="left">Source ports</th>
+<th align="left">Destination</th>
+<th align="left">Destination ports</th>
+<th align="left">Protocol</th>
+<th align="left">Access</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">65001</td>
+<td align="left">0.0.0.0&#x2F;0</td>
+<td align="left">0-65535</td>
+<td align="left">Internet</td>
+<td align="left">0-65535</td>
+<td align="left">Any</td>
+<td align="left">Allow</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>DenyAllOutBound</p>
+<table>
+<thead>
+<tr>
+<th align="left">Priority</th>
+<th align="left">Source</th>
+<th align="left">Source ports</th>
+<th align="left">Destination</th>
+<th align="left">Destination ports</th>
+<th align="left">Protocol</th>
+<th align="left">Access</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">65001</td>
+<td align="left">0.0.0.0&#x2F;0</td>
+<td align="left">0-65535</td>
+<td align="left">0.0.0.0&#x2F;0</td>
+<td align="left">0-65535</td>
+<td align="left">Any</td>
+<td align="left">Allow</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>In the <strong>Source</strong> and <strong>Destination</strong> columns, <em>VirtualNetwork</em>, <em>AzureLoadBalancer</em>, and <em>Internet</em> are service tags, rather than IP addresses. In the protocol column, <strong>Any</strong> encompasses TCP, UDP, and ICMP. When creating a rule, you can specify TCP, UDP, ICMP or Any. 0.0.0.0&#x2F;0 in the <strong>Source</strong> and <strong>Destination</strong> columns represents all addresses. Clients like Azure portal, Azure CLI, or PowerShell can use ***** or Any for this expression.</p>
+<p>You cannot remove the default rules, but you can override them by creating rules with higher priorities.</p>
+<h3 id="Augmented-security-rules"><a href="#Augmented-security-rules" class="headerlink" title="Augmented security rules"></a>Augmented security rules</h3><p>With augmented security rules, you can combine multiple ports and multiple explicit IP addresses and ranges into a single security rule. In other words, augmented security rules simplify security definition for virtual networks. This allows you to break larger and complex network security policies into fewer, and simpler rules. Augmented rules are generally used in the source, destination, and port fields of a rule.</p>
+<p>Combining augmented security rules with service tags or application security groups, helps streamline your security rule definition. However, there are limits to the number of addresses, ranges, and ports that you can specify in a rule.</p>
+<ul>
+<li><strong>Service tags</strong>: A service tag represents a group of IP address prefixes from a given Azure service. It helps to minimize the complexity of frequent updates on network security rules. Refer to <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview">Azure service tags</a>.</li>
+<li>For an example of how to use the Storage service tag to restrict network access, go to <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-restrict-network-access-to-resources">Restrict network access to PaaS resources with virtual network service endpoints using the Azure portal</a>.</li>
+<li><strong><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups">Application security groups</a></strong>: Application security groups enable you to configure network security as a natural extension of an application’s structure. This allows you to group virtual machines and define network security policies based on those groups. You can reuse your security policy at scale without manual maintenance of explicit IP addresses. To learn more, see Application security groups.</li>
+</ul>
+<h2 id="Troubleshoot-NSG-configuration-issues"><a href="#Troubleshoot-NSG-configuration-issues" class="headerlink" title="Troubleshoot NSG configuration issues"></a>Troubleshoot NSG configuration issues</h2><p>Network security groups (NSGs) enable you to control the inbound and outbound flow of traffic of a virtual machine (VM). You can associate an NSG to a subnet in an Azure virtual network, a network interface connected to a VM, or both. Any security rules applied to a network interface are a combination of rules present in the NSG associated to a network interface, and the subnet the network it is in. You can examine the conflict between rules in different NSGs that are applied on your VM’s network interfaces.</p>
+<p>The following articles help gain understanding of:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview">Virtual network overview</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface">Network interface</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview">Network security groups overview</a></li>
+</ul>
+<p>In this unit, you’ll learn how to diagnose a network traffic filter problem by viewing the NSG security rules that are effective for a VM.</p>
+<h3 id="Diagnose-using-Azure-portal"><a href="#Diagnose-using-Azure-portal" class="headerlink" title="Diagnose using Azure portal"></a>Diagnose using Azure portal</h3><p><strong>Scenario</strong></p>
+<p>When you try to connect to a VM over port 80 from the internet, the connection fails. To understand why this happens, you can examine the effective security rules for a network interface using the Azure portal, PowerShell, or the Azure CLI.</p>
+<p>If you don’t have an existing VM to view the effective security rules, you need to first deploy a Linux or Windows VM to complete the task.</p>
+<p>In the following task, the examples are for a VM named <strong>myVM</strong> with a network interface named <strong>myVMVMNic</strong>. The VM and network interface are in a resource group named <strong>myResourceGroup</strong> and are in the East US region. To diagnose the problem, Change the values in the steps, as appropriate, for the VM.</p>
+<ol>
+<li><p>Log into the Azure portal.</p>
+</li>
+<li><p>At the top of the Azure portal, enter the name of the VM in the search box. When the name of the VM appears in the search results, select it.</p>
+</li>
+<li><p>Under <strong>SETTINGS</strong>, select <strong>Networking</strong>.</p>
+<p>The rules you see listed in the following picture are for a network interface named <strong>myVMVMNic</strong>. There are <strong>INBOUND PORT RULES</strong> for the network interface from two different network security groups:</p>
+<ul>
+<li><strong>mySubnetNSG</strong>: Associated to the subnet that the network interface is in.</li>
+<li><strong>myVMNSG</strong>: Associated to the network interface in the VM named <strong>myVMVMNic</strong>.</li>
+</ul>
+<p>As you can see in the previous image, the rule named <strong>DenyAllInBound</strong> is preventing inbound communication from the internet to the VM over port 80. The rule lists 0.0.0.0&#x2F;0 for SOURCE, which includes the internet. No other rule with a higher priority (lower number) allows port 80 inbound. To allow port 80 inbound to the VM from the internet, see <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-traffic-filter-problem">Resolve a problem</a>.</p>
+<p>Under <strong>OUTBOUND PORT RULES</strong>, at the bottom, there are outbound port rules for the network interface. <strong>VirtualNetwork</strong> and <strong>AzureLoadBalancer</strong> are service tags. Service tags represent a group of IP address prefixes to help minimize complexity for security rule creation.</p>
+</li>
+<li><p>Ensure that the VM is in the running state, and then select <strong>Effective security rules</strong>, as shown in the following image:</p>
+<p>You can see that there are different tabs for the NSG associated to the network interface and the subnet. The rules listed are the same as in step 3 although, as shown in the picture, only the first 50 rules are displayed. To download a .csv file that contains all the rules, select <strong>Download</strong>.</p>
+<p>To see which prefixes each service tag represents, select a rule, such as <strong>AllowAzureLoadBalancerInbound</strong>. The picture below shows the prefixes for the <strong>AzureLoadBalancer</strong> service tag:</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/3-azure-load-balancer.png" alt="Screenshot showing prefixes for the AzureLoadBalancer service tag."></p>
+</li>
+<li><p>The VM in this example has two network interfaces, <strong>myVMVMNic</strong> and <strong>myVMVMNic2</strong> attached to it. The effective security rules can be different for each network interface. Select <strong>myVMVMNic2</strong> to view the rules for this network interface.</p>
+</li>
+</ol>
+<p>The <strong>myVMVMNic2</strong> network interface does not have a network security group associated to it, as the <strong>myVMVMNic</strong> network interface does. Each network interface and subnet can have zero, or one, NSG associated to it. The NSG associated to each network interface or subnet can be the same, or different. You can associate the same NSG to as many network interfaces and subnets as you choose.</p>
+<p> Note</p>
+<p>Though effective security rules were viewed through the VM, you can also look at them through an individual:</p>
+<ul>
+<li>Network interface: Learn how to <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface">view a network interface</a>.</li>
+<li>NSG: Learn how to <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/manage-network-security-group">view an NSG</a>.</li>
+</ul>
+<p>To run the commands using PowerShell, refer to <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-traffic-filter-problem">Diagnose using PowerShell</a>.</p>
+<p>To run the commands using Azure CLI, refer to <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-traffic-filter-problem">Diagnose using Azure CLI</a>.</p>
+<p>To troubleshoot connectivity problems:</p>
+<ul>
+<li>To allow inbound traffic from the internet, add security rules with a higher priority than default rules.</li>
+<li>To troubleshoot any issues related to virtual network peering, you can view the prefixes in the ExpandedAddressPrefix list.</li>
+<li>Ensure that there is an NSG associated with the VM’s network interface and&#x2F;or subnet. Also, check that the VM is in the running state.</li>
+<li>If the VM has a public IP address, it’s recommended to apply an NSG to the subnet of the network interface.</li>
+</ul>
+<h3 id="Additional-diagnosis"><a href="#Additional-diagnosis" class="headerlink" title="Additional diagnosis"></a>Additional diagnosis</h3><ul>
+<li>Use the <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/network-watcher/diagnose-vm-network-traffic-filtering-problem">IP flow verify</a> capability of Azure Network Watcher to determine if traffic is allowed to or from a VM.</li>
+<li>If there are no security rules causing a VM’s network connectivity to fail, the problem may be due to:<ul>
+<li>Firewall software running within the VM’s operating system.</li>
+<li>Routes configured for virtual appliances or on-premises traffic—refer to <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm?toc=/azure/virtual-network/toc.json">forced-tunneling</a>. Also, to learn how to diagnose route problems that may impede the flow of traffic out of the VM, see <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-routing-problem">Diagnose a virtual machine network traffic routing problem</a>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Review-and-interpret-NSG-flow-logs"><a href="#Review-and-interpret-NSG-flow-logs" class="headerlink" title="Review and interpret NSG flow logs"></a>Review and interpret NSG flow logs</h2><h3 id="Introduction-1"><a href="#Introduction-1" class="headerlink" title="Introduction"></a>Introduction</h3><p>The NSG flow logs feature in Azure Network Watcher allows you to log information about IP traffic flowing through an NSG. The flow data is sent to Azure Storage accounts and from there you can export it to any visualization tool, SIEM, or IDS.</p>
+<h2 id="Why-use-flow-logs"><a href="#Why-use-flow-logs" class="headerlink" title="Why use flow logs?"></a>Why use flow logs?</h2><p>Flow logs are crucial when it comes to managing and monitoring all the network activity in your cloud environment. You can use it for optimizing network flows, monitoring data, verifying compliance, detecting intrusions and more.</p>
+<p>Some common use cases are:</p>
+<p><strong>Network monitoring</strong>:</p>
+<ul>
+<li>Identify unknown or undesired traffic.</li>
+<li>Monitor traffic levels and bandwidth consumption.</li>
+<li>Filter flow logs by IP and port to understand application behavior.</li>
+<li>Export flow logs to the analytics and visualization tools you choose, to set up monitoring dashboards.</li>
+</ul>
+<p><strong>Usage monitoring and optimization</strong>:</p>
+<ul>
+<li>Identify top talkers in your network.</li>
+<li>Combine with GeoIP data to identify cross-region traffic.</li>
+<li>Understand traffic growth for capacity forecasting.</li>
+<li>Use data to remove overtly restrictive traffic rules.</li>
+</ul>
+<p><strong>Compliance</strong>:</p>
+<ul>
+<li>Use flow data to verify network isolation and compliance with enterprise access rules.</li>
+</ul>
+<p><strong>Network forensics and security analysis</strong>:</p>
+<ul>
+<li>Analyze network flows from compromised IPs and network interfaces.</li>
+<li>Export flow logs to any SIEM or IDS tool of your choice.</li>
+</ul>
+<h2 id="How-logging-works"><a href="#How-logging-works" class="headerlink" title="How logging works"></a>How logging works</h2><ul>
+<li>Flow logs operate at Layer 4 (transport layer). It records all IP flows going in and out of an NSG.</li>
+<li>Logs are collected at one-minute intervals through the Azure platform without affecting customer resources, or network performance.</li>
+<li>Logs are written in the JSON format. It shows outbound and inbound flows on a per NSG rule basis.</li>
+<li>Each log record contains the network interface (NIC). The flow applies to five-tuple information, the traffic decision and (version 2 only) throughput information. Refer to <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-overview">Log format</a>.</li>
+<li>Flow logs delete the logs up to a year after creation.</li>
+</ul>
+<p>To enable the flow logs, refer to <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-overview">Enabling NSG Flow Logs</a>.</p>
+<h3 id="IP-flow-verify"><a href="#IP-flow-verify" class="headerlink" title="IP flow verify"></a>IP flow verify</h3><p>IP flow verify confirms if a packet is allowed or denied to or from a virtual machine. You can use IP flow verify to diagnose connectivity issues from or to the internet and from or to the on-premises environment. It provides the information regarding direction, protocol, local IP, remote IP, local port, and remote port. If a security group denies the packet, the name of the rule used is returned.</p>
+<p>IP flow verify considers the rules for all NSGs applied to the network interface, such as a subnet or virtual machine NIC. It then verifies the traffic flow based on the configured settings to or from that network interface.</p>
+<p>IP flow verify validates if a rule in an NSG is blocking ingress or egress traffic to or from a virtual machine. It also evaluates the Azure Virtual Network Manager rules and NSG rules.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/3-ip-flow-verify.png" alt="Screenshot displaying IP flow verify window."></p>
+<p>To learn more about troubleshooting NSG flow logs, see <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-overview">Troubleshooting common issues</a>.</p>
+<h2 id="Determine-whether-a-VM-or-group-of-VMs-is-associated-with-an-application-security-group-ASG"><a href="#Determine-whether-a-VM-or-group-of-VMs-is-associated-with-an-application-security-group-ASG" class="headerlink" title="Determine whether a VM or group of VMs is associated with an application security group (ASG)"></a>Determine whether a VM or group of VMs is associated with an application security group (ASG)</h2><p>Application security groups allow you to group virtual machines located in Azure virtual network, and define network security policies based on those groups. This helps in reducing the maintenance effort of explicit IP addresses. Consider the following picture for a better understanding of ASGs:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Application security groups</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/3-application-security-groups.png" alt="Diagram demonstration Application security groups."></td>
+</tr>
+</tbody></table>
+<p>In the previous picture, NIC1 and NIC2 are members of the AsgWeb ASG. NIC3 is a member of the AsgLogic ASG, and NIC4 a member of the AsgDb ASG. In this example, each network interface is a member of only one network security group. However, a network interface can be a member of multiple ASGs, up to the Azure limits.</p>
+<p>None of the network interfaces have an associated network security group. NSG1 is associated to both subnets and contains the following rules:</p>
+<h3 id="Allow-HTTP-Inbound-Internet"><a href="#Allow-HTTP-Inbound-Internet" class="headerlink" title="Allow-HTTP-Inbound-Internet"></a>Allow-HTTP-Inbound-Internet</h3><p>This rule is needed to allow traffic from the internet to the web servers. Because inbound traffic from the internet is denied by the DenyAllInbound default security rule, no additional rule is needed for the AsgLogic or AsgDb application security groups.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Priority</th>
+<th align="left">Source</th>
+<th align="left">Source ports</th>
+<th align="left">Destination</th>
+<th align="left">Destination ports</th>
+<th align="left">Protocol</th>
+<th align="left">Access</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">100</td>
+<td align="left">Internet</td>
+<td align="left">*</td>
+<td align="left">AsgWeb</td>
+<td align="left">80</td>
+<td align="left">TCP</td>
+<td align="left">Allow</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h3 id="Deny-Database-All"><a href="#Deny-Database-All" class="headerlink" title="Deny-Database-All"></a>Deny-Database-All</h3><p>Because the <strong>AllowVNetInBound</strong> default security rule allows all communication between resources in the same virtual network, this rule is needed to deny traffic from all resources.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Priority</th>
+<th align="left">Source</th>
+<th align="left">Source ports</th>
+<th align="left">Destination</th>
+<th align="left">Destination ports</th>
+<th align="left">Protocol</th>
+<th align="left">Access</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">120</td>
+<td align="left">*</td>
+<td align="left">*</td>
+<td align="left">AsgWeb</td>
+<td align="left">1433</td>
+<td align="left">Any</td>
+<td align="left">Deny</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h3 id="Allow-Database-BusinessLogic"><a href="#Allow-Database-BusinessLogic" class="headerlink" title="Allow-Database-BusinessLogic"></a>Allow-Database-BusinessLogic</h3><p>This rule allows traffic from the AsgLogic ASG to the AsgDb ASG. The priority for this rule is higher than that for the Deny-Database-All rule. As a result, this rule is processed before the Deny-Database-All rule, so traffic from the AsgLogic application security group is allowed, whereas all other traffic is blocked.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Priority</th>
+<th align="left">Source</th>
+<th align="left">Source ports</th>
+<th align="left">Destination</th>
+<th align="left">Destination ports</th>
+<th align="left">Protocol</th>
+<th align="left">Access</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">110</td>
+<td align="left">AsgLogic</td>
+<td align="left">*</td>
+<td align="left">AsgDb</td>
+<td align="left">1433</td>
+<td align="left">TCP</td>
+<td align="left">Allow</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>The rules that specify an ASG as the source or destination are only applied to the network interfaces that are members of the ASG. If the network interface is not a member of an ASG, the rule is not applied to the network interface, even though the network security group is associated to the subnet.</p>
+<p>Application security groups have the following constraints:</p>
+<ul>
+<li>There are several limits related to ASGs. One of these is the number of ASGs you can have in a subscription.</li>
+<li>You cannot add network interfaces from different virtual networks to the same ASG. For example, if the first network interface assigned to an ASG named AsgWeb is in the virtual network named VNet1, then all subsequent network interfaces assigned to ASGWeb must exist in VNet1.</li>
+<li>All network interfaces for both the source and destination ASGs need to exist in the same virtual network. For example, if AsgLogic contained network interfaces from VNet1, and AsgDb contained network interfaces from VNet2, you could not assign AsgLogic as the source and AsgDb as the destination in a rule.</li>
+</ul>
+<h1 id="Troubleshoot-Azure-Firewall"><a href="#Troubleshoot-Azure-Firewall" class="headerlink" title="Troubleshoot Azure Firewall"></a>Troubleshoot Azure Firewall</h1><p>Completed100 XP</p>
+<ul>
+<li>8 minutes</li>
+</ul>
+<h2 id="Troubleshoot-Azure-Firewall-application-rules"><a href="#Troubleshoot-Azure-Firewall-application-rules" class="headerlink" title="Troubleshoot Azure Firewall application rules"></a>Troubleshoot Azure Firewall application rules</h2><p>Azure Firewall helps you to control outbound network access from an Azure subnet. With Azure Firewall, you can configure:</p>
+<ul>
+<li>Application rules that define fully qualified domain names (FQDNs) that can be accessed from a subnet.</li>
+<li>Network rules that define source address, protocol, destination port, and destination address.</li>
+</ul>
+<p>A <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli">hub-and-spoke model</a> is recommended for production deployments, where the firewall is in its own VNet. The workload servers are in peered VNets in the same region, with one or more subnets.</p>
+<ul>
+<li><strong>AzureFirewallSubnet</strong> ‒ the firewall is in this subnet.</li>
+<li><strong>Workload-SN</strong> ‒ the workload server is in this subnet. This subnet’s network traffic goes through the firewall.</li>
+</ul>
+<p>The following <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/firewall/tutorial-firewall-deploy-portal">Deploy and configure Azure Firewall using the Azure portal</a> can help you learn how to:</p>
+<ul>
+<li>Set up a test network environment.</li>
+<li>Deploy a firewall.</li>
+<li>Create a default route.</li>
+<li>Configure an application rule to allow access to <a target="_blank" rel="noopener" href="https://www.google.com/">www.google.com</a>.</li>
+<li>Configure a network rule to allow access to external DNS servers.</li>
+<li>Configure a NAT rule to allow a remote desktop to the test server.</li>
+<li>Test the firewall.</li>
+</ul>
+<h3 id="Monitor-Azure-Firewall-logs-and-metrics"><a href="#Monitor-Azure-Firewall-logs-and-metrics" class="headerlink" title="Monitor Azure Firewall logs and metrics"></a>Monitor Azure Firewall logs and metrics</h3><p>Firewall logs allow you to monitor Azure Firewall. You can also consider using activity logs to audit Azure Firewall resources. To view performance counters in the portal, use metrics.</p>
+<p>Logs can be sent to Azure Monitor logs, Storage, and Event Hubs. They can be analyzed in Azure Monitor logs or by using Excel and Power BI.</p>
+<h3 id="View-and-analyze-the-activity-log"><a href="#View-and-analyze-the-activity-log" class="headerlink" title="View and analyze the activity log"></a>View and analyze the activity log</h3><p>You can view and analyze activity log data by using any of the following methods:</p>
+<ul>
+<li><strong>Azure tools</strong>: Through Azure PowerShell, the Azure CLI, the Azure REST API, or the Azure portal, you can retrieve information from the activity log.</li>
+<li><strong>Power BI</strong>: By using the <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/power-bi/connect-data/service-connect-to-services">Azure Activity Logs content pack for Power BI</a>, you can analyze your data with preconfigured dashboards that you can use as is, or customize.</li>
+<li><strong>Microsoft Sentinel</strong>: By connecting Azure Firewall logs to Microsoft Sentinel, you can view log data in workbooks, use it to create custom alerts, and incorporate it to improve your investigation.</li>
+</ul>
+<p>Watch this video to learn more about the monitoring abilities of Azure Firewall:</p>
+<iframe src="https://www.microsoft.com/en-us/videoplayer/embed/RWI4nn?postJsllMsg=true" frameborder="0" allowfullscreen="true" data-linktype="external" title="Video Player" style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; border: 0px; width: 640px; height: 360px; position: absolute; inset: 0px;"></iframe>
+
+<h3 id="View-and-analyze-the-network-and-application-rule-logs"><a href="#View-and-analyze-the-network-and-application-rule-logs" class="headerlink" title="View and analyze the network and application rule logs"></a>View and analyze the network and application rule logs</h3><p>Azure Firewall Workbook within the Azure portal is a platform where you can use Azure Firewall data analysis in an interactive way. For example, to create visual reports, combine multiple firewalls deployed across Azure, and so on.</p>
+<p>For access and performance logs, you can connect to your storage account and retrieve the JSON log entries. After you download the JSON files, you can convert them to CSV and view them in Excel, Power BI, or any other data visualization tool.</p>
+<p>To learn more, see <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/firewall/firewall-workbook">Monitor logs using Azure Firewall Workbook</a>.</p>
+<h2 id="Troubleshoot-Azure-Firewall-network-rules"><a href="#Troubleshoot-Azure-Firewall-network-rules" class="headerlink" title="Troubleshoot Azure Firewall network rules"></a>Troubleshoot Azure Firewall network rules</h2><p>Azure Firewall denies all traffic by default. You need to manually configure the rules to allow traffic. You can configure NAT rules, network rules, and applications rules on Azure Firewall using either classic rules or Firewall Policy.</p>
+<h3 id="Rule-processing-using-classic-rules"><a href="#Rule-processing-using-classic-rules" class="headerlink" title="Rule processing using classic rules"></a>Rule processing using classic rules</h3><p>Rule collections are processed according to the priority order of a rule type, lower numbers to higher numbers, from 100 to 65,000. A rule collection name can have only letters, numbers, underscores, periods, or hyphens. It must begin with a letter or number, and end with a letter, number, or underscore. The maximum name length is 80 characters.</p>
+<p>To have room to add more rule collections if required, it’s recommended to initially space your rule collection priority numbers in increments of 100 (100, 200, 300, and so on).</p>
+<h3 id="Rule-processing-using-Firewall-Policy"><a href="#Rule-processing-using-Firewall-Policy" class="headerlink" title="Rule processing using Firewall Policy"></a>Rule processing using Firewall Policy</h3><p>Rules are organized inside Rule Collections and Rule Collection Groups when using Firewall Policy. Rule Collection Groups contain zero or more Rule Collections. Rule Collections are of NAT, Network, or Applications types. You can define multiple Rule Collection types within a single Rule Group. You can specify zero or more Rules in a Rule Collection. Rules in a Rule Collection must be of the same type (NAT, Network, or Application).</p>
+<p>Rules are processed based on Rule Collection Group and Rule Collection priority. They can be any number between 100 (highest priority) to 65,000 (lowest priority).</p>
+<p>If a Firewall Policy is inherited from a parent policy, Rule Collection Groups in the parent policy always take precedence regardless of the priority of a child policy.</p>
+<p>Here is an example of a Firewall Policy:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Priority</th>
+<th align="left">Rules</th>
+<th align="left">Inherited from</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">BaseRCG1</td>
+<td align="left">Rule Collection Group</td>
+<td align="left">200</td>
+<td align="left">8</td>
+<td align="left">Parent policy</td>
+</tr>
+<tr>
+<td align="left">DNATRC1</td>
+<td align="left">DNAT Rule Collection</td>
+<td align="left">600</td>
+<td align="left">7</td>
+<td align="left">Parent policy</td>
+</tr>
+<tr>
+<td align="left">DNATRC3</td>
+<td align="left">DNAT Rule Collection</td>
+<td align="left">600</td>
+<td align="left">7</td>
+<td align="left">Parent policy</td>
+</tr>
+<tr>
+<td align="left">NetworkRc1</td>
+<td align="left">Network Rule Collection</td>
+<td align="left">800</td>
+<td align="left">1</td>
+<td align="left">Parent policy</td>
+</tr>
+<tr>
+<td align="left">BaseRCG2</td>
+<td align="left">Rule Collection Group</td>
+<td align="left">300</td>
+<td align="left">3</td>
+<td align="left">Parent policy</td>
+</tr>
+<tr>
+<td align="left">AppRCG2</td>
+<td align="left">Application Rule Collection</td>
+<td align="left">1200</td>
+<td align="left">2</td>
+<td align="left">Parent policy</td>
+</tr>
+<tr>
+<td align="left">NetworkRC2</td>
+<td align="left">Network Rule Collection</td>
+<td align="left">1300</td>
+<td align="left">1</td>
+<td align="left">Parent policy</td>
+</tr>
+<tr>
+<td align="left">ChildRCG1</td>
+<td align="left">Rule Collection Group</td>
+<td align="left">300</td>
+<td align="left">5</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">ChAppRC1</td>
+<td align="left">Application Rule Collection</td>
+<td align="left">700</td>
+<td align="left">3</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">ChNetRC1</td>
+<td align="left">Network Rule Collection</td>
+<td align="left">900</td>
+<td align="left">2</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">ChildRCG2</td>
+<td align="left">Rule Collection Group</td>
+<td align="left">650</td>
+<td align="left">9</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">ChNetRC2</td>
+<td align="left">Network Rule Collection</td>
+<td align="left">1100</td>
+<td align="left">2</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">ChAppRC2</td>
+<td align="left">Application Rule Collection</td>
+<td align="left">2000</td>
+<td align="left">7</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">ChDNATRC3</td>
+<td align="left">DNAT Rule Collection</td>
+<td align="left">3000</td>
+<td align="left">2</td>
+<td align="left">-</td>
+</tr>
+</tbody></table>
+<p>The rule processing will be in the following order: DNATRC1, DNATRC3, ChDNATRC3, NetworkRC1, NetworkRC2, ChNetRC1, ChNetRC2, AppRC2, ChAppRC1, ChAppRC2.</p>
+<p>For more information about Firewall Policy rule sets, refer to <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/firewall/policy-rule-sets">Azure Firewall Policy rule sets</a>.</p>
+<p> Note</p>
+<p>Application rules are always processed after Network rules, which are processed after DNAT rules, regardless of Rule Collection Group or Rule Collection priority and policy inheritance.</p>
+<p>If you enable threat intelligence-based filtering, those rules are highest priority and are always processed first. For more information, see <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/firewall/threat-intel">Azure Firewall threat intelligence-based filtering</a>.</p>
+<h3 id="IDPS"><a href="#IDPS" class="headerlink" title="IDPS"></a>IDPS</h3><p>When IDPS is configured in Alert mode, it generates alerts on matching signatures for inbound and outbound flows. For an IDPS signature match, an alert is logged in firewall logs. However, there might still be another log entry generated for traffic that is denied&#x2F;allowed by application&#x2F;network rules. This is because the IDPS engine works in parallel to the rule processing engine.</p>
+<h2 id="Troubleshoot-Azure-Firewall-infrastructure-rules"><a href="#Troubleshoot-Azure-Firewall-infrastructure-rules" class="headerlink" title="Troubleshoot Azure Firewall infrastructure rules"></a>Troubleshoot Azure Firewall infrastructure rules</h2><p>There is a built-in rule collection for infrastructure Fully Qualified Domain Names (FQDNs) by default in Azure Firewall. Specific FQDNs used for the platform can’t be used for other purposes.</p>
+<p>The built-in rule collection comprises of the following services:</p>
+<ul>
+<li>Compute access to storage Platform Image Repository (PIR).</li>
+<li>Managed disks status storage access.</li>
+<li>Azure Diagnostics and Logging (MDS).</li>
+</ul>
+<h3 id="Overriding"><a href="#Overriding" class="headerlink" title="Overriding"></a>Overriding</h3><p>With the override feature, you can create a deny all application rule collection that is processed last. This will override the built-in infrastructure rule collection and will always be processed before it. Anything not in the infrastructure rule collection is denied by default.</p>
+<h2 id="Troubleshoot-Azure-Firewall-network-address-translation-NAT-rules"><a href="#Troubleshoot-Azure-Firewall-network-address-translation-NAT-rules" class="headerlink" title="Troubleshoot Azure Firewall network address translation (NAT) rules"></a>Troubleshoot Azure Firewall network address translation (NAT) rules</h2><p>Network rules allow or deny inbound, outbound, and east-west traffic based on the network layer (L3) and transport layer (L4). A network rule facilitates traffic filtering based on IP addresses, any ports, and any protocols.</p>
+<p>When you configure DNAT, the NAT rule collection action is set to Dnat. Each rule in the NAT rule collection can then be used to translate your firewall public IP address and port to a private IP address and port.</p>
+<p>The following <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/firewall/tutorial-firewall-dnat-policy">Tutorial: Filter inbound Internet traffic with Azure Firewall DNAT policy using the portal</a> can help you learn how to:</p>
+<ul>
+<li>Set up a test network environment.</li>
+<li>Deploy a firewall.</li>
+<li>Create a default route.</li>
+<li>Configure a DNAT rule.</li>
+<li>Test the firewall.</li>
+</ul>
+<h2 id="Troubleshoot-Azure-Firewall-distributed-network-address-translation-DNAT-rules"><a href="#Troubleshoot-Azure-Firewall-distributed-network-address-translation-DNAT-rules" class="headerlink" title="Troubleshoot Azure Firewall distributed network address translation (DNAT) rules"></a>Troubleshoot Azure Firewall distributed network address translation (DNAT) rules</h2><p>Azure Firewall Destination Network Address Translation (DNAT) translates and filters inbound internet traffic to your subnets. It allows or denies inbound traffic through the firewall public IP address(es). A DNAT rule translates a public IP address into a private IP address.</p>
+<p>It’s recommended to add a specific internet source to allow DNAT access to the network and avoid using wildcards for security reasons.</p>
+<h2 id="Troubleshoot-network-level-protection-issues-including-firewalls"><a href="#Troubleshoot-network-level-protection-issues-including-firewalls" class="headerlink" title="Troubleshoot network-level protection issues including firewalls"></a>Troubleshoot network-level protection issues including firewalls</h2><p>Adding security layers to the virtual machine (VM) networks protects inbound and outbound flows, to and from the users. You can use Firewall Policy to manage rule sets that the Azure Firewall uses to filter traffic.</p>
+<h3 id="Outbound-connectivity"><a href="#Outbound-connectivity" class="headerlink" title="Outbound connectivity"></a>Outbound connectivity</h3><h3 id="Network-rules-and-applications-rules"><a href="#Network-rules-and-applications-rules" class="headerlink" title="Network rules and applications rules"></a>Network rules and applications rules</h3><p>Network rules are applied in priority order before application rules. This means if a match is found in a network rule, no other rules are processed. IDPS may alert and&#x2F;or block suspicious traffic.</p>
+<p>In case there’s no network rule match, and if the protocol is HTTP, HTTPS, or MSSQL, the packet is then evaluated by the application rules in priority order.</p>
+<p>For HTTP, Azure Firewall looks for an application rule match according to the host header. For HTTPS, Azure Firewall looks for an application rule match according to SNI only.</p>
+<p>In both HTTP and TLS-inspected HTTPS cases, the firewall uses the DNS resolved IP address from the Host header instead of the packet’s destination IP address. If the firewall does not get the port number in the host header, it assumes it to be the standard port 80. In case of a port mismatch between the actual TCP port and the port in the host header, the traffic is dropped. DNS resolution is done by Azure DNS or by a custom DNS if configured on the firewall. </p>
+<h3 id="Inbound-connectivity"><a href="#Inbound-connectivity" class="headerlink" title="Inbound connectivity"></a>Inbound connectivity</h3><h3 id="DNAT-rules-and-network-rules"><a href="#DNAT-rules-and-network-rules" class="headerlink" title="DNAT rules and network rules"></a>DNAT rules and network rules</h3><p>Inbound internet connectivity is enabled by configuring Destination Network Address Translation (DNAT). NAT rules are applied in priority before network rules.</p>
+<p>If a match is found, a corresponding network rule to allow the translated traffic is added.</p>
+<p>To filter inbound HTTP&#x2F;S traffic, you should use Web Application Firewall (WAF) as Application rules aren’t applied for inbound connections.</p>
+<p>To view the results of some of the rule combinations, refer to <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/firewall/rule-processing">Azure Firewall rule processing logic</a>.</p>
+<h2 id="Troubleshoot-Azure-Firewall-Manager-misconfiguration-issues"><a href="#Troubleshoot-Azure-Firewall-Manager-misconfiguration-issues" class="headerlink" title="Troubleshoot Azure Firewall Manager misconfiguration issues"></a>Troubleshoot Azure Firewall Manager misconfiguration issues</h2><p>Azure Firewall Manager is a security management service. You can use it to create secured virtual hubs to secure cloud network traffic destined for private IP addresses, Azure PaaS, and the internet.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Secured virtual hub</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/4-azure-firewall-manager.png" alt="Diagram showing secured virtual hub using Azure Firewall Manager."></td>
+</tr>
+</tbody></table>
+<p>The following <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/firewall-manager/secure-cloud-network">Tutorial: Secure your virtual hub using Azure Firewall Manager</a> can help you learn how to:</p>
+<ul>
+<li>Create the spoke virtual network.</li>
+<li>Create a secured virtual hub.</li>
+<li>Connect the hub-and-spoke virtual networks.</li>
+<li>Route traffic to your hub.</li>
+<li>Deploy the servers.</li>
+<li>Create a firewall policy and secure your hub.</li>
+<li>Test the firewall.</li>
+</ul>
+<h1 id="Troubleshoot-latency-issues-within-a-virtual-network"><a href="#Troubleshoot-latency-issues-within-a-virtual-network" class="headerlink" title="Troubleshoot latency issues within a virtual network"></a>Troubleshoot latency issues within a virtual network</h1><p>Completed100 XP</p>
+<ul>
+<li>8 minutes</li>
+</ul>
+<p>You work as a support engineer supporting Azure infrastructure. You’ve been contacted by your web team about an issue with the website not responding. The web team have a pool of webservers behind a load balancer and public IP address.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-topology-zoom.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-topology.png" alt="Screenshot of a network topology diagram showing a pool of webservers behind a load balancer."></a></p>
+<p>In this exercise, you’ll use what you’ve learned to go through steps to troubleshoot the connection issues to the virtual machines.</p>
+<h2 id="Verify-that-the-website-can’t-be-reached"><a href="#Verify-that-the-website-can’t-be-reached" class="headerlink" title="Verify that the website can’t be reached"></a>Verify that the website can’t be reached</h2><p>Use the Cloud Shell on the right.</p>
+<ol>
+<li><p>Use this Azure CLI command to get the public IP address of the scale set.</p>
+<p>BashCopy</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">az network public-ip show \</span><br><span class="line">--resource-group cloud-shell-storage-westeurope \</span><br><span class="line">--name myScaleSetLBPublicIP \</span><br><span class="line">--query <span class="string">&#x27;[ipAddress]&#x27;</span> \</span><br><span class="line">--output tsv</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Copy the IP address, in a new tab in your browser, try to navigate to it.</p>
+</li>
+</ol>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-website-not-responding.png" alt="Screenshot of the website not responding."></p>
+<h2 id="Check-that-Network-Security-Groups-are-configured-correctly"><a href="#Check-that-Network-Security-Groups-are-configured-correctly" class="headerlink" title="Check that Network Security Groups are configured correctly"></a>Check that Network Security Groups are configured correctly</h2><ol>
+<li><p>In another browser tab, navigate to the Azure portal.</p>
+</li>
+<li><p>Search for <strong>Network security groups</strong>.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-search-nsg.png" alt="A screenshot showing the virtual machine scale set is shown on screen."></p>
+</li>
+<li><p>Under <strong>Services</strong>, select <strong>Network Security Groups</strong>.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-no-network-security-groups.png" alt="A screenshot showing that in this environment there are no NSGs created."></p>
+</li>
+</ol>
+<h2 id="Check-the-port-rules-for-the-scale-set"><a href="#Check-the-port-rules-for-the-scale-set" class="headerlink" title="Check the port rules for the scale set"></a>Check the port rules for the scale set</h2><ol>
+<li><p>In the Azure portal, search for <strong>scale set</strong>, and then under <strong>Services</strong>, select <strong>Virtual machine scale sets</strong>.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-search-virtual-machine-scale-sets.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-search-virtual-machine-scale-sets.png" alt="A screenshot showing the virtual machine scale set is highlighted."></a></p>
+</li>
+<li><p>In the list, select <strong>myScaleSet</strong> to view the details.</p>
+</li>
+<li><p>On the left, under <strong>Settings</strong>, select <strong>Networking</strong>.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-inbound-outbound-port-rules.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-inbound-outbound-port-rules.png" alt="A screenshot of Networking selected, with inbound and outbound port rules highlighted."></a></p>
+</li>
+<li><p>Select the <strong>Inbound port rules</strong> tab, and then select the <strong>Outbound port rules</strong> tab.</p>
+</li>
+</ol>
+<p> Note</p>
+<p>There are no network security groups (NSG) on this network interface.</p>
+<h2 id="Check-the-network-settings-for-the-pool-instances"><a href="#Check-the-network-settings-for-the-pool-instances" class="headerlink" title="Check the network settings for the pool instances"></a>Check the network settings for the pool instances</h2><ol>
+<li><p>On the left, under <strong>Settings</strong>, select <strong>Instances</strong>.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-instances.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-instances.png" alt="A screenshot showing an instance in the scale set highlighted."></a></p>
+</li>
+<li><p>Select the first instance listed, in the above example this is <strong>myScaleSet_2</strong>. In your environment this could be different.</p>
+</li>
+<li><p>On the left, under <strong>Settings</strong>, select <strong>Networking</strong>.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-network.png" alt="A screenshot showing the instances without NSG setup."></p>
+</li>
+<li><p>There isn’t an NSG being used by this instance.</p>
+</li>
+<li><p>In the breadcrumb trail, select <strong>myScaleSet</strong>, and then repeat steps 2 to 4 to see that there isn’t an NSG on the other instance.</p>
+</li>
+</ol>
+<h2 id="Check-the-load-balancer-for-a-scale-set"><a href="#Check-the-load-balancer-for-a-scale-set" class="headerlink" title="Check the load balancer for a scale set"></a>Check the load balancer for a scale set</h2><ol>
+<li><p>Select the <strong>Load balancing</strong> tab, and then select the <strong>myScaleSetLB</strong> load balancer.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-load-balancer.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-load-balancer.png" alt="A screenshot showing the myScaleSetLB highlighted."></a></p>
+</li>
+<li><p>On the left, under <strong>Settings</strong>, select <strong>Frontend IP configuration</strong>.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-front-end-ip-configuration.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-front-end-ip-configuration.png" alt="A screenshot showing  the frontend IP address highlighted."></a></p>
+</li>
+<li><p>Check that there is a frontend IP address, and that this is the IP you tested at the beginning of this exercise.</p>
+</li>
+<li><p>On the left, under <strong>Settings</strong>, select <strong>Load balancing rules</strong>.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-load-balancing-rules.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-load-balancing-rules.png" alt="Screen shot showing the load balancing rules."></a></p>
+<p> Note</p>
+<p>There is a rule for port <strong>80</strong> and port <strong>443</strong>.</p>
+</li>
+<li><p>On the left, select <strong>Diagnose and solve problems</strong>.</p>
+</li>
+</ol>
+<h2 id="Use-the-Diagnose-and-solve-problems-troubleshooter"><a href="#Use-the-Diagnose-and-solve-problems-troubleshooter" class="headerlink" title="Use the Diagnose and solve problems troubleshooter"></a>Use the Diagnose and solve problems troubleshooter</h2><ol>
+<li><p>Select the <strong>No connectivity to the backend pool</strong> troubleshooter.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-no-connectivity.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-no-connectivity.png" alt="A screenshot showing the No connectivity to backend pool troubleshooter."></a></p>
+</li>
+<li><p>In the <strong>Tell us more about the problem you are experiencing</strong> drop-down box, select <strong>Intermittent connectivity</strong>.</p>
+</li>
+<li><p>Scroll down and read the insight found.</p>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-no-connectivity-back-end-pool.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-no-connectivity-back-end-pool.png" alt="Screen shot of the connectivity results showing the backend pool can&#39;t be connected to over port 443."></a></p>
+<p>The insight points to the fact that the backend instances in the pool aren’t listening for port <strong>443</strong>. The website instances should be listening to port <strong>80</strong>. This insight points to a problem in the load balancer rule.</p>
+<h1 id="Exercise-Troubleshoot-issue-connecting-virtual-machine-scale-set"><a href="#Exercise-Troubleshoot-issue-connecting-virtual-machine-scale-set" class="headerlink" title="Exercise: Troubleshoot issue connecting virtual machine scale set"></a>Exercise: Troubleshoot issue connecting virtual machine scale set</h1><p>Completed100 XP</p>
+<ul>
+<li>7 minutes</li>
+</ul>
+<p>This module requires a sandbox to complete.</p>
+<p>A <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/support/faq?pivots=sandbox">sandbox</a> gives you access to free resources. Your personal subscription will not be charged. The sandbox may only be used to complete training on Microsoft Learn. Use for any other reason is prohibited, and may result in permanent loss of access to the sandbox.</p>
+<p>Microsoft provides this lab experience and related content for educational purposes. All presented information is owned by Microsoft and intended solely for learning about the covered products and services in this Microsoft Learn module.</p>
+<p>Activate sandbox</p>
+<p>You work as a support engineer supporting Azure infrastructure. You’ve been contacted by your web team about an issue with the website not responding. The web team have a pool of webservers behind a load balancer and public IP address.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-topology.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-topology.png" alt="Screenshot of a network topology diagram showing a pool of webservers behind a load balancer."></a></p>
+<p>In this exercise, you’ll use what you’ve learned to go through steps to troubleshoot the connection issues to the virtual machines.</p>
+<h2 id="Verify-that-the-website-can’t-be-reached-1"><a href="#Verify-that-the-website-can’t-be-reached-1" class="headerlink" title="Verify that the website can’t be reached"></a>Verify that the website can’t be reached</h2><p>Use the Cloud Shell on the right.</p>
+<ol>
+<li><p>Use this Azure CLI command to get the public IP address of the scale set.</p>
+<p>Copy</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">az network public-ip show \</span><br><span class="line">--resource-group [sandbox resource group name] \</span><br><span class="line">--name webPublicIP \</span><br><span class="line">--query &#x27;[ipAddress]&#x27; \</span><br><span class="line">--output tsv</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Copy the IP address, in a new tab in your browser, try to navigate to it.</p>
+</li>
+</ol>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-website-not-responding.png" alt="Screenshot of the website not responding."></p>
+<h2 id="Check-that-Network-Security-Groups-are-configured-correctly-1"><a href="#Check-that-Network-Security-Groups-are-configured-correctly-1" class="headerlink" title="Check that Network Security Groups are configured correctly"></a>Check that Network Security Groups are configured correctly</h2><ol>
+<li><p>In another browser tab, navigate to the <a target="_blank" rel="noopener" href="https://portal.azure.com/learn.docs.microsoft.com">Azure portal</a>.</p>
+</li>
+<li><p>Search for <strong>Network security groups</strong>.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-search-nsg.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-search-nsg.png" alt="A screenshot showing the virtual machine scale set is detailed."></a></p>
+</li>
+<li><p>Under <strong>Services</strong>, select <strong>Network Security Groups</strong>.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-no-network-security-groups.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-no-network-security-groups.png" alt="A screenshot showing that in this environment there are no NSGs created."></a></p>
+</li>
+<li><p>Select <strong>webNetworkSecurityGroup</strong>.</p>
+</li>
+<li><p>Check that internet traffic over port <strong>80</strong> is allowed by the Network Security Group.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-check-inbound-traffic-allowed.png" alt="Screenshot of the Network Security Group inbound rules are correct."></p>
+</li>
+</ol>
+<h2 id="Check-the-network-settings-for-the-virtual-machines"><a href="#Check-the-network-settings-for-the-virtual-machines" class="headerlink" title="Check the network settings for the virtual machines"></a>Check the network settings for the virtual machines</h2><ol>
+<li><p>On the left, select <strong>Virtual Machines</strong>.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-check-virtual-machine-networking.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-check-virtual-machine-networking.png" alt="A screenshot showing an instance in the scale set highlighted."></a></p>
+</li>
+<li><p>Select the first virtual machine listed, in the above example this is <strong>webVirtualMachine1</strong>. In your environment this could be different.</p>
+</li>
+<li><p>On the left, under <strong>Settings</strong>, select <strong>Networking</strong>.</p>
+</li>
+<li><p>Note that port 80 is allowed.</p>
+</li>
+<li><p>Repeat these steps for <strong>webVirtualMachine2</strong>.</p>
+</li>
+</ol>
+<h2 id="Check-the-load-balancer"><a href="#Check-the-load-balancer" class="headerlink" title="Check the load balancer"></a>Check the load balancer</h2><ol>
+<li><p>In the Azure portal, search for <strong>Load balancers</strong>, then under <strong>Services</strong>, select <strong>Load balancers</strong>.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-search-load-balancers.png" alt="Screenshot showing searching for load balancers."></p>
+</li>
+<li><p>Select the <strong>webLoadBalancer</strong>.</p>
+</li>
+<li><p>On the left, under <strong>Settings</strong>, select <strong>Frontend IP configuration</strong>.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-front-end-ip-configuration.png" alt="A screenshot showing  the frontend IP address highlighted."></p>
+</li>
+<li><p>Check that there is a frontend IP address, and that this is the IP you tested at the beginning of this exercise.</p>
+</li>
+<li><p>On the left, under <strong>Settings</strong>, select <strong>Load balancing rules</strong>.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-load-balancing-rules.png" alt="Screen shot showing the load balancing rules."></p>
+<p> Note</p>
+<p>There is a rule for port <strong>80</strong> and port <strong>443</strong>.</p>
+</li>
+<li><p>On the left, select <strong>Diagnose and solve problems</strong>.</p>
+</li>
+</ol>
+<h2 id="Use-the-Diagnose-and-solve-problems-troubleshooter-1"><a href="#Use-the-Diagnose-and-solve-problems-troubleshooter-1" class="headerlink" title="Use the Diagnose and solve problems troubleshooter"></a>Use the Diagnose and solve problems troubleshooter</h2><ol>
+<li><p>Select the <strong>No connectivity to the backend pool</strong> troubleshooter.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-no-connectivity.png" alt="A screenshot showing the No connectivity to backend pool troubleshooter."></p>
+</li>
+<li><p>In the <strong>Tell us more about the problem you are experiencing</strong> drop-down box, select <strong>Intermittent connectivity</strong>.</p>
+</li>
+<li><p>Scroll down and read the insight found.</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-no-connectivity-back-end-pool.png" alt="Screen shot of the connectivity results showing the backend pool can&#39;t be connected to over port 443."></p>
+<p>The insight points to the fact that the backend instances in the pool aren’t listening for port <strong>443</strong>. The website instances should be listening to port <strong>80</strong>. This insight points to a problem in the load balancer rule.</p>
+</li>
+</ol>
+<hr>
+<h1 id="Exercise-Resolve-issue-connecting-virtual-machine-scale-set"><a href="#Exercise-Resolve-issue-connecting-virtual-machine-scale-set" class="headerlink" title="Exercise: Resolve issue connecting virtual machine scale set"></a>Exercise: Resolve issue connecting virtual machine scale set</h1><p>Completed100 XP</p>
+<ul>
+<li>7 minutes</li>
+</ul>
+<p>This module requires a sandbox to complete.</p>
+<p>A <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/support/faq?pivots=sandbox">sandbox</a> gives you access to free resources. Your personal subscription will not be charged. The sandbox may only be used to complete training on Microsoft Learn. Use for any other reason is prohibited, and may result in permanent loss of access to the sandbox.</p>
+<p>Microsoft provides this lab experience and related content for educational purposes. All presented information is owned by Microsoft and intended solely for learning about the covered products and services in this Microsoft Learn module.</p>
+<p>Activate sandbox</p>
+<p>After investigating the connection issues to your website, you’ve found an issue with the load balancer rule user by the virtual machine scale set.</p>
+<p>In this exercise, you’ll resolve the issue and check that the website can now be accessed.</p>
+<h2 id="Validate-load-balancer-rules"><a href="#Validate-load-balancer-rules" class="headerlink" title="Validate load balancer rules"></a>Validate load balancer rules</h2><ol>
+<li><p>In the Azure portal, search for <strong>load balancers</strong>, and then under <strong>Services</strong>, select <strong>Load balancers</strong>.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/7-load-balancers.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/7-load-balancers.png" alt="A screenshot showing searching for load balancers."></a></p>
+</li>
+<li><p>Select the <strong>webLoadBalancer</strong> load balancer.</p>
+</li>
+<li><p>Under <strong>Settings</strong>, select <strong>Load balancing rules</strong>.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-load-balancing-rules.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/6-load-balancing-rules.png" alt="A screenshot showing the load balancer rule highlighted."></a></p>
+</li>
+<li><p>From the list of rules, select <strong>webLoadBalancerRule</strong>.</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/7-my-load-balancer-rule-web.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/7-my-load-balancer-rule-web.png" alt="A screenshot of the load balancer rule, showing the port set to 80 and backend port set to 443. This is the error."></a></p>
+</li>
+<li><p>To resolve the backend issue, change the <strong>Backend port</strong> from <strong>443</strong> to <strong>80</strong>, and then select <strong>Save</strong>.</p>
+<p>Note</p>
+<p>The front and backend in this environment need to be the same to get a response from the webserver to http requests.</p>
+</li>
+<li><p>Wait until the rule has been deployed successfully.</p>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/7-successful-rule.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/7-successful-rule.png" alt="A screenshot showing the successful deployment of the updated load balancer rule."></a></p>
+<h2 id="Verify-that-the-website-can-now-be-reached"><a href="#Verify-that-the-website-can-now-be-reached" class="headerlink" title="Verify that the website can now be reached"></a>Verify that the website can now be reached</h2><ol>
+<li><p>Refresh the tab you opened to test the public IP address.</p>
+<p>Note</p>
+<p>If you have closed the previous browser tab, run this command to get the public IP address:</p>
+<p>Copy</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">az network public-ip show \</span><br><span class="line">--resource-group [sandbox resource group name] \</span><br><span class="line">--name webPublicIP \</span><br><span class="line">--query &#x27;[ipAddress]&#x27; \</span><br><span class="line">--output tsv</span><br></pre></td></tr></table></figure>
+
+<p>If the website is online, you’ll see a page with a <strong>Hello World</strong> message from the backend instance.</p>
+</li>
+</ol>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/troubleshoot-network-security-issues/media/7-hello-world.png" alt="A screenshot of the website showing it&#39;s online."></p>
+<h1 id="Summary-and-resources"><a href="#Summary-and-resources" class="headerlink" title="Summary and resources"></a>Summary and resources</h1><p>Completed100 XP</p>
+<ul>
+<li>3 minutes</li>
+</ul>
+<p>As a support engineer, you have investigated various network security issues. Having completed this module, you can troubleshoot issues arising in the security infrastructure using the Azure portal and other tools.</p>
+<p>You now understand how to protect your Azure Virtual Network through network security policies and resources.</p>
+<p>Now that you’ve completed this module, you should be able to:</p>
+<ul>
+<li>Troubleshoot network security issues.</li>
+<li>Troubleshoot Network Security Group (NSG).</li>
+<li>Troubleshoot Azure Firewall.</li>
+<li>Troubleshoot latency issues within a virtual network.</li>
+</ul>
+<h2 id="Learn-more"><a href="#Learn-more" class="headerlink" title="Learn more"></a>Learn more</h2><p>Use these resources to discover more:</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/ag-overview">WAF overview</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-waf-configuration">WAF configuration</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/application-gateway/application-gateway-diagnostics">WAF monitoring</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/ag-overview">Anomaly scoring mode</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-minimum-version?tabs=portal">Configure minimum required version of Transport Layer Security (TLS) for a storage account</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls">Support for TLS 1.2</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-wan/certificates-point-to-site">Generate and export certificates for User VPN connections</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal">Connect to a VNet using P2S VPN &amp; certificate authentication: portal - Azure VPN Gateway</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/troubleshoot-rdp-connection">Troubleshoot Remote Desktop connections to a VM</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/dotnet/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate">How to retrieve the Thumbprint of a Certificate</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/private-link/troubleshoot-private-endpoint-connectivity">Diagnose connectivity problems</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure-stack/user/azure-stack-vpn-gateway-settings">IPsec&#x2F;IKE parameters</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure-stack/user/azure-stack-vpn-s2s">Steps to configure an IPsec&#x2F;IKE policy for site-to-site (S2S) VPN connections in Azure Stack Hub</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits?toc=/azure/virtual-network/toc.json">Azure limits</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview">Azure service tags</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-restrict-network-access-to-resources">Tutorial - Restrict network access to PaaS resources with virtual network service endpoints using the Azure portal</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups">Application security groups</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview">Virtual network overview</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface">Create, change, or delete an Azure network interface</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview">Azure network security groups overview</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/manage-network-security-group">Create, change, or delete an Azure network security group</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm?toc=/azure/virtual-network/toc.json">Forced-tunneling</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-routing-problem">Diagnose a virtual machine network traffic routing problem</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-overview">Introduction to flow logging for NSGs - Azure Network Watcher</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/firewall/tutorial-firewall-deploy-portal">Deploy and configure Azure Firewall using the Azure portal</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/power-bi/connect-data/service-connect-to-services">Azure Activity Logs content pack for Power BI</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/firewall/firewall-workbook">Monitor logs using Azure Firewall Workbook</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/firewall/policy-rule-sets">Azure Firewall Policy rule sets</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/firewall/threat-intel">Azure Firewall threat intelligence-based filtering</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/firewall/tutorial-firewall-dnat-policy">Tutorial: Filter inbound Internet traffic with Azure Firewall DNAT policy using the portal</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/firewall/rule-processing">Azure Firewall rule processing logic</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/firewall-manager/secure-cloud-network">Tutorial: Secure your virtual hub using Azure Firewall Manager</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/network-watcher/diagnose-vm-network-traffic-filtering-problem">Tutorial: Diagnose a VM network traffic filter problem - Azure portal - Azure Network Watcher</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-test-latency">Test VM network latency</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-bandwidth-testing">Bandwidth&#x2F;Throughput testing (NTTTCP)</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes?toc=/azure/virtual-network/toc.json">VM sizes - Azure Virtual Machines</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways">About VPN Gateway</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-machines/resize-vm?tabs=portal">Resize a VM</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-validate-throughput-to-vnet">Validate VPN throughput to a virtual network - Azure VPN Gateway</a></p>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/14/AZ-720-Troubleshoot-authentication-and-access-control-issues-in-Microsoft-Azure-5/" rel="prev" title="AZ-720-Troubleshoot-authentication-and-access-control-issues-in-Microsoft-Azure-5">
+      <i class="fa fa-chevron-left"></i> AZ-720-Troubleshoot-authentication-and-access-control-issues-in-Microsoft-Azure-5
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/11/14/AZ-720-Troubleshoot-routing-traffic-control-and-load-balancing-in-Microsoft-Azure-7/" rel="next" title="AZ-720-Troubleshoot-routing-traffic-control-and-load-balancing-in-Microsoft-Azure-7">
+      AZ-720-Troubleshoot-routing-traffic-control-and-load-balancing-in-Microsoft-Azure-7 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Learning-objectives"><span class="nav-number">1.1.</span> <span class="nav-text">Learning objectives</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Prerequisites"><span class="nav-number">1.2.</span> <span class="nav-text">Prerequisites</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Setup-troubleshooting-environment"><span class="nav-number">2.</span> <span class="nav-text">Setup troubleshooting environment</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-the-exercise-environment"><span class="nav-number">2.1.</span> <span class="nav-text">Create the exercise environment</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Troubleshoot-network-security-issues"><span class="nav-number">3.</span> <span class="nav-text">Troubleshoot network security issues</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Determine-why-Web-Application-Firewall-WAF-is-blocking-wanted-traffic"><span class="nav-number">3.1.</span> <span class="nav-text">Determine why Web Application Firewall (WAF) is blocking wanted traffic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Understanding-WAF-logs"><span class="nav-number">3.2.</span> <span class="nav-text">Understanding WAF logs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Viewing-WAF-logs"><span class="nav-number">3.3.</span> <span class="nav-text">Viewing WAF logs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Anomaly-Scoring-mode"><span class="nav-number">3.4.</span> <span class="nav-text">Anomaly Scoring mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fixing-false-positives"><span class="nav-number">3.5.</span> <span class="nav-text">Fixing false positives</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#To-configure-exclusion-lists-using-the-Azure-portal"><span class="nav-number">3.5.1.</span> <span class="nav-text">To configure exclusion lists using the Azure portal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#To-disable-rule-groups-or-specific-rules"><span class="nav-number">3.5.2.</span> <span class="nav-text">To disable rule groups or specific rules</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Restrict-global-parameters-to-eliminate-false-positives"><span class="nav-number">3.6.</span> <span class="nav-text">Restrict global parameters to eliminate false positives</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Determine-which-version-of-TLS-a-customer-is-running"><span class="nav-number">3.7.</span> <span class="nav-text">Determine which version of TLS a customer is running</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configure-the-client-TLS-version"><span class="nav-number">3.8.</span> <span class="nav-text">Configure the client TLS version</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshoot-encryption-x2F-certificate-related-issues-for-point-to-site-scenarios"><span class="nav-number">3.9.</span> <span class="nav-text">Troubleshoot encryption&#x2F;certificate-related issues for point-to-site scenarios</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generate-certificates"><span class="nav-number">3.10.</span> <span class="nav-text">Generate certificates</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshoot-a-connection"><span class="nav-number">3.11.</span> <span class="nav-text">Troubleshoot a connection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Revoke-a-client-certificate"><span class="nav-number">3.12.</span> <span class="nav-text">Revoke a client certificate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshoot-connectivity-to-secure-endpoints"><span class="nav-number">3.13.</span> <span class="nav-text">Troubleshoot connectivity to secure endpoints</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Diagnose-connectivity-problems"><span class="nav-number">3.14.</span> <span class="nav-text">Diagnose connectivity problems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshoot-encryption-x2F-certificate-related-issues-for-site-to-site-scenarios"><span class="nav-number">3.15.</span> <span class="nav-text">Troubleshoot encryption&#x2F;certificate-related issues for site-to-site scenarios</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IPsec-and-IKE-policy-parameters-for-VPN-gateways"><span class="nav-number">3.15.1.</span> <span class="nav-text">IPsec and IKE policy parameters for VPN gateways</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Troubleshoot-NSGs"><span class="nav-number">4.</span> <span class="nav-text">Troubleshoot NSGs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Demonstrate-an-understanding-of-network-security-group-NSG-configuration-data-including-ports-service-tags-and-priority-numbers"><span class="nav-number">4.1.</span> <span class="nav-text">Demonstrate an understanding of network security group (NSG) configuration data including ports, service tags, and priority numbers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-security-groups"><span class="nav-number">4.1.1.</span> <span class="nav-text">Network security groups</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Security-rules"><span class="nav-number">4.1.2.</span> <span class="nav-text">Security rules</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Default-security-rules"><span class="nav-number">4.1.3.</span> <span class="nav-text">Default security rules</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Augmented-security-rules"><span class="nav-number">4.1.4.</span> <span class="nav-text">Augmented security rules</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshoot-NSG-configuration-issues"><span class="nav-number">4.2.</span> <span class="nav-text">Troubleshoot NSG configuration issues</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Diagnose-using-Azure-portal"><span class="nav-number">4.2.1.</span> <span class="nav-text">Diagnose using Azure portal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Additional-diagnosis"><span class="nav-number">4.2.2.</span> <span class="nav-text">Additional diagnosis</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Review-and-interpret-NSG-flow-logs"><span class="nav-number">4.3.</span> <span class="nav-text">Review and interpret NSG flow logs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction-1"><span class="nav-number">4.3.1.</span> <span class="nav-text">Introduction</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-use-flow-logs"><span class="nav-number">4.4.</span> <span class="nav-text">Why use flow logs?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-logging-works"><span class="nav-number">4.5.</span> <span class="nav-text">How logging works</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IP-flow-verify"><span class="nav-number">4.5.1.</span> <span class="nav-text">IP flow verify</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Determine-whether-a-VM-or-group-of-VMs-is-associated-with-an-application-security-group-ASG"><span class="nav-number">4.6.</span> <span class="nav-text">Determine whether a VM or group of VMs is associated with an application security group (ASG)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Allow-HTTP-Inbound-Internet"><span class="nav-number">4.6.1.</span> <span class="nav-text">Allow-HTTP-Inbound-Internet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deny-Database-All"><span class="nav-number">4.6.2.</span> <span class="nav-text">Deny-Database-All</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Allow-Database-BusinessLogic"><span class="nav-number">4.6.3.</span> <span class="nav-text">Allow-Database-BusinessLogic</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Troubleshoot-Azure-Firewall"><span class="nav-number">5.</span> <span class="nav-text">Troubleshoot Azure Firewall</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshoot-Azure-Firewall-application-rules"><span class="nav-number">5.1.</span> <span class="nav-text">Troubleshoot Azure Firewall application rules</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Monitor-Azure-Firewall-logs-and-metrics"><span class="nav-number">5.1.1.</span> <span class="nav-text">Monitor Azure Firewall logs and metrics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#View-and-analyze-the-activity-log"><span class="nav-number">5.1.2.</span> <span class="nav-text">View and analyze the activity log</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#View-and-analyze-the-network-and-application-rule-logs"><span class="nav-number">5.1.3.</span> <span class="nav-text">View and analyze the network and application rule logs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshoot-Azure-Firewall-network-rules"><span class="nav-number">5.2.</span> <span class="nav-text">Troubleshoot Azure Firewall network rules</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rule-processing-using-classic-rules"><span class="nav-number">5.2.1.</span> <span class="nav-text">Rule processing using classic rules</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rule-processing-using-Firewall-Policy"><span class="nav-number">5.2.2.</span> <span class="nav-text">Rule processing using Firewall Policy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IDPS"><span class="nav-number">5.2.3.</span> <span class="nav-text">IDPS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshoot-Azure-Firewall-infrastructure-rules"><span class="nav-number">5.3.</span> <span class="nav-text">Troubleshoot Azure Firewall infrastructure rules</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overriding"><span class="nav-number">5.3.1.</span> <span class="nav-text">Overriding</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshoot-Azure-Firewall-network-address-translation-NAT-rules"><span class="nav-number">5.4.</span> <span class="nav-text">Troubleshoot Azure Firewall network address translation (NAT) rules</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshoot-Azure-Firewall-distributed-network-address-translation-DNAT-rules"><span class="nav-number">5.5.</span> <span class="nav-text">Troubleshoot Azure Firewall distributed network address translation (DNAT) rules</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshoot-network-level-protection-issues-including-firewalls"><span class="nav-number">5.6.</span> <span class="nav-text">Troubleshoot network-level protection issues including firewalls</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Outbound-connectivity"><span class="nav-number">5.6.1.</span> <span class="nav-text">Outbound connectivity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-rules-and-applications-rules"><span class="nav-number">5.6.2.</span> <span class="nav-text">Network rules and applications rules</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inbound-connectivity"><span class="nav-number">5.6.3.</span> <span class="nav-text">Inbound connectivity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNAT-rules-and-network-rules"><span class="nav-number">5.6.4.</span> <span class="nav-text">DNAT rules and network rules</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshoot-Azure-Firewall-Manager-misconfiguration-issues"><span class="nav-number">5.7.</span> <span class="nav-text">Troubleshoot Azure Firewall Manager misconfiguration issues</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Troubleshoot-latency-issues-within-a-virtual-network"><span class="nav-number">6.</span> <span class="nav-text">Troubleshoot latency issues within a virtual network</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Verify-that-the-website-can%E2%80%99t-be-reached"><span class="nav-number">6.1.</span> <span class="nav-text">Verify that the website can’t be reached</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Check-that-Network-Security-Groups-are-configured-correctly"><span class="nav-number">6.2.</span> <span class="nav-text">Check that Network Security Groups are configured correctly</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Check-the-port-rules-for-the-scale-set"><span class="nav-number">6.3.</span> <span class="nav-text">Check the port rules for the scale set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Check-the-network-settings-for-the-pool-instances"><span class="nav-number">6.4.</span> <span class="nav-text">Check the network settings for the pool instances</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Check-the-load-balancer-for-a-scale-set"><span class="nav-number">6.5.</span> <span class="nav-text">Check the load balancer for a scale set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Use-the-Diagnose-and-solve-problems-troubleshooter"><span class="nav-number">6.6.</span> <span class="nav-text">Use the Diagnose and solve problems troubleshooter</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Exercise-Troubleshoot-issue-connecting-virtual-machine-scale-set"><span class="nav-number">7.</span> <span class="nav-text">Exercise: Troubleshoot issue connecting virtual machine scale set</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Verify-that-the-website-can%E2%80%99t-be-reached-1"><span class="nav-number">7.1.</span> <span class="nav-text">Verify that the website can’t be reached</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Check-that-Network-Security-Groups-are-configured-correctly-1"><span class="nav-number">7.2.</span> <span class="nav-text">Check that Network Security Groups are configured correctly</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Check-the-network-settings-for-the-virtual-machines"><span class="nav-number">7.3.</span> <span class="nav-text">Check the network settings for the virtual machines</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Check-the-load-balancer"><span class="nav-number">7.4.</span> <span class="nav-text">Check the load balancer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Use-the-Diagnose-and-solve-problems-troubleshooter-1"><span class="nav-number">7.5.</span> <span class="nav-text">Use the Diagnose and solve problems troubleshooter</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Exercise-Resolve-issue-connecting-virtual-machine-scale-set"><span class="nav-number">8.</span> <span class="nav-text">Exercise: Resolve issue connecting virtual machine scale set</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Validate-load-balancer-rules"><span class="nav-number">8.1.</span> <span class="nav-text">Validate load balancer rules</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Verify-that-the-website-can-now-be-reached"><span class="nav-number">8.2.</span> <span class="nav-text">Verify that the website can now be reached</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary-and-resources"><span class="nav-number">9.</span> <span class="nav-text">Summary and resources</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Learn-more"><span class="nav-number">9.1.</span> <span class="nav-text">Learn more</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1986</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="IntroductionWelcome to configuring Azure API Management. My name is Matthew Quickenden, and I am going to be guiding you through some of the key features and aspects of configuring the Azure API Manag">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AZ-204-Configuring-Azure-API-Management-33">
+<meta property="og:url" content="https://example.com/2022/11/14/AZ-204-Configuring-Azure-API-Management-33/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="IntroductionWelcome to configuring Azure API Management. My name is Matthew Quickenden, and I am going to be guiding you through some of the key features and aspects of configuring the Azure API Manag">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-14T15:54:25.000Z">
+<meta property="article:modified_time" content="2022-11-15T14:00:30.000Z">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://example.com/2022/11/14/AZ-204-Configuring-Azure-API-Management-33/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>AZ-204-Configuring-Azure-API-Management-33 | Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AZ-204-Configuring-Azure-API-Management-33/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AZ-204-Configuring-Azure-API-Management-33
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-14 11:54:25" itemprop="dateCreated datePublished" datetime="2022-11-14T11:54:25-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-15 10:00:30" itemprop="dateModified" datetime="2022-11-15T10:00:30-04:00">2022-11-15</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/AZ-204-Configuring-Azure-API-Management-33/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AZ-204-Configuring-Azure-API-Management-33/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Welcome to configuring Azure API Management. My name is Matthew Quickenden, and I am going to be guiding you through some of the key features and aspects of configuring the Azure API Management resource. I have over 20 years industry experience and have recently been working with cloud and hybrid cloud technologies, with a specific focus on <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> and Azure Stack. If you have any questions, feel free to connect with me on LinkedIn, or send an email to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. </p>
+<p>This course is intended for people who want to become a certified Azure developer, or who are tasked with creating and managing an Azure API Management resource. To get the most out of this course, you should have a general understanding of Microsoft Azure and be able to deploy and manage resources. Being familiar with restful APIs and having some experience using Postman and an understanding of OAuth token flow would be useful, but not essential. For this course, you do not need any knowledge of any specific development languages. </p>
+<p>We are going to look at what Azure API Management is and what it can do, and we will create an instance in Azure. Once we have this instance, we will look at various ways we can secure the APIs and apply policies during different stages of an API request. We will use Postman to help access and consume the service external to the Azure Portal. </p>
+<p>By the end of this course, you should be able to set up an instance of Azure’s API Management, secure it using OAuth endpoints, apply policies to alter API requests and responses and be able to troubleshoot and trace policies being applied. Your feedback on this course is important, so please give it a rating when you’re finished. Let’s <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/getting-started/">get started</a>.</p>
+<h1 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h1><p>Because <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/introduction/">Azure API Management</a> takes a while to deploy and become usable we’re going to go to the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> portal and kick off the provisioning process immediately. There is only one blade you need to complete to start the creation of your service which we can review now. </p>
+<p>In this case, we can see a screenshot, where I’ve named it clouddemo which is appended with the .azure-api.net suffix. I’ve select a subscription and a resource group. I’ve chosen a location and given the company name. I’ve also entered an email address, this needs to be a valid email as you will receive emails to this based on the service and selected a pricing tier which is Developer. </p>
+<p>If we look at the pricing details we can see that the Developer tier costs around 33 dollars a month and contains all the features we need to develop. This includes AAD Integration, virtual networks, the things you are short on, the things like redundancy. You’re only in a single region and you can’t scale. However, all the features you need to develop are there for any of the other tiers. Once you go into production you can change the skew of your API very easily by selecting a new skew. So with all this done, let’s click create and we can let the service provision. Once the service is ready, you will receive a notification email.</p>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>While that’s provisioning, let’s take a look at what the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/introduction/">Azure API Management</a> is. On the Microsoft website if you look up what is API Management, <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Microsoft</a> defines it as API Management helps organizations publish APIs to external, partner, and internal developers to unlock the potential of their data and services. Businesses everywhere are looking to extend operations as a digital platform, creating new channels, finding new customers, and driving deeper engagement with existing ones. API Management provides the core competencies to ensure a successful API program through developer engagement, business insight, analytics, security, and protection. You can use Azure API Management to take any backend system and develop a fully-fledged API on top of it. </p>
+<p>So what does that mean? Using an API is a very common way to communicate over the internet, allowing your organization to provide services in a secure manner. You can consider APIM as a gateway service that provides a developer portal, a publisher portal, and allows developers, publishers, and applications and users to access all the content and data securely hosted in your own backend systems. </p>
+<p>Using API Management allows developers to easily consume APIs in different formats, including open API, which is an open standard and language agnostic, WADL XML representation of APIs, WSDL, which is SOAP representation of APIs, and other Azure-hosted services like Logic Apps, Function Apps, and API Apps. </p>
+<p>Once you have ingested these APIs, you can create different products, which allows you to deliver parts of these APIs to different user groups with different restrictions and options. When a user or company connects to the API Management service, they obtain a subscription. This subscription is used to help manage incoming requests. Azure API Management also offers a flexible way to version, test, and publish APIs to internal and external users. </p>
+<p>Some of the benefits of the Azure API Management are freedom of language choice, scalable, limit access or the number of calls, offloading security, insights for performance and troubleshooting. </p>
+<p>Now that we have an idea of what the Azure API Management is and can do and before we proceed with configuring the service, let’s discuss the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/scenario-outline/">scenario</a> of what we’re going to try and achieve over the length of this course.</p>
+<h1 id="Scenario-Outline"><a href="#Scenario-Outline" class="headerlink" title="Scenario Outline"></a>Scenario Outline</h1><p>There are a lot of components that make up the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/configuring-the-service/">configuration of the service</a>. Here we are going to explain what we are going to work through. We have already started the creation of the Clouddemo API in our subscription. Once this completes we are going to ingest an API provided by <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Microsoft</a>. This API contains a number of API operations around getting conference data. We will then create a simple API request in Postman. From there we can create the required applications in Azure AD, I’ve already provisioned an Azure AD called Cyber Labs for this demo. And will expect you to have your own Azure AD or if you don’t have one to configure it now. In the Azure AD we will create a backend app, a front end app along with a secret key. We will also grant the front end application permission to access the backend app. We will use the Azure Portal, the Developer Portal, and Postman to query the import of Microsoft Demo APIs using these applications. We will then add API policies and look at how we can scope and understand effective policy and how to trace these policies. Finally we will make sure that our API is secure and that requests to the API require a valid access token or bearer token from our Azure AD tenant which in this case is Cyber Labs. </p>
+<p>There are a lot of configuration items throughout this demo I record into Notepad To help you here is all the text. You may just want to copy it from the transcript and fill it out with your specific data as you go through the demos.</p>
+<p><a target="_blank" rel="noopener" href="https://conferenceapi.azurewebsites.net/?format=json">https://conferenceapi.azurewebsites.net?format=json
+</a>https:&#x2F;&#x2F;{name}.azure-api.net&#x2F;sessions<a target="_blank" rel="noopener" href="https://clouddemo.azure-api.net/sessions">
+</a>Starter Subscription Key: 76c24a0abeb94104809b0810f74a20e5<br>Subscription Header: Ocp-Apim-Subscription-Key</p>
+<p>Azure AD Tenant: mycyberlabs.onmicrosoft.com<br>Azure AD Tenant GUID: fc9f98a5-2d78-4a13-afa4-2ccfe88db15a</p>
+<p>Apps<br>myFrontEndApp ID: 902eef25-668f-4e58-8398-f72a5da893ea<br>myFrontEndApp Secret Key: QZdqqvNXBxm466IvJd5ociARYInUwNyPbXJuJLP3IyE&#x3D;<br>myBackEndApp ID: f9a45df4-6102-4f5c-a855-e2a2cbbab627</p>
+<p>Call Back URLs<br>Postman Call back URL: <a target="_blank" rel="noopener" href="https://www.getpostman.com/oauth2/callback[](https://www.getpostman.com/oauth2/callback)">https://www.getpostman.com/oauth2/callback[](https://www.getpostman.com/oauth2/callback)</a></p>
+<p>https:&#x2F;&#x2F;{name}.portal.azure-api.net&#x2F;signin<a target="_blank" rel="noopener" href="https://clouddemo.portal.azure-api.net/signin"></a></p>
+<p>https:&#x2F;&#x2F;{name}.portal.azure-api.net&#x2F;docs&#x2F;services&#x2F;cyberlabs&#x2F;console&#x2F;oauth2&#x2F;authorizationcode&#x2F;callback<a target="_blank" rel="noopener" href="https://clouddemo.portal.azure-api.net/docs/services/cyberlabs/console/oauth2/authorizationcode/callback"></a></p>
+<p>https:&#x2F;&#x2F;{name}.portal.azure-api.net&#x2F;signin-aad<a target="_blank" rel="noopener" href="https://clouddemo.portal.azure-api.net/signin-aad"></a></p>
+<p>Endpoints<br>OAuth 2.0 (v1) Authorization Endpoint: <a target="_blank" rel="noopener" href="https://login.microsoftonline.com/%7Baad-tenant%7D/oauth2/authorize[">https://login.microsoftonline.com/{aad-tenant}/oauth2/authorize[</a><br>](<a target="_blank" rel="noopener" href="https://login.microsoftonline.com/fc9f98a5-2d78-4a13-afa4-2ccfe88db15a/oauth2/authorize)OAuth">https://login.microsoftonline.com/fc9f98a5-2d78-4a13-afa4-2ccfe88db15a/oauth2/authorize)OAuth</a> 2.0 (v1) Token Endpoint: <a target="_blank" rel="noopener" href="https://login.microsoftonline.com/%7Baad-tenant%7D/oauth2/token[">https://login.microsoftonline.com/{aad-tenant}/oauth2/token[</a><br>](<a target="_blank" rel="noopener" href="https://login.microsoftonline.com/fc9f98a5-2d78-4a13-afa4-2ccfe88db15a/oauth2/token">https://login.microsoftonline.com/fc9f98a5-2d78-4a13-afa4-2ccfe88db15a/oauth2/token</a>)</p>
+<p>OpenID Connect meta document: <a target="_blank" rel="noopener" href="https://login.microsoftonline.com/%7Baad-tenant%7D/v2.0/.well-known/openid-configuration[](https://login.microsoftonline.com/fc9f98a5-2d78-4a13-afa4-2ccfe88db15a/v2.0/.well-known/openid-configuration)">https://login.microsoftonline.com/{aad-tenant}/v2.0/.well-known/openid-configuration[](https://login.microsoftonline.com/fc9f98a5-2d78-4a13-afa4-2ccfe88db15a/v2.0/.well-known/openid-configuration)</a></p>
+<p>V1<br><a target="_blank" rel="noopener" href="https://login.microsoftonline.com/mycyberlabs.onmicrosoft.com/.well-known/openid-configuration">https://login.microsoftonline.com/mycyberlabs.onmicrosoft.com/.well-known/openid-configuration</a></p>
+<p>postman Oauth<br><a target="_blank" rel="noopener" href="https://login.microsoftonline.com/%7Baad-tenant%7D/oauth2/authorize?resource=%7Bresource">https://login.microsoftonline.com/{aad-tenant}/oauth2/authorize?resource={resource</a> ID}</p>
+<p><a target="_blank" rel="noopener" href="https://login.microsoftonline.com/%7Baad-tenant%7D/oauth2/authorize?resource=%7Bresource">https://login.microsoftonline.com/{aad-tenant}/oauth2/authorize?resource={resource</a> ID}&amp;response_type&#x3D;code&amp;client_id&#x3D;{client ID}&amp;redirect_uri&#x3D;https:&#x2F;&#x2F;{name}.portal.azure-api.net&#x2F;docs&#x2F;services&#x2F;cyberlabs&#x2F;console&#x2F;oauth2&#x2F;authorizationcode&#x2F;callback&amp;state&#x3D;{state ID}</p>
+<h1 id="Configuring-the-Service"><a href="#Configuring-the-Service" class="headerlink" title="Configuring the Service"></a>Configuring the Service</h1><p>If we go to our clouddemo API management service and we see the overview, we can see we have the clouddemo.azure-api.net. We can see we’ve got a virtual IP address, the developer tier for this queue that we selected, and the region and the status is currently online. So, this is all the information we expected, which is great. If we go to the APIs, we can see the add API and the different types we looked at earlier. We need to find an API we can import. If you go to your favorite search engine and enter democonference api, you should be able to find the Import and publish your first API from Azure Management. We can see it’s an OpenAPI Specification and it’s conferenceapi on Azure websites in the format of JSON. So I’m gonna copy this URL. I’m also gonna record all these links in just a Notepad for my own reference. So, save that there. And if we actually open this in a browser, we can see the API definition here with the different operations. So this has the GetSessions, GetTopics.</p>
+<p>If we return to the API Management service, if we go into the Add API and OpenAPI, we’re gonna add here, and we paste in this URL, we can see that it recognizes the URL and calls it Demo Conference API. The products, and add the Starter and the Unlimited products, which are already defined when the service is created. And click Create. And now that’s imported. So we can see we’ve got the Demo Conference API now in this portal, and we can see a number of operations. I’m just gonna minimize displayed so that we can see more real estate and look at one of these operations itself. </p>
+<p>So, can we actually get some sessions back from the Demo Conference API we’ve just imported? We’re just gonna click Test and test it within the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> portal, and click on the GetSessions. We can see here there’s a number of parameters you can pass to it. We’re not so interested in that at the moment. We just wanna see the Request URL gets us some data. So if we press Send, we can see we get the HTTP response back, 200 OK, which is good, it’s green, green is good. And if we look down, we can see a collection of items. So there’s a session here, 100, keynotes with Dan North. We can see another record, time slots. So, this looks correct. </p>
+<p>We wanna test this outside of the Azure portal ‘cause we’re likely gonna be building other applications or interacting this with another way. So I’m gonna grab this Request URL here for the sessions. I’m just gonna paste that into my Notepad over here. And we’re gonna go to the Postman application. If you haven’t used Postman before, it’s a free app to download. There is a paid subscription which allows you to share your APIs with different team members. It’s a very useful tool for orchestrating and creating API requests and troubleshooting problems with APIs. </p>
+<p>I’d like to go through and make sure that we can access our Azure API services that we’re creating using Postman as well. We’ve just copied in the URL for these sessions. I’ve done nothing more here than create a workspace and a collection called demo. Again, paste that URL in and we’ll just save that, and that’s gonna be called sessions. Select the collection and Save. So now, if we click the Send button, we get an Access denied due to missing subscription key. Make sure you include a subscription key when you make an API request. If we go back to the portal, when we clicked this, we went okay, so we need to understand the difference between what’s happened here and what we need to do to access this externally. </p>
+<p>So, what we did do when we first added the API, we added the product Starter and Unlimited. That’s where we’re gonna get our subscription keys from. We’re gonna open up the Developer portal, so you see the link here on the API Management service. That will open another web browser for us. We can see there, it’s Cloud Company. That was the name that we had entered in originally when we created the system. And we can see we’ve got an Administrator log in here. So this is the portal which was created by the API service. You don’t have to create anything. You can customize this. </p>
+<p>This is supposed to be the Developer portal on how developers would interact with your API. We wanna create a user. We don’t wanna use the Administrator. So, we’re just gonna sign out. This will allow us to go through the sign up experience. Sign up right away. And I’m just gonna pause the video and enter in some details. </p>
+<p>I’ve entered an email, a password, first name, last name, and the characters we see here. And we click Sign up. We’ll save that for ease of use. And we’re told we get a verification email we need to go check. Got that email in my inbox. It’s over here. We can see we’ve got the link, welcome to Cloud Company API account, and we just need to activate this. So, it’s asking me for the password again. And sign up. Just gonna copy this out of that Chrome browser and put it in our Firefox browser here. There’s the user we’re gonna sign back in with. And we can see we have the Cloud Company API Developer portal. We have no subscriptions. So, we need to go to Products and in this case, we wanna sign up for the Starter subscription. Along with the Starter subscription, we can see we get access to the Echo API and the Demo Conference API. Just gonna click Subscribe. And we get to give that a name. Starter is fine. Confirm. </p>
+<p>We can see now for Matt Quickenden, we have a subscription for Starter and we started on this date. We have a primary and secondary key. I’m gonna just click Show here and see that key. We’re gonna use this key a couple times, so I’m gonna bring this over to my Notepad and we’re gonna call this MQ Starter Subscription Key, and save. From here, let’s go back to the clouddemo API and we wanna go to the Settings for the Demo Conference API. These settings are around the import for this app, so we can see, here’s the URL we put in. Both the URL scheme are allowed or required. Here are those products we selected. We can see we have Subscription, Subscription required. The header name is this, and the query parameter subscription key. Now that we have the subscription ID and we know what the header is we need to provide, we will go back to the Postman app and add in this information. So, let’s copy out this header name here. This is Subscription Header. Bring up Postman. And we can see we have Headers over here, so let’s click header. Let’s add in the key name, which is the subscription key. And then we’re gonna wanna add in the key itself. So, we take this number we copied, put it in the value, and Send. </p>
+<p>We’ve now actually created the appropriate headers to access the information for sessions using that key. We can now do in the Postman portal what we’ve seen happen in the Azure portal. So during this process, we created a subscription. Let’s go back to the API and have a look at what this actually means. Expand displayed, click on Subscriptions. We can see here that this Administrator has access to each of these products. The built-in service has a product. And there’s a Starter product subscribed to Matt Quickenden. If we wanna look at the different products, we have the Product displayed over here. By default, there’s a Starter and an Unlimited, and the access control here for different groups. So, you can create your own subscriptions for different access controls, different levels of permission, different customers, different end users, different developers. They’ll have different access and different levels and that very much depends on how you wanna utilize and segregate your APIs. We’re gonna be just using the Starter for our demo. </p>
+<p>So, let’s review what we’ve done. We’ve created the API Management service in the Azure portal. We have imported a Demo Conference API from Microsoft. We’ve created a user in the portal called Matt Quickenden, and we’ve captured our subscription key. We’ve tested a call for GetSessions in the Azure portal itself. And we’ve created a GetSessions request with our subscription key in Postman. We’re gonna pause the demo session here and go back and look at some of the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/authentication/">authentication theory</a>.</p>
+<h1 id="Authentication"><a href="#Authentication" class="headerlink" title="Authentication"></a>Authentication</h1><p>What does offloading security actually mean? It means the built-in APIM is the ability to consume other authentication services, which means you don’t have to deploy and maintain your own security layer. You can allow a range of different public identity services, so that your users can connect to your APIM portal. These services can be Azure AD, Azure B2C, Facebook, Google, <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Microsoft</a> and Twitter accounts can all be used to protect and access your APIM. </p>
+<p>With regards to securing the APIs directly, APIM has some native features to help secure APIs using OpenID Connect or OAuth 2.0. We are going to be working through the process of setting up and securing an API using OAuth 2, and our Azure AD tenant, Cyberlabs.</p>
+<h1 id="What-is-OAuth"><a href="#What-is-OAuth" class="headerlink" title="What is OAuth?"></a>What is OAuth?</h1><p>Let’s review the OAuth authentication protocol. OAuth allows a user to prove their identity without having to share their secure password. It covers authorization, it does not cover <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/authentication/">authentication</a>. A user can obtain a token, which they give to an application to use as proof of that user’s identity. This token is often referred to as a bearer token. Using bearer tokens means third party services, once configured, can validate a user with their identity provider, and provide access to privileged or secure resources. </p>
+<p>What is the difference between OAuth and OpenID Connect? The OAuth 2.0 protocol was designed to allow authorization to occur over HTTP. OpenID Connect was designed to be an additional layer on top of the OAuth 2.0 protocol, and adds authentication. For our scenario, we will be focusing on the OAuth 2.0 protocol.</p>
+<h1 id="Oauth-Grants"><a href="#Oauth-Grants" class="headerlink" title="Oauth Grants"></a>Oauth Grants</h1><p>There are different types of <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/what-is-oauth/">OAuth</a> grants: authorization code, implicit, password, client credentials, device code, and refresh token. We will be taking a look at the authorization code grant, which is what we are setting up for our scenarios. Having an understanding of the code flow is very useful when implementing and troubleshooting. </p>
+<p>An authorization code flow is when a client obtains a user’s approval and gets an authorization code that can be exchanged for an access token which is used to gain access to privileged resources. </p>
+<p>Let’s take a closer look at the OAuth flow for authorization code. Here we can see we have a user and their browser, a client application, the user’s authorization server, and a privileged resource server. </p>
+<p>Let’s walk through the eight steps. First, the process will be initiated by the user trying to get into a client application. Second, the client will redirect the user to an authorization server that they trust. Third, the user will log into the authorization server with their username and password. Fourth, the authorization server will validate the user’s credentials and redirect them to the client application to the reply or callback URL with an authorization token. Fifth, the browser hands the authorization token to the client application. Sixth, the client application will send the authorization token to the authorization server, to the token endpoint, and get an access token. It will also gain a refresh token. Seventh, the application will submit the access token to the resource server. Eighth, the resource server will validate the access token and will allow the client application access to the resource. </p>
+<p>With an authorization code grant, at no stage does the user give their credentials to the app. They enter their credentials into a server they know and trust. The other benefit of this flow is the access token does not pass through the browser, which makes it harder to be compromised. </p>
+<p>Next, we are going to set up the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/oauth-prerequisites/">AAD applications and delegated permissions</a> that are required to implement this.</p>
+<h1 id="OAuth-Prerequisites"><a href="#OAuth-Prerequisites" class="headerlink" title="OAuth Prerequisites"></a>OAuth Prerequisites</h1><p>This demo will be focused on setting up the prerequisites, which are critical to creating the configuration items for our <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/what-is-oauth/">OAUTH</a> and making sure we have everything we need to set up the configuration. We’ll be creating two applications in Azure ID, and we will be setting this OAUTH token flow request up into Postman. </p>
+<p>So the first thing we need to do is gather some information. Here is our cyber labs domain, we can see the name, there, Cyber Labs on microsoft.com, and it’s also helpful to grab sometimes the directory ID. So if you’ve got a properties, you can see the directory ID here. I’ve recorded this information in my notepad, so we have the My Cyber Labs and the Tenant ID. </p>
+<p>Next we wanna create the applications. And it’s important to note here that you need to use the application registrations, not DV-2 application registrations, which are currently in preview. So if we’ve got APP registrations and we create a new application registration. We gonna call this API back end, and for the sign on URL, we want to use for now just a HTTPS on our local host. So we’ll create that and click okay. </p>
+<p>Now we wanna record the application ID, so we can click this copy button here, and take that to our notepad, and turn here and we need to create the next application. So new application again, API front end, and for the sign on URL here, we want to use the API’s developer portal. If we click copy here, and return to our application creation, with forward slash sign in. And if we wanna look, I’ve recorded that information here as well, dot sign in. And click okay for create. </p>
+<p>We also want to grab this application ID, so that’s API front end, and we wanna put that in our API front end text.</p>
+<p>The next thing we’re going to do is create a secret key, that we’re going to use in the front end application to allow us to communicate and exchange the authorization token, to get an access token. We need to go to the settings and go to keys. Here we have no keys. So we’re gonna call this secret. And duration never expires and save. Now you’ll only get to see this value once. So it’s important that you do copy it. This is a secure key and it’s important that you keep it secret. In this case for this demo, we’re just gonna save it on this text file. We have now created the two applications. </p>
+<p>The last step is we need to grant the appropriate permissions on the front end application. So under here under required permissions, we need to select the required permissions and add, select an API and we wanna grant the access to the API back end APP which is here. So we select that and we wanna say this application is allowed to access the API back end. We select okay and done. And that has added that delegated permission to this front end application. Something we can use the preview APP registrations for is getting the end points. So if we go over here and select API, we can see a API front end, and if we select in points, we can see all our OAUTH in points. There’s a V two and a V one, currently the API management service only works with the V one end points. So you’ll notice that the URL is slightly different. So in this case we wanna copy the OAUTH two authorization end point version one, and OAUTH two token end point version one. Also copying the open ID connect metadata document, would be useful later. So I’ve copied all these into this document here. </p>
+<p>The next step is we wanna configure Postman to utilize all these end points in this application. If we bring up the postman application and go to authorization, under type, select OAUTH two. And we wanna add the authorization to request status, and we need to get the access token. So get new access token. We can see here, this form is blank, we gonna go through and give this a name. We’ll call this our token, the code <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/oauth-grants/">grant</a>, we can see the different types here. We had this mentioned earlier, we want to add a callback URL, as we’re using this in Postman, the callback URL will be postman. So this is copied into this callback URL, paste that in, the authorization URL we’re trying to authorize at our end point, which is the Tenant for Cyber Labs and we’re wanna authorize a particular resource which happens to be our back end application. That’s where we wanna actually get access to. We look at this is the fully constructed URL. So if you can see we’ve got the login from <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Microsoft</a>, the tenant ID, OAUTH and authorize, and after that we do a question mark, resource equals and then the ID of our back end APP. So we’ve already constructed that. I’m gonna copy that and put it under the authorization URL. </p>
+<p>Next, we wanna go to the access token URL. So this comes from the OAUTH two V one token end point, copy that and let’s paste that in. And we wanna use the client ID and client key from the front end application. So the front end application had this ID here, and we want the secret for that application, which is here. Paste that in, and let’s try get that authentication token. Now you can see here, I’m currently logged in as mat at cyber labs, which is the administrator for this Azure ID domain and we’ve been given the option to authorize API front end, to access back end up, and sign it and read your profile. So this is what we talked about originally, with the OAUTH flow, and we can see in particular the permissions that does want to access. So we gonna accept that, and we can see the reply URL does not match what’s configured. So when we configured the application, we didn’t add the URL for Postman. So that’s fair that that won’t respond. So in this case, we can close this down, we can see there’s the callback URL we want to allow. So let’s copy that and return to our Azure ID applications, Azure ID application registrations, and we wanna look for API front end under labs. </p>
+<p>In the front end app we wanna change the settings and the reply URL. So we can see we enabled the cloud demo portal sign in page, but we haven’t allowed Postman. So if we add the Postman URL to this, we can then save that information. Let’s return to Postman and try to request token again, refresh request, and here we have a token. So we can see we’ve got an APP token, and the token information, what type is it bare, is a bunch of information. We also have the refresh token, so that’s great. </p>
+<p>So to review what we’ve done, in the Azure ID, we’ve set up two API applications, a front end and a back end application, we’ve created a secret key on the front end application and we’ve delegated permission to access the back end APP. We’ve also captured the end points for that, and put that information into Postman, which has allowed us to now get a new token from that end point. We also approved access for the API APP to access My Data from the Cyber Labs domain.</p>
+<h1 id="Front-and-Back-Channels"><a href="#Front-and-Back-Channels" class="headerlink" title="Front and Back Channels"></a>Front and Back Channels</h1><p>You might be wondering the reason we <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/oauth-prerequisites/">create two applications</a>. Let’s look at the OAuth diagram again. When talking about OAuth, there is the concept of front channel and back channel. The front channel could be a browser on a user’s computer. A browser is very good at interacting with users. For example, presenting the user with a login screen and asking for user approvals. However, we don’t control the browser, and we can’t trust it with sensitive information. The back channel is considered servers or code we control or, more importantly, we can trust with sensitive information. </p>
+<p>This is why we get an access token in two phases. First, we get an authorization token through the browser or front channel. We can then exchange this <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/oauth-grants/">authorization token</a> over the back channel using the client ID and secret we have already configured. OAuth utilizes the best things about the front channel and the best things about the back channel in order to obtain the access token or bearer token securely.</p>
+<h1 id="Registering-the-Client-Application"><a href="#Registering-the-Client-Application" class="headerlink" title="Registering the Client Application"></a>Registering the Client Application</h1><p>Before a client application can present a token to an authorization server to gain access to privileged information on behalf of a user that application must be registered with an authentication server. To do this the application owner must provide a name, a callback or reply URL to represent the application. We can use this information in Azure AD to create a registered application. When we create the application we get a Client ID which is a public and unique identifier and we create a Client Secret. We give this Client ID and Client Secret back to the client application. With this combination, Azure AD knows who is sending the request and has a list of valid reply URLs stored for that application and will direct the OAuth request to the requested URL as long as it is valid. We saw this earlier with Postman when we tried to get an access token, the request failed because Postman’s callback URL was not on the list of valid reply URLs stored with the Azure AD application.</p>
+<h1 id="Decoding-the-Token"><a href="#Decoding-the-Token" class="headerlink" title="Decoding the Token"></a>Decoding the Token</h1><p>Tokens are encoded data, and if we decode that data, we can see that a token is made up of a header, a payload, and a signature. Decoding the data we retrieved from Postman can help us validate we have set up the AAD applications and <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/what-is-oauth/">OAuth</a> and Postman correctly. </p>
+<p>We can use jwt.io to decode the token and take a look at the payload. If you’d like to do this yourself, copy the token out of Postman, go to jwt.io, and paste it into the encoded field. And you can take a look at the payload yourself. In this case, we can see in the image the aud is the audience for this token, which is the back end application. And we can see the app which is in the application requesting the token is the ID of the front end application. Using this tool, we can see we have validated that our application and OAuth flow are configured correctly. Next, let’s <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/configuring-oauth-authentication-service/">configure this in our APIM service</a>.</p>
+<h1 id="Configuring-OAuth-Authentication-Service"><a href="#Configuring-OAuth-Authentication-Service" class="headerlink" title="Configuring OAuth Authentication Service"></a>Configuring OAuth Authentication Service</h1><p>For our example we’re going to be using OAuth 2.0, so let’s configure the appropriate endpoints. Under the management API service we go to security, OAuth 2.0, and we can see there’s no results here, we click add. I’ve already pre-populated this page here so we’re just going to talk through what the results are. So we have the CyberLabs for a display name. We have a client registration URL. I’ve just made up this URL. The type of grant is the authorization code. The authorization endpoint is the same authorization endpoint we used in Postman. </p>
+<p>So if we go back to our document here, we can see that this was the code we used. The next piece of information we need is the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/decoding-the-token/">token</a> URL, again, this is the same as we’ve already used and the token endpoint is here. If we keep scrolling down we can see we need the client credentials, front-end client ID, and the secret. Which we can see here is that same secret key that we’ve put in the text file. And if we click create, we can see that OAuth service is added. </p>
+<p>The next step is to use this auth service with our API. So let’s go to the APIs, Demo Conference, and we look at the settings for the Demo Conference API. If we scroll down, we can see security. So let’s select OAuth and we will get a list of all the configured OAuth 2.0 servers. So we’ve only got one, that’s fine, we’ll click save. We’ve now connected this API to the OAuth server. </p>
+<p>Next step is we wanna try and view this authorization code. What we’re going to do is launch an incognito browser just so that we make sure we end up with the correct user. I’m gonna go log into portal.azure, and I’m going to use a user that I’ve already configured in the Azure AD. Which is in the onmicrosoft and keep Jessica signed in, yes. So now we’re signed in as a user in the CyberLabs domain. And we want to take the developer portal and log in here. So I’m gonna use my other user. This would probably be Jessica as well, but this is the way we’ve set it up for now. And if we go to the Demo Conference API, and let’s go to the GetSessions, and click try it. </p>
+<p>We can see now we’ve got the subscription key, it’s already picked up the primary subscription. But we have a CyberLabs authorization. So if I select authorization code, we’re getting a request here from CyberLabs for the app API to get access to the backend app and read the profile. So we’re gonna accept that. And what we can see here is expected, this is saying that again, the reply URL isn’t valid. </p>
+<p>So I wanted to show you a way you can grab this information to try and understand what it’s doing. If you select this header here to Notepad, we’ll just do a quick replace here to help make this readable. 3a becomes a colon and the percent 2f becomes a forward slash. </p>
+<p>We can now see that this application is looking for a redirect to cloud portal docs authorize callback. So this is the URL now that we need to authorize again against our application. We go to Reply URLs, we’ve already got it loaded. Paste that in there and save. cloud portal demo docs CyberLabs console, which is the complete URL for us to get to this developer portal. So let’s just give this a hard refresh. </p>
+<p>Let’s go to the get authorization token again, and we can see that Bearer Token’s come through. So if we just show that token, let’s just validate what we’ve got there. Copy that token, we’ll go to the JWT.io. And we’ll paste that into our debugger, and we can see we’ve got the backend application, the front-end application, and we’re logged in as Jessica. Oh if we try and execute our request, we’re getting the response 200 back, which is great. Successfully set up the OAuth server. We have successfully connected that OAuth server to our API, collected an authorization code through the browser. </p>
+<p>Let’s just try this through Postman, see what we get. So if we put this in, now we don’t have any token here, but we’ve still got the data back. So what we actually need to do is apply a <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/api-policies/">policy to check for valid token</a>, which we will do in the next section.</p>
+<h1 id="API-Policies"><a href="#API-Policies" class="headerlink" title="API Policies"></a>API Policies</h1><p>A key strength of APIM is that it allows you to apply policies to change the behavior of the API. The policies can be applied on different attributes, like the subscription or data types returned and much more. The policies allow publishers to control or manipulate the requests or the various data at different stages. This screenshot is from the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> Portal and shows us where we can add policies. The Frontend, Inbound, Backend, or Outbound again. </p>
+<p>The policy definition is a simple XML document that describes the order that the policies are executed in. This policy can be added directly in the Azure Portal. The portal offers a range of code snippets that you can add to each area to perform a range of functions to a request. Here we can see the XML document with the inbound, backend, outbound, and on-error sections.</p>
+<p>Some examples of policies are securing your API by requiring an OAuth token, converting XML to JSON or JSON to XML, rate limiting the number of requests based on the specific subscription, or simply changing header values and callback URLs. Many of these policies can be applied through the UI experience by filling in the form and applying the policy in the right area. You can also code these policies by hand. The solution is very extensible. </p>
+<p>Policies can be configured at different levels. You can set an API policy globally or at the scope of a product, a specific API, or individual operation. Before creating a policy, you should decide at what level you want to apply the policy. Policy scopes are evaluated in the following order: Global scope, which is all APIs, product scopes, like starter, API scope, which is like the Demo Conference API or all operations, and operation scope, which is an individual operation. </p>
+<p>The statements within the policies are evaluated according to the placement of the base element if it is present. Global policy has no parent and using the base has no effect. We will take a look at what tools we can use to help us understand effective policies and troubleshooting policies during execution.</p>
+<h1 id="Adding-API-Policies"><a href="#Adding-API-Policies" class="headerlink" title="Adding API Policies"></a>Adding API Policies</h1><p>Let’s look at configuring <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/api-policies/">policies</a> against the API requests. First thing let’s look for an existing policy. So as we’ve said we’ve got different scopes. If we go to the products and we go to starter, we can see those are policies listed here. We can see there’s an inbound policy which limits the number of calls and renewal period. If we go to Postman and we just run this one, two, three, four, five, this time should fail and indeed it does. So we see the rate is limited, try again in 54 seconds with the 429 request and 47 seconds. So that’s counting down for us. That was an easy way for us to see how this policy has been applied to our particular subscription. </p>
+<p>Next thing we do is we want to look at perhaps changing some other policies, maybe an outbound policy. So let’s go back here and look at the API and we want to change the Demo Conference API. This is specific to this API. We want to change all operations, and we want to add some outbound processing. We’re going to try to use the UI here to change some headers. We’ve got the outbound policy and we want to choose set header. So let’s go find a header to change. </p>
+<p>If we rerun this request here, and look at our headers, let’s say we don’t want anyone to know what the version of AspNet is. So let’s grab that, there. And we want to delete it. We also want to delete the powered by ASP NET. Add header, delete, delete, and save. Cannot have values, sometimes these get populated with a value. You just need to delete it. If we go and write our query again that’s already saved, we can see those headers have disappeared. So that was very easy to manipulate or control the data coming back from the API. </p>
+<p>Let’s say we want to try something a little different. We want to go and edit this policy manually. So rather than choosing this we can choose this button here, choose expand, and we want to do a find and replace. We want to basically replace all the URL CORS that reference this conference API website and send them back to our website. If we scroll down here we can see all the different types of policies we have. In our case we wanna do the find and replace string. So what do we want to find? We want to find anything that says conference, API, azurewebsites, and we want to replace it with our URL. We’ll click save.</p>
+<p>So if we go and run the Postman call again, we can see that’s now changed. So we’ve applied two policies, three policies, to the outbound processing of the API request and we’ve applied this to all operations. So let’s say we want to change one particular operation. If we go to get sessions and we want to add a new policy, you can see here we can choose other policies. We want to add an outbound policy here and we’re going to look for JSON TO XML. So we’d like to convert the JSON output to XML for this particular function. So if we click save and go to Postman, let’s try to run that again. </p>
+<p>We’re still getting back the JSON version of the code. If you wanted to troubleshoot this, there’s a method for doing that. If we go over to the test, select get sessions, and send the query, we can then click the trace button here. So as much as we’ve got this response, we want to know why that policy hasn’t applied. So we can see the total response time, and we have different sections we can jump to.</p>
+<p>So let’s look at the outbound section. The reason that we can see that here, is the content type. It’s not applied. We can see the other policies that we did apply worked. All we need to do in this case is go to the design for that item, and we’re going to change these two values to false, and save. Now if we try this operation and test, click send, we will look at the trace again and we’re hoping to see that the JSON to XML has been applied. Outbound, and we can see that it was set to XML which is exactly what we want. We can validate this by resending the request, and we can see we’ve got a different style of return. </p>
+<p>If we save this query, and let’s duplicate it. We’re going to call this one speakers. Change the COR there to speakers. We can see we’re getting JSON from the speakers still, and we’re getting XML from sessions. Effectively applied policy at different levels to manipulate the API request in different ways. The very next thing we want to do is apply the policy to look for the correct token. We’ve seen that we can validate the token, but we’re not applying that to our session. </p>
+<p>So again on the Demo Conference API, all operations, I would like to add a new policy. We’re going to go into the code editor for this one and expand. On the inbound policy I would like to validate the JWT token. We need to delete some of this code. We’re going to delete the issuers, audience, the claim, the particular claim we’re going to match as audience and the audience value is the backend application. In the token it will decode it, and we’re looking for this value. We’re going to call this auth, and let’s just change the message here so we know that it’s us, and we need the endpoint that we’re going to validate that token against. We captured this earlier from Microsoft here. </p>
+<p>Now there’s only one problem with the endpoint that we got, and that’s it’s version two. We just need to remove the version two and you may also know that you can swap out these values here. If it wants to be more readable, instead of the tenant ID, you can put in your cyberlab’s name there. So let’s grab this openid connect inpoint for validation and put it in here. Don’t forget to leave the html closed, and save. </p>
+<p>Now we’ve applied a lot of policies here and we’re maybe not sure exactly what order they’re happening in. What we can do is calculate effective policy. If we choose a particular product, you can see the effective policy view. Here we can see the rate call limited, which was on the product. Different versions are there. If we go and check this against the sessions and we edit this one we should see that particular policy for the JSON to XML call as well. So there’s our oauth, check, jwt token, check, the rate limit, and outbound policy. We’re doing the final replace JSON to XML and removing the headers, so this helps you view all the different policies in one place. </p>
+<p>Now let’s test if our policies worked. We’ll try the developer portal first. Jessica let’s give it a refresh. We’re in the get sessions authorization code. Let’s have a look at the token just to make sure we’ve got the right user. So we have Jessica@mycyberlabs, and we’re going for the backend application. Let’s click send. We get a 200 response okay. So we’ve successfully applied that validation code there. If we turn auth off we get the authorization failure, you are not allowed in. Which is good. </p>
+<p>Let’s go to the Postman application, and we’ve got our speakers and sessions. We’re gonna say get new access token. We’re gonna call this Jessica, and request a token. Let’s grab this token and prove that we are Jessica, no slight of hand going on. Jessica@cyberlabs on <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Microsoft</a> and our audience is the backend application. </p>
+<p>If we go back to Postman, we can then choose the token Jessica and preview the header. We’ve then added this token to this header here and we click send so we get a result. Let’s take this to the sessions header. We’re gonna send as well. You’re not allowed in. So make sure we’ve got the latest Jessica token and send, and we get our result. So if we were to remove this token from the header, and send, you are not allowed in. So we’ve successfully secured our API with a validation policy and we’ve tested that and validated that token for that user works. </p>
+<p>This concludes the course, and the demos. I hope you’ve found this useful. I’ve tried to include steps here that help with troubleshooting. The oauth token flow is definitely difficult and without some of these tools it’s difficult to troubleshoot.</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/introduction/">Azure API Management</a> provides a rich set of features to manage, control, and publish your content. During this presentation, we have published our own API using an existing API from Microsoft. We have focused on using <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-azure-api-management/what-is-oauth/">OAuth</a> as a method to protect your API. Using Postman has allowed us to set up and consume this service external to the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> portal tooling. And finally, we used Azure API policies to manipulate responses. </p>
+<p>There are many other areas worth investigating, from using your own custom domains, using revisions and a Git repository to version and control the release of API functionality, using application insights to help track and troubleshoot performance, also creating alerts. I hope you found this content useful and it helps you create and consume your own APIs.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/14/AZ-204-Lab-Monitoring-Resources-with-Azure-Monitor-32/" rel="prev" title="AZ-204-Lab-Monitoring-Resources-with-Azure-Monitor-32">
+      <i class="fa fa-chevron-left"></i> AZ-204-Lab-Monitoring-Resources-with-Azure-Monitor-32
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/11/14/AZ-204-Lab-Azure-API-Management-Policies-and-Security-34/" rel="next" title="AZ-204-Lab-Azure-API-Management-Policies-and-Security-34">
+      AZ-204-Lab-Azure-API-Management-Policies-and-Security-34 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Getting-Started"><span class="nav-number">2.</span> <span class="nav-text">Getting Started</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">3.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Scenario-Outline"><span class="nav-number">4.</span> <span class="nav-text">Scenario Outline</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configuring-the-Service"><span class="nav-number">5.</span> <span class="nav-text">Configuring the Service</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Authentication"><span class="nav-number">6.</span> <span class="nav-text">Authentication</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-OAuth"><span class="nav-number">7.</span> <span class="nav-text">What is OAuth?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Oauth-Grants"><span class="nav-number">8.</span> <span class="nav-text">Oauth Grants</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OAuth-Prerequisites"><span class="nav-number">9.</span> <span class="nav-text">OAuth Prerequisites</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Front-and-Back-Channels"><span class="nav-number">10.</span> <span class="nav-text">Front and Back Channels</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Registering-the-Client-Application"><span class="nav-number">11.</span> <span class="nav-text">Registering the Client Application</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Decoding-the-Token"><span class="nav-number">12.</span> <span class="nav-text">Decoding the Token</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configuring-OAuth-Authentication-Service"><span class="nav-number">13.</span> <span class="nav-text">Configuring OAuth Authentication Service</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#API-Policies"><span class="nav-number">14.</span> <span class="nav-text">API Policies</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Adding-API-Policies"><span class="nav-number">15.</span> <span class="nav-text">Adding API Policies</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary"><span class="nav-number">16.</span> <span class="nav-text">Summary</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1986</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

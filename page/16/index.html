@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hang&#39;s Blog">
+<meta property="og:url" content="https://example.com/page/16/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://example.com/page/16/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BB%8B%E7%BB%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">zutuanxue-计算机介绍</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-15 12:19:34 / Modified: 13:40:00" itemprop="dateCreated datePublished" datetime="2022-11-15T12:19:34-04:00">2022-11-15</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BB%8B%E7%BB%8D/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BB%8B%E7%BB%8D/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="3分钟了解计算机发展历史"><a href="#3分钟了解计算机发展历史" class="headerlink" title="3分钟了解计算机发展历史"></a>3分钟了解计算机发展历史</h1><p> 阅读 (1051376) </p>
+<p> 分享</p>
+<hr>
+<h2 id="一、计算机定义"><a href="#一、计算机定义" class="headerlink" title="一、计算机定义"></a>一、计算机定义</h2><p>计算机（computer）俗称电脑，是现代一种用于高速计算的电子计算机器，可以进行数值计算，又可以进行逻辑计算，还具有存储记忆功能。是能够按照程序运行，自动、高速处理海量数据的现代化智能电子设备。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">计算机光有硬件是没法工作的，因为人无法和硬件(CPU/硬盘/光驱等)交流的，你说的它也听不懂，所以需要一个媒介来</span><br><span class="line">帮助你管理这些硬件，驱动硬件干活，能听懂的的指令，管理你的所有app。这个媒介就是操作系统，比如windows</span><br><span class="line"> Linux Unix Android ios等这些都是操作系统，所以一个可以让人使用的完整的计算机必须包括干活的硬件和辅助</span><br><span class="line">人类使用的操作系统软件</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、计算机分类"><a href="#二、计算机分类" class="headerlink" title="二、计算机分类"></a>二、计算机分类</h2><ul>
+<li>超级计算机</li>
+</ul>
+<p>超级计算机是计算机中功能最强、运算速度最快、存储容量最大的一类计算机，多用于国家高科技领域和尖端技术研究，是一个国家科研实力的体现，它对国家安全，经济和社会发展具有举足轻重的意义。是国家科技发展水平和综合国力的重要标志。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">中国超级计算机: 天河2号 神威蓝光 曙光星云等</span><br></pre></td></tr></table></figure>
+
+<p>超级计算机一般用在科研、超级运算、航天等领域，因为价格超级昂贵(注意我的措辞：昂贵，大家脑补吧)，一般不会被企业和个人购买和使用，所以我们一般是看不到这样的机器的，大家了解这种神一样的机器是存在的就可以了。有的小伙伴问过我，像阿里云、京东云等这样的云计算公司会不会用到这样的机器呢？<br>答案是肯定的：不会<br>原因是：</p>
+<ol>
+<li>价格是第一要素</li>
+<li>弹性伸缩很难实现</li>
+<li>运营成本太高</li>
+</ol>
+<ul>
+<li>工业控制计算机</li>
+</ul>
+<p>工控机（Industrial Personal Computer，IPC）即工业控制计算机，是一种采用总线结构，对生产过程及机电设备、工艺装备进行检测与控制的工具总称。工控机具有重要的计算机属性和特征，如具有计算机主板、CPU、硬盘、内存、外设及接口，并有操作系统、控制网络和协议、计算能力、友好的人机界面。工控行业的产品和技术非常特殊，属于中间产品，是为其他各行业提供稳定、可靠、嵌入式、智能化的工业计算机。</p>
+<p>工控机的主要类别有：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">IPC（PC总线工业电脑）</span><br><span class="line">PLC（可编程控制系统）</span><br><span class="line">DCS（分散型控制系统）</span><br><span class="line">FCS（现场总线系统）</span><br><span class="line">CNC（数控系统）</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>网络计算机<br>网络计算机的特点是无盘，是瘦版的计算机，数据由由服务器提供网络上的程序或存储。网络计算机具有自己的处理能力，但除核心软件之外，其他软件都需从网络服务器下载，节省了频繁的软件升级和维护，也降低了成本。</li>
+<li>个人计算机<br>个人计算机由硬件系统和软件系统组成，是一种能独立运行，完成特定功能的设备。</li>
+<li>嵌入式计算机<br>嵌入式技术就是”专用”计算机技术，这个专用，是指针对某个特定的应用，如针对网络、针对通信、针对音频、针对视频，针对工业控制等，从学术的角度，嵌入式系统是以应用为中心，以计算机技术为基础，并且软硬件可裁剪，适用于应用系统对功能、可靠性、成本、体积、功耗有严格要求的专用计算机系统，它一般由嵌入式微处理器、外围硬件设备、嵌入 式操作系统以及用户的应用程序等四个部分组成。</li>
+</ul>
+<h2 id="三、计算机的发展史"><a href="#三、计算机的发展史" class="headerlink" title="三、计算机的发展史"></a>三、计算机的发展史</h2><p><strong>第1代：电子管数字机（1946—1958年）</strong></p>
+<p>世界上第一台电脑硬件方面，逻辑元件采用的是真空电子管，主存储器采用汞延迟线、阴极射线示波管静电存储器、磁鼓、磁芯；外存储器采用的是磁带。软件方面采用的是机器语言、汇编语言。应用领域以军事和科学计算为主。特点是体积大、功耗高、可靠性差。速度慢（一般为每秒数千次至数万次）、价格昂贵，但为以后的计算机发展奠定了基础。</p>
+<p><strong>第2代：晶体管数字机（1958—1964年）</strong></p>
+<p>硬件方的操作系统、高级语言及其编译程序。应用领域以科学计算和事务处理为主，并开始进入工业控制领域。特点是体积缩小、能耗降低、可靠性提高、运算速度提高（一般为每秒数10万次，可高达300万次）、性能比第1代计算机有很大的提高。</p>
+<p><strong>第3代：集成电路数字机（1964—1970年）</strong></p>
+<p>硬件方面，逻辑元件采用中、小规模集成电路（MSI、SSI），主存储器仍采用磁芯。软件方面出现了分时操作系统以及结构化、规模化程序设计方法。特点是速度更快（一般为每秒数百万次至数千万次），而且可靠性有了显著提高，价格进一步下降，产品走向了通用化、系列化和标准化等。应用领域开始进入文字处理和图形图像处理领域。</p>
+<p><strong>第4代：大规模集成电路机（1970年至今）</strong></p>
+<p>硬件方面，逻辑元件采用大规模和超大规模集成电路（LSI和VLSI）。软件方面出现了数据库管理系统、网络管理系统和面向对象语言等。特点是1971年世界上第一台微处理器在美国硅谷诞生，开创了微型计算机的新时代。应用领域从科学计算、事务管理、过程控制逐步走向家庭。</p>
+<p>推动计算机高速发展的重要人物–冯.诺依曼<br>1944年，美籍匈牙利数学家 冯·诺依曼 提出计算机基本结构和工作方式的设想，为计算机的诞生和发展提供了理论基础。时至今日，尽管计算机软硬件技术飞速发展，但计算机本身的体系结构并没有明显的突破，当今的计算机仍属于冯·诺依曼架构。</p>
+<p><strong>计算机快速发展的贡献者–冯.诺依曼，提出了计算机的冯.诺依曼体系。</strong></p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/8/26/1598403420332.jpeg" alt="冯.诺依曼.jpeg"></p>
+<p><strong>冯.诺依曼计算机体系的部分内容：</strong><br>1）计算机硬件设备由存储器、运算器、控制器、输入设备和输出设备5部分组成。<br>2）采用二进制形式表示数据和指令。<br>3） 将程序（数据和指令序列）预先存放在主存储器中，使计算机在工作时能够自动高速地从存储器中取出指令，并加以执行。</p>
+<h1 id="快速选购适合自己的CPU"><a href="#快速选购适合自己的CPU" class="headerlink" title="快速选购适合自己的CPU"></a>快速选购适合自己的CPU</h1><p> 阅读 (353157) </p>
+<p> 分享</p>
+<hr>
+<h2 id="一、CPU介绍"><a href="#一、CPU介绍" class="headerlink" title="一、CPU介绍"></a>一、CPU介绍</h2><p>计算机的核心部件，负责程序控制和运算，是计算机组成的最重要部分。选购计算机时的重要指标部件，决定计算机运算速度的快慢。个人电脑CPU目前最著名的有：intel 和 AMD两大家，其中Intel以稳定著称，AMD以速度快著称。所以一般工作的机器用Intel的多一些，玩游戏的玩家机器一般选购AMD CPU。这个没有绝对的界限，看个人需求和爱好。</p>
+<h2 id="二、CPU分类"><a href="#二、CPU分类" class="headerlink" title="二、CPU分类"></a>二、CPU分类</h2><ul>
+<li>按厂商: intel AMD</li>
+<li>按接口: LGA PGA</li>
+</ul>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/8/26/1598403814356.jpeg" alt="intel_cpu_LGA.jpeg"></p>
+<p>LGA触点式：新式接口类型 现在Intel的CPU基本使用该接口<br><img src="https://www.zutuanxue.com:8000/static/media/images/2020/8/26/1598403862582.jpg" alt="AMD_AM4_PGA接口.jpg"><br>PGA针式： 老的接口类型，AMD一直在使用该接口</p>
+<h2 id="三、选购CPU的指标"><a href="#三、选购CPU的指标" class="headerlink" title="三、选购CPU的指标"></a>三、选购CPU的指标</h2><p>参考指标：主频、缓存、核数<br><img src="https://www.zutuanxue.com:8000/static/media/images/2020/8/26/1598403946021.png" alt="CPU_参数.png"></p>
+<h2 id="四、CPU常见故障"><a href="#四、CPU常见故障" class="headerlink" title="四、CPU常见故障"></a>四、CPU常见故障</h2><ul>
+<li>电脑无法开机<br>CPU针脚和主板接口接触不良[intel CPU是触点的会氧化]或者确针[AMD的CPU是针式]</li>
+<li>故障表象：计算机死机，重启</li>
+</ul>
+<p>故障原因：<br>温度过高造成，一般原因是天气、散热器老化、长时间高负荷运行、超频造成的。</p>
+<p>附录：2020 CPU发展天梯图<br><img src="https://www.zutuanxue.com:8000/static/media/images/2020/8/26/1598404302669.jpg" alt="cpu天梯图.jpg"></p>
+<h1 id="计算机硬件-内存"><a href="#计算机硬件-内存" class="headerlink" title="计算机硬件-内存"></a>计算机硬件-内存</h1><p> 阅读 (472635) </p>
+<p> 分享</p>
+<h2 id="一、内存介绍"><a href="#一、内存介绍" class="headerlink" title="一、内存介绍"></a>一、内存介绍</h2><p>内存是计算机中最重要的部件，它是计算机中的一个中间件。解决了CPU和硬盘之间速度严重不对等的问题，是CPU和硬盘数据交互的桥梁。默认情况下，CPU从内存读写数据，内存从硬盘读写数据。为了提升效率，一般在开机或者软件在运行的时候，会将常用数据直接从硬盘直接读入内存，以待后续CPU使用，提高计算机运行效率。</p>
+<h2 id="二、内存工作原理"><a href="#二、内存工作原理" class="headerlink" title="二、内存工作原理"></a>二、内存工作原理</h2><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/22/1600754779576.png" alt="内存工作原理.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">计算机在开机加载系统的时候，会把系统常用的数据从硬盘调入内存，方便CPU直接从内存获取数据，避免了从低速的硬盘</span><br><span class="line">拿数据造成用户等待，给用户不好的体验；当然用户在使用APP的时候也是同样的道理，所需数据都是优先存入到内存中。</span><br><span class="line">这是内存的读操作。当然，写操作也是一样的道理，也需要经过内存在到硬盘，用户在计算机操作过程中临时产生的数据</span><br><span class="line">也是暂存内存，通过用户保存或者内存数据刷新机制写入到硬盘。</span><br><span class="line"></span><br><span class="line">比如: 你创建了一个word文件，你往word文档写数据其实是先写到内存然后在由内存写到硬盘的。</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、内存分类"><a href="#三、内存分类" class="headerlink" title="三、内存分类"></a>三、内存分类</h2><p>内存条分为：笔记本、台式机两种</p>
+<p>当然如果按厂商的话会有很多，这里推荐金士顿的，老牌子靠得住。</p>
+<ul>
+<li>台式机内存</li>
+</ul>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/22/1600754846309.jpg" alt="台式机内存.jpg"></p>
+<ul>
+<li>笔记本内存</li>
+</ul>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/22/1600754863320.jpg" alt="笔记本内存.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">误区解读：内存越大越好吗？</span><br><span class="line">其实理论上是这样的，同时也需要你的金钱支撑，因为买很多大容量内存还是需要花很多钱的，同时还得主板支持。</span><br><span class="line">但是，还是需要根据自己的电脑运行业务的情况去定，很多家用电脑购买了只是简单的游戏或者办公，购买满配的内存其实</span><br><span class="line">真正的内存使用率确不到30%</span><br><span class="line">				浪费了钱也浪费了资源，你懂了吗？</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、内存选购"><a href="#四、内存选购" class="headerlink" title="四、内存选购"></a>四、内存选购</h2><p>选购参数：容量、频率</p>
+<p>选购多条内存或者升级计算机内存的时候，最好选购同品牌，同频率的产品，否则会有兼容问题，会造成蓝屏或重启。</p>
+<h2 id="五、内存常见故障"><a href="#五、内存常见故障" class="headerlink" title="五、内存常见故障"></a>五、内存常见故障</h2><p>台式机开机点不亮显示器</p>
+<p>台式机运行了一段后突然一天开机显示器不亮(点不亮)的情况，一般是由于内存条上的金手指（内存和主板插槽接触的铜片）氧化，拔下来用橡皮或者粗糙的纸擦擦就好了，如果条件允许就换个槽插上就行了。</p>
+<h1 id="计算机硬件-硬盘"><a href="#计算机硬件-硬盘" class="headerlink" title="计算机硬件-硬盘"></a>计算机硬件-硬盘</h1><p> 阅读 (263679) </p>
+<p> 分享</p>
+<h2 id="一、硬盘介绍"><a href="#一、硬盘介绍" class="headerlink" title="一、硬盘介绍"></a>一、硬盘介绍</h2><p>硬盘是计算机中最重要的存储设备，负责永久性数据存储。目前常用的硬盘分为<strong>机械硬盘</strong>和<strong>固态硬盘</strong>两种，相比来说，固态硬盘速度快但是容量较小，价格高；机械硬盘速度慢但是容量大，价格便宜。</p>
+<h3 id="机械硬盘"><a href="#机械硬盘" class="headerlink" title="机械硬盘"></a>机械硬盘</h3><p>机械硬盘是由磁盘片、磁头、马达、电路板等部件组成，分为2.5和3.5英寸两种，转速为5400转&#x2F;分、7200转&#x2F;分、10000转&#x2F;分、15000转&#x2F;分.笔记本采用的是2.5英寸的，台式机常用3.5英寸的。数据写在磁盘片的正反面的磁道上，磁盘片和光盘类似！</p>
+<p>由于机械硬盘价格相对较低、容量大、技术稳定，所以深受广大计算机用户的喜爱。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/22/1600755663926.jpeg" alt="机械硬盘结构.jpeg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">脑补：</span><br><span class="line">机械硬盘读写速度最快有多快</span><br><span class="line">机械硬盘最快的当属15000转/分的scsi接口磁盘，理论读写220MB/S</span><br></pre></td></tr></table></figure>
+
+<h3 id="固态硬盘"><a href="#固态硬盘" class="headerlink" title="固态硬盘"></a>固态硬盘</h3><p>固态硬盘是一种新型硬盘，采用电信号存储，速度更快，深受广大计算机用户的喜爱，但是目前固态硬盘容量相对较小，价格较贵，还没有深度普及，又因为其存储的颗粒受擦写次数的限制，所以只是用在擦写不是很频繁的环境中。</p>
+<ul>
+<li>固态硬盘有sata固态、m.2固态、pci-e固态三种</li>
+<li>m.2固态又有nvme的m.2和sata的m.2两种</li>
+</ul>
+<p>STAT接口的固态硬盘，目前很多笔记本电脑厂商使用这种固态硬盘，价格相对较低。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/22/1600756354053.jpg" alt="固态硬盘2.5英寸.jpg"></p>
+<p>M.2 NVME接口硬盘，俗称口香糖硬盘，苹果笔记本大部分采用这种硬盘，价格相对较高。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/22/1600756385862.jpg" alt="固态硬盘口香糖.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">脑补：</span><br><span class="line">固态硬盘速度有多快</span><br><span class="line">目前不同厂家的固态硬盘读写速度不同，最快的nvme.m2 告诉SSD磁盘理论读写速度为3400MB/S</span><br></pre></td></tr></table></figure>
+
+<h3 id="磁盘类型"><a href="#磁盘类型" class="headerlink" title="磁盘类型"></a>磁盘类型</h3><p>按接口分类:IDE、SCSI、SATA、SAS</p>
+<h2 id="二、硬盘的选购"><a href="#二、硬盘的选购" class="headerlink" title="二、硬盘的选购"></a>二、硬盘的选购</h2><p>参考指标:容量、缓存、【转速】、读写速度</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/22/1600755992921.png" alt="硬盘选购.png"></p>
+<h2 id="三、硬盘常见故障"><a href="#三、硬盘常见故障" class="headerlink" title="三、硬盘常见故障"></a>三、硬盘常见故障</h2><ul>
+<li>磁盘坏道<br>硬盘属于计算机中的耗材设备，如果磁盘出现坏道会造成蓝屏或者数据读写慢，甚至数据无法读出。应该尽快更换硬盘。</li>
+<li>电脑越用越慢<br>很多小伙伴的windows电脑越用越慢，常常抱怨，重装系统后感觉就好多了，这是为啥？<br>一般情况下windows电脑越用越慢的原因是因为windows系统在运行的时候会把运行日志都存储在安装系统的那个分区，随着时间推移，越存越多，自然该分区就越来越小了，每次在使用这个分区上的空间时都需要长时间寻找空闲空间造成等待，还因为数据量太大，从该分区找系统所使用的文件时间也会越来越长，所以用户体验特别不好。定期清理系统盘的垃圾是很有必要的。</li>
+<li>家里电脑年代长了，升级内存后依然很慢<br>电脑年头久了，想升级一下电脑，所以加装了大内存，但是感觉提升很小。原因是可能同学对电脑的运行原理还不是很了解，可以看看上一节的内存工作原理。<br>其实电脑工作涉及的核心部件就三个：CPU、内存、硬盘<br>CPU一般是不会用完的，因为个人电脑CPU再老也能满足个人的日常使用，除非你玩很大的游戏或者高负荷运算。<br>内存是CPU连接硬盘的桥梁，只要日常查看内存监控的时候使用率到不了80%以上完全没必要投资升级<br>硬盘其实是电脑慢的罪魁祸首，因为CPU的数据得从硬盘读出或存入。读是硬盘交给内存，内存交给CPU；写是CPU交给内存，内存存入硬盘。当你发现CPU使用率不高，内存的也不高，但是电脑特慢，不用在找原因了，肯定是硬盘出问题了，一般是因为长时间的使用硬盘中的盘片有划伤了，所以在读数据时，读到划伤区域会读的特变慢！<br>兄台，换块固态吧！努一努，单车变摩托。</li>
+</ul>
+<h1 id="计算机硬件-主板"><a href="#计算机硬件-主板" class="headerlink" title="计算机硬件-主板"></a>计算机硬件-主板</h1><p> 阅读 (441922) </p>
+<p> 分享</p>
+<h2 id="主板介绍"><a href="#主板介绍" class="headerlink" title="主板介绍"></a>主板介绍</h2><p>主板是计算机中最重要的平台部件，也是电脑中最大的集成电路板，它直接或间接的将所有的设备连接在一起。主板的好坏直接决定了计算机速度的快慢和运行稳定。同时主板也提供了大量的设备接口，为计算机扩展功能提供了可能。</p>
+<p>主板一般为矩形电路板，上面安装了组成计算机的主要电路系统，一般有BIOS芯片、I&#x2F;O控制芯片、键和面板控制开关接口、指示灯插接件、扩充插槽、主板及插卡的直流电源供电接插件等元件。</p>
+<p>现在主板一般情况下都集成了三卡(显卡、网卡、声卡)，也有的只集成了声卡和网卡。</p>
+<p>主板分为大板和小板两种，如果不是空间的限制，建议大家一律选择大板。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601026904041.png" alt="主板.png"></p>
+<h2 id="主板选购"><a href="#主板选购" class="headerlink" title="主板选购"></a>主板选购</h2><p>参考指标：CPU平台、接口数量、支持的技术</p>
+<h2 id="主板故障"><a href="#主板故障" class="headerlink" title="主板故障"></a>主板故障</h2><p>主板是高精密的集成电路板，出厂经过严格的检测，使用过程中如果不是外力，基本上不会被损坏。</p>
+<h1 id="计算机硬件-显卡"><a href="#计算机硬件-显卡" class="headerlink" title="计算机硬件-显卡"></a>计算机硬件-显卡</h1><p> 阅读 (407031) </p>
+<p> 分享</p>
+<h2 id="显卡介绍"><a href="#显卡介绍" class="headerlink" title="显卡介绍"></a>显卡介绍</h2><p>显卡是计算机中最重要的图像输出设备，是将计算机系统所需要的显示信息进行转换驱动显示器，并向显示器提供逐行或隔行扫描信号，控制显示器的正确显示，是连接显示器和个人计算机主板的重要组件，是“人机对话”的重要设备之一。</p>
+<p>显卡按照接口分类</p>
+<ol>
+<li>ISA</li>
+<li>PCI</li>
+<li>AGP</li>
+<li>PCI-E</li>
+</ol>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601027000625.png" alt="显卡.png"></p>
+<h2 id="显卡选购"><a href="#显卡选购" class="headerlink" title="显卡选购"></a>显卡选购</h2><p>显卡参考指标: 显存、位宽、频率</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601027009241.png" alt="显卡参数.png"></p>
+<h1 id="计算机硬件-机箱电源"><a href="#计算机硬件-机箱电源" class="headerlink" title="计算机硬件-机箱电源"></a>计算机硬件-机箱电源</h1><p> 阅读 (517711) </p>
+<p> 分享</p>
+<h2 id="机箱介绍与选购"><a href="#机箱介绍与选购" class="headerlink" title="机箱介绍与选购"></a>机箱介绍与选购</h2><p>机箱是用来装载计算机硬件的容器，可以起到对计算机硬件的保护作用。此外，电脑机箱具有屏蔽电磁辐射的重要作用。在购买机箱的时候，建议大家参考以下的指标：</p>
+<p>1）抗静电</p>
+<p>2）机箱质量</p>
+<p>3）机箱散热</p>
+<p>4）机箱质量不易变形</p>
+<p>5）机箱空间能满足扩展需求</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601027153719.jpg" alt="机箱.jpg"></p>
+<p>机箱分类</p>
+<ol>
+<li>E-ATX加大型</li>
+<li>ATX标准型</li>
+<li>M-ATX紧凑型</li>
+<li>MINI mini型</li>
+</ol>
+<h4 id="机箱选购"><a href="#机箱选购" class="headerlink" title="机箱选购"></a>机箱选购</h4><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601027132863.png" alt="机箱选购.png"></p>
+<h2 id="电源介绍与选购"><a href="#电源介绍与选购" class="headerlink" title="电源介绍与选购"></a>电源介绍与选购</h2><p>计算机属于弱电产品，也就是说部件的工作电压比较低，一般在正负12伏以内，并且是直流电。而普通的市电为220伏（有些国家为110伏）交流电，不能直接在计算机部件上使用。因此计算机和很多家电一样需要一个电源部分，负责将普通市电转换为计算机可以使用的电压，一般安装在计算机内部。计算机的核心部件工作电压非常低，并且由于计算机工作频率非常高，因此对电源的要求比较高。目前计算机的电源为开关电路，将普通交流电转为直流电，再通过斩波控制电压，将不同的电压分别输出给主板、硬盘、光驱等计算机部件。</p>
+<p>电源是所有计算机获得电力的设备，是计算机的心脏部件。电源工作的稳定直接决定了电脑的稳定，所以在选购电源时，建议大家不要选购杂牌，一定选择正规的大厂品牌，同时要考虑电源的功率，要为后续升级硬件预留空间。</p>
+<p>电源选购时应该注意以下指标:</p>
+<p>1）品牌</p>
+<p>2）提供的电源接口</p>
+<p>3）电源功率</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601027175857.jpg" alt="电源.jpg"></p>
+<h4 id="电源选购"><a href="#电源选购" class="headerlink" title="电源选购"></a>电源选购</h4><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601027189126.png" alt="电源选购.png"></p>
+<h1 id="计算机硬件-网卡声卡"><a href="#计算机硬件-网卡声卡" class="headerlink" title="计算机硬件-网卡声卡"></a>计算机硬件-网卡声卡</h1><p> 阅读 (217991) </p>
+<p> 分享</p>
+<h2 id="一、网卡介绍"><a href="#一、网卡介绍" class="headerlink" title="一、网卡介绍"></a>一、网卡介绍</h2><p>网卡又叫网络接口卡，是计算机联网的设备。之前一直是独立存在的，后来被主板商集成在主板上。目前集成的网卡基本上都是10&#x2F;100&#x2F;1000M自适应网卡。</p>
+<p>网卡分为有线网卡和无线网卡两种。</p>
+<p>无线网卡遵循了IEEE802.11ac、a、b、g、n标准，标准不同速度不同，标准之间是向下兼容的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">不同标准的无线网卡速度</span><br><span class="line">11Mbps（802.11b）</span><br><span class="line">22Mbps（802.11 Super b）</span><br><span class="line">54Mbps（802.11g/802.11a）</span><br><span class="line">108Mbps（802.11 Super G）</span><br><span class="line">125Mbps（802.11 High Speed-G）</span><br><span class="line">300Mbps（802.11n）</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601027380743.png" alt="主板集成网卡.png"></p>
+<h2 id="二、声卡介绍"><a href="#二、声卡介绍" class="headerlink" title="二、声卡介绍"></a>二、声卡介绍</h2><p>声卡 (Sound Card)也叫音频卡：声卡是多媒体技术中最基本的组成部分，是实现声波&#x2F;数字信号相互转换的一种硬件。</p>
+<p>声卡的基本功能是把来自话筒、磁带、光盘的原始声音信号加以转换，输出到耳机、扬声器、扩音机、录音机等声响设备，或通过音乐设备数字接口(MIDI)使乐器发出美妙的声音。</p>
+<p>现在电脑声卡基本上是集成在主板上的，除非特殊需要采购专业声卡，比如唱歌、影视频处理等。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601027395258.png" alt="主板集成声卡.png"></p>
+<h1 id="服务器品牌、型号介绍"><a href="#服务器品牌、型号介绍" class="headerlink" title="服务器品牌、型号介绍"></a>服务器品牌、型号介绍</h1><p> 阅读 (230656) </p>
+<p> 分享</p>
+<h2 id="一、服务器品牌介绍"><a href="#一、服务器品牌介绍" class="headerlink" title="一、服务器品牌介绍"></a>一、服务器品牌介绍</h2><p>1、戴尔（Dell），是一家总部位于美国德克萨斯州朗德罗克的世界五百强企业，由迈克尔·戴尔于1984年创立。戴尔以生产、设计、销售家用以及办公室电脑而闻名，不过它同时也涉足高端电脑市场，生产与销售服务器、数据储存设备、网络设备等</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321471498.png" alt="clip_image001.png"></p>
+<p>2、惠普已经拆分成了两家独立的世界五百强。一个叫HPI 沿用惠普的名字主营pc和打印机，一个叫HPE也就是慧与，主营服务器。拆分主要是让两家公司对这两块业务更加专注，独立运营，惠普（HP）是世界最大的信息科技（IT）公司之一，成立于1939年，总部位于美国加利福尼亚州帕洛阿尔托市。惠普下设三大业务集团：信息产品集团、打印及成像系统集团和企业计算机专业服务集团。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321488450.png" alt="clip_image002.png"></p>
+<p>3、浪潮集团有限公司，即浪潮集团，是中国本土综合实力强大的大型IT企业之一，中国领先的云计算、大数据服务商。浪潮集团旗下拥有浪潮信息、浪潮软件、浪潮国际、华光光电四家上市公司，业务涵盖云数据中心、云服务大数据、智慧城市、智慧企业四大产业群组，为全球100多个国家和地区提供IT产品和服务</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321512313.png" alt="image20191029172806677.png"></p>
+<p>4、ThinkServer是2012年6月5日联想从全球向中国引进的全新服务器品牌，与Think一脉相承，恪守对品质的坚持，传承Think“品质”、“创新”、“易用”三大基因，共享联想全球研发和制造资源，并汲取全球用户对品质的要求，以精密的设计、业界最全面的质量标准、严苛的测试流程打造全球品质的产品</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321551590.png" alt="clip_image003.png"></p>
+<p>5、华为技术有限公司是一家生产销售通信设备的民营通信科技公司，于1987年正式注册成立，是全球领先的信息与通信技术（ICT）解决方案供应商，专注于ICT领域，坚持稳健经营、持续创新、开放合作，在电信运营商、企业、终端和云计算等领域构筑了端到端的解决方案优势</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321571550.png" alt="clip_image004.png"></p>
+<p>6、IBM（International Business Machines Corporation）。总公司在纽约州阿蒙克市。1911年托马斯·沃森创立于美国，是全球最大的信息技术和业务解决方案公司，拥有全球雇员31多万人，业务遍及160多个国家和地区。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321593255.png" alt="clip_image005.png"></p>
+<p>以上的公司都是一个综合类型公司，生产和销售服务器只是他们的一项业务，除了上面介绍的几家公司之外还有思科，新华三，宝德等有服务器生产销售业务的公司。</p>
+<h2 id="二、服务器规格介绍"><a href="#二、服务器规格介绍" class="headerlink" title="二、服务器规格介绍"></a>二、服务器规格介绍</h2><p>我们以机架式服务器为例来给各位介绍一下服务器规格，通常机架式服务器都有1U、2U、4U、6U、8U这几种规格，这里面提到了一个U的概念，U指的是高度也就是1U&#x3D;4.445cm高，所以机架式服务器对应的高度你就可以用1、2、4、6、8去乘以4.445去进行计算，而服务器的高度越大对应的可扩展性就越好，支持的硬件就越多，当然价格也就越高一些。通常企业中选购的服务器以2U的居多</p>
+<h2 id="三、服务器型号介绍"><a href="#三、服务器型号介绍" class="headerlink" title="三、服务器型号介绍"></a>三、服务器型号介绍</h2><p>我们以典型的戴尔服务器和IBM的服务器为例来给大家介绍一下这两个厂商的服务器型号以及他们的命名规则</p>
+<p>首先，我们来看下戴尔的服务器，从第十代服务器开始，戴尔重新规范的了服务器的名字，以PowerEdge R640为例</p>
+<p>第一位是字母，R代表的是机架式服务器，除了R之外还有</p>
+<ul>
+<li>R：Rack，机架式服务器</li>
+<li>T：Tower 塔式服务器</li>
+<li>M：Modular 模块化服务器（刀片服务器）</li>
+</ul>
+<p>另外还有一个比较特别的系列，这个系列是为数据中心等提出的高密度服务器，也称为为服务器就是C</p>
+<p>第二位是数字，这个数字代表此服务器在整个产品线中的位置</p>
+<ul>
+<li>1,2系列为基础入门级的单路CPU服务器，这个系列是中小型企业的首选</li>
+<li>3,4,5系列为中高端的单路CPU和入门级的双路CPU服务器，包含有可选的高级系统管理功能，适合远程站点和较大的公司使用</li>
+<li>6,7,8系列是主流的双路CPU和入门级四路CPU服务器，拥有强大的性能，能够满足大部分企业级应用需求</li>
+<li>9系列是最高端的四路CPU服务器，用用强大的计算能力，支持超大内存，适合需要最高性能，可靠性以及I&#x2F;O可扩展的关键任务应用程序</li>
+</ul>
+<p>第三位是数字，代表的是第几代产品</p>
+<ul>
+<li>目前戴尔最新的服务器是第十四代产品所以这个数字是4</li>
+</ul>
+<p>最后一位是数字</p>
+<ul>
+<li>0代表的是intel的CPU，5代表的是AMD的CPU</li>
+</ul>
+<p>接下来我们看下IBM的服务器</p>
+<p>IBM服务器，主要包括i系列、p系列、x系列、z系列。</p>
+<ul>
+<li>i系列的服务器产品一直被大家命名为“小型机“，i系列服务器一般是终端产品，该系列产品用户主要是将众多的小型服务器合并到更少量的i系列产品中，i系列采用IBM POWER微处理器技术。</li>
+<li>p系列也是基于POWER处理器的服务器，运行AIX（IBM版Unix）和Linux，p系列是IBM Unix服务器产品线的根基，有机架式和机柜式。</li>
+<li>x系列全部基于X86架构处理器，也和DELL、HP一样包括塔式服务器、机架式服务器和刀片服务器。如IBM X3850 X5服务器来说明命名规则，x3表明是x3架构下的服务器，第二位的8表明性能，数字越大表示性能越强，第三位的5表示机架式，如果是2或者3也表示机架式，如果第三位是0则表示塔式，如X3500服务器即为塔式服务器，第四位的0表示采用的是intel的CPU，5表示用的是AMD的CPU，最后的两位x5则是表示内存技术、内存扩展能力。</li>
+<li>z系列为大型机，都为机柜式结构，该系列产品相当高端，是IBM的支柱产品。</li>
+</ul>
+<h2 id="四、如何购买"><a href="#四、如何购买" class="headerlink" title="四、如何购买"></a>四、如何购买</h2><p>对于服务器产品的购买，现在的渠道相对来说比较多，可以去京东，淘宝，或者各家服务器的官网，货比三家之后购买会有惊喜</p>
+<h2 id="五、服务器内部结构"><a href="#五、服务器内部结构" class="headerlink" title="五、服务器内部结构"></a>五、服务器内部结构</h2><p>对于刀片式服务器，从大体上为存储模块，散热模块，计算模块（包含CPU，内存等）供电模块和其他扩展模块这几部分组成，不同类型的布局上会稍微有些差异，下面的两张图片分别是戴尔和IBM的产品</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321618840.png" alt="clip_image006.png"></p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321631447.png" alt="clip_image007.png"></p>
+<h2 id="六、机柜介绍"><a href="#六、机柜介绍" class="headerlink" title="六、机柜介绍"></a>六、机柜介绍</h2><p>机柜一般是冷轧钢板或合金制作的用来存放计算机和相关控制设备的物件，可以提供对存放设备的保护，屏蔽电磁干扰，有序、整齐地排列设备，方便以后维护设备。机柜一般分为服务器机柜、网络机柜、控制台机柜等。我们以服务器机柜为例，服务器机柜在机柜的深度、高度、承重等方面均有要求。高度有2.2米、2.0米、1.8米、1.6米、1.4米、1.2米等高度；宽度为800mm、700mm或600mm三种；深度为800mm、900mm和1000mm三种，对应的是47U、42U、37U、32U、27U、22U，可以配置：专用固定托盘、专用滑动托盘、电源支架、地脚轮、地脚钉、理线环、理线架、L支架、扩展横梁等。主体框架、前后门、左右侧门可以快速拆装。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321650329.png" alt="clip_image008.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/IPV6%E5%9C%A8%E4%BC%81%E4%B8%9A%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E9%83%A8%E7%BD%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/IPV6%E5%9C%A8%E4%BC%81%E4%B8%9A%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E9%83%A8%E7%BD%B2/" class="post-title-link" itemprop="url">IPV6在企业网络中的部署</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-15 11:40:28 / Modified: 11:41:50" itemprop="dateCreated datePublished" datetime="2022-11-15T11:40:28-04:00">2022-11-15</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/IPV6%E5%9C%A8%E4%BC%81%E4%B8%9A%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E9%83%A8%E7%BD%B2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/IPV6%E5%9C%A8%E4%BC%81%E4%B8%9A%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E9%83%A8%E7%BD%B2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><object data="IPV6在企业网络中的部署.pdf" type="application/pdf" width="100%" height="600"></object></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/AZ-500-Cert-Prep-Microsoft-Azure-Security-Technologies-AZ-500-24/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/AZ-500-Cert-Prep-Microsoft-Azure-Security-Technologies-AZ-500-24/" class="post-title-link" itemprop="url">AZ-500-Cert-Prep:-Microsoft-Azure-Security-Technologies-AZ-500-24</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-15 10:11:58 / Modified: 10:12:00" itemprop="dateCreated datePublished" datetime="2022-11-15T10:11:58-04:00">2022-11-15</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/AZ-500-Cert-Prep-Microsoft-Azure-Security-Technologies-AZ-500-24/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/AZ-500-Cert-Prep-Microsoft-Azure-Security-Technologies-AZ-500-24/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/AZ-500-AZ-500-Exam-Preparation-Summary-23/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/AZ-500-AZ-500-Exam-Preparation-Summary-23/" class="post-title-link" itemprop="url">AZ-500-AZ-500-Exam-Preparation:-Summary-23</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-15 10:11:57 / Modified: 10:11:58" itemprop="dateCreated datePublished" datetime="2022-11-15T10:11:57-04:00">2022-11-15</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/AZ-500-AZ-500-Exam-Preparation-Summary-23/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/AZ-500-AZ-500-Exam-Preparation-Summary-23/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/AZ-500-Lab-Azure-Key-Vault-and-Disk-Encryption-22/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/AZ-500-Lab-Azure-Key-Vault-and-Disk-Encryption-22/" class="post-title-link" itemprop="url">AZ-500-Lab-Azure-Key-Vault-and-Disk-Encryption-22</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-15 10:11:54 / Modified: 10:11:56" itemprop="dateCreated datePublished" datetime="2022-11-15T10:11:54-04:00">2022-11-15</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/AZ-500-Lab-Azure-Key-Vault-and-Disk-Encryption-22/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/AZ-500-Lab-Azure-Key-Vault-and-Disk-Encryption-22/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/AZ-500-Lab-Enabling-Microsoft-Defender-for-Azure-SQL-Database-21/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/AZ-500-Lab-Enabling-Microsoft-Defender-for-Azure-SQL-Database-21/" class="post-title-link" itemprop="url">AZ-500-Lab-Enabling-Microsoft-Defender-for-Azure-SQL-Database-21</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-15 10:11:53 / Modified: 10:11:54" itemprop="dateCreated datePublished" datetime="2022-11-15T10:11:53-04:00">2022-11-15</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/AZ-500-Lab-Enabling-Microsoft-Defender-for-Azure-SQL-Database-21/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/AZ-500-Lab-Enabling-Microsoft-Defender-for-Azure-SQL-Database-21/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/AZ-500-Microsoft-Azure-Security-Solutions-20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/AZ-500-Microsoft-Azure-Security-Solutions-20/" class="post-title-link" itemprop="url">AZ-500-Microsoft-Azure-Security-Solutions-20</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-15 10:11:51 / Modified: 10:11:52" itemprop="dateCreated datePublished" datetime="2022-11-15T10:11:51-04:00">2022-11-15</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/AZ-500-Microsoft-Azure-Security-Solutions-20/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/AZ-500-Microsoft-Azure-Security-Solutions-20/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/AZ-500-Lab-Securing-Azure-Storage-Account-using-Private-Endpoints-19/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/AZ-500-Lab-Securing-Azure-Storage-Account-using-Private-Endpoints-19/" class="post-title-link" itemprop="url">AZ-500-Lab-Securing-Azure-Storage-Account-using-Private-Endpoints-19</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-15 10:11:49 / Modified: 10:11:50" itemprop="dateCreated datePublished" datetime="2022-11-15T10:11:49-04:00">2022-11-15</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/AZ-500-Lab-Securing-Azure-Storage-Account-using-Private-Endpoints-19/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/AZ-500-Lab-Securing-Azure-Storage-Account-using-Private-Endpoints-19/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/AZ-500-Designing-an-Azure-Network-Implementation-18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/AZ-500-Designing-an-Azure-Network-Implementation-18/" class="post-title-link" itemprop="url">AZ-500-Designing-an-Azure-Network-Implementation-18</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-15 10:11:47 / Modified: 10:11:48" itemprop="dateCreated datePublished" datetime="2022-11-15T10:11:47-04:00">2022-11-15</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/AZ-500-Designing-an-Azure-Network-Implementation-18/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/AZ-500-Designing-an-Azure-Network-Implementation-18/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/AZ-500-Configuring-Azure-Application-and-Data-Security-17/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/AZ-500-Configuring-Azure-Application-and-Data-Security-17/" class="post-title-link" itemprop="url">AZ-500-Configuring-Azure-Application-and-Data-Security-17</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-15 10:11:46 / Modified: 10:11:48" itemprop="dateCreated datePublished" datetime="2022-11-15T10:11:46-04:00">2022-11-15</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/AZ-500-Configuring-Azure-Application-and-Data-Security-17/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/AZ-500-Configuring-Azure-Application-and-Data-Security-17/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/199/">199</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1986</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

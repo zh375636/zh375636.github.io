@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Implementing and Managing FSLogix - IntroductionHello, and welcome to this course on implementing and managing FSLogix. My name is Shabaz Darr and I’ll be your instructor for this course. I’m an Azure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AZ-140-Managing-FSLogix-on-Azure-Virtual-Desktop-19">
+<meta property="og:url" content="https://example.com/2022/11/13/AZ-140-Managing-FSLogix-on-Azure-Virtual-Desktop-19/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="Implementing and Managing FSLogix - IntroductionHello, and welcome to this course on implementing and managing FSLogix. My name is Shabaz Darr and I’ll be your instructor for this course. I’m an Azure">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-13T22:59:14.000Z">
+<meta property="article:modified_time" content="2022-11-14T10:32:26.000Z">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://example.com/2022/11/13/AZ-140-Managing-FSLogix-on-Azure-Virtual-Desktop-19/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>AZ-140-Managing-FSLogix-on-Azure-Virtual-Desktop-19 | Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/13/AZ-140-Managing-FSLogix-on-Azure-Virtual-Desktop-19/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AZ-140-Managing-FSLogix-on-Azure-Virtual-Desktop-19
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-13 18:59:14" itemprop="dateCreated datePublished" datetime="2022-11-13T18:59:14-04:00">2022-11-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-14 06:32:26" itemprop="dateModified" datetime="2022-11-14T06:32:26-04:00">2022-11-14</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/13/AZ-140-Managing-FSLogix-on-Azure-Virtual-Desktop-19/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/13/AZ-140-Managing-FSLogix-on-Azure-Virtual-Desktop-19/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Implementing-and-Managing-FSLogix-Introduction"><a href="#Implementing-and-Managing-FSLogix-Introduction" class="headerlink" title="Implementing and Managing FSLogix - Introduction"></a>Implementing and Managing FSLogix - Introduction</h1><p>Hello, and welcome to this course on implementing and managing FSLogix. My name is Shabaz Darr and I’ll be your instructor for this course. I’m an Azure Virtual Desktop Specialist, and I’ve been working with Microsoft Cloud Technologies for several years specifically with Azure Virtual Desktop since its inception and I have multiple Azure-focused certifications. My contact information is available on screen. Please feel free to reach out to me with any questions, comments, or concerns, and I’ll be happy to discuss these with you. For any other issues you can always get in touch with us here at Cloud Academy by sending an email to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a> and one of our cloud experts will follow up with you.</p>
+<p>This course is intended for people that are planning on taking the Azure Virtual Desktop Specialty exam and anyone who is interested in learning how to deploy an Azure Virtual Desktop environment. By the end of this course, you will have knowledge on, <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/planning-for-fslogix/">planning for FSLogix</a>, <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/installing-and-configuring-fslogix/">installing and configuring FSLogix</a>, <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/configuring-profile-containers/">configuring Profile Containers</a>, <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/configuring-cloud-cache/">configuring Cloud Cache</a>, <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/migrating-user-profiles-to-fslogix/">migrating user profiles to FSLogix</a>. To get them most from this course you should have an administrator-level understanding of Azure cloud services.</p>
+<p>Feedback on course content hosted by Cloud Academy is always appreciated and encouraged as it allows us as trainers to improve, which helps all of our students taking courses in the future. If you have any feedback, positive or negative it would be greatly appreciated if you could contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. When I created this course, all information was current. If you notice any updates or corrections please reach out to us. Thank you.</p>
+<h1 id="Planning-for-FSLogix"><a href="#Planning-for-FSLogix" class="headerlink" title="Planning for FSLogix"></a>Planning for FSLogix</h1><p>Welcome to this module on planning for FSLogix. In this module, we will cover the following topics. We will start off by talking about what FSLogix is. Next, we will highlight some of FSLogix key capabilities. Finally, we will look at the eligibility requirements for FSLogix.</p>
+<p>In this first lecture let’s discuss what FSLogix is. It’s primary function is to enhance user profile experience on VDI environments. FSLogix can be used for profile containerization, Office suite containerization, Application masking and Java version control. It allows user profile data to roam across the VDI session hosts which allows for a much richer experience when working in <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/designing-azure-virtual-desktop-architecture-2046/azure-virtual-desktop-overview/">Azure Virtual Desktop</a>. Lets now take a look at some of the key capabilities of FSLogix. It allows you to redirect user profiles to a network location, and in the case of Azure Virtual Desktop, this is normally an <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/intro-to-azure-storage/demo-creating-azure-file-share-1/">Azure File Share</a>.</p>
+<p>Rather than redirect the entire profile, you can simply redirect only the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-microsoft-defender-office-365-1571/introduction/">Microsoft Office</a> suite data. This is normally used in a scenario when a company has a different roaming profile solution that is not FSLogix. Your applications that are installed on the Azure Virtual Desktop session hosts utilize the profile as if they were located on a local drive and are able to obscure the redirection. Application masking manages access to fonts, printers, applications and other items. You can control which users have access to these and which do not by using App Masking.</p>
+<p>Finally, Cloud Cache is used with profile containers to create a resilient and highly available environment. It places a part of the profile virtual hard disk, VHD, on the local hard drive. We are going to finish this module by looking at the requirements to run FSLogix. You need to ensure you have the relevant Microsoft 365 license, which includes either Microsoft 365 E3, E5, F1, F3 or for companies who are eligible for education licensing, A3, A5. You can also utilize Windows 10 Enterprise E3, E5 or A3, A5 for the education sector. Remote Desktop Services, or RDS, Client Access License, CAL, and Subscriber Access License, SAL, is also supported. From an operating system perspective, FSLogix will run on Windows 7 and above for desktop OS and server 2008 R2 and above for server</p>
+<h1 id="Installing-and-Configuring-FSLogix"><a href="#Installing-and-Configuring-FSLogix" class="headerlink" title="Installing and Configuring FSLogix"></a>Installing and Configuring FSLogix</h1><p>Welcome to this module on Installing and Configuring FSLogix. In this module, we’ll cover the following topics. We’ll complete a walkthrough demo of installing FSLogix. In this short demo, we’ll cover the steps you need to complete in order to install FSLogix to your Windows 10 OS. One thing to note is that at the time of this course the Windows 10 OS images that are available, via the Azure Marketplace, come with FSLogix pre-installed. So you should only need to complete these steps if you are creating an image from scratch outside of <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a>.</p>
+<p>As you can see, we have an internet browser window open at the webpage where it gives us a download link for FSLogix. The direct link to download FSLogix is <a target="_blank" rel="noopener" href="https://aka.ms/fslogix/download">https://aka.ms/fslogix/download</a>. However, if we just click on the download link next to download, it will automatically download the required zip file. Once this is downloaded, browse to your download folder in Explorer and unzip the file. As you will see here, we have both 32 bit and 64 bit architecture installs available. In our example is 64 bit Windows 10, so we never get to those installation files.</p>
+<p>Here, we have three possible installation files. The FSLogixAppsJavaRuleEditor install allows you to manage <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/advanced-java-programming/introduction/">Java</a> version control, the FSLogixAppsRuleEditor allows you to create an App Masking rule, and the FSLogixAppSetup allows you to configure profile and office containers. In our demo, we are just going to install FSLogixAppSetup. If we right-click run, this is an administrator, we will eventually see the license terms. You can click on Options to customize the install location, but in our demo we are going to leave this default and click on Install. Once this is successively installed, you can click on Close. The process to install the Java control and App Masking tools is very similar, so we will not cover those in this demo.</p>
+<h1 id="Configuring-Profile-Containers"><a href="#Configuring-Profile-Containers" class="headerlink" title="Configuring Profile Containers"></a>Configuring Profile Containers</h1><p>Welcome to the module on configuring profile containers. We will cover the following topics in this module. We will complete a walk-through demo of configuring FSLogix for profile containers. Here we are logged into our Windows 10 session host where we will be configuring the environment for the profile containers. We start off by opening the registry, where we are going to create two entries.</p>
+<p>Let’s navigate to HKey Local Machine, then software, FSLogix, and profiles. If we right-click in the center window, select new and then DWORD 32-bit value. Enter the word Enabled for the value, and set the value data to 1. Next, right-click in the center window again, select new, and this time we want to choose a multi-string value. We will enter a value of VHDLocations but for the data value we need to enter the path of your <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/intro-to-azure-storage/introduction-azure-files-1/">Azure Files</a> container, which can be obtained from the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> portal.</p>
+<p>There are further customizations we can make if we need to include or exclude specific users. We can open the local users and group list to find these groups. I am navigating to Computer Management, and then Local Users and Groups, then Groups. As you can see at the bottom we’ve 4 groups, FSLogix ODFC Exclude and Include lists, and FSLogix Profile Exclude and Include lists. That completes our walk-through demo of configuring Profile Containers.</p>
+<h1 id="Configuring-Cloud-Cache"><a href="#Configuring-Cloud-Cache" class="headerlink" title="Configuring Cloud Cache"></a>Configuring Cloud Cache</h1><p>Welcome to this module on configuring cloud cache. We will cover the following topics in this module: we’ll complete a walk-through demo of configuring Cloud Cache with FSLogix for profile containers. Here we are logged into our Windows 10 session host where we will be configuring the environment for the profile container, but this time we are going to use Cloud Cache for SMB. As we did in the previous demo where we configured a standard profile container, we open up the registry and navigate to the same location. HKey Local Machine, then software, FSLogix and profiles.</p>
+<p>If we right-click in the center window, select new and then DWORD 32-bit value. Enter the word Enabled for the value, and set the value data to 1, as we did before. And as we did before, we right-click in the center window again, select new, and this time we want to choose a multi-string value. This time however we call it CCDLocations and need to enter a different string that looks like this: type&#x3D;smb,connectionString&#x3D;&#x2F;&#x2F; and your file path of your file store. This is using the SMB protocol and telling the system that the location for this Cloud cache provider is that specific location and folder. If you want to add multiple provider details, you simple separate them with a semicolon. You can configure Cloud Cache for Office Containers and for <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> Page Blob.</p>
+<h1 id="Migrating-User-Profiles-to-FSLogix"><a href="#Migrating-User-Profiles-to-FSLogix" class="headerlink" title="Migrating User Profiles to FSLogix"></a>Migrating User Profiles to FSLogix</h1><p>Welcome to this module, on migrate user profiles to FSLogix. We will cover the following topics in this module. We’ll take a look at the requirements before migrating. Finally, we will discuss an overview of the steps you need to complete to migrate user profiles to FSLogix. Let’s start by discussing FSLogix migration requirements. Before you move any user profile data you need to ensure you have provisioned the correct cloud storage tier that fits your requirements. You have two options, either Azure Files, which fits the majority of used cases. The second option is Azure NetApp Files, which is utilized for enterprise level workloads.</p>
+<p>Finally, you need to ensure you have prepared the relevant PowerShell script and downloaded the required <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/powershell-byte-session-1477/introduction/">PowerShell</a> modules before you are ready to migrate. The following PowerShell cmdlets are important. Convert UDP-Roaming Profile, which converts a roaming profile to an FSLogix profile container. Convert-UDPProfile, which converts a user profile disk to an FSLogix profile container. Convert-UPMProfile, which converts UPM profiles to an FSLogix container. Once the PowerShell script is ready, you can proceed with the migration.</p>
+<p>Let’s now look at two high-level steps you need to complete when migrating user profiles to FSLogix. Step one, is to convert any .vhdx files into the .vhd format. This is done by using the PowerShell script we mentioned in the previous section in this module. Step two, is to migrate the converted .vhd files into the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/intro-to-azure-storage/course-introduction-1/">Azure Storage</a>, which can be either Azure Files or Azure NetApp files. You can then attach these to the user’s <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/designing-azure-virtual-desktop-architecture-2046/azure-virtual-desktop-overview/">Azure Virtual Desktop</a> session.</p>
+<h1 id="Implementing-and-Managing-FSLogix-Summary"><a href="#Implementing-and-Managing-FSLogix-Summary" class="headerlink" title="Implementing and Managing FSLogix - Summary"></a>Implementing and Managing FSLogix - Summary</h1><p>We have covered several important topics in this course. This course was very demo heavy as we needed to look closer at the steps you need to complete when deploying and configuring FSLogix. We started off by discussing <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/planning-for-fslogix/">planning for FSLogix</a> which included understanding what FSLogix is, looking at its capabilities, and finally discussing its requirements. In the next lecture we completed a walkthrough demonstration of <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/installing-and-configuring-fslogix/">installing FSLogix onto Windows 10 session host</a>. Continuing with the demos in the third lecture completed a walkthrough of <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/configuring-profile-containers/">configuring profile containers on a Windows 10 session host</a>. In the penultimate lecture in this module we completed a walkthrough demo of <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/configuring-cloud-cache/">configuring Cloud Cache</a>. Finally, we finished off this module by discussing an overview of <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/migrating-user-profiles-to-fslogix/">migrating user profiles to FSLogix</a>.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/13/AZ-140-Knowledge-Check-Managing-Security-on-Azure-Virtual-Desktop-18/" rel="prev" title="AZ-140-Knowledge-Check-Managing-Security-on-Azure-Virtual-Desktop-18">
+      <i class="fa fa-chevron-left"></i> AZ-140-Knowledge-Check-Managing-Security-on-Azure-Virtual-Desktop-18
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/11/13/AZ-140-Managing-Security-on-Azure-Virtual-Desktop-17/" rel="next" title="AZ-140-Managing-Security-on-Azure-Virtual-Desktop-17">
+      AZ-140-Managing-Security-on-Azure-Virtual-Desktop-17 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Implementing-and-Managing-FSLogix-Introduction"><span class="nav-number">1.</span> <span class="nav-text">Implementing and Managing FSLogix - Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Planning-for-FSLogix"><span class="nav-number">2.</span> <span class="nav-text">Planning for FSLogix</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Installing-and-Configuring-FSLogix"><span class="nav-number">3.</span> <span class="nav-text">Installing and Configuring FSLogix</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configuring-Profile-Containers"><span class="nav-number">4.</span> <span class="nav-text">Configuring Profile Containers</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configuring-Cloud-Cache"><span class="nav-number">5.</span> <span class="nav-text">Configuring Cloud Cache</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Migrating-User-Profiles-to-FSLogix"><span class="nav-number">6.</span> <span class="nav-text">Migrating User Profiles to FSLogix</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Implementing-and-Managing-FSLogix-Summary"><span class="nav-number">7.</span> <span class="nav-text">Implementing and Managing FSLogix - Summary</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1986</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

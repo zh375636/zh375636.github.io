@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Azure Virtual Desktop Networking Planning &amp; Implementation - IntroductionThanks for joining this course on Azure Virtual Desktops Network Architecture. As you’re prepping for the Azure Virtual Des">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AZ-140-Implementing-Networking-for-Azure-Virtual-Desktop-6">
+<meta property="og:url" content="https://example.com/2022/11/13/AZ-140-Implementing-Networking-for-Azure-Virtual-Desktop-6/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="Azure Virtual Desktop Networking Planning &amp; Implementation - IntroductionThanks for joining this course on Azure Virtual Desktops Network Architecture. As you’re prepping for the Azure Virtual Des">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-13T22:20:18.000Z">
+<meta property="article:modified_time" content="2022-11-14T10:32:18.000Z">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://example.com/2022/11/13/AZ-140-Implementing-Networking-for-Azure-Virtual-Desktop-6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>AZ-140-Implementing-Networking-for-Azure-Virtual-Desktop-6 | Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/13/AZ-140-Implementing-Networking-for-Azure-Virtual-Desktop-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AZ-140-Implementing-Networking-for-Azure-Virtual-Desktop-6
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-13 18:20:18" itemprop="dateCreated datePublished" datetime="2022-11-13T18:20:18-04:00">2022-11-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-14 06:32:18" itemprop="dateModified" datetime="2022-11-14T06:32:18-04:00">2022-11-14</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/13/AZ-140-Implementing-Networking-for-Azure-Virtual-Desktop-6/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/13/AZ-140-Implementing-Networking-for-Azure-Virtual-Desktop-6/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Azure-Virtual-Desktop-Networking-Planning-amp-Implementation-Introduction"><a href="#Azure-Virtual-Desktop-Networking-Planning-amp-Implementation-Introduction" class="headerlink" title="Azure Virtual Desktop Networking Planning &amp; Implementation - Introduction"></a>Azure Virtual Desktop Networking Planning &amp; Implementation - Introduction</h1><p>Thanks for joining this course on Azure Virtual Desktops Network Architecture. As you’re prepping for the Azure Virtual Desktop Certification or just brushing up on your skills, you will learn how to craft the best network solution for your environment. My name is Dean Cefola, and I’ve been in the IT industry for over 20 years. Today, I’m an Azure Principal Engineer at Microsoft and I’ve been working with Azure Virtual Desktop since before the beginning. I hope that you’ll find this course entertaining and educational so please rate this course when you’re done and let me know how I did.</p>
+<p>Who should attend this course? Well, anyone who’s planning on taking the Azure Virtual Desktop Specialty exam and anyone who’s interested in learning more on how to properly deploy an AVD environment. Speaking of this course, we’ll cover the AVD Networking Requirements, implementing your Azure virtual network solutions. We’ll talk about your Hybrid connectivity options to the internet and your on-premises networks. We will implement and manage network security, which will also cover the Azure Bastion service so you can manage your AVD session hosts, and we’ll talk about monitoring and troubleshooting your network connectivity.</p>
+<p>To get the most out of this course, you should have an administrator-level understanding of Azure Cloud Services of Networking, Network Security, and Network Monitoring. Feedback is how we can all continue to improve. So if you have any feedback, positive or negative, you can let me know by rating this course at the end, as well as contacting us directly at <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>.</p>
+<p>One last thing before we get started. Everything I’ll be showing in this course is up to date at the time of filming. However, the cloud does change over time. So if you find this material becomes out of date, please let us know at <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a> so we can keep things updated. With all that out of the way, let’s get started.</p>
+<h1 id="Network-Connectivity"><a href="#Network-Connectivity" class="headerlink" title="Network Connectivity"></a>Network Connectivity</h1><p>There’s a lot that goes into a network for any application, but with a virtual desktop there’s a lot of details to think through, so let’s take this one step at a time. The key to setting up the best network solution for a service like Azure Virtual Desktop is to remember that the laws of physics don’t change. You should always keep all of your resources as close to each other as possible. This keeps latency as low as possible. Also, the shortest distance between any two points is a straight line. So the fewest number of hops in your connections will be the most performant ones.</p>
+<p>In Azure Virtual Desktop, connectivity is established using something called reverse connect. This allows your AVD clients to connect over the public internet to the AVD service securely using TCP port 443, without the need of public IP addresses. This starts with your client authenticating to Azure Active Directory, which means you get to use all of the benefits of Azure AD Authentication, like named locations, conditional access, and multifactor authentication.</p>
+<p>Once your sign-in is complete, you’ll receive an Azure AD authentication token. Now that you’re authenticated, the token will pass to the AVD service web access role, which will then present to you with a list of remote applications and desktops that you’ve been allowed to use. When you click on one of those icons to open that app or desktop, your token will be presented to the AVD gateway, which will make a certificate for you. And this’ll be installed onto your client. The gateway service will also contact your AVD host pool and find a session host that is currently available. The gateway will then start a new outbound session from the session host back through the gateway to your client. With the connectivity finally established, you will log onto your Windows session, launching your remote application or desktop and you can get to work. So that’s how Azure Virtual Desktop works. What about the clients?</p>
+<h1 id="AVD-Client-Connectivity"><a href="#AVD-Client-Connectivity" class="headerlink" title="AVD Client Connectivity"></a>AVD Client Connectivity</h1><p>Clients connect to AVD in two basic ways. First, is from the public internet. The second is from a Hybrid network. Now, if you’re okay with your users connecting over the public internet, and all of your supported services are in Azure, then you may not need Hybrid connectivity at all. The Hybrid Option is where you can connect to your existing corporate resources on-prem or over a private connection to Azure. To implement this, you need an Azure Virtual Network Gateway.</p>
+<p>This gateway can only be deployed into your virtual networks Gateway Subnet, which I’ll show you how to set up in a moment. Now, the Hybrid Option breaks down further into these following options. First is an Azure ExpressRoute. This is a private direct connection between your company, the provider of your choice, and Microsoft. This is the highest bandwidth and best performance solution you can have, but it is also the highest cost.</p>
+<p>Next is a Site-to-Site VPN. If you have your domain controllers or other resources on-site that your AVD users will still need access to, then you will need a Site-to-Site VPN. As the name implies, this VPN connects multiple corporate locations together so they can share resources. This VPN comes in many levels of performance, so check the Azure documentation so you can have all the information to make the right decisions.</p>
+<p>Finally, there is a client VPN, also known as a Point-to-Site VPN. If you want to require your AVD clients to connect to a VPN before they can get to AVD, then you will want to have a Point-to-Site VPN. If this is the case for you, you will also need to leverage Azure Active Directory Conditional Access rules to deny connectivity from IP address ranges that are not in your corporate networks connecting to Azure Virtual Desktop.</p>
+<p>There is one more way to get connected to Azure Virtual Desktop, and that’s using something called RDP Shortpath. If you remember back to the Reverse Connect model, once you connected to the AVD Gateway service, the Gateway would have a session host make an outbound connection to you over the public internet. RDP Shortpath changes how that connection is made.</p>
+<p>As you can see in the picture on the right, there is a new connection line at the top. The client is allowed to connect directly to the session host over the Hybrid network connection. There’s also a change in protocol. Reverse Connect uses TCP port 443, but RDP Shortpath uses the UDP protocol on port 3390. The reason for this? UDP as a protocol is much more efficient than TCP. There are less handshakes, less retries, and it is specifically more efficient for this kind of traffic that we use in Azure Virtual Desktop.</p>
+<h1 id="Network-Guidelines"><a href="#Network-Guidelines" class="headerlink" title="Network Guidelines"></a>Network Guidelines</h1><p>Since latency is the enemy of good performance, we want to keep our latency as low as possible. The way that you can check your latency from your clients to AVD is with the Azure virtual desktop experience estimator. This web page will show you the roundtrip time in milliseconds from where your client is located to all the different Azure regions. The recommended guidance is to keep your latency under 120 milliseconds.</p>
+<p>The second thing that will impact your performance is what your users are doing. Here’s an Azure doc that give bandwidth estimates for different AVD workloads of light, medium, heavy, and power user. Now, what exactly do those workload types mean? Well, you see here, there’s a link here that will take you to a different section of the docs which explains what those are.</p>
+<p>A medium workload will use database entry applications, Word, static web pages, whereas a power user would be doing all of that plus things like Adobe Photoshop, Illustrator or CAD design. Notice as well that each workload type has a recommended bandwidth and that’s really the key, even more so than the individual applications.</p>
+<p>Finally, there’s a great doc for RDP bandwidth requirements showing the estimated bandwidth used by remote graphics. In this table at the bottom you see a idle full desktop uses about 0.3 kilobits per second. Down at the bottom of the list, we can see playing back a full screen video at 3.1 megabits per second using an H.264 encoder. And if you really need to establish some tight levels of controls, here at the bottom of the page there’s a way to use quality of service, or QoS, to shape your traffic and set up throttle rate limits using PowerShell.</p>
+<h1 id="AVD-Network-Implementation"><a href="#AVD-Network-Implementation" class="headerlink" title="AVD Network Implementation"></a>AVD Network Implementation</h1><p>Now that you’ve got the basic concepts, let’s build our network in Azure. Then we’ll set up our supporting services like our gateway and DNS. And then we’ll set up security to allow connectivity to Azure Virtual Desktop. In the Azure portal, click the plus to create a resource and in the search box type network. Select the first option of virtual network and click create.</p>
+<p>Every resource in Azure needs to be in a subscription and a resource group. So, select your subscription and let’s click to create a new resource group. Now, there are several strategies for how to name and locate your resources in Azure, but to keep things simple today, we’re going to build one resource group for our networks and we’ll call it RG-AVD-Network. This way, when you’re looking at your resources, you’ll know that this is a resource group for Azure Virtual Desktop that contains network resources.</p>
+<p>Now we need a name for our virtual network. So, sticking with our naming convention, we’ll call this VNET-AVD. Azure resources need to reside in an Azure region and since we need to keep all of our resources as close together as possible, I suggest that you build this network in a region located closest to you, and I’ll pick the East US. Click next. This is where you set up your address space. This is the number of total IP addresses in your network. By default, you’ve been given a &#x2F;16 network, which means that you have over 65,000 IP addresses.</p>
+<p>Now, one of the beauties of how Azure does this, is called software defined networking. You and I can both create a 10.0&#x2F;16 network. Even though we have the exact same address spaces we don’t overlap and the networks can’t communicate together because we’re two different users in two different environments of Azure. Things are different when connecting this virtual network to another virtual network in your subscription or to your on-premise networks.</p>
+<p>Once this virtual network is connected to any other network, they must all have unique addresses. So, if we have a 10.0&#x2F;16 network in Azure, you cannot have a 10.0&#x2F;16 network on-premise that connects to Azure. All of these 65,000 IP addresses become usable in the bottom section where you create subnets. A subnet is where we divide those 65,000 addresses into different blocks and we will need a few of those.</p>
+<p>Now, there are three special subnets in Azure that need specific names. The GatewaySubnet, this will contain the Azure Virtual Network gateway resources, which are required for setting up a VPN or express route connection. AzureFirewallSubnet, this is required for you to set up an Azure firewall for security. AzureBastionSubnet, this service will allow you to connect to your Azure virtual machine resources and manage them.</p>
+<p>The first subnet has been created for you with a 10.0&#x2F;24 which makes up 256 addresses. Select it by clicking the word default. Rename this subnet to GatewaySubnet and you can leave the other settings alone and click save at the bottom. Click to add a new subnet and we’ll call this one AzureFirewallSubnet. For the subnet address range, we’ll use the next available range, which is 10.0.1.0&#x2F;24. Click add at the bottom.</p>
+<p>Just two more. This one will be called Identity, and it’s going to be for your active directory domain controllers that you’ll build later. This address range will be 10.0.3.0&#x2F;24. Of course, if you’re planning on using only Azure AD Join you won’t be needing domain controllers so you might skip the Identity subnet in the future. However, you will need this next subnet for your Azure Virtual Desktop session hosts. So let’s call it AVD. If you said the address range should be 10.0.4.0&#x2F;24 you get the gold star.</p>
+<p>Now, why didn’t we use the 2.0 address range? Click next and I’ll explain. In the security tab, we have three options. BastionHost, DDoS protection, and the Azure firewall. Bastion turns the Azure portal into a jump host where you can literally open a RDP or shell session to your virtual machines inside your browser and this is a requirement for the AVD exam. DDos Basic is included in Azure by default. The standard version of the service enables DDoS specifically on your virtual network.</p>
+<p>In the case of virtual desktop, I generally would not use this. The reason why is, we’re going to secure our networks in such a way, that the only way in, is through either Bastion or Azure Virtual Desktop. Then we have the Azure firewall. This is a great service to secure your virtual network and is something worth knowing. However, since it’s not specifically required for the Azure Virtual Desktop certification, and it’s a resource that runs all the time, so it will burn through any of your Azure credits, we’re going to skip it for now and use network security groups instead, which are free resources. Click to enable BastionHost. We need to provide a name and a subnet range as well as a public IP address for Bastion to use. We’ll call it Bastion-AVD and the subnet range we’ll use, you guessed it, 10.0.2.0&#x2F;24. If we had set up the subnet in our last step with the 2.0 range, in here we would have gotten an error saying that the subnet range was already in use.</p>
+<p>Click to create a new public IP address. Let’s call it Bastion-AVD-PIP. As you see, the naming of all of our resources like this, helps you to keep track of what services are as well as what they’re related to. Click next. Here’s where you can add your tags. Tags are metadata that you can attach to your resources. And the purpose of tags is not only to keep track of things like owners and cost centers, but you can also use them for automation. For example, find all of my virtual machines that have a tag of AVD and another tag of January, so I can decommission them when I deploy my updated session hosts from my updated image.</p>
+<p>Now, a tag has a name and a value. These can literally be anything. So, you should work within your organization to come up with the set of tags and values that have meaning for you so you can get the most out of them. The tags I generally use are, application, cost center, environment, maintenance window, owner, and support contact. Click the review and create button to provision your resources.</p>
+<h1 id="Configuring-Your-Virtual-Network-Demo"><a href="#Configuring-Your-Virtual-Network-Demo" class="headerlink" title="Configuring Your Virtual Network Demo"></a>Configuring Your Virtual Network Demo</h1><p>Now that we’ve created our virtual network, we need to do some configuration. Select VNET-AVD, on the left blade, select DNS Servers. The default option is to use Azure provided DNS. This is referring to the default DNS IP for Azure of 168.63.129.16. For many workloads this would be just fine, and if you’re planning on only using Azure AD Join VMs, you can stick with the default. However, since AVD relies on Active Directory DNS today, you will need to change this to custom and enter the IP addresses of your Active Directory DNS servers. I will have two of these located in Azure in the identity sub-net that we created earlier. So their IP addresses would be 10.0.3.4 and 10.0.3.5 respectively. I will also add the Azure default as my last DNS address. This way if my DNS servers can’t resolve something, it’ll be forwarded to Azure DNS. If your DNS servers are on premise, you can add those here as well. But before there’ll be able to work, you’ll need hybrid connectivity.</p>
+<h1 id="AVD-Network-Security"><a href="#AVD-Network-Security" class="headerlink" title="AVD Network Security"></a>AVD Network Security</h1><p>Security can take the form of permissions as well as controlling ingress and egress of your traffic. In Azure, this requires either network security groups or some kind of firewall. If you want to use the Azure firewall, then it must be deployed into your virtual network’s subnet. If you are using a third-party firewall, there is no such requirement; I would still deploy it there to keep things isolated and identifiable unless the vendor specifically says to do otherwise.</p>
+<p>In this deployment, we’ll only deal with network security groups or NSGs. The NSG works on a five-tuple rule set; this means that it will be looking at the source IP, destination IP, source port, destination port and protocol. For example, your AVD users will log onto their session host and need to load their FSLogix profile. The session host, which has a source IP address of 10.0.4.10 will need to connect to your Azure file’s storage that has a destination IP of 10.0.5.50. This connection will have a source and destination port of 445, which is the SMB port and the protocol is TCP.</p>
+<p>Now you’ll have to make a rule in the NSG to allow this traffic to flow. In the same resource group you just deployed your virtual network, click to add a new resource at the top, in the search box type, “network security group”. The subscription and resource group should already be selected for you; if not, select the same ones that you used to deploy your virtual network.</p>
+<p>Our NSG needs a name and a region, so I will use “NSG-AVD” and select the East US. Click next, add your tags, and I’ll just use the same tags we used for our virtual network earlier so we can identify all of our resources together, and then click the review and create button to complete the build.</p>
+<p>Now that the NSG is built, we need to make some rules. It’s the rules that will control the flow of traffic into or out of your subnets. So the rules should be subnet specific, which means that the rules for your AVD subnet will look different than your identity subnet; for example, you’ll have active directory rules that need to be allowed between them.</p>
+<p>Your identity inbound rules should have whatever the outbound rules from your AVD subnet are so that the rules can match. On the left, start with outbound rules. There are five rules that we need to allow Azure virtual desktop to work, and you can find those in the AVD documentation. We need to allow port 443 outbound to the Azure virtual desktop service, as well as to the Azure cloud service. Then we will need port 1688, to Azure KMS, which is required for the multi-session activation. Then we will need two specific source IPs on port 80 for health monitoring.</p>
+<p>Back in our NSG outbound rules, click add at the top, set your source as virtual network; the source port range should be asterisk, destination should be a service tag, destination service tag should be windows virtual desktop, and note that this may be changed to Azure virtual desktop in the future. The service can stay as custom, destination port range should be 443 and the protocol should be TCP, your action should be to allow and now we have the priority. You can start as low as 100 and as high as 4,096; the lower the number, the higher the priority.</p>
+<p>Since there might be other rules in the future that may need a higher priority than this rule, I always like to start at 1,000. Then I will create the rules in the increments of 10, just in case I need to squeeze rules in between later on. Give your rule a name and click add, repeat this for the Azure cloud service exactly like we just did, and then these last three rules will be slightly different.</p>
+<p>First, let’s deal with the Azure KMS rule; if you do a quick internet search for Azure KMS, you will find this doc showing the different instances of the Azure KMS or different Azure clouds. The one that we want for this course is the Azure global address. Copy the IP address and let’s start a new NSG rule. The destination will be IP address, paste in the KMS IP that you got, the port will be 1688 and the protocol is TCP. The rule should be allowed, give your rule a name and click add. Repeat this for the last two rules using port 80, and it should all look like this. Those are the only rules needed for Azure virtual desktop to work, you will need other rules in the future for active directory communication, as well as rules to Azure storage and whatever other services you need in your environment.</p>
+<p>Let’s take a look now at the inbound security rules, click to add a new rule at the top. On the right, your source will be an IP address; use your bastion subnet of 10.0.2.0&#x2F;24. Source port range will be asterisk, destination is virtual network. For the service you’ll want to use RDP, this will automatically select port 3390 and the TCP protocol for you. The action should be allowed, and since this is the first rule on the inbound side, we’ll use 1,000. We’ll name this “the bastion rule” and click add. Once you have finished adding all of your rules, click the subnets on the left, click associate at the top, select the VNET-AVD network. In the subnets box, select AVD, and that’s it. Your rules are now associated with the AVD subnet, and these will apply to all of the VMs you put in that subnet.</p>
+<h1 id="Monitoring-amp-Troubleshooting-Demo"><a href="#Monitoring-amp-Troubleshooting-Demo" class="headerlink" title="Monitoring &amp; Troubleshooting Demo"></a>Monitoring &amp; Troubleshooting Demo</h1><p>The final section in this course on AVD networking, we’ll talk about monitoring and troubleshooting connectivity. When it comes to network monitoring, there are two services that you need to set up. In the search bar at the top of the screen, type monitor. Select the first match, and this is the Azure Monitor Service. Scroll down on the blade on the left, and you’ll want to click on Diagnostic settings. Use the filters at the top to select the appropriate subscription and resource group where all of our networking assets are located and then it should look something like this. It currently says disabled for all of these diagnostic settings, and that means that nothing is actively being monitored.</p>
+<p>Before we can fix this, we need a place to store all of these diagnostic logs. On the top left click the + button, and on the left near the bottom select Monitoring and Diagnostics. Select the 2nd item from the top, Log Analytics Workspace. Select the same subscription and resource group that we’ve used throughout this course, and I will name the workspace Logs-Networking-AVD, and located in the East US region. Click Next, and add all of your tags, and then click Review and Create.</p>
+<p>Once that’s complete, go back to the Azure Monitor, select Diagnostic settings on the bottom left again, and click on your first item. Then in the middle of the screen, click to add Diagnostic settings. The experience is the same here, no matter what the resource type is. Give the diagnostic a name. So in this case, it would be Log-AVD-Bastion. For the categories, these will be resource-specific. But I always recommend selecting all of the categories and metrics.</p>
+<p>Now we need a destination for our logs. I’ll select the first box for a Log Analytics Workspace, then select the workspace we just created. Click Save at the top, and logging on Bastion is now enabled. Repeat these steps on all of the other resources and it should look like this.</p>
+<p>The second component of network monitoring uses the Azure Network Watcher. In the search box at the top of the screen, type network watcher. Azure Network Watcher is not a virtual desktop-specific tool, but focuses on the infrastructure side of your resources, like your network cards of your AVD session hosts as well as the virtual networks, gateways, and firewalls. Most tools inside Network Watcher require you to have VMs that are online for it to examine. And since we haven’t deployed any VMs in this course, we will be somewhat limited in what I can show you, but there’s still enough here to talk through everything you need.</p>
+<p>So the first thing on the left is your topology and this will show the layout of your network resources. Just filter down to the correct subscription and resource group, where your network assets are located, and you should see something like this, showing your virtual networks, subnets, NSGs, and route tables. This’ll definitely help you know that you’ve got all the right connectivity in place.</p>
+<p>The next tool we’ll look at is IP Flow Verify. This is an on-demand tool that will verify if traffic would be allowed to flow inbound or outbound from a VM in Azure. Again, we haven’t specifically set up any VMs in this course, so I’ll show an example from another project I’ve been working on. You select your subscription resource group and the name of a VM, and then select the network interface of that VM.</p>
+<p>Next, we select the protocol and direction that you want to test. This will populate the local IP address for you, and now select the local port you want to test, and I’ll choose 3389, then a remote IP. This IP can be in Azure or a public IP anywhere in the world. Select a port for this as well, and you would click the Check button at the bottom. In a few seconds, Azure will check which security rule will allow or deny this traffic. The other tools on the left have a different spin on connectivity troubleshooting like NSG diagnostics, Next Hop, which is helpful, if you have a hub and spoke topology or a firewall will let you know that everything is going the way that it should. The VPN troubleshooter, which will verify your gateway and connections are functioning properly to your on-prem and along with that, the NSG flow logs, which will give you even greater details than the diagnostic laws we set up earlier.</p>
+<h1 id="Azure-Virtual-Desktop-Networking-Planning-amp-Implementation-Conclusion"><a href="#Azure-Virtual-Desktop-Networking-Planning-amp-Implementation-Conclusion" class="headerlink" title="Azure Virtual Desktop Networking Planning &amp; Implementation - Conclusion"></a>Azure Virtual Desktop Networking Planning &amp; Implementation - Conclusion</h1><p>We’ve covered all of the AVD network requirements, built a virtual network in Azure with the proper subnets to support AVD. We’ve talked about our network security with our NSG rules, and then we covered your connectivity options, like Reverse Connect and RDPShortpath, along with your Hybrid options. Finally, we went through the monitoring and troubleshooting of your network solution. Please respond to the survey at the end and let me know how I did in this course, and your feedback is definitely welcomed, so I can improve. And please direct message me on social media, and let me know that you are now AVD certified. Thanks for joining me for this course and happy learning.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/13/AZ-140-Knowledge-Check-Designing-for-Azure-Virtual-Desktop-User-Identities-and-Profiles-5/" rel="prev" title="Knowledge-Check-Designing-for-Azure-Virtual-Desktop-User-Identities-and-Profiles-5">
+      <i class="fa fa-chevron-left"></i> Knowledge-Check-Designing-for-Azure-Virtual-Desktop-User-Identities-and-Profiles-5
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/11/13/AZ-140-Knowledge-Check-Implementing-Networking-for-Azure-Virtual-Desktop-7/" rel="next" title="AZ-140-Knowledge-Check-Implementing-Networking-for-Azure-Virtual-Desktop-7">
+      AZ-140-Knowledge-Check-Implementing-Networking-for-Azure-Virtual-Desktop-7 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Azure-Virtual-Desktop-Networking-Planning-amp-Implementation-Introduction"><span class="nav-number">1.</span> <span class="nav-text">Azure Virtual Desktop Networking Planning &amp; Implementation - Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Network-Connectivity"><span class="nav-number">2.</span> <span class="nav-text">Network Connectivity</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AVD-Client-Connectivity"><span class="nav-number">3.</span> <span class="nav-text">AVD Client Connectivity</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Network-Guidelines"><span class="nav-number">4.</span> <span class="nav-text">Network Guidelines</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AVD-Network-Implementation"><span class="nav-number">5.</span> <span class="nav-text">AVD Network Implementation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configuring-Your-Virtual-Network-Demo"><span class="nav-number">6.</span> <span class="nav-text">Configuring Your Virtual Network Demo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AVD-Network-Security"><span class="nav-number">7.</span> <span class="nav-text">AVD Network Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Monitoring-amp-Troubleshooting-Demo"><span class="nav-number">8.</span> <span class="nav-text">Monitoring &amp; Troubleshooting Demo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Azure-Virtual-Desktop-Networking-Planning-amp-Implementation-Conclusion"><span class="nav-number">9.</span> <span class="nav-text">Azure Virtual Desktop Networking Planning &amp; Implementation - Conclusion</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1986</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

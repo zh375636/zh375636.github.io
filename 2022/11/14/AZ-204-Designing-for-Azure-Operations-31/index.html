@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="IntroductionGreetings! Welcome to Design for Azure Operations with Cloud Academy! I am delighted to have you join me on what is bound to be an educational and delightful adventure into the world of Mi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AZ-204-Designing-for-Azure-Operations-31">
+<meta property="og:url" content="https://example.com/2022/11/14/AZ-204-Designing-for-Azure-Operations-31/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="IntroductionGreetings! Welcome to Design for Azure Operations with Cloud Academy! I am delighted to have you join me on what is bound to be an educational and delightful adventure into the world of Mi">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-14T15:51:25.000Z">
+<meta property="article:modified_time" content="2022-11-15T13:48:10.000Z">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://example.com/2022/11/14/AZ-204-Designing-for-Azure-Operations-31/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>AZ-204-Designing-for-Azure-Operations-31 | Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AZ-204-Designing-for-Azure-Operations-31/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AZ-204-Designing-for-Azure-Operations-31
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-14 11:51:25" itemprop="dateCreated datePublished" datetime="2022-11-14T11:51:25-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-15 09:48:10" itemprop="dateModified" datetime="2022-11-15T09:48:10-04:00">2022-11-15</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/AZ-204-Designing-for-Azure-Operations-31/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AZ-204-Designing-for-Azure-Operations-31/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Greetings! Welcome to Design for Azure Operations with Cloud Academy! I am delighted to have you join me on what is bound to be an educational and delightful adventure into the world of Microsoft Azure.</p>
+<p>First I will let you know a bit about myself before I get into the course outline. My name is Jonathan. I am one of the course developers with Cloud Academy. I work professionally as a technical consultant specializing in DevOps, data engineering, and security. Long ago in another life I was a public school teacher, so I love educating people and I am thrilled to be doing it again only now with technology.</p>
+<p>So enough about me, let’s get into this course. Who is this course for exactly? This course is for anyone looking to improve their infrastructure engineering abilities with Microsoft Azure. If you are a DevOps engineer, sysadmin, or security specialist and plan to work with Microsoft Azure at your next job, then this course will be very helpful to you.</p>
+<p>So what exactly are the prerequisites for this course then - what do I expect you to know in order to understand the material? Well, not much actually. This is not a programming intensive subject. You do not need any deep knowledge of computer science or software development. The course will focus mostly on explaining Microsoft Azure systems and how to use the Azure user interface. You should know some basic concepts, like what a virtual machine is, or what software application logs are. You should also know some basic networking concepts, like SSL and TCP. If these sort of rudimentary cloud and software concepts are new to you, then you probably don’t need this course anyway.</p>
+<p>The course will cover a lot of information given its short length. We are going to go into detail on a number of Azure services and practices. You will learn all about Azure monitoring and automation systems - the kinds of things DevOps engineers would need to worry about in their day to day work. We are going to talk about log aggregation, software application instrumentation, and network security.</p>
+<p>There are three core learning objectives for this course. Number one is learning how to use Azure for application monitoring. Number two is how monitor Azure resources and infrastructure. Number three finally, is about task automation in Azure, including instance autoscaling. If you finish the course with a solid understanding of these three things, you will have gotten your money’s worth.</p>
+<p>Lastly I want to encourage everyone to leave feedback. Email <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a> if you have any questions, comments, suggestions, or concerns. We always appreciate people taking the time. Now without further ado, let’s get started.</p>
+<h1 id="The-Big-Four-Priorities-of-Microsoft-Azure"><a href="#The-Big-Four-Priorities-of-Microsoft-Azure" class="headerlink" title="The Big Four Priorities of Microsoft Azure"></a>The Big Four Priorities of Microsoft Azure</h1><p>For section 1 of this course we have four priorities: System monitoring, application monitoring, log monitoring, and alerting. System monitoring refers to monitoring of cloud resources and hardware with a focus on things like CPU, memory, and network. Application monitoring refers to instrumentation of your own service code - anything you deploy on top of your servers. Log monitoring, as you can probably guess, is focused on analyzing logs generated by your system. Finally alerting is the process by which we automate a variety of alarms triggered by your application getting into an unhealthy state. The fourth priority, alerting, is made possible by the first three - system and application monitoring along with log analysis.</p>
+<p>For system monitoring you will need to learn about the Azure Monitor service. For logging you will get acquainted with Azure Log Analytics. For application monitoring Azure offers its Application Insights service, which we will also be using for alerting in the last part of the section. So if you’re ready, we’ll get started now in the next lesson with an introduction to Azure Monitor.</p>
+<h1 id="Monitoring"><a href="#Monitoring" class="headerlink" title="Monitoring"></a>Monitoring</h1><p>One of the nice things about Azure is that there are a lot of default metrics automatically reported for different services. For Azure VM’s, system level metrics are enabled by default and viewable in the dashboard. You can see a lot of these metrics right from the Azure compute interface by just clicking on the relevant VMs.</p>
+<p>Azure Monitor is sort of your ‘base camp’ for metrics in Microsoft Azure. Azure Monitor, ‘provides base level infrastructure metrics and logs for most services in Microsoft Azure. The service has evolved over time, gradually subsuming more and more types of metrics from other Azure services. We are going to focus on Azure Monitor as our solution for system level monitoring.</p>
+<p>In the Azure Monitor interface we can casually browse different system metrics. By default all Azure resources report basic information about network and system state. It is analogous to Amazon’s Cloudwatch. Azure Monitor is meant to be used primarily with Azure resources, however individual components can be used with non-Azure servers. For example the Application Insights component, which we will address in more detail later, can be installed on on-premise servers or virtual instances in another cloud. You could then use Azure Monitor to collect metrics about your Google Cloud or Amazon servers. This is not a very common use case though.</p>
+<p>Azure also has a diagnostics extension that can be used for application performance monitoring. For this course we will be using Application Insights for this sort of monitoring, but it is cool to know that Monitor is also getting into this use case. In the future the two systems may become more tightly integrated, so it’s good to be aware of it.</p>
+<p>By default Azure Monitor will store metrics for 30 days. If you need to keep metrics for longer than that you will need to store them somewhere. You can easily import metrics into Azure storage by using the console. If you wish to store metric data elsewhere, you can also export everything to some other system.</p>
+<p>Now that we have a good understanding of Azure Monitor’s capabilities and how to get started, our next priority is looking at log aggregation. In the next lesson we’ll talk about Azure Log Analytics and learn how it can be your one-stop shop for logs. Let’s get to it.</p>
+<h1 id="Log-Analytics"><a href="#Log-Analytics" class="headerlink" title="Log Analytics"></a>Log Analytics</h1><p>Having application and system level metrics is a minimum requirement for a proper monitoring system. However log aggregation is a similarly important but often overlooked part of an overall monitoring strategy. Many companies do not even think about proper log management until some disaster comes along and they find they cannot properly identify the root of the problem. Being able to collect and quickly analyze large numbers of logs is extremely helpful for any forensic investigation.</p>
+<p>Companies spend large amounts of money and development on solutions like Splunk or ELK. With Azure, you get a baked in solution with Azure Log Analytics. It gives you an easy way to search a variety of types of event logs and has simple quickstart guides for Linux, Windows, and Azure VM server types.</p>
+<p>The setup for Azure VM’s is easiest. All you will have to do is enable to log analytics extension from the console. With just a few clicks you can immediately start collecting event data for analysis. For Linux and Windows servers you will need to obtain a set of credentials - specifically a workspace ID and key. These will be used to set up the log analytics agent that will run on your server. The actual agent installation is pretty straightforward. You can do it with a few terminal commands in Linux. For Windows, you can download the agent from Azure directly and set it up with a few clicks on the relevant server. In both cases, you will need to configure the agent with the workspace ID and key so that the log data is sent to your Azure portal.</p>
+<p>From the Log Analytics portal you will do most of your setup using the ‘Advanced Settings’ tab. There you can type in the name of the relevant logs to set as event logs. You can enable OS performance data for Linux or Windows with a separate option and configure severity levels WARN and ERROR for isolating potentially serious events. Once you are done with configuration, you can freely search and view log data by clicking on ‘Log Search.’ There you can type in any arbitrary pattern and find matches among all of your events.</p>
+<p>One final cool feature to note about Azure Log Analytics is the ecosystem of additional plugins, known as ‘management solutions’ that you can add to your workspace. Management solutions are additional data acquisition rules and visualizations that let you really customize your log analysis needs to your specific use case. There are dozens of them available. Just to name a few examples, there is a management solution specifically for container monitoring, a solution for tracking specific events in your activity log, and a solution for automated real-time server mapping and graphing. If you want to really get the most out of your log data then it is definitely worth your time to browse these additional features for Azure Log Analytics.</p>
+<p>In the alerting section we will discuss how to use Log Analytics for automatically catching dangerous conditions in your system. For now, you should have a basic understanding of how to set up Log Analytics and use it for investigating your systems. Next, we move on to application monitoring with Application Insights. See you there.</p>
+<h1 id="App-Monitoring"><a href="#App-Monitoring" class="headerlink" title="App Monitoring"></a>App Monitoring</h1><p>Now that we have a solid understanding of log analysis and system monitoring in Azure, we can proceed to the final and most critical component of our instrumentation: Application monitoring. This is a deeper level of monitoring that goes beyond just tracking the state of the hardware. When we talk about application monitoring, we really mean monitoring everything we actually put into our infrastructure - all of our own unique business logic, internally developed software, and external libraries.</p>
+<p>The general way to do this is to use a monitoring library with your code. There are many such libraries as frameworks for different languages, such as dropwizard metrics or ERMA for Java. Application Insights is similar in that you will need to add it to your code base before you can start getting metrics. Like many such frameworks the library is pretty lightweight and should not cause much performance overhead. Tracking calls are non-blocking, batched, and sent in a separate thread.</p>
+<p>Application Insights can be used to monitor applications running <em>anywhere</em>. You can use it to monitor applications hosted in another provider like AWS or Digital Ocean. You can use it to monitor applications hosted on premise or even on your personal computer. All that Azure needs is for your application to have the Insights library installed and sending metrics to an endpoint in Azure.</p>
+<p>Now, the Azure Portal has some great quickstart guides for a few languages including Java, Node.js, and .Net. It starts by having you create the Application Insights resource in the portal. You will need to set an app name, a region, an application type (usually just the language or framework name), and a resource group name, which is just the name for the resource actually hosting the metric data.</p>
+<p>Once you have the Application Insights resource defined, step two is installing the library in your app. The quickstart guide shows how to do this very quickly using an IDE like Eclipse. It can also be done manually if you carefully follow the Azure documentation. There are some useful code examples that show how to actually get your application code to send data.</p>
+<p>Once you have solid application and system monitoring in place, you need to make use of all that data. You need to empower your systems to send you actionable alerts when metrics suggest that something is wrong. In the next lesson we will discuss how to create meaningful alerts using application and system metrics.</p>
+<h1 id="App-Alerting"><a href="#App-Alerting" class="headerlink" title="App Alerting"></a>App Alerting</h1><p>A key principle with alerting is ensuring that alerts are actionable and relevant. If you set up a large number of irrelevant alerts that fire constantly, you will train your team to ignore all alerts. Maintaining a good signal to noise ratio is critical with alerts that may require human intervention. It is similarly important that you try to make sure all alerts are actionable. This is not always possible - sometimes you may have to configure an alert for a situation that is not easily resolved. To the extent possible, you want to try to have documented responses to alerts so that the majority of your alerts are actionable.</p>
+<p>For system level alerts - things like low disk space or high cpu load - we can use Azure Monitor. In the Azure Monitor portal we can configure notifications to fire when specific metric thresholds are met. From the monitoring dashboard click on the ‘Add metric alert’ button and create a name for your alert. You will then pick a relevant metric and set a condition such as ‘greater than’ or ‘less than’ some specific value.</p>
+<p>You also will have to set a time period for the condition such as ‘5 minutes’. This would mean that the alert condition must be sustained for five minutes in order for the alert to trigger. It is crucial to think very carefully about the time period parameter. Configuring it incorrectly can lead to false positives or false negatives. For example, let’s say we set an alert for CPU load. We set it to alert whenever load is above 2.0 for more than 3 minutes. This may be too sensitive, as perhaps your application regularly has short periods of high load that are expected. In such case the alert would just end up being noise and training your response team to not take alerts seriously.</p>
+<p>For Azure metric alerts be sure to add the right email address under the ‘Additional administrator email(s)’ section. This way you can ensure that the right people are notified when an alert is triggered.</p>
+<p>Application Insights alerts are similarly easy to set up for your application performance metrics. From the Insights dashboard just click on ‘Alerts’ and then ‘Add alert’ to get the setup menu. From there you will define the alert rules in much the same way as we did with system metrics. You will pick a metric, a time period, a threshold, and a condition. You can set contact emails or a webhook address if you wish to integrate your Insights alerts with another system.</p>
+<p>Finally it is possible to set up alerts based on queries run by Azure Log Analytics. From the Analytics dashboard you can create the alert rules by defining a time window and query. If the query returns the expected result within the time window, and alert can be generated. This can be used for example to catch serious ERROR messages that were output to an event log within some time frame.</p>
+<p>And that about wraps it up for alerting using Azure Monitor and Application Insights. As we have seen, we can create a variety of alerts based on system metrics and application performance stats. Keep in mind the importance of minimizing noise with your alerts - make sure that when an alert is triggered it really means something. With this in mind, let’s move on to the next major section of course.</p>
+<h1 id="Network-Security-and-Access-Management-with-Azure"><a href="#Network-Security-and-Access-Management-with-Azure" class="headerlink" title="Network Security and Access Management with Azure"></a>Network Security and Access Management with Azure</h1><p>Now that we have a solid understanding of application monitoring and alerting with Azure, we need to think about how to properly monitor Azure resources at a higher level. While Azure Monitor is a pretty flexible system for getting basic metrics about Azure VM’s, we need to think about how to monitor other Azure components. We also need to think about Azure network security and access management.</p>
+<p>Section two will address these priorities in three parts. In part one, we’ll look at how to actually monitor all of the different Azure components using Azure Health, Azure Advisor, and the Activity Log. In part two we will focus on network security the Network Watcher Service and Azure Log Analytics. Finally in part three take a detailed look at the Azure Security Center and see how it can help ensure our Azure infrastructure is not compromised.</p>
+<p>So without further ado, let’s begin.</p>
+<h1 id="Monitoring-Platform-Resources"><a href="#Monitoring-Platform-Resources" class="headerlink" title="Monitoring Platform Resources"></a>Monitoring Platform Resources</h1><p>Out first monitoring priority is just tracking the health of Azure itself. Azure Health is your first line of defense for identifying problems with Azure platform resources. It is the most high level view of your cloud system and is generally the best place to start if you are experiencing problems and have no other leads.</p>
+<p>Azure Health offers three basic levels of information about your infrastructure. At the highest level is Azure Status, which is simply a dashboard with information about the health of all of Azure’s different components. This information is not specific to your account; rather it will tell you if there is a global issue with a particular Azure service, such as virtual machines or storage. A quick check of the Azure Status dashboard is the fastest way to rule provider level problems when debugging failures.</p>
+<p>The next level is Azure Service Health. It is similar to Azure Status but focused only on Azure resources in your account. Like Azure Status it is a dashboard only this one is customizable. You can arrange elements to focus on specific Azure products and regions.  Also like Azure Status, it will give you a general health check for each product category and inform you of issues that need your attention. Azure Service Health will notify you of planned maintenance that may affect your system. It will also warn you if you are approaching a resource quota or if a feature you use is about to become deprecated. After a quick check of the Azure Status dashboard, Azure Service Health is often the next best place to quickly examine when you are in the middle of responding to some kind of system failure.</p>
+<p>Finally you have Azure Resource Health, the most granular level of inspection in the Azure Health suite. With Azure Resource Health you can get the status of specific instances of Azure resources, such as a single VM. It will let you know if a given resource is unavailable and it keeps a very useful log of platform events. You can see if an Azure platform SLA was violated at any point. With its very simple status messages and historical data, Azure Resource Health is the simplest way to monitor individual resources from the Azure platform’s perspective.</p>
+<p>The Azure Health set of services gives us a lot of information to track our system’s health over time. However we often need to more than just data; we need some analysis and a more granular view of system events. To address these two issues we will use Azure Advisor and Azure Activity Log respectively.</p>
+<p>Azure Advisor, as the name implies, is a personalized cloud consultant. It automatically examines all of your Azure resources and identifies ways to optimize them. It will spit out tons of recommendations automatically focusing on security, availability, performance, and cost. The nice thing about Advisor is that it’s really simple to use. Literally all you do is click “Advisor” in the left pane menu and you’ll get a summary of recommendations. You can then drill down to one of the four categories I just mentioned. So for example, you might get a cost recommendation telling you to scale down your storage provisioning if you are not actually using much of it.</p>
+<p>So Azure Health has given us copious amounts of information about our system and Advisor continually helps us optimize. The final component is tracking system changes over time. For this we have Azure Activity Log.</p>
+<p>Azure Activity Log is a subscription log that records events using event data from Azure Resource Manager. It records eight specific types of events: Administrative, Service Health, Security, Alert, Autoscale, Recommendation, Policy, and Resource Health.</p>
+<p>Now, Azure Activity Log is accessible from a wide range of tools. You can get event data from the console, Powershell, CLI tools, and the Azure Monitor REST API. You can do a lot of useful things aside from just viewing system event data in the dashboard. You can store the data offline and query it programmatically with scripts. You can set alerts against specific types of event. You can also stream Activity Log data to external event hubs such as a third party analytics tool or monitoring system.</p>
+<p>Activity Log is a very flexible tool and is very simple to use. That said, it is important to understand its limitations. It is not a replacement for proper application logging and monitoring. Activity Log is primarily concerned with Azure Resource Manager events. Some of the older “classic” type resources will not by default send events to Activity Log. You will need proxy resource providers to make the operations appear in Activity Log.</p>
+<p>So now we are at the end of our dive into platform resource monitoring. You should have a basic understanding now of how Azure can monitor its own assets, track events over time, and automatically help us use resources most efficiently. So next we move onto all of that space in between our Azure resources: the network. In the next lesson we will learn how to properly monitor our network infrastructure in Azure.</p>
+<p>Let’s get to it.</p>
+<h1 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h1><p>We have spent a good deal of time covering how to monitor the physical infrastructure of our system. We have covered application level monitoring and Azure resources from the smallest levels up to the entire set of Azure datacenters. Our priority now is to fill in the gaps - to track what happens in between all of those resources at the network level. Our main tool to accomplish this will be the Azure Network Watcher service. We will also revisit Azure Log Analytics as it plays a role here too.</p>
+<p>Network Watcher is a comprehensive network topology monitoring and analytics solution. It is comprised of several features. A full list is presented here in the slides. I will not dive deeply into every single one so it is a good idea to pause the lesson and read through each description. I will cover three of the more important Network Watcher tools so that you know how to handle basic network level monitoring.</p>
+<p>It starts with the Topology app. This gives you a network level view showing the various interconnections between network resources within a given resource group. This will be your go-to tool when you need to get a clear picture of your network infrastructure.</p>
+<p>Next up is the Variable Packet Capture tool. This lets you capture packets flowing in and out of virtual machines, much as you might do with tcpdump or wireshark. You can filter the capture tool to set size and time constraints and then store the packets in the Azure blob store or on the VM disk. This is a really useful surgical tool for analyzing very low level network events.</p>
+<p>Thirdly there is the Next Hop tool. This is a personal favorite because it can identify unexpected behavior. Basically it just determines the next hop for packets routed in the Azure Network Fabric. It is great for identifying problems with user-defined routes.</p>
+<p>There are eight other great tools to look at in Network Watcher. It’s worth giving a quick mention to the NSG Flow Logging, Security Group View, and IP Flow Verify tools, all of which are really great for identifying where exactly packets are permitted to go and not go. Again, be sure to take a deeper look at the documentation to learn about the other Network Watcher tools.</p>
+<p>Azure Log Analytics adds a few useful supplemental feature  to your overall network monitoring system. They are activated through the Log Analytics UI and so need to be addressed separately. Most are just additional levels of instrumentation. For example there are the DNS Analytics and Traffic Analytics components. The former is for DNS administrators and aggregates DNS logs. The latter is for aggregating and visualizing public internet traffic against Azure systems.</p>
+<p>Two larger pieces of the Log Analytics network monitoring feature set, are the Network Performance Monitor and the Application Gateway analytics solution. We’ll start with the Network Performance Monitor. At a high level, all it is meant to do is track performance between various parts of your infrastructure. The power comes from the versatility and the web interface. Network Performance Monitor can track loss and latency across  various subnets and set alerts. It can track connectivity between user locations, multiple data centers, on-premise locations, and other endpoints, all while visualizing everything in an intuitive UI.</p>
+<p>The Application Gateway analytics solution will provide you with an additional level of network logging, specifically firewall logs, performance logs, and access logs for application gateways. It is quick to set up too. Simply enable the Azure Application Gateway analytics solution from Azure Marketplace and then enable diagnostics logging for the desired application gateways.</p>
+<p>Whew! So this was pretty thorough. As you can see, Azure gives you A LOT of tools for monitoring your network infrastructure. If you are the type that likes to be able to audit every single packet, then Azure is going to be a lot of fun for you.</p>
+<p>Our final priority in this section is going to be security. We have covered in depth how to track everything that happens in our system both in transit and at rest, so now we need to think about how to harden the system from threats. We’ll dive in in the next lesson. See you there space cowboy!</p>
+<h1 id="Securing"><a href="#Securing" class="headerlink" title="Securing"></a>Securing</h1><p>Properly securing your cloud infrastructure is a multi-faceted effort. It includes a lot more than just using the tools provided by your hosting solution. It takes employee training, secure coding practices, properly maintained facilities, regular auditing, and a number of other important practices. That said, Microsoft Azure does of good job of simplifying the task of securing its own resources. Thanks to the Azure Security Center service you have one full-featured centralized solution for hardening your entire Azure infrastructure.</p>
+<p>Security Center is automatically included with your Azure account at no additional charge. By default it can only be used with your Azure systems. If you upgrade from the free tier to the ‘standard’ tier, you can have Security Center work with non-Azure resources in a sort of hybrid infrastructure model. The upgraded ‘standard’ tier also adds a number of useful features not available to the free tier. These include advanced threat detection systems for Azure systems, customizable alerting, security event collection and search, and a threat intelligence module.</p>
+<p>Security Center’s core functionality, available in both the free and standard tiers, is its security policy system. Security policies let you defined the configuration of your workloads such that they satisfy specific company or regulatory security requirements. When you access the Security Center UI you will discover that there are default policies for all Azure subscriptions. These policies include recommendations that can be turned on or off. A good place to start looking is at your computer resources. On the Security Center dashboard, click ‘Overview,’ and then select ‘Computer.’ It will display a color-coded list of recommendations for your entire computer infrastructure.</p>
+<p>The security policy and recommendation services are the bulk of what the free tier of Azure Security Center does. It might seem simple, but it is actually quite powerful, particularly if you are <em>only</em> using Azure for your cloud environment. You get tons of free recommendations and a central location for auditing and adjusting security policies to suit company compliance requirements. When combined with all of the other monitoring, event logging, and alerting systems in Azure that we have already covered, you have all the tools you need to maintain a hardened, transparent, self-optimizing infrastructure.</p>
+<p>We strongly recommend digging into the Security Center documentation to learn about some of the additional features at the standard tier. In particular VM access management and customizable alert systems can be very helpful for complex cloud systems. One cool thing is you can actually use the standard tier with all of its additional features completely free for 60 days. It’s a great way to see if you actually need any of its advanced capabilities.</p>
+<p>So with that, we come to the end of section two. We have thoroughly covered platform monitoring, network monitoring, and security for your Azure systems. Congratulations on making it this far. You’re ready to really do some great operational work for any Azure environment now. Our final section will focus on operation automation. See you there!</p>
+<h1 id="Automation-Overview"><a href="#Automation-Overview" class="headerlink" title="Automation Overview"></a>Automation Overview</h1><p>This is a very broad topic that could easily be its own course. For our purposes we will focus on Azure-specific technologies and introduce a few third-party tools that integrate well with the platform.</p>
+<p>We will again divide our subject into three parts. We will start by just introducing the relevant automation technologies, namely, Chef, Puppet, PowerShell, Desired State Configuration, Event Grid, and Azure Logic Apps. The next two sections will be about using these technologies to address the challenges mentioned above: Autoscaling, and task automation. By the end of this unit you should have a solid understanding of how to automate operations in Azure.</p>
+<p>So without further ado, let’s get started.</p>
+<h1 id="Automation-Technologies"><a href="#Automation-Technologies" class="headerlink" title="Automation Technologies"></a>Automation Technologies</h1><p>When it comes to automation with Azure we have a lot of different options. The three basic categories are Azure web console tools, PowerShell scripts with Azure SDK, or a third party tool like Chef. Which approach we take will be a function of our expertise and the nature of the work we want to automate.</p>
+<p>We will start by focusing on Azure’s built-in tool set. Azure Automation is comprised of two core pieces: Runbooks and Configurations, both built on top of PowerShell. Before you do anything you will need to set up an Azure Automation  account in the UI. Once done you are ready to start writing PowerShell runbooks and PowerShell Desired State Configurations (DSC). A runbook is a simply a collection of scripts. These scripts use the Azure SDK API to execute changes to your Azure system. It takes some programming knowledge to use it properly. The upside is that Powershell is far more flexible than simply using the web gui.</p>
+<p>Desired State Configurations are special methods within PowerShell that let you predefine a configuration state for your servers. For example you can enforce that specific ports are open or that only a specific set of software is installed. DSC greatly simplifies the process of writing scripts by letting you work from the end state. The Azure documentation and console make it very easy for non-programmers to generate and import basic PowerShell DSC scripts in their Azure Automation account. It lets you define a specific end state for your Azure systems and let Azure do the work of getting things there. Be warned that DSC Configurations sometimes do tasks in a manner or order you don’t expect. If you have very delicate requirements regarding how and when things change in your system it may be better to write more explicit PowerShell code instead of relying on DSC.</p>
+<p>Azure also has a service for intelligent event routing. It is called Azure Event Grid and it lets you automate responses to relevant events across both Azure and non-Azure services. Event Grid uses a publish-subscribe model and is configurable in the portal or by using Azure CLI or Powershell scripts. To use Event Grid you need to create an event subscription. This is done by selecting ‘Add Event Grid subscription’ to the relevant app in the Azure portal. The Azure documentation includes a number of handy examples of how you can make use of this. In one it shows how you can use Event Grid to automatically resize images uploaded to your Azure storage. It can be done in minutes and save you a great deal of time and money that would be spent on manually fixing images.</p>
+<p>Let’s turn our attention to some non-Azure tools. Chef and Puppet are two cloud infrastructure automation tools. Both have open source offerings that have integrations with not only Azure, but other providers like Google Cloud and AWS. Chef and Puppet have different names for their different pieces. For example in Chef, modules are described as ‘cookbooks’ with scripts called ‘recipes.’ In Puppet these things are called ‘manifests’ and ‘modules.’ One thing to note is that both are fairly complex tools. If your automation needs are very simple, then it is likely not a great idea to try to set up Chef or Puppet; better to just stick with Azure’s built-in tools such as PowerShell with DSC or Event Grid.</p>
+<p>So we he have discussed Chef, Puppet, Powershell with DSC, Runbooks, and Event Grid. As you can see, we have a lot of options when it comes to automating work in Azure. In our next lesson we will focus in on a specific use case: autoscaling. Let’s get started.</p>
+<h1 id="Autoscaling"><a href="#Autoscaling" class="headerlink" title="Autoscaling"></a>Autoscaling</h1><p>Azure has multiple systems for automatically scaling computer resources. Our focus will be on horizontal scaling - namely, adding additional compute resources instead of trying to switch to a larger instance.</p>
+<p>The simplest approach with Azure is to use Azure Monitor’s built-in autoscale feature. This lets you automatically scale up and down compute resources based on metrics.</p>
+<p>Azure VM’s also have a concept known as ‘Scale Sets.’ A Scale Set is simply a group of VM’s that can be given autoscaling rules. They are similar to AWS autoscale groups and make for a handy way to organize and think about your VM’s in terms of large groups instead of individual machines. Scale Sets can also be configured through Azure Service Fabric. Each node type in a Service Fabric cluster can be a separate VM scale set, thus allowing each node type to scale up or down independently.</p>
+<p>Azure autoscaling is also available for the Azure App Service. Autoscaling is actually built right in as an app-level setting. It will allow you to scale based on a designated metric. You select a value and also use a slider to set your maximum and minimum number of instances. Similarly, Azure Cloud Services have a setting for autoscaling. The difference here is that scaling is based on number of cores being used. Depending on your subscription you may have a limit for a maximum number of cores for autoscaling. You can set this up in the portal by clicking on the scale tab in the portal and setting it to ‘automatic.’</p>
+<p>Finally, probably the most bleeding-edge approach to autoscaling, would be to cut out VM’s and containers entirely and just use Azure Functions. If you can adopt a serverless paradigm wherein your app logic is defined using Azure Functions, then you won’t need to think about autoscaling at all. The Azure platform automatically allocates computer resources as necessary to any code running as an Azure Function in your account.</p>
+<p>We won’t focus much on non-Azure autoscaling systems. I’ll instead just take a quick second to remind you that such systems exist. Kubernetes, for example, has support for horizontal scaling of ‘pods’ based on metrics. You can also integrate your configuration management tools like Chef with your monitoring to create autoscaling logic.</p>
+<p>So now that we have a good understanding of what autoscaling looks like in Azure, it is time to broaden our automation scope. In the next lesson we will discuss how to automate arbitrary tasks in Azure using a variety of different approaches. See you there.</p>
+<h1 id="Task-Automation"><a href="#Task-Automation" class="headerlink" title="Task Automation"></a>Task Automation</h1><p>Azure is very flexible when it comes to arbitrary task automation. In this short lesson we will introduce a few common maintenance tasks and explain how we can fully automate the work using different tools.</p>
+<p>As we have seen in earlier lessons, Azure integrates well with management tools such as Chef and Puppet. If, for example, you are already very comfortable with Chef, then it trivial to automate any task defined in your Chef code on subsets of your servers. There is an easy to use cron Chef cookbook that lets you define cronjobs. One common use-case is to automate the chef-client run itself to run every few minutes. This ensures that configuration changes are automatically propagated quickly.</p>
+<p>Another common need is automated resource deletion and re-creation. For example a business may want to save money by not running Azure VM’s during non-work hours. Automating this safely requires ensuring you have a reliable way of preserving the environment’s state and then recreating and deleting resources easily. This is do-able using Chef and Puppet if you have your infrastructure well-defined in your config management code. A perhaps easier approach, however, is to use a runbook with a Powershell Workflow.</p>
+<p>As mentioned in the previous lesson, runbooks are just collections of Powershell scripts. An Azure Powershell Workflow uses runbooks to execute a series of tasks. Workflows add a number of useful features to your Runbooks. For one, they can be scheduled, and they can include automated failure recovery and retry logic. Workflows can help automate many simple maintenance tasks. For example, you can create workflows that save your environment state every day at 8 pm and then delete unneeded resources. Then you can have another workflow that executes a runbook to recreate everything the next day at 8 am. This would cut your Azure hourly costs in half.</p>
+<p>You might need several different scripts to do all of the work of snapshotting your environment, deleting everything safely, and then recreating everything in the right order with proper tests to ensure environment health. You could combine the scripts into multiple runbooks and multiple workflows.</p>
+<p>Powershell workflows are great for people comfortable writing scripts. For people that prefer to focus on GUI tools, Azure has its Logic Apps system. Azure Logic Apps let you automate and schedule workflows. Logic Apps are similar to Powershell scripts in that they can include conditional statements, switches, loops, and branches. All of this is definable in the GUI, so if you have ever done any coding using a GUI you will have a sense of what to expect.  You can define a logic app in the Azure portal. You will have to define a resource group to let the logic app know what Azure components it will access, and then you define a schedule trigger, which lets you set the exact time interval for when to execute the app.</p>
+<p>So that’s basically all you need to know about task automation in Azure. You have your third party services like Chef and Puppet. These integrate well so if you’re familiar with them you can continue to lean on them with Azure. If you prefer writing scripts perhaps because you like checking them into version control and being more transparent, Powershell works great with Azure runbooks and workflows. If you are not as confident about writing scripts, you’ve got Azure Logic Apps, and that will let you automate pretty much anything involving Azure resources.</p>
+<p>So keep those core three approaches in mind and congrats on making it through this final section of the course. We will finish up with a final course summary in the next lesson. See you there.</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>Congratulations on completing the Microsoft Azure Design for Operations course. For a relatively short course there is a lot of material crammed in here, and you made it through, so kudos. We covered a lot of ground.</p>
+<p>We started by talking about application monitoring and alerting. We learned how to thoroughly instrument applications using Azure Application Insights and we learned how to aggregate log data using Azure Log Analytics. We explored the numerous features in the Azure Monitor system.</p>
+<p>We then learned all about how to monitor the Azure platform itself. We went over how to use Azure Status and Azure Health to quickly assess the state of both our own Azure resources and the wider Azure platform. We learned about how to optimize our resource usage with Azure Advisor. We covered how to use the Activity Log for forensic investigations and resource tracking. We also covered the Azure Network Watcher service and Azure Security Center to handle network and platform security respectively.</p>
+<p>Finally we did a deep dive on Azure automation. We learned how to autoscale resources using Azure Autoscale, and we learned how to automate various tasks by using Powershell and Runbooks. We also reviewed configuration management technologies like Chef and Puppet to see how they integrate with our Azure systems.</p>
+<p>By combining all of this knowledge we have a skill set for thoroughly modernizing our cloud infrastructure. We can instrument, monitor, configure, automate, and secure our Azure systems as well as a professional DevOps engineer. That’s pretty darn cool for a class like this. Of course remember that practice makes perfect. We have described a lot of technology in this course. It is up to you to actually play around with things in Azure and develop some intuition.</p>
+<p>Now that you are done I’d like to invite you to send any feedback you have about the course to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. We greatly appreciate your comments, questions, and suggestions. Congratulations again on fighting through the whole course and good luck in your future endeavors.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/14/AZ-204-Integrating-Redis-Cache-and-CDN-on-Azure-30/" rel="prev" title="AZ-204-Integrating-Redis-Cache-and-CDN-on-Azure-30">
+      <i class="fa fa-chevron-left"></i> AZ-204-Integrating-Redis-Cache-and-CDN-on-Azure-30
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/11/14/AZ-204-Lab-Monitoring-Resources-with-Azure-Monitor-32/" rel="next" title="AZ-204-Lab-Monitoring-Resources-with-Azure-Monitor-32">
+      AZ-204-Lab-Monitoring-Resources-with-Azure-Monitor-32 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Big-Four-Priorities-of-Microsoft-Azure"><span class="nav-number">2.</span> <span class="nav-text">The Big Four Priorities of Microsoft Azure</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Monitoring"><span class="nav-number">3.</span> <span class="nav-text">Monitoring</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Log-Analytics"><span class="nav-number">4.</span> <span class="nav-text">Log Analytics</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#App-Monitoring"><span class="nav-number">5.</span> <span class="nav-text">App Monitoring</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#App-Alerting"><span class="nav-number">6.</span> <span class="nav-text">App Alerting</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Network-Security-and-Access-Management-with-Azure"><span class="nav-number">7.</span> <span class="nav-text">Network Security and Access Management with Azure</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Monitoring-Platform-Resources"><span class="nav-number">8.</span> <span class="nav-text">Monitoring Platform Resources</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Network"><span class="nav-number">9.</span> <span class="nav-text">Network</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Securing"><span class="nav-number">10.</span> <span class="nav-text">Securing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Automation-Overview"><span class="nav-number">11.</span> <span class="nav-text">Automation Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Automation-Technologies"><span class="nav-number">12.</span> <span class="nav-text">Automation Technologies</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Autoscaling"><span class="nav-number">13.</span> <span class="nav-text">Autoscaling</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Task-Automation"><span class="nav-number">14.</span> <span class="nav-text">Task Automation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary"><span class="nav-number">15.</span> <span class="nav-text">Summary</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1986</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

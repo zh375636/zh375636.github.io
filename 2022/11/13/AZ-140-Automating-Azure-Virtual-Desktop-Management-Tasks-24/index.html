@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="IntroductionHello and welcome to this course on Automating Azure Virtual Desktop Management Tasks My name is Shabaz Darr and I’ll be your instructor for this course. I am an Azure Virtual Desktop Spec">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AZ-140-Automating-Azure-Virtual-Desktop-Management-Tasks-24">
+<meta property="og:url" content="https://example.com/2022/11/13/AZ-140-Automating-Azure-Virtual-Desktop-Management-Tasks-24/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="IntroductionHello and welcome to this course on Automating Azure Virtual Desktop Management Tasks My name is Shabaz Darr and I’ll be your instructor for this course. I am an Azure Virtual Desktop Spec">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-13T23:11:46.000Z">
+<meta property="article:modified_time" content="2022-11-14T10:32:32.000Z">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://example.com/2022/11/13/AZ-140-Automating-Azure-Virtual-Desktop-Management-Tasks-24/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>AZ-140-Automating-Azure-Virtual-Desktop-Management-Tasks-24 | Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/13/AZ-140-Automating-Azure-Virtual-Desktop-Management-Tasks-24/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AZ-140-Automating-Azure-Virtual-Desktop-Management-Tasks-24
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-13 19:11:46" itemprop="dateCreated datePublished" datetime="2022-11-13T19:11:46-04:00">2022-11-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-14 06:32:32" itemprop="dateModified" datetime="2022-11-14T06:32:32-04:00">2022-11-14</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/13/AZ-140-Automating-Azure-Virtual-Desktop-Management-Tasks-24/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/13/AZ-140-Automating-Azure-Virtual-Desktop-Management-Tasks-24/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Hello and welcome to this course on Automating Azure Virtual Desktop Management Tasks</p>
+<p>My name is Shabaz Darr and I’ll be your instructor for this course. I am an Azure Virtual Desktop Specialist and have been working in the Microsoft cloud services for several years, specifically with Azure Virtual Desktop since its inception, and have multiple Azure-focused certifications.</p>
+<p>My contact information is available on the screen. Please feel free to reach out to me with any questions, comments, or concerns and I will be happy to discuss these with you. </p>
+<p>For any other issues, you can always get in touch with us here at Cloud Academy by sending an email to <a href="mailto:&#x73;&#117;&#112;&#x70;&#111;&#x72;&#x74;&#x40;&#x63;&#x6c;&#x6f;&#117;&#x64;&#97;&#x63;&#97;&#100;&#101;&#109;&#x79;&#x2e;&#x63;&#111;&#109;">&#x73;&#117;&#112;&#x70;&#111;&#x72;&#x74;&#x40;&#x63;&#x6c;&#x6f;&#117;&#x64;&#97;&#x63;&#97;&#100;&#101;&#109;&#x79;&#x2e;&#x63;&#111;&#109;</a> and one of our cloud experts will follow up with you.</p>
+<p>This course is intended for anyone planning to take the Azure Virtual Desktop Specialty exam and anyone interested in learning how to deploy an Azure Virtual Desktop environment</p>
+<p>By the end of this course, you will have knowledge on:</p>
+<ul>
+<li>Configuring Automation for Azure Virtual Desktop</li>
+<li>Automating Management of host pools, session hosts, and user sessions by using PowerShell and Azure Command-Line interface (CLI)</li>
+<li>Implementing Autoscaling in host pools</li>
+</ul>
+<p>To get the most from this course you should have an Administrator-level understanding of Azure Cloud services</p>
+<p>When I created this course, all information was current. Feedback on course content hosted by Cloud Academy is always appreciated and encouraged, as it allows us as trainers to improve which helps all of our students taking courses in the future. If you have any feedback, positive or negative, it would be greatly appreciated if you could contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>.</p>
+<p>If you notice any updates or corrections, please reach out to us. Thank you!</p>
+<h1 id="Configuring-Automation-for-Azure-Virtual-Desktop"><a href="#Configuring-Automation-for-Azure-Virtual-Desktop" class="headerlink" title="Configuring Automation for Azure Virtual Desktop"></a>Configuring Automation for Azure Virtual Desktop</h1><p>Welcome to this module on configuring automation for Azure Virtual Desktop. In this module, we will cover the following:</p>
+<ul>
+<li>We will look at how scaling works</li>
+<li>Prerequisites for Automation with Azure Virtual Desktop</li>
+<li>Finally, we will look at the high-level steps you need to complete when configuring Azure Automation for AVD</li>
+</ul>
+<p>Let’s start this module off by discussing how scaling works. There are different ways in which you can utilize scaling within Azure Virtual Desktop. You can start and stop virtual machines during peak and off-peak usage hours. You can Scale out virtual machines based on the number of sessions per CPU core. Finally, you can scale in virtual machines during off-peak hours so only a few VMs are running.</p>
+<p>We are now going to move on to looking at the prerequisites you need to complete before you can integrate automation with Azure Virtual Desktop.</p>
+<p>You need to have a functioning Azure Virtual Desktop host pool within your environment. Your session hosts need to be registered with the Azure Virtual Desktop Service. You then need to ensure the account you are using to configure automation has at least contributor access to the entire subscription.</p>
+<p>Finally, you need to ensure the management machine you are using to complete this deployment has the relevant tools on. Ensure PowerShell 5.1 or later is installed on this management machine, and you will need to install the Azure Az PowerShell module to be able to complete the configuration.</p>
+<p>In the final lecture of this module, we will look at the high-level steps you need to complete in order to configure Azure Automation for Azure Virtual Desktop.</p>
+<p>The first step is to create an Azure Automation account which can be completed via PowerShell. If you have an existing automation account you can also utilize this, however, you will need to follow a specific process to update this account if required.</p>
+<p>The next step is to create an Azure Automation run as account. This provides authentication for managing resources in Azure with Azure cmdlets. Once you have created the relevant automation accounts you then need to create an Azure Logic App. You will need to download and import the Desktop Virtualization PowerShell module to use within your PowerShell session for this step.</p>
+<p>Finally, you will need to create the execution schedule for the new scaling tool. The PowerShell script will need to be run for each host pool you want to autoscale, but you only need on Azure Automation account.</p>
+<h1 id="Automating-Management-of-Host-Pools-Session-Hosts-and-User-Sessions-by-Using-PowerShell-and-Azure-Command-Line-Interface-CLI"><a href="#Automating-Management-of-Host-Pools-Session-Hosts-and-User-Sessions-by-Using-PowerShell-and-Azure-Command-Line-Interface-CLI" class="headerlink" title="Automating Management of Host Pools, Session Hosts, and User Sessions by Using PowerShell and Azure Command-Line Interface (CLI)"></a>Automating Management of Host Pools, Session Hosts, and User Sessions by Using PowerShell and Azure Command-Line Interface (CLI)</h1><p>Welcome to this module on automating management of host pools, session hosts, and user sessions by using PowerShell, and Azure Command-Line Interface (CLI). In this module, we will cover the following topics:</p>
+<ul>
+<li>Automating host pools, session hosts, and user sessions with PowerShell</li>
+<li>Automating host pools, session hosts, and user sessions with Azure Command-line interface (CLI)</li>
+</ul>
+<p>Let’s start off by doing a walk-through demo of configuring automation tasks with PowerShell.</p>
+<p>Here we have PowerShell open with Administrative privileges. The first step we need to complete is to ensure we have the relevant module installed to allow us to run the AVD Powershell cmdlets. In our case, we need to install the ‘Az.DesktopVirtualization’ module. We can select Yes for the warnings that appear, and then we are ready to connect and authenticate to the Azure portal.</p>
+<p>We use the ‘Connect-AzAccount’ cmdlet to initiate the connection, and then enter our global administrative credentials in the pop-up box to authenticate. We are now logged into our tenant and ready to manage the AVD environment.</p>
+<p>The first command we will look at is ‘Get-AzWvdHostPool’ which outputs relevant information regarding our AVD host pool. We need to specify the host pool name and the resource group it is stored in. The output then shows you all the relevant information about that specific host pool, including location, an Identity Type if you have set one, and any plan details if you are using one. The Get cmdlet will always retrieve information about the relevant resource you have specified and will not make any changes.</p>
+<p>Another Get cmdlet we can use when managing AVD is ‘Get-AzWvdDesktop’ which will show us relevant information about a specific desktop application we have set up. You need to specify the resource group, application group name, and the name of the desktop application you need information about.</p>
+<p>Let’s now look at a cmdlet that will make an actual change to our environment. In this cmdlet we are going to remove an application group, so we use the cmdlet called ‘Remove-AzWvdApplicaitonGroup’. As you can see we need to specify the resource group again, and the name of the application group we want to remove. </p>
+<p>The final cmdlet I want to show is one to update an existing resource within AVD. We need to use an update cmdlet, in our case we are going to utilize the ‘Update-AzWvdHostPool’ cmdlet to update an existing host pool. As you can see there are a number of settings we can update. In our case, the only one that will be different is that we are changing the MaxSessionLimit from 5 to 6.</p>
+<p>We are now going to do a walk-through demo of configuring automation tasks with Azure CLI.</p>
+<p>We are launching the Azure CLI from the Azure portal, therefore need to navigate to the portal.azure.com&#x2F;Cloudshell URL. As we are already authenticated from logging into the Azure portal we do not need to authenticate again when launching the Azure CLI.</p>
+<p>The first command type we are going to use is one that lists specific resources within our AVD environment. List commands are very similar to ‘Get’ cmdlets in PowerShell. As you can see in this command, we want to list all the information about our application group called ‘Desktop’ within our resource group. There is a whole host of details that are shown as part of the output, including the application group type, location, and the object ID.</p>
+<p>So we can get a clear view of the output, I have re-launched the Azure CLI. The next command I want to look at is similar to the list command, in that it does not make any changes and simply outputs information about a specific resource. It is the ‘show’ command. In our example, we want to show information regarding the application group called ‘ITGEEK-DT01’. Again as you can see a number of details are shown in the output, very similar to the list command output.</p>
+<p>One clever feature of the Azure CLI is that it will not let you delete resources if other resources already exist within it. In this example we are trying to delete a host pool, however, because an application group exists within that which needs to be deleted first, we get an error giving us that information.</p>
+<h1 id="Implementing-Autoscaling-in-Host-Pools"><a href="#Implementing-Autoscaling-in-Host-Pools" class="headerlink" title="Implementing Autoscaling in Host Pools"></a>Implementing Autoscaling in Host Pools</h1><p>Welcome to this module on implementing autoscaling in host pools. In this module we will cover the following topics:</p>
+<ul>
+<li>Azure Virtual Desktop Scaling plans</li>
+<li>Requirements for auto-scaling in AVD</li>
+<li>A demo where I will configure an auto-scaling plan for Azure Virtual Desktop</li>
+</ul>
+<p>Let’s start off by discussing scaling plans. Traditionally, scaling was implemented within Azure using either Powershell scripts or Azure Automation, however, you can utilize a feature called scaling plans.</p>
+<p>Scaling plans allows you to define ramp-up hours which is the time you want to increase resources when the usage increases. </p>
+<p>Peak hours which is the time of day when usage is at its highest.</p>
+<p>Ramp-down hours when usage starts to drop off.</p>
+<p>You can then configure associated triggers which will kick off your scaling plan if those triggers are met, for example, a certain percentage of CPU usage. Finally, your scaling plan must include an associated schedule for at least one day of the week.</p>
+<p>Let’s now move on to discussing requirements for autoscaling in Azure Virtual Desktop. There are two main items that need to be in place before you can start implementing autoscaling. The first is that you need to create a custom role-based access control, better known as RBAC, role. Once this role has been created, the second item that needs to be in place is that you need to assign this role to the Azure Virtual Desktop application. </p>
+<p>Once these two requirements are fulfilled, you can start configuring autoscaling in Azure Virtual Desktop</p>
+<p>To finish off this module we are going to complete a demo of implementing a scaling plan in Azure that you can utilize with your AVD environment</p>
+<p>Here we are in the Azure Portal. We need to navigate to the scaling plans section of the portal. We do not currently have any existing scaling plans, so let’s select ‘Create’. We now need to ensure we select the relevant subscription, resource group and give the scaling plan a name. You will need to be careful when selecting the location as not all locations support scaling plans. In our example, I am selecting Canada East as I know this region is supported. Finally, I am giving it a friendly name and moving on to the schedule plan.</p>
+<p>We need to select ‘Add schedule’. We now have a number of different panes we need to complete. First, let’s enter general information like the schedule name. We then need to select which days we want the schedule to repeat on, in our case, we select each weekday.</p>
+<p>For ‘ramp-up’ hours, the repeat on days and time zone are already entered by default, so we need to enter the start time. Please note this utilizes the 24-hour clock system. We then need to specify the load balancing algorithm. I am going to leave this on bread-first. We then need to specify the minimum percentage of session host virtual machines to start for ramp-up and peak hours. I will leave this on the default of 20%. Finally, on this pane, we need to enter the percentage of used host pool capacity that will be considered to evaluate whether to turn on or off virtual machines during ramp-up and peak hours.</p>
+<p>If we now move onto the ‘Peak Hours’ pane, again the days and time zone are already selected and we need to specify the start time and load balancing algorithm which I am going to change to bread-first. The threshold capacity is grayed out and set to 60%, therefore we cannot edit this.</p>
+<p>Now we move on to the ‘ramp-down’ pane. The first value we need to set is the start time, then the load balancing algorithm, which I am again going to set as breadth-first. We now need to set the minimum percentage of session host virtual machines that you would like to get to for ramp-down and off-peak hours.</p>
+<p>Next, we need to select the percentage of used host pool capacity that will be considered to evaluate whether to turn on or off virtual machines during ramp-down and off-peak hours. We can then specify if we want to force users to log off or not, set a delay time before forcing the users to log off and customize a notification message.</p>
+<p>The final pane to complete the schedule configuration is the ‘off-peak hours’ pane. Here we need to specify the start time, and load balancing algorithm. Again I am changing this to bread-first. Please note we cannot edit the capacity threshold again.</p>
+<p>Now the schedule is configured we need to select the host pool we want this to apply to. In our case, we do not have an active host pool in this tenant. Finally, we can enter any tags we want to set, before reviewing and creating our scaling plan.</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>We covered a lot of important topics in this module. The first lecture was on configuring automation for Azure Virtual Desktop, where we talked about how scaling works and some of its configurable values. We then looked at the prerequisites for automation, and finally the high-level steps you need to complete when configuring automation with Azure Virtual Desktop.</p>
+<p>In the second lecture, we dived into automating management of host pools, session hosts, and user sessions by using both PowerShell and Azure Command Line Interface (CLI). This was a demo-heavy lecture where I did a demo using PowerShell and then a demo using Azure CLI for automation tasks for AVD.</p>
+<p>In the final lecture of this module, we looked at implementing autoscaling in a host pool. Here, we looked at AVD scaling plans in more detail, followed by the requirements for autoscaling in AVD, and finished off with a demo of configuring a scaling plan.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/13/AZ-140-Implementing-Business-Continuity-for-Azure-Virtual-Desktop-23/" rel="prev" title="AZ-140-Implementing-Business-Continuity-for-Azure-Virtual-Desktop-23">
+      <i class="fa fa-chevron-left"></i> AZ-140-Implementing-Business-Continuity-for-Azure-Virtual-Desktop-23
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/11/13/AZ-140-Resource-Required-Reading-for-AZ-140-25/" rel="next" title="AZ-140-Resource-Required-Reading-for-AZ-140-25">
+      AZ-140-Resource-Required-Reading-for-AZ-140-25 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configuring-Automation-for-Azure-Virtual-Desktop"><span class="nav-number">2.</span> <span class="nav-text">Configuring Automation for Azure Virtual Desktop</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Automating-Management-of-Host-Pools-Session-Hosts-and-User-Sessions-by-Using-PowerShell-and-Azure-Command-Line-Interface-CLI"><span class="nav-number">3.</span> <span class="nav-text">Automating Management of Host Pools, Session Hosts, and User Sessions by Using PowerShell and Azure Command-Line Interface (CLI)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Implementing-Autoscaling-in-Host-Pools"><span class="nav-number">4.</span> <span class="nav-text">Implementing Autoscaling in Host Pools</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary"><span class="nav-number">5.</span> <span class="nav-text">Summary</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1986</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

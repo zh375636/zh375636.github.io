@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="计算机网络介绍 阅读 (224944)   分享 计算机网络计算机网络是由通信介质将地理位置不同的且相互独立的计算机连接起来，实现数据通信与资源共享 网络分类按照网络拓扑分类总线型：一般传输介质为同轴电缆，需要T型头和信号终结器  环形：需要申请令牌才可以通信。  星型：中央节点压力大，单点故障  网型：效率高，网络复杂  按地域分类：参照物不同，类型不同局域网(LAN)：一个公司、一个家庭 城域">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zutuanxue-计算机网络基础">
+<meta property="og:url" content="https://example.com/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="计算机网络介绍 阅读 (224944)   分享 计算机网络计算机网络是由通信介质将地理位置不同的且相互独立的计算机连接起来，实现数据通信与资源共享 网络分类按照网络拓扑分类总线型：一般传输介质为同轴电缆，需要T型头和信号终结器  环形：需要申请令牌才可以通信。  星型：中央节点压力大，单点故障  网型：效率高，网络复杂  按地域分类：参照物不同，类型不同局域网(LAN)：一个公司、一个家庭 城域">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023369025.png">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023390144.png">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023413168.png">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023426070.png">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023466761.jpeg">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023483245.jpeg">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023511681.jpeg">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023533094.png">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023556171.jpg">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023863056.png">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023885728.gif">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024106315.png">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024134979.png">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024158331.png">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024398414.jpeg">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024418282.png">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024479086.jpeg">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024457747.jpeg">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024638647.png">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601026468125.png">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601026081212.png">
+<meta property="og:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601026370058.png">
+<meta property="article:published_time" content="2022-11-15T16:19:35.000Z">
+<meta property="article:modified_time" content="2022-11-15T17:48:12.000Z">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023369025.png">
+
+<link rel="canonical" href="https://example.com/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>zutuanxue-计算机网络基础 | Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          zutuanxue-计算机网络基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-15 12:19:35 / Modified: 13:48:12" itemprop="dateCreated datePublished" datetime="2022-11-15T12:19:35-04:00">2022-11-15</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="计算机网络介绍"><a href="#计算机网络介绍" class="headerlink" title="计算机网络介绍"></a>计算机网络介绍</h1><p> 阅读 (224944) </p>
+<p> 分享</p>
+<h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><p>计算机网络是由通信介质将地理位置不同的且相互独立的计算机连接起来，实现数据通信与资源共享</p>
+<h2 id="网络分类"><a href="#网络分类" class="headerlink" title="网络分类"></a>网络分类</h2><h4 id="按照网络拓扑分类"><a href="#按照网络拓扑分类" class="headerlink" title="按照网络拓扑分类"></a>按照网络拓扑分类</h4><p>总线型：一般传输介质为同轴电缆，需要T型头和信号终结器</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023369025.png" alt="总线型.png"></p>
+<p>环形：需要申请令牌才可以通信。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023390144.png" alt="环型.png"></p>
+<p>星型：中央节点压力大，单点故障</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023413168.png" alt="星型.png"></p>
+<p>网型：效率高，网络复杂</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023426070.png" alt="网型.png"></p>
+<h4 id="按地域分类：参照物不同，类型不同"><a href="#按地域分类：参照物不同，类型不同" class="headerlink" title="按地域分类：参照物不同，类型不同"></a>按地域分类：参照物不同，类型不同</h4><p>局域网(LAN)：一个公司、一个家庭</p>
+<p>城域网(MAN)：一个区、一个城市、一个国家</p>
+<p>广域网(WAN)：一个国家、全世界</p>
+<h2 id="网络设备"><a href="#网络设备" class="headerlink" title="网络设备"></a>网络设备</h2><p>交换机：负责组建局域网，研究的是MAC地址</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023466761.jpeg" alt="交换机.jpeg"></p>
+<p>路由器：负责组建广域网，研究的是IP地址</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023483245.jpeg" alt="路由器.jpeg"></p>
+<h2 id="传输介质"><a href="#传输介质" class="headerlink" title="传输介质"></a>传输介质</h2><p>同轴电缆、双绞线、光纤</p>
+<p>目前常用的就是双绞线和光纤</p>
+<h3 id="1）双绞线"><a href="#1）双绞线" class="headerlink" title="1）双绞线"></a>1）双绞线</h3><p>双绞线（twisted pair，TP）是一种综合布线工程中最常用的传输介质，是由两根具有绝缘保护层的铜导线组成的。把两根绝缘的铜导线按一定密度互相绞在一起，每一根导线在传输中辐射出来的电波会被另一根线上发出的电波抵消，有效降低信号干扰的程度。双绞线理论最大传输距离是100米，<strong>树明建议不要超过90米</strong>。如果两台设备超过这个距离，建议中间放一个中继器或者交换机。</p>
+<p><strong>双绞线分为屏蔽双绞线和非屏蔽双绞线两种。</strong></p>
+<p>屏蔽双绞线：抗静电干扰性强，价格稍高一些，一般室外用的多一些。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023511681.jpeg" alt="屏蔽双绞线.jpeg"></p>
+<p>非屏蔽双绞线：重量轻，易弯曲，易安装，一般用在室内。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023533094.png" alt="非屏蔽双绞线.png"></p>
+<p><strong>按照传输速度分类</strong></p>
+<ul>
+<li>1类 100KHz 主要用于传输语音</li>
+<li>2类 1MHz 用于语音传输和最高传输速率4Mbps的数据传输</li>
+<li>3类 16MHz 指目前在ANSI和EIA&#x2F;TIA568标准中指定的电缆，该电缆的传输频率16MHz，用于语音传输及最高传输速率为10Mbps的数据传输主要用于10BASE–T。</li>
+<li>4类 20MHz 该类电缆的传输频率为20MHz，用于语音传输和最高传输速率16Mbps的数据传输主要用于基于令牌的局域网和 10BASE-T&#x2F;100BASE-T。</li>
+<li>5类 100MHz 该类电缆增加了绕线密度，外套一种高质量的绝缘材料，传输率为100MHz，用于语音传输和最高传输速率为10Mbps的数据传输，主要用于100BASE-T和10BASE-T网络。这是最常用的以太网电缆。</li>
+<li>5e类 100MHz 超5类具有衰减小，串扰少，并且具有更高的衰减与串扰的比值(ACR)和信噪比(Structural Return Loss)、更小的时延误差，性能得到很大提高。超5类线主要用于千兆位以太网（1000Mbps）。</li>
+<li>6类 250MHz 六类线：该类电缆的传输频率为1MHz～250MHz，六类布线系统在200MHz时综合衰减串扰比（PS-ACR）应该有较大的余量，它提供2倍于超五类的带宽。六类布线的传输性能远远高于超五类标准，最适用于传输速率高于1Gbps的应用。六类与超五类的一个重要的不同点在于：改善了在串扰以及回波损耗方面的性能，对于新一代全双工的高速网络应用而言，优良的回波损耗性能是极重要的。六类标准中取消了基本链路模型，布线标准采用星形的拓扑结构，要求的布线距离为：永久链路的长度不能超过90m，信道长度不能超过100m。</li>
+<li>6A类 500MHz</li>
+<li>7类 600MHz</li>
+</ul>
+<p><strong>按照品牌分类</strong></p>
+<ul>
+<li>安普</li>
+<li>西蒙</li>
+<li>朗讯</li>
+<li>丽特</li>
+<li>IBM</li>
+</ul>
+<h3 id="2）光纤"><a href="#2）光纤" class="headerlink" title="2）光纤"></a>2）光纤</h3><p>光纤是光导纤维的简写，是一种由玻璃或塑料制成的纤维，可作为光传导工具。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023556171.jpg" alt="光纤.jpg"></p>
+<p><strong>光纤分类</strong></p>
+<p>单模光纤：只能传输一种模式的光，传输距离远，是多模光纤的几十倍以上，单模光纤外面护套线颜色一般为黄色</p>
+<p>多模光纤：可以传输多种模式的光，多模光纤传输的距离比较近，一般只有几千米，多模光纤外面颜色一般为橘红色</p>
+<p><strong>光纤速度</strong></p>
+<p>光纤的极限传输家用的普通光纤就可达到10Gbps以上。</p>
+<p>实验室中单条光纤最大速度已达到了26Tbps，有消息说通过石墨烯制造的新光调制器，还可继续提高10000倍，即260Pbps。</p>
+<h1 id="OSI七层网络模型"><a href="#OSI七层网络模型" class="headerlink" title="OSI七层网络模型"></a>OSI七层网络模型</h1><p> 阅读 (322693) </p>
+<p> 分享</p>
+<h2 id="ISO介绍"><a href="#ISO介绍" class="headerlink" title="ISO介绍"></a>ISO介绍</h2><p>国际标准化组织（International Organization for Standardization，ISO）简称ISO，是一个全球性的非政府组织，是国际标准化领域中一个十分重要的组织。ISO国际标准组织成立于1946年，</p>
+<p>ISO负责目前绝大部分领域（包括军工、石油、船舶等垄断行业）的标准化活动。ISO现有117个成员，包括117个国家和地区。中国是ISO的正式成员，代表中国参加ISO的国家机构是中国国家技术监督局（CSBTS）。</p>
+<h2 id="网络模型介绍"><a href="#网络模型介绍" class="headerlink" title="网络模型介绍"></a>网络模型介绍</h2><p>在上世纪70年代，不同的厂商的计算机之间采用的都是本厂的通信协议，不同厂商间的计算机是无法通信的，为了解决这个问题，ISO组织专门成立了一个小组，目的是写出一套公共通信协议，实现不同厂商计算机之间通信互联。</p>
+<p>实际上只是Honeywell Information System公司的一个小组完成的，小组的技术负责人是Charlie Bachman，这个小组主要是为了开发一些原型系统而成立的，主要关注数据库系统的设计。70年代中，为了支持数据库系统的访问，需要一个结构化的分布式通信系统体系结构。</p>
+<p>在1977年提出了一个七层的体系结构模型，他们内部称之为分布式系统体系结构（DSA）</p>
+<p>与此同时，1977年英国标准化协会向国际标准化组织（ISO）提议，为了定义分布处理之间的通信基础设施，需要一个标准的体系结构。结果，ISO就开放系统互联（OSI）问题成立了一个专委会（TC 97, Subcomittee 16），指定由美国国家标准协会（ANSI）开发一个标准草案，在专委会第一次正式会议之前提交。</p>
+<p>Bachman [1] 参加了ANSI早期的会议，并提交了他的七层模型，这个模型就成了提交ISO专委会的唯一的一份草案。1978年发布了这个临时版本，1979年稍作细化之后，成了最终的版本。</p>
+<h2 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h2><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023863056.png" alt="osi七层模型简图.png"></p>
+<h2 id="OSI七层模型介绍"><a href="#OSI七层模型介绍" class="headerlink" title="OSI七层模型介绍"></a>OSI七层模型介绍</h2><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023885728.gif" alt="osi七层.gif"></p>
+<p>应用层</p>
+<p>网络服务与最终用户的一个接口。</p>
+<p>协议有：HTTP FTP TFTP SMTP SNMP DNS TELNET HTTPS POP3 DHCP</p>
+<p>表示层</p>
+<p>数据的表示、安全、压缩。（在五层模型里面已经合并到了应用层）</p>
+<p>格式有，JPEG、ASCll、DECOIC、加密格式等</p>
+<p>会话层</p>
+<p>建立、管理、终止会话。（在五层模型里面已经合并到了应用层）</p>
+<p>对应主机进程，指本地主机与远程主机正在进行的会话</p>
+<p>传输层</p>
+<p>定义传输数据的协议端口号，以及流控和差错校验。</p>
+<p>协议有：TCP UDP，数据包一旦离开网卡即进入网络传输层</p>
+<p>网络层</p>
+<p>进行逻辑地址寻址，实现不同网络之间的路径选择。</p>
+<p>协议有：ICMP IGMP IP（IPV4 IPV6） ARP RARP</p>
+<p>数据链路层</p>
+<p>建立逻辑连接、进行硬件地址寻址、差错校验 [2] 等功能。（由底层网络定义协议）</p>
+<p>将比特组合成字节进而组合成帧，用MAC地址访问介质，错误发现但不能纠正。</p>
+<p>物理层</p>
+<p>建立、维护、断开物理连接。（由底层网络定义协议）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">关于设备工作在哪一层！</span><br><span class="line"></span><br><span class="line">一个设备工作在哪一层，关键看它工作时利用哪一层的数据头部信息。网桥工作时，是以MAC头部来决定转发端口的，</span><br><span class="line">因此显然它是数据链路层的设备。</span><br><span class="line">具体说:</span><br><span class="line">物理层：网卡，网线，集线器，中继器，调制解调器</span><br><span class="line"></span><br><span class="line">数据链路层：网桥，交换机</span><br><span class="line"></span><br><span class="line">网络层：路由器</span><br></pre></td></tr></table></figure>
+
+<h2 id="OSI七层特点"><a href="#OSI七层特点" class="headerlink" title="OSI七层特点"></a>OSI七层特点</h2><p>OSI七层由于太过严格，所以并没有应用在计算机中，而是基于其衍生了一个TCP&#x2F;IP四层模型，被广大操作系统所应用。</p>
+<h1 id="TCP-x2F-IP四层网络模型"><a href="#TCP-x2F-IP四层网络模型" class="headerlink" title="TCP&#x2F;IP四层网络模型"></a>TCP&#x2F;IP四层网络模型</h1><p> 阅读 (230877) </p>
+<p> 分享</p>
+<h2 id="一、TCP-x2F-IP四层模型介绍"><a href="#一、TCP-x2F-IP四层模型介绍" class="headerlink" title="一、TCP&#x2F;IP四层模型介绍"></a>一、TCP&#x2F;IP四层模型介绍</h2><p>OSI的七层协议体系结构的概念清楚，理论也比较完整，但它既复杂又不实用，ISO制定的OSI参考模型的过于庞大、复杂招致了许多批评。由技术人员自己开发的TCP&#x2F;IP协议栈获得了更为广泛的应用。TCP&#x2F;IP体系结构则不同，它现在已经得到了非常广泛的应用，TCP&#x2F;IP是一个四层的体系结构。</p>
+<p>它包含应用层、运输层、网际层和网络接口层（用网际层这个名字是强调这一层是为了解决不同网络的互连问题 ），不过从实质来讲，TCP&#x2F;IP只有最上面的三层，因为最下面的网络接口层基本上和一般的通信链路的功能上没有多大差别.</p>
+<h2 id="二、TCP-x2F-IP四层模型"><a href="#二、TCP-x2F-IP四层模型" class="headerlink" title="二、TCP&#x2F;IP四层模型"></a>二、TCP&#x2F;IP四层模型</h2><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024106315.png" alt="tcp:ip四层.png"></p>
+<p>每一层负责不同的功能:</p>
+<p>链路层：有时也称作数据链路层或网络接口层，</p>
+<p>通常包括操作系统中的设备驱动程序和计算机</p>
+<p>中对应的网络接口卡。它们一起处理与电缆(或其他任何传输媒介)的物理接口细节。</p>
+<p>网络层：有时也称作互联网层，处理分组在网络中的活动，例如分组的选路。在TCP&#x2F;IP协议族中，网络层协议包括IP协议(网际协议)，ICMP协议(Internet互联网控制报文协议 ，以及IGMP协议(Internet组管理协议 )。</p>
+<p>运输层：主要为两台主机上的应用程序提供端到端的通信。在TCP&#x2F;IP 协议族中 ， 有两个互不相同的传输协议 : TCP (传输控制协议) 和UDP (用户数据报协议)。</p>
+<p>TCP 为两台主机提供高可靠性的数据通信。它所做的工作包括把应用程序交给它的数据分 成合适的小块交给下面的网络层，确认接收到的分组，设置发送最后确认分组的超时时钟等。由于运输层提供了高可靠性的端到端的通信，因此应用层可以忽略所有这些细节。</p>
+<p>而另一方面， UDP则为应用层提供一种非常简单的服务 。 它只是把称作数据报的分组从一台主机发送到另一台主机，但并不保证该数据报能到达另一端。任何必需的可靠 性必须由应用层来提供。 这两种运输层协议分别在不同的应用程序中有不同的用途，这一点将在后面看到。</p>
+<p>应用层：负责处理特定的应用程序细节。几乎各种不同的 TCP&#x2F;IP实现都会提供下面这些通用的应用程序:</p>
+<p>Telnet 远程登录。</p>
+<p>FTP 文件传输协议。</p>
+<p>SMTP 简单邮件传送协议。</p>
+<p>SNMP 简单网络管理协议。</p>
+<h3 id="TCP-x2F-IP协议簇"><a href="#TCP-x2F-IP协议簇" class="headerlink" title="TCP&#x2F;IP协议簇"></a>TCP&#x2F;IP协议簇</h3><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024134979.png" alt="TCP:IP协议.png"></p>
+<h3 id="一次C-x2F-S通信"><a href="#一次C-x2F-S通信" class="headerlink" title="一次C&#x2F;S通信"></a>一次C&#x2F;S通信</h3><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024158331.png" alt="tcp:ip通信机制.png"></p>
+<h1 id="传输层协议"><a href="#传输层协议" class="headerlink" title="传输层协议"></a>传输层协议</h1><p> 阅读 (318213) </p>
+<p> 分享</p>
+<p>TCP 和 UDP 是两种最为著名的传输层协议，二者都使用 I P 作 为 网 络 层 协 议</p>
+<p>尽管 TCP 和 UDP 都使用相同的网络层( IP )， TCP 却向应用层提供与 UDP 完全不同的服务。 TCP 提供一种面向连接的、可靠的字节流服务。</p>
+<p>TCP: 传输控制协议,面向连接的协议</p>
+<p>面向连接意味着两个使用 TCP 的 应 用 ( 通 常 是 一 个 客 户 和 一 个 服 务 器 ) 在 彼 此 交 换 数 据 之前必须先建立一个 TCP 连 接 。</p>
+<p>一对一传输</p>
+<h3 id="tcp三次握手"><a href="#tcp三次握手" class="headerlink" title="tcp三次握手"></a>tcp三次握手</h3><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024398414.jpeg" alt="TCP三次握手.jpeg"></p>
+<h3 id="TCP四次断开"><a href="#TCP四次断开" class="headerlink" title="TCP四次断开"></a>TCP四次断开</h3><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024418282.png" alt="tcp四次断开.png"></p>
+<h3 id="TCP包头"><a href="#TCP包头" class="headerlink" title="TCP包头"></a>TCP包头</h3><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024479086.jpeg" alt="tcp包头.jpeg"></p>
+<h3 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h3><p>UDP（User Datagram Protocol），用户数据报协议，是OSI(Open System Interconnection，开放式系统互联) 参考模型中一种无连接的传输层协议，提供面向事务的简单不可靠信息传送服务,UDP提供了无连接通信，适合于一次传输少量数据,UDP报文没有可靠性保证、顺序保证和流量控制字段等，可靠性较差。但是正因为UDP协议的控制选项较少，在数据传输过程中延迟小、数据传输效率高，适合对可靠性要求不高的应用程序，或者可以保障可靠性的应用程序，如DNS、TFTP、SNMP等。</p>
+<p>可以一对一、一对多传输、多对一和多对多的交互通信</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024457747.jpeg" alt="UDP包头.jpeg"></p>
+<h3 id="TCP与UDP区别："><a href="#TCP与UDP区别：" class="headerlink" title="TCP与UDP区别："></a>TCP与UDP区别：</h3><p>1、TCP面向连接（如打电话要先拨号建立连接）;UDP是无连接的，即发送数据之前不需要建立连接</p>
+<p>2、TCP提供可靠的服务。也就是说，通过TCP连接传送的数据，无差错，不丢失，不重复，且按序到达;UDP尽最大努力交付，即不保证可靠交付，Tcp通过校验和，重传控制，序号标识，滑动窗口、确认应答实现可靠传输。如丢包时的重发控制，还可以对次序乱掉的分包进行顺序控制。</p>
+<p>3、UDP具有较好的实时性，工作效率比TCP高，适用于对高速传输和实时性有较高的通信或广播通信。</p>
+<p>4.每一条TCP连接只能是点到点的;UDP支持一对一，一对多，多对一和多对多的交互通信</p>
+<p>5、TCP对系统资源要求较多，UDP对系统资源要求较少。</p>
+<h1 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h1><p> 阅读 (450309) </p>
+<p> 分享</p>
+<h2 id="一、IP介绍"><a href="#一、IP介绍" class="headerlink" title="一、IP介绍"></a>一、IP介绍</h2><p>IP是英文Internet Protocol的缩写，意思是“网络之间互连的协议”，也就是为计算机网络相互连接进行通信而设计的协议。在因特网中，它是能使连接到网上的所有计算机网络实现相互通信的一套规则，规定了计算机在因特网上进行通信时应当遵守的规则。任何厂家生产的计算机系统，只要遵守IP协议就可以与因特网互连互通。正是因为有了IP协议，因特网才得以迅速发展成为世界上最大的、开放的计算机通信网络。因此，IP协议也可以叫做“因特网协议”。</p>
+<p>IP地址是指互联网协议地址，IP地址是IP协议提供的一种统一的地址格式，它为互联网上的每一个网络和每一台主机分配一个逻辑地址。大家日常见到的情况是每台联网的PC上都需要有IP地址，才能正常通信。我们可以把“个人电脑”比作“一台电话”，那么“IP地址”就相当于“电话号码”，而Internet中的路由器，就相当于电信局的“程控式交换机”。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">IP是一个协议，是计算机在网络中互联互通的规则</span><br><span class="line">IP地址是IP实现互联互通的一个策略</span><br></pre></td></tr></table></figure>
+
+<h3 id="IP地址和Mac地址"><a href="#IP地址和Mac地址" class="headerlink" title="IP地址和Mac地址"></a>IP地址和Mac地址</h3><p>IP地址是软件地址，而不是硬件地址。硬件地址被硬编码到网络接口卡(NIC)中，用于在本地 网络中寻找主机。 IP地址让一个网络中的主机能够与另一个网络中的主机通信，而不管这些主机所属的LAN是什么类型的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MAC用于局域网中通信，交换机通过mac地址将数据包转发到正确的计算机</span><br><span class="line">IP用于网络间通信</span><br></pre></td></tr></table></figure>
+
+<h3 id="IP地址分类"><a href="#IP地址分类" class="headerlink" title="IP地址分类"></a>IP地址分类</h3><p>IPV4:32位二进制 以点分割，分为4段十进制数 a.b.c.d</p>
+<p>IPV6:128位二进制 以冒号分割,分为8段十六进制数 a🅱️c:d:e:f:g:h</p>
+<h2 id="二、IPV4地址"><a href="#二、IPV4地址" class="headerlink" title="二、IPV4地址"></a>二、IPV4地址</h2><p>IPV4地址长 32位，这些位被划分成 4组(称为字节或八位组)，每组8位,每组最大不超过255，我们可使用下面3种方法描述IP地址:</p>
+<p>点分十进制表示，如 192.168.0.1。</p>
+<p>二进制，如 11000000.10101000.00000000.00000001</p>
+<p>十六进制，如 c0.a8.0.1。</p>
+<p>上述示例表示的是同一个IP地址。对于IP编址时，十六进制表示没有点分十进制和二进制那样常用，但某些程序确实以十六进制形式存储IP地址， Windows注册表就将机器的IP地址存储为十六进制。</p>
+<h3 id="IPV4地址分类"><a href="#IPV4地址分类" class="headerlink" title="IPV4地址分类"></a>IPV4地址分类</h3><p>按照第一段的范围分类</p>
+<p>A 1-126</p>
+<p>B 128-191</p>
+<p>C 192-223</p>
+<p>D 224-239</p>
+<p>E 240-255</p>
+<p>设计因特网的人决定根据网络规模创建网络类型。对于少量包含大量节点的网络，他们创建了A类网络;对于另一种极端情况的网络，他们创建了C类网络，用来指示大量只包含少量节点的网络; 介于超大型和超小型网络之间的是B类网络。所以IPV4五类地址中只有前三类可以分给用户试用，D类是多播地址，E类为保留地址，用于研究。</p>
+<p>网络的类型决定了 IP地址将如何划分成网络部分和节点部分</p>
+<h3 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h3><p>子网掩码：区分IP地址的网络位和主机位</p>
+<p>255.0.0.0</p>
+<p>255.255.0.0</p>
+<p>255.255.255.0</p>
+<p>255.255.255.255</p>
+<p>网络位:掩码对应的IP位的二进制部分，全为1的部分是网络位</p>
+<p>主机位:掩码对应的IP位的二进制部分，不全为1的部分是主机位</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024638647.png" alt="网络位与主机位.png"></p>
+<h3 id="进制转换方法"><a href="#进制转换方法" class="headerlink" title="进制转换方法"></a>进制转换方法</h3><p>十进制转二进制: 除2取余倒着念</p>
+<p>十进制转八进制: 除8取余倒着念</p>
+<p>十进制转十六进制: 除16取余倒着念</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601026468125.png" alt="进制转换.png"></p>
+<h3 id="8421法则转换法"><a href="#8421法则转换法" class="headerlink" title="8421法则转换法"></a>8421法则转换法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">把要转换的十进制数按照下列数累加，用的的写1没用的的写0</span><br><span class="line">128      64      32      16    8     4   2   1</span><br><span class="line"></span><br><span class="line">比如：十进制数132转换为二进制</span><br><span class="line">128      64      32      16    8     4   2   1</span><br><span class="line">1         0      0       0     0     1   0   0</span><br><span class="line"></span><br><span class="line">因为132=128+4</span><br><span class="line">所以十进制数132转换为二进制是&quot;10000100</span><br></pre></td></tr></table></figure>
+
+<h3 id="私网地址"><a href="#私网地址" class="headerlink" title="私网地址"></a>私网地址</h3><p>由于互联网的蓬勃发展，IP位址的需求量愈来愈大，使得IP位址的发放愈趋严格，各项资料显示全球IPv4位址可能在2005至2010年间全部发完(实际情况是在2011年2月3日IPv4位地址分配完毕）。</p>
+<p>为了解决IP地址不足，又设计了私有地址，这样就可以重复在局域网中使用了，LAN中的用户想上网只需通过PNAT的方式通过地址转换技术就可以上网，保证了公网地址的最大化、最高效应用。</p>
+<p>A类地址中私网10.0.0.0–10.255.255.255</p>
+<p>B类地址中私网172.16.0.0.0–172.31.255.255</p>
+<p>C类地址中私网192.168.0.0–192.168.255.255</p>
+<h3 id="PNAT技术"><a href="#PNAT技术" class="headerlink" title="PNAT技术"></a>PNAT技术</h3><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601026081212.png" alt="LAN_NAT_WAN.png"></p>
+<h3 id="IP分配原则"><a href="#IP分配原则" class="headerlink" title="IP分配原则"></a>IP分配原则</h3><p>只有A、B、C三类地址可以分配给计算机和网络设备</p>
+<p>网络地址相同主机地址必须唯一</p>
+<p>网络地址的第一个数字不能为127，保留用来测试连接</p>
+<p>网络地址不能全为0，也不能全为1.</p>
+<p>主机地址中不能全为0，也不能全为1：主机地址全为0用来表示网络地址，全为1用作广播</p>
+<p><strong>ipv4特殊IP，不能使用的IP：</strong></p>
+<p>0.0.0.0</p>
+<p>255.255.255.255</p>
+<p>127.x.x.x</p>
+<p>A.0.0.0、A.255.255.255</p>
+<p>169.254.0.0–168.254.255.255</p>
+<h2 id="三、IPv6地址"><a href="#三、IPv6地址" class="headerlink" title="三、IPv6地址"></a>三、IPv6地址</h2><p>由于IPv4最大的问题在于网络地址资源有限，严重制约了互联网的应用和发展。IPv6的使用，不仅能解决网络地址资源数量的问题，而且也解决了多种接入设备连入互联网的障碍</p>
+<p>互联网数字分配机构（IANA）在2016年已向国际互联网工程任务组（IETF）提出建议，要求新制定的国际互联网标准只支持IPv6，不再兼容IPv4。</p>
+<h3 id="IPV6组成"><a href="#IPV6组成" class="headerlink" title="IPV6组成"></a>IPV6组成</h3><p>IPv6的地址长度为128位，是IPv4地址长度的4倍。于是IPv4点分十进制格式不再适用，采用十六进制表示。</p>
+<h3 id="IPV6分类"><a href="#IPV6分类" class="headerlink" title="IPV6分类"></a>IPV6分类</h3><p>单播地址（Unicast Address）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用来唯一标识一个接口，类似于IPv4中的单播地址。发送到单播地址的数据报文将被传送给此地址所标识的一个接口。</span><br></pre></td></tr></table></figure>
+
+<p>组播地址（Multicast Address）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用来标识一组接口（通常这组接口属于不同的节点），类似于IPv4中的组播地址。发送到组播地址的数据报文被传送给此</span><br><span class="line">地址所标识的所有接口。</span><br></pre></td></tr></table></figure>
+
+<p>任播地址（Anycast Address）</p>
+<p>用来标识一组接口（通常这组接口属于不同的节点）。发送到任播地址的数据报文被传送给此地址所标识的一组接口中距离源节点最近（根据使用的路由协议进行度量）的一个接口，一对最近。</p>
+<p>单播地址</p>
+<p>可聚合的全球单播地址（Aggregatable Global Unicast Addresses）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">可在全球范围内路由和到达的，相当于IPv4里面的global addresses。前三个bit是001</span><br><span class="line"></span><br><span class="line">例如：2000::1:2345:6789:01ab</span><br></pre></td></tr></table></figure>
+
+<p>链路本地地址（Link-Local Addresses）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">用于同一个链路上的相邻节点之间通信，相当于IPv4里面的169.254.0.0/16地址。Ipv6的路由器不会转发链路本地地址</span><br><span class="line">的数据包。前10个bit是1111 1110 10，由于最后是64bit的interface ID，所以它的前缀总是FE80::/64</span><br><span class="line"></span><br><span class="line">例如：FE80::1/10</span><br></pre></td></tr></table></figure>
+
+<p>站点本地地址（Site-Local Addresses）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对于无法访问internet的本地网络，可以使用站点本地地址，这个相当于IPv4里面的private address（10.0.0.0/8,</span><br><span class="line"> 172.16.0.0/12, and 192.168.0.0/16）。它的前10个bit是1111 1110 11，它最后是16bit的Subnet ID和</span><br><span class="line">64bit的interface ID，所以它的前缀是FEC0::/48。</span><br></pre></td></tr></table></figure>
+
+<p>未指定地址（Unspecified address）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0:0:0:0:0:0:0:0 或者::</span><br><span class="line"></span><br><span class="line">当一个有效地址还不能确定，一般用未指定地址作为源地址。未指定地址不能作为一个目标地址来使用。</span><br></pre></td></tr></table></figure>
+
+<p>回环地址（Loopback address）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">回环地址::1用于标识一个回环接口，可以使一个节点可以给自己发送数据包。相当于IPv4的回环地址127.0.0.1</span><br></pre></td></tr></table></figure>
+
+<p>唯一的本地单播地址（ULA，Unique Local IPv6 Unicast Address）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在RFC4193中标准化了一种用来在本地通信中取代单播站点本地地址的地址。ULA拥有固定前缀FC00::/7，后面跟一个</span><br><span class="line">被称为全局ID的40bit随机标识符</span><br></pre></td></tr></table></figure>
+
+<h3 id="IPV6特殊地址"><a href="#IPV6特殊地址" class="headerlink" title="IPV6特殊地址"></a>IPV6特殊地址</h3><p>下面列出一些绝对应该牢记的地址范围，因为我们总是会用到它们。它们都是特殊地址或保留用 于特定目的的地址，但不同于 IPv4， IPv6提供的地址非常多，因此保留一些不会有任何害处。</p>
+<p>0:0:0:0:0:0:0:0 (::)相当于 IPv4地址 0.0.0札通常在使用有状态 DHCP配置时，用作主机 的源地址。</p>
+<p>0:0:0:0:0:0:0:1 (::1) 相当于 IPv4地址 127.0.0.10</p>
+<p>0:0:0:0:0:0:192.168.100.1 在同时支持 IP4和IPv6的网络中，从 IPv4地址转换而来的IPv6地址通常这样书写。</p>
+<p>2000::&#x2F;3 全局单播地址范围。</p>
+<p>FCOO::厅唯一的本地单播地址范围。</p>
+<p>FE80::&#x2F;10 链路本地单播地址范围。</p>
+<p>FFOO::&#x2F;8 组播地址范围。</p>
+<p>3FFF:FFFF::&#x2F;32 保留举例和编写文档时使用。</p>
+<p>2001:0088::&#x2F;32 保留举例和编写文档时使用。</p>
+<p>2002::&#x2F;16 保留供 6t04隧道技术使用。 6t04隧道技术是一种从IPv4迁移到IPv6的方法，让IPv6分组能够通过IPv4 网络进行传输，而无需配置显式的隧道。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">IPV6为啥这么多年没广泛应用</span><br><span class="line"></span><br><span class="line">网络黑白名单需要时间去建立，否则网络威胁无法解决。</span><br><span class="line"></span><br><span class="line">目前骨干线路已经全部使用了IPV6地址，随着物联网的出现，IPV6会更快完成替换。</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、VLSM可变长子网掩码"><a href="#四、VLSM可变长子网掩码" class="headerlink" title="四、VLSM可变长子网掩码"></a>四、VLSM可变长子网掩码</h2><p>VLSM(可变长子网掩码) 提供了在一个主类(A类、B类、C类)网络内包含多个子网的能力，可以对一个子网再进行子网划分,使IP地址得到最充分的利用.</p>
+<h3 id="划分子网"><a href="#划分子网" class="headerlink" title="划分子网"></a>划分子网</h3><p>就是借用主机号的位充当网络号来扩大网络的个数</p>
+<h3 id="VLSM优点"><a href="#VLSM优点" class="headerlink" title="VLSM优点"></a>VLSM优点</h3><p>VLSM技术可以避免固定长度子网掩码浪费地址空间的问题。</p>
+<p>提高带宽利用率</p>
+<p>实现LAN中的网络隔离，更加安全。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601026370058.png" alt="VLSM.png"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BB%8B%E7%BB%8D/" rel="prev" title="zutuanxue-计算机介绍">
+      <i class="fa fa-chevron-left"></i> zutuanxue-计算机介绍
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/11/15/zutuanxue-Linux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%AE%9D%E5%85%B8/" rel="next" title="zutuanxue-Linux系统管理宝典">
+      zutuanxue-Linux系统管理宝典 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">计算机网络介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-number">1.1.</span> <span class="nav-text">计算机网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB"><span class="nav-number">1.2.</span> <span class="nav-text">网络分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E7%85%A7%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%88%86%E7%B1%BB"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">按照网络拓扑分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E5%9C%B0%E5%9F%9F%E5%88%86%E7%B1%BB%EF%BC%9A%E5%8F%82%E7%85%A7%E7%89%A9%E4%B8%8D%E5%90%8C%EF%BC%8C%E7%B1%BB%E5%9E%8B%E4%B8%8D%E5%90%8C"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">按地域分类：参照物不同，类型不同</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87"><span class="nav-number">1.3.</span> <span class="nav-text">网络设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E4%BB%8B%E8%B4%A8"><span class="nav-number">1.4.</span> <span class="nav-text">传输介质</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%EF%BC%89%E5%8F%8C%E7%BB%9E%E7%BA%BF"><span class="nav-number">1.4.1.</span> <span class="nav-text">1）双绞线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%EF%BC%89%E5%85%89%E7%BA%A4"><span class="nav-number">1.4.2.</span> <span class="nav-text">2）光纤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OSI%E4%B8%83%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">OSI七层网络模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ISO%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.1.</span> <span class="nav-text">ISO介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.2.</span> <span class="nav-text">网络模型介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.3.</span> <span class="nav-text">OSI七层模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.4.</span> <span class="nav-text">OSI七层模型介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OSI%E4%B8%83%E5%B1%82%E7%89%B9%E7%82%B9"><span class="nav-number">2.5.</span> <span class="nav-text">OSI七层特点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-x2F-IP%E5%9B%9B%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">TCP&#x2F;IP四层网络模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81TCP-x2F-IP%E5%9B%9B%E5%B1%82%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D"><span class="nav-number">3.1.</span> <span class="nav-text">一、TCP&#x2F;IP四层模型介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81TCP-x2F-IP%E5%9B%9B%E5%B1%82%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.2.</span> <span class="nav-text">二、TCP&#x2F;IP四层模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-x2F-IP%E5%8D%8F%E8%AE%AE%E7%B0%87"><span class="nav-number">3.2.1.</span> <span class="nav-text">TCP&#x2F;IP协议簇</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E6%AC%A1C-x2F-S%E9%80%9A%E4%BF%A1"><span class="nav-number">3.2.2.</span> <span class="nav-text">一次C&#x2F;S通信</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE"><span class="nav-number">4.</span> <span class="nav-text">传输层协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tcp%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="nav-number">4.0.1.</span> <span class="nav-text">tcp三次握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP%E5%9B%9B%E6%AC%A1%E6%96%AD%E5%BC%80"><span class="nav-number">4.0.2.</span> <span class="nav-text">TCP四次断开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP%E5%8C%85%E5%A4%B4"><span class="nav-number">4.0.3.</span> <span class="nav-text">TCP包头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP%E5%8D%8F%E8%AE%AE"><span class="nav-number">4.0.4.</span> <span class="nav-text">UDP协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP%E4%B8%8EUDP%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="nav-number">4.0.5.</span> <span class="nav-text">TCP与UDP区别：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IP%E5%9C%B0%E5%9D%80"><span class="nav-number">5.</span> <span class="nav-text">IP地址</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81IP%E4%BB%8B%E7%BB%8D"><span class="nav-number">5.1.</span> <span class="nav-text">一、IP介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IP%E5%9C%B0%E5%9D%80%E5%92%8CMac%E5%9C%B0%E5%9D%80"><span class="nav-number">5.1.1.</span> <span class="nav-text">IP地址和Mac地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP%E5%9C%B0%E5%9D%80%E5%88%86%E7%B1%BB"><span class="nav-number">5.1.2.</span> <span class="nav-text">IP地址分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81IPV4%E5%9C%B0%E5%9D%80"><span class="nav-number">5.2.</span> <span class="nav-text">二、IPV4地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IPV4%E5%9C%B0%E5%9D%80%E5%88%86%E7%B1%BB"><span class="nav-number">5.2.1.</span> <span class="nav-text">IPV4地址分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81"><span class="nav-number">5.2.2.</span> <span class="nav-text">子网掩码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E6%96%B9%E6%B3%95"><span class="nav-number">5.2.3.</span> <span class="nav-text">进制转换方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8421%E6%B3%95%E5%88%99%E8%BD%AC%E6%8D%A2%E6%B3%95"><span class="nav-number">5.2.4.</span> <span class="nav-text">8421法则转换法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%81%E7%BD%91%E5%9C%B0%E5%9D%80"><span class="nav-number">5.2.5.</span> <span class="nav-text">私网地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PNAT%E6%8A%80%E6%9C%AF"><span class="nav-number">5.2.6.</span> <span class="nav-text">PNAT技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP%E5%88%86%E9%85%8D%E5%8E%9F%E5%88%99"><span class="nav-number">5.2.7.</span> <span class="nav-text">IP分配原则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81IPv6%E5%9C%B0%E5%9D%80"><span class="nav-number">5.3.</span> <span class="nav-text">三、IPv6地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IPV6%E7%BB%84%E6%88%90"><span class="nav-number">5.3.1.</span> <span class="nav-text">IPV6组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IPV6%E5%88%86%E7%B1%BB"><span class="nav-number">5.3.2.</span> <span class="nav-text">IPV6分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IPV6%E7%89%B9%E6%AE%8A%E5%9C%B0%E5%9D%80"><span class="nav-number">5.3.3.</span> <span class="nav-text">IPV6特殊地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81VLSM%E5%8F%AF%E5%8F%98%E9%95%BF%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81"><span class="nav-number">5.4.</span> <span class="nav-text">四、VLSM可变长子网掩码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E5%88%86%E5%AD%90%E7%BD%91"><span class="nav-number">5.4.1.</span> <span class="nav-text">划分子网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VLSM%E4%BC%98%E7%82%B9"><span class="nav-number">5.4.2.</span> <span class="nav-text">VLSM优点</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1986</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="IntroductionHello and welcome to this course on Designing User Identity and Profiles. My name is Shabaz Darr, and I’ll be your instructor for this course. I am an Azure Virtual Desktop specialist and">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AZ140-Designing-for-Azure-Virtual-Desktop-User-Identities-and-Profiles">
+<meta property="og:url" content="https://example.com/2022/11/13/AZ-140-Designing-for-Azure-Virtual-Desktop-User-Identities-and-Profiles-4/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="IntroductionHello and welcome to this course on Designing User Identity and Profiles. My name is Shabaz Darr, and I’ll be your instructor for this course. I am an Azure Virtual Desktop specialist and">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-13T19:03:57.000Z">
+<meta property="article:modified_time" content="2022-11-14T10:33:20.000Z">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://example.com/2022/11/13/AZ-140-Designing-for-Azure-Virtual-Desktop-User-Identities-and-Profiles-4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>AZ140-Designing-for-Azure-Virtual-Desktop-User-Identities-and-Profiles | Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/13/AZ-140-Designing-for-Azure-Virtual-Desktop-User-Identities-and-Profiles-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AZ140-Designing-for-Azure-Virtual-Desktop-User-Identities-and-Profiles
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-13 15:03:57" itemprop="dateCreated datePublished" datetime="2022-11-13T15:03:57-04:00">2022-11-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-14 06:33:20" itemprop="dateModified" datetime="2022-11-14T06:33:20-04:00">2022-11-14</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/13/AZ-140-Designing-for-Azure-Virtual-Desktop-User-Identities-and-Profiles-4/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/13/AZ-140-Designing-for-Azure-Virtual-Desktop-User-Identities-and-Profiles-4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Hello and welcome to this course on Designing User Identity and Profiles. My name is Shabaz Darr, and I’ll be your instructor for this course. I am an Azure Virtual Desktop specialist and I’ve been working with Microsoft cloud technologies for several years, specifically with Azure Virtual Desktop since its inception, and have multiple Azure-focused certifications. My contact information is available on screen. Please feel free to reach out to me with any questions, comments, or concerns and I will be happy to discuss these with you. For any other issues you can always get in touch with us here at Cloud Academy by sending an email to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a> and one of our cloud experts will follow up with you.</p>
+<p>This course is intended for people that are planning on taking the Azure Virtual Desktop Specialty exam and anyone who is interested in learning how to deploy an Azure Virtual Desktop environment. By the end of this course, you will have knowledge on, selecting an appropriate licensing model for Azure virtual desktop based on requirements, recommending an appropriate storage solution, including understanding the differences between Azure NetApp Files and Azure Files, planning for Azure Virtual Desktop Client Deployment, planning for user profiles, recommending a solution for network connectivity, planning for Azure AD Connect for user identities.</p>
+<p>To get the most from this course you should have an Administrator level understanding of Azure Cloud services.</p>
+<p>Feedback on course content hosted by Cloud Academy is always appreciated and encouraged, as it helps us as trainers to improve which helps all of our students taking courses in the future. If you have any feedback, positive or negative, it would be greatly appreciated if you could contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>.</p>
+<p>Please note, that at the time of writing this content, all course information was accurate. To accommodate new features and services, Microsoft regularly updates exam guidelines and measured skills. This may result in certain elements of discrepancy appearing in the content over time. Please contact us if you find any outdated content at <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. This will allow us to update the course during the next release cycle. Thank you.</p>
+<h1 id="Selecting-an-Appropriate-Licensing-Model"><a href="#Selecting-an-Appropriate-Licensing-Model" class="headerlink" title="Selecting an Appropriate Licensing Model"></a>Selecting an Appropriate Licensing Model</h1><p>Welcome to this module on selecting an appropriate licensing model for Azure Virtual Desktop based on requirements. In this module, we will cover the following topics: An Azure Virtual Desktop licensing overview. We will then look at bring your own license, or BYOL which includes: virtual desktop licensing for BYOL, remote app licensing for BYOL. Let’s take a look at an overview of Azure Virtual Desktop licensing.</p>
+<p>There are two aspects of AVD licensing. The first is license entitlement. If you have an eligible Windows, Microsoft 365, or Microsoft Remote Desktop Client Access License, better known as an RDS CAL, there is no additional cost. The second part of Azure Virtual Desktop licensing is per user pricing. A recent addition to this has been introduced which supports Azure Virtual Desktop for external users only, meaning it supports users outside of your organization. We’ll explore this in more detail in the next part of this module.</p>
+<p>There are different licensing models, the first one being virtual desktops. Virtual Desktop licensing for BYOL allows users outside of your organization to use their own license and access either Windows 10 or Windows 7 or Windows Server desktop session hosts. Additionally, they can utilize per user access licenses which will grant them access to Windows 10 and Windows 7 desktop for a fixed monthly price.</p>
+<p>The second BYOL licensing model is for application streaming. This model follows the almost identical features and licenses as the virtual desktop model, however there is an exception. Rather than give access to a full virtual desktop, it will give the external users access to stream compatible applications.</p>
+<h1 id="Recommending-an-Appropriate-Storage-Solution"><a href="#Recommending-an-Appropriate-Storage-Solution" class="headerlink" title="Recommending an Appropriate Storage Solution"></a>Recommending an Appropriate Storage Solution</h1><p>Welcome to this module on recommending an appropriate storage solution including Azure NetApp Files vs Azure Files. It is important to understand the different storage solutions that are available and their features before you can recommend one. In this module, we will cover the following topics: What is Azure Files including its main features? What is Azure NetApp Files including its main features? Azure Files vs Azure NetApp Files where we will compare the features from both.</p>
+<p>Let’s start with looking at Azure Files. Azure Files is Microsoft Cloud’s native file share as a service. You can compare it to an on-premises file server but hosted at an Azure data center. It supports both server message block, or SMB and network file system, or NFS protocols so you can utilize this service for different workloads and scenarios. From an Azure Virtual Desktop perspective, Azure Files is utilized to facilitate user profiles, and integrates with FSLogix to give a smooth roaming profile experience to the end user.</p>
+<p>Let’s now take a look at Azure NetApp Files and some of its features. Like Azure Files, this is also a cloud-hosted file share as a service, however, it is NetApp technology rather than Azure native. It is an enterprise-grade file share as a service and supports multiple protocols, much like its on-premises NetApp equivalent. There are also more tier options available with NetApp files as well as the existing premium and standard that are available with Azure Files. Azure NetApp Files also integrates with FSLogix to give a seamless roaming profile experience but with much better performance, which we will discuss shortly.</p>
+<p>Now we understand what both storage types are and some of their key features, let’s see how they compare. Whereas Azure Files is more optimized for random access workloads, NetApp Files is more suited to high performance and low latency workloads. From a protocol aspect, we know Azure Files supports SMB and NFS but it also supports REST protocols, whereas NetApp Files also has SMB, NFS and dual-protocol access. Availability of both services is similar, where Azure NetApp Files has its premium tier available in 30 plus regions and its standard tier available in all regions.</p>
+<p>Azure NetApp Files has all its tiers available in 28 plus regions. When we look at network access differences, both are accessible from VPN Gateway and Express Route. However, only Azure Files can be potentially accessed from the Internet. With regards to identity-based authentication and authorization, both support Active Directory Domain Services and Azure AD DS. However, for Azure Files, identity-based authorization is only supported when utilizing the SMB protocol.</p>
+<p>When we look at encryption, Azure Files allows for customer-managed or Microsoft-managed keys, whereas Azure NetApp files only allows for Microsoft-managed keys for all protocols. Finally, from a performance perspective, NetApp files supports Ultra and Premium disks and have much more higher IOPS and throughput, therefore offer a much better performance experience compared to Azure Files.</p>
+<h1 id="Planning-for-Azure-Virtual-Desktop-Client-Deployment"><a href="#Planning-for-Azure-Virtual-Desktop-Client-Deployment" class="headerlink" title="Planning for Azure Virtual Desktop Client Deployment"></a>Planning for Azure Virtual Desktop Client Deployment</h1><p>Welcome to this module on planning for Azure Virtual Desktop Client Deployment. We’ll cover the following topics in this module. We’ll look at an overview of the connection methods for Azure Virtual Desktop. Finally, we’ll look at the web browsers that support the web client. We’re going to start by looking at an overview of the different connection methods and clients for Azure Virtual Desktop.</p>
+<p>The first is a Windows client, which can be downloaded from the internet and comes in both 32-bit and 64-bit form. This allows for user to either login with their Microsoft 365 email address, or use the remote access resource feed to subscribe to the workspace. We then have a web client which can be accessed from several supported web browsers. However, we will go into more detail on this shortly. Azure Virtual Desktop can also be accessed from Android devices by downloading a client from the Google Play store. This works in the same way the Windows client does in that you can subscribe to the remote access resource feed. There is an Azure Virtual Desktop client for the Apple macOS which is downloaded via web browser. Once installed, you add the workspace and enter your credentials to authenticate to the workspace. Finally, there is a client available to the Apple iOS device, which can be downloaded from the Apple store. This is similar to the Android client in that you subscribe to the remote access resource feed to access the workspace.</p>
+<p>Now we understand the different types of clients and operating systems that support access into the Azure Virtual Desktop environment, let’s discuss which web browser clients are supported. You can access Azure Virtual Desktop via the web client using our Microsoft Edge internet browser. This is available on Windows operating system devices. Apple Safari supports access to Azure Virtual Desktop via the web client and this browser is available on macOS.</p>
+<p>We then have a Mozilla Firefox web browser. However, please note that version 55 or later supports the Azure Virtual Desktop web client. This is also available on multiple operating systems, including Windows, macOS, and Linux. Finally, we have Google Chrome web browser, which supports web client access to Azure Virtual Desktop. Much like Mozilla Firefox, this is available on multiple operating systems, including Windows, macOS, Linux and Chrome OS.</p>
+<h1 id="Planning-for-User-Profiles"><a href="#Planning-for-User-Profiles" class="headerlink" title="Planning for User Profiles"></a>Planning for User Profiles</h1><p>Welcome to this module on planning for user profiles in Azure Virtual Desktop. We will cover the following topics in this module. Storage options for user profiles in Azure Virtual Desktop. We will then discuss FSLogix Profile Containers. Finally, we will have a look at what FSLogix Office Containers are. Let’s start off by looking at storage options for user profiles.</p>
+<p>Azure Virtual Desktop integrates with both Azure Files and Azure NetApp Files to facilitate user profiles. We discussed both of these services in a previous module in this course. As we discussed in the Recommending an appropriate storage solution module, Azure Files offers a general purpose use case, whereas Azure NetApp Files is more suited to higher performance user cases. You also need to be aware of the location you are storing your user profiles, as both Azure Files and NetApp files have different availability options. We are now going to discuss FSLogix profile containers. This is a remote profile solution which is installed on the Azure Virtual Desktop sessions hosts.</p>
+<p>The FSLogix profile containers offer profile redirection and are similar to traditional on-premises roaming profiles. FSLogix profile containers fully integrate with Azure Files and Azure NetApp Files. You can also domain join the storage accounts associated with FSLogix which will enable you to control access using Active Directory Domain Services. In the final part of this module, we are going to discuss FSLogix Office Containers. This is also a form of profile redirection, however it is specific to Microsoft Office related data only. Office Containers allow the user to have an enhanced experience when using Office apps, but best practice recommendation is to implement it with another profile solution.</p>
+<h1 id="Recommending-a-Solution-for-Network-Connectivity"><a href="#Recommending-a-Solution-for-Network-Connectivity" class="headerlink" title="Recommending a Solution for Network Connectivity"></a>Recommending a Solution for Network Connectivity</h1><p>Welcome to this module on recommending a solution for network connectivity. We’ll cover the following topics in this module. We’ll first look at virtual network recommendations for Azure Virtual Desktop. We’ll then move on to talking about the differences between VPN Gateway and Express Route, including use cases. Finally, we’ll look at some of the networking best practices for Azure virtual desktop.</p>
+<p>First, let’s take a look at virtual network recommendations. In an Azure virtual desktop environment, it’s important to pick a sensible naming convention, largely to identify who the network belongs to. Naming convention is even more important if the environment is being deployed for a global organization, as it may have different regions. It’s always recommended to provision virtual networks to the closest region where the user will be situated. Make sure to revision multiple subnets. For example, if you have different host pools for different departments, you can separate these into different subnets and have more control over access. Finally, utilizing Azure services, like Network Security Groups to increase the network security posture of the Azure Virtual Desktop environment, is always recommended.</p>
+<p>Let’s now discuss the difference between VPN Gateways and Express Routes. First, VPN Gateways. This is a shared VPN connection into Azure. This can be point-to-site, which is an individual VPN user connecting into Azure, or a site-to-site VPN connection, which is an on-premise office network or some location with a VPN device like a router connecting into Azure. Let’s now compare a VPN Gateway to an Express Route. This is a private connection between your organization’s on-premises location and the Azure data center.</p>
+<p>There are two types of Express Route connection. The first is where you establish a connection to Azure at an Express Route location, known as an exchange provider facility. The second is where you directly connect to Azure from an existing Wide Area Network or WAN, which is provided by your network service provider. In the final part of this module, we are going to discuss some general networking best practices for Azure Virtual Desktop.</p>
+<p>It is the best practice recommendation to have strong network controls in place. By this, we mean centralizing management and governance of the core network functions like the virtual network and any virtual network appliances. Next, it is recommended to logically segment virtual subnets, especially if you have used a large network address space for your VNet.</p>
+<p>We touched on security earlier in this module, and as part of that is adopting a zero-trust approach to network access. Use Azure AD features like conditional access and just-in-time access to mitigate any security risks. The final best practice recommendation is to utilize virtual network appliances where possible. This includes virtual firewalls, which add an extra layer of security to your Azure Virtual Desktop environment.</p>
+<h1 id="Planning-for-Azure-AD-Connect-for-User-Identities"><a href="#Planning-for-Azure-AD-Connect-for-User-Identities" class="headerlink" title="Planning for Azure AD Connect for User Identities"></a>Planning for Azure AD Connect for User Identities</h1><p>Welcome to this module on planning for Azure AD Connect for User Identities. We will cover the following topics in this module: I will explain what Azure AD Connect is. We will then discuss some the synchronization features available with Azure AD Connect. Finally, we will have a look at some of the use cases that fit each of these features.</p>
+<p>Let’s start by looking at what Azure AD Connect is. Azure AD Connect is an application that is installed on a server within your on-premises environment, and it allows you to create a hybrid identity and access management solution between Active Directory Domain Services and Azure AD. It has a built-in health monitoring feature called Azure AD Connect Health which provides robust monitoring of your on-premises identity environment.</p>
+<p>Although Azure AD Connect is a free tool and included as part of your Azure subscription, to get the best out of this tool, including the health capability, you need at least an Azure AD P1 license. Let’s look a bit deeper now at some of the main Azure AD Connect features, specifically the synchronization options. The first synchronization feature is called password hash synchronization. This feature enables a user to have the same password for Microsoft 365 and on-premises, and it synchronizes a hash, of the hash, of the user’s password from on-premises AD to Azure AD.</p>
+<p>The second synchronization option is called pass-through authentication, or PTA. This has the same features as password hash, but in addition it allows organizations to enforce their on-premises AD security and password policies without the need for extra infrastructure. The final synchronization option is Active Directory Federation Services, or ADFS. With ADFS you get all the same features as pass-through, but much more integration with 3rd party MFA providers and ADFS claims. Also requires much more additional on-premises infrastructure than password hash and pass-through authentication.</p>
+<p>In the final part of this module, we are going to look at the different use cases that would fit each of the synchronization options we have discussed. If you have a lot of existing on-premises infrastructure, including applications and services that need to be accessed with your Microsoft 365 accounts, then ADFS would be a sensible choice for your organization. If you want your users to have the same login credentials, both on-premises and in the cloud, then pass-through authentication, or PTA, is the most sensible choice for your organization. Finally, if you are just looking to improve user productivity, then password hash synchronization is the most relevant choice for your organization.</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>We have covered several important topics in this course. First, we covered selecting an appropriate licensing model for Azure Virtual Desktop where we looked at an overview of AVD licensing, then introduced the concept of ‘Bring Your Own License’, or BYOL. This had two variants, the first being Virtual Desktop BYOL and the second being Application Streaming BYOL.</p>
+<p>Next, we discussed recommending an appropriate storage solution, where we covered an overview of Azure Files and its features. We then discussed Azure NetApp Files and its features, and finally did a comparison of both where we compared the features and looked at the use cases that could fit both services. The third module in this course looked at planning for Azure Virtual Desktop Client Deployment. Here we discussed an overview of the required clients to be able to connect from various operating systems. Finally, we looked at the supported browsers for the web client.</p>
+<p>We then moved on to looking at planning for user profiles. In this module, we looked at storage options for user profiles in Azure Virtual Desktop, FSLogix for Profile Containers, and FSLogix for Office Containers. In the next module for this course we looked at recommending a solution for network connectivity. We started off by looking at some recommendations for virtual networks, then discussed Azure VPN Gateway and ExpressRoute where we compared their features.</p>
+<p>Finally, we talked about some best practice recommendations for network connectivity. In the final module of this course we talked about planning for Azure AD Connect for user identities. Here we started off by discussing what Azure AD Connect is, then looked at some of the different synchronization features, including password hash, pass-through authentication and AD FS. Finally we looked at the use cases that fit each of these synchronization options.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/13/AZ-140-Lab-Introduction-to-Azure-Virtual-Desktop-AVD-3/" rel="prev" title="AZ140-Lab-Introduction-to-Azure-Virtual-Desktop-AVD">
+      <i class="fa fa-chevron-left"></i> AZ140-Lab-Introduction-to-Azure-Virtual-Desktop-AVD
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/11/13/AZ-140-Knowledge-Check-Designing-for-Azure-Virtual-Desktop-User-Identities-and-Profiles-5/" rel="next" title="Knowledge-Check-Designing-for-Azure-Virtual-Desktop-User-Identities-and-Profiles-5">
+      Knowledge-Check-Designing-for-Azure-Virtual-Desktop-User-Identities-and-Profiles-5 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Selecting-an-Appropriate-Licensing-Model"><span class="nav-number">2.</span> <span class="nav-text">Selecting an Appropriate Licensing Model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Recommending-an-Appropriate-Storage-Solution"><span class="nav-number">3.</span> <span class="nav-text">Recommending an Appropriate Storage Solution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Planning-for-Azure-Virtual-Desktop-Client-Deployment"><span class="nav-number">4.</span> <span class="nav-text">Planning for Azure Virtual Desktop Client Deployment</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Planning-for-User-Profiles"><span class="nav-number">5.</span> <span class="nav-text">Planning for User Profiles</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Recommending-a-Solution-for-Network-Connectivity"><span class="nav-number">6.</span> <span class="nav-text">Recommending a Solution for Network Connectivity</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Planning-for-Azure-AD-Connect-for-User-Identities"><span class="nav-number">7.</span> <span class="nav-text">Planning for Azure AD Connect for User Identities</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary"><span class="nav-number">8.</span> <span class="nav-text">Summary</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1986</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

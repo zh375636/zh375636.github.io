@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hang&#39;s Blog">
+<meta property="og:url" content="https://example.com/page/69/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://example.com/page/69/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/13/AZ-140-Managing-Security-on-Azure-Virtual-Desktop-17/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/13/AZ-140-Managing-Security-on-Azure-Virtual-Desktop-17/" class="post-title-link" itemprop="url">AZ-140-Managing-Security-on-Azure-Virtual-Desktop-17</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-13 18:59:14" itemprop="dateCreated datePublished" datetime="2022-11-13T18:59:14-04:00">2022-11-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-14 06:33:02" itemprop="dateModified" datetime="2022-11-14T06:33:02-04:00">2022-11-14</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/13/AZ-140-Managing-Security-on-Azure-Virtual-Desktop-17/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/13/AZ-140-Managing-Security-on-Azure-Virtual-Desktop-17/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Hello, and welcome to this course on Managing Security to Azure Virtual Desktop. My name is Shabaz Darr and I’ll be your instructor for this course. I am an Azure Virtual Desktop Specialist, and have been working with Microsoft cloud technologies for several years, specifically with Azure Virtual Desktop since its inception, and have multiple Azure-focused certifications. My contact information is available on screen. Please feel free to reach out to me with any questions, comments, or concerns, and I’ll be happy to discuss these with you.</p>
+<p>For any other issues, you can always get in touch with us here at Cloud Academy by sending an email to <a href="mailto:&#115;&#117;&#112;&#x70;&#x6f;&#114;&#x74;&#64;&#99;&#x6c;&#x6f;&#x75;&#100;&#x61;&#x63;&#97;&#x64;&#x65;&#109;&#121;&#x2e;&#x63;&#x6f;&#109;">&#115;&#117;&#112;&#x70;&#x6f;&#114;&#x74;&#64;&#99;&#x6c;&#x6f;&#x75;&#100;&#x61;&#x63;&#97;&#x64;&#x65;&#109;&#121;&#x2e;&#x63;&#x6f;&#109;</a> and one of our cloud experts will follow up with you. This course is intended for people that are planning on taking the Azure Virtual Desktop Specialty exam, and anyone who is interested in learning how to deploy an Azure Virtual Desktop environment.</p>
+<p>By the end of this course, you will have knowledge on <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-security-azure-virtual-desktop-2356/planning-and-implementing-conditional-access-policies-for-connections-to-azure-virtual-desktop/">planning and implementing Conditional Access policies</a> for connections to Azure Virtual Desktop. <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-security-azure-virtual-desktop-2356/planning-and-implementing-multi-factor-authentication-in-azure-virtual-desktop/">Planning and implementing multi-factor authentication in Azure Virtual Desktop</a>. <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-security-azure-virtual-desktop-2356/managing-security-by-using-microsoft-defender-for-cloud/">Managing security by using Microsoft Defender for Cloud</a>, formerly known as Azure Security Center. <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-security-azure-virtual-desktop-2356/configuring-microsoft-defender-antivirus-for-session-hosts/">Configuring Microsoft Defender Antivirus for session hosts</a>. To get the most from this course, you should have an administrator-level understanding of Azure Cloud services.</p>
+<p>Feedback on course content hosted by Cloud Academy is always appreciated and encouraged, as it allows us as trainers to improve, which helps all of our students taking courses in the future. If you have any feedback, positive or negative, it would be greatly appreciated if you could contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. When I created this course, all information was current. If you notice any updates or corrections, please reach out to us. Thank you.</p>
+<h1 id="Planning-and-Implementing-Conditional-Access-Policies-for-Connections-to-Azure-Virtual-Desktop"><a href="#Planning-and-Implementing-Conditional-Access-Policies-for-Connections-to-Azure-Virtual-Desktop" class="headerlink" title="Planning and Implementing Conditional Access Policies for Connections to Azure Virtual Desktop"></a>Planning and Implementing Conditional Access Policies for Connections to Azure Virtual Desktop</h1><p>Welcome to this module on planning and implementing conditional access policies for connections to <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/designing-azure-virtual-desktop-architecture-2046/azure-virtual-desktop-overview/">Azure Virtual Desktop</a> based on requirements. In this module, we’ll cover the following topics. What are the requirements to implement conditional access policies with Azure Virtual Desktop? We will then walk-through a demo to create a conditional access policy with session settings.</p>
+<p>Let’s start by discussing conditional access policy requirements for Azure Virtual Desktop. We need to ensure that the Microsoft 365 tenant has the relevant licensing which includes the conditional access feature. This is covered by the Azure AD P1 licenses and above. You then need to ensure you have a fully configured Azure Virtual Desktop environment, including a host pool and an application group. We will now complete a walk through demo of creating a conditional access policy with session settings.</p>
+<p>As you can see, we are logged into the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/designing-azure-identity-management/introduction-to-azure-ad/">Azure Active Directory</a> portal with an account that has Global Admin access. We now navigate to the Security option, and from here Conditional Access. We then select New policy, then create a new policy. Let’s give the policy a name, in our example let’s use AVD MFA. Under the Assignments section you need to select the group you want this policy to apply to. In our example, we are going to use an existing group called AVD-Users.</p>
+<p>Moving on we click on Cloud apps or actions, then select apps. On the right-hand side we see a list of applications to choose from. If we start to type in the word Windows, we can now see Azure Virtual Desktop as an option. Click on this and then hit the select button. In our example we are not going to create any conditions, but I quickly want to highlight the types of conditions you are able to set. You can control MFA access to AVD based on the Device platform, for example is it an iOS device? Or you can put a condition based on location, for example you may wish to exempt a local office network from being prompted for MFA.</p>
+<p>The other options you see are client apps, device state, or filter for devices. For our demo, we are going to leave all these options not configured and move onto access control. We need to select Grant. Because we want to enforce MFA, we select require <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-microsoft-365-access-and-authentication/manage-user-settings-azure-multi-factor-authentication-cloud/">multi-factor authentication</a>. There are other options as we see here, where a device needs to be marked as compliant, or require that the device be Hybrid joined for example. </p>
+<p>Before we are ready to create the policy, we need to configure session control. If we click on this and now we see several options on the right-hand pane. For your example, we want to tick sign-in frequency which allows us to control the amount of time before a user needs to authenticate their MFA. If we look at Units first, we can select hours or days, and then we can enter the numerical value above that. In our example, we are going to configure seven days, but you should configure according to your organization’s policies. Then, we can click on create and ensure the on option is selected. That concludes the demo.</p>
+<h1 id="Planning-and-Implementing-Multi-Factor-Authentication-in-Azure-Virtual-Desktop"><a href="#Planning-and-Implementing-Multi-Factor-Authentication-in-Azure-Virtual-Desktop" class="headerlink" title="Planning and Implementing Multi-Factor Authentication in Azure Virtual Desktop"></a>Planning and Implementing Multi-Factor Authentication in Azure Virtual Desktop</h1><p>Welcome to this module on planning and implementing multi-factor authentication in <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/designing-azure-virtual-desktop-architecture-2046/azure-virtual-desktop-overview/">Azure Virtual Desktop</a>. In this module, we’ll cover the following topics. We’ll look at what is required to integrate Azure Virtual Desktop with <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-microsoft-365-access-and-authentication/manage-user-settings-azure-multi-factor-authentication-cloud/">Multi-Factor Authentication</a>, better known as MFA. We will complete this lecture by doing a walk-through demo of how to implement MFA settings.</p>
+<p>Let’s initially take a look at some of the requirements to implement multi-factor authentication with AVD. Like most Microsoft 365, services you need to ensure you have the relevant license in place. Now although MFA can be configured with the basic <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/designing-azure-identity-management/introduction-to-azure-ad/">Azure AD</a> subscription, this is only with security baselines in place. In order to integrate it with Azure Virtual Desktop, you require a minimum of Azure AD P1. You also need to ensure you have an existing Azure Virtual Desktop environment, including a host pool and application group.</p>
+<p>Finally, you need to ensure you have a conditional access policy in place to enable MFA for Azure Virtual Desktop. As we saw in the demo for the last lecture, MFA is configured via a Conditional access policy. We have already seen a demo on how to configure a conditional access policy to enable MFA in the last lecture. In this demo, we are going to look at MFA settings in Azure. Here we are in the Azure AD portal, and we initially want to navigate to security and then MFA.</p>
+<p>Here we have a number of options we can configure, including Account lockout, Fraud alerts, and look at activity reports. If we take a closer look at account lockout settings, we can customize three different settings. The number of MFA denials that will trigger an account lockout. The number of minutes until an account lockout counter is reset. And finally, the number of minutes until an account is automatically unlocked. With the fraud alert settings, it is turned off by default, therefore you have the ability to enable this. This will automatically turn on the setting to automatically block users who report fraud.</p>
+<p>Finally, you can set a specific code which signifies a fraud report. The default setting is zero. The final setting I mentioned was activity reports, which allow you to review which users have been completing MFA authentication, the time, the app that was being used, as well as the authentication method, among other details. These three settings as well as many others can be implemented to give your organization a much better experience and add additional layers of security for your AVD environment.</p>
+<h1 id="Managing-Security-by-Using-Microsoft-Defender-for-Cloud"><a href="#Managing-Security-by-Using-Microsoft-Defender-for-Cloud" class="headerlink" title="Managing Security by Using Microsoft Defender for Cloud"></a>Managing Security by Using Microsoft Defender for Cloud</h1><p>Welcome to this module on managing security by using Microsoft Defender for Cloud, formerly known as <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-azure-security-center/preventing-responding-security-threats-azure-security-center/">Azure Security Center</a>. We will cover the following topics in this module. We will discuss the requirements needed to integrate Microsoft Defender for Cloud with <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/designing-azure-virtual-desktop-architecture-2046/azure-virtual-desktop-overview/">Azure Virtual Desktop</a>. We will then look at the features that are available. Finally, we will look at some general security best practices for Azure Virtual Desktop. </p>
+<p>Let’s start off by taking a look at some of the requirements that need to be fulfilled in order to integrate Azure Virtual Desktop with Microsoft Defender for Cloud. There are two levels of Microsoft Defender for Cloud, basic and standard. Before you can integrate this service with AVD, you need to ensure you have enabled the standard tier in Microsoft Defender for Cloud. Finally, you need to ensure you have provisioned your Azure Virtual Desktop environment and have active session hosts within this environment.</p>
+<p>Let’s now move on to discussing some of the features that are available once you meet these requirements. The first feature I would like to highlight is the security configuration assessment, which will assess your existing security implementation within Azure Virtual Desktop. Next, we have a security score, which again assesses the AVD environment, but this time outputs a score, detailing vulnerabilities and how you can remediate those.</p>
+<p>We move on to file integrity monitoring, better known as FIM. This feature examines operating system files, Windows registry, apps, and more for changes in behavior that might indicate an attack. I also want to mention Just-in-time VM access as an important feature. This feature allows you to control access to the sessions hosts and limit not only the level of access, but the amount of time a user can access a VM.</p>
+<p>The final feature I will touch on is adaptive application control. This is an intelligent and automated solution for defining allow lists of known, safe applications for your session hosts. In the final part of this lecture, I will discuss general security best practices for Azure Virtual Desktop. An important aspect of AVD is the session host <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/getting-started-with-azure-virtual-machines-988/what-is-a-virtual-machine/">virtual machines</a>, so ensuring you have some type of endpoint protection enabled on these is very important.</p>
+<p>With any type of cloud-hosted environment, security posture is key, and AVD is no different, which is why it is another best practice to continuously monitor and improve your secure score. Access and authentication are an important aspect of all cloud-hosted services, and as such, forcing users to utilize multi-factor authentication when accessing Azure Virtual Desktop should be standard. The final best practice recommendation I want to point out is to set up screen locks for idle sessions. This protects access to the environment if users walk away from their screens and leave the session unattended.</p>
+<h1 id="Configuring-Microsoft-Defender-Antivirus-for-Session-Hosts"><a href="#Configuring-Microsoft-Defender-Antivirus-for-Session-Hosts" class="headerlink" title="Configuring Microsoft Defender Antivirus for Session Hosts"></a>Configuring Microsoft Defender Antivirus for Session Hosts</h1><p>Welcome to this module on Configuring Microsoft Defender Antivirus for Session Hosts. We will cover the following topics in this module. What is Microsoft Defender Antivirus? What are the requirements to run Microsoft Defender Antivirus in a VDI environment? We’ll take a closer look at the security intelligence updates for Windows 10 OS.</p>
+<p>Let’s start off by explaining what Microsoft Defender Antivirus is. This is next-generation protection services that are hosted by <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/setting-up-and-managing-a-microsoft-365-tenant/setup-microsoft-365-tenant-and-subscription/">Microsoft 365</a> and part of its wider security suite. It combines machine learning, big-data analysis and in-depth resistance research to offer a robust protection layer for Windows 11, 10 and Server OS. There are two modes.</p>
+<p>First, we have Active mode which is utilized as the primary antivirus application on the device, so it remediates threats. And then, we have passive mode, where Microsoft Defender Antivirus is not utilized as the primary antivirus, so it does not remediate threats. As with most Microsoft Cloud services, there are a number of requirements that need to be met before it can be implemented with <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/designing-azure-virtual-desktop-architecture-2046/azure-virtual-desktop-overview/">Azure Virtual Desktop</a>. From a licensing perspective, it is included as part of the Microsoft 365 E5, E3, E5 security, and A5 security subscriptions. It is supported on both server OS from 2008 R2 SP1 or higher and from Windows 7 SP1 and higher, including Windows 10 and 11.</p>
+<p>Finally, before you can turn this service on, you need to ensure you are using an <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> account with the relevant role assigned to it, which includes Global Administrator, Security Administrator, and Compliance Administrator to name a few. In this final section of this module, we are going to discuss security intelligence for Windows 10 operating system. Microsoft continually updates security intelligence in antimalware products to cover the latest threats, and constantly tweak detection logic. This security intelligence works directly with cloud-based protection to deliver fast and powerful AI-enhanced, next-generation protection. Network Inspection System updates are designed to protect you from network threats, including exploits as they are transmitted.</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>We have covered several important topics in this course. We started off by looking at planning and implementing conditional access policies for connection to Azure Virtual Desktop. In this section, we discussed the requirements needed to implement conditional access, and followed this up with a demo of <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-security-azure-virtual-desktop-2356/planning-and-implementing-conditional-access-policies-for-connections-to-azure-virtual-desktop/">configuring a policy for Azure Virtual Desktop</a>.</p>
+<p>Next, we moved on to discussing <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-security-azure-virtual-desktop-2356/planning-and-implementing-multi-factor-authentication-in-azure-virtual-desktop/">planning and implementing multi-factor authentication in Azure Virtual Desktop</a> where we highlighted the requirements to enable MFA, and again followed up with another demo, but this time we looked at some of the settings you can implement to harden your MFA settings for Azure Virtual Desktop.</p>
+<p>In the third section of this module, we had a look at managing security by using Microsoft Defender for Cloud, formerly known as Azure Security Center. Here we focused on understanding the requirements needed before you can implement this service. We then discussed some of the key features of <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-security-azure-virtual-desktop-2356/managing-security-by-using-microsoft-defender-for-cloud/">Microsoft Defender for Cloud</a>, and then finished off by highlighting <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-security-azure-virtual-desktop-2356/configuring-microsoft-defender-antivirus-for-session-hosts/">some security best practices for Azure Virtual Desktop</a>.</p>
+<p>Finally, we talked about configuring Microsoft Defender Antivirus for session hosts. We initially explained what this service is, followed by the requirements you need before you can integrate this with Azure Virtual Desktop, and we finished off by discussing security intelligence updates.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/13/AZ-140-Managing-FSLogix-on-Azure-Virtual-Desktop-19/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/13/AZ-140-Managing-FSLogix-on-Azure-Virtual-Desktop-19/" class="post-title-link" itemprop="url">AZ-140-Managing-FSLogix-on-Azure-Virtual-Desktop-19</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-13 18:59:14" itemprop="dateCreated datePublished" datetime="2022-11-13T18:59:14-04:00">2022-11-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-14 06:32:26" itemprop="dateModified" datetime="2022-11-14T06:32:26-04:00">2022-11-14</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/13/AZ-140-Managing-FSLogix-on-Azure-Virtual-Desktop-19/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/13/AZ-140-Managing-FSLogix-on-Azure-Virtual-Desktop-19/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Implementing-and-Managing-FSLogix-Introduction"><a href="#Implementing-and-Managing-FSLogix-Introduction" class="headerlink" title="Implementing and Managing FSLogix - Introduction"></a>Implementing and Managing FSLogix - Introduction</h1><p>Hello, and welcome to this course on implementing and managing FSLogix. My name is Shabaz Darr and I’ll be your instructor for this course. I’m an Azure Virtual Desktop Specialist, and I’ve been working with Microsoft Cloud Technologies for several years specifically with Azure Virtual Desktop since its inception and I have multiple Azure-focused certifications. My contact information is available on screen. Please feel free to reach out to me with any questions, comments, or concerns, and I’ll be happy to discuss these with you. For any other issues you can always get in touch with us here at Cloud Academy by sending an email to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a> and one of our cloud experts will follow up with you.</p>
+<p>This course is intended for people that are planning on taking the Azure Virtual Desktop Specialty exam and anyone who is interested in learning how to deploy an Azure Virtual Desktop environment. By the end of this course, you will have knowledge on, <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/planning-for-fslogix/">planning for FSLogix</a>, <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/installing-and-configuring-fslogix/">installing and configuring FSLogix</a>, <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/configuring-profile-containers/">configuring Profile Containers</a>, <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/configuring-cloud-cache/">configuring Cloud Cache</a>, <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/migrating-user-profiles-to-fslogix/">migrating user profiles to FSLogix</a>. To get them most from this course you should have an administrator-level understanding of Azure cloud services.</p>
+<p>Feedback on course content hosted by Cloud Academy is always appreciated and encouraged as it allows us as trainers to improve, which helps all of our students taking courses in the future. If you have any feedback, positive or negative it would be greatly appreciated if you could contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. When I created this course, all information was current. If you notice any updates or corrections please reach out to us. Thank you.</p>
+<h1 id="Planning-for-FSLogix"><a href="#Planning-for-FSLogix" class="headerlink" title="Planning for FSLogix"></a>Planning for FSLogix</h1><p>Welcome to this module on planning for FSLogix. In this module, we will cover the following topics. We will start off by talking about what FSLogix is. Next, we will highlight some of FSLogix key capabilities. Finally, we will look at the eligibility requirements for FSLogix.</p>
+<p>In this first lecture let’s discuss what FSLogix is. It’s primary function is to enhance user profile experience on VDI environments. FSLogix can be used for profile containerization, Office suite containerization, Application masking and Java version control. It allows user profile data to roam across the VDI session hosts which allows for a much richer experience when working in <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/designing-azure-virtual-desktop-architecture-2046/azure-virtual-desktop-overview/">Azure Virtual Desktop</a>. Lets now take a look at some of the key capabilities of FSLogix. It allows you to redirect user profiles to a network location, and in the case of Azure Virtual Desktop, this is normally an <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/intro-to-azure-storage/demo-creating-azure-file-share-1/">Azure File Share</a>.</p>
+<p>Rather than redirect the entire profile, you can simply redirect only the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/configuring-microsoft-defender-office-365-1571/introduction/">Microsoft Office</a> suite data. This is normally used in a scenario when a company has a different roaming profile solution that is not FSLogix. Your applications that are installed on the Azure Virtual Desktop session hosts utilize the profile as if they were located on a local drive and are able to obscure the redirection. Application masking manages access to fonts, printers, applications and other items. You can control which users have access to these and which do not by using App Masking.</p>
+<p>Finally, Cloud Cache is used with profile containers to create a resilient and highly available environment. It places a part of the profile virtual hard disk, VHD, on the local hard drive. We are going to finish this module by looking at the requirements to run FSLogix. You need to ensure you have the relevant Microsoft 365 license, which includes either Microsoft 365 E3, E5, F1, F3 or for companies who are eligible for education licensing, A3, A5. You can also utilize Windows 10 Enterprise E3, E5 or A3, A5 for the education sector. Remote Desktop Services, or RDS, Client Access License, CAL, and Subscriber Access License, SAL, is also supported. From an operating system perspective, FSLogix will run on Windows 7 and above for desktop OS and server 2008 R2 and above for server</p>
+<h1 id="Installing-and-Configuring-FSLogix"><a href="#Installing-and-Configuring-FSLogix" class="headerlink" title="Installing and Configuring FSLogix"></a>Installing and Configuring FSLogix</h1><p>Welcome to this module on Installing and Configuring FSLogix. In this module, we’ll cover the following topics. We’ll complete a walkthrough demo of installing FSLogix. In this short demo, we’ll cover the steps you need to complete in order to install FSLogix to your Windows 10 OS. One thing to note is that at the time of this course the Windows 10 OS images that are available, via the Azure Marketplace, come with FSLogix pre-installed. So you should only need to complete these steps if you are creating an image from scratch outside of <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a>.</p>
+<p>As you can see, we have an internet browser window open at the webpage where it gives us a download link for FSLogix. The direct link to download FSLogix is <a target="_blank" rel="noopener" href="https://aka.ms/fslogix/download">https://aka.ms/fslogix/download</a>. However, if we just click on the download link next to download, it will automatically download the required zip file. Once this is downloaded, browse to your download folder in Explorer and unzip the file. As you will see here, we have both 32 bit and 64 bit architecture installs available. In our example is 64 bit Windows 10, so we never get to those installation files.</p>
+<p>Here, we have three possible installation files. The FSLogixAppsJavaRuleEditor install allows you to manage <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/advanced-java-programming/introduction/">Java</a> version control, the FSLogixAppsRuleEditor allows you to create an App Masking rule, and the FSLogixAppSetup allows you to configure profile and office containers. In our demo, we are just going to install FSLogixAppSetup. If we right-click run, this is an administrator, we will eventually see the license terms. You can click on Options to customize the install location, but in our demo we are going to leave this default and click on Install. Once this is successively installed, you can click on Close. The process to install the Java control and App Masking tools is very similar, so we will not cover those in this demo.</p>
+<h1 id="Configuring-Profile-Containers"><a href="#Configuring-Profile-Containers" class="headerlink" title="Configuring Profile Containers"></a>Configuring Profile Containers</h1><p>Welcome to the module on configuring profile containers. We will cover the following topics in this module. We will complete a walk-through demo of configuring FSLogix for profile containers. Here we are logged into our Windows 10 session host where we will be configuring the environment for the profile containers. We start off by opening the registry, where we are going to create two entries.</p>
+<p>Let’s navigate to HKey Local Machine, then software, FSLogix, and profiles. If we right-click in the center window, select new and then DWORD 32-bit value. Enter the word Enabled for the value, and set the value data to 1. Next, right-click in the center window again, select new, and this time we want to choose a multi-string value. We will enter a value of VHDLocations but for the data value we need to enter the path of your <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/intro-to-azure-storage/introduction-azure-files-1/">Azure Files</a> container, which can be obtained from the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> portal.</p>
+<p>There are further customizations we can make if we need to include or exclude specific users. We can open the local users and group list to find these groups. I am navigating to Computer Management, and then Local Users and Groups, then Groups. As you can see at the bottom we’ve 4 groups, FSLogix ODFC Exclude and Include lists, and FSLogix Profile Exclude and Include lists. That completes our walk-through demo of configuring Profile Containers.</p>
+<h1 id="Configuring-Cloud-Cache"><a href="#Configuring-Cloud-Cache" class="headerlink" title="Configuring Cloud Cache"></a>Configuring Cloud Cache</h1><p>Welcome to this module on configuring cloud cache. We will cover the following topics in this module: we’ll complete a walk-through demo of configuring Cloud Cache with FSLogix for profile containers. Here we are logged into our Windows 10 session host where we will be configuring the environment for the profile container, but this time we are going to use Cloud Cache for SMB. As we did in the previous demo where we configured a standard profile container, we open up the registry and navigate to the same location. HKey Local Machine, then software, FSLogix and profiles.</p>
+<p>If we right-click in the center window, select new and then DWORD 32-bit value. Enter the word Enabled for the value, and set the value data to 1, as we did before. And as we did before, we right-click in the center window again, select new, and this time we want to choose a multi-string value. This time however we call it CCDLocations and need to enter a different string that looks like this: type&#x3D;smb,connectionString&#x3D;&#x2F;&#x2F; and your file path of your file store. This is using the SMB protocol and telling the system that the location for this Cloud cache provider is that specific location and folder. If you want to add multiple provider details, you simple separate them with a semicolon. You can configure Cloud Cache for Office Containers and for <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> Page Blob.</p>
+<h1 id="Migrating-User-Profiles-to-FSLogix"><a href="#Migrating-User-Profiles-to-FSLogix" class="headerlink" title="Migrating User Profiles to FSLogix"></a>Migrating User Profiles to FSLogix</h1><p>Welcome to this module, on migrate user profiles to FSLogix. We will cover the following topics in this module. We’ll take a look at the requirements before migrating. Finally, we will discuss an overview of the steps you need to complete to migrate user profiles to FSLogix. Let’s start by discussing FSLogix migration requirements. Before you move any user profile data you need to ensure you have provisioned the correct cloud storage tier that fits your requirements. You have two options, either Azure Files, which fits the majority of used cases. The second option is Azure NetApp Files, which is utilized for enterprise level workloads.</p>
+<p>Finally, you need to ensure you have prepared the relevant PowerShell script and downloaded the required <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/powershell-byte-session-1477/introduction/">PowerShell</a> modules before you are ready to migrate. The following PowerShell cmdlets are important. Convert UDP-Roaming Profile, which converts a roaming profile to an FSLogix profile container. Convert-UDPProfile, which converts a user profile disk to an FSLogix profile container. Convert-UPMProfile, which converts UPM profiles to an FSLogix container. Once the PowerShell script is ready, you can proceed with the migration.</p>
+<p>Let’s now look at two high-level steps you need to complete when migrating user profiles to FSLogix. Step one, is to convert any .vhdx files into the .vhd format. This is done by using the PowerShell script we mentioned in the previous section in this module. Step two, is to migrate the converted .vhd files into the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/intro-to-azure-storage/course-introduction-1/">Azure Storage</a>, which can be either Azure Files or Azure NetApp files. You can then attach these to the user’s <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/designing-azure-virtual-desktop-architecture-2046/azure-virtual-desktop-overview/">Azure Virtual Desktop</a> session.</p>
+<h1 id="Implementing-and-Managing-FSLogix-Summary"><a href="#Implementing-and-Managing-FSLogix-Summary" class="headerlink" title="Implementing and Managing FSLogix - Summary"></a>Implementing and Managing FSLogix - Summary</h1><p>We have covered several important topics in this course. This course was very demo heavy as we needed to look closer at the steps you need to complete when deploying and configuring FSLogix. We started off by discussing <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/planning-for-fslogix/">planning for FSLogix</a> which included understanding what FSLogix is, looking at its capabilities, and finally discussing its requirements. In the next lecture we completed a walkthrough demonstration of <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/installing-and-configuring-fslogix/">installing FSLogix onto Windows 10 session host</a>. Continuing with the demos in the third lecture completed a walkthrough of <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/configuring-profile-containers/">configuring profile containers on a Windows 10 session host</a>. In the penultimate lecture in this module we completed a walkthrough demo of <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/configuring-cloud-cache/">configuring Cloud Cache</a>. Finally, we finished off this module by discussing an overview of <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-fslogix-azure-virtual-desktop-2385/migrating-user-profiles-to-fslogix/">migrating user profiles to FSLogix</a>.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/13/AZ-140-Knowledge-Check-Managing-Security-on-Azure-Virtual-Desktop-18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/13/AZ-140-Knowledge-Check-Managing-Security-on-Azure-Virtual-Desktop-18/" class="post-title-link" itemprop="url">AZ-140-Knowledge-Check-Managing-Security-on-Azure-Virtual-Desktop-18</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-13 18:45:09 / Modified: 20:00:46" itemprop="dateCreated datePublished" datetime="2022-11-13T18:45:09-04:00">2022-11-13</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/13/AZ-140-Knowledge-Check-Managing-Security-on-Azure-Virtual-Desktop-18/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/13/AZ-140-Knowledge-Check-Managing-Security-on-Azure-Virtual-Desktop-18/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><object data="7.pdf" type="application/pdf" width="100%" height="600"></object></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/13/AZ-140-Lab-Managing-Permissions-and-Users-in-Azure-Virtual-Desktop-16/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/13/AZ-140-Lab-Managing-Permissions-and-Users-in-Azure-Virtual-Desktop-16/" class="post-title-link" itemprop="url">AZ-140-Lab-Managing-Permissions-and-Users-in-Azure-Virtual-Desktop-16</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-13 18:41:02 / Modified: 18:41:04" itemprop="dateCreated datePublished" datetime="2022-11-13T18:41:02-04:00">2022-11-13</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/13/AZ-140-Lab-Managing-Permissions-and-Users-in-Azure-Virtual-Desktop-16/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/13/AZ-140-Lab-Managing-Permissions-and-Users-in-Azure-Virtual-Desktop-16/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/13/AZ-140-Knowledge-Check-Managing-Access-to-Azure-Virtual-Desktop-15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/13/AZ-140-Knowledge-Check-Managing-Access-to-Azure-Virtual-Desktop-15/" class="post-title-link" itemprop="url">AZ-140-Knowledge-Check-Managing-Access-to-Azure-Virtual-Desktop-15</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-13 18:39:48 / Modified: 20:00:34" itemprop="dateCreated datePublished" datetime="2022-11-13T18:39:48-04:00">2022-11-13</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/13/AZ-140-Knowledge-Check-Managing-Access-to-Azure-Virtual-Desktop-15/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/13/AZ-140-Knowledge-Check-Managing-Access-to-Azure-Virtual-Desktop-15/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><object data="6.pdf" type="application/pdf" width="100%" height="600"></object></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/13/AZ-140-Knowledge-Check-Managing-Azure-Virtual-Desktop-Session-Host-Images-13/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/13/AZ-140-Knowledge-Check-Managing-Azure-Virtual-Desktop-Session-Host-Images-13/" class="post-title-link" itemprop="url">AZ-140-Knowledge-Check-Managing-Azure-Virtual-Desktop-Session-Host-Images-13</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-13 18:38:00 / Modified: 20:00:18" itemprop="dateCreated datePublished" datetime="2022-11-13T18:38:00-04:00">2022-11-13</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/13/AZ-140-Knowledge-Check-Managing-Azure-Virtual-Desktop-Session-Host-Images-13/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/13/AZ-140-Knowledge-Check-Managing-Azure-Virtual-Desktop-Session-Host-Images-13/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><object data="5.pdf" type="application/pdf" width="100%" height="600"></object></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/13/AZ-140-Managing-Azure-Virtual-Desktop-Session-Host-Images-12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/13/AZ-140-Managing-Azure-Virtual-Desktop-Session-Host-Images-12/" class="post-title-link" itemprop="url">AZ-140-Managing-Azure-Virtual-Desktop-Session-Host-Images-12</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-13 18:37:20" itemprop="dateCreated datePublished" datetime="2022-11-13T18:37:20-04:00">2022-11-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-14 06:31:10" itemprop="dateModified" datetime="2022-11-14T06:31:10-04:00">2022-11-14</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/13/AZ-140-Managing-Azure-Virtual-Desktop-Session-Host-Images-12/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/13/AZ-140-Managing-Azure-Virtual-Desktop-Session-Host-Images-12/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Thanks for joining this course on <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-azure-virtual-desktop-session-host-images-2404/imaging-in-azure/">Imaging for Azure Virtual Desktop</a>. As you’re prepping for the Azure Virtual Desktop certification, or just brushing up on your skills, you’ll learn how to create and work with Imaging in Azure using a variety of solutions. My name is Dean Cefola and I’ve been in the IT industry for over 20 years. Today, I’m an Azure Principal Engineer at Microsoft and I’ve been working with Azure Virtual Desktop since before the beginning. I hope you find this course entertaining and educational, so please rate this course when you’re done and let me know how I did.</p>
+<p>Who should attend this course? Anybody who’s planning on taking the Azure Virtual Desktop specialty exam or anyone who’s interested in learning more how to properly deploy an AVD environment. Speaking of this course, we’ll cover the AVD Imaging requirements which will involve <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-azure-virtual-desktop-session-host-images-2404/creating-a-gold-image/">creating a custom image</a>, <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-azure-virtual-desktop-session-host-images-2404/deploying-a-session-host/">deploying a session host</a> with our custom image, modifying a session host image, <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-azure-virtual-desktop-session-host-images-2404/installing-a-language-pack/">installing language packs</a> into that image, plan for image update and management, creating an Azure Compute Gallery to manage our images and automating the whole process with the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-azure-virtual-desktop-session-host-images-2404/azure-image-builder/">Azure Image Builder</a>.</p>
+<p>To get the most out of this course, you should have an administrator-level understanding of imaging a Windows OS, Azure Virtual Machines, <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-azure-virtual-desktop-session-host-images-2404/snapshots/">VM snapshots</a>, Azure Compute Gallery, and the Azure Image Builder. </p>
+<p>Feedback is how we can all continue to improve, so if you have any feedback, positive or negative, you can let me know by rating this course at the end as well as contacting <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. One last thing before we get started, everything I’ll be showing you in this course is up to date at the time of filming. However, the cloud does change over time, so if you find any material that is out of date, please let us know at <a href="mailto:&#115;&#x75;&#112;&#112;&#x6f;&#x72;&#116;&#64;&#x63;&#x6c;&#111;&#x75;&#x64;&#x61;&#x63;&#97;&#x64;&#101;&#x6d;&#x79;&#x2e;&#99;&#x6f;&#109;">&#115;&#x75;&#112;&#112;&#x6f;&#x72;&#116;&#64;&#x63;&#x6c;&#111;&#x75;&#x64;&#x61;&#x63;&#97;&#x64;&#101;&#x6d;&#x79;&#x2e;&#99;&#x6f;&#109;</a> so we can get that updated. Let’s start imaging.</p>
+<h1 id="Imaging-in-Azure"><a href="#Imaging-in-Azure" class="headerlink" title="Imaging in Azure"></a>Imaging in Azure</h1><p>Before we can start imaging, let’s begin with a definition. What exactly is an image? Well, to put it simply, an image is an operating system, that’s combined with patches and updates, and any customizations you wish to add. The files that are on your USB or DVD, that you installed windows from, those would be considered an image, and so would all of these in the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> marketplace. These are Microsoft gallery images. We’re not gonna spend a whole lot of time on these in this course because we wanna focus on creating your own custom or gold image. And this is going to be done by deploying a <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/getting-started-with-azure-virtual-machines-988/what-is-a-virtual-machine/">VM</a> in the cloud from a gallery image, specifically windows 10 multi-session, then installing your apps and customizations, then we’ll do a process called capturing. Now we have an image that we can deploy more VMs from.</p>
+<h1 id="Sysprep"><a href="#Sysprep" class="headerlink" title="Sysprep"></a>Sysprep</h1><p>The problem with making an image from an existing system, comes down to unique identifiers. When a system wants to communicate with another system, there has to be a way to uniquely identify each VM so the main system knows who it’s talking to. These globally unique identifiers, or GUIDs, are all over the Windows Operating System and knowing where they are and exactly how to remove them safely, so that you can create new machines from this machine as an image, is extremely complicated. Thankfully, Microsoft has given us a tool to make this very simple. And that tool is called Sysprep.</p>
+<p>Sysprep is located on every version of Windows, in the C Windows system 32 Sysprep folder. There are some ways to edit what Sysprep does and customize it. But the only thing you need to do is set the dropdown for the out-of-box experience, check the box to generalize and then set your shutdown option. Once the process is complete, the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/getting-started-with-azure-virtual-machines-988/what-is-a-virtual-machine/">VM</a> will still be powered on in <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> but Windows will be shut down, and we’re ready to make an image from that VM’s drive with all unique identifying marks removed.</p>
+<p>There is a limitation to how many times you can Sysprep a Windows OS. From Windows XP through Windows 7 on the client side, and Server 2003 through 2008 R2. After three times, you’d have to start over with a clean install of Windows. However, from Windows 8.1 and Server 2012 up to today, including Windows 11 and Server 2022 this limit has been raised to 1001, practically removing the limitation.</p>
+<h1 id="Snapshots"><a href="#Snapshots" class="headerlink" title="Snapshots"></a>Snapshots</h1><p>Another thing that makes the image management process complex is that things can go wrong. And depending how bad it is, you could lose all of your work and have to recreate your image from scratch. That’s where snapshots come in. Snapshots are save states that will let you roll back to an earlier version of the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/getting-started-with-azure-virtual-machines-988/what-is-a-virtual-machine/">VM</a>. When creating a gold image, a snapshot should be used at each step of the process, so you could go back to that step in case something goes wrong. This can also save you if the capture process fails, and that process itself will make the VM unusable.</p>
+<p>Let’s walk through creating a snapshot. In the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> Portal, go to your virtual machine, on the left, select the Disks, then select your operating system <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/disks-snapshots-images-azure-1478/disk-types/">disk</a>, and at the top, click to create a snapshot. The subscription and resource group will already be selected for you, and you need to give your snapshot a name. When thinking about the name, I like to put the name of the virtual machine and some kind of reference to what I did and a number for the snapshot. Since you’re going to have multiple snapshots in the VM creation process, the numbers and the names will let you know which ones you need to roll back to in case you have issues. </p>
+<p>Next, you have your snapshot type. For image creation snapshots, I always recommend a full instead of incremental. Incrementals work by snapshotting the differences between the virtual machine and the current state, and if I end up with a real big problem like OS corruption along the process, the incremental won’t be able to do a complete restore. A full snapshot will go back completely, and it’s safer for this kind of process. The rest of the items on this page are pulled from the source virtual machine data and cannot be edited.</p>
+<p>So the last item here is the storage type for your snapshot. Those are zone-redundant, standard hard disk drive and premium SSD. Zone redundancy is needed if you’re deploying VMs across multiple availability zones. This is a good way to create high availability for your workload. However, be aware that availability zones are still being rolled out and integrated across all of the Azure features, so not everything supports availability zones at this time. But if you’ve tested everything in availability zones, they are a great solution.</p>
+<p>As for the other two options, I would use standard hard disk drives over premium SSDs. The reason is because SSDs are more expensive than hard disks, and there is no performance to be gained by using an SSD in this case. And once we have a good image, we’re going to delete all of our snapshots anyway. Click Next, and then we have our encryption type. Now all storage in Azure is encrypted at rest by default using platform managed keys. There are several other choices including customer-managed keys or double encryption by combining a platform and a customer-managed key together.</p>
+<p>Unless you have a specific requirement for customer-managed keys or double encryption, I recommend using the default platform managed key for simplicity’s sake. Click Next, and here we have an option for adding network layer security to your images by using something called a private endpoint. Since Azure is a public cloud, you can reach all kinds of services in Azure if you have the right access and security. This particular feature will set up an IP address on your private Azure network for you to directly access your image or deny any kind of network access at all, which would also block the ability to export the snapshot from the cloud.</p>
+<p>This is another one of those features that can enhance the security, but also the complexity of your solution. So if you don’t have a specific requirement for private endpoints, then the public endpoint is just fine. Again, because these snapshots will be deleted once the image creation is successful. Click Next, and here’s where we can add tags to your snapshots. Tags are additional metadata that are key and value pairs, and you can assign them to almost every resource in Azure. These can be used to give you additional context as well as searchability and automation in the cloud beyond how you name the resource.</p>
+<p>Now I’m not gonna cover tagging strategies in this particular course, but here’s an example of tags that I like to use. The application that this resource is associated with. The cost code, so I know who’s being charged for this resource. The environment, which in this case is my lab. The owner of the resource, so I know who to contact if there’s a problem. And then the support contact information. Once you’re done, go ahead and create your snapshot.</p>
+<h1 id="Restoring-a-VM-from-a-Snapshot"><a href="#Restoring-a-VM-from-a-Snapshot" class="headerlink" title="Restoring a VM from a Snapshot"></a>Restoring a VM from a Snapshot</h1><p>Now that you have a snapshot created, let’s go through how you would restore your VM from the snapshot, in case you had a problem. Now, a <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/getting-started-with-azure-virtual-machines-988/what-is-a-virtual-machine/">virtual machine</a> and disc are two separate resources that are attached together to make Windows work. When you created a snapshot, that is an additional resource that contains a copy of the VM disc. So our process here will be to create a disc from that <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/disks-snapshots-images-azure-1478/snapshots-and-images/">snapshot</a>, detach the current disc from the virtual machine and then attach our restored disc in its place. This is a great process because it allows you to jump easily between versions of that Windows VM, for troubleshooting, testing of several variations. And it only takes as long as a reboot to get back up and running.</p>
+<p>To do this from inside your snapshot, at the top click to create a disc, the subscription and resource group will be selected for you and you need to give your new VM disc a name, as well as select any availability zone, if applicable. At the bottom, you can set the size for your new disc. Just note that you can’t make it smaller than the original disc was, but it can be larger, depending on the size, this could also increase performance. For those encryption and networking tabs, you’ll wanna set these as you did originally when you took the snapshot. But again, if you don’t require extra encryption or network layer security on your VM disc, I would just take the defaults.</p>
+<p>Then click over to the advanced tab. The options on this screen are generally not applicable for an operating system disc, but I want you to know what they are. A shared disc is usually used in a clustering solution, where you’ll have multiple virtual machines that need to be able to write to the same disc at the same time. On-demand bursting is available on discs that are 512 gigabytes or larger. And that’s where you can gain extra disc performance or greater throughput in short bursts, beyond what is normally allocated to a disc of that size.</p>
+<p>Since operating system discs cannot be shared, and OS discs rarely get as large as 512 gigabytes, we won’t be using these options in this course. So just click next, add your tags. And these are the metadata, and that should be associated with your standard policy for tagging VM discs. And when you’re ready, create your disc. Now that we have a restored disc from our snapshot go back to your virtual machine and on the left, select disc. Near the top, click on that button to swap an OS disc click the dropdown, and choose your disc.</p>
+<p>In the top portion, it shows the available discs in the same resource group as your VM and at the bottom, you’ll see every available disc in your subscription in the same region as your VM. Click on the restored disc. Now you’d want to confirm this process by typing the name of the VM in the box and then click okay at the bottom. The swap will only take a moment and it’ll be brought back to the disc screen and you should see the restored disc under the VM disc name.</p>
+<h1 id="The-Gold-Image"><a href="#The-Gold-Image" class="headerlink" title="The Gold Image"></a>The Gold Image</h1><p>The term gold image refers to your own certified custom image that you use to build out an application or environment. For this course, our gold image will start with Windows 10, version 20H2, multi-session. And this image will come from the Microsoft gallery. The Windows multi-session image is a special version of the client operating system that can support multiple users remoting into it at the same time. This is a special version of Windows and is only supported in the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/overview-of-azure-services/course-introduction/">Azure Cloud</a>.</p>
+<p>So to create your golden image you first need to deploy an Azure BM from the Windows Enterprise multi-session source image. Since our <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/getting-started-with-azure-virtual-machines-988/what-is-a-virtual-machine/">VM</a> will be deployed from the Azure marketplace, we don’t need to take a snapshot right away but we will be taking a snapshot after each step in the process. Once your VM is deployed, you can RDP or log on through Bash in, to access the desktop and we can start installing our customizations. For our customizations, we’ll be doing a few applications that have unique installations for a multi-session environment, including Office, Teams, OneDrive, and a few language packs.</p>
+<h1 id="Installing-Office"><a href="#Installing-Office" class="headerlink" title="Installing Office"></a>Installing Office</h1><p>I’ve already downloaded and staged all the executables and files we’ll need to get our applications going. So let’s start with Office. You’ll need to download the Office Deployment Tool and then run setup, agree to the license and extract the files. There are example configurations here for the different kinds of installs, but for course I’m going to delete those and use the example XML from the docs. I’ve opened a command prompt as administrator and will execute the command setup.exe &#x2F;configure configuration.XML, You can see the setup X executable running in the background through the task manager. This will take several minutes.</p>
+<p>Once the setup has gone away, you can see the Office click to run in the task manager. And if you click the start button you’ll see the different <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/planning-office-365-workloads-and-applications/intro-planning-office-365-workloads-and-applications/">Office apps</a> installed. Once Office is installed. There is an additional script from the docs that we’ll need to optimize our settings for our VDI environment. I’ve saved that here to the Office setup.cmd file, which I will right click and run as administrator. And that’ll just take a moment. Once complete, we can go back to the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> portal so we can take our snapshot.</p>
+<h1 id="Creating-a-VM-Snapshot"><a href="#Creating-a-VM-Snapshot" class="headerlink" title="Creating a VM Snapshot"></a>Creating a VM Snapshot</h1><p>Now, this is the only time I’ll walk you through the snapshot process but just make sure that you take a snapshot after each customization step. Find your <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/getting-started-with-azure-virtual-machines-988/what-is-a-virtual-machine/">virtual machine</a> and on the left, go to disks, select the operating system <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/disks-snapshots-images-azure-1478/introduction-to-azure-managed-disks/">disk</a> and then at the top, click to create a snapshot. Give your snapshot a name and I’ll call this VMImage-Office-00. That what I know the source VM name, as well as the last thing I did and which revision of the snapshot this is. We’ll wanna take this as a full snapshot and at the bottom, change zone-redundant to standard hard disk drive and then click next.</p>
+<p>On the encryption and networking screens, we’ll just take the defaults, so click Next, and here we can add all of our standard tags. Then click the review and create button. And finally, create your snapshot. With our snapshot complete, we can move on to the next task knowing that we have a saved checkpoint we can go back to later if we run into problems.</p>
+<h1 id="Installing-Teams"><a href="#Installing-Teams" class="headerlink" title="Installing Teams"></a>Installing Teams</h1><p>The Teams installation is not only going to install our application but also set up the AV redirection features, which are necessary to make Teams audio and video performance function just as it would on a local machine. This is done by first adding the registry key and then installing the WebRTC executable, followed by installing Teams for all users. Back on our <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/getting-started-with-azure-virtual-machines-988/what-is-a-virtual-machine/">VM</a>, let’s open the registry editor and navigate to HKEY_LOCAL_MACHINE, Software, Microsoft. Then right click on Microsoft, go to new and select a new key. The name for this key will be Teams. Right click on the new Teams key, go to new and select DWORD. And the name, this should be ISWVDEnvironment as one word. Then click on that DWORD and give it a value of one.</p>
+<p>Now you can close the registry editor. We now can run the WebRTC Installer. And just note that if you have a problem with this installer, back in the docs, there is a link to download the Visual C Redistributable package. Then try to install WebRTC again. And this will just take a moment. With that complete, open a Command Prompt as administrator, and you’ll want to use the per machine installation command, found in the docs. This is calling the msiexec command to install Teams using the parameter for all users and we’ll store the results in a Teams-Install.log file.</p>
+<p>Once complete, in the setup.log file, you’ll see at the bottom the Teams Machine-Wide Installer was completed successfully. And under the Start menu, we can see <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/planning-office-365-workloads-and-applications/teams/">Microsoft Teams</a> is present. Now, on your own, go back to the Azure portal and take another snapshot before we move on to the next app.</p>
+<h1 id="Installing-OneDrive"><a href="#Installing-OneDrive" class="headerlink" title="Installing OneDrive"></a>Installing OneDrive</h1><p>Each one of the steps is covered here in the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> docs, beginning with downloading the OneDrive executable, which I’ve already done. I’ll open a Command Prompt as administrator, navigate over to my folder. We’ll add a registry entry so OneDrive can be installed for all users. Next, we can run the OneDrive installer itself with the command OneDriveSetup.exe &#x2F;allusers. Once that’s complete, we can run the next three commands from the docs. They are optional but recommended. The first one will allow OneDrive to start up at sign in for all users.</p>
+<p>The second will set up a silent configuration for the user account. And the last command will set up known folder redirection, as well as associate OneDrive with the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/setting-up-and-managing-a-microsoft-365-tenant/setup-microsoft-365-tenant-and-subscription/">M365</a> tenant. And before you run this command, you’ll need to add your tenant ID. This can be found in the Azure portal by going to <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/designing-azure-identity-management/introduction-to-azure-ad/">Azure Active Directory</a>. Here in the top middle, you’ll see your tenant ID. Just copy that and paste it into the command and then run it. Once that’s complete, you’re ready for another snapshot.</p>
+<h1 id="Installing-a-Language-Pack"><a href="#Installing-a-Language-Pack" class="headerlink" title="Installing a Language Pack"></a>Installing a Language Pack</h1><p>With our third snapshot complete, we’re ready to install our language packs. And of course, which languages you install will depend on your varying needs and which features you need to support. To begin, we need to download the language and feature on-demand ISOs for your specific version of Windows, and you can find the links for this in the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> docs. Once you’ve started the download of your files, on the right side of the docs, click the link for create a custom Windows 10 Enterprise multi-session image automatically. This will give you a script that’s set up to install Spanish, French and Chinese. And you can use this as a template for any other language you want to install. I’ve saved this as a <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/powershell-byte-session-1477/introduction/">PowerShell</a> file on my VM and now I’ll mount the FOD and client packs to my system.</p>
+<p>One thing to note in the script that we got out of the docs is line nine, the LIPContent. This is looking for the FOD ISO and for me that’s mounted to the F drive. So I’ve changed my letter here. Make sure that you change yours accordingly. Now go ahead and execute the script.</p>
+<p>Now, you might run into one or two errors during the script installation and this will be fine because the script and the FOD ISO don’t always have all the same file names. But while we’re waiting for the process, there is another method that I wanted to show you for setting up language packs. And that’s by opening the Windows Settings menu and then going to time and language. And on the left, click language. In the center here, you can click to add a language. And you’ll have a list of all the different languages and the options. And there’s a legend at the bottom showing you which features are supported in each language. I’ll pick Danish here and you can see all the features that it supports and I’ll click next.</p>
+<p>Now, I’m not going to set this as my current displayed language but I’ll click install at the bottom. It will take several minutes to download and set up all these files but once it’s done, you’ll be able to switch also into the Danish language. Once you’re done with this whole step, don’t forget to take a snapshot.</p>
+<h1 id="Image-Capture"><a href="#Image-Capture" class="headerlink" title="Image Capture"></a>Image Capture</h1><p>With our image customization completed successfully, and after testing, we’ll find that our VM is still good, and we’re ready to start the capture process. So how do we do this in Azure? Well, once all your applications and customizations are set up on your VM and you have snapshots for safety’s sake at every step, you can run Sysprep, which will shut down the VM. And then we’ll go to the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> Portal. Inside the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/getting-started-with-azure-virtual-machines-988/what-is-a-virtual-machine/">virtual machine</a>, at the top, you’ll see a capture button. This will save the generalized VM’s OS disc as an image resource, which can be either standalone, as a managed image, or an image in the Azure Compute Gallery.</p>
+<p>A managed image is a standalone resource that you can deploy VMs from, but it is missing some key features that I’ll show you in a minute. The only real options you have to set are if you want zone resiliency or not, which can be valuable if you work in availability zones. However, the preferred path is to use the Azure Compute Gallery. This gives you additional abilities to replicate the image in a single region or across multiple regions, subscriptions, and even across <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/designing-azure-identity-management/introduction-to-azure-ad/">Azure Active Directory</a> Tenants.</p>
+<p>Next, you have the option to automatically delete the source VM after this is created. This is normally what I’d recommend, because once Sysprep’d, there’s no way to get back inside the Windows operating system. If I needed to go back to the VM, for some reason, I would go and recover from my snapshot. In the Gallery Details section, you can select your Azure Compute Gallery, or create a new one. And since you’ve Sysprep’d your VM already, you’ll see the note that your virtual machine has been generalized.</p>
+<p>The final section are the image details that will be stored in the Gallery, including the image definition, which is a container for your versions to go into. And if you don’t have one, click to create a new one, and give it a name. Then we have our version number. This pattern is for major versions, minor versions, and patch versions. So you need something like 15.35.6. Then we have the checkbox to Exclude from Latest.</p>
+<p>Now, why would you wanna do that? If you’re creating a new image version, but are not ready to release it for general deployment, excluding will give you a chance to test privately without interfering with any new deployments that are going on. Once your testing is complete, and you are ready to promote the image, you can go into the Gallery and remove the check so the next deployments will use your latest version. The End of Life Date is metadata for your reference. It does not directly impact when the image is or is not usable. It’s just an optional internal reference for your benefit.</p>
+<p>Finally, we have the Replication Section. Now your images are extremely important for your ability to scale. A custom image in Azure is limited to deploying 20 virtual machines simultaneously. The way you can scale beyond that is by using the Gallery to create multiple replicas of your image in a single region which can enable you to deploy up to 1000 VMs at once.</p>
+<p>Now, before you start thinking about deploying 1000 VMs at the same time there are many other factors that impact your scale of your VM’s deployments like availability zones, availability sets, as well as subscription, quotas and Azure API limits. So just be sure you know all those details and you can plan your deployments accordingly. Our default replica count here is one. This number can be increased to 50, allowing for 1000 VMs to be deployed. Then we have the target regions for the image to be replicated in as well as the storage account type.</p>
+<p>For the type, I always recommend using standard hard disc drives with LRS, which stands for a Locally Redundant Storage. This is the lowest cost option to store your images and does not impact the deployment time. As for the target region, this allows you to scale out your image across the world using the default replica count. However, because image capture and replication processes are handled as one work item, I recommend only creating one image replica in a single region. This will allow the image process to finish as fast as possible, which means you can start testing as soon as possible to know if your image is good or if you need to revert back to a snapshot and start troubleshooting.</p>
+<p>Once the image process is complete. I’ll show you where you can go in the Azure Compute Gallery to increase your replica accounts. Click next and add your tags like we did for our other resources. And when you’re ready, create your image.</p>
+<h1 id="Creating-a-Gold-Image"><a href="#Creating-a-Gold-Image" class="headerlink" title="Creating a Gold Image"></a>Creating a Gold Image</h1><p>Now that you know the details of the process, let’s get our <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/getting-started-with-azure-virtual-machines-988/what-is-a-virtual-machine/">VM</a> captured. Log on to the VM and clean up any installers or temp files unless you’ll specifically need them inside your image. Once you’re ready, head over to C, Windows, System32, Sysprep. Right click on Sysprep.exe and run as administrator. The system cleanup action should be set for the out-of-box experience. Check the generalize box and set your shutdown option for shutdown. Then click OK. Once this is done, Windows will be shut down and we’re ready to capture the VM as an image.</p>
+<p>In the Azure portal, open the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-azure-subscriptions-resource-groups/overview-resource-groups/">resource group</a> where the VM is located and notice that we have snapshots for each step of our process so in case the capture process fails, we can roll back to each point, which will make troubleshooting easier. Select your VM and then at the top, select the capture button. Make sure you have the Azure Compute Gallery option selected and check the box to automatically delete this virtual machine. Now choose your target VM image definition. Give your image a version number and select your end of life date. Click next and then add your standard tags. Then click next and create your image.</p>
+<p>Once the capture process is complete, you can go back to your resource group and see that you have an <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> Compute Gallery, along with an image definition and image version. When you click on the image version, on the left, you’ll find the configuration tab and in there, you’ll find the exclude from latest checkbox, which at this point, should be unchecked. Back on the left, go to update replicas and this is where you can add multiple replicas in a single region or replicate across multiple regions.</p>
+<p>Back on the overview tab, you can click deploy virtual machine at the top, give your VM a name and note that the image is already selected as your version from the compute gallery. Then I’ll just take the rest of the defaults and build a test VM quickly. Once this is done, you can RDP into the machine and test and verify that all your applications and customizations work. Once you verified that everything is good to go, you can delete your snapshots and we can move on to deploying our image to our host pools.</p>
+<h1 id="Deploying-a-Session-Host"><a href="#Deploying-a-Session-Host" class="headerlink" title="Deploying a Session Host"></a>Deploying a Session Host</h1><p>Now that we have a gold image, which we’ve successfully tested, we need to deploy a session host using our golden image. Over in the Azure portal, you can search for <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/designing-azure-virtual-desktop-architecture-2046/azure-virtual-desktop-overview/">Azure Virtual Desktop</a> in the top bar, and then open the Virtual Desktop Admin Center. On the left, go to your host pools, select a host pool and at the top, click registration key. Now, you may already have a registration key. If you do, then you can proceed in the next step. If not, click at the top to generate a new key. You’ll have to put in a date and time when your key will expire and click OK.</p>
+<p>Now that you have a key, you can close that window on the right and on the left side, go to session hosts, and at the top, click the add button. On this first screen is the host pool settings, so just click Next. And here’s where you can build your <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/getting-started-with-azure-virtual-machines-988/what-is-a-virtual-machine/">virtual machine</a>. We need a naming prefix. Now, this needs to be less than 11 characters because we need a net BIOS name to be a maximum of 15 characters. And the way this works is by setting your prefix and then at the end of that prefix, Virtual Desktop will add on a -0, -1, -2 for all of the VMs that you plan on building. I’ll use the prefix CA-VM.</p>
+<p>Then we have our availability options. You can choose between availability zones or sets, or choose no redundancy. But the kind of redundancy that you build will depend on your high availability strategy and what kind of host pool you’re deploying. Since this is just a test of our image in Virtual Desktop, I’ll choose no infrastructure redundancy required. Scroll down and underneath the image dropdown box, click the link to see all images. This will show you the Azure Marketplace with every possible image.</p>
+<p>On the left at the top, click my items, and that’ll show you your managed images, of which I don’t have any, and then you can click on shared images. And this will show you all of the available images in your Azure Compute Gallery that are within your region. Select your image and you can see that this is using our image definition with the latest flag. As for the number of VMs, we’ll just be deploying one, and then scroll down and select the appropriate network to deploy your virtual machine.</p>
+<p>Now we have to make a choice of which kind of join we’re going to do. Do you want Active Directory join or Azure Active Directory join? I’m not going to go into a lot of detail here but I’ll just show you the options. If you use <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/designing-azure-identity-management/introduction-to-azure-ad/">Active Directory</a>, you’ll have to provide credentials within your domain in a UPN format that has permissions to join machines to your domain, as well as the password. Then you can specify the domain name and an organizational unit path if you choose to. The other option is Azure Active Directory join, which is much simpler. Your VM will be a registered device within your Azure AD tenant and you have the option to also enable your device for Intune management. Which scenario is right for you will depend on a great many other decisions, as well as features that you want to access.</p>
+<p>Next, you’ll enter the local administrator credentials that you want to create on your new virtual machine. Then you can click next. You can optionally enable diagnostic settings, which is normally recommended, however, since this is just a test of our image, I won’t be enabling diagnostics here. Click next and add your standard tags, and then deploy your VM. After the virtual machine is deployed, it will be made part of the Virtual Desktop service as a session host, and if all goes well, all the health status will be set for success and inside the virtual machine, you can check to verify that all your applications are installed and running.</p>
+<h1 id="Azure-Image-Builder"><a href="#Azure-Image-Builder" class="headerlink" title="Azure Image Builder"></a>Azure Image Builder</h1><p>The best way to work in the cloud is through automation. Our images are no exception. We can automate the imaging process in <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> with the Azure Image Builder. To use the Azure Image Builder, we need a few things. An Azure subscription, a resource group, an Azure user assigned managed ID so that the the Image Builder can access your subscription, which will also require a custom role, so Image Builder will only do what we allow it to do. Then we’ll need an image template, and this will describe the source image, updates, reboots, applications, and other customizations you need all through code.</p>
+<p>Step one is we’ll need to create that image configuration. This will start off with picking your source image and Azure Image Builder supports both Windows and Linux. Although for <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/designing-azure-virtual-desktop-architecture-2046/azure-virtual-desktop-overview/">Azure virtual desktop</a> today, we’ll just be working with Windows. Then we look at your customizations. These can be for Windows through powershell scripts and command files, and these scripts need to be accessible to the Image Builder service, so I usually store my scripts on my public GitHub repo. However, there is a way to do this by accessing your resources through a private virtual network, but we’ll just save that for another course.</p>
+<p>There’s also native support for running windows updates and restarting your <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/getting-started-with-azure-virtual-machines-988/what-is-a-virtual-machine/">virtual machine</a>. And that means we can also use image builder to automate your monthly update servicing. Your configuration here is fully defined as an image template, and then it’s going to be submitted to the Image Builder service. The Image Builder service itself will spin up some temporary resources in your Azure subscription and build your VM from your image template all through a pipeline in the background. What you’ll see in the Azure portal is a staging resource group and staging resources. And that leads us to the last part, which is the distribution of your brand new Gold Image.</p>
+<p>Once the staging VM is finished, CIS prep will run and the VM will be shut down. And the image capture process will occur just like you’ve seen earlier. Then your new Gold Image will be imported into the Azure compute gallery. And a new image version will be established. If you’ve selected multiple regions then your image version will be replicated out to those regions and the process will be complete. So let’s see it in action. Over on the right is the Azure Image Builder GitHub repository for Azure virtual desktop. And you can see that there are several files here. This will say it up and configure FSLogix as well as the Windows optimization code for pooled systems and install teams in an automated way just like we showed you earlier. Then we have an armed template and this is the image template file.</p>
+<p>So if we walk through this real quick we have a resource here and this is the image template itself that we’ll be creating. And it has a input required here for a managed ID. There is a property for the build timeout and that means that after 120 minutes by default, the image process will stop. So if everything you are doing will take longer than 120 minutes, you can just increase this number. When Image Builder does its magic, it’s going to build a virtual machine in the cloud in a staging resource group. And that machine will be a D2 V2 in size, and it will use 127 gigabytes for the operating system disc. And this is because the image that it’s going to use as its source is the Windows 10 multi-session image for version 20h1 for enterprise. If you would like to use a different version, you just need to change these values. And if want to use your own existing custom image like we already created, you would replace these four lines of code with an ID for your image.</p>
+<p>Then we have the customization section, and here, as I said we’re going to install FSLogix, then run the optimization code. We’ll do a Windows restart, and then install teams followed by another restart. And these script URLs are how we’re going to call applications for Image Builder, and they are in a public GitHub repository that I showed you a moment ago. Then at the bottom, we have our distribution section going to our image gallery. This will create an image definition for you and then replicate the image into the region of your choice. Again, I only recommend going to one region for the initial process. That way, if something goes wrong, the process will finish as fast as possible.</p>
+<p>Now over on the left, I have the Azure Cloud Shell open and that’s just to give me a powershell environment that we can execute all of this code. And that begins with this prerequisites section. And this will register the image builder service for your subscription, and then checks on that service to verify that everything is loaded and running. Now I of course have already this, so I’m not going to repeat the process, but you would just copy this code, paste it into your cloud shell, and then wait for it to respond as registered.</p>
+<p>In the next section, we’re going to set up some environment variables for Image Builder to function, and I’ll just paste those here into the cloud shell. And now we have a WVD image demo resource group set up in the west US2. And if you wanted something different, then you can just modify the name of the resource group in your own code or the location, or even the name of the image builder template. And the next step we’ll create our managed ID, and we’ll paste that code, and then we’ll hit the yes to all.</p>
+<p>Now we’ll assign those new permissions to our managed ID so that the Image Builder can distribute our image to our shared image gallery. Next we’ll create a shared image gallery and so far and we have a new resource group as well as managed ID, our image gallery, and our new image definition. Back in the code, I’ve scrolled down to the download template and configure section. And this is going to download the image template that we looked at earlier into your cloud shell. Make a few edits based on your subscription, resource group, name, region, image definition name, and your managed ID, and insert all of those into your template. And if we just look at the files that are here in my cloud shell, and if we cat the armTemplateWvd.json file, and under our image template resource we have our managed user ID, and we scroll down to see our source image of Windows Multi-session 20h2, and we have our customizations to install FSLogix, the Windows optimizations, reboot, install teams, reboot, and then run Windows update.</p>
+<p>And finally, we’ll distribute this image to our shared image gallery to the proper image definition into our selected region. So if we scroll down over here in the code to submit our template, paste into power shell, and that has created a new image template resource, and we can see that over in the Azure portal. We’ve got all the details here for what we just created, including a JSON view, where you can and look at the code and see that it matches everything that we just asked for.</p>
+<p>Now, at this point the image template resource has been created, but we haven’t begun the image process. This has just set up everything we need for Image Builder to run. So you can start the process by either clicking start build here in the portal, or over here in powershell. You can copy this text to start your build. And with that, the process is now running. The image template has been submitted to the Image Builder service, and it will begin the process. And you can check on the process with this block of code and you see that the process is currently running with the status of building.</p>
+<p>Back in the Azure portal, you can see the same thing with the build run state. And this process will take approximately 20 to 40 minutes depending on what you have inside your image. And it will go for a maximum of 120 minutes because that is what was defined inside our template. And you’ll find a new resource group in your subscription starting with IT underscore, and then the name of the staging resource group, and the name of your template. And as you can see, this has created our staging resources to perform the image creation, and then it will do the capture, which it will deposit our image inside our shared image gallery, just like we saw earlier.</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>Well, that’ll do it for this course. We’ve covered all there is to know on <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-azure-virtual-desktop-session-host-images-2404/imaging-in-azure/">imaging in Azure</a>. So you can create your own <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-azure-virtual-desktop-session-host-images-2404/creating-a-gold-image/">custom images</a> for your virtual desktop <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-azure-virtual-desktop-session-host-images-2404/deploying-a-session-host/">session hosts</a> and how to manage and replicate those images with the Azure Compute Gallery and how to automate everything, using the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-azure-virtual-desktop-session-host-images-2404/azure-image-builder/">Azure Image Builder</a>. Let me know how I did in this course, your feedback is always welcome so I can improve, and please direct message me on social media and let me know that you are now AVD certified. Thanks for joining me for this course and happy learning.</p>
+<p><strong>Sysprep</strong></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation?view=windows-11#limits-on-how-many-times-you-can-run-sysprep">Limits on how many times you can run Sysprep</a></p>
+<p><strong>Installing Office</strong></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/install-office-on-wvd-master-image#install-office-in-shared-computer-activation-mode">Install Office for AVD</a></p>
+<p><strong>Installing Teams</strong></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/teams-on-avd">Teams with A&#x2F;V Redirection</a></p>
+<p><strong>Installing OneDrive</strong></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/install-office-on-wvd-master-image#install-onedrive-in-per-machine-mode">OneDrive for AVD</a></p>
+<p><strong>Installing a Language Pack</strong></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/language-packs">Add Language Packs</a></p>
+<p><strong>Creating a Gold Image</strong></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/virtual-machines/shared-image-galleries">Azure Compute Gallery</a></p>
+<p><strong>Azure Image Builder</strong></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/virtual-machines/image-builder-overview">Azure Image Builder</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/danielsollondon/azvmimagebuilder/tree/master/solutions/14_Building_Images_WVD">Image Builder for AVD GitHub repo</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/13/AZ-140-Lab-Working-with-Azure-Virtual-Desktop-Host-Pools-11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/13/AZ-140-Lab-Working-with-Azure-Virtual-Desktop-Host-Pools-11/" class="post-title-link" itemprop="url">AZ-140-Lab-Working-with-Azure-Virtual-Desktop-Host-Pools-11</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-13 18:36:24 / Modified: 18:36:26" itemprop="dateCreated datePublished" datetime="2022-11-13T18:36:24-04:00">2022-11-13</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/13/AZ-140-Lab-Working-with-Azure-Virtual-Desktop-Host-Pools-11/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/13/AZ-140-Lab-Working-with-Azure-Virtual-Desktop-Host-Pools-11/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/13/AZ-140-Configuring-Azure-Virtual-Desktop-Host-Pools-and-Session-Hosts-10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/13/AZ-140-Configuring-Azure-Virtual-Desktop-Host-Pools-and-Session-Hosts-10/" class="post-title-link" itemprop="url">AZ-140-Configuring-Azure-Virtual-Desktop-Host-Pools-and-Session-Hosts-10</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-13 18:34:58" itemprop="dateCreated datePublished" datetime="2022-11-13T18:34:58-04:00">2022-11-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-14 06:31:22" itemprop="dateModified" datetime="2022-11-14T06:31:22-04:00">2022-11-14</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/13/AZ-140-Configuring-Azure-Virtual-Desktop-Host-Pools-and-Session-Hosts-10/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/13/AZ-140-Configuring-Azure-Virtual-Desktop-Host-Pools-and-Session-Hosts-10/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="AVD-Host-Pools-and-Session-Hosts"><a href="#AVD-Host-Pools-and-Session-Hosts" class="headerlink" title="AVD Host Pools and Session Hosts"></a>AVD Host Pools and Session Hosts</h1><p>Thanks for joining this course on Azure Virtual Desktops, Host Pools, and Session Hosts. You’re going to learn just about everything there is about Host Pools and Session Hosts so that you can pass the Azure Virtual Desktop exam and up your AVD skills. My name is Dean Cefola and I’ve been in the IT industry for over 20 years. Today, I’m an Azure Principal Engineer at Microsoft and I’ve been working with Azure Virtual Desktop since before the beginning. I hope you’ll find this course entertaining and educational, so please rate this course when you’re done and let me know how I did.</p>
+<p>Who should attend this course? Anybody that’s planning on taking the Azure Virtual Desktop Specialty exam and anyone who’s interested in learning more on how to properly deploy an AVD environment. Speaking of this course, we’ll cover everything you need to deploy and configure your Host Pools and Session Hosts. We’ll set up auto-scaling for Azure Virtual Desktop. We’ll talk through the AVD limits as well as the high availability options. We’ll go through the AVD Session Hosts join options, as well as take a quick dive into AVD automation, so that you can have a well-rounded view of AVD and how you can build and improve your environment. </p>
+<p>To get the most out of this course, you should have an administrator-level understanding of Azure Virtual Machines, Azure’s high availability solutions, Windows Management join options, and then ARM templates, Azure CLI, and PowerShell for automation. Feedback is how we can all continue to improve, so if you have any feedback, positive or negative, you can let me know by rating this course at the end, as well as contacting us directly at <a href="mailto:&#115;&#x75;&#112;&#112;&#x6f;&#x72;&#x74;&#64;&#99;&#x6c;&#x6f;&#x75;&#x64;&#x61;&#99;&#x61;&#x64;&#101;&#109;&#x79;&#x2e;&#99;&#x6f;&#x6d;">&#115;&#x75;&#112;&#112;&#x6f;&#x72;&#x74;&#64;&#99;&#x6c;&#x6f;&#x75;&#x64;&#x61;&#99;&#x61;&#x64;&#101;&#109;&#x79;&#x2e;&#99;&#x6f;&#x6d;</a>. One last thing before we get started, everything I’ll be showing in this course is up to date at the time of filming, however, the cloud does change over time. So, if you find the material here becomes out of date, please let us know at <a href="mailto:&#x73;&#117;&#112;&#x70;&#x6f;&#x72;&#x74;&#x40;&#x63;&#108;&#x6f;&#x75;&#x64;&#97;&#x63;&#x61;&#100;&#x65;&#x6d;&#x79;&#x2e;&#x63;&#111;&#109;">&#x73;&#117;&#112;&#x70;&#x6f;&#x72;&#x74;&#x40;&#x63;&#108;&#x6f;&#x75;&#x64;&#97;&#x63;&#x61;&#100;&#x65;&#x6d;&#x79;&#x2e;&#x63;&#111;&#109;</a>, so we can keep things updated. With all that out of the way, let’s get started.</p>
+<h1 id="What-is-a-Host-Pool"><a href="#What-is-a-Host-Pool" class="headerlink" title="What is a Host Pool?"></a>What is a Host Pool?</h1><p>Let’s first answer the question, what exactly is a Host Pool? Host Pools are a collection of one or more identical virtual machines in the AVD Environment, and it’s a Host Pool that’s the heart of AVD. Session hosts are a member of it, App groups are connected to it, and workspaces are associated with it. The reason why a Host Pool is a collection of identical virtual machine session Host is because a Host Pool should be created for a specific use case or user persona to consumer’s resources. For example, you would have a Host Pool for the Accounting Department and a separate pool for those field sales folks. </p>
+<p>This is because the applications that each group needs will be unique and so to will be their behavior and performance requirements, which means that their configurations and properties will also be different. Each Host Pool will also be unique because of the number of users in that use case and they’ll require different amounts of user density and different numbers of session hosts, which also means different configurations and properties. An example of this is in the join options. If you have domain join session host and Azure AD-joined session host, they will need to be in separate pools because the RDP property configurations are very different.</p>
+<h1 id="How-Many-Host-Pools-Do-You-Need"><a href="#How-Many-Host-Pools-Do-You-Need" class="headerlink" title="How Many Host Pools Do You Need?"></a>How Many Host Pools Do You Need?</h1><p>With those thoughts in mind, how many host pools do you really need?</p>
+<p>As I said before, you can have a unique host pool for every use case. But at the upper limit of a AVD, you can have 400 host pools per Azure Active Directory Tenant. Now, there are also two different kinds of host pools; personal and pooled.</p>
+<p>Personal host pools have a single user assigned to each session host. So, if you have 500 users, you’ll need 500 session hosts. Pooled host pools can have multiple users logging on to the same session host virtual machine at the same time. So, those same 500 users could all be logged in at the same time across 20 virtual machines.</p>
+<h1 id="Build-Host-Pool-Demo"><a href="#Build-Host-Pool-Demo" class="headerlink" title="Build Host Pool Demo"></a>Build Host Pool Demo</h1><p>Let’s build our first host pool. In the Azure portal, click the plus at the top to create a new resource. Type host pool in the search box, then you’ll want to click on the second option for host pool. Now click the ‘Create’ button, select the desired subscription, and then click here to create a new resource group. You’ll need to give the resource group a name and the name should follow your company’s standard naming convention. </p>
+<p>For me, that uses the name of the project-resource type. So, in my environment, I’ll use FirstPool-RG. Now the host pool name should also match your naming convention. So, for me this will be FirstPool-HP. Now we need a location, and this is where the metadata of the host pool will be stored. The metadata is extra information about your Azure virtual desktop resources that are needed to maintain your connections, users, and application associations, and that’s all stored in a Cosmos database per geography. As of this recording, there are five metadata locations. Canada, Europe, Japan, United Kingdom, and the United States. Since my users are located near the East US, that’s where I’ll be deploying. </p>
+<p>Next, we have the validation environment setting. This feature controls two things: Access to some of the preview features, and how AVD session host agent updates are rolled out. It is recommended to have a validation host pool for each production pool if they’re built from unique images, or one validation pool if they’re all built from the same image. This will allow you to test the AVD agent update’s potential impact on your pools in advance of production. It is very rare to see an issue, but if you do, open a support ticket as quickly as possible so the issue can be resolved before updates are rolled out to production pools.</p>
+<p>Functionally, this will not impact your pool, so I’ll leave it on ‘No’ in this case. And let’s look at the last choice we need to make on this page concerning our host pool type. We have two options, personal and pooled. If you select personal, you’ll now have to decide how your users will be assigned to their session host virtual machines, automatically or directly. The only reason I find that customers want to go against the general best practice that all VMs in the host pool are the same, is because if they’re built from different sizes or have special applications or configurations. If so, you’ll want to choose the direct method. And don’t get me wrong, it is a viable option, just not an optimal one. The other option is to choose pooled. </p>
+<p>Here, you have to choose the load balancer algorithm of either breadth-first or depth-first. Breadth-first is where we will have users logging in across all of the session hosts in the pool evenly. This is most advantageous during those morning logon storms, so each user can log in as fast as possible. Depth-first is where you’ll want to have the maximum number of users log on to the first VM before anyone is allowed to log on to a second. This is usually best after the logon storm during the normal business operations, so that you can have the fewest number of session hosts running as possible, which helps to keep costs down. But since you have to pick one method, which one is right? I’m going to say both and neither, which might be confusing right now but it will become a lot clearer as we configure our host pools in our next section. </p>
+<p>For now, I’ll pick breadth-first and now we need to set the max session limit, and this controls how many users can log on to the VM at the same time. I’m going to set this to 20, and now click ‘Next’. This is where we could provision our session host VMs, but we’ll skip over this for now. Click ‘Next’, here’s where you could provision a workspace, but that’s another course, so we’ll skip that as well. Here on the advanced tab, you can set up your monitoring, and I do definitely recommended this. You check the box here at the top and then you select the preferred logging method, which is going to depend on your monitoring solution. To leverage the native AVD insights monitoring tool, you’ll need to select a log analytics workspace. I’m actually going to remove these options for now so I can show you how to do this on an existing host pool in just a moment. </p>
+<p>So, I’ll uncheck the box here and click ‘Next’. Here we can add another form of metadata with Azure tags. These are key and value pairs that tell you not only a lot about your resources, but they can be leveraged for automation and management as well. The standard tags that I use are for application, cost center, environment, owner, and support contact. Add the tags that are part of your governance plan and then click the ‘Review and Create’ button. Here we have a summary of everything that you selected to build, but before you click ‘Deploy’, click over here on download a template for automation. This is a JSON arm template that will be used to provision your host pool. And you can click the ‘Download’ button at the top to save this for our future use or customization. We’ll talk more about armed templates during our automation section later in this course. For now, click the ‘X’ in the top corner and then click the ‘Create’ button at the bottom.</p>
+<h1 id="Configure-Host-Pool-Demo"><a href="#Configure-Host-Pool-Demo" class="headerlink" title="Configure Host Pool Demo"></a>Configure Host Pool Demo</h1><p>Now that you’ve built your first Host Pool, let’s have a look around. Starting at the top, we have a registration key, and this will be necessary when building our session host, so we’ll come back to that one later. Then we have some information about our Host Pool and our tags. In the bottom section, we can see the total number of session hosts which right now is zero. Separate from that is the number of session hosts that are unavailable for user connections, then the disconnected, active, and total number of user sessions. Finally, at the bottom is the number of application groups and applications this pool supports. Over on the left of the screen, we have the blade section. </p>
+<p>Starting at the bottom, click on ‘Diagnostic settings’. This is the same settings that we walked through during the build process and it’s required to set up AVD insights monitoring. Click the ‘Add diagnostic settings’ in the middle. Settings need a name but it does not have to be unique. So, we’ll just call it Host Pool Monitoring. On the left, we have all of the different log categories that can be monitored, but the default recommendation is to select all logs. Then on the right, we have the destination for those logs. Now to use the native insights monitoring tool, you’ll need to store this in log analytics. So, I’ll just check that box and select a workspace in my environment. </p>
+<p>Then click ‘Save’ at the top. Now, of course, if you’re using a different monitoring solution, then you’ll need to pick the proper log destination. Moving up the blade, we have the management section. We’re going to skip MSIX packages since that would be more related to a course on AVD applications. We’ll come back to session host in a few minutes. So, click on ‘Application groups’. The one thing I’ll mention here is that during the portal build process, you’ll get your first desktop application group automatically. But if you provision your session host through an arm template or some other scripted automation, you would not get an application group by default. </p>
+<p>And since application groups are their own resources which would be covered in another course on apps, we’ll move on to the scheduled agent updates. This feature lets you control when the AVD session host agent updates are rolled out and they can be deployed during your maintenance windows. This is separate from the validation environment setting and can be used in conjunction with it. To enable, check the box at the top and then you’ll need to specify a schedule. If your session hosts are spread across multiple regions, then I suggest you check this box to use the local session host time zone. That way, each region will be able to follow its own maintenance window instead of having one global maintenance window. This will help any maintenance going on in region A not disturb the users in region B. Then we need to select our maintenance window by picking the day of the week and the time you want the window to begin. </p>
+<p>You can also check the box here for an additional maintenance window if you like, and then click ‘Apply’ at the bottom. Next in the blade is the property section. Here’s where you’ll find the resource ID for the Host Pool, and if you scroll down, we have the start VM on connect and validation environment settings. Start VM on connect only applies to Personal-HostPools, so we won’t worry about that for this Pooled-HostPool. You can also give your Host Pool a friendly name and a description, and at the bottom, you can change the load balancing algorithm or the max session limit. Once you’ve made any changes here, you’ll need to click ‘Save’ at the top. Next is the RDP properties. This controls some of the look, feel, and security of your Host Pool that more traditionally would have been done through group policy. Now, not all of these settings are applicable in every environment. </p>
+<p>For example, unless you’re using smart card authentication, you wouldn’t need to use the KDC proxy name. On the sessions tab, you can control the reconnection behavior and compression for video playback and try to optimize the user experience. On the device redirection tab, you’ll find several of these security settings controlling microphone and camera redirection, presenting local drives into the AVD session, as well as clipboard and local printer redirection behavior, and a whole lot more. The display settings is where you can figure how the sessions will be displayed to the users, from picking single or multiple monitors to specific resolution settings and scaling factors. On the advanced tab, this is the culmination of all of the other settings. The ones you’re seeing here are all of the default settings and any changes you make on the previous tabs will update here automatically and then you just click ‘Save’. You can find a full list of these settings here in the AVD documentation and there is a whole lot to read through.</p>
+<h1 id="Autoscale-Host-Pool-Demo"><a href="#Autoscale-Host-Pool-Demo" class="headerlink" title="Autoscale Host Pool Demo"></a>Autoscale Host Pool Demo</h1><p>The next item in the blade is the scaling plans. This relates to the autoscale feature which will allow your pooled host pools to dynamically power on or off your session host which helps to control costs all based on user demand. This feature is currently in preview, however, we don’t need the validation environment setting to use it. But we will have to create a custom role to grant the AVD service permissions to control our virtual machines. To begin, we’re going to have to go to your Azure subscription. Then on the left near the top, go to access control, click the ‘Add’ button here at the top, and then click ‘Add custom role’. Click over to the JSON tab, and then click the ‘Edit’ button here at the top. </p>
+<p>You’re going to want to erase all of the code in the box and then open this link. Scroll down until you find this block of JSON code and click the ‘Copy’ button, then go back to the Azure portal. Paste in the code in the box and click the ‘Save’ button at the top. Now go back to the Assignable scopes tab, and you’ll see here a placeholder that you need to delete. Now click the ‘Assignable Scopes’ button. If it’s not already on the left, select the subscriptions, and then on the right, select the particular subscription where your host pool is located. Then click the ‘Select’ button at the bottom. Click the ‘Review and Create’ button and you can review all of the permissions that will be granted to the virtual desktop service, and then click the ‘Create’ button at the bottom and you should see this message that you’ve successfully created a custom role, and that role is called Azure Virtual Desktop Autoscale. </p>
+<p>Now it may take a few minutes to display this role everywhere, so be patient. Click the ‘Okay’ button, back in the host pool, click the ‘Access Control’ in the top of the blade on the left, then click the ‘Add’ button at the top, and click ‘Add role assignment’. In the filter, type the word autoscale, and then select Azure Virtual Desktop Autoscale, which is a custom role, then click ‘Next’. Click in the middle here to select members. Over on the right, search for Windows Virtual Desktop and click on the first item that only says Windows Virtual Desktop. Then click the ‘Select’ button at the bottom. Now click ‘Review and Assign’. When I look at the role assignment section, I can see the Azure Virtual Desktop Autoscale role has been assigned to the Windows Virtual Desktop service scoped at the host pools resource. Back on the left, click on your ‘Scaling plans’. Now in order to add a scaling plan to this host pool, first we need to create one. </p>
+<p>In the search bar here at the top, type scaling plan, then click on the first item. Click the ‘Create’ button at the top, select this subscription and the same resource group where your host pool is located, and give your scaling plan a name that matches your naming convention. For me, this will be FirstPool-ScalingPlan. The location must be the same region where the host pool is deployed, and you can optionally give your scaling plan a friendly name and a description. At the bottom, select your time zone and then click ‘Next’. I’d like to add a new schedule and many of the settings here are filled out to help guide you along the way. This first schedule’s name is weekdays_schedule, and it has Monday through Friday selected. Be aware though at this time each day can only be associated with a single schedule. </p>
+<p>Click ‘Next’. In the ramp up section, we dictate how the host pool will function during those morning log on storms, and you can specify the start time such as 8:00 AM. The load balancing algorithm here is set for breadth first, which will allow the greatest number of users to log on to the most number of session hosts at the same time, which should leave nobody waiting. The minimum percentage of hosts is set for 20%, which means that 20% of the total hosts in the pool will be powered on at 8:00 AM. And our capacity threshold has to do with the number of the users logged on relative to the max session limit. Now we set our max session limit for 20, and the capacity threshold of 60% means when 12 users have logged onto a VM, autoscale will power on the next VM. Click ‘Next’. </p>
+<p>In the peak hours tab, we’re now past the morning log on storm, and so we’ve set our time here for 9:00 AM. And we’ve switched the load balancing algorithm to depth first, and this means we now want to stack as many users as possible onto each VM before more users log on to the next available VM. This will help you get the most usage out of each session host VM in the pool, and as your users log off sessions, eventually the VMs will have no users on them and be able to be powered off to reduce cost. In the ramp down section, we’re beginning this at 6:00 PM. So, this is the end of our day. We’ve still got depth first load balancing set and we want to get as many VMs turned off as soon as possible. </p>
+<p>The minimum percentage of hosts that will remain online is 10% and the capacity threshold is 90%, and we have the option to force users to log off. I generally don’t recommend this because you don’t want to interrupt a user during a session if you don’t have to. You can additionally delay the time before those users are forced off and you can display for them a console notification telling them to save their work and log off before the time limit, so that they don’t lose anything that they’re doing. Click ‘Next’. Finally, the off-peak hour section begins at 8 PM. We’re still using depth first and we have a capacity threshold of 90%, so we won’t spin up a new VM unless 18 out of 20 users are logged onto a machine, and 20 was, again, our max session limit that we chose. </p>
+<p>Click ‘Add’ at the bottom and click ‘Next’ for your host pool assignment. Since the scaling plan and the host pool must be in the same region, when you click the drop-down, you’ll only see the pools that are in the same region as your scaling plan. Check the box for your host pool and then click ‘Next’. Add your standard tags just like we did before. This way, all of your resources will all be related to each other. Click ‘Next’ and you can review all of your settings, and if everything looks correct, then click ‘Create’. Back in your host pool, we now see that the scaling plan has been associated with your pool, which means that the autoscale feature is now enabled.</p>
+<h1 id="What-are-Session-Hosts"><a href="#What-are-Session-Hosts" class="headerlink" title="What are Session Hosts?"></a>What are Session Hosts?</h1><p>Now, I know we’ve talked about it several times, but what exactly is a Session Host?</p>
+<p>An Azure Virtual Desktop Session Host is a standard Azure virtual machine of any type and any size that has been deployed in the cloud. Then, the AVD Bootloader agent and the AVD agent get installed, registering the VM to the Host Pool as a new Session Host. This means that the Session Host is a role that’s added to a VM and not the VM itself. And since the Session Host role can be added to any virtual machine type, you can use the VM skew that best suits your needs and user personas. Maybe you need something like a massive CPU, you can pick an L series VM. Or maybe you need graphics power, and you can pick an N series skew. You can even take advantage of other VM’s advanced features, like ephemeral disk, or trusted launch, and also Gen2 virtual machines.</p>
+<h1 id="Session-Hosts-Limits"><a href="#Session-Hosts-Limits" class="headerlink" title="Session Hosts Limits"></a>Session Hosts Limits</h1><p>Let’s talk about limits for Session Hosts.</p>
+<p>Well, there kind of are none, at least not when the number of users are concerned. There’s also no AVD user license restriction, and there’s also no Windows license restriction from packing as many users you want to on a single AVD Session Host. The limitations come in more of the resources that are available on the VM and what those users are doing. So, as always, it depends, and what it depends most on are the apps and their requirements, the overall VM performance, and the numbers of total VMS that you want to manage in your environment. </p>
+<p>Now, as far as the upper limit of Session Host per Host Pool, today, it’s 10,000 Session Host per Host Pool. However, it is recommended to have no more than 5,000 Session Host per subscription, per region. So, if you have three Azure subscriptions and you’re deployed across three different regions, then you can have 5,000 Session Host per region for a total of 15,000 Session Hosts. Now, if your users and workloads are centered just around these three regions and you need to scale out more, then you can expand across those other subscriptions. So, two subscriptions would give you 30,000, and if you scale out further across all three subscriptions, you can have 45,000 session hosts.</p>
+<h1 id="Session-Hosts-High-Availability"><a href="#Session-Hosts-High-Availability" class="headerlink" title="Session Hosts High Availability"></a>Session Hosts High Availability</h1><p>There is no best practice or recommendation for how to deploy with or without high availability, but there are a lot of things to consider. When we talk about high availability in Azure VMs, we’re talking about availability zones or availability sets. Availability zones are groups of Azure data centers within a particular region where availability sets are scoped at the rack of servers within a data center. And availability sets break down into two parts, fault domains, and update domains. The fault domain is the rack of equipment. Then the update domains are groups of VMs spread across multiple racks for a single workload. Now, when it comes to your personal host pools, you have one user for each session host virtual machine. </p>
+<p>So, from the user’s perspective, there really is no high availability regardless of if you choose availability zones or sets because if their VM is down, they’re unable to work. However, it is still a best practice to use an availability zone or set so that the personal host pool solution as a whole can remain more highly available in case there are any hardware issues in the Azure data centers. In a pooled host pool, however, we have the opposite case. If any singular VM is unavailable, your users could simply log onto a different VM in the pool. So, definitely using an availability set or a zone will give you more high availability for this solution as a whole as well as the individual user. </p>
+<p>Not all Azure services work directly with availability zones and any traffic that goes between zones is considered interzonal traffic, which does have an egress charge. One last thing to consider, however, are deployments. Availability sets also have a maximum of 200 VMs per set and that is a limitation at a AVD scale solution. So, if your AVD deployment is larger than 200 session hosts in a single region, you’ll need to consider how much you really need an availability set, since this will potentially limit the number of VMs that you can deploy at once. Without an availability set, you can deploy up to 400 VMs at a time. Now you might be willing to sacrifice on the deployment side to get some extra high availability, but you also need to consider your monthly service updates. If your update plan is to provision new VMs and throw away the old ones, you’ll be doing large numbers of deployments every month. And at scale, having the availability set is going to double your deployment time every month.</p>
+<h1 id="Session-Hosts-Join-Options"><a href="#Session-Hosts-Join-Options" class="headerlink" title="Session Hosts Join Options"></a>Session Hosts Join Options</h1><p>The last thing we need to cover before we start building our Session Host are the Join Options. Now, there’s basically three choices: Active Directory Join, which is the traditional approach to manning VMs in a Windows environment, Azure Active Directory Join, which would be a modern cloud management model, and in the middle, we have Hybrid Azure AD Join. This is where you would do a traditional Active Directory join and then you have group policies in place that will do a Azure Active Directory join on those same systems. </p>
+<p>Along with these join options, there’s also different ways to manage. Traditionally, you would use group policy within Active Directory to control your environment. In the hybrid join environment, you can leverage group policy as well as modern management through Intune, also known as Microsoft Endpoint Manager. And on the Azure AD solution, we can only use Endpoint Manager. Now, since all three scenarios are viable and supported, the question you need to ask is, how do you want to manage?</p>
+<h1 id="Build-Session-Hosts-Demo"><a href="#Build-Session-Hosts-Demo" class="headerlink" title="Build Session Hosts Demo"></a>Build Session Hosts Demo</h1><p>Let’s build some Session Hosts on the pool we created earlier. Session hosts are added to a pool by installing agents onto virtual machines using a registration key. So, the first step is to make sure that our host pool has a valid registration key. Click ‘Registration Key’ at the top. And as you can see, this pool no longer has a registration key, and it’s not something to really be concerned about. The key is only used when adding a new session host to an existing host pool, and the session host will not expire when the key does. Click here to generate a new key. Now, you’ll need to pick a date and time when the key will expire. If I was performing a monthly update and I needed to provision 300 VMS and I was going to do that over three days, I would make the key expire in three days. </p>
+<p>Now, once you’ve picked your date and time, click ‘Okay’. And once the key has been generated and listed here, we don’t need to do anything with it from the portal, but if you’re using another deployment experience, you might need to copy it and paste, and I’ll show you that later in the automation section. For now, close this panel on the right and click over here on your session hosts. Click ‘Add’ at the top. Notice on this first page that everything is grayed out. That’s because this is information about the pool and we can’t change that information when provisioning a host. So, click ‘Next’. First, you’ll need to select a resource group, and I’ll take the defaults here, which is the resource group where our host pool is located. </p>
+<p>The name prefix is going to be the first part of the VM name followed by a dash and a number. I’ll pick the prefix FirstPool, so the first VM that will be built is FirstPool-0. Another thing to keep in mind here is the Windows NetBios limitation of 15 character names. And because the portal will add a dash and a number at the end, you can only use 11 characters in your prefix. For the location, I’ll use the East US, which is where my host pool is located. Then we have our availability options, and this refers to the availability zone or the availability set, or no availability option at all. And if you’re going to do a very large deployment and get past the 200 VM per deployment limit, that’s when you’d use the no infrastructure redundancy option. </p>
+<p>For this example, I’ll just leave it on availability zone and select Zone 1 and scroll down. The security type is the option between standard and trusted launch. Trusted launch will require Gen 2 virtual machines and will use TPM authentication to secure your boot process. For this example though, we’ll just use standard. The image type will come from our gallery, and if you click the dropdown for the image, you’ll see we have a lot to choose from. For this example, I’ll use Windows 11 multi-session + M365 Apps. The VM size of 2 core and 8 gig of RAM is fine for this example, just be sure that when you pick your VM size, you’ve selected one that best fits your needs. I’ll choose the provision three virtual machines session hosts. Again, pick the VM that matches your user density options, so you can meet your total user requirements in your scenario for that VM size.</p>
+<p>For the disk type, it is recommended that all production workloads use premium SSDs. With that said, I found that the performance requirements for standard are generally fine for personal host pools. However, pooled host pools must have premium SSDs since we’ll have multiple users accessing and writing data to that disc at the same time, and you’ll need all the performance you can get. For the boot diagnostics, we’ll leave this on enabled with manage storage and scroll down. I’ll select a virtual network and subnet that I’ve already allocated for this solution, and from my network security groups, I’ll set that to none since I’ve already got an NSG attached to the subnet directly. </p>
+<p>For the domain join options, we have two choices: Azure Active Directory or Active Directory. If you want to go with the hybrid option, choose Active Directory here and then your group policies will do the rest. I’ll just use Azure Active Directory join in this example, and I’ll choose to enroll my VMS with Intune. Just be aware that Intune does have its own licensing requirements, but we won’t be covering that in this course. Next, we’ll need to add our virtual machine local administrator account and password. And once you’re done with all of that, click ‘Next’. On the Advanced screen, check the box to enable diagnostics and then select your log analytics workspace, and this should be the same workspace where you’re sending your host pool data. </p>
+<p>Then, click ‘Next’. Add all of your standard tags like we’ve done before, then click ‘Next’. Verify that everything looks good on this review screen and then click ‘Create’. Once the build is done, you can come back to your host pool screen and you can see we now have three total virtual machine session hosts and zero are unavailable. And if you click on that, you can see the names of our three VMs. Over in Azure Active Directory in the devices section, you can see all three of my devices have been Azure AD joined and registered with the MDM solution of Microsoft Intune.</p>
+<h1 id="Automation-Azure-CLI-x2F-PowerShell"><a href="#Automation-Azure-CLI-x2F-PowerShell" class="headerlink" title="Automation Azure CLI&#x2F;PowerShell"></a>Automation Azure CLI&#x2F;PowerShell</h1><p>Because the possibilities are nearly limitless with scripting and automation, we’ll just go through a few examples. Just know that for the exam, you’ll need to be very familiar with all of the commandlets in both Azure CLI and PowerShell. I’ve opened another web page here, shell.azure.com, which is the Azure Cloud Shell, but lets me view it as a full screen. If I click here, we can open the editor and you see that I’ve created a file called Cloud Academy and I’ve put in the commands that we’re going to use, and this will just make it easy to talk through everything before we execute. The first command is going to be using the Azure CLI and it’s going to create a new host pool. Now if you think back to when we did the portal build, we’ve got to answer all of those same questions using the code. </p>
+<p>Just a quick word on the Azure CLI. It’s structured by using the command AZ and then using a resource provider, in this case, desktopvirtualization, and then you have your resource, which is a HostPool and the command is to Create. Our location will be in the East US and I’ve added a description and friendly name of Personal. The HostPool type will also be Personal. The Personal-desktop-assignment-type is automatic. The preferred-app-group-type is desktop, because personal HostPools only support desktop app groups. The registration info has to do with the expiration of your registration token, and that’s going to use this date and time, and then have a operation of update. Start-vm-connect will be set to true and we do have a vm-template section here, but it just says json because we’re not actually building VMs at this time, but if you wanted to you could add that information here. </p>
+<p>And we’ve got our standard tags like we’ve used in the rest of this course. The name for this Pool will be Personal-HP and the resource group will also go into the FirstPool-RG. So, we’ll just copy all of that code and then paste it into the Cloud Shell and click ‘Enter’. That Pool will be built in just a moment. When we go back to the resource group, we can now see that we have a personal HostPool. Now let’s look back at our first Host Pool at the RDP properties advanced section, and this is the default configuration of every HostPool and you can see that there’s a lot here. Back in the Cloud Shell, the next command we want to run will change those RDP properties and it will only allow microphone, and camera redirection and set the multimonitor to support to no. We’ll copy that and execute, and then back in our RDP properties, we can see that our settings have changed accordingly. </p>
+<p>The next demo, we’ll create an empty remote application group. This requires a name and a resource group and an app group type, which in this case is RemoteApp. Then we need the resource ID of our HostPool that the app group will belong to. I found this in the Azure portal by going to the Host Pool properties blade. Just copy the resource ID here and then paste that in your code, and we’ll put all of that in the Cloud Shell and click ‘Enter’. Back in the Azure portal, we’ll look at our resource group and see we have a new remote application group. And if you look at the FirstPool-HostPool in the application group blade, you can see that new remoteApp group there as well. </p>
+<p>Now let’s click on that app group. Notice that there are no applications listed yet. So, let’s go back to the Cloud Shell. Our next command is going to use PowerShell and it’s going to create a new application inside that group. PowerShell and Azure CLI commands are constructed differently. PowerShell is based on a Verb-Noun and the Azure CLI is AZ and then a resource provider. So, the verb, in this case, is New and the noun is AzWVDApplication. We’ll need to reference our resource group and the app group name of Monet. The name of the app we’ll create is called Paint. Then we need to give it a file path to the mspaint.exe. The IconIndex of zero tells the system to use the first icon embedded in that executable. Then we’ll need a path to the icon file which is the same as our executable. The command line setting of allow lets you pass commands when the application runs and the show in portal will allow the app to be visible. </p>
+<p>Copy and paste the code into the Cloud Shell and click ‘Enter’ and you get a simplified return here. Back in the Azure portal, we have a new app in our app group, and if you click on that, you’ll see the app name of Paint. And if you click on Paint, you’ll see the details of that app that we supplied from the code. There’s one more thing I want to do here and that’s change the display name from Paint to Monet. So, back in the Cloud Shell, we’ll do this through PowerShell as well, and the verb this time will be Update and the noun is AzWVDApplication. We’ll reference our resource group and the group name of Monet, the name of Paint, and give it a friendly name of Monet. We’ll copy and paste that code and then back in the portal, we see the display name changed to Monet.</p>
+<h1 id="Automation-ARM-Templates-Demo"><a href="#Automation-ARM-Templates-Demo" class="headerlink" title="Automation ARM Templates Demo"></a>Automation ARM Templates Demo</h1><p>Let’s shift our automation discussion now to ARM template deployments. This is my public GitHub repository, and this code has been used by hundreds of my customers to deploy their AVD solutions or as a starting point to customize their own deployments. If you scroll down to the bottom, you’ll see that there are three different ‘Deploy to Azure’ buttons. Each one of these will pull from a different template in the repo to deploy Windows 11 solutions, Windows 10, or specialized deployment for stateless AVD solution using ephemeral disk. Let’s click the ‘Windows 11 Deployment’ button. This opens the Azure portal’s custom deployment screen and you could just fill out the form and start your build. </p>
+<p>But first, click here to edit the template. Now, remember I said earlier that a session host is a standard Azure virtual machine that has agents added to it. So, this template is a standard VM build that will leverage VM extensions to add the agent. And let’s walk through it quickly. Along the left, we have the different sections of the template and those are also represented on the right. The parameters are the inputs that you saw on that form on the last screen. The variable section can take those parameters and also provide other values before passing them off to the resources section. And it’s the resource section that contains the things that you’re going to build. </p>
+<p>Let me point out just two parameters for you: the OperatingSystem and VMSize. Now, the OS parameter has a default value of Windows 11 and only one allowed value, because this is the Windows 11 template. The VMSize, however, has multiple allowed values. But notice, they’re not normal VM sizes. We have just small, medium, and large. This is because I like to keep my template inputs very clean and simple. This way, anyone can deploy them without asking too many questions. If we look down at the variables section and we look at VM sizes, we can see those same items of small, medium, and large. And those correspond to specific VM skews. Down in the resource section, if we take a look at our VM properties in the hardware profile area, this is where the VM sizes are needed. And the way this reads is grab the variable called VM_SIZE using the input of the parameter for VMSize and put the value here. </p>
+<p>So, if you selected small as your parameter, the value would be Standard_B2ms. Let’s move on to the last section where the magic really happens. This is a VM’s custom script extension. It allows you to run PowerShell on Windows VMs remotely. The PowerShell code we’re executing is pulled from a variable here called firstFileName, and it’s also using some arguments. Those arguments are listed here on line 107, and they come from two input parameters: ProfilePath, which relates to the share you’re using for FSLogix, and the RegistrationToken, which is going to be used to add our VMs to the host pool. The script we’re executing is found here on line 102. This code is linked also in my public GitHub and if we open it, we have a parameters block here at the top for ProfilePath and RegistrationToken, and this code is going to do many different things. It will create a temp Directory to store the agents we’re going to download, and then it’s going to extract those agents from their zip. </p>
+<p>It’s going to discover which Operating System you have, so it installs things properly. Then it will install the agents with the registration key, then perform the FSLogix agent installation, and it’s going to configure the standard FSLogix best practices. Once all of that is complete, it’s going to reboot the VM. And now that you know how all this process works, let’s build some hosts. Back in the form, I’ve filled out everything already, starting with the subscription and resource group at the top and the East US region, just like we’ve done throughout this course. The prefix this time will be Personal. This will be leveraging Active Directory join and the admin username is also going to be leveraged for the domain join process. </p>
+<p>So, I’ve added the appropriate credentials. Scroll down. You need to enter your Active Directory Domain’s FQDN, then specify how many session hosts you want to build. I did also set a template hard limit for 100 VMs, but you could adjust that to suit your needs. The only Operating System that’s available in this template is Windows 11. The size will be small, which you know from looking at the code is a B2ms skew. Then you specify your virtual network’s resource group, the name of the VNET, and the subnet you want to build on. And now we have those custom script extension input parameters. For the ProfilePath, I’ll use the SMB share for my FSLogix profiles and the RegistrationToken that I grabbed from the host pool earlier. Click the ‘Review and Create,’ and you can read through all of the details, and then click the ‘Create’ button. Once complete, you can have a look at your host pool and we see that we have a single personal VM registered.</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>That’ll do it for this course, we’ve covered Azure Virtual Desktops, host pools, and session hosts. We built and managed them using the portal and multiple automation methods, and we also touched on our monitoring of our new resources. And of course, we’ve just scratched the surface on what’s possible, so test things for yourself and practice your automation because there will be a test. Please respond to the survey at the end of this course and let me know how I did, and your feedback is more than welcome, so I can improve. And please don’t forget to direct message me on social media and let me know that you are now AVD certified. Thanks for joining me for this course, and happy learning.</p>
+<p><strong>Configure Host Pool Demo</strong></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/rdp-files?context=/azure/virtual-desktop/context/context">Supported Remote Desktop RDP File Settings</a></p>
+<p><strong>Autoscale Host Pool Demo</strong></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/autoscale-scaling-plan">Create an Autoscale Scaling Plan for AVD</a></p>
+<p><strong>Automation ARM Templates Demo</strong></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/DeanCefola/Azure-WVD/tree/master/WVDTemplates/WVD-NewHost">Github Repository</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/13/AZ-140-Knowledge-Check-Implementing-Storage-for-Azure-Virtual-Desktop-9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/13/AZ-140-Knowledge-Check-Implementing-Storage-for-Azure-Virtual-Desktop-9/" class="post-title-link" itemprop="url">AZ-140-Knowledge-Check-Implementing-Storage-for-Azure-Virtual-Desktop-9</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-13 18:34:09 / Modified: 19:59:46" itemprop="dateCreated datePublished" datetime="2022-11-13T18:34:09-04:00">2022-11-13</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/13/AZ-140-Knowledge-Check-Implementing-Storage-for-Azure-Virtual-Desktop-9/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/13/AZ-140-Knowledge-Check-Implementing-Storage-for-Azure-Virtual-Desktop-9/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><object data="4.pdf" type="application/pdf" width="100%" height="600"></object></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/68/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/68/">68</a><span class="page-number current">69</span><a class="page-number" href="/page/70/">70</a><span class="space">&hellip;</span><a class="page-number" href="/page/199/">199</a><a class="extend next" rel="next" href="/page/70/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1986</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

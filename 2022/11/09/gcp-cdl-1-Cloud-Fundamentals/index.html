@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Cloud Computing">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gcp-cdl-1.Cloud_Fundamentals">
+<meta property="og:url" content="https://example.com/2022/11/09/gcp-cdl-1-Cloud-Fundamentals/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="Cloud Computing">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-09T22:24:31.000Z">
+<meta property="article:modified_time" content="2022-11-10T18:03:28.000Z">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://example.com/2022/11/09/gcp-cdl-1-Cloud-Fundamentals/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>gcp-cdl-1.Cloud_Fundamentals | Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/09/gcp-cdl-1-Cloud-Fundamentals/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          gcp-cdl-1.Cloud_Fundamentals
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-09 18:24:31" itemprop="dateCreated datePublished" datetime="2022-11-09T18:24:31-04:00">2022-11-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-10 14:03:28" itemprop="dateModified" datetime="2022-11-10T14:03:28-04:00">2022-11-10</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/09/gcp-cdl-1-Cloud-Fundamentals/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/09/gcp-cdl-1-Cloud-Fundamentals/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Cloud-Computing"><a href="#Cloud-Computing" class="headerlink" title="Cloud Computing"></a>Cloud Computing</h1><span id="more"></span>
+
+<h2 id="Cloud-Computing-1"><a href="#Cloud-Computing-1" class="headerlink" title="Cloud Computing"></a>Cloud Computing</h2><p>Cloud computing is a remote, virtual pool of on-demand, shared resources that can be rapidly deployed at scale. </p>
+<h2 id="Virtualization"><a href="#Virtualization" class="headerlink" title="Virtualization"></a>Virtualization</h2><p>Virtualization allows you to create multiple virtual machines, or VMs, all of which run on a single server. Each of these VMs has its own operating system and set of applications. VMs can all run at the same time, completely independently, without being aware of each other’s existence. Yet, they all still share the same underlying hardware.</p>
+<h2 id="Benefits-of-Virtualization"><a href="#Benefits-of-Virtualization" class="headerlink" title="Benefits of Virtualization"></a>Benefits of Virtualization</h2><p>There are many benefits of virtualization, but here are the main ones. Number one, easily share resources. Virtualization makes it much easier for many different people to share the same hardware. You can have someone running Windows, and someone else running Linux, both at the same time and on the same number computer. Number two, less waste. Most computers are not constantly running at 100% utilization. Right now, your computer is probably only using a small fraction of its CPU and memory to play this video. Virtualization gives you access to previously unused resources. And so, it reduces the total number of computers needed. Number three, lower operating costs. With virtualization, you have less computers sitting idle. And less hardware means less space, power, and cooling that are required. Number four, more environmentally friendly. Less hardware that needs to be manufactured and less power consumed means virtualization also helps promote green computing, as well.</p>
+<h2 id="Hypervisor"><a href="#Hypervisor" class="headerlink" title="Hypervisor"></a>Hypervisor</h2><p>A hypervisor is a piece of software used to create the virtualized environment. It sits between the physical hardware and the virtual machines, and it creates a shared pool of virtual hardware resources for each of them to access. Any request from a VM to the hardware passes through the hypervisor, thus ensuring that the hardware resources are properly shared as needed.</p>
+<h2 id="Cloud-Resources"><a href="#Cloud-Resources" class="headerlink" title="Cloud Resources"></a>Cloud Resources</h2><h3 id="Compute-Resources"><a href="#Compute-Resources" class="headerlink" title="Compute Resources"></a>Compute Resources</h3><p>Compute resources provide on-demand processing power to complete your workloads. Whenever you have a program or a script that needs to run, compute resources can run for you. In your traditional on-premises data centers, these would be the equivalent to the physical servers that you could connect to remotely, and install, and run software on.</p>
+<h3 id="Storage-Resources"><a href="#Storage-Resources" class="headerlink" title="Storage Resources"></a>Storage Resources</h3><p>Storage resources allow you to save and retrieve your unstructured data. Any resource that allows you to store things like images or video in the Cloud is classified as a storage resource. In a traditional data center, you would have DAS, or directly attached storage, which includes hard and solid state drives. You might also have had things like NAS, or SAN, network attached storage, or storage area network.</p>
+<h3 id="Database-Resources"><a href="#Database-Resources" class="headerlink" title="Database Resources"></a>Database Resources</h3><p>Database resources allow you to store structured sets of data for use in your applications. So the equivalent here in your traditional data center would include databases such as SQL Server, Oracle, or MySQL. And network resources, which allow you to control how all the other resources will communicate with each other. Now, in a traditional data center, this would include things such as routers, switches, firewalls, and load balancers. In Cloud computing, these resources can either be directly managed by the end-user, or management can be abstracted away to create <strong>serverless</strong> offerings. </p>
+<p><strong>Serverless</strong> does not mean that there are literally no servers or VMs. It just means that the VMs are hidden. Serverless offerings don’t require any knowledge or interaction with the underlying virtual machines. Instead, you can use a serverless service, and it will silently manage the VMs for you. So, for example, in a serverless database, whenever you need more storage or processing power, it’s automatically added in the background. Then, when less processing power is required, resources can be automatically removed. So you can use a serverless database without having to worry about upgrades, updates, or maintenance.</p>
+<h1 id="Cloud-Types"><a href="#Cloud-Types" class="headerlink" title="Cloud Types"></a>Cloud Types</h1><h2 id="public-cloud"><a href="#public-cloud" class="headerlink" title="public cloud"></a>public cloud</h2><p>A public cloud is a collection of virtual on-demand services that are offered to the public. The vendor essentially rents out use of its hardware to many different customers. Each customer can use what they want when they need it. Today, you might only need five web servers, but tomorrow you might need 500. The major cloud vendors are capable of providing more resources than you could possibly use. These resources are typically accessible from anywhere, as long as you have a working internet connection. All back-end maintenance, including power, cooling, upgrades, and repairs are handled by the cloud vendor. The customer will never actually see the hardware, nor will they know the exact physical location of their services or data. They’ll usually be able to specify the geographic region in which it resides. This allows them to have some control for data storage requirements, and for latency.</p>
+<h2 id="Private-Cloud"><a href="#Private-Cloud" class="headerlink" title="Private Cloud"></a>Private Cloud</h2><p>A private cloud is similar to a public cloud, but the main difference is that the resources are not shared to the general public. Typically, a company will create its own private cloud and share the resources among its various departments. Everything is hosted, managed, and owned by that company. This allows for direct control over the resources. Enterprises who wish to keep a tighter grasp on security might adopt this architecture. Now, maybe this sounds exactly like the on-premises data center approach, but the difference is that the private cloud uses the same cloud principles as the public. Different teams and different departments are provided on-demand access to the same pool of shared scalable resources. That means you no longer have certain machines dedicated to finance or human resources. Everyone shares the same resources. Accounting can use some VMs to crunch some numbers for a while, and then afterwards, marketing can use those same VMs to render a new video. Resources are shifted around as needed.</p>
+<p>With this approach, the company has more control, but it also has a lot more responsibility. Private clouds require a lot of <strong>initial capital</strong> to purchase the hardware and to set up the data centers. Not only this, but additional resources will be needed to maintain everything. Now, individual departments will have more flexibility, but the company as a whole can’t use more resources than it currently physically owns. Plus, any unused resources still have costs associated with them.</p>
+<h2 id="Hybrid-Cloud"><a href="#Hybrid-Cloud" class="headerlink" title="Hybrid Cloud"></a>Hybrid Cloud</h2><p>A hybrid cloud is literally the combination of public and private clouds. That is, you’ll have some dedicated resources in a private cloud for predictable workloads, but when you use up all available resources, you can always request more from a public cloud. Now the hybrid model is built by establishing a network link between your private cloud and a public cloud. Thus, you essentially extend the internal network of your private cloud. Now, in theory, this gives you the benefits of both models, so you can choose where each service most appropriately fits. However, in practice, the hybrid model tends to suffer from the negatives of both solutions. And because of this, hybrid clouds are typically short-term configurations. They often represent a transitional state for enterprises. It’s usually more of a way to bridge the transition from on-premises to a public cloud model.</p>
+<h1 id="Cloud-Characteristics"><a href="#Cloud-Characteristics" class="headerlink" title="Cloud Characteristics"></a>Cloud Characteristics</h1><h2 id="On-demand-resourcing"><a href="#On-demand-resourcing" class="headerlink" title="On-demand resourcing"></a>On-demand resourcing</h2><p> This essentially means that when you want to provision a resource within the cloud, it’s almost immediately available to you. You allocate them when and where you need them. There’s no more waiting around for hardware to be ordered, installed, cabled, and configured before you can use it. It’s often as simple as filling out a form and clicking submit.</p>
+<h2 id="Consumption-based"><a href="#Consumption-based" class="headerlink" title="Consumption-based"></a>Consumption-based</h2><p>With many cloud services, you only pay for what you use. What do I mean by this? Well, if you only have a server running for two hours and then you shut it down, then you’re only going to pay for two hours worth of compute resources. It’s just like your power bill at home and how you only pay for the electricity you use.</p>
+<h2 id="Scalability-and-agility"><a href="#Scalability-and-agility" class="headerlink" title="Scalability and agility"></a>Scalability and agility</h2><p>Cloud computing offers you the ability to rapidly scale your environment’s resources, both up and down and in and out. It depends upon the requirements and the demands of your application and services. When scaling up and down, you’re altering the power and performance of a particular instance. Perhaps you’re using one with greater CPU or memory power. When scaling in and out, you’re simply adding or removing instances to your fleet of compute resources. This gives you the ultimate flexibility to keep up with the ever-changing demands of the market. And it frees you up to try new things and experiment with much lower initial costs.</p>
+<h2 id="Economy-of-scale"><a href="#Economy-of-scale" class="headerlink" title="Economy of scale"></a>Economy of scale</h2><p> Public cloud vendors can procure hardware for much cheaper due to bulk pricing. Also, it’s simply more economical to create and run large public cloud data centers rather than having each company with its own on premises. You, as the end user can benefit from these exceptionally low resource costs compared to traditional hosting.</p>
+<h2 id="Highly-available"><a href="#Highly-available" class="headerlink" title="Highly available"></a>Highly available</h2><p>By design, many of the core services on the public cloud are replicated across different geographic zones and regions. That means that a disruption in one area does not have to result in any downtime. When one zone goes down, you can usually seamlessly switch to another. In this way, you can ensure the durability of your data and the availability of your services.</p>
+<h2 id="Flexibility-and-elasticity"><a href="#Flexibility-and-elasticity" class="headerlink" title="Flexibility and elasticity"></a>Flexibility and elasticity</h2><p> Cloud computing offers huge flexibility and elasticity to your design approach. You can choose to have as many or as few resources as you require. You decide how much and how long you want it for, and at what scale. You have full control and can make fairly significant changes without worrying about waste.</p>
+<h2 id="Shared-infrastructure"><a href="#Shared-infrastructure" class="headerlink" title="Shared infrastructure"></a>Shared infrastructure</h2><p> As discussed previously, multiple instances running on the same hardware significantly reduces the amount of physical hardware required. This in turn reduces the amount of power, cooling, and space required. All this results in cheaper costs for you, the customer.</p>
+<h2 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h2><p>This is one of the most discussed topics within cloud computing and many enterprises still have concerns. However, the major public cloud vendors are considered to be more secure than your own data center. The main vendors operate at an exceptionally high standard of security. They manage the security of the cloud by securing the data centers. And it’s up to you to ensure security in the cloud by correctly leveraging the tools, services, and applications available. If you copy your private information to a publicly accessible website, that’s on you. </p>
+<h1 id="Cloud-Service-Models"><a href="#Cloud-Service-Models" class="headerlink" title="Cloud Service Models"></a>Cloud Service Models</h1><h2 id="SaaS"><a href="#SaaS" class="headerlink" title="SaaS"></a>SaaS</h2><p>SaaS offerings are ready to use applications. There’s nothing to install or maintain. Users can simply access the application over the internet. Probably one of the most well-known examples of this would be Google Gmail. Any user can sign in and access their email over the internet. You don’t have to install anything. As long as you can bring up a browser, you’re good to go. SaaS offerings require little to no setup, but usually offer the least amount of customization. </p>
+<h2 id="PaaS"><a href="#PaaS" class="headerlink" title="PaaS"></a>PaaS</h2><p>Platform as a service offers a greater level of control, but it requires more setup. Essentially, you’re given access to a certain environment and you can build or run whatever you want on it. The underlying architecture, the hardware operating system, and maybe even things like libraries, those are all managed by the cloud vendor. Basically this gives developers a simple platform to deploy and run code on. They can concentrate on writing software and they don’t have to waste a lot of time maintaining, upgrading and patching servers.</p>
+<h2 id="IaaS"><a href="#IaaS" class="headerlink" title="IaaS"></a>IaaS</h2><p>The highest level of customization offered is on infrastructure as a service. Now these services give you the option of architecting your own virtual data center. You can start out by configuring a virtual network with routers, firewalls and private IP address ranges. Then you can configure different virtual machine instances. You pick the operating system at the libraries, install any applications. It feels a lot closer to your traditional on premises data center. Now, this service does offer the highest level of customization and control, however, the underlying hardware is still managed by the vendor. So you’re not going to have complete control and there are going to be some limits on what you can and cannot change. </p>
+<h1 id="Common-Use-Cases-of-Cloud-Computing"><a href="#Common-Use-Cases-of-Cloud-Computing" class="headerlink" title="Common Use Cases of Cloud Computing"></a>Common Use Cases of Cloud Computing</h1><h2 id="Proof-of-concept"><a href="#Proof-of-concept" class="headerlink" title="Proof of concept"></a>Proof of concept</h2><p>The cloud is a great fit for research and development. If you need to build a proof of concept, the cloud can let you create it at a fraction of the cost. You don’t need a huge initial investment of capital. Access whatever resources you need and then evaluate. Is your prototype going to work? Will it be successful? Is it going to bring in enough revenue to justify its cost? You can use the results of your proof of concept to better predict success or failure before committing too many resources.</p>
+<h2 id="Traffic-Bursting"><a href="#Traffic-Bursting" class="headerlink" title="Traffic Bursting"></a>Traffic Bursting</h2><p>A very common scenario for companies is to have periods of time where extra computing resources are required. Perhaps you’re in the retail business and the Christmas season brings with it additional shoppers and orders. In a classic data center environment, to handle the extra load, you would need to have extra hardware on hand that would mostly sit idle the rest of the year. A far better way to handle this would be to leverage on-demand resources from a public cloud. The major cloud vendors can scale to handle almost any load imaginable.</p>
+<h2 id="Backup-and-Disaster-Recovery"><a href="#Backup-and-Disaster-Recovery" class="headerlink" title="Backup and Disaster Recovery"></a>Backup and Disaster Recovery</h2><p>Due to the public cloud’s built-in resiliency and durability, it makes for a great backup solution. If something like an earthquake or hurricane strikes the same area your systems are running, then you can simply move them to another location. With the cloud, you have access to virtually unlimited storage space. All of your data can have multiple copies, and those copies can be stored across many different locations. Physically relocating a new data center can take weeks, months, or even years. Moving around in the cloud might only take you a few minutes, depending upon your setup. It also can be significantly cheaper.</p>
+<h2 id="Websites-and-other-Web-based-Services"><a href="#Websites-and-other-Web-based-Services" class="headerlink" title="Websites and other Web-based Services"></a>Websites and other Web-based Services</h2><p>Many organizations choose to host their web services in the cloud due to its ability to rapidly scale up and down with demand. In addition, the wide geographic distribution of data centers, gives you the ability to place servers close to your users. It also allows you to access certain services like Content Delivery Networks, or CDNs. A CDN is a set of systems that redirects traffic to a nearby caching server. As a result, this can significantly reduce a website’s latency for its users across the globe.</p>
+<h2 id="Testing-and-Development-Environments"><a href="#Testing-and-Development-Environments" class="headerlink" title="Testing and Development Environments"></a>Testing and Development Environments</h2><p>Many companies do not have the extra resources available for proper testing and development. Financially speaking, they can just be too costly. Using the public cloud allows you to spin up servers for a short time and then shut them down when you’re finished. So if you need to occasionally build and test one of your products, you don’t need a set of dedicated machines.</p>
+<h2 id="Big-Data"><a href="#Big-Data" class="headerlink" title="Big Data"></a>Big Data</h2><p>The cloud also makes it easier and cheaper to manage massive amounts of data, or big data. Building and maintaining specialized resources to handle huge data sets can be expensive and complicated. By using the cloud, you have access to specialized resources to make your analysis quicker and easier. Having some of these elements managed by a cloud vendor allows you to focus on the data and not worry about the underlying architecture.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/10/30/ccnp-ensari-1/" rel="prev" title="ccnp-ensari-1">
+      <i class="fa fa-chevron-left"></i> ccnp-ensari-1
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/11/09/gcp-cdl-2-Cloud-Platform-Services/" rel="next" title="gcp-cdl-2.Cloud-Platform-Services">
+      gcp-cdl-2.Cloud-Platform-Services <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Cloud-Computing"><span class="nav-number">1.</span> <span class="nav-text">Cloud Computing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cloud-Computing-1"><span class="nav-number">1.1.</span> <span class="nav-text">Cloud Computing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Virtualization"><span class="nav-number">1.2.</span> <span class="nav-text">Virtualization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Benefits-of-Virtualization"><span class="nav-number">1.3.</span> <span class="nav-text">Benefits of Virtualization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hypervisor"><span class="nav-number">1.4.</span> <span class="nav-text">Hypervisor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cloud-Resources"><span class="nav-number">1.5.</span> <span class="nav-text">Cloud Resources</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Compute-Resources"><span class="nav-number">1.5.1.</span> <span class="nav-text">Compute Resources</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Storage-Resources"><span class="nav-number">1.5.2.</span> <span class="nav-text">Storage Resources</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Database-Resources"><span class="nav-number">1.5.3.</span> <span class="nav-text">Database Resources</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cloud-Types"><span class="nav-number">2.</span> <span class="nav-text">Cloud Types</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#public-cloud"><span class="nav-number">2.1.</span> <span class="nav-text">public cloud</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Private-Cloud"><span class="nav-number">2.2.</span> <span class="nav-text">Private Cloud</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hybrid-Cloud"><span class="nav-number">2.3.</span> <span class="nav-text">Hybrid Cloud</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cloud-Characteristics"><span class="nav-number">3.</span> <span class="nav-text">Cloud Characteristics</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#On-demand-resourcing"><span class="nav-number">3.1.</span> <span class="nav-text">On-demand resourcing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Consumption-based"><span class="nav-number">3.2.</span> <span class="nav-text">Consumption-based</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scalability-and-agility"><span class="nav-number">3.3.</span> <span class="nav-text">Scalability and agility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Economy-of-scale"><span class="nav-number">3.4.</span> <span class="nav-text">Economy of scale</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Highly-available"><span class="nav-number">3.5.</span> <span class="nav-text">Highly available</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flexibility-and-elasticity"><span class="nav-number">3.6.</span> <span class="nav-text">Flexibility and elasticity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shared-infrastructure"><span class="nav-number">3.7.</span> <span class="nav-text">Shared infrastructure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Security"><span class="nav-number">3.8.</span> <span class="nav-text">Security</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cloud-Service-Models"><span class="nav-number">4.</span> <span class="nav-text">Cloud Service Models</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SaaS"><span class="nav-number">4.1.</span> <span class="nav-text">SaaS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PaaS"><span class="nav-number">4.2.</span> <span class="nav-text">PaaS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IaaS"><span class="nav-number">4.3.</span> <span class="nav-text">IaaS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Common-Use-Cases-of-Cloud-Computing"><span class="nav-number">5.</span> <span class="nav-text">Common Use Cases of Cloud Computing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Proof-of-concept"><span class="nav-number">5.1.</span> <span class="nav-text">Proof of concept</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Traffic-Bursting"><span class="nav-number">5.2.</span> <span class="nav-text">Traffic Bursting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backup-and-Disaster-Recovery"><span class="nav-number">5.3.</span> <span class="nav-text">Backup and Disaster Recovery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Websites-and-other-Web-based-Services"><span class="nav-number">5.4.</span> <span class="nav-text">Websites and other Web-based Services</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Testing-and-Development-Environments"><span class="nav-number">5.5.</span> <span class="nav-text">Testing and Development Environments</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Big-Data"><span class="nav-number">5.6.</span> <span class="nav-text">Big Data</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1986</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

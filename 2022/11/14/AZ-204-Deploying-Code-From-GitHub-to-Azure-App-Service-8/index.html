@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Deploying Code From GitHub to Azure App ServiceWelcome to “Deploying Code from GitHub to Azure App Service”. To get the most from this course, you should already have some experience using App Service">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AZ-204-Deploying-Code-From-GitHub-to-Azure-App-Service-8">
+<meta property="og:url" content="https://example.com/2022/11/14/AZ-204-Deploying-Code-From-GitHub-to-Azure-App-Service-8/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="Deploying Code From GitHub to Azure App ServiceWelcome to “Deploying Code from GitHub to Azure App Service”. To get the most from this course, you should already have some experience using App Service">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-14T15:04:48.000Z">
+<meta property="article:modified_time" content="2022-11-15T03:23:26.000Z">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://example.com/2022/11/14/AZ-204-Deploying-Code-From-GitHub-to-Azure-App-Service-8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>AZ-204-Deploying-Code-From-GitHub-to-Azure-App-Service-8 | Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AZ-204-Deploying-Code-From-GitHub-to-Azure-App-Service-8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AZ-204-Deploying-Code-From-GitHub-to-Azure-App-Service-8
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-14 11:04:48 / Modified: 23:23:26" itemprop="dateCreated datePublished" datetime="2022-11-14T11:04:48-04:00">2022-11-14</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/AZ-204-Deploying-Code-From-GitHub-to-Azure-App-Service-8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AZ-204-Deploying-Code-From-GitHub-to-Azure-App-Service-8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Deploying-Code-From-GitHub-to-Azure-App-Service"><a href="#Deploying-Code-From-GitHub-to-Azure-App-Service" class="headerlink" title="Deploying Code From GitHub to Azure App Service"></a>Deploying Code From GitHub to Azure App Service</h1><p>Welcome to “Deploying Code from GitHub to Azure App Service”. To get the most from this course, you should already have some experience using App Service. If you don’t, then you can take our “<a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-azure-app-service-2185/introduction/">Introduction to Azure App Service</a>” and “<a target="_blank" rel="noopener" href="https://cloudacademy.com/course/using-deployment-slots-azure-app-service-2359/using-deployment-slots-in-azure-app-service/">Using Deployment Slots in Azure App Service</a>” courses. It would also be helpful to have some experience with GitHub, although it’s not a requirement.</p>
+<p>Microsoft provides many ways to deploy code to App Service, but one of the best ways is to deploy from a source code repository, such as GitHub, Bitbucket, or Azure Repos. This is useful whether you need to upload your code once or need to implement continuous deployment in a DevOps environment.</p>
+<p>In this short course, I’ll show you how to deploy code from GitHub to App Service both manually and using continuous deployment. Although it’s possible to do both using the Azure Portal’s graphical user interface, I’m going to use the command-line interface to do the manual deployment for a couple of reasons. First, you can use Azure commands in automation scripts. Second, Microsoft often asks command-line questions in its Azure Developer certification exam, so if you’re preparing to take that exam, it’s good to know these commands.</p>
+<p>In this demo, I’m going to show you all of the commands you’ll need to use if you don’t have any App Service resources yet. First, I’m going to create a resource group to hold the resources. Then, I’ll create an App Service Plan to host the app. Next, I’ll create a webapp in the plan. And finally, I’ll deploy a sample app from one of Microsoft’s GitHub repositories to the webapp in App Service. The sample app is called “html-docs-hello-world”. It doesn’t do much, but it’ll be fine for demonstration purposes.</p>
+<p>To use the command-line interface from your desktop, you need to install the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/overview-of-azure-services/using-azure-cli/">Azure CLI</a>. But an alternative is to use Azure Cloud Shell, which has the Azure CLI preinstalled. Click here to start it. If it’s your first time running Cloud Shell, then it’ll ask you to create a storage account that it can use. I’ve used Cloud Shell before, so mine already has a storage account.</p>
+<p>Okay, first let’s create a resource group. You need to use the “az group create” command. Add the name parameter and call it “webapprg” for “webapp resource group”. Then add the location parameter and specify an Azure region. I’ll use “westus”.</p>
+<p>As you’d expect in a course about GitHub, I put all of the commands from this demo in a readme file in a GitHub repository so you can copy and paste them. You can find a <a target="_blank" rel="noopener" href="https://github.com/cloudacademy/azure-app-service-github">link</a> to the repository in the Overview tab below this video.</p>
+<p>All right, now we need to create an App Service plan using the “az appservice plan create” command. For the name parameter, I’ll call it “asplan” for “App Service Plan”. For the resource group, we need to say “webapprg”, which is the resource group we just created. For the location, we’ll use the same region as we did for the resource group. And finally, we have to specify the SKU, which means the pricing tier for the App Service Plan. F1 is the free tier, so we won’t have to pay anything.</p>
+<p>Okay, now we need to create a webapp in the plan. This will essentially be a place to put our app when the time comes, so when we first create the webapp, it’ll be empty. We use the “az webapp create” command. The name has to be globally unique, so I’ll call it “ca” for “Cloud Academy”, “webapp”. You’ll have to call it something else. Then tell it to use the webapprg resource group and the App Service plan we just created, which we called asplan.</p>
+<p>All right, now we have everything we need to deploy the app. The command we need is “az webapp deployment source config”. We need to give it a lot of parameters. You can put them in any order, but I’ll put them in the order that I think is most logical.</p>
+<p>First, we’ll use the “repo-url” parameter to tell it where the GitHub repository is. This is the URL for the “html-docs-hello-world” sample app. Then we need to tell it which branch of the repository contains the code we want to deploy. In most cases, you’ll probably just want to deploy the master branch, but if you need to deploy a different branch, this is where you do it.</p>
+<p>Next, we need to specify the “manual-integration” parameter. This means that we’re deploying the code manually rather than telling it to automatically deploy the app every time the code changes.</p>
+<p>Then we tell it the name of the webapp where we want to deploy the code. And finally, we tell it which resource group the webapp is in. This’ll take a while, so I’ll fast-forward.</p>
+<p>Okay, it’s done. Now we can see if it worked by going to the URL of the webapp, which is the name of the webapp and then “.azurewebsites.net”.</p>
+<p>Yes, this is the sample hello world app, so it worked.</p>
+<p>If you want to configure continuous deployment, which is where the app automatically gets deployed every time the code in the repository changes, then Microsoft recommends using the Azure Portal.</p>
+<p>First, I’ll find my app in the portal. Here it is. Now, we need to go to the Deployment Center. Since we already did a deployment from GitHub, it shows the configuration we used. Here’s the URL of the GitHub repository. If we wanted to do another deployment manually, then we’d just click on “Sync” up here. But we’re going to set up continuous deployment, so first we need to get rid of this manual configuration, which we can do by clicking “Disconnect”.</p>
+<p>It says, “You’re now in the production slot, which is not recommended for setting up continuous integration &#x2F; continuous deployment. That’s because if a new version of the app got deployed to the production slot, it would cause the app to be unavailable until the deployment is finished, which is not something you want to do to your users. The solution is to configure continuous deployment in a non-production deployment slot.</p>
+<p>Since our App Service Plan is using the Free tier, which doesn’t support deployment slots, we’ll need to upgrade our plan to the Standard tier. To do that, we go to “Scale up”, choose the S1 tier, which means “Standard”, and click “Apply”.</p>
+<p>There. Now we need to create a deployment slot, so we select “Deployment slots” in the menu, and then click “Add Slot”. We’ll call it “staging” and tell it to clone settings from the production slot.</p>
+<p>Then we click on the slot, and now we can go back to the Deployment Center. Good, the warning is gone because now we’re in the staging slot, which is a non-production deployment slot.</p>
+<p>In the “Source” dropdown, it gives us the option to set up either continuous deployment or manual deployment. Let’s select “GitHub” in the continuous deployment section.</p>
+<p>Before it can deploy the app, it needs to build it. By default, it uses GitHub Actions to do the build, but it’s usually easier to change this to “App Service Build Service”. This means that App Service will take care of building it.</p>
+<p>Now I need to authorize App Service to access my GitHub account.</p>
+<p>Then I need to choose the organization, the repository, and the branch. I don’t have privileged access to Microsoft’s sample repository, so it’s not something I can select here. Instead, I copied Microsoft’s repository to my own organization, where I do have privileged access. Then I’ll click “Save”.</p>
+<p>That worked, so now whenever the code in the master branch of my copy of the repository changes, it will automatically build and deploy the app to the staging slot. Then I could swap the staging slot with the production slot to upgrade the production version of the app. Alternatively, I could configure auto swap on the staging slot, so it would automatically swap the slot with production once the app is running.</p>
+<p>If you’ve been following along on your own, make sure to either downgrade the App Service Plan to the free tier or delete the whole resource group. That way, you won’t incur any more charges.</p>
+<p>And that’s it for deploying code from GitHub to Azure App Service. Please give this course a rating, and if you have any questions or comments, please let us know. Thanks!</p>
+<h2 id="Deploying-Code-From-GitHub-to-Azure-App-Service-1"><a href="#Deploying-Code-From-GitHub-to-Azure-App-Service-1" class="headerlink" title="Deploying Code From GitHub to Azure App Service"></a><strong>Deploying Code From GitHub to Azure App Service</strong></h2><p><a target="_blank" rel="noopener" href="https://github.com/cloudacademy/azure-app-service-github">Course GitHub repo</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/14/AZ-204-Lab-Deploying-And-Monitoring-Azure-App-Service-Web-Apps-7/" rel="prev" title="AZ-204-Lab-Deploying-And-Monitoring-Azure-App-Service-Web-Apps-7">
+      <i class="fa fa-chevron-left"></i> AZ-204-Lab-Deploying-And-Monitoring-Azure-App-Service-Web-Apps-7
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/11/14/AZ-204-Configuring-Networking-in-Azure-App-Service-9/" rel="next" title="AZ-204-Configuring-Networking-in-Azure-App-Service-9">
+      AZ-204-Configuring-Networking-in-Azure-App-Service-9 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Deploying-Code-From-GitHub-to-Azure-App-Service"><span class="nav-number">1.</span> <span class="nav-text">Deploying Code From GitHub to Azure App Service</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Deploying-Code-From-GitHub-to-Azure-App-Service-1"><span class="nav-number">1.1.</span> <span class="nav-text">Deploying Code From GitHub to Azure App Service</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1986</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

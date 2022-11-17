@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Course IntroductionAloha, I’m David Gaynes. And I have been developing .NET and cloud software for more than 20 years. I spent some time at Microsoft, and I’ve written a book or two in the past as wel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AZ-204-Introduction-to-Azure-Functions-15">
+<meta property="og:url" content="https://example.com/2022/11/14/AZ-204-Introduction-to-Azure-Functions-15/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="Course IntroductionAloha, I’m David Gaynes. And I have been developing .NET and cloud software for more than 20 years. I spent some time at Microsoft, and I’ve written a book or two in the past as wel">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-14T15:11:30.000Z">
+<meta property="article:modified_time" content="2022-11-15T04:12:24.000Z">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://example.com/2022/11/14/AZ-204-Introduction-to-Azure-Functions-15/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>AZ-204-Introduction-to-Azure-Functions-15 | Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AZ-204-Introduction-to-Azure-Functions-15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AZ-204-Introduction-to-Azure-Functions-15
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-14 11:11:30" itemprop="dateCreated datePublished" datetime="2022-11-14T11:11:30-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-15 00:12:24" itemprop="dateModified" datetime="2022-11-15T00:12:24-04:00">2022-11-15</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/AZ-204-Introduction-to-Azure-Functions-15/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AZ-204-Introduction-to-Azure-Functions-15/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Course-Introduction"><a href="#Course-Introduction" class="headerlink" title="Course Introduction"></a>Course Introduction</h1><p>Aloha, I’m David Gaynes. And I have been developing .NET and cloud software for more than 20 years. I spent some time at Microsoft, and I’ve written a book or two in the past as well. This course is intended for software developers who want to learn how to implement <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/azure-functions-overview/">Azure Functions</a> as a part of their cloud software design. You don’t need any specific background to get something out of the course, but it will certainly help if you understand event driven programming, what servers and APIs are in general and if you have experience with C#, JSON and how to create a project in Visual Studio.</p>
+<p>Azure Functions are little bits of your application logic that live in the cloud. You can think of them in the same way that you think of any API endpoint, meaning you can get to an <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> Function using HTTP. You just call them whenever you need to run that logic. The course will include how to activate, or what we call trigger, your Azure Functions, how to pass data to and from them and also how to tie different Azure Functions together.</p>
+<p>Note that this course covers Azure Functions 2.0 and up. As is typical with Microsoft, there were several breaking changes from V1 to V2. So if you have used Azure Functions V1 in the past, then, obviously, there are some places where the material in this course won’t match what you are used to.</p>
+<p>For any additional help, just email <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. And please rate my course when you’re finished. Thanks! And on we go.</p>
+<h1 id="Azure-Functions-Overview"><a href="#Azure-Functions-Overview" class="headerlink" title="Azure Functions Overview"></a>Azure Functions Overview</h1><p>You would typically use <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/course-introduction/">Azure Functions</a> to run bits of your overall application logic on-demand in the same way that you use any other HTTP-accessible endpoint. Just as with any other API endpoint or library function, you create a serverless <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> Function to do some compute work as a part of a larger logic landscape. You can configure Azure Functions and pass data to and from them using a wide range of architectures.</p>
+<p>As I mentioned, Azure Functions are just HTTP endpoints that you can call in the same way that you call any other API endpoint from within your code or other process. However, instead of residing on a standard web server that is operational 24&#x2F;7&#x2F;365, your Azure Function is available, quote, on demand whenever you call it. The endpoint is not provisioned into the cloud until it is called. As a result, because your cloud services charge you per minute for any resource in use, an Azure Function is typically less costly to operate than a typical API endpoint web server that’s running and available all the time.</p>
+<p>And when do you use Azure Functions? Well, Azure Functions have <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/introduction-to-triggers/">triggers</a> that cause them to execute. So they are especially useful when responding to events such as data coming or going, timers going off, or even HTTP requests coming in. If you have some code that you want to execute based only on a particular event, one that may or may not occur regularly, Azure Functions can be a solution.</p>
+<p>As I mentioned, triggers for your Azure Function can include timers, data operations, and standard HTTP calls or webhooks. Triggers are created in a configuration file that is a companion to your Azure Function. As we’ll see when we write our first Azure Function, the trigger type you choose actually defines your project.</p>
+<p>Azure Functions connect to your data stores and resources through the use of bindings. Input bindings provide any needed data to your Azure Function and output bindings receive any results. Bindings are created in the same configuration file I mentioned that is the companion to your Azure Function when you publish it.</p>
+<p>We will cover the implementation of triggers and bindings in the first part of the course.</p>
+<p>Because <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> Functions employ the on-demand services model I mentioned earlier, they are typically stateless. Azure Functions are serverless meaning there is no host server to hold or store information between calls. Your Azure Function is provisioned into the cloud when it needs to run and de-provisioned immediately afterwards so there is no concept of state connected to it.</p>
+<p>However, there is an extension to standard Azure Functions called Durable Functions that does allow you to manage state&#x2F;coordination of different Azure Functions. It’s a very useful feature in a serverless environment. We will cover the use of Durable Functions in the second part of the course.</p>
+<h1 id="Introduction-to-Triggers"><a href="#Introduction-to-Triggers" class="headerlink" title="Introduction to Triggers"></a>Introduction to Triggers</h1><p>Triggers are how your <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/course-introduction/">Azure Function</a> starts, so it seems the best place for us to start as well. A trigger defines how your function is invoked. There are several kinds of triggers you can employ to run your function when desired. In general, they have three primary types, including HTTP&#x2F;Webhooks, timers, and data operations.</p>
+<p>So for HTTP trigger, your Azure Function fires whenever an HTTP request hits that endpoint.</p>
+<p>For a generic webhook trigger, your function fires when a webhook HTTP request, hits that endpoint from any service that supports webhooks, such as Stripe or Twilio.</p>
+<p>A GitHub webhook trigger in specific means that your function fires when an event occurs in your GitHub repository, such as create, delete, download, fork, push, pull requests, commit comment or any of the other several dozen GitHub events.</p>
+<p>For a timer trigger your function is called at intervals, we’ll actually be creating a timer trigger in our exercise.</p>
+<p>A queue trigger means your function fires when a new message comes into your <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> queue storage. The message contents are then passed on as input to the function. We will also be doing a queue trigger in our exercise.</p>
+<p>For a service bus trigger, your function fires when a new message arrives from a service bus queue or topic. The message contents are then passed in as input to your function.</p>
+<p>A BLOB trigger means that your function fires when a new or updated BLOB is detected, and then the BLOB contents are passed to your function as input or an event hub trigger your function fires when any events are delivered to an Azure Event Hub.</p>
+<p>To define those triggers and other bindings for your Azure Function, you create a function.json file that creates the configuration metadata for the function itself. Here you can see an example of a function.json file.</p>
+<p>You can see within it that a function can only have a single trigger binding. As we’ll discuss later, it can have multiple input slash output bindings. All bindings and triggers will have a direction property and note that for triggers, the direction is always in.</p>
+<p>Here you can see examples of several common types of trigger bindings used for implementation of those that we just listed. This code would all be found in your function.json file, typically auto generated by Visual Studio, but you do have direct access to edit it when you desire.</p>
+<p>So you can see httpTrigger with an authorization level, a timerTrigger with a schedule, a blobTrigger with the file path to the blob, a queueTrigger with the name of the queue, and so on all of the details necessary for your binding to enable itself to be properly connected to whichever resource you are binding to.</p>
+<p>The easiest way to create an Azure Function, and to see all of this is using Visual Studio. You just write your functions, starting with the templates provided, and then publish in the usual way to your Azure Cloud. Note that because any Azure Function can have exactly only one trigger as specified, the trigger type you intend to use is what differentiates your Azure Functions when you <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/demo-creating-a-new-function/">create them</a> in Visual Studio, so let’s take a look at that.</p>
+<h1 id="DEMO-Creating-a-New-Function"><a href="#DEMO-Creating-a-New-Function" class="headerlink" title="DEMO: Creating a New Function"></a>DEMO: Creating a New Function</h1><p>To begin, we’ll be creating the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/course-introduction/">Azure Functions</a> equivalent of Hello World. Although, in this case, we’ll actually be logging to our console. So, just use your create a new project template in the typical way to create an Azure Function project. If you don’t see it immediately in your list of projects, you can always use the filter control at the top by <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a>, and you’ll find it quickly.</p>
+<p>We’re gonna go ahead and name our function according to the primary type of <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/introduction-to-triggers/">trigger</a> that we intend to use, which in this case for simplicity’s sake, we’ll just go ahead and make a timer. So, we’ll call our project, AzureFunctionTimer. And although we will be using a couple of other types of timers throughout the project, including an HTTP trigger, which is the kind that you would want to use to access your function as an API endpoint.</p>
+<p>As we discussed earlier, we’ll also be touching on Queue trigger, but, as I mentioned for the moment for simplicity’s sake, we’ll start with a Timer trigger that runs on a simple interval. The interval that we’ll specify here will be the default value of five minutes, and we’re also going to want to be engaging our default development storage emulator provided by Visual Studio and Azure, which is the AzureWebJobsStorage account. That’s going to allow us to interact with our local Blob storage, Queue storage, anything that we might need as Azure storage without having to provision any live resources into the cloud, which would incur charges and require a live Azure account.</p>
+<p>So, for development work, we can use the free local storage emulator provided by Visual Studio. We’ll go ahead and create that function, and let Visual Studio do its magic for us. And when it’s finished doing so, you can see that we have a base function signature for an Azure function, and that it includes the necessary trigger attribute applied to the first argument, which in this case is the Timer trigger with the interval specified in part of its constructor argument.</p>
+<p>That attribute applies to the TimerInfo variable, myTimer. And, in this function, all we’re going to be doing is logging information that lets us know, yes, that function ran. To do so, we’re going to use the dependency injection ILogger variable log. If you’re not familiar with dependency injection, don’t worry about it for right now. It just means that Visual Studio and Azure have some built-in functionality that you can access by using the right types of arguments in your function’s signature, things like logging and configuration.</p>
+<p>So, in this particular case, we’re gonna go ahead and use logging, and then we’re just gonna go ahead and run that function and see the sort of output that we get. And you’ll see the first thing that happens when you run locally is that Azure Functions will pop up your console, so that you can see the logging activity that’s happening inside of your function.</p>
+<p>Here, you can see it picking up some configuration information, including the Cron schedule here that indicates that this function will be running every five minutes at five, 10, 15, 20, 25 minutes past the hour, etc. And so, as soon as we hit one of those specific timer intervals, our Timer trigger will fire, and there it is. As we see, we have successfully executed Function1. Because the timer fired, we have logged our information to the console, and we have confirmed that our function has executed successfully from end-to-end. So, congratulations, you have created your first Azure function.</p>
+<p>Now, if you’d like to see the function.json file that goes along with that Azure function and defines all of the configuration inside the function, you can drill down by doing Show All Files inside of your Visual Studio. Then, you’re gonna want to go into the bin directory, into your compilation, down inside of Function1, and there you will see your function.json file with the specified trigger binding automatically injected into it. So, your function.json file will hold all of your bindings, all the bindings that are created throughout the rest of the project, triggers, or input or <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/introduction-to-output-bindings/">output bindings</a>, whatever they are, but they will all go into your function.json file, which was automatically created when you built the project and will automatically be deployed with your project when you deploy it into the cloud.</p>
+<h1 id="Introduction-to-Output-Bindings"><a href="#Introduction-to-Output-Bindings" class="headerlink" title="Introduction to Output Bindings"></a>Introduction to Output Bindings</h1><p>Creating and then deploying your <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/course-introduction/">Azure Function</a> to the cloud in your usual way in Visual Studio automatically <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/demo-creating-a-new-function/">creates</a> and deploys that function.json file we talked about earlier that contains the configuration&#x2F;metadata information for your Azure Function that it requires based on the code you just wrote. The cloud runtime environment reads the file when it spins up your Azure Function and then runs the logic in the function itself. All in response to the activated trigger.</p>
+<p>Triggers are one kind of binding. But Azure Functions also make use of input and <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/demo-output-bindings/">output bindings</a> to allow you to easily connect to your related cloud resources such as data and other resources. Azure Functions 2.0 and later supports a variety of bindings that you can use for inbound or outbound connection to those resources.</p>
+<p>Note quickly that all bindings except HTTP and Timer must be registered. .NET functions can access and register bindings just by using NuGet packages. Other functions can use extension bundles to access bindings through configuration settings.</p>
+<p>Notice in the function.json file that input and output bindings can use directions both in and out, depending on the type of the binding. And some bindings even support a special direction InOut that is available using the Advanced editor in the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> portal, but we won’t be talking about InOut bindings in this opening course on Azure Functions.</p>
+<p>So what kinds of resource bindings are supported in Azure Functions? Well, for input you’ve got Blob Storage, Cosmos DB, IoT Hub, Microsoft Graph Excel tables, Microsoft Graph OneDrive files, Microsoft Graph events, Microsoft Graph Auth tokens, mobile apps, SignalR, Table storage and even Twilio. And for output bindings, it’s all of the above except for the Graph Auth tokens, IoT Hub and SignalR. Plus, Event Grid, Event Hubs, HTTP and webhooks, Microsoft Graph Outlook email, Notification Hubs, Queue Storage, SendGrid, and Service Bus. </p>
+<p>In other words, your ability to create interactions in your Azure Functions between the various parts of your cloud architecture is nearly limitless through the use of input and output bindings.</p>
+<p>So let’s continue our code example by adding an Output binding to our Azure Function. Suppose that we have a scenario in which whenever our current Timer triggered Azure Function goes off, we want to send a message to our Queue. Let’s just hop back into Visual Studio to implement that code.</p>
+<h1 id="DEMO-Output-Bindings"><a href="#DEMO-Output-Bindings" class="headerlink" title="DEMO: Output Bindings"></a>DEMO: Output Bindings</h1><p>Implementation of your <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/introduction-to-output-bindings/">output binding</a> in your <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/course-introduction/">Azure Function</a> inside of Visual Studio is very straightforward. All you’re actually doing is adding an output parameter argument to your function signature and then applying an attribute to that argument to actually indicate the binding that you’re looking to create.</p>
+<p>So you can begin to see a pattern developing here. For example when we used the TimerTrigger attribute, we simply applied that attribute to our initial argument of the type that we want it to be using. And we’re doing exactly the same thing in our second argument where we apply this binding attribute for the queue to the out message that we’re going to be creating using our queue.</p>
+<p>If the Visual Studio that you’re using doesn’t recognize this particular item, make sure that you have a couple of NuGet packages installed which would be the Microsoft.Azure.Storage.Queue and then the Microsoft.Azure.WebJobs.Extensions.Storage will give you everything that you’re gonna need to be able to interact with your queue both presently and in the future if you’re ever gonna be creating functions to peek into your queue or anything like that.</p>
+<p>So those two namespaces will give you everything that you need. And then the only caveat here before we run our function would be to make sure that we actually have a queue that matches this name that exists because what our code is saying here is that when our <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/demo-output-bindings-with-triggers/">trigger</a> function runs, we will automatically be sending data.</p>
+<p>Because it’s an output binding, we’re going to be sending data to the object specified here in this argument. So to make sure that our queue exists, we just pop open our local cloud explorer, and it will include a menu item for local, you may have other connections established, but initially all you’re interested in for this project would be your local connection, using that as your WebJobs storage connection string. And you can see as you drill down that in your storage account you’ll have blob containers and queues and tables and so on and so forth. And so in our case we’re just checking our queues that we, yes, we do have an item in here called thequeue, and if we right-click on that queue, we can pop it open and we can actually see that there is nothing in it. Queue contains no messages.</p>
+<p>So in theory when we run our function, we should be able to go back into that queue and see that this QMessage, Timer triggered, has been created. So you’ll note that there is another name for the string value that we’re passing to QMessage. I’ll get into the details of this in just a second.</p>
+<p>We’re gonna use this when we do a combination of an input binding to combine with our output binding. But again right now our output binding simply acts as a receiver for data that we’re gonna be sending, in this case it’s our queue object and the particular message that we’re going to be sending is Timer triggered. This should all happen automatically when our timer function runs.</p>
+<p>So we’ll just go ahead and run the function and see what we get. And so Visual Studio pops open our console as is typical for a local development Azure Function. It reports on its status in the usual way. And then we can see that our function has executed. So our Timer trigger function has executed and successfully.</p>
+<p>So now in order to verify that everything worked properly with our queue, we just close that up, stop the host, head over to our queue, open it up, and we see that we have the first message successfully in there, Timer triggered. If you’re curious about what that looks like inside your function.JSON file, here it is, here is your trigger binding with your queue output. </p>
+<p>Remember that Visual Studio takes care of all of this by simply creating the arguments properly with the attributes inside of your Azure Function. So typically you don’t even have to see inside of your function JSON file, you don’t have to make any changes to it. <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> and Visual Studio will automatically take care of all of those bindings for you. So you have successfully implemented your first output binding in an Azure Function.</p>
+<h1 id="DEMO-Output-Bindings-with-Triggers"><a href="#DEMO-Output-Bindings-with-Triggers" class="headerlink" title="DEMO: Output Bindings with Triggers"></a>DEMO: Output Bindings with Triggers</h1><p>So now that we’ve done that, successfully added an <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/demo-output-bindings/">output binding</a> to our <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/course-introduction/">Azure Function</a>. Recall that, queue can actually be a trigger as well. So we have now created a timer trigger to inject something into our queue, we could create another Azure Function that would respond to that queue entry, as a queue trigger.</p>
+<p>So let’s go ahead and add another Azure Function. We’ll just go ahead and call that function two for the moment. Then when we do, we’ll get the choice of trigger types that we wanna create. We select queue trigger. We go ahead and we use the same <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> web jobs storage that we have been using for our default development environment. We can even rename the queue according to the particular queue that we have been working with. And then we select OK.</p>
+<p>Visual Studio will whip up our new as your function with a queue trigger. And this particular function, again indicated with a queue trigger binding is named properly and using our connection and all this function does is again use the dependency injection parameter for logging. Logging information that says that our queue trigger function has actually run and then it should indicate the content of the queue item when we run the function.</p>
+<p>So we just go ahead and run all of that and it should all weave together automatically. Once again, Visual Studio pops up our console so that we can see what’s going on inside of our Azure Function. And it reports back to us on its progress in the usual way. And it runs our function and we can see that everything that we wanted to happen has happened. Our timer trigger function has run and our queue trigger function has also run.</p>
+<p>We can see that both functions succeeded. You can see the detail that our function with the queue trigger ran because a new queue message was detected. So our timer has run, our output binding has functioned in providing a message to the queue. And our queue trigger function has run in response to that.</p>
+<p>So we have now chained together different Azure Functions with different triggers. That is one of the most valuable things that you can do with Azure Functions. You have a wide variety of these kinds of conditions that you can create. To use logical sequences in your programming a very valuable use of Azure Functions. And so you have successfully created your first function, your output binding, and your second function to respond as a trigger to that output binding.</p>
+<h1 id="Introduction-to-Input-Bindings"><a href="#Introduction-to-Input-Bindings" class="headerlink" title="Introduction to Input Bindings"></a>Introduction to Input Bindings</h1><p>For input bindings, you’ll see in a moment that when using .NET, you just define the data types using function parameters in the typical way. For example, as your argument for an inbound stream, such as from a BLOB, you would use type stream from the standard System.IO namespace, while for the inbound text coming from a queue <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/introduction-to-triggers/">trigger</a> you would use a string argument. You can also use any custom type of your choice as an argument to de-serialize input to that object type.</p>
+<p>For dynamically typed languages, such as JavaScript, you would need to set the dataType property in the function.json file as a part of that binding definition. For example, to read stream input from a BLOB, set the dataType to stream, like you see here.</p>
+<p>Other options for dataType are byte array, binary, and string. So this time let’s go back into our <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/course-introduction/">Azure Function</a> inside Visual Studio so we can see an example of how we employ the use of an <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/demo-input-bindings/">input binding</a> as an argument.</p>
+<h1 id="DEMO-Input-Bindings"><a href="#DEMO-Input-Bindings" class="headerlink" title="DEMO: Input Bindings"></a>DEMO: Input Bindings</h1><p>To implement an <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/introduction-to-input-bindings/">input binding</a> in your <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/course-introduction/">Azure Functions</a>, let’s go ahead and return to our queue trigger function and provide an attribute to that function so that we can create our binding. </p>
+<p>Now remember that a queue trigger will be activated by any entry placed into the specific queue that is referenced. So although in our previous example, we were using our timer to create a queue entry, any connection to your queue from anywhere in your enterprise software that creates an entry in your queue will activate this trigger.</p>
+<p>So let’s suppose that somewhere in your enterprise, you have a security application that takes a photograph every time a secure area or restricted area is violated, and that at the moment that that violation occurs an image is taken and sent to your blob storage. And that at the same moment, a queue entry is created saying, “Hey, there’s a new security image that somebody needs to review or that we need to process in order to find out what’s going on.” So what we need is an input binding that is expecting that data to be there, and then a queue trigger activated off of that queue entry, that will then go look for that image inside of our storage.</p>
+<p>Here’s a quick look at what that activity does inside of your function, .json file, here you can see the direction of the input binding and the same specifications that we applied inside of our function parameter. So we’ve provided a blob attribute which references this container and this specific image.</p>
+<p>So assuming that this image is here, we will not get a null value return. Let’s just go check our Cloud Explorer real quick and make sure yes, we do have an image in our Cloud Explorer that I put there earlier, QR2.jpg, which will match this name.</p>
+<p>So when this trigger is fired, we should be able to have a valid log entry created that says, “New image was found,” and then just the size of the picture in this case, will help us separate which picture was found. Keep in mind that just for the moment that I have hard-coded that value, QR2.jpg so that we can verify our connection to blob storage and that when an image exists, we can actually effectively process it. We’ll soon be creating a dynamic value in there as a variable but in this case, we expect it QR2.</p>
+<p>So let’s go ahead and run that function. <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> will pop up your console as usual to let you see what’s going on inside of your Azure function. We can see that it has found two functions, both one and two. And we can also see that because we have a timer triggered, queue trigger firing, that we know was created by our timer, it has gone in and it has found the image that we were looking for QR2, 4388 bytes, we can go in, we can go back to our blob container, and we can verify that yes, the size of that image was 4.3 K.</p>
+<p>So we know that in this particular case, the function has run properly, our connection to our storage is working. And now we can get on to an actual real-world example, in which we would not be providing a hard-coded value here. The key to this is that this value can be dynamic, based on the text content of the queue item that came in.</p>
+<p>So we would want to have the queue item that had just come in from your security application, indicating some specific information in the queue, an image name that would help us go into our blob container and fetch that image.</p>
+<p>So how do we do that? And the answer is by using special syntax, and a special argument called queue trigger, that is going to provide us with the text information that came into the my queue item argument that we have the queue trigger attribute applied to.</p>
+<p>So now what we are expecting is that our blob will have an image of the same name as whatever the item was, that was created inside of our queue. So let’s go back into our Cloud Explorer, and we’ll pop open our blobs container again. And we’ll see that we have an image in here, an image in here that has been created in this case manually, but could have been sent in by our security application. That is called SecurityViolation.jpg.</p>
+<p>So assuming that we create an item in our queue of the same name, we should now be able to see that a security image was found and with the actual length of that particular picture. So our queue item has to contain the word security when we create it. And of course, we need to actually have our function running to make sure that our Azure function will be responsive when we create our item in the queue.</p>
+<p>So now that we know that we have that up and running, we just head back over to our queue and we create a message with very specific text called security violation, because that is the name of the image that we are expecting to be able to match. So we go ahead and we create that text entry in our queue. And as soon as we do, we can see that our queue trigger is immediately processed, and that it has indicated to us that it is in specific a security violation that it executed.</p>
+<p>So now we have been able to see that our queue trigger Azure Function can be responsive to multiple ways of inputting information to our queue, that we can narrow down inside of that function, the specific item information that we’ve received from the queue, and that we can use that information to apply specific logic for that situation. And so you have effectively combined your input binding of expected data with your queue trigger function.</p>
+<h1 id="Durable-Functions-Types-and-Uses"><a href="#Durable-Functions-Types-and-Uses" class="headerlink" title="Durable Functions: Types and Uses"></a>Durable Functions: Types and Uses</h1><p>Okay that covers our introduction to <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/course-introduction/">Azure Functions</a>. We got one running, we used bindings to interact with remote resources, we called functions from it, triggered functions from it and logged our activities. I spoke briefly earlier about the ILogger Dependency Injection that we were using for that.</p>
+<p>Azure Functions 2.0 and later is much, much better at handling Dependency Injection than was version 1.0. And since it’s pretty much required in a stateless environment that’s a very good thing.</p>
+<p>As I mentioned, if you’re not familiar with Dependency Injection, that’s okay. In this case the point of it is that Azure Functions as a runtime has some built-in tools such as Logging and Configuration that you can use for all of your Azure Function.</p>
+<p>And you get access to those tools when you pass the right kind of object types in the Constructor of your Azure Function. Since you haven’t created those objects yourself you know that <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> must be doing it for you in the background. Because those background objects are actually controlling much of what happens in your function, Dependency Injection of objects is sometimes called Inversion of Control.</p>
+<p>The need for Dependency Injection brings us back to a point I mentioned earlier and again just now, the whole on-demand serverless model is by nature stateless. It’s hard to hold state in something that doesn’t exist most of the time such as is the case with your Azure Function.</p>
+<p>But what happens when you do have several Azure Functions and you would like them to be aware of what the others have done before they execute in a smarter way than we just employed using our bindings and triggers? It’s a common enough scenario and it’s why Durable Functions were created.</p>
+<p>Durable Functions is an extension of Azure Function that lets you orchestrate, or tie together in one way or another, stateful functions in a serverless environment. The <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/use-of-orchestrator-and-activity-functions/">orchestration</a> is typically a sequence of logical processing. A Durable Function application is a solution you create that is composed of different Azure Functions, each one playing a different role within that orchestration.</p>
+<h1 id="Use-of-Orchestrator-and-Activity-Functions"><a href="#Use-of-Orchestrator-and-Activity-Functions" class="headerlink" title="Use of Orchestrator and Activity Functions"></a>Use of Orchestrator and Activity Functions</h1><p>There are currently four durable function types in <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/course-introduction/">Azure Functions</a>, Activity, Orchestrator, Entity, and Client. But we’ll start by looking at just the first two, Activity and Orchestrator. </p>
+<p>Activity Functions are pretty much basic <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> Functions written more or less as usual with the one important difference being the requirement of an ActivityTrigger attribute that indicates that this function can be triggered from your Orchestrator function.</p>
+<p>Your Orchestrator orchestrates the various Activity Functions by executing them as you specify. The Orchestrator function type requires an OrchestrationTrigger as we’ll soon see.</p>
+<p>When you start your <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/durable-functions-types-and-uses/">Durable function</a>, it creates the necessary control queues for each of the Activity Functions that it finds, and one worker item queue. Take note that although your Orchestrator looks like it is directly calling the function, under the covers it is instead actually sending a message to that work-item queue.</p>
+<p>Your Activity Functions will receive a message from the queue through implementation of your ActivityTrigger and then execute any of its internal logic. When the Activity Function completes its execution, the function sends a response message to the control queue. The Orchestrator function then receives that response message via its OrchestrationTrigger, and the full behavior of the Durable Function is complete.</p>
+<p>So an example might be you have a total of order items that you need to pass to another function to get taxes, or you have area parameters for something that then you need to calculate the total volume. Basically, any situation in which you have a value that you would like to pass on to another separate function to return a dependent value would be a use case for Durable Functions orchestrating your Azure Functions.</p>
+<p>So let’s take a look at how this works in code by jumping back into our Visual Studio project.</p>
+<h1 id="DEMO-Durable-Functions"><a href="#DEMO-Durable-Functions" class="headerlink" title="DEMO: Durable Functions"></a>DEMO: Durable Functions</h1><p>The <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/durable-functions-types-and-uses/">Durable Functions</a> equivalent of hello world, would be to create a set of activity functions that could be executed from your <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/use-of-orchestrator-and-activity-functions/">orchestrator function</a>. So that’s what we’re going to do in this exercise, we’ll even create our own as <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/course-introduction/">Azure Function</a> outside of the template, and we’ll have a value returned from that function that we can then pass on. In this case, we’ll be passing it back to the same function to show a change in value, but we could take that value and pass it along anywhere, thus maintaining state which is usually very challenging in the serverless world of <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/use-of-orchestrator-and-activity-functions/https://cloudacademy.com/library/azure/">Azure</a> Functions.</p>
+<p>To add a Durable Function to your Azure Functions project, just right click on the project name and do Add New Azure Function. We’ll actually go ahead and name this one FunctionDurable since we know that’s what we’re gonna do with it, and then the list of Azure Function Types pops up, and you will see that Durable Functions Orchestration is in the list. So we just click Okay, and Visual Studio will do its thing and create for us our basic Durable Functions template, which is going to include three different types of functions in it. It will include first our orchestrator function that will be responsible for calling all of the other activity functions. And then there will also be an HTTP trigger function, that is going to be how we are going to activate our orchestrator function in the first place, meaning that yes, at last, we will finally be executing one of our Azure Functions using the much mentioned HTTP trigger as if our function was an API endpoint.</p>
+<p>So first, just to make sure that we can see what’s going on here, we’re expecting some text to be written to the screen when we run our orchestrator calling our activity functions. So let’s just run the Azure Function and make sure that everything is looking good inside of our Durable Function. As usual, Visual Studio pops up your console so that you can see all the logging. We’re going to need some important bits of this, you can see right there durable task has been created. And you can see in the green there just flashing by us was a critical bit of information that we need. This is our actual HTTP endpoint that we would need to use from a browser to call our Azure Function.</p>
+<p>So we’ll go ahead and do a quick copy on that, we’ll pop open a new window, we’ll paste that in, and we’ll run our Durable Function. You can see we got something back from running it so everything’s looking good. And when we come over to our console, we can see it’s full of a lot of stuff, including here’s a hello to London, here’s a hello to Seattle. And so we can see that each of the activity functions within our Durable Function has run properly.</p>
+<p>So now let’s take advantage of some of the power of that so that we can actually pass some values from one Durable Function to another and see that important sequence happening. So let’s just create a little bit of space here. And then I have a pre-created function that I can drop in that does nothing but add five to the value that we pass in. So here’s x equals five, here’s the logging information telling us that we’re gonna be adding that value to whatever the value that is passed in. And then we’re gonna be going ahead and returning that value.</p>
+<p>So how would we get access to some of that stuff up here inside of our orchestrator function? Let’s go ahead and take out a few thing. And this is the simple process of creating an integer, having the value of that integer then reassigned to the return value from our add five function, and then doing the same thing again. So between Seattle and London, we should have one output that says we’re adding five to zero, and then we should have another output that says we’re adding five to five. And we can watch that value change dynamically as our Durable Function runs.</p>
+<p>So let’s go ahead and run that function and see what we get. Azure Functions, once again, displays our log, verifying we have a durable task running. And there’s the endpoint that we’re going to need to use, which of course, fortunately, turns out to be the same endpoint that we just used.</p>
+<p>So now that we know that everything is up and running, we can actually just come back to our open browser, make another request to the same endpoint. When it’s completely finished, we can go in, and we can take a look. And we can see that our function durable hello has been running properly, and so has our add function. here we can see down in the list, we’re adding five plus five. Here further above, we’re adding five plus zero.</p>
+<p>So, as we are going through our Azure Function, and here’s the beginning saying hello to Seattle, adding five plus zero, adding five plus five, and then at the end here, saying hello to London. And so, in this process, we have really been able to see very powerfully that Azure Functions can tie together in a number of ways, orchestrating your Azure Functions to create a sequence like this is one of the most powerful ways that you can manage your state and the logic within your larger application picture.</p>
+<p>So, now we have successfully created an Azure Durable Function that has called individual activity functions. We have activated that function using an HTTP trigger endpoint. And that concludes the first part of our introduction to Durable Functions.</p>
+<h1 id="Course-Summary"><a href="#Course-Summary" class="headerlink" title="Course Summary"></a>Course Summary</h1><p>That concludes our introductory look at <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/course-introduction/">Azure Functions</a>. We’ve seen that Azure Functions are actually just little bits of your application logic that you can have reside in the cloud as a part of your general software architecture, and they can perform on demand pretty much anything that you want them to, using a variety of triggers such as timers or data events or HTTP triggers, as if they were regular API endpoints.</p>
+<p>You have the ability to string together different bindings of a wide range of data sources and resources such as queue, BLOB, <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> tables, etc, etc, that you can weave all of these things together into a sequence of bindings and triggers that allow you to really dictate a logical flow of data or processing through one piece of your application logic. That’s just one way to orchestrate Azure Functions together.</p>
+<p>The formal Azure Functions way of orchestrating things together is by using <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/demo-durable-functions/">Durable Functions</a>. We’ve seen that Durable Functions can, through the use of orchestration, call other Azure Functions that can pass data to and from each other using the orchestration function as that sort of nexus that lets you be in complete control of logical and data flow.</p>
+<p>So, hopefully, you’ve seen some things within Azure Functions that get you excited to use them. Hopefully, you can apply them to the benefit of your enterprise coding structure soon. Thank you again for taking my course. I hope you enjoyed it, I hope you got a lot out of it. Happy coding!</p>
+<h2 id="6DEMO-Output-Bindings"><a href="#6DEMO-Output-Bindings" class="headerlink" title="6DEMO: Output Bindings"></a>6<strong>DEMO: Output Bindings</strong></h2><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/visualstudio/azure/vs-azure-tools-resources-managing-with-cloud-explorer?view=vs-2022">Cloud Explorer Alternatives</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/14/AZ-204-Lab-Creating-a-Topic-and-Subscription-in-Azure-Service-Bus-14/" rel="prev" title="AZ-204-Lab-Creating-a-Topic-and-Subscription-in-Azure-Service-Bus-14">
+      <i class="fa fa-chevron-left"></i> AZ-204-Lab-Creating-a-Topic-and-Subscription-in-Azure-Service-Bus-14
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/11/14/AZ-204-Lab-Integrate-Services-with-Azure-Function-Apps-16/" rel="next" title="AZ-204-Lab-Integrate-Services-with-Azure-Function-Apps-16">
+      AZ-204-Lab-Integrate-Services-with-Azure-Function-Apps-16 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Course-Introduction"><span class="nav-number">1.</span> <span class="nav-text">Course Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Azure-Functions-Overview"><span class="nav-number">2.</span> <span class="nav-text">Azure Functions Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction-to-Triggers"><span class="nav-number">3.</span> <span class="nav-text">Introduction to Triggers</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DEMO-Creating-a-New-Function"><span class="nav-number">4.</span> <span class="nav-text">DEMO: Creating a New Function</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction-to-Output-Bindings"><span class="nav-number">5.</span> <span class="nav-text">Introduction to Output Bindings</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DEMO-Output-Bindings"><span class="nav-number">6.</span> <span class="nav-text">DEMO: Output Bindings</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DEMO-Output-Bindings-with-Triggers"><span class="nav-number">7.</span> <span class="nav-text">DEMO: Output Bindings with Triggers</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction-to-Input-Bindings"><span class="nav-number">8.</span> <span class="nav-text">Introduction to Input Bindings</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DEMO-Input-Bindings"><span class="nav-number">9.</span> <span class="nav-text">DEMO: Input Bindings</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Durable-Functions-Types-and-Uses"><span class="nav-number">10.</span> <span class="nav-text">Durable Functions: Types and Uses</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Use-of-Orchestrator-and-Activity-Functions"><span class="nav-number">11.</span> <span class="nav-text">Use of Orchestrator and Activity Functions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DEMO-Durable-Functions"><span class="nav-number">12.</span> <span class="nav-text">DEMO: Durable Functions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Course-Summary"><span class="nav-number">13.</span> <span class="nav-text">Course Summary</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6DEMO-Output-Bindings"><span class="nav-number">13.1.</span> <span class="nav-text">6DEMO: Output Bindings</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1986</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

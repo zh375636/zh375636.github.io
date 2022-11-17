@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="IntroductionHello and welcome to this course on Configuring User Experience in Azure Virtual Desktop. My name is Shabaz Darr and I’ll be your instructor for this course. I am an Azure Virtual Desktop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AZ-140-Configuring-User-Experience-Settings-in-Azure-Virtual-Desktop-20">
+<meta property="og:url" content="https://example.com/2022/11/13/AZ-140-Configuring-User-Experience-Settings-in-Azure-Virtual-Desktop-20/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="IntroductionHello and welcome to this course on Configuring User Experience in Azure Virtual Desktop. My name is Shabaz Darr and I’ll be your instructor for this course. I am an Azure Virtual Desktop">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-13T23:00:45.000Z">
+<meta property="article:modified_time" content="2022-11-14T10:32:54.000Z">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://example.com/2022/11/13/AZ-140-Configuring-User-Experience-Settings-in-Azure-Virtual-Desktop-20/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>AZ-140-Configuring-User-Experience-Settings-in-Azure-Virtual-Desktop-20 | Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/13/AZ-140-Configuring-User-Experience-Settings-in-Azure-Virtual-Desktop-20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AZ-140-Configuring-User-Experience-Settings-in-Azure-Virtual-Desktop-20
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-13 19:00:45" itemprop="dateCreated datePublished" datetime="2022-11-13T19:00:45-04:00">2022-11-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-14 06:32:54" itemprop="dateModified" datetime="2022-11-14T06:32:54-04:00">2022-11-14</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/13/AZ-140-Configuring-User-Experience-Settings-in-Azure-Virtual-Desktop-20/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/13/AZ-140-Configuring-User-Experience-Settings-in-Azure-Virtual-Desktop-20/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Hello and welcome to this course on Configuring User Experience in Azure Virtual Desktop. My name is Shabaz Darr and I’ll be your instructor for this course. I am an Azure Virtual Desktop Specialist and have been working in the Microsoft cloud services for several years, specifically with Azure Virtual Desktop since its inception, and have multiple Azure-focused certifications. My contact information is available on the screen. </p>
+<p>Please feel free to reach out to me with any questions, comments, or concerns and I will be happy to discuss these with you. For any other issues, you can always get in touch with us here at Cloud Academy by sending an email to <a href="mailto:&#x73;&#117;&#112;&#x70;&#111;&#x72;&#x74;&#x40;&#99;&#108;&#111;&#x75;&#x64;&#97;&#99;&#97;&#100;&#x65;&#x6d;&#121;&#46;&#x63;&#x6f;&#109;">&#x73;&#117;&#112;&#x70;&#111;&#x72;&#x74;&#x40;&#99;&#108;&#111;&#x75;&#x64;&#97;&#99;&#97;&#100;&#x65;&#x6d;&#121;&#46;&#x63;&#x6f;&#109;</a> and one of our cloud experts will follow up with you. This course is intended for anyone planning to take the Azure Virtual Desktop Specialty exam and anyone interested in learning how to deploy an Azure Virtual Desktop environment</p>
+<p> By the end of this course, you will have knowledge on:</p>
+<ul>
+<li>Configuring Universal print</li>
+<li>Configuring user settings through group policies and Endpoint Manager policies</li>
+<li>Configuring persistent and non-persistent desktop environments</li>
+<li>Configuring Remote desktop Protocol (RDP) properties on a host pool</li>
+<li>Configuring session timeout properties</li>
+<li>Troubleshooting user profile issues</li>
+<li>Troubleshooting Azure Virtual Desktop clients</li>
+</ul>
+<p>To get the most from this course you should have an Administrator-level understanding of Azure Cloud services. When I created this course, all information was current. Feedback on course content hosted by Cloud Academy is always appreciated and encouraged, as it allows us as trainers to improve which helps all of our students taking courses in the future. If you have any feedback, positive or negative, it would be greatly appreciated if you could contact <a href="mailto:&#x73;&#x75;&#112;&#112;&#111;&#114;&#x74;&#x40;&#99;&#108;&#111;&#117;&#100;&#x61;&#99;&#x61;&#x64;&#101;&#x6d;&#121;&#46;&#x63;&#111;&#109;">&#x73;&#x75;&#112;&#112;&#111;&#114;&#x74;&#x40;&#99;&#108;&#111;&#117;&#100;&#x61;&#99;&#x61;&#x64;&#101;&#x6d;&#121;&#46;&#x63;&#111;&#109;</a>.</p>
+<p>If you notice any updates or corrections, please reach out to us. Thank you!</p>
+<h1 id="Configuring-Universal-Print"><a href="#Configuring-Universal-Print" class="headerlink" title="Configuring Universal Print"></a>Configuring Universal Print</h1><p>Welcome to this module on configuring Universal Print. In this module we will discuss the following topics:</p>
+<ul>
+<li>We will first explain exactly what the Universal Print service is</li>
+<li>Next, we will look at some of the prerequisites that need to be implemented before you can deploy the Universal Print service.</li>
+<li>Finally, we will explain the four steps you need to complete when setting up Universal Print</li>
+</ul>
+<p>Let’s start off by explaining exactly what the Universal Print service is. It is a modern print solution that you can utilize to manage your print infrastructure. It runs completely in Azure and require zero on-premises infrastructure.</p>
+<p>From a license perspective, it is a Microsoft 365 subscription-based service, so there is no need to purchase any extra license. Finally, it is fully integrated with Azure AD and supports single sign-on (SSO).</p>
+<p>Now we know what the Universal Print service is, let’s move on to looking at prerequisites. As with most cloud-based services, you need to ensure you complete certain tasks before you can start to deploy or implement it.</p>
+<p>For the Universal Print service, you need to ensure that an eligible license has been assigned to the admin user who will be configuring the deployment. You then need to ensure the user has either the Printer Administrator role or the Global Administrator role. Keep in mind that it is best practice to follow least privilege access when assigning admin roles.</p>
+<p>Finally, you need to ensure you have a Windows 10 client device running version 1903 and above. Using the latest OS release will provide a much richer user experience. In this final lecture of this module, let’s look at the 4 steps that need to be completed to deploy the Universal Print Service. </p>
+<p>Step 1 is to set up the Universal Print connector. This is the component that you can utilize to make a printer work with Universal Print. You use this connector when you do not have a printer that directly connects to the Universal Print Service.</p>
+<p>Step 2: You need to register the printers by using the Universal printer connector. This is similar to installing a printer on a print server. Once it is registered it will be accessible to add to devices for users with the relevant permissions.</p>
+<p>This leads us well to Step 3, which is to assign permissions and share the printer. You can assign permissions to Azure AD users and security groups. Once the permissions are granted, it then needs to be shared.</p>
+<p>Step 4, the final step, is to add the Universal printer to the end-users Windows device. You need to ensure the device is connected to the Internet and that it is either Azure AD joined, Azure AD registered, or Hybrid Azure AD joined before adding the printer. </p>
+<h1 id="Configure-User-Settings-through-Group-Policies-and-Endpoint-Policies"><a href="#Configure-User-Settings-through-Group-Policies-and-Endpoint-Policies" class="headerlink" title="Configure User Settings through Group Policies and Endpoint Policies"></a>Configure User Settings through Group Policies and Endpoint Policies</h1><p>Welcome to this module on configuring user settings through group policy and endpoint manager policies. In this module we will cover the following topics:</p>
+<ul>
+<li>Configuring Azure Virtual Desktop via Group Policy, including a walkthrough demo</li>
+<li>Configuring Azure Virtual Desktop via Endpoint Manager, including a walkthrough demo</li>
+</ul>
+<p>Let’s start this module by looking at configuring AVD via Group Policy. In order to allow Group Policy to be able to access Azure Virtual Desktop, you need to ensure your session hosts are either Active Directory Domain joined, or Hybrid joined.</p>
+<p>You can then deploy group policies the same way you would in an on-premises environment, including being able to configure both computer configuration policies and user configuration policies. Let’s do a demo configuration of a group policy for Azure Virtual Desktop.</p>
+<p>Here we are logged into one of our Azure virtual machines that we are preparing as a golden image for our AVD deployment. We need to navigate to the local group policy app from the Start menu. As you can see here we have both Computer and User configuration. </p>
+<p>We will now browse to the Windows settings under Computer configuration, then Security settings then click on the Network List Manager Policies. We have 4 options here, but we want to choose All networks. This policy Is going to allow us to control permissions for if users can change the network name, location, or icon from within the session. We are going to change each option so the user cannot change any of them and click on OK.</p>
+<p>Let’s check out some additional settings we can configure via Group Policy. This time, under computer configuration, let’s select administrative templates and then expand network. Here we have a whole host of settings we can configure, including Background Intelligent Transfer Service (BITS) and DirectAccess Client Experience Settings. </p>
+<p>Let’s select the BITS settings and again we have a whole list of settings we can configure. For example, if we double click ‘Do not allow the computer to act as a BITS processing server’ if we enable this then the session hosts will no longer cache downloaded files and offer them to its peers.</p>
+<p>Let’s now check out the network settings we can configure, specifically the ‘Prohibit use of Internet Connection Sharing on you DNS Domain network’. By enabling this setting, ICS cannot be enabled or configured by an administrator and the service cannot be run on this session host. We have multiple policies we can configure but this very much depends on your organization’s requirements. Now we have looked at configuring Group policy for Azure Virtual Desktop, let’s look at configuring AVD via Endpoint Manager.</p>
+<p>In order to allow Endpoint Manager to be able to access Azure Virtual Desktop, you need to ensure your session hosts are either Azure AD joined, or Hybrid joined. However, there are some limitations, for example, it is not possible to deploy a configuration policy to configure Wi-Fi settings on a Windows 10 device. Additionally, Autopilot reset is not currently supported with Endpoint Manager integration. Another limitation example is that it is not currently possible to remotely wipe an Azure Virtual Desktop session host via Endpoint Manager. </p>
+<p>We will finish this module with a demo of configuring Azure Virtual Desktop via Endpoint Manager.</p>
+<p>Here we are logged into the Endpoint Manager portal. Let’s navigate to our session host which is Azure AD enrolled which we can see if currently fully compliant and managed by Intune. If we click on it we can see we have multiple options we can manage, but if we go back a step we can see the different types of policies and profiles we can configure, including Compliance policies, configuration profiles, and Windows 10 update rings.</p>
+<p>If we go back into the device again, we can see the options that are support and not supported as they are greyed out, and if needed, we can obtain information from the left-hand side menu regarding device compliance and configuration.</p>
+<h1 id="Configuring-Persistent-and-Non-Persistent-Desktops"><a href="#Configuring-Persistent-and-Non-Persistent-Desktops" class="headerlink" title="Configuring Persistent and Non-Persistent Desktops"></a>Configuring Persistent and Non-Persistent Desktops</h1><p>Welcome to this module on configuring persistent and non-persistent desktop environments. We will cover the following topics:</p>
+<ul>
+<li>Configuring persistent desktop environments including a walkthrough demo</li>
+<li>Configuring non-persistent desktop environments including a walkthrough demo</li>
+</ul>
+<p>Let’s first look at configuring persistent environments. The definition of a persistent VDI environment is when the user has the same experience each time they login. This means they can access saved files and any specific customizations to the desktop are still intact every time they login, even after reboots.</p>
+<p>There are two types of persistent environments available with Azure Virtual Desktop. The first is pooled host pools where users share the resources on the session hosts. We then have personal host pools which is a 1 to 1 ratio, so when the user logs in they are assigned the same session host with the same settings and files they saved the last time they logged in. FSLogix profile containers are utilized to facilitate user profiles which helps give the users a more persistent experience.</p>
+<p>Let’s now do a quick demo of how to provision a persistent desktop in Azure Virtual Desktop via the Azure Portal. Here we are in the Azure Portal in the AVD blade and to create a persistent environment we need to create a new host pool. Let’s click on Create under the host pool blade and enter all the required details such as subscription, resource group, host pool name, and location.</p>
+<p>As mentioned earlier in this section we have two types of persistent environments, pooled and personal host pools. If we click on pooled host pools we then need to set the load balancing algorithm. We again have two options, breadth-first or depth-first. Breadth-first is when all user connections are randomly sent to any available session host within the environment. Depth-first is when all new connections are sent to a single session host until it hits a limit that you set, after which any new connections are sent to the next available session host. Before we move on we set a connection limit and then move on to configuring the virtual machine settings for the host pool.</p>
+<p>We enter all the required settings again like resource group, name prefix, location, availability zone, and Image. You can then select the VM size you wish to have as part of the your deployment. Once all the settings have been specified and you have entered all the relevant credentials, we can move on to configuring the workspace, then the advanced settings and tags. Finally, you can create your persistent desktop environment. Now we understand configuring persistent environments, let’s move onto looking at configuring non-persistent environments.</p>
+<p>Non-persistent environments within Azure Virtual desktop are based on ephemeral disk, which is like a temporary disk. From a user experience perspective in a non-persistent environment, users essentially see a new desktop every time they log back in, they will not see any files that have been saved locally on the disk and any customizations that are made will also not be saved. Non-persistent environments using Ephemeral disks are ideal for stateless applications which are tolerant of individual virtual machine failures. </p>
+<p>Let’s now do a quick demo of how to provision a non-persistent desktop in Azure by looking at how to provision an Ephemeral disk on an Azure VM. To configure our non-persistent desktop environment, we need to create the session hosts with Ephemeral disks. In this demo, I will walk through how to configure one with an Azure virtual machine. Here we are in the Azure portal in the virtual machine blade. We want to create an Azure virtual machine. We then need to configure all the standard basic settings, including subscription, resource group, VM name, region, and image.</p>
+<p>Now we need to ensure we select VM size that is supported as not all sizes support Ephemeral disks. You need to ensure you select one with a large enough Temp disk cache. Once all the basic settings are configured, we then move onto the Disks tab. If you navigate to the bottom of the page under ‘Advanced’ you have the option for the Ephemeral disk which by default is set to none. We can either select OS cache placement or Temp disk placement depending on what our requirement is. We can then move onto the complete the rest of the VM configuration, including Networking, Management, Advanced, and Tags before finally creating the VM.</p>
+<h1 id="Configuring-RDP-Properties-on-a-Host-Pool"><a href="#Configuring-RDP-Properties-on-a-Host-Pool" class="headerlink" title="Configuring RDP Properties on a Host Pool"></a>Configuring RDP Properties on a Host Pool</h1><p>Welcome to this module on configuring Remote Desktop properties (RDP) on a host pool. We will cover the following topics in this module:</p>
+<ul>
+<li>We will explain what the RDP properties are</li>
+<li>Look at some examples of the RDP properties that can be configured</li>
+<li>Finally, we will complete a walk-through demo of configuring some RDP properties in the Azure Portal</li>
+</ul>
+<p>Let’s start off by discussing what RDP properties are. RDP properties are a method for administrators to customize host pool features to meet your organizations’ requirements. The customizations you make can enhance the user experience as it gives them a more local desktop feel to the environment. There are two ways in which you can configure the RDP properties. First, you can make configuration changes via the Azure Portal, something we will explore in the demo at the end of this module. Secondly, you can use PowerShell with the Azure module to make changes to the RDP properties.</p>
+<p>Now let’s move on to looking at some examples of RDP properties you can customize before we dive into the demo. Firstly, we have connection information. Here, for example, you can configure whether Remote Desktop will use CredSSP for authentication if it is available as well as specifying a program to automatically start when the remote computer is started.</p>
+<p>Next, we have Session behavior. In this section, we can configure reconnection settings, compression settings, and video playback settings as a few examples. We then have a device redirection section. Here, we have a few customizations we can make, including Audio and Video redirection settings, and local devices and resource redirection including printers, drives, and USB devices.</p>
+<p>Another important feature is being able to configure display settings for our Azure Virtual Desktop environment. This includes multiple monitors, resolution, and Desktop size as a few examples. The final customization is the Advance section. Here we can set custom RDP properties but in script form. We will take a closer look at this in the demo. In the final lecture of this module, we are going to complete a walk-through demo of configuring some of the RDP properties via the Azure Portal.</p>
+<p>Here we are in the Azure Portal, specifically the Azure Virtual Desktop blade. To configure the RDP properties, we need to navigate to the Host pool and then under settings, we will find RDP properties. You can now see all the customizations options we mentioned earlier in this lecture. For the purpose of this demo, we are going to configure only a few of these settings.</p>
+<p>Let’s start with Session Behavior. Here we are going to set the Reconnection option to automatically try and reconnect and the video playback setting to Use RDP-efficient multimedia streaming for the video playback when possible. </p>
+<p>Moving onto the Device Redirection tab, we have a number of customizations we are going to set. We are going to start with setting the Microphone redirection, Redirect video encoding, and Audio output location. Under Local devices and resources, we will set the camera redirection, clipboard redirection, smart card redirection, and finally disable the USB redirection.</p>
+<p>We are going to make a few changes to the display settings to finish off, including enabling multiple displays, setting the screen mode to full screen, and setting the desktop size. The final item I wanted to highlight in this demo is the Advanced tab, where you can set custom RDP properties in script form and separate them by semicolons.</p>
+<h1 id="Configuring-Session-Timeout-Properties"><a href="#Configuring-Session-Timeout-Properties" class="headerlink" title="Configuring Session Timeout Properties"></a>Configuring Session Timeout Properties</h1><p>Welcome to this module on configuring session timeout properties. We will cover the following topics in this module:</p>
+<ul>
+<li>We will explain what session timeout properties are</li>
+<li>We will finish off with a demo walkthrough of configuring session timeout properties for Azure Virtual Desktop</li>
+</ul>
+<p>Let’s start off by looking at exactly what session timeout properties are. The session timeout feature allows you to log off user sessions that have been inactive for a specified amount of time. It is configured via the local group policy on a session host, so it would be recommended to implement this during the golden image creation. This way it is deployed to all session hosts.</p>
+<p>The session timeout properties configuration includes setting time limits for, disconnected sessions, active but idle remote desktop services sessions, active remote desktop services sessions, and finally, you can configure the ability to end sessions when time limits are reached. We will set all these properties in the demo which is next.</p>
+<p>Now we understand what session timeout properties are, let’s complete a walkthrough demo of configuring them via the local group policy on a session host. Here we are in our virtual machine which we are going to use for our session host golden image. We need to open the local group policy editor. Once it is opened, we navigate to ‘Computer Configuration &gt; Administrative Templates &gt; Windows Components &gt; Remote Desktop Services &gt; Remote Desktop Session Host &gt; Session Time Limits. Here we have all the session time-out policies we discussed earlier in this module.</p>
+<p>Let’s first edit ‘Set time limit for disconnected sessions’, enable it, and set this to 30 minutes. Next, let’s edit the ‘Set time limit for active but idle Remote Desktop services sessions’ but set this to a little sooner at 10 minutes. Next, let’s edit ‘Set time limit for active Remote Desktop Services sessions’, enable it, but leave it set to never. We are now going to enable the policy called ‘End session when time limits are reached’, in the event we set time limits within our AVD environment. The final policy we want to configure is the ‘Set time limit for logoff of RemoteApp sessions’ and after enabling this we will set it to 30 minutes. This completes the configuring session timeout demo.</p>
+<h1 id="Troubleshooting-User-Profile-Issues"><a href="#Troubleshooting-User-Profile-Issues" class="headerlink" title="Troubleshooting User Profile Issues"></a>Troubleshooting User Profile Issues</h1><p>Welcome to this module on troubleshooting user profile issues. In this module we will cover the following topics:</p>
+<ul>
+<li>We will look at the tracks you can utilize to escalate issues with Microsoft</li>
+<li>We will then discuss the different methods of reporting issues</li>
+<li>Finally, we will touch on some common user profile related issues you might come across</li>
+</ul>
+<p>Let’s start by discussing Escalation tracks. When you are faced with an issue including profile-related ones and you are struggling to find a solution, you can escalate the issue directly to Microsoft. Before doing this however you can take a look at the Azure Status page and the Azure Service health page in the portal to check if there are any known issues or outages that might be the root of your problem. If that is not the case, you can move forward with opening an Azure support request so you can troubleshoot the issue with the Microsoft Engineer.</p>
+<p>Let’s now discuss Reporting issues. There are many different places you can find help for all types of Azure Virtual Desktop issues, including profile-related problems. To start with you can create a thread within the AVD Tech community site where you can potentially receive help and advice from other Tech professionals who may have had similar issues and recommend a solution.</p>
+<p>As we mentioned earlier, you can report issues directly to Microsoft by creating a support ticket. As well as problems you can also suggest new features you might want to see within the AVD environment and Microsoft can take this into consideration. In the final section of this module, let’s discuss some common user profile-related issues you may come across when managing and implementing Azure Virtual Desktop.</p>
+<p>Some common user profile issues include the user profile failing to attach to the session. In this case, you will get an error and are unable to sign in. This can be caused by communication issues between the session hosts and the profile containers, and a reboot of the session can resolve this. Another issue may be that you could be logged in with a local profile, rather than your network profile. This can be caused by permissions or a corrupt profile. Finally, a common issue you might find is that the FSLogix profile container has not been correctly configured in the Image so all the session hosts will have the incorrect user profile path.</p>
+<h1 id="Troubleshooting-Azure-Virtual-Desktop-Clients"><a href="#Troubleshooting-Azure-Virtual-Desktop-Clients" class="headerlink" title="Troubleshooting Azure Virtual Desktop Clients"></a>Troubleshooting Azure Virtual Desktop Clients</h1><p>Welcome to this module on Troubleshooting Azure Virtual Desktop clients. We will cover the following topics in this module:</p>
+<ul>
+<li>We explain what the Remote Desktop Client is</li>
+<li>We will finish off the module by discussion some common issues with the Remote Desktop client</li>
+</ul>
+<p>Let’s start by explaining what the Remote Desktop client is. This is an application that is utilized by your end users to connect into your Azure Virtual Desktop environment. It is supported on multiple platforms and operating systems, including Windows, Android, iOS, MacOS, and a web client version.</p>
+<p>Let’s finish off this short module by discussion some of the common issues you may come across with the Remote Desktop client. You may come across an issue where the client app has stopped responding. In this scenario, you can reset the user data by using the command called msrdcm.exe which will remove user data, restore default settings, and unsubscribe from all workspaces. Another common issue you may come across is that the web client will not open. With this type of issue, you need to do a DNS check to ensure your internet connection is working as expected. If this is the case, then restart your web browser or try a different browser.</p>
+<p>You might come across a problem where the client has opened and logged in correctly, however you see no resources. For this type of issue, ensure the user is logged in to the app from the correct Azure AD account. If these checks are ok and you need to ensure your app group is associated with a workspace. The final common issue I want to touch on is when your web client stops responding or continually disconnects. In this type of scenario, you should try reconnecting using a different browser or different client.</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>We have covered several important topics in this course. We started off by discussing the Universal Print service, where we explained what this service was, some of the prerequisites that need to be in place before we can use it, and four high-level steps you need to complete to implement this service. We then moved on to talking about configuring user settings through Group Policy and Endpoint Manager. In this lecture, we looked at configuring the user settings via Group Policy, including a walkthrough demo of how to implement this. We then discussed configuring AVD via Endpoint Manager which also included a demo.</p>
+<p>Moving on, we looked at persistent and non-persistent desktop environments where we initially discussed what persistent desktops are including a walkthrough demo of how to configure a pooled host pool. We then did the same with looking at non-persistent desktops, which included a walkthrough demo of implementing an Ephemeral disk to an Azure Virtual machine. We continued on in this module to talk about configuring Remote Desktop Protocol (RDP) properties on a host pool. This lecture included discussing what the RDP properties were, then looking at examples of the RDP properties, finishing off with a walkthrough demo of configuring the RDP properties in the Azure portal.</p>
+<p>Next, we took a closer look at Session timeout properties. We touched on two topics in this lecture. First, we discussed what session timeout properties are, and second, we did a walkthrough demo of configuring session timeout properties via the local group policy settings. In the penultimate lecture in this module, we took a closer look at Troubleshooting user profile issues. We initially discussed options around escalating issues to Microsoft, then the different methods in which you can report issues, and finally some common user profile issues you may come across with AVD.</p>
+<p>In the final lecture in this module, we talked about Troubleshooting Azure Virtual Desktop clients. We covered two topics in this lecture. First, we explained what the Remote Desktop client is and then discussed some common issues that you may encounter with the Remote Desktop client app.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/13/AZ-140-Managing-Access-to-Azure-Virtual-Desktop-14/" rel="prev" title="AZ-140-Managing-Access-to-Azure-Virtual-Desktop-19">
+      <i class="fa fa-chevron-left"></i> AZ-140-Managing-Access-to-Azure-Virtual-Desktop-19
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/11/13/AZ-140-Knowledge-Check-Configuring-User-Experience-Settings-in-Azure-Virtual-Desktop-21/" rel="next" title="AZ-140-Knowledge-Check-Configuring-User-Experience-Settings-in-Azure-Virtual-Desktop-21">
+      AZ-140-Knowledge-Check-Configuring-User-Experience-Settings-in-Azure-Virtual-Desktop-21 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configuring-Universal-Print"><span class="nav-number">2.</span> <span class="nav-text">Configuring Universal Print</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configure-User-Settings-through-Group-Policies-and-Endpoint-Policies"><span class="nav-number">3.</span> <span class="nav-text">Configure User Settings through Group Policies and Endpoint Policies</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configuring-Persistent-and-Non-Persistent-Desktops"><span class="nav-number">4.</span> <span class="nav-text">Configuring Persistent and Non-Persistent Desktops</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configuring-RDP-Properties-on-a-Host-Pool"><span class="nav-number">5.</span> <span class="nav-text">Configuring RDP Properties on a Host Pool</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configuring-Session-Timeout-Properties"><span class="nav-number">6.</span> <span class="nav-text">Configuring Session Timeout Properties</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Troubleshooting-User-Profile-Issues"><span class="nav-number">7.</span> <span class="nav-text">Troubleshooting User Profile Issues</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Troubleshooting-Azure-Virtual-Desktop-Clients"><span class="nav-number">8.</span> <span class="nav-text">Troubleshooting Azure Virtual Desktop Clients</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary"><span class="nav-number">9.</span> <span class="nav-text">Summary</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1986</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
