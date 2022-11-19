@@ -183,7 +183,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AZ-720-Troubleshoot-name-resolution-issues-in-Microsoft-Azure-2/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/AZ-500-Implementing-Multi-Factor-Authentication-on-Azure-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -197,7 +197,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/14/AZ-720-Troubleshoot-name-resolution-issues-in-Microsoft-Azure-2/" class="post-title-link" itemprop="url">AZ-720-Troubleshoot-name-resolution-issues-in-Microsoft-Azure-2</a>
+            <a href="/2022/11/15/AZ-500-Implementing-Multi-Factor-Authentication-on-Azure-3/" class="post-title-link" itemprop="url">AZ-500-Implementing-Multi-Factor-Authentication-on-Azure-3</a>
         </h2>
 
         <div class="post-meta">
@@ -208,7 +208,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-11-14 13:34:37 / Modified: 16:30:00" itemprop="dateCreated datePublished" datetime="2022-11-14T13:34:37-04:00">2022-11-14</time>
+              <time title="Created: 2022-11-15 10:11:20 / Modified: 10:11:22" itemprop="dateCreated datePublished" datetime="2022-11-15T10:11:20-04:00">2022-11-15</time>
             </span>
 
           
@@ -220,1212 +220,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/14/AZ-720-Troubleshoot-name-resolution-issues-in-Microsoft-Azure-2/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AZ-720-Troubleshoot-name-resolution-issues-in-Microsoft-Azure-2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Completed100 XP</p>
-<ul>
-<li>3 minutes</li>
-</ul>
-<p>As an Azure network support engineer, you are responsible for ensuring that computers and devices on your network stay connected. Name resolution is the process of matching the name of a computer to its network address. If a name cannot be resolved, the computer will not be visible on the network, causing a breakdown in connectivity. Name resolution may be:</p>
-<ul>
-<li>Public, using public Domain Name System (DNS) servers.</li>
-<li>Internal to Azure, using Azure infrastructure.</li>
-<li>On-premises, using your own DNS server.</li>
-</ul>
-<p>You might also adopt a hybrid approach, using a combination of either private and public DNS, or on-premises and Azure DNS servers.</p>
-<p>In this unit you will learn how to troubleshoot internal Azure name resolution issues and public DNS issues.</p>
-<h2 id="Learning-objectives"><a href="#Learning-objectives" class="headerlink" title="Learning objectives"></a>Learning objectives</h2><p>By completing this module, you’ll learn how to:</p>
-<ul>
-<li>Troubleshoot built-in Azure name resolution issues</li>
-<li>Troubleshoot custom Azure name resolutions issues</li>
-<li>Troubleshoot Azure Private Zone DNS</li>
-<li>Troubleshoot Public DNS issues</li>
-<li>Review the Azure DNS logs</li>
-</ul>
-<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
-<li>Demonstrate an understanding of the OSI model</li>
-<li>Demonstrate an understanding of Azure CLI</li>
-<li>Demonstrate an understanding of PowerShell</li>
-<li>Know how to run Cloud Shell to run commands</li>
-</ul>
-<h1 id="Azure-name-resolution-issues"><a href="#Azure-name-resolution-issues" class="headerlink" title="Azure name resolution issues"></a>Azure name resolution issues</h1><p>Completed100 XP</p>
-<ul>
-<li>3 minutes</li>
-</ul>
-<p> Important</p>
-<p>You need your own <a target="_blank" rel="noopener" href="https://azure.microsoft.com/free/">Azure subscription</a> to complete the exercises in this module. If you don’t have an Azure subscription, you can still view the demonstration video in the exercise unit.</p>
-<ol>
-<li>Select <strong>Sign in</strong> to activate sandbox and sign in using your own credentials.</li>
-<li>Select <strong>Review permissions</strong>, read and accept to continue.</li>
-<li>Azure Cloud Shell will authenticate and build and you are ready to start the exercise.</li>
-</ol>
-<p>You’ll troubleshoot a name resolution problem in a later exercise. Use the following instructions and the Azure Cloud Shell on the right of the screen to create the environment for this exercise.</p>
-<p> Note</p>
-<p>The resource group <strong>sandbox-rg</strong> has been created automatically. Use this as your resource group name. You won’t have permission to create additional resource groups in the sandbox.</p>
-<p>In the sandbox to the right, follow these steps:</p>
-<h2 id="Create-the-exercise-environment"><a href="#Create-the-exercise-environment" class="headerlink" title="Create the exercise environment"></a>Create the exercise environment</h2><p>Using the Cloud Shell on the right, run these commands to create the example topology. The environment will take approximately 13 minutes to build.</p>
-<ol>
-<li><p>Clone the setup script from GitHub.</p>
-<p>ConsoleCopy</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/MicrosoftDocs/mslearn-name-resolution-issues networking</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Run the setup script.</p>
-<p>ConsoleCopy</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">networking/setup.ps1</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>The script will create all the resources. Wait until it completes, you should see a Lab Environment Created message.</p>
-</li>
-<li><p>You can continue to the next unit as this command runs in the background.</p>
-</li>
-</ol>
-<h1 id="Troubleshoot-public-DNS-in-Microsoft-Azure"><a href="#Troubleshoot-public-DNS-in-Microsoft-Azure" class="headerlink" title="Troubleshoot public DNS in Microsoft Azure"></a>Troubleshoot public DNS in Microsoft Azure</h1><p>Completed100 XP</p>
-<ul>
-<li>7 minutes</li>
-</ul>
-<h2 id="Troubleshoot-issues-with-Domain-Name-System-records-at-public-providers"><a href="#Troubleshoot-issues-with-Domain-Name-System-records-at-public-providers" class="headerlink" title="Troubleshoot issues with Domain Name System records at public providers"></a>Troubleshoot issues with Domain Name System records at public providers</h2><p>Public DNS servers convert domain names to IP addresses to allow people to find web sites and other addresses on the internet. If your VM has internet connectivity, it will need to resolve names from public DNS servers. If you have problems with resolving names from public DNS servers, try the following:</p>
-<ol>
-<li><p>Check your VM has internet connectivity.</p>
-</li>
-<li><p>From a command prompt, ping the IP address of the website you are trying to reach. If ping does not get a response, this tells you that the website is not available.</p>
-</li>
-<li><p>Check whether the DNS server is the primary server for the zone, or a secondary copied DNS server. Updates are made to the primary DNS server, so this will always include the latest changes and be the most up to date. The primary DNS server is also known as the Authoritative DNS. The secondary DNS server is a read-only copy of the primary DNS server.</p>
-</li>
-<li><p>From a command prompt, run nslookup:</p>
-<p>nslookup <em>name IP address of the DNS server</em>;</p>
-<p>For example:</p>
-<p>nslookup app1 10.0.0.1</p>
-<p>If you get a failure or time-out response, check for recursion problems. Check the server that was used in your original query forwards queries by examining the Forwarders tab in the Server properties in the DNS console. If the Enable forwarders check box is selected, and one or more servers are listed, this server forwards queries.</p>
-<p>With recursion, all DNS servers that are used in the path of a recursive query must be able to respond and forward correct data. If they can’t, a recursive query can fail because:</p>
-<ul>
-<li>The query times out before it can be completed.</li>
-<li>A server failed to respond.</li>
-<li>A server provides incorrect data.</li>
-</ul>
-<p>Nslookup will also tell you whether the name has been resolved by an authoritative or non-authoritative server.</p>
-</li>
-<li><p>Flush the resolver cache by running the dnscmd &#x2F;clearcache command in an Elevated Command Prompt window:</p>
-<ul>
-<li>Right select Command Prompt and choose ‘Run as administrator’</li>
-</ul>
-<p>Type dnscmd <em>servername</em> &#x2F;clearcache</p>
-<p>The <em>servername</em> is its IP address, FQDN, or hostname. If omitted, the local server is used.</p>
-<p>You can also use <strong>ipconfig -flushdns</strong> to clear the DNS cache.</p>
-<p>Alternatively, in an Elevated PowerShell window, run the following cmdlet:</p>
-<p>Clear-DnsServerCache</p>
-<p>Once you have cleared the cache, try again.</p>
-</li>
-<li><p>Check the DNS server address. If necessary, correct the address.</p>
-</li>
-<li><p>The <a target="_blank" rel="noopener" href="https://phoenixnap.com/kb/linux-dig-command-examples">dig command</a> (domain information groper) gives DNS information which is helpful in troubleshooting problems. It is a free utility which needs to be installed on Windows machines. To get dig information, run the following command:</p>
-<p>dig <em>domain name or IP</em></p>
-<p>DIG displays the <strong>status</strong> of whether a query was successful.</p>
-<p>The <strong>ANSWER SECTION</strong> shows a response to a request sent in the <strong>QUESTION SECTION</strong>.</p>
-<p>The <strong>SERVER</strong> displays the address for the public DNS server.</p>
-<p>By default, dig looks up the <strong><a target="_blank" rel="noopener" href="https://phoenixnap.com/kb/dns-record-types">A record</a></strong> for a domain and shows which IP address the domain points to when resolving the name.</p>
-<p>Use <strong>dig</strong> with the <strong>+trace</strong> tag to see the full path to the destination:</p>
-<p>dig contoso.com +trace</p>
-<p>To check the delegated name servers, use the ns option:</p>
-<p>dig contoso.com ns</p>
-</li>
-<li><p>If a computer cannot be reached, try using the commands IPCONFIG &#x2F; RELEASE and IPCONFIG &#x2F;RENEW from the computer’s command prompt to refresh cached information.</p>
-<p> Important</p>
-<p>IPCONFIG &#x2F;RELEASE will disconnect the computer from the internet. Run IPCONFIG &#x2F;ALL to check the current information.</p>
-</li>
-<li><p>To check the IP configuration of a computer, run ipconfig &#x2F;all at a command prompt. Scroll down to verify the IP address, subnet mask, and default gateway. The default gateway will be a router or firewall.</p>
-</li>
-<li><p>The tracert tools displays the route from source to destination. When troubleshooting DNS issues, it helps to identify where packets stopped on the network. Install the traceroute tool using the <a target="_blank" rel="noopener" href="https://phoenixnap.com/kb/how-to-manage-packages-ubuntu-debian-apt-get">apt package manager</a>.</p>
-<p>If running on a Windows machine:</p>
-<p>tracert <em>domain name or IP</em></p>
-</li>
-<li><p>If the computer uses the ISP’s DNS, and you cannot resolve the issue, contact the ISP.</p>
-</li>
-</ol>
-<h2 id="Troubleshoot-domain-configuration-issues"><a href="#Troubleshoot-domain-configuration-issues" class="headerlink" title="Troubleshoot domain configuration issues"></a>Troubleshoot domain configuration issues</h2><p>To use a domain name with Microsoft 365 products, you must set up your custom domain names in the Microsoft 365 admin center:</p>
-<ol>
-<li>From the Microsoft 365 admin center, select <a target="_blank" rel="noopener" href="https://go.microsoft.com/fwlink/p/?linkid=2171997">Setup</a>.</li>
-<li>Under Get your custom domain set up, select View &gt; Manage &gt; Add domain.</li>
-<li>Enter the domain name, and then select Next.</li>
-<li>If your domain registrar is available, sign in to your domain registrar, and then select Next.</li>
-<li>Choose the services for your new domain.</li>
-<li>Select Next &gt; Authorize &gt; Next, and then Finish. Your new domain has been added.</li>
-</ol>
-<p>You can check for problems with your domain by checking its status. Go to Setup &gt; Domains and view the notifications in the Status column. If you see an issue, select the three dots (more actions), and then select Check health to display any issues occurring with your domain.</p>
-<p>There are a couple of common reasons that domain verification doesn’t work as it should:</p>
-<ul>
-<li>The verification record value is incorrect. Check the value in the TXT verification record at your DNS host. This should include the “MS&#x3D;” part of the record.</li>
-<li>The record hasn’t been saved. Some DNS hosts require you to save the zone file where the DNS record is stored. If this has not been saved, it will not be visible by Microsoft 365.</li>
-<li>The record hasn’t updated across the Internet. It can take a few minutes or a few hours for a new record to be visible.</li>
-</ul>
-<h2 id="Troubleshoot-delegation-issues"><a href="#Troubleshoot-delegation-issues" class="headerlink" title="Troubleshoot delegation issues"></a>Troubleshoot delegation issues</h2><p>Azure DNS zones allow you to manage the DNS records for a domain. For domain queries to reach Azure DNS, the parent domain must be delegated to Azure DNS. There are two types of DNS servers:</p>
-<ul>
-<li>An <strong>authoritative</strong> DNS server hosts DNS zones. It answers DNS queries for records in those zones only.</li>
-<li>A <strong>recursive</strong> DNS server doesn’t host DNS zones. It answers all DNS queries by calling authoritative DNS servers to gather the data it needs.</li>
-</ul>
-<p>Azure DNS provides an authoritative DNS service.</p>
-<p>First, you need to know the name servers for your zone. Azure DNS allocates name servers from a pool each time a zone is created.</p>
-<p>In the Azure portal, select <strong>All resources</strong>, and then select your DNS zone. Alternatively, enter your domain name in the Filter by name box. Retrieve the name servers from the DNS zone page.</p>
-<p>For example, the zone contoso.net might be assigned name servers:</p>
-<ul>
-<li>ns1-01.azure-dns.com</li>
-<li>ns2-01.azure-dns.net</li>
-<li>ns3-01.azure-dns.org</li>
-<li>ns4-01.azure-dns.info</li>
-</ul>
-<p>Azure DNS automatically creates authoritative NS records in your zone for the assigned name servers.</p>
-<p>Now you have the name servers, you can update the parent domain. Each registrar has its own DNS management tools. From the registrar’s DNS management page, edit the NS records and replace the NS records with the Azure DNS name servers.</p>
-<p>The image shows an example DNS query, with contoso.net and partners.contoso.net in Azure DNS zones:</p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/3-zones.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/3-zones.png" alt="Diagram of a DNS query in the Azure DN zones."></a></p>
-<p>Each delegation has two copies of the NS records - one in the parent zone pointing to the child, and another in the child zone itself. The ‘contoso.net’ zone contains the NS records for ‘contoso.net’, in addition to the NS records in ‘net’. These records are called authoritative NS records and they sit at the apex of the child zone.</p>
-<p>To troubleshoot domain delegation, try the following:</p>
-<ol>
-<li>Check you have updated the domain with the name servers that Azure DNS provides. Use all four name servers, regardless of the name of your domain. Domain delegation doesn’t require a name server to use the same top-level domain as your domain.</li>
-<li>Include the trailing period at the end of the name server address. The trailing period indicates the end of a fully qualified domain name. Some registrars append the period if the NS name doesn’t have it. To be compliant with the DNS RFC, always include the trailing period.</li>
-<li>Delegations that use name servers in your own zone, sometimes called vanity name servers, are not supported in Azure DNS.</li>
-<li>Verify that the delegation is working. Use a tool such as nslookup to query the Start of Authority (SOA) record. The SOA record is automatically created with the zone. Wait at least 10 minutes after delegation has been set up, as it can take a while for changes to propagate through the DNS system.</li>
-</ol>
-<p>From a command prompt, enter a nslookup command:</p>
-<p>nslookup -type&#x3D;SOA contoso.net</p>
-<p>The response should look similar to this:</p>
-<p>Server: ns1-04.azure-dns.com</p>
-<p>Address: 208.76.47.4</p>
-<p>contoso.net</p>
-<p>primary name server &#x3D; ns1-04.azure-dns.com</p>
-<p>responsible mail addr &#x3D; msnhst.microsoft.com</p>
-<p>serial &#x3D; 1</p>
-<p>refresh &#x3D; 900 (15 mins)</p>
-<p>retry &#x3D; 300 (5 mins)</p>
-<p>expire &#x3D; 604800 (7 days)</p>
-<p>default TTL &#x3D; 300 (5 mins)</p>
-<h2 id="Review-Domain-Name-System-audit-logs"><a href="#Review-Domain-Name-System-audit-logs" class="headerlink" title="Review Domain Name System audit logs"></a>Review Domain Name System audit logs</h2><p>Use DNS Analytics to help you to identify:</p>
-<ul>
-<li>Clients that are trying to resolve malicious domain names.</li>
-<li>Identify stale resource records.</li>
-<li>Identify frequently queried domain names and talkative DNS clients.</li>
-<li>View request load on DNS servers.</li>
-<li>View dynamic DNS registration failures.</li>
-</ul>
-<p>DNS Analytics (Preview) collects, analyzes, and correlates Windows DNS analytic and audit logs and other related data from your DNS servers.</p>
-<ul>
-<li>You must install the Log Analytics agent on each Windows DNS server you want to monitor.</li>
-<li>If you are running Operations Manager, you will need to connect it to Azure Monitor.</li>
-</ul>
-<p>The solution starts collecting data without the need of further configuration.</p>
-<p>You can download DNS Analytics (Preview) from Azure Marketplace. For DNS related insights, the DNS server should be Windows Server 2012 R2 or later.</p>
-<p>You can also access DNS Analytics via Azure Monitor and Log Analytics workspaces. In the Azure portal, go to Azure Monitor. On the Insights menu, select Insights Hub, and then select Log Analytics. The Overview page in Azure Monitor displays a tile for each solution installed in a Log Analytics workspace.</p>
-<h1 id="Troubleshoot-name-resolution-issues"><a href="#Troubleshoot-name-resolution-issues" class="headerlink" title="Troubleshoot name resolution issues"></a>Troubleshoot name resolution issues</h1><p>Completed100 XP</p>
-<ul>
-<li>5 minutes</li>
-</ul>
-<p>Name resolution in Azure is done by one of three methods:</p>
-<ul>
-<li>Azure built-in name resolution</li>
-<li>Azure custom name resolution</li>
-<li>Azure DNS private zones</li>
-</ul>
-<p>In this unit you will learn how to troubleshoot each of these methods.</p>
-<h2 id="2-1-Troubleshoot-built-in-Azure-name-resolution"><a href="#2-1-Troubleshoot-built-in-Azure-name-resolution" class="headerlink" title="2.1 Troubleshoot built-in Azure name resolution"></a>2.1 Troubleshoot built-in Azure name resolution</h2><p>Built-in Azure name resolution provides basic authoritative Domain Name System (DNS) capabilities. DNS names and records are managed by Azure. Built-in Azure name resolution does not allow you to control the DNS names or the life cycle of DNS records.</p>
-<p>Azure built-in name resolution works with public DNS names and provides internal name resolution for VMs and role instances within the same virtual network or cloud service.</p>
-<p>Built-in Azure name resolution has some limitations:</p>
-<ul>
-<li>The Azure-created DNS suffix cannot be modified.</li>
-<li>DNS lookup is scoped to a virtual network. DNS names created for one virtual network can’t be resolved from other virtual networks.</li>
-<li>You cannot manually register your own records.</li>
-<li>WINS and NetBIOS are not supported. You cannot see your VMs in Windows Explorer.</li>
-<li>Host names must be DNS-compatible. Names must use only 0-9, a-z, and ‘-‘, and cannot start or end with a ‘-‘.</li>
-<li>DNS query traffic is throttled for each virtual machine (VM). Throttling shouldn’t impact most applications. If request throttling is observed, ensure that client-side caching is enabled.</li>
-<li>Only VMs in the first 180 cloud services are registered for each virtual network in a classic deployment model. This limit does not apply to virtual networks in Azure Resource Manager.</li>
-<li>The Azure DNS IP address is 168.63.129.16. This is a static IP address, is used in all regions and all national clouds and will not change.</li>
-<li>Azure Dynamic Host Configuration Protocol (DHCP) provides an internal DNS suffix (.internal.cloudapp.net) to each VM. This suffix enables host name resolution because the host name records are in the internal.cloudapp.net zone.</li>
-</ul>
-<p> </p>
-<h2 id="2-2-Troubleshoot-Domain-Name-System-private-zones"><a href="#2-2-Troubleshoot-Domain-Name-System-private-zones" class="headerlink" title="2.2 Troubleshoot Domain Name System private zones"></a>2.2 Troubleshoot Domain Name System private zones</h2><p>Azure Private DNS allows you to manage and resolve domain names in a virtual network without the need to add a custom DNS solution. You can use custom domain names, rather than the Azure-provided names.</p>
-<p>DNS resolution using a private DNS zone works only from virtual networks that are linked to it. These private DNS zones records can be resolved from the internet, but the private IP address is not routable via the Internet.</p>
-<p>You can link a private DNS zone to one or more virtual networks by creating <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/dns/private-dns-virtual-network-links">virtual network links</a>. You can also enable the <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/dns/private-dns-autoregistration">autoregistration</a> feature to automatically manage the life cycle of the DNS records for the virtual machines that get deployed in a virtual network. With autoregistration enabled, Azure DNS will update the zone record whenever a virtual machine gets created, changes its’ IP address, or gets deleted.</p>
-<p> Note</p>
-<p>A Virtual Network can only have autoregistration enabled on one Private DNS Zone link. If you try to link two private DNS zones to the same VNet, only one of the links will be enabled for autoregistration.</p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/4-link-zones.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/4-link-zones.png" alt="Diagram of private DNS zones on the same Vnet."></a></p>
-<p>There are limits on how many private DNS zones you can create, how many records sets, and records per record set.</p>
-<p>Single-labelled private DNS zones aren’t supported. Your private DNS zone must have two or more labels. For example, contoso.com has two labels separated by a dot. A private DNS zone can have a maximum of 34 labels.</p>
-<p>You can’t create zone delegations (NS records) in a private DNS zone. If you intend to use a child domain, you can directly create the domain as a private DNS zone. Then you can link it to the virtual network without setting up a nameserver delegation from the parent zone.</p>
-<p>To create a Private DNS zone:</p>
-<ol>
-<li>In the Azure portal, <strong>type private dns zones</strong> in the search text box and press <strong>Enter</strong>. The <strong>Private DNS zones</strong> blade is displayed.</li>
-<li>Select <strong>Create</strong>. The <strong>Create Private DNS</strong> zone blade is displayed.</li>
-<li>Type or select the following:<ol>
-<li>Subscription</li>
-<li>Resource group</li>
-<li>Name – this must be unique within the Resource group.</li>
-<li>Resource group location</li>
-</ol>
-</li>
-<li>Select <strong>Review + Create</strong>.</li>
-<li>Select <strong>Create</strong>.</li>
-</ol>
-<p>To troubleshoot issues relating to DNS zones:</p>
-<ol>
-<li>Review the Azure DNS audit logs.</li>
-<li>Check that each DNS zone name is unique within its resource group.</li>
-<li>Do not create zone names that could affect the DNS resolution of Microsoft services, such as azure.com, and the like.</li>
-<li>Do not use a .local domain for your private DNS zone. Not all operating systems support this.</li>
-<li>Check you have not reached the maximum number of zones for your subscription. If so, you will see the error message “You have reached or exceeded the maximum number of zones in subscription {subscription ID}.” Either use a different Azure subscription, delete some zones, or contact Azure Support to raise your subscription limit.</li>
-<li>“The zone ‘{zone name}’ is not available” indicates that Azure DNS is unable to allocate name servers for this DNS zone. Rename the zone or contact Azure support to allocate name servers for you.</li>
-</ol>
-<p>To troubleshoot issues related to DNS records:</p>
-<ol>
-<li>The record set already exists. Record set names must be unique within the zone.</li>
-<li>CNAME records must not be created at the apex.</li>
-<li>CNAME record sets cannot have the same name as other record sets.</li>
-<li>Apex records consist of the ‘@’ character.</li>
-<li>The maximum number of records that can be created is shown in the Azure portal, under the ‘Properties’ for the zone. If you’ve reached this limit, then either delete some record sets or contact Azure Support to raise your record limit for this zone.</li>
-</ol>
-<p> Note</p>
-<p>Apex records are records added at the root of the zone.</p>
-<p>To troubleshoot resolving DNS records:</p>
-<ol>
-<li>Check that the fully qualified name, zone name, and record type are correct.</li>
-<li>Check that no DNS records have the same name, even if they are of different types.</li>
-<li>Check that the DNS records resolve correctly on the Azure DNS name servers.</li>
-<li>Check name resolution with a service such as <strong><a target="_blank" rel="noopener" href="https://digwebinterface.com/">digwebinterface</a></strong>. This tests the current state of the name servers by removing proxy servers and cached results.</li>
-<li>Check that the name servers are correct for your DNS zone, as shown in the Azure portal.</li>
-<li>Check that the DNS domain name has been correctly <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/dns/dns-domain-delegation">delegated to Azure DNS</a>. Use nslookup to validate that the zone is delegated to in-built Azure DNS.</li>
-</ol>
-<p> Note</p>
-<p>If your environment uses a hybrid approach and uses both private zone DNS and public zone, records in private zone DNS will be resolved first.</p>
-<p>To troubleshoot resolving DNS records:</p>
-<ol>
-<li>Check that the fully qualified name, zone name, and record type is correct.</li>
-<li>Check that no DNS records have the same name, even if they are of different types.</li>
-<li>Check that the DNS records resolve correctly on the Azure DNS name servers.</li>
-<li>Check name resolution with a service such as <a target="_blank" rel="noopener" href="https://digwebinterface.com/">digwebinterface</a>. This removes proxy servers and cached results, and only tests the current state of the name servers.</li>
-<li>Check that the name servers are correct for your DNS zone, as shown in the Azure portal.</li>
-</ol>
-<p>Azure Private DNS zones have the following limitations:</p>
-<ul>
-<li>If automatic registration of VM DNS is enabled, only one private zone can be linked to a virtual network. You can however link multiple virtual networks to a single DNS zone.</li>
-<li>Reverse DNS works only for private IP space in the linked virtual network.</li>
-<li>Reverse DNS for a private IP address in linked virtual network will return internal.cloudapp.net as the default suffix for the virtual machine. For virtual networks that are linked to a private zone with autoregistration enabled, reverse DNS for a private IP address returns two fully qualified domain names (FQDNs): one with default the suffix internal.cloudapp.net and another with the private zone suffix.</li>
-<li>Conditional forwarding isn’t currently natively supported. To enable resolution between Azure and on-premises networks, see <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances">Name resolution for VMs and role instances.</a></li>
-</ul>
-<h2 id="2-3-Troubleshoot-custom-Domain-Name-System-configuration-issues"><a href="#2-3-Troubleshoot-custom-Domain-Name-System-configuration-issues" class="headerlink" title="2.3 Troubleshoot custom Domain Name System configuration issues"></a>2.3 Troubleshoot custom Domain Name System configuration issues</h2><p>As well as Azure in-built DNS, you also have the option to configure a custom DNS server. For example, you might want to integrate with on-premises Active Directory or resolve names between VNets.</p>
-<p>To use Azure custom DNS, you must add a list of IP addresses that point to DNS servers. This list will be distributed to any devices in the virtual network that were using the Azure DNS server.</p>
-<p>There are some limitations with Azure custom DNS:</p>
-<ul>
-<li>You cannot register a public domain name using Azure custom DNS.</li>
-<li>DNSSEC is not enabled.</li>
-<li>You cannot do zone transfers.</li>
-</ul>
-<p> Note</p>
-<p>Updating from in-built DNS (Inherit from virtual network) to custom DNS will restart all affected VMs.</p>
-<p>In DNS settings, you can choose whether to inherit DNS settings from the virtual network or use custom DNS. Check that you have saved any change from Azure in-built DNS to custom DNS, otherwise, the changes will not persist.</p>
-<p>To test whether custom DNS is working, use the PowerShell command:</p>
-<p>Copy</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test-netconnection -computername -port  </span><br></pre></td></tr></table></figure>
-
-<p>To check your custom DNS is using the correct DNS server, from a command prompt type:</p>
-<p>Copy</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ipconfig /all</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="Exercise-Name-resolution-issues"><a href="#Exercise-Name-resolution-issues" class="headerlink" title="Exercise: Name resolution issues"></a>Exercise: Name resolution issues</h1><p>Completed100 XP</p>
-<ul>
-<li>10 minutes</li>
-</ul>
-<p> Important</p>
-<p>You need your own <a target="_blank" rel="noopener" href="https://azure.microsoft.com/free/">Azure subscription</a> to complete the exercises in this module. If you don’t have an Azure subscription, you can still view the demonstration video at the bottom of this page.</p>
-<p>Sign in to the <a target="_blank" rel="noopener" href="https://portal.azure.com/learn.docs.microsoft.com">Azure portal</a> using the same account you used to activate the sandbox.</p>
-<p>If you have not already run the script in unit 2, please do so now so you can follow the exercise below.</p>
-<p>You work for Contoso as a network engineer, and users are complaining that they cannot access VM1 or VM2. You have configured two Azure virtual networks: VNet1 and VNet2. They are connected with peering.</p>
-<table>
-<thead>
-<tr>
-<th align="left"><strong>Virtual network</strong></th>
-<th align="left"><strong>IPv4 network address</strong></th>
-<th align="left"><strong>Subnet</strong></th>
-<th align="left"><strong>IPv4 network address</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">VNet1</td>
-<td align="left">10.1.0.0&#x2F;16</td>
-<td align="left">Subnet1</td>
-<td align="left">10.1.1.0&#x2F;24</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Subnet2</td>
-<td align="left">10.1.2.0&#x2F;24</td>
-</tr>
-<tr>
-<td align="left">VNet2</td>
-<td align="left">10.2.0.0&#x2F;16</td>
-<td align="left">Default</td>
-<td align="left">10.2.0.0&#x2F;24</td>
-</tr>
-</tbody></table>
-<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-network-1.png" alt="Screenshot showing the topology of v net 1."></p>
-<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-network-2.png" alt="Screenshot showing the topology of v net 2."></p>
-<table>
-<thead>
-<tr>
-<th align="left"><strong>Virtual machine</strong></th>
-<th align="left"><strong>Operating system</strong></th>
-<th align="left"><strong>VNet and subnet</strong></th>
-<th align="left"><strong>DNS domain</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">VM1</td>
-<td align="left">Windows Server 2019</td>
-<td align="left">VNet1, Subnet1</td>
-<td align="left">contoso.com</td>
-</tr>
-<tr>
-<td align="left">VM2</td>
-<td align="left">Windows Server 2019</td>
-<td align="left">VNet1, Subnet2</td>
-<td align="left">contoso.com</td>
-</tr>
-<tr>
-<td align="left">VM3</td>
-<td align="left">Windows Server 2019</td>
-<td align="left">VNet2, default</td>
-<td align="left">contoso.com</td>
-</tr>
-</tbody></table>
-<h2 id="Diagnosis"><a href="#Diagnosis" class="headerlink" title="Diagnosis"></a>Diagnosis</h2><p>Use Nslookup on VM1 and VM2 and check you get the following results:</p>
-<ul>
-<li>vm1.contoso.com – success</li>
-<li>vm2.contoso.com – success</li>
-<li>vm3.contoso.com – can’t find</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-nslookup.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-nslookup.png" alt="Screenshot showing the results of n s lookup in the command prompt."></a></p>
-<p>Nslookup on VM3 gives these results:</p>
-<ul>
-<li>vm1.contoso.com – can’t find</li>
-<li>vm2.contoso.com – can’t find</li>
-<li>vm3.contoso.com – can’t find</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-nslookup-3.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-nslookup-3.png" alt="Screenshot of results of running n s lookup in the command prompt on vm3."></a></p>
-<h2 id="Diagnosis-1"><a href="#Diagnosis-1" class="headerlink" title="Diagnosis"></a>Diagnosis</h2><h3 id="Examine-the-Internet-Protocol-configuration-of-the-Virtual-Machines"><a href="#Examine-the-Internet-Protocol-configuration-of-the-Virtual-Machines" class="headerlink" title="Examine the Internet Protocol configuration of the Virtual Machines"></a>Examine the Internet Protocol configuration of the Virtual Machines</h3><p>Connect to each VM using Remote Desktop. Open a command prompt window and type: ipconfig &#x2F;all</p>
-<p>The IP addresses are:</p>
-<ul>
-<li>VM1 &#x3D; 10.1.1.4</li>
-<li>VM2 &#x3D; 10.1.2.4</li>
-<li>VM3 &#x3D; 10.2.0.4</li>
-</ul>
-<p>The DNS server address is 168.63.129.16, which is the wire server.</p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-network-configure.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-network-configure.png" alt="Screenshot of command prompt results after running i p config / all."></a></p>
-<h3 id="Test-network-connectivity"><a href="#Test-network-connectivity" class="headerlink" title="Test network connectivity"></a>Test network connectivity</h3><p>Use <strong>ping</strong> to test network connectivity between the three virtual machines.</p>
-<p>All three VMs are able to ping each other, so network connectivity is good at the IP level (OSI Layer 3).</p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-ping-connectivity.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-ping-connectivity.png" alt="Screenshot of command screen after pinging for network connectivity."></a></p>
-<h3 id="Examine-the-Azure-resource-group"><a href="#Examine-the-Azure-resource-group" class="headerlink" title="Examine the Azure resource group"></a>Examine the Azure resource group</h3><p>There are two virtual networks (VNets) called VNet1 and VNet2.</p>
-<p>There is a private DNS zone, which is contoso.com.</p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-resource-group.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-resource-group.png" alt="Screenshot showing the resources within the resource group."></a></p>
-<p>The private DNS zone has vm1 and vm2 automatically registered, but vm3 does not appear.</p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-no-machine-3.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-no-machine-3.png" alt="Screenshot showing that that vm 3 is not appearing."></a></p>
-<p>Go to <strong>Settings</strong> &gt; <strong>Virtual network links</strong>. We see that the private DNS zone is linked to VNet1, but not to VNet2.</p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-virtual-network.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-virtual-network.png" alt="Screenshot showing the virtual links."></a></p>
-<h2 id="Resolution"><a href="#Resolution" class="headerlink" title="Resolution"></a>Resolution</h2><h3 id="Link-the-private-Domain-Name-System-zone-to-Virtual-Network-2"><a href="#Link-the-private-Domain-Name-System-zone-to-Virtual-Network-2" class="headerlink" title="Link the private Domain Name System zone to Virtual Network 2"></a>Link the private Domain Name System zone to Virtual Network 2</h3><p>Navigate to the private DNS zone (contoso.com) and select the Virtual network links page. Add a new link.</p>
-<ul>
-<li>Link name: vnet2_dns</li>
-<li><input disabled type="checkbox"> I know the resource ID of virtual network – leave unchecked</li>
-<li>Subscription: <the name of your subscription></the></li>
-<li>Virtual network: VNet2</li>
-<li>Configuration: [X] Enable auto registration</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-add-virtual-network.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-add-virtual-network.png" alt="Screenshot showing the add virtual network link screen."></a></p>
-<p>After you select OK, it may take a few minutes for the link to be created. Select Refresh occasionally to see the latest status. Wait until the link status says Completed.</p>
-<h3 id="Inspect-the-Domain-Name-System-name-table"><a href="#Inspect-the-Domain-Name-System-name-table" class="headerlink" title="Inspect the Domain Name System name table"></a>Inspect the Domain Name System name table</h3><p>Navigate to the Overview page and inspect the DNS name table.</p>
-<p>VM1, VM2, and VM3 should appear. You may need to wait a short while for VM3 to appear. Select Refresh if necessary.</p>
-<p>Nslookup on VM1 and VM2 should resolve vm3.contoso.com.</p>
-<p> Tip</p>
-<p>If VM3 does not appear after several minutes, try restarting the VM.</p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-table.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-table.png" alt="Screenshot showing the d n s table."></a></p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-command-prompt-machine.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-command-prompt-machine.png" alt="Screenshot showing the results of running the n s lookup commands."></a></p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-command-prompt-lookup.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/name-resolution-issues/media/5-command-prompt-lookup.png" alt="Screenshot of the command prompt showing the results of n s lookup."></a></p>
-<p>Optionally, you can test pinging the VMs, using their DNS names.</p>
-<ul>
-<li>vm1.contoso.com</li>
-<li>vm2.contoso.com</li>
-<li>vm3.contoso.com</li>
-</ul>
-<p>In this demonstration you will see how to proactively troubleshoot Conditional Access policies using the What if tool in the Azure portal:</p>
-<iframe src="https://www.microsoft.com/en-us/videoplayer/embed/RE4TYML?postJsllMsg=true" frameborder="0" allowfullscreen="true" data-linktype="external" title="Video Player" style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; border: 0px; width: 640px; height: 360px; position: absolute; inset: 0px;"></iframe>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>Completed100 XP</p>
-<ul>
-<li>3 minutes</li>
-</ul>
-<p>In this module you have learned how to troubleshoot Azure in-built name resolution, custom name resolution, and Azure private zone. You have learned how to troubleshoot public DNS, and domain delegation.</p>
-<p>Now that you have completed this module you know how to troubleshoot:</p>
-<ul>
-<li>Troubleshoot built-in Azure name resolution issues</li>
-<li>Troubleshoot custom Azure name resolutions issues</li>
-<li>Troubleshoot Azure Private Zone DNS</li>
-<li>Public DNS issues</li>
-<li>Reviewing the Azure DNS logs</li>
-</ul>
-<h2 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h2><p>For more information about the articles discussed in this module, see:</p>
-<h3 id="Azure-Built-in-Name-resolution"><a href="#Azure-Built-in-Name-resolution" class="headerlink" title="Azure Built-in Name resolution"></a>Azure Built-in Name resolution</h3><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/dns/dns-troubleshoot">Azure DNS troubleshooting guide</a></p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances">Name resolution for resources in Azure virtual networks</a></p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns">Tutorial: Host your domain in Azure DNS</a></p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/dns/dns-getstarted-powershell">Create a DNS zone</a></p>
-<h3 id="Azure-DNS-Private-Zones"><a href="#Azure-DNS-Private-Zones" class="headerlink" title="Azure DNS Private Zones"></a>Azure DNS Private Zones</h3><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/azure-monitor/insights/dns-analytics">DNS Analytics solution in Azure Monitor</a></p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/dns/private-dns-getstarted-portal">Quickstart: Create an Azure private DNS zone using the Azure portal</a></p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/dns/dns-getstarted-powershell">Quickstart: Create an Azure DNS zone and record using Azure PowerShell</a></p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/windows-server/networking/dns/troubleshoot/troubleshoot-dns-server">Troubleshooting DNS Servers</a></p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/dns/dns-domain-delegation">Azure DNS delegation overview</a></p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits">Azure subscription limits and quotas</a></p>
-<h3 id="Custom-DNS"><a href="#Custom-DNS" class="headerlink" title="Custom DNS"></a>Custom DNS</h3><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/dns/dns-web-sites-custom-domain">Tutorial - Create custom Azure DNS records for a web app</a></p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-ddns">Using dynamic DNS to register hostnames in Azure</a></p>
-<h3 id="Log-Analytics"><a href="#Log-Analytics" class="headerlink" title="Log Analytics"></a>Log Analytics</h3><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/azure-monitor/agents/agent-windows">Install Log Analytics agent on Windows computers</a></p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/azure-monitor/agents/om-agents">Connect Operations Manager to Azure Monitor</a></p>
-<p><a target="_blank" rel="noopener" href="https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.DnsAnalyticsOMS?tab=Overview">Microsoft Azure Marketplace</a></p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/azure-monitor/insights/solutions?tabs=portal">Monitoring solutions in Azure Monitor</a></p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/azure-monitor/insights/dns-analytics">Gather insights about your DNS infrastructure with the DNS Analytics Preview solution</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AZ-720-Troubleshoot-business-continuity-with-Microsoft-Azure-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/123456.gif">
-      <meta itemprop="name" content="Hang Zhang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hang's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/14/AZ-720-Troubleshoot-business-continuity-with-Microsoft-Azure-1/" class="post-title-link" itemprop="url">AZ-720-Troubleshoot-business-continuity-with-Microsoft-Azure-1</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-11-14 13:02:09 / Modified: 16:25:16" itemprop="dateCreated datePublished" datetime="2022-11-14T13:02:09-04:00">2022-11-14</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2022/11/14/AZ-720-Troubleshoot-business-continuity-with-Microsoft-Azure-1/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AZ-720-Troubleshoot-business-continuity-with-Microsoft-Azure-1/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Completed100 XP</p>
-<ul>
-<li>3 minutes</li>
-</ul>
-<p>As an Azure network support engineer, you understand that business data is valuable, and needs to be protected from internal and external risks. When you encounter problems with backing up or recovery, you need to know how to approach the problem. In this module, you will learn how to monitor the status of backups, review logs, and troubleshoot common issues that occur when backing up and recovering data.</p>
-<h2 id="Learning-objectives"><a href="#Learning-objectives" class="headerlink" title="Learning objectives"></a>Learning objectives</h2><p>By the end of this module, you will be able to:</p>
-<ul>
-<li>Review the status of a backup job, manage alerts, and review logs.</li>
-<li>Troubleshoot backing and restoring a virtual machine (VM).</li>
-<li>Troubleshoot Microsoft Azure Recovery Services backups.</li>
-<li>Troubleshoot backing up and restoring servers.</li>
-<li>Troubleshoot Azure to Azure Site Recovery.</li>
-<li>Troubleshoot site recovery with Hyper-V, VMM, and VMware.</li>
-</ul>
-<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
-<li>Demonstrate an understanding of the OSI model</li>
-<li>Demonstrate an understanding of Azure CLI</li>
-<li>Demonstrate an understanding of PowerShell</li>
-<li>Know how to run Cloud Shell to run commands</li>
-</ul>
-<h1 id="Troubleshoot-backup-issues-with-Microsoft-Azure"><a href="#Troubleshoot-backup-issues-with-Microsoft-Azure" class="headerlink" title="Troubleshoot backup issues with Microsoft Azure"></a>Troubleshoot backup issues with Microsoft Azure</h1><p>Completed100 XP</p>
-<ul>
-<li>8 minutes</li>
-</ul>
-<h2 id="Review-backup-status-in-the-Azure-portal"><a href="#Review-backup-status-in-the-Azure-portal" class="headerlink" title="Review backup status in the Azure portal"></a>Review backup status in the Azure portal</h2><p>The Azure Backup Center is a one-stop location to manage Azure backups including:</p>
-<ul>
-<li>Azure VM backup</li>
-<li>SQL in Azure VM backup</li>
-<li>SAP HANA in Azure VM backup</li>
-<li>Azure Files backup</li>
-<li>Azure Blobs backup</li>
-<li>Azure Managed Disks backup</li>
-<li>Azure Database for PostgreSQL Server backup</li>
-</ul>
-<p>For information about supported scenarios, see the <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-center-support-matrix">Support matrix for Backup center</a>.</p>
-<p>In the Azure portal, search for Backup center in the Search bar. You can then pin the Backup center to your dashboard. Use the filter options to view the specific jobs you are interested in. You can filter on the following parameters:</p>
-<ul>
-<li>Datasource subscription, resource group, location, tag, or type</li>
-<li>Vault</li>
-<li>Protection status</li>
-</ul>
-<p>Use the Backup jobs menu to review the job status. You can review the time the backup started, the duration, the job operation, and its status. You can also display the backup instance associated with the job, the subscription, resource group, and location.</p>
-<p>Select an item in the grid to get more details. Right-click an item to go to the resource and take any necessary actions.</p>
-<h3 id="Review-and-respond-to-backup-alerts"><a href="#Review-and-respond-to-backup-alerts" class="headerlink" title="Review and respond to backup alerts"></a>Review and respond to backup alerts</h3><p>From the Backup center left menu, under Monitoring + reporting, select Alerts (preview).</p>
-<p>By default, the summary displays open alerts in the last 24 hours. You can also filter by a range of parameters:</p>
-<ul>
-<li><p>Datasource subscription</p>
-</li>
-<li><p>Datasource resource group</p>
-</li>
-<li><p>Datasource location</p>
-</li>
-<li><p>Datasource type</p>
-</li>
-<li><p>Vault</p>
-</li>
-<li><p>Severity (0 &#x3D; critical, 1 &#x3D; error, 2 &#x3D; warning, 3 &#x3D; informational, and 4 &#x3D; verbose)</p>
-</li>
-<li><p>State (New, acknowledged, closed)</p>
-</li>
-<li><p>Type (Security alert, configured alert)</p>
-</li>
-<li><p>Signal type (metric or log)</p>
-</li>
-<li><p>Time range (24 hours, week, two weeks, 30 days, or custom)</p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/business-continuity/media/2-backup-reports.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/business-continuity/media/2-backup-reports.png" alt="Screenshot that shows Backup Report."></a></p>
-</li>
-</ul>
-<h3 id="Alerts-by-email-notification"><a href="#Alerts-by-email-notification" class="headerlink" title="Alerts by email notification"></a>Alerts by email notification</h3><p>You can get email notifications when alerts are triggered by creating an alert processing rule.</p>
-<ul>
-<li>From the Azure portal, go to the Backup center.</li>
-<li>From the left menu, select Alerts (Preview).</li>
-<li>From the top menu, select Alert processing rule (preview).</li>
-<li>From the top menu, select Create.</li>
-<li>In the Scope section, select Select scope to display the Select Scope pane.</li>
-<li>Select the resource you want the alert processing rule applied to by either selecting from the drop-down list, or by typing to filter the resources. The matching resources are then displayed. Use the check boxes to select the resources you want the alert processing rule to apply to.</li>
-<li>Alternatively, you can apply the rule for all resources within a subscription. When the Select Scope pane is displayed, select the check box next to the correct subscription.</li>
-<li>In the Filter section, you can apply one or more filters. For example, select Severity to generate notifications for alerts of a certain severity.</li>
-<li>Under Rule Settings, create an action group (or use an existing one). An action group is the destination to which the alert notification should be sent, such as an email address.</li>
-<li>On the Basics tab, select the name of the action group, the subscription, and resource group under which it should be created.</li>
-<li>On the Notifications tab, select Email&#x2F;SMS message&#x2F;Push&#x2F;Voice and enter the recipient’s details.</li>
-<li>Test the action group. A test email is sent to the specified email addresses.</li>
-<li>Select Review + Create, and then Create to save the action group.</li>
-<li>Select Create to save the action rule.</li>
-</ul>
-<h3 id="Review-and-interpret-backup-logs"><a href="#Review-and-interpret-backup-logs" class="headerlink" title="Review and interpret backup logs"></a>Review and interpret backup logs</h3><p>To review and interpret backup logs, select the Backup Reports menu in the Backup center. When configured, Azure Backup Reports allow you to audit your backups and restores, analyze trends, and track and forecast usage.</p>
-<p>Configure diagnostics settings for a Recovery Services vault by going to the vault and selecting Diagnostics settings. Select + Add Diagnostic Setting for the metrics you want to collect. Under Destination details, select the destinations that you want to stream them to. This includes Log Analytics workspace as an option.</p>
-<p>The following views are available from the tabs:</p>
-<ul>
-<li><p>Overview – select specific subscriptions and workspaces, and links to more information.</p>
-</li>
-<li><p>Summary – a high-level overview of your backup estate.</p>
-</li>
-<li><p>Backup Items – cloud storage consumed at a backup item level.</p>
-</li>
-<li><p>Usage – key billing parameters for your backups.</p>
-</li>
-<li><p>Jobs – view long-running trends on jobs, such as the number of failed jobs per day, and the top causes of job failure.</p>
-</li>
-<li><p>Policies – information on active policies, such as the number of associated items, and the total cloud storage consumed by items backed up under a given policy.</p>
-</li>
-<li><p>Optimize – potential cost optimization opportunities for your backups.</p>
-</li>
-<li><p>Policy adherence – success of backups per day for every backup instance.</p>
-<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/business-continuity/media/2-backup-center.png" alt="Screenshot of Backup Center."></p>
-</li>
-</ul>
-<h2 id="Troubleshooting-backups-with-Microsoft-Azure-Recovery-Services-MARS"><a href="#Troubleshooting-backups-with-Microsoft-Azure-Recovery-Services-MARS" class="headerlink" title="Troubleshooting backups with Microsoft Azure Recovery Services (MARS)"></a>Troubleshooting backups with Microsoft Azure Recovery Services (MARS)</h2><p> Note</p>
-<p>Microsoft documentation refers to both the backup agent and MARS interchangeably: both refer to the same service name (cbengine). In this module, it is referred to as Microsoft Azure Recovery Services (MARS).</p>
-<p>Microsoft Azure Recovery Services is also known as the backup agent. This is the Azure service that is used to back up data. The MARS agent can run on:</p>
-<ul>
-<li>On-premises Windows machines.</li>
-<li>Azure VMs running Windows. The MARS agent runs side by side with the Azure VM backup extension. The agent backs up specific files and folders on the VM.</li>
-<li>A Microsoft Azure Backup Server (MABS) or a System Center Data Protection Manager (DPM) server.</li>
-</ul>
-<p>Use the MARS agent to back up files, folders, and Windows machines either on-premises or in the cloud. Data is backed up to an Azure Recovery Services Vault.</p>
-<p>To troubleshoot with the MARS agent, first check basic issues, and then more advanced issues.</p>
-<h3 id="Step-1-Basic-troubleshooting"><a href="#Step-1-Basic-troubleshooting" class="headerlink" title="Step 1: Basic troubleshooting"></a>Step 1: Basic troubleshooting</h3><p>Check that:</p>
-<ul>
-<li>You have network connectivity between the MARS backup agent and Azure.</li>
-<li>The MARS agent is running. You might need to restart it and ensure the MARS agent is ready.</li>
-<li>There is 5%-10% free space in the scratch folder.</li>
-<li>Antivirus software or any other process is not interfering with the backup.</li>
-<li>Any warning messages have been reviewed.</li>
-</ul>
-<h3 id="Step-2-Troubleshoot-versions-and-other-steps"><a href="#Step-2-Troubleshoot-versions-and-other-steps" class="headerlink" title="Step 2: Troubleshoot versions and other steps"></a>Step 2: Troubleshoot versions and other steps</h3><ul>
-<li>For offline backups, ensure Azure PowerShell 3.7.0 is installed on both computers.</li>
-<li>The operating system and MARS agent are up-to-date.</li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-support-matrix-mars-agent">Unsupported drives, and files with unsupported attributes, are excluded from backup</a>.</li>
-<li>Are manual backups working, but scheduled backups are not?</li>
-<li>Are all relevant clocks set to the correct time zone?</li>
-</ul>
-<h2 id="Troubleshoot-backing-up-Azure-VMs"><a href="#Troubleshoot-backing-up-Azure-VMs" class="headerlink" title="Troubleshoot backing up Azure VMs"></a>Troubleshoot backing up Azure VMs</h2><p>When configuring backups for an Azure VM, follow best practice guidelines. If you encounter problems with backing up an Azure VM, try the following:</p>
-<h3 id="Step-1-Basic-troubleshooting-1"><a href="#Step-1-Basic-troubleshooting-1" class="headerlink" title="Step 1: Basic troubleshooting"></a>Step 1: Basic troubleshooting</h3><ul>
-<li>Is the Azure VM provisioning state ‘Running’? The backup will not run if it is in a Stopped&#x2F;Deallocated&#x2F;Updating state. You might see the error message: VM is not in a state that allows backups.</li>
-<li>Are there any pending operating system updates or does the VM need to reboot? Install system updates and reboot before retrying the backup.</li>
-<li>Does the Azure VM have internet connectivity?</li>
-<li>Is another backup service running? Two backup services cannot run at the same time. If you suspect another backup has not left a snapshot extension, <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout">uninstall extensions</a> to force a reload, then try the backup again.</li>
-<li>Is antivirus software preventing the backup from running? If so, you might see the error message: antivirus configured in the VM is restricting the execution of backup extension. To resolve this issue, in the antivirus configuration, exclude the directories below:</li>
-</ul>
-<p>C:\Packages\Plugins\Microsoft.Azure.RecoveryServices.VMSnapshot</p>
-<p>C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.RecoveryServices.VMSnapshot</p>
-<h3 id="Step-2-Check-the-Azure-VM-Guest-Agent"><a href="#Step-2-Check-the-Azure-VM-Guest-Agent" class="headerlink" title="Step 2: Check the Azure VM Guest Agent"></a>Step 2: Check the Azure VM Guest Agent</h3><ul>
-<li>Is the Azure VM Guest Agent service installed and started? Go to services.msc to check it is running then try rebooting the VM.</li>
-<li>Is the Microsoft Azure VM Guest Agent the latest version?</li>
-</ul>
-<h3 id="Step-3-Check-Azure-VM-extension-health"><a href="#Step-3-Check-Azure-VM-extension-health" class="headerlink" title="Step 3: Check Azure VM extension health"></a>Step 3: Check Azure VM extension health</h3><ul>
-<li>Are all Azure VM extensions in the ‘provisioning succeeded’ state? From the Azure portal, go to the VM, then Settings. From the Extensions menu, select Extensions status.</li>
-<li>Have all <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/overview">extension issues</a> been resolved?</li>
-</ul>
-<h3 id="Step-4-Check-the-Azure-backup-agent"><a href="#Step-4-Check-the-Azure-backup-agent" class="headerlink" title="Step 4: Check the Azure backup agent"></a>Step 4: Check the Azure backup agent</h3><ul>
-<li>Is the Windows or Linux VM operating system supported? Refer to the <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-support-matrix-iaas">IaaS VM Backup Support Matrix</a> for supported versions.</li>
-<li>Is the VM agent up-to-date? Azure VMs are backed up by installing a backup agent. Check that the backup agent is installed and it’s a recent version.</li>
-<li>Is the Azure Backup option grayed out? Hover over the grayed-out option to find out the reason.</li>
-<li>Is antivirus software blocking the extension? If there are log entries in Event Viewer Application logs with the faulting application name IaaSBcdrExtension.exe then it could be the antivirus software.</li>
-<li>Are there entries in the Event Log? The Event Log may show backup failures from products other than Azure Backup. If Azure Backup is failing, find the corresponding error code in <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout">Common Issues</a> to discover the solution.</li>
-</ul>
-<p>For an up-to-date list of common error messages, see <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-troubleshoot">Troubleshoot backup errors with Azure VMs - Azure Backup | Microsoft Docs</a>.</p>
-<h2 id="Troubleshoot-Azure-Backup-Server-issues"><a href="#Troubleshoot-Azure-Backup-Server-issues" class="headerlink" title="Troubleshoot Azure Backup Server issues"></a>Troubleshoot Azure Backup Server issues</h2><p>Microsoft Azure Backup Server (MABS), also known as Azure Backup Server, is the software used to back up a range of servers and workloads. For a complete list of what can be protected with MABS, see:</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-mabs-protection-matrix">MABS (Azure Backup Server) V3 UR1 (and later) protection matrix</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/microsoft-azure-backup-server-protection-v3">Azure Backup Server V3 RTM protection matrix</a></li>
-</ul>
-<p>MABS must be installed on a dedicated, single-purpose server. The computer cannot be a domain controller, a node of a cluster, have Exchange Server running, have System Center Operations Manager running, or have the Application Server role installed. It must be a dedicated backup server.</p>
-<p>Microsoft Azure Backup Server isn’t supported on Windows Server Core or Microsoft Hyper-V Server.</p>
-<p>Microsoft Azure Backup Server must be part of a domain. You cannot move an existing MABS machine to a new domain after deployment.</p>
-<p>Microsoft Azure Backup Server must be registered with a Recovery Services vault, whether backup data is stored locally or in Azure.</p>
-<p>Run through the following questions to troubleshoot Azure Backup Server issues:</p>
-<ul>
-<li>Is there network connectivity between the MARS agent and the Azure server?</li>
-<li>Is the MARS service running? In the Service console, start or restart the service and try the backup again.</li>
-<li>Is the SQL Agent service running and set to automatic in the MABS server?</li>
-<li>Is the MARS agent up-to-date?</li>
-<li>Ensure no other process or antivirus software is interfering with Azure backup.</li>
-<li>If Push install fails, check if DPM agent is already present. If yes, then uninstall the agent and install it again.</li>
-<li>Ensure .NET Framework 4.5.2 or later is installed on the server.</li>
-<li>Ensure the server on which you’re trying to install Azure Backup Server isn’t already registered with another vault.</li>
-<li>Configure antivirus software for MABS server.</li>
-<li>Check where MABs is installed, and what else is installed on that server.</li>
-<li>Check the backup vault credentials.</li>
-</ul>
-<h2 id="Troubleshoot-scheduled-backups"><a href="#Troubleshoot-scheduled-backups" class="headerlink" title="Troubleshoot scheduled backups"></a>Troubleshoot scheduled backups</h2><p>There are two types of policies for scheduled backups:</p>
-<ul>
-<li>Default backup policy – the default policy backs up the VM once a day, retaining the backups for 30 days.</li>
-<li>Custom policy – you define whether backups run daily or weekly, and specify how long to retain the backup.</li>
-</ul>
-<p>If you have problems with scheduled backups, try the following:</p>
-<ul>
-<li>The VMs must be in the same region and subscription as the recovery vault.</li>
-<li>If you get a message saying the recovery point is crash-consistent, check whether the VM is switched on. If the VM is not on, it will be backed up as an offline VM and the recovery point will be crash-consistent. This means that Azure gives no guarantee about the consistency of the data on the storage medium.</li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/troubleshoot/system-center/dpm/troubleshoot-scheduled-backup-job-failures">Troubleshoot scheduled backup job failures - Data Protection Manager | Microsoft Docs</a></li>
-</ul>
-<h1 id="Troubleshoot-recovery-issues-with-Microsoft-Azure"><a href="#Troubleshoot-recovery-issues-with-Microsoft-Azure" class="headerlink" title="Troubleshoot recovery issues with Microsoft Azure"></a>Troubleshoot recovery issues with Microsoft Azure</h1><p>Completed100 XP</p>
-<ul>
-<li>9 minutes</li>
-</ul>
-<p>When you have created a backup, you may need to recover the data as part of a planned migration, or in case of data loss. In this unit, you will learn how to troubleshoot data recovery for different scenarios.</p>
-<h2 id="Troubleshoot-file-recovery-for-an-Azure-VM-backup"><a href="#Troubleshoot-file-recovery-for-an-Azure-VM-backup" class="headerlink" title="Troubleshoot file recovery for an Azure VM backup"></a>Troubleshoot file recovery for an Azure VM backup</h2><p>When you recover data from an Azure VM backup you have three options to restore the data:</p>
-<ul>
-<li>File Recovery</li>
-<li>Restore VM</li>
-<li>Disk restore. Only the disks are restored, which can then be used to create a new VM or replace a disk on an existing VM.</li>
-</ul>
-<p>To recover files, select the <strong>File Recovery</strong> option. It is then a three-step process to recover the files:</p>
-<ol>
-<li>Select a recovery point. This is the date when your files were available.</li>
-<li>Download a script. The script will mount the drives storing your files. The drives will remain mounted for 12 hours for you to restore the files you need.</li>
-<li>Unmount the drives and close the connection.</li>
-</ol>
-<p>The following sections provide troubleshooting information when common error messages appear:</p>
-<h3 id="Error-message-Exception-caught-while-connecting-to-target"><a href="#Error-message-Exception-caught-while-connecting-to-target" class="headerlink" title="Error message: Exception caught while connecting to target"></a>Error message: Exception caught while connecting to target</h3><p>This may appear if the script is unable to access the recovery point. To resolve this issue:</p>
-<ol>
-<li>Check that the machine running the script has access to the recovery vault.</li>
-<li>Verify the connection to the Azure target IP addresses. To check, run the following from an elevated command prompt: nslookup download.microsoft.com or ping download.microsoft.com</li>
-<li>Ensure access to iSCSI outbound port 3260.</li>
-<li>Check for a firewall or NSG blocking traffic to Azure target IPs or recovery service URLs.</li>
-<li>Check that antivirus software isn’t preventing the script from running.</li>
-</ol>
-<p>Also check the following common error messages:</p>
-<h3 id="Error-message-The-target-has-already-been-logged-in-via-an-iSCSI-session"><a href="#Error-message-The-target-has-already-been-logged-in-via-an-iSCSI-session" class="headerlink" title="Error message: The target has already been logged in via an iSCSI session"></a>Error message: The target has already been logged in via an iSCSI session</h3><p>This might be caused by the script already running on the same machine, and the drives are already attached. Browse the available volumes using File Explorer to find the mounted drives.</p>
-<h3 id="Error-message-This-script-is-invalid-because-the-disks-have-been-dismounted-via-portal-x2F-exceeded-the-12-hr-limit-Download-a-new-script-from-the-portal"><a href="#Error-message-This-script-is-invalid-because-the-disks-have-been-dismounted-via-portal-x2F-exceeded-the-12-hr-limit-Download-a-new-script-from-the-portal" class="headerlink" title="Error message: This script is invalid because the disks have been dismounted via portal&#x2F;exceeded the 12-hr limit. Download a new script from the portal"></a>Error message: This script is invalid because the disks have been dismounted via portal&#x2F;exceeded the 12-hr limit. Download a new script from the portal</h3><p>This message appears if you attempt to run the script more than 12 hours after you downloaded it. You need to download another script from the portal.</p>
-<h3 id="Error-message-ExtensionSnapshotFailedCOM"><a href="#Error-message-ExtensionSnapshotFailedCOM" class="headerlink" title="Error message: ExtensionSnapshotFailedCOM"></a>Error message: ExtensionSnapshotFailedCOM</h3><p>The backup operation failed due to an issue with the Windows service COM+ System application. To resolve this issue, follow these steps:</p>
-<ol>
-<li>Try starting&#x2F;restarting Windows service COM+ System Application (from an elevated command prompt – net start COMSysApp).</li>
-<li>Ensure Distributed Transaction Coordinator service is running as Network Service account. If not, change it to run as Network Service account and restart COM+ System Application.</li>
-<li>If unable to restart the service, then reinstall Distributed Transaction Coordinator service by following the steps below:</li>
-<li>Stop the MSDTC service</li>
-<li>Open a command prompt (cmd)</li>
-<li>Run the command msdtc -uninstall</li>
-<li>Run the command msdtc -install</li>
-<li>Start the MSDTC service</li>
-<li>Start the Windows service COM+ System Application. After the COM+ System Application starts, trigger a backup job from the Azure portal.</li>
-</ol>
-<p>For an up-to-date list of common error messages and recommended action, see <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-azure-vm-file-recovery-troubleshoot">Troubleshoot Azure VM file recovery - Azure Backup | Microsoft Docs</a>.</p>
-<h2 id="Troubleshoot-restoring-using-Microsoft-Azure-Recovery-Services-MARS-backup-agent"><a href="#Troubleshoot-restoring-using-Microsoft-Azure-Recovery-Services-MARS-backup-agent" class="headerlink" title="Troubleshoot restoring using Microsoft Azure Recovery Services (MARS) backup agent"></a>Troubleshoot restoring using Microsoft Azure Recovery Services (MARS) backup agent</h2><p>To restore data that has been backed up using Microsoft Azure Recovery Services (MARS):</p>
-<ol>
-<li>From the MARS agent home screen, select Recover Data. The Recover Data Wizard is displayed.</li>
-<li>Specify where you want to restore the data.</li>
-<li>Select the data to restore, and the date and time it was backed up. These selections determine the data recovery point.</li>
-<li>Select Mount to mount the disk containing the recovery point then select the location where you want to recover the data.</li>
-<li>Confirm your selections before starting the data recovery.</li>
-</ol>
-<p>When you installed the MARS agent, an encryption passphrase was generated. This is stored in a text file and should be kept somewhere safe. If the passphrase is lost, you cannot recover any data backed up by the MARS backup agent.</p>
-<p>When the MARS agent is configured, you specify how long the backup data should be retained. Data will not be kept after this period of time.</p>
-<h2 id="Troubleshoot-restore-issues-when-using-Azure-backup-agent"><a href="#Troubleshoot-restore-issues-when-using-Azure-backup-agent" class="headerlink" title="Troubleshoot restore issues when using Azure backup agent"></a>Troubleshoot restore issues when using Azure backup agent</h2><p>When you recover an Azure Virtual Machine from a backup, a process server is used to handle the data. If you encounter problems with restoring data, use a step-by-step methodology:</p>
-<h3 id="Step-1-Monitor-process-server-health"><a href="#Step-1-Monitor-process-server-health" class="headerlink" title="Step 1: Monitor process server health"></a>Step 1: Monitor process server health</h3><p>It is good practice to proactively monitor the process server when restoring data. This allows you to monitor alerts, and handle issues as they occur.</p>
-<p>The following graphic summarizes the steps to troubleshoot a backup recovery:</p>
-<ol>
-<li>Are all services running?</li>
-<li>Is the CPU state OK?</li>
-<li>Is the memory state OK?</li>
-<li>Is cache free space OK?</li>
-<li>Does the process server have a heartbeat?</li>
-<li>Troubleshoot connection&#x2F;replication issues.</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/wwl-azure/business-continuity/media/3-steps-backup-recovery.png#lightbox"><img src="https://learn.microsoft.com/en-us/training/wwl-azure/business-continuity/media/3-steps-backup-recovery.png" alt="Screenshot of steps to troubleshoot a backup recovery."></a></p>
-<h2 id="Troubleshoot-restore-issues-from-Microsoft-Azure-Backup-Server-MABS"><a href="#Troubleshoot-restore-issues-from-Microsoft-Azure-Backup-Server-MABS" class="headerlink" title="Troubleshoot restore issues from Microsoft Azure Backup Server (MABS)"></a>Troubleshoot restore issues from Microsoft Azure Backup Server (MABS)</h2><p>Azure Backup Server is designed to back up and restore workloads such as Hyper-V VMs, Microsoft SQL Server, SharePoint Server, Microsoft Exchange, and Windows clients.</p>
-<p>If you have problems restoring from MABS, try the following troubleshooting checklist:</p>
-<h3 id="Check-the-installation-folder"><a href="#Check-the-installation-folder" class="headerlink" title="Check the installation folder"></a>Check the installation folder</h3><p>The default installation folders for DPM are as follows:</p>
-<p>C:\Program Files\Microsoft Azure Backup Server\DPM\DPM</p>
-<p>You can also run the following command to find the install folder path:</p>
-<p>Reg query “HKLM\SOFTWARE\Microsoft\Microsoft Data Protection Manager\Setup”</p>
-<h3 id="Invalid-vault-credentials"><a href="#Invalid-vault-credentials" class="headerlink" title="Invalid vault credentials"></a>Invalid vault credentials</h3><p>When you register to a vault, if you get an error message saying invalid vault credentials have been provided, either you have a corrupt file, or you provided incorrect credentials. Try the following:</p>
-<ol>
-<li>Download the latest credentials file from the vault and try again.</li>
-<li>Try downloading the credentials to a different local directory or create a new vault.</li>
-<li>Try updating the date and time settings as described in <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-azure-mars-troubleshoot">this article</a>.</li>
-<li>Check to see if c:\windows\temp has more than 65000 files. Move stale files to another location or delete the items in the Temp folder.</li>
-<li>Check the status of certificates.</li>
-<li>In Control Panel, open <strong>Manage Computer Certificates</strong>.</li>
-<li>Expand the <strong>Personal</strong> node and its child node <strong>Certificates</strong>.</li>
-<li>Remove the certificate <strong>Windows Azure Tools</strong>.</li>
-<li>Retry the registration in the Azure Backup client.</li>
-<li>Check to see if a group policy is in place.</li>
-</ol>
-<h3 id="Replica-is-inconsistent"><a href="#Replica-is-inconsistent" class="headerlink" title="Replica is inconsistent"></a>Replica is inconsistent</h3><p>In the Protection Group Wizard, verify that the automatic consistency check option is turned on.</p>
-<p>In the case of System State&#x2F;BMR backup, verify that Windows Server Backup is installed on the protected server.</p>
-<ul>
-<li>Check for space-related issues in the DPM storage pool on the DPM&#x2F;Microsoft Azure Backup Server and allocate storage as required.</li>
-<li>Check the state of the Volume Shadow Copy Service on the protected server. If it’s in a disabled state, set it to start manually. Start the service on the server then go back to the DPM&#x2F;Microsoft Azure Backup Server console, and start the sync with the consistency check job.</li>
-</ul>
-<h3 id="Online-recovery-point-creation-failed"><a href="#Online-recovery-point-creation-failed" class="headerlink" title="Online recovery point creation failed"></a>Online recovery point creation failed</h3><p>If you get an error message saying “the Windows Azure Backup Agent was unable to create a snapshot of the selected volume”, try increasing the available space in the recovery point volume.</p>
-<p>If you get an error message saying “the Windows Azure Backup Agent cannot connect to the OBEngine service”, try verifying that the OBEngine exists in the list of running services on the computer. If the OBEngine service is not running, use the “net start OBEngine” command to start it.</p>
-<p>If you get an error message saying that “the encryption passphrase for this server is not set. Please configure an encryption passphrase”, try configuring an encryption passphrase. If that fails, take the following steps:</p>
-<ol>
-<li>Verify that the scratch location exists. This is the location that’s mentioned in the registry <strong>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Azure Backup\Config</strong>, where the name <strong>ScratchLocation</strong> should exist.</li>
-<li>If the scratch location exists, try re-registering by using the old passphrase.</li>
-</ol>
-<p> Note</p>
-<p>When you configure an encryption passphrase, always save it in a secure location.</p>
-<h2 id="Troubleshoot-hybrid-scenarios"><a href="#Troubleshoot-hybrid-scenarios" class="headerlink" title="Troubleshoot hybrid scenarios"></a>Troubleshoot hybrid scenarios</h2><h3 id="Troubleshoot-site-recovery-with-Hyper-V"><a href="#Troubleshoot-site-recovery-with-Hyper-V" class="headerlink" title="Troubleshoot site recovery with Hyper-V"></a>Troubleshoot site recovery with Hyper-V</h3><p>When recovering an on-premises Hyper-V VM to Azure, use Azure Site Recovery. If you experience issues, use the following checklist to troubleshoot the problem:</p>
-<ul>
-<li>Do all your Hyper-V hosts and VMs meet the requirements and prerequisites for recovery?</li>
-<li>Check the “Support for disaster recovery of on-premises Hyper-V VMs to Azure” link at the end of this module.</li>
-<li>If Hyper-V hosts are managed by Virtual Machine Manager (VMM), the VMM server must have at least one cloud and one or more host groups. The Hyper-V hosts running the VMs should be in the cloud with network mapping between on-premises VMM VM networks, and Azure virtual networks. See links in the Summary of this module.</li>
-<li>Check the log located in <strong>Applications and Services Logs</strong> &gt; <strong>Microsoft</strong> &gt; <strong>Windows</strong>.</li>
-<li>On the guest VM, verify that WMI is enabled and accessible.<ul>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/windows/win32/wmisdk/wmi-troubleshooting">Troubleshoot</a> WMI.</li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/previous-versions/tn-archive/ff406382(v=msdn.10)">Troubleshoot</a> problems with WMI scripts and services.</li>
-</ul>
-</li>
-<li>On the guest VM, ensure that you have the latest version of Integration Services and it is running. Microsoft recommends keeping integration services up-to-date.</li>
-</ul>
-<p>Also, check common error messages:</p>
-<h3 id="Cannot-enable-protection-as-the-virtual-machine-is-not-highly-available"><a href="#Cannot-enable-protection-as-the-virtual-machine-is-not-highly-available" class="headerlink" title="Cannot enable protection as the virtual machine is not highly available"></a>Cannot enable protection as the virtual machine is not highly available</h3><p>Try restarting the VMM service on the VMM machine. If that doesn’t work, try removing the virtual machine from the cluster and adding it again.</p>
-<h3 id="The-VSS-writer-NTDS-failed-with-status-11-and-writer-specific-failure-code-0x800423F4"><a href="#The-VSS-writer-NTDS-failed-with-status-11-and-writer-specific-failure-code-0x800423F4" class="headerlink" title="The VSS writer NTDS failed with status 11 and writer specific failure code 0x800423F4"></a>The VSS writer NTDS failed with status 11 and writer specific failure code 0x800423F4</h3><p>To resolve this issue, upgrade to Windows Server R2 with 4072650 applied. Also, check that the Hyper-V host has Windows 2016 or later installed.</p>
-<h3 id="Troubleshoot-site-recovery-with-VMware"><a href="#Troubleshoot-site-recovery-with-VMware" class="headerlink" title="Troubleshoot site recovery with VMware"></a>Troubleshoot site recovery with VMware</h3><p>Before you restore a VMware VM, ensure it meets <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/site-recovery/vmware-physical-azure-support-matrix">Azure requirements</a>.</p>
-<p>Verify properties as follows:</p>
-<ol>
-<li>In <strong>Protected Items</strong>, select <strong>Replicated Items</strong>, and then select the VM you want to verify.</li>
-<li>In the <strong>Replicated item</strong> pane, there’s a summary of VM information, health status, and the latest available recovery points. Select <strong>Properties</strong>.</li>
-<li>In <strong>Compute and Network</strong>, you can modify these properties as needed:<ul>
-<li>Azure name</li>
-<li>Resource group</li>
-<li>Target size</li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-availability-sets">Availability set</a></li>
-<li>Managed disk settings</li>
-</ul>
-</li>
-<li>You can view and modify network settings, including:<ul>
-<li>The network and subnet in which the Azure VM will be located after failover.</li>
-<li>The IP address that will be assigned to it.</li>
-</ul>
-</li>
-<li>In <strong>Disks</strong>, review operating system information, and data disks on the VM.</li>
-</ol>
-<p>To run a failover to Azure, in <strong>Settings</strong>, select <strong>Replicated items</strong>, select the VM to fail over, and then select <strong>Failover</strong>.</p>
-<p>In <strong>Failover</strong>, select a <strong>Recovery Point</strong> to fail over to. You can use one of the following options:</p>
-<ul>
-<li><strong>Latest</strong>: This option first processes all the data sent to Site Recovery. It provides the lowest Recovery Point Objective (RPO) because the Azure VM that’s created after failover has all the data that was replicated to Site Recovery when the failover was triggered.</li>
-<li><strong>Latest processed</strong>: This option fails the VM over to the latest recovery point processed by Site Recovery. This option provides a low RTO (Recovery Time Objective) because no time is spent processing unprocessed data.</li>
-<li><strong>Latest app-consistent</strong>: This option fails the VM over to the latest app-consistent recovery point processed by Site Recovery.</li>
-<li><strong>Custom</strong>: This option lets you specify a recovery point.</li>
-</ul>
-<p>You then select <strong>Shut down machine before beginning failover</strong> to attempt to shut down source VMs before triggering the failover. Failover continues even if the shutdown fails. You can follow the failover progress on the Jobs page.</p>
-<p>In some scenarios, failover requires additional processing that takes around 8 to 10 minutes to complete. You might notice longer test failover times for:</p>
-<ul>
-<li>VMware VMs running a Mobility service version older than 9.8.</li>
-<li>Physical servers.</li>
-<li>VMware Linux VMs.</li>
-<li>Hyper-V VMs protected as physical servers.</li>
-<li>VMware VMs that don’t have the DHCP service enabled.</li>
-<li>VMware VMs that don’t have the following boot drivers: storvsc, vmbus, storflt, intelide, atapi.</li>
-</ul>
-<p> Note</p>
-<p>Don’t cancel a failover in progress. If you cancel a failover in progress, the VM won’t replicate again.</p>
-<p>If you have problems, try the following troubleshooting steps:</p>
-<ol>
-<li>Monitor process server health. In the Azure portal, monitor the process servers to verify they are connected and working.</li>
-<li>Check connectivity between the source server and the process server, and between the process server and Azure.</li>
-<li>Check that the source machine is available for replication, specifically:<ul>
-<li>Check that two VMs don’t have the same UUID. Refer to <a target="_blank" rel="noopener" href="https://social.technet.microsoft.com/wiki/contents/articles/32026.asr-vmware-to-azure-how-to-cleanup-duplicatestale-entries.aspx">Azure Site Recovery VMware-to-Azure: How to clean up duplicate or stale entries</a>.</li>
-</ul>
-</li>
-<li>Ensure the <strong>vCenter credentials</strong> are correct when you set up the configuration server, by using the OVF template or unified setup. To verify the credentials, see <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/site-recovery/vmware-azure-manage-configuration-server#modify-credentials-for-automatic-discovery">Modify credentials for automatic discovery</a>.</li>
-<li>If insufficient permissions are provided to access vCenter, failure to discover virtual machines might occur. Ensure that the permissions described in <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/site-recovery/vmware-azure-tutorial-prepare-on-premises">Prepare an account for automatic discovery</a> are added to the vCenter user account.</li>
-<li>Management servers cannot be replicated. If the VM is used as one or more of the following roles—Configuration server &#x2F; scale-out process server &#x2F; Master target server—then you will not be able to choose the virtual machine from the portal.</li>
-<li>If the virtual machine is already protected or failed over through Site Recovery, it will not be available to select for protection in the portal. Ensure that the virtual machine isn’t already protected by any other user, or under a different subscription.</li>
-<li>Check if vCenter is in connected state. To verify, go to <strong>Recovery Services vault</strong> &gt; <strong>Site Recovery Infrastructure</strong> &gt; <strong>Configuration Servers</strong> &gt; <strong>Click on respective configuration server</strong>. A pane opens on the right with details of associ&#x2F;rvers. Check if vCenter is connected. If it’s in a “Not Connected” state, resolve the issue and then refresh the configuration server on the portal. After this, virtual machine will be listed on the portal.</li>
-<li>If the ESXi host under which the VM resides is in powered off state, then virtual machine will not be listed or will not be selectable on the Azure portal. Power on the ESXi host, and refresh the configuration server on the portal. After this, virtual machine will be listed on the portal.</li>
-<li>If there is a pending reboot, you will not be able to select the VM on the Azure portal. Complete the pending reboot and refresh the configuration server. They should then be listed on the portal.</li>
-<li>If the virtual machine doesn’t have a valid IP address associated with it, you will not be able to select the machine on the Azure portal. Assign a valid IP address to the virtual machine, and refresh the configuration server. This could also be caused by the machine not having a valid IP address associated with one of its NICs. Either assign a valid IP address to all NICs or remove the NIC that’s missing the IP.</li>
-</ol>
-<h3 id="Troubleshoot-site-recovery-with-SCCM"><a href="#Troubleshoot-site-recovery-with-SCCM" class="headerlink" title="Troubleshoot site recovery with SCCM"></a>Troubleshoot site recovery with SCCM</h3><p>A System Center Configuration Manager (SCCM) site recovery is needed if a site fails, or you lose data in the site database. Site recovery includes repairing and resynchronizing the data.</p>
-<p>If you experience problems, try the following troubleshooting issues:</p>
-<ol>
-<li>Check that previous configurations are not on the site server, as this can cause conflicts. Remove previous configurations before restoring Configuration Manager by using one of the following methods:<ul>
-<li>Restoring to a new server.</li>
-<li>Formatting the disks and reinstalling the operating system.</li>
-<li>Cleaning an existing server, including deleting registry entries starting with SMS from HKLM\System\CurrentControlSet\Services.</li>
-</ul>
-</li>
-<li>For site database recovery only before restoring Configuration Manager:<ul>
-<li>Back up the site database, including supporting databases such as WSUS.</li>
-<li>Note the SQL Server name and instance name.</li>
-<li>Delete the site database from the SQL Server.</li>
-<li>Restart the SQL Server.</li>
-</ul>
-</li>
-<li>Clean an existing server for full recovery before restoring Configuration Manager:<ul>
-<li>Back up the site database, including supporting databases such as WSUS.</li>
-<li>Make a copy of the content library.</li>
-<li>Uninstall the Configuration Manager site.</li>
-<li>Manually delete the site database from the SQL Server.</li>
-<li>Manually delete the Configuration Manager installation folder, and any other Configuration Manager folders.</li>
-<li>Restart the server.</li>
-<li>Restore the content library and other databases like WSUS.</li>
-</ul>
-</li>
-<li>Use a supported version and the same edition of SQL Server:<ul>
-<li>Check that the version of SQL Server is both supported, and the same edition as the original. Restoring to a newer version of SQL Server is supported, providing you don’t change the edition—you can restore Standard to Standard and Enterprise to Enterprise.</li>
-<li>Ensure SQL Server is not set to <strong>single-user mode</strong>.</li>
-<li>Make sure the MDF and LDF files are valid. When you recover a site, there’s no check for the state of the files.</li>
-</ul>
-</li>
-<li>SQL Server Always On availability groups:&#x2F;<ul>
-<li>If you use SQL Server Always On availability groups to host the site database, modify your recovery plans as described in <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/mem/configmgr/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database">Prepare to use SQL Server Always On</a>.</li>
-</ul>
-</li>
-<li>Database replicas:<ul>
-<li>After you restore a site database that you configured for database replicas, reconfigure each replica. Before you can use the database replicas, recreate both the publications and subscriptions.</li>
-</ul>
-</li>
-</ol>
-<h2 id="Troubleshoot-site-to-site-recovery"><a href="#Troubleshoot-site-to-site-recovery" class="headerlink" title="Troubleshoot site-to-site recovery"></a>Troubleshoot site-to-site recovery</h2><p>Azure to Azure Site Recovery allows you to replicate Azure virtual machines (VMs) from one region to another. In case of problems, check the following:</p>
-<h3 id="High-data-change-rate-on-the-source-virtual-machine"><a href="#High-data-change-rate-on-the-source-virtual-machine" class="headerlink" title="High data change rate on the source virtual machine"></a>High data change rate on the source virtual machine</h3><p>Azure Site Recovery creates an event if the data change rate on the source virtual machine is higher than the supported limits. Go to <strong>Replicated items</strong> &gt; <strong>VM</strong> &gt; <strong>Events</strong> - <strong>last 72 hours</strong>. You should see the event <strong>Data change rate beyond supported limits</strong>:</p>
-<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/business-continuity/media/3-backup-center-data-change.png" alt="Screenshot that shows Data change rate beyond supported limits."></p>
-<p>Select the event to display disk information:</p>
-<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/business-continuity/media/3-disk-information.png" alt="Screenshot that shows disk information."></p>
-<h3 id="Azure-Site-Recovery-limits"><a href="#Azure-Site-Recovery-limits" class="headerlink" title="Azure Site Recovery limits"></a>Azure Site Recovery limits</h3><p>Azure Site Recovery limits are data churn per disk and data churn per virtual machine. The actual limits vary according to specific configurations. For example, a single VM Site Recovery can handle 5MB&#x2F;s of churn per disk and a maximum of five disks. Site Recovery has a limit of 54MB&#x2F;s of total churn per VM.</p>
-<p>To find out whether this is a recurring problem, check the data change rate of the relevant virtual machine under <strong>Monitoring</strong>. You will need to add the metrics shown in the following screenshot:</p>
-<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/business-continuity/media/3-data-change-rate.png" alt="Screenshot that shows O S Disk Writes Bytes per Sec."></p>
-<h3 id="Network-connectivity-problems"><a href="#Network-connectivity-problems" class="headerlink" title="Network connectivity problems"></a>Network connectivity problems</h3><p>Site Recovery sends replicated data to the cache storage account. You might experience network errors if uploading the data from a virtual machine to the cache storage account is slower than 4MB in three seconds.</p>
-<p>To check for latency problems, use the command-line utility <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10">AzCopy</a>. This uploads data from the virtual machine to the cache storage account. If the latency is high, check whether you’re using a network virtual appliance (NVA) to control outbound network traffic from VMs. The appliance might get throttled if all the replication traffic passes through the NVA.</p>
-<p>Microsoft recommends creating a network service endpoint in your virtual network for “Storage” so that the replication traffic doesn’t go to the NVA.</p>
-<h3 id="Network-connectivity"><a href="#Network-connectivity" class="headerlink" title="Network connectivity"></a>Network connectivity</h3><p>Site Recovery needs the VM to provide outbound connectivity to specific URLs or IP ranges. You might have your VM behind a firewall or use network security group (NSG) rules to&#x2F;l outbound connectivity. If so, you might experience issues. Make sure all the URLs are connected. For more information, see <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-about-networking">Outbound connectivity for URLs</a>.</p>
-<p>For an up-to-date list of common issues, see: <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-troubleshoot-replication">Troubleshoot replication of Azure VMs with Azure Site Recovery - Azure Site Recovery | Microsoft Docs</a>.</p>
-<h1 id="Exercise-Troubleshoot-business-continuity-issues"><a href="#Exercise-Troubleshoot-business-continuity-issues" class="headerlink" title="Exercise: Troubleshoot business continuity issues"></a>Exercise: Troubleshoot business continuity issues</h1><p>Completed100 XP</p>
-<ul>
-<li>7 minutes</li>
-</ul>
-<p>You’ve been asked to make a backup of a virtual machine. The backup must be application consistent.</p>
-<p> Important</p>
-<p>You need your own <a target="_blank" rel="noopener" href="https://azure.microsoft.com/free/">Azure subscription</a> to complete the exercises in this module. If you don’t have an Azure subscription, you can still view the demonstration video at the bottom of this page.</p>
-<h2 id="Create-the-exercise-environment"><a href="#Create-the-exercise-environment" class="headerlink" title="Create the exercise environment"></a>Create the exercise environment</h2><p>Using the Cloud Shell on the right, run these commands to create the example topology. The environment will take approximately 5 minutes to build.</p>
-<ol>
-<li><p>Clone the setup script from GitHub.</p>
-<p>PowerShellCopy</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/MicrosoftDocs/mslearn<span class="literal">-business-continuity</span> networking</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Run the setup script.</p>
-<p>PowerShellCopy</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">networking/setup.ps1</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>The script will create all the resources. Wait until it completes, you should see a <strong>Lab Environment Created</strong> message.</p>
-</li>
-</ol>
-<h2 id="Create-a-backup"><a href="#Create-a-backup" class="headerlink" title="Create a backup"></a>Create a backup</h2><ol>
-<li><p>Sign in to the <a target="_blank" rel="noopener" href="https://portal.azure.com/learn.docs.microsoft.com">Azure portal</a> using your own subscription.</p>
-</li>
-<li><p>Select the portal menu on the top left, select <strong>Virtual machines</strong>, and then select <strong>labvm</strong>.</p>
-</li>
-<li><p>If the VM is running, select <strong>Stop</strong>, and wait for the <strong>Status</strong> to show <strong>Stopped (deallocated)</strong>.</p>
-</li>
-<li><p>In the left navigation pane, under <strong>Operations</strong>, select <strong>Backup</strong>.</p>
-<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/business-continuity/media/4-azure-backup-welcome.png" alt="Screenshot showing the back up welcome screen."></p>
-</li>
-<li><p>Enter the following settings, and then select <strong>Enable Backup</strong>.</p>
-<ul>
-<li>Recovery Services vault: <strong>Create new</strong></li>
-<li>Backup vault: <strong>labdemo</strong></li>
-<li>Choose backup policy: <strong>DefaultPolicy-labdemo</strong></li>
-</ul>
-</li>
-<li><p>This takes you back to the <strong>Virtual machines</strong> page, select <strong>labvm</strong>.</p>
-</li>
-<li><p>In the left navigation pane, under <strong>Operations</strong>, select <strong>Backup</strong>.</p>
-</li>
-<li><p>Select <strong>Backup now</strong>, and then select <strong>OK</strong>.</p>
-<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/business-continuity/media/4-machine-backup-screen.png" alt="Screenshot showing the backup screen."></p>
-</li>
-<li><p>The backup starts, and runs in two phases.</p>
-<ul>
-<li>In the first phase, it takes a snapshot of the VM. This takes about 10 minutes.</li>
-<li>In the second phase, it moves the data into the recovery services vault. This takes about 50 minutes.</li>
-</ul>
-</li>
-</ol>
-<h2 id="Monitor-progress-of-the-first-phase"><a href="#Monitor-progress-of-the-first-phase" class="headerlink" title="Monitor progress of the first phase"></a>Monitor progress of the first phase</h2><p>You won’t see anything in the Backup page of the VM until the backup has completed. However, you can monitor it in the Backup center.</p>
-<ol>
-<li><p>In the Azure portal, search for <strong>backup center</strong>, and then under <strong>Services</strong>, select <strong>Backup center</strong>.</p>
-</li>
-<li><p>In the left navigation pane, under <strong>Monitoring + reporting</strong>, select <strong>Backup jobs</strong>. You should see your job running.</p>
-<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/business-continuity/media/4-backup-instances.png" alt="Screenshot showing the backup job running."></p>
-</li>
-<li><p>Select the backup job to see more info. You can see in the screen picture that the first phase has completed.</p>
-<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/business-continuity/media/4-single-backup.png" alt="Screenshot showing a single backup instance."></p>
-</li>
-</ol>
-<h2 id="View-results-of-first-phase"><a href="#View-results-of-first-phase" class="headerlink" title="View results of first phase"></a>View results of first phase</h2><p>When the first phase has completed, you can see that it is <strong>Crash Consistent</strong>.</p>
-<ol>
-<li><p>In the breadcrumb trail, select <strong>Backup center</strong>.</p>
-</li>
-<li><p>In the left navigation pane, under <strong>Manage</strong>, select <strong>Backup instances</strong>.</p>
-<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/business-continuity/media/4-multiple-backups.png" alt="Screenshot showing multiple backup instances."></p>
-</li>
-<li><p>Scroll down until you see <strong>labvm</strong> and select <strong>labvm</strong>. This shows that the backup is <strong>Crash Consistent</strong>. This is incorrect, the backup should be <strong>Application Consistent</strong>. You need to find out why and fix the problem.</p>
-<p> Note</p>
-<p>Only the first phase has completed, and the data will now be transferring to the vault. You can continue with the lab; you don’t have to wait for this to complete.</p>
-</li>
-</ol>
-<h2 id="Resolution"><a href="#Resolution" class="headerlink" title="Resolution"></a>Resolution</h2><p>The VM was in a <strong>Stopped</strong> state. You need to start the VM and wait for it to be in a running state before making another backup.</p>
-<ol>
-<li><p>Select the portal menu on the top left, select <strong>Virtual machines</strong>, and then select <strong>labvm</strong>.</p>
-</li>
-<li><p>Select <strong>Start</strong>, and wait for the <strong>Status</strong> to show <strong>Running</strong>.</p>
-</li>
-<li><p>In the left navigation pane, under <strong>Operations</strong>, select <strong>Backup</strong>.</p>
-</li>
-<li><p>On the <strong>labvm</strong> page, you should see that there is one <strong>Crash Consistent</strong> restore point.</p>
-</li>
-<li><p>Select <strong>Backup now</strong>.</p>
-<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/business-continuity/media/4-backup-screen.png" alt="Screenshot of the backup screen."></p>
-</li>
-<li><p>On the <strong>Backup now</strong> page, select <strong>OK</strong>. The second backup will be an incremental backup and should take less time than the first backup.</p>
-</li>
-<li><p>You can monitor progress in the <strong>Backup center</strong>.</p>
-</li>
-<li><p>When the first phase is complete, navigate to the <strong>Backup</strong> page of the VM. The send backup is <strong>Application Consistent</strong>.</p>
-<p><img src="https://learn.microsoft.com/en-us/training/wwl-azure/business-continuity/media/4-crash-instance-restore-point.png" alt="Screenshot showing the crash consistent restore point."></p>
-</li>
-</ol>
-<p>In this demonstration you will see how to proactively troubleshoot Conditional Access policies using the What if tool in the Azure portal:</p>
-<iframe src="https://www.microsoft.com/en-us/videoplayer/embed/RE4Ubfe?postJsllMsg=true" frameborder="0" allowfullscreen="true" data-linktype="external" title="Video Player" style="box-sizing: inherit; outline-color: inherit; margin: 0px; padding: 0px; border: 0px; width: 640px; height: 360px; position: absolute; inset: 0px;"></iframe>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>Completed100 XP</p>
-<ul>
-<li>3 minutes</li>
-</ul>
-<p>In this module, you have learned how to troubleshoot common backup and restore issues when working in Azure.</p>
-<p>Now that you have completed this module, you’ll be able to:</p>
-<ul>
-<li>Review the status of a backup job, manage alerts, and review logs.</li>
-<li>Troubleshoot backing up and restoring a virtual machine (VM).</li>
-<li>Troubleshoot Microsoft Azure Recovery Services backups.</li>
-<li>Troubleshoot backing up and restoring servers.</li>
-<li>Troubleshoot Azure to Azure Site Recovery.</li>
-<li>Troubleshoot site recovery with Hyper-V, SCCM, and VMware.</li>
-</ul>
-<h2 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h2><p>Use these resources to discover more.</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-center-support-matrix">Support matrix for Backup center</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-center-monitor-operate">Monitor and operate backups using Backup Center - Azure Backup | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/monitoring-and-alerts-overview">Monitoring and reporting solutions for Azure Backup - Azure Backup | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-azure-monitoring-use-azuremonitor">Monitor Azure Backup with Azure Monitor - Azure Backup | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-azure-monitoring-built-in-monitor">Monitor Azure Backup protected workloads - Azure Backup | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/azure-policy-configure-diagnostics">Configure Vault Diagnostics settings at scale - Azure Backup | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-azure-monitoring-built-in-monitor">Monitoring Azure Backup workloads</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-action-rules?tabs=portal">Alert processing rules for Azure Monitor alerts - Azure Monitor | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-azure-mabs-troubleshoot">Troubleshoot Azure Backup Server - Azure Backup | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout">Troubleshoot Agent and extension issues - Azure Backup | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-azure-mars-troubleshoot">Troubleshoot the Azure Backup agent - Azure Backup | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/site-recovery/hyper-v-azure-troubleshoot">Troubleshoot Hyper-V disaster recovery with Azure Site Recovery - Azure Site Recovery | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-troubleshoot-replication">Troubleshoot replication of Azure VMs with Azure Site Recovery - Azure Site Recovery | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/site-recovery/vmware-azure-troubleshoot-replication">Troubleshoot replication issues for disaster recovery of VMware VMs and physical servers to Azure by using Azure Site Recovery - Azure Site Recovery | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-azure-vm-file-recovery-troubleshoot">Troubleshoot Azure VM file recovery - Azure Backup | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-troubleshoot">Troubleshoot backup errors with Azure VMs - Azure Backup | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-azure-troubleshoot-slow-backup-performance-issue">Troubleshoot slow backup of files and folders - Azure Backup | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/mem/configmgr/core/servers/manage/recover-sites">Site recovery - Configuration Manager | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/mem/configmgr/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database">Prepare to use an availability group - Configuration Manager | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-support-matrix-iaas">Support matrix for Azure VM backup - Azure Backup | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/microsoft-azure-backup-server-protection-v3">Azure Backup Server V3 RTM protection matrix</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-mabs-protection-matrix">MABS (Azure Backup Server) V3 UR1 (and later) protection matrix</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-overview">About Azure Site Recovery - Azure Site Recovery | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction">About Azure VM backup - Azure Backup | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-azure-file-folder-backup-faq">Microsoft Azure Recovery Services (MARS) Agent – FAQ - Azure Backup | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/site-recovery/vmware-azure-tutorial">Set up VMware VM disaster recovery to Azure with Azure Site Recovery - Classic - Azure Site Recovery | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/site-recovery/hyper-v-azure-support-matrix">Support for disaster recovery of Hyper-V VMs to Azure with Azure Site Recovery - Azure Site Recovery | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/site-recovery/hyper-v-prepare-on-premises-tutorial">Prepare for disaster recovery of Hyper-V VMs to Azure with Azure Site Recovery - Azure Site Recovery | Microsoft Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-about-networking">Network virtual appliance configuration</a>.</li>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-vms-prepare">Back up Azure VMs in a Recovery Services vault - Azure Backup | Microsoft Docs</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/gcp-digital-leader-exam-Cert-Prep-Google-Cloud-Digital-Leader-14/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/123456.gif">
-      <meta itemprop="name" content="Hang Zhang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hang's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/14/gcp-digital-leader-exam-Cert-Prep-Google-Cloud-Digital-Leader-14/" class="post-title-link" itemprop="url">gcp-digital-leader-exam-Cert-Prep-Google-Cloud-Digital-Leader-14</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-11-14 12:56:56 / Modified: 12:56:58" itemprop="dateCreated datePublished" datetime="2022-11-14T12:56:56-04:00">2022-11-14</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2022/11/14/gcp-digital-leader-exam-Cert-Prep-Google-Cloud-Digital-Leader-14/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/gcp-digital-leader-exam-Cert-Prep-Google-Cloud-Digital-Leader-14/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/15/AZ-500-Implementing-Multi-Factor-Authentication-on-Azure-3/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/AZ-500-Implementing-Multi-Factor-Authentication-on-Azure-3/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1459,7 +255,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/gcp-digital-leader-exam-Resource-Required-Reading-for-Google-Cloud-Digital-Leader-Exam-13/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/AZ-500-Designing-for-Azure-Identity-Management-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -1473,7 +269,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/14/gcp-digital-leader-exam-Resource-Required-Reading-for-Google-Cloud-Digital-Leader-Exam-13/" class="post-title-link" itemprop="url">gcp-digital-leader-exam-Resource-Required-Reading-for-Google-Cloud-Digital-Leader-Exam-13</a>
+            <a href="/2022/11/15/AZ-500-Designing-for-Azure-Identity-Management-2/" class="post-title-link" itemprop="url">AZ-500-Designing-for-Azure-Identity-Management-2</a>
         </h2>
 
         <div class="post-meta">
@@ -1484,7 +280,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-11-14 12:55:52 / Modified: 12:55:54" itemprop="dateCreated datePublished" datetime="2022-11-14T12:55:52-04:00">2022-11-14</time>
+              <time title="Created: 2022-11-15 10:11:18 / Modified: 10:11:20" itemprop="dateCreated datePublished" datetime="2022-11-15T10:11:18-04:00">2022-11-15</time>
             </span>
 
           
@@ -1496,8 +292,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/14/gcp-digital-leader-exam-Resource-Required-Reading-for-Google-Cloud-Digital-Leader-Exam-13/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/gcp-digital-leader-exam-Resource-Required-Reading-for-Google-Cloud-Digital-Leader-Exam-13/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/15/AZ-500-Designing-for-Azure-Identity-Management-2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/AZ-500-Designing-for-Azure-Identity-Management-2/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1531,7 +327,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/gcp-digital-leader-exam-Site-Reliability-Engineering-Principles-on-GCP-12/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-14/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -1545,7 +341,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/14/gcp-digital-leader-exam-Site-Reliability-Engineering-Principles-on-GCP-12/" class="post-title-link" itemprop="url">gcp-digital-leader-exam-Site-Reliability-Engineering-Principles-on-GCP-12</a>
+            <a href="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-14/" class="post-title-link" itemprop="url">CCIE路由和交换认证考试指南第5版卷1-14</a>
         </h2>
 
         <div class="post-meta">
@@ -1554,10 +350,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-14 12:54:45 / Modified: 12:54:46" itemprop="dateCreated datePublished" datetime="2022-11-14T12:54:45-04:00">2022-11-14</time>
+              <time title="Created: 2022-11-14 22:11:26" itemprop="dateCreated datePublished" datetime="2022-11-14T22:11:26-04:00">2022-11-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-15 19:00:36" itemprop="dateModified" datetime="2022-11-15T19:00:36-04:00">2022-11-15</time>
+              </span>
 
           
   
@@ -1568,8 +370,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/14/gcp-digital-leader-exam-Site-Reliability-Engineering-Principles-on-GCP-12/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/gcp-digital-leader-exam-Site-Reliability-Engineering-Principles-on-GCP-12/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-14/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-14/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1584,7 +386,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <p><object data="14.pdf" type="application/pdf" width="100%" height="600"></object></p>
+
       
     </div>
 
@@ -1603,7 +406,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/gcp-digital-leader-exam-Introduction-to-Google-Cloud-Operations-Suite-11/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-13/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -1617,7 +420,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/14/gcp-digital-leader-exam-Introduction-to-Google-Cloud-Operations-Suite-11/" class="post-title-link" itemprop="url">gcp-digital-leader-exam-Introduction-to-Google-Cloud-Operations-Suite-11</a>
+            <a href="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-13/" class="post-title-link" itemprop="url">CCIE路由和交换认证考试指南第5版卷1-13</a>
         </h2>
 
         <div class="post-meta">
@@ -1626,10 +429,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-14 12:44:33 / Modified: 12:44:34" itemprop="dateCreated datePublished" datetime="2022-11-14T12:44:33-04:00">2022-11-14</time>
+              <time title="Created: 2022-11-14 22:11:24" itemprop="dateCreated datePublished" datetime="2022-11-14T22:11:24-04:00">2022-11-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-15 19:00:26" itemprop="dateModified" datetime="2022-11-15T19:00:26-04:00">2022-11-15</time>
+              </span>
 
           
   
@@ -1640,8 +449,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/14/gcp-digital-leader-exam-Introduction-to-Google-Cloud-Operations-Suite-11/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/gcp-digital-leader-exam-Introduction-to-Google-Cloud-Operations-Suite-11/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-13/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-13/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1656,7 +465,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <p><object data="13.pdf" type="application/pdf" width="100%" height="600"></object></p>
+
       
     </div>
 
@@ -1675,7 +485,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/gcp-digital-leader-exam-Lab-Build-and-Deploy-a-Container-Application-with-Google-Cloud-Run-10/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-12/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -1689,7 +499,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/14/gcp-digital-leader-exam-Lab-Build-and-Deploy-a-Container-Application-with-Google-Cloud-Run-10/" class="post-title-link" itemprop="url">gcp-digital-leader-exam-Lab-Build-and-Deploy-a-Container-Application-with-Google-Cloud-Run-10</a>
+            <a href="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-12/" class="post-title-link" itemprop="url">CCIE路由和交换认证考试指南第5版卷1-12</a>
         </h2>
 
         <div class="post-meta">
@@ -1698,10 +508,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-14 12:43:43 / Modified: 12:43:44" itemprop="dateCreated datePublished" datetime="2022-11-14T12:43:43-04:00">2022-11-14</time>
+              <time title="Created: 2022-11-14 22:11:22" itemprop="dateCreated datePublished" datetime="2022-11-14T22:11:22-04:00">2022-11-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-15 19:00:16" itemprop="dateModified" datetime="2022-11-15T19:00:16-04:00">2022-11-15</time>
+              </span>
 
           
   
@@ -1712,8 +528,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/14/gcp-digital-leader-exam-Lab-Build-and-Deploy-a-Container-Application-with-Google-Cloud-Run-10/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/gcp-digital-leader-exam-Lab-Build-and-Deploy-a-Container-Application-with-Google-Cloud-Run-10/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-12/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-12/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1728,7 +544,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <p><object data="12.pdf" type="application/pdf" width="100%" height="600"></object></p>
+
       
     </div>
 
@@ -1747,7 +564,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/gcp-digital-leader-exam-Knowledge-Check-Designing-a-Google-Cloud-Infrastructure-9/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -1761,7 +578,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/14/gcp-digital-leader-exam-Knowledge-Check-Designing-a-Google-Cloud-Infrastructure-9/" class="post-title-link" itemprop="url">gcp-digital-leader-exam-Knowledge-Check-Designing-a-Google-Cloud-Infrastructure-9</a>
+            <a href="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-11/" class="post-title-link" itemprop="url">CCIE路由和交换认证考试指南第5版卷1-11</a>
         </h2>
 
         <div class="post-meta">
@@ -1770,10 +587,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-14 12:38:04 / Modified: 12:38:06" itemprop="dateCreated datePublished" datetime="2022-11-14T12:38:04-04:00">2022-11-14</time>
+              <time title="Created: 2022-11-14 22:11:21" itemprop="dateCreated datePublished" datetime="2022-11-14T22:11:21-04:00">2022-11-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-15 19:00:10" itemprop="dateModified" datetime="2022-11-15T19:00:10-04:00">2022-11-15</time>
+              </span>
 
           
   
@@ -1784,8 +607,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/14/gcp-digital-leader-exam-Knowledge-Check-Designing-a-Google-Cloud-Infrastructure-9/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/gcp-digital-leader-exam-Knowledge-Check-Designing-a-Google-Cloud-Infrastructure-9/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-11/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-11/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1800,7 +623,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <p><object data="11.pdf" type="application/pdf" width="100%" height="600"></object></p>
+
       
     </div>
 
@@ -1819,7 +643,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/gcp-digital-leader-exam-Designing-a-Google-Cloud-Infrastructure-8/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -1833,7 +657,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/14/gcp-digital-leader-exam-Designing-a-Google-Cloud-Infrastructure-8/" class="post-title-link" itemprop="url">gcp-digital-leader-exam-Designing-a-Google-Cloud-Infrastructure-8</a>
+            <a href="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-10/" class="post-title-link" itemprop="url">CCIE路由和交换认证考试指南第5版卷1-10</a>
         </h2>
 
         <div class="post-meta">
@@ -1842,10 +666,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-14 12:36:54 / Modified: 12:36:56" itemprop="dateCreated datePublished" datetime="2022-11-14T12:36:54-04:00">2022-11-14</time>
+              <time title="Created: 2022-11-14 22:11:18" itemprop="dateCreated datePublished" datetime="2022-11-14T22:11:18-04:00">2022-11-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-15 19:00:00" itemprop="dateModified" datetime="2022-11-15T19:00:00-04:00">2022-11-15</time>
+              </span>
 
           
   
@@ -1856,8 +686,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/14/gcp-digital-leader-exam-Designing-a-Google-Cloud-Infrastructure-8/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/gcp-digital-leader-exam-Designing-a-Google-Cloud-Infrastructure-8/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-10/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-10/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1872,7 +702,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <p><object data="10.pdf" type="application/pdf" width="100%" height="600"></object></p>
+
       
     </div>
 
@@ -1891,7 +722,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/gcp-digital-leader-exam-Lab-Starting-a-Linux-Virtual-Machine-on-Google-Compute-Engine-7/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -1905,7 +736,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/14/gcp-digital-leader-exam-Lab-Starting-a-Linux-Virtual-Machine-on-Google-Compute-Engine-7/" class="post-title-link" itemprop="url">gcp-digital-leader-exam-Lab-Starting-a-Linux-Virtual-Machine-on-Google-Compute-Engine-7</a>
+            <a href="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-9/" class="post-title-link" itemprop="url">CCIE路由和交换认证考试指南第5版卷1-9</a>
         </h2>
 
         <div class="post-meta">
@@ -1914,10 +745,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-14 12:36:04 / Modified: 12:36:06" itemprop="dateCreated datePublished" datetime="2022-11-14T12:36:04-04:00">2022-11-14</time>
+              <time title="Created: 2022-11-14 22:11:17" itemprop="dateCreated datePublished" datetime="2022-11-14T22:11:17-04:00">2022-11-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-15 18:59:46" itemprop="dateModified" datetime="2022-11-15T18:59:46-04:00">2022-11-15</time>
+              </span>
 
           
   
@@ -1928,8 +765,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/14/gcp-digital-leader-exam-Lab-Starting-a-Linux-Virtual-Machine-on-Google-Compute-Engine-7/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/gcp-digital-leader-exam-Lab-Starting-a-Linux-Virtual-Machine-on-Google-Compute-Engine-7/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-9/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-9/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1944,7 +781,166 @@
     <div class="post-body" itemprop="articleBody">
 
       
+          <p><object data="9.pdf" type="application/pdf" width="100%" height="600"></object></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
           
+            <a href="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-8/" class="post-title-link" itemprop="url">CCIE路由和交换认证考试指南第5版卷1-8</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-14 22:11:15" itemprop="dateCreated datePublished" datetime="2022-11-14T22:11:15-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-15 18:59:24" itemprop="dateModified" datetime="2022-11-15T18:59:24-04:00">2022-11-15</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><object data="8.pdf" type="application/pdf" width="100%" height="600"></object></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-7/" class="post-title-link" itemprop="url">CCIE路由和交换认证考试指南第5版卷1-7</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-14 22:11:13" itemprop="dateCreated datePublished" datetime="2022-11-14T22:11:13-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-15 18:57:50" itemprop="dateModified" datetime="2022-11-15T18:57:50-04:00">2022-11-15</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-7/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/CCIE%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E5%8D%B71-7/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><object data="7.pdf" type="application/pdf" width="100%" height="600"></object></p>
+
       
     </div>
 
@@ -1962,7 +958,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/62/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/62/">62</a><span class="page-number current">63</span><a class="page-number" href="/page/64/">64</a><span class="space">&hellip;</span><a class="page-number" href="/page/199/">199</a><a class="extend next" rel="next" href="/page/64/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/62/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/62/">62</a><span class="page-number current">63</span><a class="page-number" href="/page/64/">64</a><span class="space">&hellip;</span><a class="page-number" href="/page/244/">244</a><a class="extend next" rel="next" href="/page/64/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -2030,7 +1026,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1986</span>
+          <span class="site-state-item-count">2432</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
