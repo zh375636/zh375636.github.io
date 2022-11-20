@@ -20,13 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="Introduction to CloudHSMHello, and welcome to this course that will be focused on AWS CloudHSM, which is a security service offered by AWS that allows you to generate and use your own encryption key">
+<meta property="og:type" content="article">
 <meta property="og:title" content="AWS-Security-Specialty-Manage-Your-Own-Encryption-Keys-Using-AWS-CloudHSM-35">
 <meta property="og:url" content="https://example.com/2022/11/14/AWS-Security-Specialty-Manage-Your-Own-Encryption-Keys-Using-AWS-CloudHSM-35/index.html">
 <meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="Introduction to CloudHSMHello, and welcome to this course that will be focused on AWS CloudHSM, which is a security service offered by AWS that allows you to generate and use your own encryption key">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-14T17:52:40.000Z">
-<meta property="article:modified_time" content="2022-11-14T17:52:42.000Z">
+<meta property="article:modified_time" content="2022-11-20T02:55:40.000Z">
 <meta property="article:author" content="Hang Zhang">
 <meta name="twitter:card" content="summary">
 
@@ -208,9 +210,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-14 13:52:40 / Modified: 13:52:42" itemprop="dateCreated datePublished" datetime="2022-11-14T13:52:40-04:00">2022-11-14</time>
+              <time title="Created: 2022-11-14 13:52:40" itemprop="dateCreated datePublished" datetime="2022-11-14T13:52:40-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-19 22:55:40" itemprop="dateModified" datetime="2022-11-19T22:55:40-04:00">2022-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AWS-Security-Specialty/" itemprop="url" rel="index"><span itemprop="name">AWS-Security-Specialty</span></a>
+                </span>
             </span>
 
           
@@ -238,7 +255,271 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <span id="more"></span>
+
+<h1 id="Introduction-to-CloudHSM"><a href="#Introduction-to-CloudHSM" class="headerlink" title="Introduction to CloudHSM"></a>Introduction to CloudHSM</h1><p>Hello, and welcome to this course that will be focused on AWS CloudHSM, which is a security service offered by AWS that allows you to generate and use your own encryption keys to protect your data through encryption.</p>
+<p>Before we start I’d like to introduce myself, my name is Stuart Scott, and I am the AWS content and security lead here at Cloud Academy. Feel free to connect with me to ask any questions using the details shown on the screen, alternatively you can always get in touch with us here at Cloud Academy by sending an e-mail to <a href="mailto:&#x73;&#x75;&#x70;&#x70;&#111;&#114;&#x74;&#64;&#99;&#x6c;&#111;&#117;&#x64;&#97;&#x63;&#x61;&#100;&#x65;&#x6d;&#121;&#x2e;&#99;&#x6f;&#109;">&#x73;&#x75;&#x70;&#x70;&#111;&#114;&#x74;&#64;&#99;&#x6c;&#111;&#117;&#x64;&#97;&#x63;&#x61;&#100;&#x65;&#x6d;&#121;&#x2e;&#99;&#x6f;&#109;</a> where one of our Cloud experts will reply to your question.</p>
+<p>This course has been designed for those who are responsible for protecting data stored within AWS. If you are looking to utilise a managed service to help you perform cryptographic operations then this course can help you understand how to manage those controls. Also, if you are preparing for an AWS certification that requires you to have knowledge of securing data, having knowledge of CloudHSM will help.</p>
+<p>The objectives of this course are to explain what AWS CloudHSM is and does, the architecture of CloudHSM and its implementation, Access Control of your HSM Cluster, how to use CloudHSM as a custom key store in KMS, the Key Management Service, and Monitoring and Logging.</p>
+<p>As a prerequisite to this course, it would be beneficial to have a basic awareness of the fundamentals of AWS and some of its core services, such as VPC architecture, in addition to some basic cryptography knowledge, but this is not essential.</p>
+<p>Feedback on our courses here at Cloud Academy is valuable to both us as trainers and any students looking to take the same course in the future. If you have any feedback, positive or negative, it would be greatly appreciated if you could contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>.</p>
+<p>Please note that, at the time of writing this content, all course information was accurate. AWS implements hundreds of updates every month as part of its ongoing drive to innovate and enhance its services.</p>
+<p>As a result, minor discrepancies may appear in the course content over time. Here at Cloud Academy, we strive to keep our content up to date in order to provide the best training available. </p>
+<p>So, if you notice any information that is outdated, please contact <a href="mailto:&#x73;&#x75;&#x70;&#112;&#x6f;&#x72;&#116;&#64;&#x63;&#x6c;&#111;&#117;&#x64;&#97;&#99;&#x61;&#x64;&#x65;&#109;&#x79;&#x2e;&#x63;&#x6f;&#109;">&#x73;&#x75;&#x70;&#112;&#x6f;&#x72;&#116;&#64;&#x63;&#x6c;&#111;&#117;&#x64;&#97;&#99;&#x61;&#x64;&#x65;&#109;&#x79;&#x2e;&#x63;&#x6f;&#109;</a>. This will allow us to update the course during its next release cycle.</p>
+<p>Thank you! </p>
+<h1 id="What-is-CloudHSM"><a href="#What-is-CloudHSM" class="headerlink" title="What is CloudHSM?"></a>What is CloudHSM?</h1><p>Hello and welcome to this lecture where I shall provide you with a foundational view of the AWS CloudHSM service.</p>
+<p>Firstly, what does the HSM stand for? Well HSM stands for Hardware Security Module, but what is a hardware security module? It’s a physical tamper-resistant hardware appliance that is used to protect and safeguard cryptographic material and encryption keys.</p>
+<p>The AWS CloudHSM service provides HSMs that are validated to Federal Information Processing Standards (FIPS) 140-2 Level 3, which is often required if you are going to be using your CloudHSM for document signing or if you intend to operate a public certificate authority for SSL certificates.</p>
+<p>As I mentioned, CloudHSM is a physical device, and it’s important to note that this device is not shared with any other customer, so it’s NOT a multi-tenant device. It is a dedicated single-tenant appliance exclusively made available to you, for your own workloads. The fact that the HSM is based upon single tenancy should not be surprising bearing in mind how sensitive the information is that it contains.</p>
+<p>CloudHSM is an enterprise-class service used for secure encryption key management and storage which can be used as a root of trust for an enterprise when it comes to data protection allowing you to deploy secure and compliant workloads within AWS.</p>
+<p>There are a number of different operations that CloudHSM can help you provide, these include:</p>
+<ul>
+<li>The creation, storage and management of cryptographic keys, allowing you to import and export both asymmetric and symmetric keys.</li>
+<li>The ability to use cryptographic hash functions to enable you to compute message digests and hash-based message authentication codes, otherwise known as HMACs.</li>
+<li>Cryptographic data signing and signature verification.</li>
+<li>Using both asymmetric and symmetric encryption algorithms.</li>
+<li>And the ability to generate cryptographically secure random data.</li>
+</ul>
+<p>I just mentioned both symmetric and asymmetric encryption keys, and I feel like I should quickly explain the difference between the two.</p>
+<p>Asymmetric encryption involves two separate keys. One is used to encrypt the data and a separate key is used to decrypt the data. These keys are created both at the same time and are linked through a mathematical algorithm. One key is considered the private key and should be kept by a single party and should never be shared with anyone else. The other key is considered the public key and this key can be given and shared with anyone. It doesn’t matter who has access to this public key as without the private key, any data encrypted with it cannot be accessed. </p>
+<p>Both the private and public keys are required to decrypt the data when asymmetric encryption is being used. So how does it work? </p>
+<p>If another party wanted to send you an encrypted message or data, they would encrypt the message using your own public key which can be made freely available to them or anyone. The message is then sent to you where you will use your own private key which has that mathematical relationship with your public key to decrypt the data. This allows you to send encrypted data to anyone without the risk of exposing your private key.</p>
+<p>Some common examples of asymmetric cryptography algorithms are RSA, Diffie-Hellman, and Digital Signature Algorithm. </p>
+<p>With symmetric encryption, a single key is used to both encrypt and also decrypt the data. So for example if someone was using a symmetric encryption method, they would encrypt the data with a key and then when that same person needed to access that data, they would use the same key that they used to encrypt the data to decrypt the data. As a result, this key must be sent securely between the two parties and here it exposes a weakness in this method. If the key is intercepted by anyone during that transmission, then that third party could easily decrypt any data associated with that key. </p>
+<p>Some common symmetric cryptography algorithms that are used are AES which is Advanced Encryption Standard, DES, Digital Encryption Standard, Triple DES and Blowfish. </p>
+<p>AWS CloudHSM is not the only encryption service available with AWS, you may have also heard of the Key Management Service, known as KMS. KMS is a managed service used to store and generate encryption keys that can be used by other AWS services and applications to encrypt your data. Much like CloudHSM, KMS uses HSMs, but with KMS, these are managed by AWS, as a result you have less management control of the keys and key material. Later in this course, I shall explain the integrations that exist between the 2 services.</p>
+<p>For more information on KMS, please see our existing course <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/amazon-web-services-key-management-service-kms/kms-encryption-introduction/">here</a>.</p>
+<h1 id="Understanding-AWS-CloudHSM-Architecture-amp-Implementation"><a href="#Understanding-AWS-CloudHSM-Architecture-amp-Implementation" class="headerlink" title="Understanding AWS CloudHSM Architecture &amp; Implementation"></a>Understanding AWS CloudHSM Architecture &amp; Implementation</h1><p>Hello and welcome to this lecture where I want to provide an overview of the architecture of CloudHSM and the general steps of implementation to help you understand its deployment. </p>
+<p>Let me start with the CloudHSM Cluster. When you implement CloudHSM, you will begin by creating a cluster. This cluster is simply a grouping of different HSMs which will act as a single unit when configured and deployed. Having multiple HSMs provides an element of high availability as you are able to select multiple different subnets, one from each availability zone that your VPC operates in, to deploy an HSM into. Any requests to your CloudHSM cluster are then automatically load-balanced between the HSMs in the cluster, and if one HSM fails, AWS will automatically deploy another one within your cluster. As a result, running a VPC is a prerequisite of implementing your cluster.</p>
+<p>During the deployment of your HSMs, it’s actually an Elastic Network Interface (ENI) that is placed within the subnet that you select of your VPC. The HSM itself actually resides in a different AWS-owned VPC, and located in the same AZ as you select during its deployment. So it’s the ENI that is deployed in your VPC which acts as an interface between your network and the HSM residing in an AWS-owned VPC.</p>
+<p>When you create the cluster, CloudHSM will do 2 things. Firstly, a new service-linked role will be created ‘AWSServiceRoleForCloudHSM’ which gives CloudHSM the permission to send log data to CloudWatch Logs log groups and log streams on your behalf. For those familiar with IAM policies, the policy looks as shown.</p>
+<p>Secondly, CloudHSM will also create a new security group for the cluster (cloudhsm-cluster-clusterID-sg). This is an important security group as it controls which resources can communicate with the HSMs. The security group itself will allow both inbound and outbound connectivity over TCP ports 2223-2225, which enables each of your HSMs within your cluster to communicate with each other. When this security group is created by CloudHSM, no other resources are associated with it. </p>
+<p>Once your cluster has been defined and created in the different subnets and availability zones that you have selected, it will have been provisioned in an ‘uninitialized state’. From this point, you can create your HSMs in each availability zone that you selected and ‘initialize’ the cluster. As this is a beginner course, I will not dive into this initialization process, however, if you would like a detailed technical understanding of how to perform this step, please refer to the AWS documentation <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">here</a>.</p>
+<p>When your cluster is initialized you can then connect to your cluster HSM network interfaces, and one of the easiest ways to do this is via an EC2 instance provisioned in the same VPC. There are 2 steps which must be carried out for your EC2 instances to interact with the HSMs. Firstly, you must configure a security group. And secondly, you need to install the AWS CloudHSM client software on your instance.</p>
+<p>So, firstly, the security group. You must add your instance to the cloudhsm-cluster-clusterID-sg security group. As we already know, this security group allows your HSMs to communicate with each other, but this same security group is also used to define which EC2 instances can communicate with your CloudHSMs, which must be manually added to the security group. If you want to connect to your CloudHSM using a Windows EC2 instance then you must add a rule to this SG using RDP with port 3389, if using a Linux instance then you must select SSH using port 22.</p>
+<p>Next, you must install the client and command-line tools. To do this, connect to your instance that you added to the security group as I just mentioned. </p>
+<p>If using a Linux instance, then you need to run a command, and this command will be different depending on the OS you are running. For a list of commands relating to the following OS’s please refer to <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/install-and-configure-client-linux.html">this AWS resource</a>.</p>
+<p>Once you have installed the client and tools, you need to modify the client configuration to enable you to connect to your cluster. Firstly you need to copy your issuing certificate (created when you initialize your cluster) to &#x2F;opt&#x2F;cloudhsm&#x2F;etc&#x2F;customerCA.crt</p>
+<p>You must also run the following command, replacing the red text with your HSMs IP address </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /opt/cloudhsm/bin/configure -a &lt;IP address&gt;</span><br></pre></td></tr></table></figure>
+
+<p>If you are using a Windows instance, then you will need to download the installation from here.</p>
+<p>After running the MSI file, you will need to copy the self-signed issuing certificate to the following.</p>
+<p>And then finally, you need to run the following command to configure the client software replacing the text in red with your own HSM details.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Amazon\CloudHSM\configure.exe -a &lt;HSM IP address&gt;</span><br></pre></td></tr></table></figure>
+
+<p>So let’s take a quick logical look at how the infrastructure would look like at this stage.</p>
+<p>So as you can see, we have the customer VPC split across 3 different availability zones and subnets, each with an EC2 client containing the HSM client software and an HSM ENI. Each EC2 client can communicate with ANY of the HSM ENI across the different subnets within the cluster using the cloudhsm-cluster security group. These ENIs then communicate with the HSMs located in an AWS-owned VPC.</p>
+<p>We also have the IAM role that has been created allowing HSM to send log data to CloudWatch Logs log groups and log streams on your behalf. </p>
+<p>Once your infrastructure is in place and you have configured your CloudHSM connectivity, you simply need to activate your HSM cluster before use.</p>
+<h1 id="Access-Control"><a href="#Access-Control" class="headerlink" title="Access Control"></a>Access Control</h1><p>Hello and welcome to this lecture where I want to highlight how you can access AWS CloudHSM. </p>
+<p>More often than not in AWS, access to resources can be controlled by IAM controls, however, CloudHSM is slightly different. Instead of using IAM users, the service has its own users and security held on the HSMs themselves utilizing a role-based access control method. Do bear in mind, however, you will still need permissions from within IAM to use the CloudHSM service.  As you might expect, there are different types of users with different levels of controls as to what actions they can perform on the module. So let’s take a look. </p>
+<p>The types of users available on the HSM are as follows:</p>
+<ul>
+<li>Precrypto Office (PRECO).</li>
+<li>Crypto Office (CO).</li>
+<li>Crypto User (CU).</li>
+<li>Appliance User (AU).</li>
+</ul>
+<p>After you have created your HSM cluster, the first HSM you connect to will be provisioned with the Precrypto Office (PRECO) user with a default username and password. This is a temporary user with temporary credentials of read-only access to the cluster. Using the PRECO user you must activate your cluster. As a part of the activation process of your cluster you will need to change the PRECO password, and by doing so your PRECO user will then become the Crypto Office (CO) user. </p>
+<p>The Crypto Office (CO) user contains a more advanced permission set than that of the PRECO user. The CO has the ability to carry out user management tasks, such as the creation and deletion of users, in addition to changing users’ passwords. It can also perform some administrative level operations as well, including:</p>
+<ul>
+<li>The ability to zeroise data on the HSM, which will delete certificated, keys and any other data on the HSM.</li>
+<li>Obtain HSM details such as the different HSM IP address in the cluster, the models, and serial numbers.</li>
+<li>View and determine the synchronization status across your cluster.</li>
+</ul>
+<p>A Crypto User (CU) is used predominantly to perform the cryptographic operations and key management functions with your CloudHSM cluster, these include: </p>
+<ul>
+<li>Create, delete, import&#x2F;export, and share cryptographic keys.</li>
+<li>Perform encryption and decryption, plus signing and verifying.</li>
+</ul>
+<p>Also, much like the CO, CUs are also able to zeroise data and basic cluster information such as IP address and serial number and retrieve cluster synchronization status.</p>
+<p>The Appliance User (AU) performs cloning and synchronization across your cluster and it exists on all HSMs. The CloudHSM calls upon the AU to ensure the synchronization of your HSMs within your cluster is maintained. </p>
+<p>Here is a summary of the different user types used on the HSMs. (Image source: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/manage-hsm-users.html#user-permissions-table">https://docs.aws.amazon.com/cloudhsm/latest/userguide/manage-hsm-users.html#user-permissions-table</a>)</p>
+<p>The hardware security modules are designed with physical tamper detection and response processes. This means that if the HSM detected any kind of physical breach or tampering of the device, it would begin key deletion across the hardware. </p>
+<p>In addition to this, the HSMs are also designed with protection against brute force login attacks. This means that if you were to incorrectly enter the wrong passwords for a Crypto User, then that HSM would lock out that user, and would have to be unlocked by a Crypto Officer.</p>
+<h1 id="Using-CloudHSM-as-a-Custom-Key-Store-in-KMS"><a href="#Using-CloudHSM-as-a-Custom-Key-Store-in-KMS" class="headerlink" title="Using CloudHSM as a Custom Key Store in KMS"></a>Using CloudHSM as a Custom Key Store in KMS</h1><p>Hello and welcome to this lecture where I want to explain the interaction between the two AWS encryption services, AWS Key Management Service and AWS CloudHSM.</p>
+<p>When working with AWS KMS, you are able to create custom key stores. A key store is effectively a storage location which can store and protect your cryptographic keys used to encrypt and decrypt your data in AWS. When working with AWS KMS, the default key stores are managed by KMS and are stored on HSMs managed by AWS, and so as a user of KMS you have no control over these HSMs which underpin the cryptographic storage of KMS.</p>
+<p>However, if you have specific compliance controls that you need to adhere to, where you might require a greater level of control of your key stores. By creating a custom key store you can leverage the power of your CloudHSM cluster which you have full management of, as explained in the previous lecture. </p>
+<p>A benefit of AWS KMS is that it has a wide range of integrations with other AWS services, allowing you to perform server-side encryption often at the click of a button with minimal configuration required. This makes it a great choice when protecting your data. </p>
+<p>KMS creates and stores Customer Master Keys (CMKs) which is the main key type in KMS and there are two types of customer master keys. Firstly, those which are managed and created by you and I, as customers of AWS, which can be created by using KMS and then those that are managed and created by AWS themselves. </p>
+<p>CMKs that are generated and created by us as customers, rather than AWS, provide the ability to implement greater flexibility, such as being able to manage the key, including rotation, governing access and key policy configuration, along with being able to both enable and disable the key when it is no longer required. </p>
+<p>So, if within your organisation you want to use the seamless integration of KMS with many AWS services, but require the security and compliance of maintaining your own key material outside of KMS then you can create a custom key store backed by your CloudHSM cluster.</p>
+<p>The custom key store is a resource managed from within KMS, but allows you to store your key material within your managed HSMs of your CloudHSM cluster. This allows you to use the key material located within your HSM cluster to create the CMKs that KMS uses to implement encryption across different AWS services. CMKs created from your custom key store are 256-bit, non-exportable AES symmetric keys that never leave the HSM unencrypted. All cryptographic operations made with the CMK happens within the HSM cluster</p>
+<p>So as you can see from this diagram, AWS services use CMKs managed by KMS using existing integration, but your CMKs can either come from the default key store created and stored by HSMs managed by AWS, or by using the custom key store which are managed by you allowing you to control access to your key material used within the CMKs.</p>
+<p>Bear in mind that each HSM Cluster can only be associated with one custom key store for KMS, and both the cluster and the KMS creation of the custom key store must be within the same region. KMS is a regional service, and keys can’t be used between multiple regions. If you want to create CMKs within your custom key store, then your cluster must have at least 2 HSMs activated in different availability zones. </p>
+<p>As a part of the process to create your custom key store you must upload the trust anchor certificate for the cluster to KMS, and this certificate is generated when the cluster is first initialized. Also, you must create a dedicated Crypto User called kmsuser (without 2 factor authentication) and generate a password, which you then provide to KMS. Going forward KMS will use this kmsuser CU to perform its operations in addition to rotating the password every time the user is authenticated.</p>
+<h1 id="Monitoring-amp-Logging"><a href="#Monitoring-amp-Logging" class="headerlink" title="Monitoring &amp; Logging"></a>Monitoring &amp; Logging</h1><p>Hello and welcome to this lecture which will look at how to monitor and log events from AWS CloudHSM. </p>
+<p>As with most other AWS services, CloudHSM is able to push metric data to Amazon CloudWatch. For those unfamiliar with Amazon CloudWatch, it is a global service that has been designed to be your window into the health and operational performance of your applications and infrastructure.</p>
+<p>It’s able to collate and present meaningful operational data from your resources allowing you to monitor and review their performance. This gives you the opportunity to take advantage of the insights that CloudWatch presents, which in turn can trigger automated responses or provide you with the opportunity and time to make manual operational changes and decisions to optimize your infrastructure if required.</p>
+<p>The following are the current metrics that CloudWatch can record and monitor at the time of writing this course.</p>
+<ul>
+<li>HsmUnhealthy: This determines if a HSM is not performing as expected. When CloudHSM identifies a faulty HSM it is automatically replaced for you by the service.  </li>
+<li>HsmTemperature: If the processor of the HSM reaches a temperature of 110 degrees centigrade then this system will automatically shut down.</li>
+<li>HsmKeysSessionOccupied: This will display the number of session keys that are in operation with a particular HSM.</li>
+<li>HsmKeysTokenOccupied: This will display the number of token keys that are in operation with a particular HSM.</li>
+<li>HsmSslCtxsOccupied: Displays the number of encrypted channels to the HSM.</li>
+<li>HsmSessionCount: Displays the number of open connections to the HSM.</li>
+<li>HsmUsersAvailable: This displays the number of additional users that can be created on the HSM.</li>
+<li>HsmUsersMax: This displays the maximum number of users that can be created on the HSM instance.</li>
+<li>InterfaceEth2OctetsInput: Calculates the total traffic sent to the HSM.</li>
+<li>InterfaceEth2OctetsOutput: Calculates the total traffic sent from the HSM.</li>
+</ul>
+<p>Using CloudWatch you are able to configure alerts and notifications if any of these metrics reach a specific threshold allowing you to take corrective action. </p>
+<p>For more information on how to configure these alerts and notifications, please see our existing <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/aws-cloudtrail-introduction/aws-cloudtrail-an-introduction-1/">course</a> content covering <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/aws-cloudtrail-introduction/aws-cloudtrail-an-introduction-1/">Amazon CloudWatch</a>. </p>
+<p>When it comes to logging in CloudHSM there are a couple of different options to consider. </p>
+<ul>
+<li>Firstly, we have AWS CloudTrail to track and record all API calls relating to CloudHSM. </li>
+<li>We also have CloudWatch Logs for HSM Audit Logs.</li>
+</ul>
+<p>So let’s take a look at both of these options in a bit more detail, starting with AWS CloudTrail.</p>
+<p>AWS CloudTrail is a service that has a primary function to record and track all AWS API requests made. These API calls can be programmatic requests initiated from a user using an SDK, the AWS command-line interface, from within the AWS management console or even from a request made by another AWS service, such as CloudHSM.</p>
+<p>When an API request is initiated, such as a ‘CreateHsm’ call, AWS CloudTrail captures the request as an event and records this event within a log file which is then stored on S3. Each API call represents a new event within the log file. CloudTrail also records and associates other identifying metadata with all the events. For example, the identity of the caller, the timestamp of when the request was initiated, and the source IP address. </p>
+<p>Here is an excerpt from a CloudTrail log that captures this request of CreateHsm as the “eventName.” </p>
+<p>For more information on AWS CloudTrail and how it is configured and a deeper understanding of the logs, please see our existing course here.</p>
+<p>Let me now take a quick look at Audit logs. CloudHSM Audit logs are logs that are generated by your AWS CloudHSM Clients using the CloudHSM client daemon. These logs can be retrieved by viewing the file on the client, or by entering a simple command, it’s all dependent on the OS that the client is running. Use the following <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/hsm-client-logs.html">AWS resource</a> to find the best method for your OS.</p>
+<p>The Audit logs are an essential feature that can’t be disabled or turned off, and they contain records of requests that have been initiated using the AWS CloudHSM command lines tools and software libraries, containing all commands that have been submitted from the client. This allows a full audit of all the actions and requests that have made changes to the HSM, such as the creation and deletion of clusters, users, and keys. </p>
+<p>These audit logs are used by CloudHSM which are then sent to Amazon CloudWatch Logs, and this is where the permissions from the AWSServiceRoleForCloudHSM role I explained in a previous lecture come into effect. Much like the creation of these logs themselves, having them sent to CloudWatch is also mandatory which can’t be disabled.</p>
+<p>When data is fed into Cloudwatch Logs you are able to monitor the logstream in real time and set up metric filters to search for specific events that you need to be alerted on or respond to. This allows CloudWatch Logs to act as a central repository for real-time monitoring of log data. </p>
+<p>For more information on Amazon CloudWatch Logs and how they are managed, please see our existing course <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/how-implement-enable-logging-across-aws-services-part-1-2/introduction/">here</a>.</p>
+<p>Interpreting the logs is a fairly straightforward process, the following shows an example of a log entry that shows the creation of a Key Pair.</p>
+<p>Let me just run through the different fields quickly.</p>
+<p>Time: This shows the date and time that the event occurred on the HSM using the UTC time zone.</p>
+<p>Sequence No: This number increments by 1 for every new event stored within the same log stream.</p>
+<p>Reboot counter: This is a A 32-bit persistent ordinal counter that is incremented when the HSM hardware is rebooted.</p>
+<p>Command type(hex): This is used to define the command’s category.</p>
+<p>Opcode: This shows which command was carried out, in this example the generation of a new key pair.</p>
+<p>Session handle: A value to represent which session the command was carried out on.</p>
+<p>Response: This determines if the command was successful or not.</p>
+<p>Log type: This signifies which log type of the CloudHSM log that recorded the request.</p>
+<p>The last 2 entries show the values of the Private and Public key handles that were created as a result of the command issued.</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>Hello and welcome to the final lecture of this course where I will summarize the key points taken from each of the previous lectures. </p>
+<p>I started the course by explaining what AWS CloudHSM is and in this lecture we learnt that:</p>
+<ul>
+<li><p>CloudHSM is an enterprise-class service used to store and secure encryption key management which can be used as a root of trust for an enterprise when it comes to data protection allowing you to deploy secure and compliant workloads within AWS.</p>
+</li>
+<li><p>HSM stands for Hardware Security Module which is a physical tamper-resistant hardware appliance used to protect and safeguard cryptographic material and encryption keys</p>
+</li>
+<li><p>AWS CloudHSM is validated to FIPS 140-2 Level 3</p>
+</li>
+<li><p>CloudHSMs are NOT multi-tenant devices</p>
+</li>
+<li><p>It can be used to </p>
+</li>
+<li><ul>
+<li>Create, store and manage cryptographic keys</li>
+</ul>
+</li>
+<li><p>Manage cryptographic hash functions </p>
+</li>
+<li><p>Perform cryptographic data signing and signature verification</p>
+</li>
+<li><p>Generate cryptographically secure random data</p>
+</li>
+<li><p>Asymmetric encryption involves two separate keys. One is used to encrypt the data and a separate key is used to decrypt the data. </p>
+</li>
+<li><p>Symmetric encryption uses a single key to both encrypt and also decrypt the data. </p>
+</li>
+<li><p>The Key Management Service, known as KMS is another AWS encryption service</p>
+</li>
+<li><p>KMS HSMs are managed by AWS</p>
+</li>
+<li><p>CloudHSMs allow the customer to manage the HSM</p>
+</li>
+</ul>
+<p>In the next lecture I look at the architecture and implementation of the AWS CloudHSM service where I explained the following points: </p>
+<ul>
+<li>An HSM cluster is a grouping of different HSMs which will act as a single unit when configured and deployed. </li>
+<li>HSMs must be deployed in a VPC</li>
+<li>Multiple HSMs provides an element of high availability</li>
+<li>If one HSM fails, AWS will automatically deploy another one within your cluster</li>
+<li>An Elastic Network Interface (ENI) is placed within each subnet of your deployment</li>
+<li>The HSM itself actually resides in a different AWS owned VPC located in the same AZ</li>
+<li>The ENI acts as an interface between your network and the HSM residing in an AWS-owned VPC.</li>
+<li>When you create a cluster, CloudHSM will create a service-linked role allowing permission to send log data to CloudWatch </li>
+<li>It will also create a security group to control which resources can communicate with the cluster</li>
+<li>Your cluster will need to be initialized before you can connect to the ENIs </li>
+<li>You need to add EC2 instances to the clusters security group and install and configure the AWS CloudHSM client to enable communication between the 2 resources</li>
+<li>When all resources are in place, you can activate your cluster</li>
+</ul>
+<p>I then shifted focus over to access control to understand how CloudHSM managed security from that perspective. In this lecture we learnt that:</p>
+<ul>
+<li><p>CloudHSM has its own users and security held on the HSMs themselves utilizing a role-based access control method. </p>
+</li>
+<li><p>Different types of users have different levels of controls </p>
+</li>
+<li><p>There are 4 user types, these being:</p>
+</li>
+<li><p>Precrypto Office (PRECO)</p>
+</li>
+<li><p>Crypto Office (CO)</p>
+</li>
+<li><p>Crypto User (CU)</p>
+</li>
+<li><p>Appliance User (AU)</p>
+</li>
+<li><p>The Precrypto Office (PRECO) user is a temporary user with read-only access to the cluster, used to activate your cluster. As a part of this process, you must change the password of the user which will change the user type to the Crypto Office (CO) user. </p>
+</li>
+<li><p>The Crypto Office User contains a more advanced permission set than that of the PRECO user as has the ability to carry out user management tasks and administrative level functions</p>
+</li>
+<li><p>The Crypto User (CU) is used predominantly to perform the cryptographic operations and key management functions </p>
+</li>
+<li><p>The Appliance User (AU) performs cloning and synchronization across your cluster and it exists on all HSMs. </p>
+</li>
+<li><p>The HSM are designed with protection against brute force login attacks</p>
+</li>
+</ul>
+<p>I then took a quick look at how AWS KMS has a level of integration with CloudHSM, and during this lecture I covered the following:</p>
+<ul>
+<li>KMS allows you to create custom key stores. </li>
+<li>A key store is used to store and protect your cryptographic keys</li>
+<li>KMS Default key stores are managed by KMS and are stored on HSMs managed by AWS</li>
+<li>Custom key stores allow you to leverage the power of your CloudHSM cluster</li>
+<li>The custom key store is a resource managed from within KMS, but allows you to store your key material within your managed HSMs of your CloudHSM cluster. </li>
+<li>CMKs created from your custom key store are 256-bit, non-exportable AES symmetric keys that never leave the HSM unencrypted. </li>
+<li>All cryptographic operations made with the CMK happens within the HSM cluster</li>
+<li>Each HSM Cluster can only be associated with one custom key store for KMS</li>
+<li>KMS and the Cluster must be in the same region</li>
+<li>You must upload the trust anchor certificate for the cluster to KMS to create a custom key store</li>
+<li>You must also create a dedicated Crypto User called <strong>kmsuser</strong></li>
+</ul>
+<p>In the final lecture, I covered an overview of logging and monitoring, the key takeaways from this lecture were:</p>
+<ul>
+<li><p>CloudHSM is able to push metric data to Amazon CloudWatch. </p>
+</li>
+<li><p>CloudWatch can record and monitor a number of different metrics relating to CloudHSM to determine its health, connection details, user capacity and more</p>
+</li>
+<li><p>Using CloudWatch allows you to be alerted and notified if any configured metric thresholds are met </p>
+</li>
+<li><p>AWS CloudTrail can track and record all API calls relating to CloudHSM </p>
+</li>
+<li><p>When an API request is initiated, such as a ‘CreateHsm’ call, AWS CloudTrail captures the request as an event and records this event within a log file </p>
+</li>
+<li><p>Each API call represents a new event within the log file. </p>
+</li>
+<li><p>CloudTrail records and associates identifying metadata with all the events. For example, the identity of the caller, the timestamp of when the request was initiated and the source IP address. </p>
+</li>
+<li><p>CloudWatch Logs can record your HSM Audit Logs </p>
+</li>
+<li><p>CloudHSM Audit logs are logs that are generated by your AWS CloudHSM Clients using the CloudHSM client daemon. </p>
+</li>
+<li><p>Audit logs can’t be disabled or turned off, and they contain records of requests that have been initiated using the AWS CloudHSM command lines tools and software libraries.</p>
+</li>
+<li><p>Audit logs used by CloudHSM are sent to Amazon CloudWatch Logs</p>
+</li>
+<li><p>Cloudwatch Logs allow to monitor the logstream in real time and set up metric filters to search for specific events that you need to be alerted on or respond to</p>
+</li>
+</ul>
+<p>That now brings me to the end of this lecture and to the end of this course, and so you should now have a greater understanding of AWS CloudHSM and how it can be configured and deployed within your VPC.</p>
+<p>Feedback on our courses here at Cloud Academy is valuable to both us as trainers and any students looking to take the same course in the future. If you have any feedback, positive or negative, it would be greatly appreciated if you could contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>.</p>
+<p>Thank you for your time and good luck with your continued learning of cloud computing. Thank you.</p>
+<h1 id="2What-is-CloudHSM"><a href="#2What-is-CloudHSM" class="headerlink" title="2What is CloudHSM?"></a>2<strong>What is CloudHSM?</strong></h1><p><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/amazon-web-services-key-management-service-kms/kms-encryption-introduction/">Course: How to Use KMS Key Encryption to Protect Your Data</a></p>
+<h1 id="3Understanding-AWS-CloudHSM-Architecture-amp-Implementation"><a href="#3Understanding-AWS-CloudHSM-Architecture-amp-Implementation" class="headerlink" title="3Understanding AWS CloudHSM Architecture &amp; Implementation"></a>3<strong>Understanding AWS CloudHSM Architecture &amp; Implementation</strong></h1><p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">AWS Documentation</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/install-and-configure-client-linux.html">Full list of commands</a></p>
+<h1 id="6Monitoring-amp-Logging"><a href="#6Monitoring-amp-Logging" class="headerlink" title="6Monitoring &amp; Logging"></a>6<strong>Monitoring &amp; Logging</strong></h1><p><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/aws-cloudtrail-introduction/aws-cloudtrail-an-introduction-1/">Amazon CloudWatch course</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/hsm-client-logs.html">Find the best method for your OS</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/how-implement-enable-logging-across-aws-services-part-1-2/introduction/">Course: How to Implement &amp; Enable Logging Across AWS Services (Part 1 of 2)</a></p>
+
     </div>
 
     
@@ -319,6 +600,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction-to-CloudHSM"><span class="nav-number">1.</span> <span class="nav-text">Introduction to CloudHSM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-CloudHSM"><span class="nav-number">2.</span> <span class="nav-text">What is CloudHSM?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Understanding-AWS-CloudHSM-Architecture-amp-Implementation"><span class="nav-number">3.</span> <span class="nav-text">Understanding AWS CloudHSM Architecture &amp; Implementation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Access-Control"><span class="nav-number">4.</span> <span class="nav-text">Access Control</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Using-CloudHSM-as-a-Custom-Key-Store-in-KMS"><span class="nav-number">5.</span> <span class="nav-text">Using CloudHSM as a Custom Key Store in KMS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Monitoring-amp-Logging"><span class="nav-number">6.</span> <span class="nav-text">Monitoring &amp; Logging</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary"><span class="nav-number">7.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2What-is-CloudHSM"><span class="nav-number">8.</span> <span class="nav-text">2What is CloudHSM?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3Understanding-AWS-CloudHSM-Architecture-amp-Implementation"><span class="nav-number">9.</span> <span class="nav-text">3Understanding AWS CloudHSM Architecture &amp; Implementation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6Monitoring-amp-Logging"><span class="nav-number">10.</span> <span class="nav-text">6Monitoring &amp; Logging</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -341,7 +623,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

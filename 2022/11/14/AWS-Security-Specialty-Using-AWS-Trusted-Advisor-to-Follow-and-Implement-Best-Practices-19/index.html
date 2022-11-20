@@ -20,13 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="IntroductionHello and welcome to this course which will look at how you can use AWS Trusted Advisor to help you follow and implement some best practices and recommendations across your AWS environme">
+<meta property="og:type" content="article">
 <meta property="og:title" content="AWS-Security-Specialty-Using-AWS-Trusted-Advisor-to-Follow-and-Implement-Best-Practices-19">
 <meta property="og:url" content="https://example.com/2022/11/14/AWS-Security-Specialty-Using-AWS-Trusted-Advisor-to-Follow-and-Implement-Best-Practices-19/index.html">
 <meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="IntroductionHello and welcome to this course which will look at how you can use AWS Trusted Advisor to help you follow and implement some best practices and recommendations across your AWS environme">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-14T17:52:12.000Z">
-<meta property="article:modified_time" content="2022-11-14T17:52:14.000Z">
+<meta property="article:modified_time" content="2022-11-20T02:55:58.000Z">
 <meta property="article:author" content="Hang Zhang">
 <meta name="twitter:card" content="summary">
 
@@ -208,9 +210,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-14 13:52:12 / Modified: 13:52:14" itemprop="dateCreated datePublished" datetime="2022-11-14T13:52:12-04:00">2022-11-14</time>
+              <time title="Created: 2022-11-14 13:52:12" itemprop="dateCreated datePublished" datetime="2022-11-14T13:52:12-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-19 22:55:58" itemprop="dateModified" datetime="2022-11-19T22:55:58-04:00">2022-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AWS-Security-Specialty/" itemprop="url" rel="index"><span itemprop="name">AWS-Security-Specialty</span></a>
+                </span>
             </span>
 
           
@@ -238,7 +255,148 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <span id="more"></span>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Hello and welcome to this course which will look at how you can use AWS Trusted Advisor to help you follow and implement some best practices and recommendations across your AWS environment with your organization.</p>
+<p>Before we start I’d like to introduce myself, my name is Stuart Scott, and I am the AWS content and security lead here at Cloud Academy. Feel free to connect with me to ask any questions using the details shown on the screen, alternatively you can always get in touch with us here at Cloud Academy by sending an e-mail to <a href="mailto:&#115;&#117;&#x70;&#112;&#111;&#x72;&#x74;&#x40;&#x63;&#x6c;&#111;&#117;&#100;&#x61;&#99;&#97;&#100;&#x65;&#x6d;&#121;&#x2e;&#x63;&#x6f;&#x6d;">&#115;&#117;&#x70;&#112;&#111;&#x72;&#x74;&#x40;&#x63;&#x6c;&#111;&#117;&#100;&#x61;&#99;&#97;&#100;&#x65;&#x6d;&#121;&#x2e;&#x63;&#x6f;&#x6d;</a> where one of our Cloud experts will reply to your question.</p>
+<p>This course has been designed for those who might be in one of the following roles:</p>
+<ul>
+<li>Security Professionals &amp; Security Auditors</li>
+<li>Systems Engineers and Administrators</li>
+<li>Compliance Managers</li>
+<li>Anyone looking to learn to become AWS certified</li>
+</ul>
+<p>There are a number of learning objectives to this course, you will understand:</p>
+<ul>
+<li>The purpose and benefits of Trusted Advisor</li>
+<li>How to navigate the Trusted Advisor Console</li>
+<li>How to use Trusted Advisor to optimize your AWS resources and account</li>
+<li>How to take actionable steps with Trusted Advisor to improve your AWS infrastructure</li>
+</ul>
+<p>As a prerequisite to this course, I recommend that you have a basic understanding of some of the core services, such as IAM. This is because AWS Trusted Advisor provides recommendations and best practices across a range of other AWS services.</p>
+<h1 id="What-is-AWS-Trusted-Advisor"><a href="#What-is-AWS-Trusted-Advisor" class="headerlink" title="What is AWS Trusted Advisor?"></a>What is AWS Trusted Advisor?</h1><p>Hello and welcome to this lecture where I am going to be looking at AWS Trusted Advisor, explaining what it is and the different components that make up this service. </p>
+<p>Trusted Advisor plays an integral part in helping you to optimize your infrastructure across a number of key areas, allowing you to make decisions upon recommendations made by the service which follow and best practices that have been honed over the years by AWS.</p>
+<p>The service itself can be found within the AWS Management Console under the Management &amp; Governance category, alongside services such as Amazon CloudWatch, Control Tower and Systems Manager. </p>
+<p>The main function of Trusted Advisor is to recommend improvements across your AWS account to help optimize and streamline your environment based on these AWS best practices. These recommendations cover 5 distinct categories:</p>
+<ol>
+<li><strong>Cost optimization</strong> - Helps to identify ways in which you could optimize your resources to help you reduce costs by implementing features such as reserved capacity and removing unused capacity</li>
+<li><strong>Performance</strong> - This reviews your resources to highlight any potential performance issues across your infrastructure, determining if you could take benefits from performance-enhancing capabilities such as provisioned throughput</li>
+<li><strong>Security</strong> - This analyses your environment for any potential security weaknesses or vulnerabilities that could potentially lead to a breach.</li>
+<li><strong>Fault Tolerance</strong> - This helps to suggest best practices to maintain service operations by increasing resiliency, should a fault or incident occur across your resources.</li>
+<li><strong>Service Limit</strong> - This identifies and warns you when your resources reach 80% capacity of their service limit quota.</li>
+</ol>
+<p>Within each of these 5 categories, Trusted Advisor has a list of control points and checks to see how your account, resources and architecture is implemented to determine if you’re aligned with best practice. So it essentially acts as an automatic auditor across your account, which can save you money, increase the efficiency of your resources, maintain a tighter and more secure environment, help to ensure your resources remain operational should a failure occur and that you remain in line with your service limitations, allowing you to request an increase where possible.</p>
+<p>Between the 5 different categories and at the time of writing this course, there are over 115 different checks. Please note, that the number of these checks are constantly changing, so for the most up to date figures, please review the following link: <a target="_blank" rel="noopener" href="https://aws.amazon.com/premiumsupport/technology/trusted-advisor/best-practice-checklist/">https://aws.amazon.com/premiumsupport/technology/trusted-advisor/best-practice-checklist/</a></p>
+<p>Although there are a lot of these checks that Trusted Advisor can perform, not all of them are freely available to anyone with an AWS account. The list of checks that you have access to is very dependent on the support agreement with hold with AWS.</p>
+<p>The full power and potential of AWS Trusted Advisor is only available if you have a Business or Enterprise Support Plan with AWS. Without either of these plans then you will only have access to 6 core checks in the security category and all the Service Limits </p>
+<p>The 6 checks within security are as follows:</p>
+<ul>
+<li>S3 Bucket permissions</li>
+<li>Security Groups - Specific Ports Unrestricted</li>
+<li>EBS Public Snapshots</li>
+<li>RDS Public Snapshots</li>
+<li>IAM Use</li>
+<li>MFA on root account</li>
+</ul>
+<p>At the time of writing this course, here are the available service limit checks.</p>
+<p>Now if you compare this to the full list of checks here: <a target="_blank" rel="noopener" href="https://aws.amazon.com/premiumsupport/technology/trusted-advisor/best-practice-checklist/">https://aws.amazon.com/premiumsupport/technology/trusted-advisor/best-practice-checklist/</a></p>
+<p>….that are included with Business and Enterprise support plans, you will see that the full checklist can provide a huge wealth of valuable information to help you optimise your infrastructure. </p>
+<p>In addition to these extra checks that these support plans offer, you will also get the additional benefit of being able to administer certain functions of Trusted Advisor, such as:</p>
+<ul>
+<li>being able to track the most recent changes to your AWS account by bringing them to the top of your AWS Trusted Advisor dashboard.</li>
+<li>using the AWS Support API to retrieve and refresh trusted advisor results. </li>
+<li>Also you’ll have the added advantage of having Amazon CloudWatch integration to detect and react to changes made to your Trusted Advisor checks</li>
+</ul>
+<p>There are also a number of features that everyone has access to, including those outside of the Enterprise and Business support plans, these being:</p>
+<ul>
+<li><p><strong>Trusted Advisor Notifications</strong> - This is an opt-in or opt-out feature which is completely free to everyone and can be configured within the preferences pane of the Trusted Advisor console. It tracks your resource check changes and cost saving estimates over the course of a week and it will then email up to 3 recipients, for billing, operations and security notifications with a report.</p>
+</li>
+<li><p><strong>Exclude Items</strong> - This allows you to select specific resources to be excluded from appearing in the console within a specific check. You may want to do this if you are not interested in the reporting for that particular resource and so you decide to exclude it. You can decide to include it again at any point if you do change your mind. This feature can make viewing and managing your checks easier by eliminating some resources within the console.</p>
+</li>
+<li><p><strong>Action Links</strong> - Many of the items identified within the Checks against resources have hyperlinks associated, these are known as Action Links which allow quick access to the resource in question allowing you to remediate the issue identified. For example, if you reached 80% of the number of VPC’s within a Region, the <strong>‘VPC’</strong> Service Limit Check would highlight this as an issue. The Action Link against the resource would lead you to an AWS Support Center page to create a case to increase the quantity of VPCs you’re allowed within a single region.</p>
+</li>
+<li><p><strong>Access Management</strong> - AWS Trusted Advisor is tightly integrated within Identity &amp; Access Management. You can grant different levels of access to Trusted Advisor, including Full Access, Read Only, or even restrict access down to specific Categories, Checks and Actions. For example, the following IAM policy allows access to AWS Trusted Advisor, but denies the user from performing a refresh and updating notification preferences.</p>
+</li>
+</ul>
+<p>For a full list of IAM permissions using the trustedadvisor namespace please see the following AWS reference: <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html">https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html</a></p>
+<ul>
+<li><strong>Refresh</strong> - The data within Trusted Advisor is automatically refreshed if the data is more than 24 hours old when you view it within the console. However, after any refresh, you can perform a manual refresh 5 minutes after the previous refresh. You can either choose to perform a refresh against individual checks or against all checks.</li>
+</ul>
+<p>Before I finish this lecture I just want to give a high level overview of how Trusted Advisor works in a few simple steps:</p>
+<ul>
+<li>Once you connect to AWS Trusted Advisor, the service will scan your infrastructure </li>
+<li>It will then compare the state of your infrastructure against best practices defined within the 5 categories of Cost Optimization, Security, Performance, Fault Tolerance and service limits</li>
+<li>The output of this scan will generate a number of recommendations of how your infrastructure could be optimised with a priority factor</li>
+<li>This then allows you to optimize your resources based on the recommendations</li>
+</ul>
+<p>AWS Trusted Advisor uses a service-linked IAM role to access you resources, named <strong>AWSTrustedAdvisorServiceRolePolicy.</strong> This is a predefined role created by AWS and allows the services to call other services on your behalf. The policy summary of this role is as shown here and helps to define which AWS services that Trusted Advisor communicates with.</p>
+<p>Please be aware that this list will change over time, so for an updated list please refer to the role within IAM to determine which services <strong>AWSTrustedAdvisorServiceRolePolicy</strong> has access to.</p>
+<h1 id="Reviewing-Checks-amp-Taking-Action"><a href="#Reviewing-Checks-amp-Taking-Action" class="headerlink" title="Reviewing Checks &amp; Taking Action"></a>Reviewing Checks &amp; Taking Action</h1><p>- Hello, and welcome to this lecture, while we shall be looking at how to review the status of your checks and take action against any findings identified by Trusted Advisor. Firstly, let me explain the dashboard, when you first go into Trusted Advisor, you’ll be presented with the five different categories. Beneath each of these categories, there are three icons, these being a tick, a triangle with an exclamation mark, and a circle with an exclamation mark. If any of these icons are Grey, it means there are no checks within that category that I’ve met an alert criteria to activate the icon. In this screenshot, the reason that so many of the icons are Grey, will be that my personal AWS account, is not covered by a business or enterprise support plan, and so those checks are locked as explained in the previous lecture. If a check does meet the criteria within the category, then one of the following will be presented. The tick box may become green, meaning no action is necessary for the check that has been reviewed, the triangle may become yellow meaning investigation required, and the circle may become red, identifying an item requires immediate action and attention. Next to each of these icons when active will be a number, and that number represents the amount of checks within that category, with a specific status. So as we can see from this image, I’ve one check within the service limits category, that should have been investigated as a priority. Five checks within the security category when no action is required, but I do have one check within this category that requires investigation. So that’s a very quick glance of the dashboard, I can see that I have a potential security threat that I need to look into, in addition to being very close to a service limitation, that I need to check immediately, as it could potentially cause a production issue. As mentioned previously, if you don’t have an enterprise or business support plan with AWS for your account, like in my example, then you will not be able to take full advantage of what Trusted Advisor has to offer. However, for this lecture I will review the six core checks that are freely available to anyone with an AWS account. Plus, I shall take a look at some of the service limit checks that are available. For every check that Trusted Advisor provides, it will provide four pieces of information. A description of the check and why it is used, the alert criteria, and this shows the conditions under which a check has given a green, no action necessary status, a yellow, investigation required status, or red, immediate action required status. Recommended action. This gives a high-level suggestion on the steps and actions that you could take to remediate any findings, based upon a yellow or red alert criteria. And additional resources, this highlights additional reading material for you to learn more about the topics being discussed. And this usually refers to AWS documentation or white papers. Let me now take a look at the free checks under the security category in more detail. Security groups, specific ports unrestricted. So this particular check, assesses your security groups that you have configured, and checks to see if you have any rules that allow an unrestricted source or destination, such as 0.0.0.0&#x2F;0. Having an unrestricted rules such as this, is not considered a best practice, as it is considered a security risk. And so you should aim to implement a tighter and more restrictive IP address range. However, some ports and protocols might be required to have an unrestricted setting, such as HTTP protective for web traffic on a web server. If you do have any secrets group roles that are exposed and fall within a yellow or red alert criteria, then it could lead to a security breach, allowing the intrusion of malicious activity, within your network and against your resources. When organizations are implementing security at the instance level using security groups, unrestricted access is often given to test or to help resolve incidents, to help identify where a problem might exist, and as a result, the correct and original source and destinations, are sometimes left exposed without intention. Trusted Advisor can help you identify these security groups, to make the necessary changes. By selecting this check, I can drill down into the different security groups, that have triggered the yellow or red status. As you can see from the screenshot, I’ve 13 security groups, that should be investigated. You may also notice that, the security groups listed have hyperlinks associated, and this will allow me to quickly select the security group which will take me directly to the configuration page, to change or modify the security group to make any alterations. If upon investigation I consider this cage group is configured correctly for the use intended, then I can choose to exclude the security group from any further reviews relating to this check. I just simply need to mark the security groups, and then select exclude and refresh. And this will remove the selected security group from any further reviews, carried out by this particular check. To then view the excluded items, I can just change the view from the included items to excluded items. I can then move these security groups back to the included group at any time. IAM use. The IAM use check simply ascertains if you’re using the identity and access management service. It recommends that you should have at least one user created to log in with, instead of operating and managing your AWS account using your route administrator account, which has the highest level of security privileges available. MFA on root account. Your root account has administrative level access to your AWS account. As a result, it is a very powerful account to use. And that such, logging in as the root account, should have additional levels of authentication, in addition to a password to verify the account. Added multi-factor authentication, MFA, to your root account, helps you protect your AWS account, so this check simply looks to see if you have activated MFA on your root account. MFA uses a random six digit number that is only available for a very short period of time before the number changes again, which is generated by an MFI device. There is no additional charge for this level of authentication, however, you will need your own MFA device, which can be a physical token or a virtual device. AWS provides a summary of all supported devices found here. Personally, I use Google Authenticator on my phone, because it is simple and easy to set up and configure. Before a user can authenticate with MFA, it must be configured and associated to the user from within IAM. Amazon EBS Public Snapshots. This check identifies if any of your elastic block store snapshots have been marked as public. When EBS snapshot is public, it is then accessible to all other AWS accounts and users within those accounts. With access to these snapshots, users can then access the data held within the snapshot. There may be circumstances where you need to allow other users or AWS accounts, access to specific snapshots. If this is the case, then he should mark the snapshot as private, and explicitly allow access on a per AWS account&#x2F;user level, rather than exposing all of the data to all accounts by marking it as public. For information on the elastic block store service, please see our existing course here. Amazon RDS Public Snapshots. This check performs exactly the same function as the Amazon EBS Public Snapshots but for your RDS snapshots instead of EBS. For more information on Amazon RDS, please see your existing course here. Service limit category checks. The checks within this category are used to assess when a service limit reaches 80% or more. Unfortunately, this doesn’t perform checks on all AWS services. As a recap from our previous lecture, it does support the following services and limits. It’s important to bear in mind that this list is changing all the time. AWS are constantly evolving and updating their services, and so over time, this list will change. For the most accurate and up-to-date list, please visit the link shown. If I look at a service from this list, such as Amazon Virtual Private Cloud, We can see that it will monitor the service limits of three different features relating to VPCs. These being elastic IP addresses, internet gateways and VPCs. So for each of these services or service features, you are allowed five per region. As a result, the service limit check will highlight if any of these thresholds get to four, which is 80%. The advantage of having this check, gives you enough time to either request an increased limit with AWS if possible or allowed, or you choose to simply reduce the number of AIPs, internet gateways or VPCs that you have. This may also force you to undertake some much needed housekeeping of your environment. I now want to perform a demonstration while I should provide an overview of the Trusted Advisor dashboard, and how to drill down into the issues or identified area. Within this demonstration, I will perform the following steps, navigate to AWS Trusted Advisor, provide an overview of the dashboard, drill down into the Trusted Advisor checks, identify and rectify the issues that are displayed, and refreshed Trusted Advisor to ensure the issues have been resolved. And then I’ll download the status of the checks as an Excel file for offline review. Okay, so I’m in my AWS Management Console, and if I scroll down to the management and governance section here, and I’ll be able to see Trusted Advisor just here. So if I select Trust Advisor, and that will take me to the Trusted Advisor dashboard which we can see here. Now we have our five categories our cost optimization, performance, security, full tolerance, and service limits. Now as I explained previously, I don’t have the enterprise or business support plans, so I’ll just have access to the free checks that are available. So there is six in security, and then all of the service limit checks. Now down here, the recommended actions, this will show all of the checks that I have access to. So it will be the six on the security and the 49 service limit checks here, and it will list them here. Now I’ll list them in a priority. So at the top here it is listed the one for action recommended, and then we have our investigation recommended here, and then we have lots of checks that are all absolutely fine. So there’s two items that I really need to check. Now here we can see, we have the orange triangle, with one investigation recommended, and over here and more importantly, we have one where the action is recommended. So we have an issue with a service limits and also a security issue as well. So let’s take a look at each of these to see if we can rectify them or the actions that we should take to try and rectify them. So firstly, the VPC. So let’s break this out a little bit to take a look. So we can see here that this check, checks for usage that is more than 80% of the VPC limit. Now on our alert criteria, we can see that if it’s yellow, then 80% of it has been reached, it turns red if a hundred percent of the limit is reached. So that tells me straight away that I’m unable to add any more VPCs in a specific region because I’m at a red alert and I’ve reached the maximum limit. So if I scroll down, I’ll be able to see exactly what region this is in, and we can see at the top here. So we have a red alert for the VPC service in EU West one. The limit amount was five and my current usage is five. So I can do two things, I can request a limit increase, and we can see here under recommended action, that if I click on request a limit increase, then it will take me straight to the support center page, where I can then request a service limit increase for the VPC. Or alternatively, I can go to my VPC configuration, in the EU West one Region and delete one of my VPCs. So if I swap over to VPC, and I’m in the region of EU West one, which has we know is where we have the issue, and I can see here that I have my five VPCs. So if I wanted to reduce these, I can simply select any of the VPCs that I want, and then go to actions and delete VPC, and that will take me down to four, which would be 80%, and I would come off the Radler, but I would go into the yellow because I would bet 80%. So like I say, you can either delete VPCs to reduce the current usage, down to a four, three, two whatever you need to, or request a limit increase if you do need all of these VPCs and would likely be needing more in that region. So that’s how we’d resolve the VPC check. Next up, we have our security groups, specific ports are restricted at a investigation required level. So let’s take a look at this. So this as we know, checks for any rules that allow unrestrictive access to specific ports. And if we look at the alert criteria, we’re at a yellow, so we have a security group that provides access to any other port that is unrestricted, that doesn’t fall into either the red or green categories. So let’s take a look at some of the VPCs that it’s detected. So it can see here, that 10 of the 44 security groups that I have, are meeting the investigation required category. So let’s go ahead and take a look at one of these security groups. Let me just pick this one for example, so I can select on the security group name, and it will take me straight to the configuration of that security group. Now, if we look at the details if we look at the inbound rules, we can see there that this is allowing SSH on port 22 from anywhere inbound, and the outbound rules are very open as well. So what we could do, we could edit these inbound rules, and change this from anywhere to just allow my IP address, and then save rules. Then if we go to the outbound, and say edit outbound rules, and again set the destination to only my IP address. If we save that. Now, if we go back to our Trusted Advisor, so as the launch, was it a security group name? So let me just highlight that check, now what I want to do is just refresh this check, to see if that is still an issue or to see if it has been resolved. So I can select the security group that in question, and go up to the check, and then say, refresh this check. So let’s do that now. Now we want to see if this is still an issue or if it’s been resolved. So as we can see it’s done a current refresh at the moment. Okay, so that’s refreshed, and we can see that that security group is no longer in the list, so we resolved the issue. So basically, I just went into the security group and removed the unrestricted access that it was granting from both the source and destination. Now I could do the same for each of the rest of these security groups, I can go into them, all the settings if need be, or leave them as they were, if that is how they were intended to be. And if they were supposed to have the open access and it’s not an issue, then I can simply select the checks and then select exclude and refresh again. No no, I can’t do this straight away because you have to wait five minutes before each refresh, but in another four minutes time, I will be able to simply exclude these from this check and they would move into the excluded items list. Okay, now the last thing I want to show you, is how to download the status of all the checks to an Excel file that you can then view offline. So at the top right-hand of the screen here, if you click on this download arrow, this will then download an Excel spreadsheet, and if we open that up, we can see here there’s a tab for every check, and it will print out the details for each of those checks, to allow you to view all of these issues offline outside of the management console. So here we have the security groups specific ports some restricted, and that we looked at just a moment ago, and we can see that we have all of the security groups that still have problems that security group IDs, and also the protocol status, et cetera. So that’s just another way of viewing your results of Trusted Advisor offline out of the management console. So that’s a very quick overview of the Trusted Advisor dashboard, the different categories and the checks, and how to look into some of those issues if you do have any alerts or investigation that’s required and how to resolve them.</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>Hello and welcome to this short lecture where I want to summarise some of the key elements of what we have covered throughout this introductory course.</p>
+<p>I started off by explaining what the service is and what it does, here I explained that: </p>
+<ul>
+<li><p>The main function of Trusted Advisor is to recommend improvements across your AWS account to help optimize your environment based on AWS best practices</p>
+</li>
+<li><p>Trusted Advisor focuses on 5 categories with a list of best practice checks in each:</p>
+</li>
+<li><ul>
+<li>Cost optimization </li>
+<li>Performance </li>
+<li>Security </li>
+<li>Fault Tolerance </li>
+<li>Service Limits</li>
+</ul>
+</li>
+<li><p>The list of available checks to your account is dependant on your AWS Support Plan</p>
+</li>
+<li><p>Business and Enterprise support can take full advantage of all the checks available</p>
+</li>
+<li><p>All other AWS accounts only have access to 6 free core checks in the Security category, plus the Service Limit checks.</p>
+</li>
+</ul>
+<p>The Security checks are:</p>
+<ul>
+<li>Security Groups - Specific Ports Unrestricted</li>
+<li>Amazon EBS Public Snapshots</li>
+<li>Amazon RDS Public Snapshots</li>
+<li>IAM Use</li>
+<li>MFA on root account</li>
+</ul>
+<p>There are a number of useful features within Trusted Advisor, these being:</p>
+<ul>
+<li>Trusted Advisor Notifications - This tracks your resource check changes and cost-saving estimates over the course of a week and e-mail you a report</li>
+<li>Exclude Items - This allows you to select specific resources to be excluded from appearing in the console within a specific check. </li>
+<li>Action Links - Action Links lead you on to remediate any issue identified</li>
+<li>Access Management - Using IAM you can grant different levels of access to Trusted Advisor</li>
+<li>Refresh - You can perform a manual refresh 5 minutes after the previous refresh against either individual checks or against all checks</li>
+</ul>
+<p>Following this, I focused on reviewing checks and taking appropriate action. </p>
+<ul>
+<li><p>A summary is provided for each category displaying how many checks require no action, how many need investigation, and how many should be looked at immediately</p>
+</li>
+<li><p>For every check that Trusted Advisor provides you will see:</p>
+</li>
+<li><ul>
+<li>A description </li>
+<li>Alert Criteria</li>
+<li>Recommended Action</li>
+<li>Additional Resources</li>
+</ul>
+</li>
+</ul>
+<p>This lecture also included a demonstration where I provided an overview of the dashboard and performed the following steps:</p>
+<ul>
+<li>Provided an overview of the dashboard</li>
+<li>Drilled down into the Trusted Advisor Checks</li>
+<li>Identified and rectified the issues that were displayed </li>
+<li>Refreshed Trusted Advisor to ensure the issues had been resolved</li>
+<li>Downloaded the status of the checks as an Excel file for offline review</li>
+</ul>
+<p>I also provided an overview of each of the core checks available to all AWS accounts.</p>
+<p>You should now have a greater understanding of what AWS Trusted Advisor is and does and how you can use it within your environment to optimize your infrastructure. It is a powerful tool especially if you do have a Business or Enterprise support plan to fully maximize its potential.</p>
+<h1 id="2What-is-AWS-Trusted-Advisor"><a href="#2What-is-AWS-Trusted-Advisor" class="headerlink" title="2What is AWS Trusted Advisor?"></a>2<strong>What is AWS Trusted Advisor?</strong></h1><p><a target="_blank" rel="noopener" href="https://aws.amazon.com/premiumsupport/technology/trusted-advisor/best-practice-checklist/">Best Practice Checklist</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html">Full list of IAM permissions</a></p>
+
     </div>
 
     
@@ -319,6 +477,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-AWS-Trusted-Advisor"><span class="nav-number">2.</span> <span class="nav-text">What is AWS Trusted Advisor?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reviewing-Checks-amp-Taking-Action"><span class="nav-number">3.</span> <span class="nav-text">Reviewing Checks &amp; Taking Action</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary"><span class="nav-number">4.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2What-is-AWS-Trusted-Advisor"><span class="nav-number">5.</span> <span class="nav-text">2What is AWS Trusted Advisor?</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -341,7 +500,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

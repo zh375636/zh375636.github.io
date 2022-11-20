@@ -20,13 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="Using AWS Identity Federation to Simplify Access at ScaleHello, my name is Stuart Scott and today I want to speak to you about AWS Identity Federation. I want to explain what it is, some of the AWS">
+<meta property="og:type" content="article">
 <meta property="og:title" content="AWS-Security-Specialty-Using-AWS-Identity-Federation-to-Simplify-Access-at-Scale-11">
 <meta property="og:url" content="https://example.com/2022/11/14/AWS-Security-Specialty-Using-AWS-Identity-Federation-to-Simplify-Access-at-Scale-11/index.html">
 <meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="Using AWS Identity Federation to Simplify Access at ScaleHello, my name is Stuart Scott and today I want to speak to you about AWS Identity Federation. I want to explain what it is, some of the AWS">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-14T17:51:58.000Z">
-<meta property="article:modified_time" content="2022-11-14T17:52:00.000Z">
+<meta property="article:modified_time" content="2022-11-20T02:58:42.000Z">
 <meta property="article:author" content="Hang Zhang">
 <meta name="twitter:card" content="summary">
 
@@ -208,9 +210,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-14 13:51:58 / Modified: 13:52:00" itemprop="dateCreated datePublished" datetime="2022-11-14T13:51:58-04:00">2022-11-14</time>
+              <time title="Created: 2022-11-14 13:51:58" itemprop="dateCreated datePublished" datetime="2022-11-14T13:51:58-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-19 22:58:42" itemprop="dateModified" datetime="2022-11-19T22:58:42-04:00">2022-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AWS-Security-Specialty/" itemprop="url" rel="index"><span itemprop="name">AWS-Security-Specialty</span></a>
+                </span>
             </span>
 
           
@@ -238,7 +255,55 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <span id="more"></span>
+
+<h1 id="Using-AWS-Identity-Federation-to-Simplify-Access-at-Scale"><a href="#Using-AWS-Identity-Federation-to-Simplify-Access-at-Scale" class="headerlink" title="Using AWS Identity Federation to Simplify Access at Scale"></a>Using AWS Identity Federation to Simplify Access at Scale</h1><p>Hello, my name is Stuart Scott and today I want to speak to you about AWS Identity Federation. I want to explain what it is, some of the AWS services that can be involved in federation and also highlight some scenarios where you might want to implement it.</p>
+<p>If you have any feedback on this course, positive or negative, it would be greatly appreciated if you can contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>.</p>
+<p>So, firstly, what is Identity Federation? </p>
+<p>It’s basically a method where two different providers can establish a level of trust allowing users to authenticate from one, which authorizes them to access resources in the other. During the federation process, one party would act as an Identity Provider, known as an IdP, and the other would be the Service Provider, an SP.  The identity provider authenticates the user, and the service provider controls access to their service or resources based on IdPs authentication.</p>
+<p>You’ve probably all been to websites where it presents you with a log in page, where you can either log in using existing credentials native for that service, or you might have an option to authenticate using credentials from a 3rd party provider, such as Facebook, Google, Twitter or LinkedIn etc. </p>
+<p>On the screen here you can see the login page for medium.com you can use existing credentials from identity providers including Google, Facebook, Apple, Twitter and Gmail to create a new Medium account, or log back in to Medium if you’ve already created an account. In this scenario, Medium would be the Service Provider.</p>
+<p>So if you didn’t have an account with Medium already, you could select one of these providers to create one. So as an example if you already had a Google account and were signed in with it, and selected ‘Sign in with Google’ you’d be presented with the following screen</p>
+<p>Now here Medium has detected that I didn’t have a Medium account associated with my current Google Account, you can see it says “Sorry, we didn’t recognize that account’, and so you are asked if you would like to create one. By selecting Sign up with Google, Medium authenticates my access via my Google credentials, and so trusting the Google IdP, and this enables me to create a new Medium account based off of that authentication. </p>
+<p>So in this example, Google was used as the Identity Provider to authenticate you to Medium with a new account. The next time I then need to log in to Medium, all I would have to do is select ‘Sign in with Google’ and as long as I were logged in to my Google account already, I would be logged straight into Medium with 1-click, and this directly correlates to the term ‘Single-Sign on’, or SSO. SSO relates to the method of signing in to one system, which can then be used to authenticate you into another without having to resupply additional credentials. </p>
+<p>Now, the process behind this is fairly simple, when the identity provider has been selected, and the user is authenticated by that provider, an assertion is sent back to the service provider, in this case Medium. And this assertion is a message that contains metadata and attributes about the user such as their username. This assertion allows the service provider to authorize access to their services.**<br>**</p>
+<p>So identity federation provides a great way to easily set up access control systems with flexibility and ease for the users and service providers. </p>
+<p>So using this same principle AWS has a variety of services and methods that allows you to access your AWS services via federated access, meaning you don’t need to have a specific identity &amp; access Management user configured in AWS if you already have a user directory that is managed elsewhere that could be used as an Identity Provider. </p>
+<p>Using many different identity standards, including OAuth 2.0, OIDC, which is OpenID Connect, and SAML 2.0, (Security Assertion Markup Language), AWS enables you to easily configure access for contractors and other 3rd parties, in addition to allowing scalable access to authenticate to your mobile and web applications.</p>
+<p>Let’s take a quick look at the definitions of these standards according to Wikipedia:</p>
+<p><strong>“OAuth</strong> <em>is an open standard for access delegation, commonly used as a way for Internet users to grant websites or applications access to their information on other websites but without giving them the passwords”</em> - Wikipedia</p>
+<p><strong>“OpenID Connect</strong> <em>is a simple identity layer on top of the OAuth 2.0 protocol, which allows computing clients to verify the identity of an end-user based on the authentication performed by an authorization server, as well as to obtain basic profile information about the end-user.”</em> - Wikipedia</p>
+<p><em>“</em><strong>Security Assertion Markup Language 2.0</strong> <em>(<em><strong>SAML 2.0</strong></em>) is a standard for exchanging authentication and authorization identities between security domains. SAML 2.0 is an XML-based protocol that uses security tokens containing assertions to pass information about a principal (usually an end user) between a SAML authority, named an Identity Provider, and a SAML consumer, named a Service Provider.” -</em> Wikipedia</p>
+<p>Now we have more of an understanding of federation, I want to take a high level look at some of the services offered by AWS and how they fit into AWS Identity Federation, including</p>
+<ul>
+<li>AWS Single Sign-On, known as SSO</li>
+<li>AWS Identity &amp; Access Management (IAM)</li>
+<li>And Amazon Cognito</li>
+</ul>
+<p>Now, by the name alone we can safely assume that this has something to do with federated access. </p>
+<p>This service has primarily been designed for users to easily access multiple accounts within their AWS Organization enabling a single sign-on approach negating the need to provide credentials for each account. For those unfamiliar with AWS Organizations, they provide a means of centrally managing and categorizing multiple AWS accounts that you own, bringing them together into a single organization, helping to maintain your AWS environment from a security, compliance, and account management perspective.</p>
+<p>You can either use the AWS SSO own built in user directory which allows you to create unique users based on e-mail addresses, or alternatively connect AWS SSO to one of the supporting identity providers, such as your own corporate MS Active Directory if you are using one. </p>
+<p>Either way, AWS SSO enables you to create different groups while leveraging the power of IAM roles and permissions allowing you to control what access users or groups have in specific AWS Accounts within your organization. </p>
+<p>When Users have been configured, they can connect via their own portal which will list all AWS accounts they have access to, along with roles they have access to adopt, and if they would like to access the Management console or use temporary credentials for AWS CLI access.</p>
+<p>AWS SSO can also be used to manage access to cloud-based apps using SAML 2.0 such as Office 365 and Salesforce. </p>
+<p>As I mentioned previously, Identity federation allows you to access and manage AWS resources even if you don’t have a user account within IAM. </p>
+<p>Whereas AWS SSO allows you to create a single sign-on approach to multiple accounts in your AWS organization using the in-built user directory or MS-AD, AWS IAM allows you to configure federated access to your AWS accounts and resources using different identity providers for each AWS account. Examples include both SAML 2.0 for enterprise federation using MS-AD, and OpenID Connect, classed as web identity federation, such as Google, PayPal and Amazon. As a result you could allow access to your environment using these Identity Providers instead of setting up users with a new identity within AWS IAM.</p>
+<p>The benefits of this is twofold. It minimizes the amount of administration required within IAM and it allows for a single sign-on solution. </p>
+<p>As a part of the configuration process to implement federated authentication, a trust relationship between the identity provider and your AWS account is established. AWS supports two types of identity providers, OpenID Connect, also often referred to as web identity federation, and SAML 2.0.</p>
+<p>Amazon Cognito has been built purely to enable the simplification of enabling secure authentication and access control for new and existing users accessing your web or mobile applications, rather than your AWS account. It not only integrates well with SAML 2.0 but also web identity federation as well. One of the biggest features of Amazon Cognito is that it has the capability to scale to millions of new users which is great when working with mobile applications.</p>
+<p>Cognito also allows you to use a custom portal allowing you to add a personalized sign-in page with branding and your own logo.</p>
+<p>There are 2 main components of Amazon Cognito, these being ‘User Pools’ and ‘Identity Pools’ and they perform different actions.</p>
+<p>User Pools are essentially a scalable user directory that allows new users to sign up, or existing users to log in to your mobile application using their native credentials from the user pool, or they can alternatively federate their access via a web or enterprise IdP. </p>
+<p>Identity Pools are different to user pools in that they actually provide you with the ability of accessing AWS resources called upon by your web or mobile app by using temporary credentials and the Security token service.</p>
+<p>So let me summarize the key difference between these 3 AWS options to implement federated access to AWS.</p>
+<ul>
+<li>AWS SSO allows you to create a Single sign-on approach to access multiple AWS accounts within an AWS Organization using a single identity provider for all.</li>
+<li>AWS IAM allows you to configure different OpenID or SAML identity providers for each of your AWS accounts.</li>
+<li>Amazon Cognito enables secure authentication to your web or mobile applications using both SAML 2.0 and web identity federation.</li>
+</ul>
+<p>That brings me to the end of this introductory course covering AWS identity Federation. You should now have a greater understanding of what it is and some of the services that can be used to implement different kinds of federated Access.</p>
+<p>If you have any feedback on this course, positive or negative, please send an e-mail to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>, your feedback is greatly appreciated. Thank you for your time and good luck with your continued learning of cloud computing. Thank you.</p>
+
     </div>
 
     
@@ -319,6 +384,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Using-AWS-Identity-Federation-to-Simplify-Access-at-Scale"><span class="nav-number">1.</span> <span class="nav-text">Using AWS Identity Federation to Simplify Access at Scale</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -341,7 +407,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
