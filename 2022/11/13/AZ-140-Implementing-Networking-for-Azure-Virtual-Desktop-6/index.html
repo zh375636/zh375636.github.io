@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Azure Virtual Desktop Networking Planning &amp; Implementation - IntroductionThanks for joining this course on Azure Virtual Desktops Network Architecture. As you’re prepping for the Azure Virtual Des">
+  <meta name="description" content="Azure Virtual Desktop Networking Planning &amp; Implementation - IntroductionThanks for joining this course on Azure Virtual Desktops Network Architecture. As you’re prepping for the Azure Virtual D">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AZ-140-Implementing-Networking-for-Azure-Virtual-Desktop-6">
 <meta property="og:url" content="https://example.com/2022/11/13/AZ-140-Implementing-Networking-for-Azure-Virtual-Desktop-6/index.html">
 <meta property="og:site_name" content="Hang&#39;s Blog">
-<meta property="og:description" content="Azure Virtual Desktop Networking Planning &amp; Implementation - IntroductionThanks for joining this course on Azure Virtual Desktops Network Architecture. As you’re prepping for the Azure Virtual Des">
+<meta property="og:description" content="Azure Virtual Desktop Networking Planning &amp; Implementation - IntroductionThanks for joining this course on Azure Virtual Desktops Network Architecture. As you’re prepping for the Azure Virtual D">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-13T22:20:18.000Z">
-<meta property="article:modified_time" content="2022-11-14T10:32:18.000Z">
+<meta property="article:modified_time" content="2022-11-20T23:19:36.000Z">
 <meta property="article:author" content="Hang Zhang">
 <meta name="twitter:card" content="summary">
 
@@ -218,8 +218,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-14 06:32:18" itemprop="dateModified" datetime="2022-11-14T06:32:18-04:00">2022-11-14</time>
+                <time title="Modified: 2022-11-20 19:19:36" itemprop="dateModified" datetime="2022-11-20T19:19:36-04:00">2022-11-20</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-140/" itemprop="url" rel="index"><span itemprop="name">AZ-140</span></a>
+                </span>
+            </span>
 
           
   
@@ -246,7 +255,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Azure-Virtual-Desktop-Networking-Planning-amp-Implementation-Introduction"><a href="#Azure-Virtual-Desktop-Networking-Planning-amp-Implementation-Introduction" class="headerlink" title="Azure Virtual Desktop Networking Planning &amp; Implementation - Introduction"></a>Azure Virtual Desktop Networking Planning &amp; Implementation - Introduction</h1><p>Thanks for joining this course on Azure Virtual Desktops Network Architecture. As you’re prepping for the Azure Virtual Desktop Certification or just brushing up on your skills, you will learn how to craft the best network solution for your environment. My name is Dean Cefola, and I’ve been in the IT industry for over 20 years. Today, I’m an Azure Principal Engineer at Microsoft and I’ve been working with Azure Virtual Desktop since before the beginning. I hope that you’ll find this course entertaining and educational so please rate this course when you’re done and let me know how I did.</p>
+        <span id="more"></span>
+
+<h1 id="Azure-Virtual-Desktop-Networking-Planning-amp-Implementation-Introduction"><a href="#Azure-Virtual-Desktop-Networking-Planning-amp-Implementation-Introduction" class="headerlink" title="Azure Virtual Desktop Networking Planning &amp; Implementation - Introduction"></a>Azure Virtual Desktop Networking Planning &amp; Implementation - Introduction</h1><p>Thanks for joining this course on Azure Virtual Desktops Network Architecture. As you’re prepping for the Azure Virtual Desktop Certification or just brushing up on your skills, you will learn how to craft the best network solution for your environment. My name is Dean Cefola, and I’ve been in the IT industry for over 20 years. Today, I’m an Azure Principal Engineer at Microsoft and I’ve been working with Azure Virtual Desktop since before the beginning. I hope that you’ll find this course entertaining and educational so please rate this course when you’re done and let me know how I did.</p>
 <p>Who should attend this course? Well, anyone who’s planning on taking the Azure Virtual Desktop Specialty exam and anyone who’s interested in learning more on how to properly deploy an AVD environment. Speaking of this course, we’ll cover the AVD Networking Requirements, implementing your Azure virtual network solutions. We’ll talk about your Hybrid connectivity options to the internet and your on-premises networks. We will implement and manage network security, which will also cover the Azure Bastion service so you can manage your AVD session hosts, and we’ll talk about monitoring and troubleshooting your network connectivity.</p>
 <p>To get the most out of this course, you should have an administrator-level understanding of Azure Cloud Services of Networking, Network Security, and Network Monitoring. Feedback is how we can all continue to improve. So if you have any feedback, positive or negative, you can let me know by rating this course at the end, as well as contacting us directly at <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>.</p>
 <p>One last thing before we get started. Everything I’ll be showing in this course is up to date at the time of filming. However, the cloud does change over time. So if you find this material becomes out of date, please let us know at <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a> so we can keep things updated. With all that out of the way, let’s get started.</p>
@@ -399,7 +410,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

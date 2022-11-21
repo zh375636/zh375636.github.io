@@ -20,13 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="IntroductionWelcome to “Introduction to Azure Networking”. I’m Guy Hummel. In this course, I’ll start with an overview of Azure Virtual Networks (or VNets), which are at the heart of Azure networkin">
+<meta property="og:type" content="article">
 <meta property="og:title" content="AZ-900-Introduction-to-Azure-Networking-11">
 <meta property="og:url" content="https://example.com/2022/11/18/AZ-900-Introduction-to-Azure-Networking-11/index.html">
 <meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="IntroductionWelcome to “Introduction to Azure Networking”. I’m Guy Hummel. In this course, I’ll start with an overview of Azure Virtual Networks (or VNets), which are at the heart of Azure networkin">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-19T00:29:35.000Z">
-<meta property="article:modified_time" content="2022-11-19T00:29:36.000Z">
+<meta property="article:modified_time" content="2022-11-20T04:28:42.000Z">
 <meta property="article:author" content="Hang Zhang">
 <meta name="twitter:card" content="summary">
 
@@ -208,9 +210,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-18 20:29:35 / Modified: 20:29:36" itemprop="dateCreated datePublished" datetime="2022-11-18T20:29:35-04:00">2022-11-18</time>
+              <time title="Created: 2022-11-18 20:29:35" itemprop="dateCreated datePublished" datetime="2022-11-18T20:29:35-04:00">2022-11-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-20 00:28:42" itemprop="dateModified" datetime="2022-11-20T00:28:42-04:00">2022-11-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-900/" itemprop="url" rel="index"><span itemprop="name">AZ-900</span></a>
+                </span>
             </span>
 
           
@@ -238,7 +255,49 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <span id="more"></span>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Welcome to “Introduction to Azure Networking”. I’m Guy Hummel.</p>
+<p>In this course, I’ll start with an overview of Azure Virtual Networks (or VNets), which are at the heart of Azure networking. Then I’ll go over some of the different ways to connect a VNet to other networks, including on-premises networks. Finally, I’ll explain private endpoints, which allow you to connect a virtual network to various Azure services in a private and secure manner.</p>
+<p>To get the most from this course, you should already have some basic knowledge of Azure. If you don’t have any experience with Azure, then you can take our “Overview of Azure Services” course. You should also have some knowledge of basic networking concepts, such as IP addresses.</p>
+<p>We’d love to get your feedback on this course, so please give it a rating when you’re finished. Thanks!</p>
+<h1 id="Azure-Virtual-Networks"><a href="#Azure-Virtual-Networks" class="headerlink" title="Azure Virtual Networks"></a>Azure Virtual Networks</h1><p>Computers in on-premises datacenters communicate with each other over local area networks. The physical details of these networks are often quite complex, including cables, hubs, routers, wireless devices, and more. Azure datacenters have this sort of physical networking infrastructure, too, but you don’t have to worry about it because Microsoft takes care of it. You still have to do some network configuration, though. We’ll get into the details of that in a minute.</p>
+<p>The Azure equivalent of a local area network is called an Azure virtual network (or VNet). It’s not quite the same, though. First of all, many different customers can create VNets in the same Azure datacenter, so these VNets have to be isolated from one another. Second, you can only put some types of Azure resources in a VNet.</p>
+<p>Some examples of what you can put in a VNet are virtual machines, firewalls, and Azure Kubernetes clusters. Some examples of what you can’t put in a VNet are Azure SQL Database instances, Azure Storage containers, and Azure Active Directory tenants. All of these types of resources can communicate with each other whether they’re inside the same virtual network or not, but how they communicate with each other is a bit different depending on where they are. I’ll talk about that in another lesson.</p>
+<p>Okay, now let’s get back to what you need to configure. When you create a VNet, you need to specify its IP address space and any subnets you want it to have. You also need to give it a name, the subscription it should go in, and the region where you want it to be located. But those are parameters you need to configure for almost all Azure resources, not just virtual networks.</p>
+<p>The IP address space tells Azure what pool of addresses it can choose from when assigning an IP address to a resource in a VNet. In most cases, you should specify a range of private, non-routable IP addresses. That is, you should use one of the special IP address ranges that have been designated for use inside private networks that cannot be used to directly connect to the internet. If you don’t know what range to use, that’s okay because Azure will assign one by default.</p>
+<p>You also need to define at least one subnetwork (or “subnet” for short) in your VNet. You can use subnets to divide your resources into logical groupings. Resources that frequently communicate with each other should usually be put in the same subnet. You can also apply different security rules to different subnets. For each subnet, you need to specify which portion of the virtual network’s IP address space should be reserved for that subnet’s resources.</p>
+<p>Resources in different subnets can still communicate with each other, though, because Azure creates a default route that allows all resources in a VNet to find each other. It also creates a default route that tells resources how to reach the internet.</p>
+<p>If you want to override the default ones or add new routes, you can create your own custom routes, also known as user-defined routes. For example, you could add a firewall to the virtual network and then route all internet-traffic through the firewall.</p>
+<p>Speaking of the internet, how do resources in a VNet normally communicate over the internet? By default, all outbound traffic from a VNet to the internet is allowed. But if you want a resource in a VNet to be able to receive inbound traffic from the internet, then you need to assign a public IP address to it. Public IP addresses are precious resources, so you need to pay for them. You also have to make sure you have good security on any resource that has a public IP address because opening it up to the internet makes it more vulnerable.</p>
+<p>Although I’ve been talking a lot about IP addresses, you’d normally want to refer to virtual machines and other resources by a name rather than an IP address. To make this work, you need a name resolution service that translates between names and IP addresses. There are three ways to do this.</p>
+<p>First, if you only need the resources in a VNet to communicate with each other using names, then you can use Azure-provided name resolution, which is something you get automatically when you create a VNet.</p>
+<p>If your resources need to resolve the names of systems in another virtual network, then you can use Azure DNS private zones. Azure DNS is a domain name system service that you can use to manage name resolution for all of your systems, whether they’re on Azure or not. It’s much more sophisticated than Azure-provided name resolution. Azure DNS private zones is a component of Azure DNS that only handles private virtual networks on Azure. That is, it handles name resolution for systems that aren’t visible on the internet.</p>
+<p>Finally, if the resources in your virtual network need to resolve the names of systems in an on-premises environment, then you can use your own DNS server. Alternatively, you can use Azure DNS because it’s capable of acting as a full DNS service.</p>
+<p>And that’s it for this quick overview of Azure virtual networks.</p>
+<h1 id="Connecting-to-Other-Networks"><a href="#Connecting-to-Other-Networks" class="headerlink" title="Connecting to Other Networks"></a>Connecting to Other Networks</h1><p>Once you’ve created an Azure virtual network, you’ll usually want to connect it to resources that are outside of it. For example, its resources might need to communicate with resources in another Azure virtual network. You could set up an internet connection between the two, but a much faster and more secure way to do it is to use VNet peering. You just need to configure one peering connection in each direction between the two VNets, and then resources will be able to communicate with each other as if they’re on the same network.</p>
+<p>If the two VNets are in different regions, then you can use global VNet peering. Regardless of whether the VNets are in the same region or not, the peering connection goes over the Microsoft backbone network rather than over the internet, which is why it’s faster and more secure. What if you want to connect your VNet to an on-premises network? There are two ways to do that: either use a VPN or use Azure ExpressRoute. The main difference between the two is that a VPN (or Virtual Private Network) traverses the internet, while ExpressRoute is a direct connection between your on-premises network and Azure.</p>
+<p>Since traffic on a VPN goes over the internet, it’s encrypted to prevent other parties from viewing it. To implement a VPN, you can deploy an Azure VPN Gateway in your virtual network. This’ll take care of the Azure side of the connection, but you’ll need something on the other side of the connection, too. What you put on the other end depends on the type of connection you’re setting up.</p>
+<p>If you want to connect to an on-premises location, then you can set up a site-to-site connection. To make this work, you need to install a VPN device in your on-premises location and give it a public IP address. You need to let Azure know about this VPN device by defining it as a local network gateway. A site-to-site connection is a good solution if you have many devices in the same location that need to have access to your Azure virtual network.</p>
+<p>If you want to connect individual devices, such as mobile phones, to your virtual network, then you can set up point-to-site connections. This method works differently from the site-to-site method because there’s no VPN device on the user’s side. Instead, you have to install a certificate on each mobile device. The certificate is used to authenticate with the Azure VPN Gateway. In most cases, you can use the same VPN Gateway for both site-to-site and point-to-site connections. In fact, you can only have one VPN Gateway in each VNet, so you have to use the same one. The only situation where you can’t support both site-to-site and point-to-site connections from the same gateway is when you need to configure a different type of routing for each.</p>
+<p>There are two types of routing: policy-based and route-based. In almost every case, route-based is the right option. Not only is it more robust, but it’s the only supported option for point-to-site connections. If, for some reason, you need to configure policy-based routing for a site-to-site connection, then you won’t be able to support point-to-site connections from the same VPN Gateway. And since you can only have one VPN Gateway per virtual network, you’d have to create a second virtual network to support the other VPN Gateway. This isn’t a common scenario, though, so you probably won’t have to deal with it.</p>
+<p>If you don’t want your connection to go over the internet or you need more bandwidth, then you can set up a direct connection using Azure ExpressRoute. Be aware that this is a much more expensive solution, though.</p>
+<p>There are four ways to connect to Azure using ExpressRoute. It all comes down to where you have your IT infrastructure. Many organizations put at least some of their IT systems in a colocation facility, which is a datacenter that rents space to multiple customers.</p>
+<p>If you’re fortunate enough to have some of your IT infrastructure in a colocation facility that Microsoft has designated as an ExpressRoute location, then you can connect to Microsoft’s network directly. You do this by connecting to a Microsoft Enterprise Edge device in the facility. This option is called ExpressRoute Direct, and it has the highest bandwidth of the four options. It can support connections of 10 gigabits or 100 gigabits per second.</p>
+<p>Alternatively, if you’re in an ExpressRoute location (otherwise known as a peering location or a “cloud exchange”), but you need less than 10 gigabits per second of bandwidth, then you can connect to Microsoft’s network through a service provider. They can provide options between 50 megabits and 10 gigabits per second. The service provider can also take care of some of the management tasks involved with having this sort of connection.</p>
+<p>If you’re not in that sort of facility, then you have a couple of other options. Some organizations use an IPVPN provider to connect their branch offices and datacenters to their core network. This is called any-to-any connectivity. If your organization uses an IPVPN provider, then you can make the Microsoft network look like one of your branch offices and connect to it that way. The final option is to rent a leased line from a point-to-point Ethernet provider to connect your datacenter to an ExpressRoute location.</p>
+<p>Regardless of which option you choose, there are a couple of other interesting things you can do with ExpressRoute. First, you can also use it to connect to Microsoft 365, although having a direct connection to Microsoft 365 isn’t typically needed as much as it is for Azure.</p>
+<p>Second, if you have ExpressRoute connections from branch offices in different parts of the world, you can use ExpressRoute Global Reach to connect those branch offices to each other through the Microsoft network rather than through the internet. You have to pay extra to do this, though.</p>
+<p>And that’s it for connecting to other networks.</p>
+<h1 id="Private-Endpoints"><a href="#Private-Endpoints" class="headerlink" title="Private Endpoints"></a>Private Endpoints</h1><p>Some Azure resources, such as Azure SQL Database instances and Azure Storage containers, can’t be put in a virtual network directly, but there is an indirect way to bring them into a VNet. The solution is called a private endpoint. It’s simply a private IP address in a virtual network that’s connected to an Azure resource that’s outside of the VNet.</p>
+<p>If you don’t use a private endpoint, then the resources in your VNet have to connect to the external resource using a public endpoint. For example, a virtual machine in your VNet would access an Azure Storage container using the container’s public endpoint. The problem with public endpoints is that they’re exposed to the internet, which is a security risk. If you created a private endpoint for your Azure Storage container, you could disable its public endpoint. Then the only way to access your storage container would be to connect to it over the Microsoft backbone network from your VNet.</p>
+<p>I should mention that not all Azure resources can be connected to a private endpoint. A resource has to be hosted by a service that supports something called Private Link. This is what’s actually used to connect your private endpoint to the service.</p>
+<p>Here’s how all of this works. Suppose you have a virtual machine that’s running an application that needs to store its data in a SQL Database instance called DB1. Let’s say the VM is in a subnet called Sub1 in a virtual network called Vnet1. First, you’d create a private endpoint called, let’s say, PrivateSqlEndpoint. You’d configure it to be in the Sub1 subnet in Vnet1, and you’d configure its target to be DB1. Next, you’d need to go into DB1’s configuration and set its connectivity method to private endpoint. You could also disable public access to DB1 so the database would only be accessible through a private endpoint.</p>
+<p>Once this was set up, the application on the VM could access DB1 by connecting to the IP address of PrivateSqlEndpoint. Behind the scenes, the Private Link service would send the traffic over Microsoft’s backbone network from the private endpoint to DB1. This is such a handy solution that Microsoft has even made it possible to set up a custom Private Link service for your own application.</p>
+<p>Private endpoints are also a great solution when you have other networks connected to a VNet. For example, if your VNet is peered to another VNet, then resources in the peered VNet can access an external Azure resource through a private endpoint as well. This even works when you have an on-premises environment connected to your VNet.</p>
+<p>And that’s it for this introduction to Azure networking. Please give this course a rating, and if you have any questions or comments, please let us know. Thanks!</p>
+<h1 id="1Introduction"><a href="#1Introduction" class="headerlink" title="1Introduction"></a>1<strong>Introduction</strong></h1><p><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/overview-of-azure-services/">Course: Overview of Azure Services</a></p>
+
     </div>
 
     
@@ -319,6 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Azure-Virtual-Networks"><span class="nav-number">2.</span> <span class="nav-text">Azure Virtual Networks</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Connecting-to-Other-Networks"><span class="nav-number">3.</span> <span class="nav-text">Connecting to Other Networks</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Private-Endpoints"><span class="nav-number">4.</span> <span class="nav-text">Private Endpoints</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1Introduction"><span class="nav-number">5.</span> <span class="nav-text">1Introduction</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -341,7 +401,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

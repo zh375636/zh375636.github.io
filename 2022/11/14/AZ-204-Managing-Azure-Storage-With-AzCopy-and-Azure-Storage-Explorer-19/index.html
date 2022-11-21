@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Managing Azure Storage With AzCopy and Azure Storage ExplorerWelcome to Managing Azure Storage with AzCopy and Azure Storage Explorer. I’m Guy Hummel. To get the most from this course, you should alre">
+  <meta name="description" content="Managing Azure Storage With AzCopy and Azure Storage ExplorerWelcome to Managing Azure Storage with AzCopy and Azure Storage Explorer. I’m Guy Hummel. To get the most from this course, you should al">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AZ-204-Managing-Azure-Storage-With-AzCopy-and-Azure-Storage-Explorer-19">
 <meta property="og:url" content="https://example.com/2022/11/14/AZ-204-Managing-Azure-Storage-With-AzCopy-and-Azure-Storage-Explorer-19/index.html">
 <meta property="og:site_name" content="Hang&#39;s Blog">
-<meta property="og:description" content="Managing Azure Storage With AzCopy and Azure Storage ExplorerWelcome to Managing Azure Storage with AzCopy and Azure Storage Explorer. I’m Guy Hummel. To get the most from this course, you should alre">
+<meta property="og:description" content="Managing Azure Storage With AzCopy and Azure Storage ExplorerWelcome to Managing Azure Storage with AzCopy and Azure Storage Explorer. I’m Guy Hummel. To get the most from this course, you should al">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-14T15:14:08.000Z">
-<meta property="article:modified_time" content="2022-11-15T04:30:58.000Z">
+<meta property="article:modified_time" content="2022-11-20T23:28:58.000Z">
 <meta property="article:author" content="Hang Zhang">
 <meta name="twitter:card" content="summary">
 
@@ -218,8 +218,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-15 00:30:58" itemprop="dateModified" datetime="2022-11-15T00:30:58-04:00">2022-11-15</time>
+                <time title="Modified: 2022-11-20 19:28:58" itemprop="dateModified" datetime="2022-11-20T19:28:58-04:00">2022-11-20</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-204/" itemprop="url" rel="index"><span itemprop="name">AZ-204</span></a>
+                </span>
+            </span>
 
           
   
@@ -246,7 +255,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Managing-Azure-Storage-With-AzCopy-and-Azure-Storage-Explorer"><a href="#Managing-Azure-Storage-With-AzCopy-and-Azure-Storage-Explorer" class="headerlink" title="Managing Azure Storage With AzCopy and Azure Storage Explorer"></a>Managing Azure Storage With AzCopy and Azure Storage Explorer</h1><p>Welcome to Managing Azure Storage with AzCopy and Azure Storage Explorer. I’m Guy Hummel. To get the most from this course, you should already have some knowledge of Azure Storage. I’ll show you two different ways of working with Azure Storage. If you prefer a graphical user interface, then you can use Azure Storage Explorer, which is an application that runs on Windows, MacOS, and Linux. If you’re comfortable with the command line, then you can use AzCopy. Let’s start with Azure Storage Explorer. First you need to download it from Microsoft. The URL for this page is in the transcript below. Select your operating system and click the ‘Download’ button. On a Mac, you just need to open the zip file and then run the Storage Explorer application. On Windows and Linux, you need to run an installation program. The first thing you’ll need to do is sign into your Azure Storage account. Unless you’re using a special Azure environment, leave this set to Azure and click ‘Next’.</p>
+        <span id="more"></span>
+
+<h1 id="Managing-Azure-Storage-With-AzCopy-and-Azure-Storage-Explorer"><a href="#Managing-Azure-Storage-With-AzCopy-and-Azure-Storage-Explorer" class="headerlink" title="Managing Azure Storage With AzCopy and Azure Storage Explorer"></a>Managing Azure Storage With AzCopy and Azure Storage Explorer</h1><p>Welcome to Managing Azure Storage with AzCopy and Azure Storage Explorer. I’m Guy Hummel. To get the most from this course, you should already have some knowledge of Azure Storage. I’ll show you two different ways of working with Azure Storage. If you prefer a graphical user interface, then you can use Azure Storage Explorer, which is an application that runs on Windows, MacOS, and Linux. If you’re comfortable with the command line, then you can use AzCopy. Let’s start with Azure Storage Explorer. First you need to download it from Microsoft. The URL for this page is in the transcript below. Select your operating system and click the ‘Download’ button. On a Mac, you just need to open the zip file and then run the Storage Explorer application. On Windows and Linux, you need to run an installation program. The first thing you’ll need to do is sign into your Azure Storage account. Unless you’re using a special Azure environment, leave this set to Azure and click ‘Next’.</p>
 <p>It opens a browser tab and asks you to authenticate. I’m already logged in, so once I select my account, I’m authenticated and I can close this tab and go back to Storage Explorer. Over here, you can choose your subscription and your storage account. I have an account called camonthlyreports and a blob container in it called monthly-reports. When I click on the container, it shows me the blobs in it. I don’t have any blobs in this container which is why nothing shows up here. I’ll upload some files into it so we have something to work with. You can either upload a whole folder or individual files. If I were to choose folder, then it would create a virtual folder inside the container, which isn’t what I want in this case. So, I’m going to upload the files that are in the folder. I can select all of the files by holding down the ‘Shift’ key when I click the bottom one. That way they’ll all get uploaded at the same time.</p>
 <p>Now all of the files are in the container. If you right click on one of the files, you can see that there are lots of options for what we can do with it. For example, we could copy it, or delete it, or change its access tier, such as if we wanted to move it to the cool tier. I’ll show you how to copy a blob to another container. First, let’s create a second container so we have a place to copy the blob to. If we right-click on blob containers, there’s an option to create a blob container. Let’s call it Copies. Now, if we go back to the first container, we can right-click on a file and select ‘Copy’. It’s not obvious that we did anything, but if we go to the second container, we can click the ‘Paste’ button and it’ll copy that blob into this container. You might have noticed something interesting down here. It says ‘Copy AzCopy Command to Clipboard’. It turns out that Azure Storage Explorer uses the AzCopy command when it needs to copy blobs. And if you want to see the actual command, you can click here.</p>
 <p>Now it’s on the clipboard, so we have to paste it somewhere to see it. I’ll paste it to a text editor. It kind of looks like gibberish, doesn’t it? Well it’s not as bad as it looks. The basic command is just ‘azcopy copy’ then the URL of the source and the URL of the destination. So, why do you have to put ‘copy’ after ‘azcopy’? That’s because the AzCopy command can also do other things besides just copying files, so the name of the utility is a bit misleading. For example, if you wanted to delete a blob, you’d start the command with azcopy remove. Okay, so why are the URLs so long? That’s because the URL contains a shared access signature, or SAS. It’s the part after the question mark. A SAS gives access to resources in a storage account for a limited amount of time. You can generate a SAS yourself if you want to give someone access to a particular resource for, let’s say, the next week. But Storage Explorer generated a SAS for the source and a SAS for the destination for you.</p>
@@ -362,7 +373,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

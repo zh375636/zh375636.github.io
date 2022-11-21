@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="IntroductionHello, and welcome to this course on Managing Security to Azure Virtual Desktop. My name is Shabaz Darr and I’ll be your instructor for this course. I am an Azure Virtual Desktop Specialis">
+  <meta name="description" content="IntroductionHello, and welcome to this course on Managing Security to Azure Virtual Desktop. My name is Shabaz Darr and I’ll be your instructor for this course. I am an Azure Virtual Desktop Special">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AZ-140-Managing-Security-on-Azure-Virtual-Desktop-17">
 <meta property="og:url" content="https://example.com/2022/11/13/AZ-140-Managing-Security-on-Azure-Virtual-Desktop-17/index.html">
 <meta property="og:site_name" content="Hang&#39;s Blog">
-<meta property="og:description" content="IntroductionHello, and welcome to this course on Managing Security to Azure Virtual Desktop. My name is Shabaz Darr and I’ll be your instructor for this course. I am an Azure Virtual Desktop Specialis">
+<meta property="og:description" content="IntroductionHello, and welcome to this course on Managing Security to Azure Virtual Desktop. My name is Shabaz Darr and I’ll be your instructor for this course. I am an Azure Virtual Desktop Special">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-13T22:59:14.000Z">
-<meta property="article:modified_time" content="2022-11-14T10:33:02.000Z">
+<meta property="article:modified_time" content="2022-11-20T23:20:38.000Z">
 <meta property="article:author" content="Hang Zhang">
 <meta name="twitter:card" content="summary">
 
@@ -218,8 +218,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-14 06:33:02" itemprop="dateModified" datetime="2022-11-14T06:33:02-04:00">2022-11-14</time>
+                <time title="Modified: 2022-11-20 19:20:38" itemprop="dateModified" datetime="2022-11-20T19:20:38-04:00">2022-11-20</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-140/" itemprop="url" rel="index"><span itemprop="name">AZ-140</span></a>
+                </span>
+            </span>
 
           
   
@@ -246,8 +255,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Hello, and welcome to this course on Managing Security to Azure Virtual Desktop. My name is Shabaz Darr and I’ll be your instructor for this course. I am an Azure Virtual Desktop Specialist, and have been working with Microsoft cloud technologies for several years, specifically with Azure Virtual Desktop since its inception, and have multiple Azure-focused certifications. My contact information is available on screen. Please feel free to reach out to me with any questions, comments, or concerns, and I’ll be happy to discuss these with you.</p>
-<p>For any other issues, you can always get in touch with us here at Cloud Academy by sending an email to <a href="mailto:&#115;&#x75;&#112;&#112;&#111;&#x72;&#x74;&#64;&#99;&#x6c;&#111;&#x75;&#x64;&#97;&#x63;&#97;&#x64;&#101;&#x6d;&#x79;&#x2e;&#99;&#111;&#x6d;">&#115;&#x75;&#112;&#112;&#111;&#x72;&#x74;&#64;&#99;&#x6c;&#111;&#x75;&#x64;&#97;&#x63;&#97;&#x64;&#101;&#x6d;&#x79;&#x2e;&#99;&#111;&#x6d;</a> and one of our cloud experts will follow up with you. This course is intended for people that are planning on taking the Azure Virtual Desktop Specialty exam, and anyone who is interested in learning how to deploy an Azure Virtual Desktop environment.</p>
+        <span id="more"></span>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Hello, and welcome to this course on Managing Security to Azure Virtual Desktop. My name is Shabaz Darr and I’ll be your instructor for this course. I am an Azure Virtual Desktop Specialist, and have been working with Microsoft cloud technologies for several years, specifically with Azure Virtual Desktop since its inception, and have multiple Azure-focused certifications. My contact information is available on screen. Please feel free to reach out to me with any questions, comments, or concerns, and I’ll be happy to discuss these with you.</p>
+<p>For any other issues, you can always get in touch with us here at Cloud Academy by sending an email to <a href="mailto:&#115;&#x75;&#112;&#x70;&#111;&#x72;&#x74;&#x40;&#x63;&#x6c;&#111;&#117;&#x64;&#x61;&#99;&#x61;&#100;&#101;&#109;&#121;&#x2e;&#99;&#x6f;&#x6d;">&#115;&#x75;&#112;&#x70;&#111;&#x72;&#x74;&#x40;&#x63;&#x6c;&#111;&#117;&#x64;&#x61;&#99;&#x61;&#100;&#101;&#109;&#121;&#x2e;&#99;&#x6f;&#x6d;</a> and one of our cloud experts will follow up with you. This course is intended for people that are planning on taking the Azure Virtual Desktop Specialty exam, and anyone who is interested in learning how to deploy an Azure Virtual Desktop environment.</p>
 <p>By the end of this course, you will have knowledge on <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-security-azure-virtual-desktop-2356/planning-and-implementing-conditional-access-policies-for-connections-to-azure-virtual-desktop/">planning and implementing Conditional Access policies</a> for connections to Azure Virtual Desktop. <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-security-azure-virtual-desktop-2356/planning-and-implementing-multi-factor-authentication-in-azure-virtual-desktop/">Planning and implementing multi-factor authentication in Azure Virtual Desktop</a>. <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-security-azure-virtual-desktop-2356/managing-security-by-using-microsoft-defender-for-cloud/">Managing security by using Microsoft Defender for Cloud</a>, formerly known as Azure Security Center. <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-security-azure-virtual-desktop-2356/configuring-microsoft-defender-antivirus-for-session-hosts/">Configuring Microsoft Defender Antivirus for session hosts</a>. To get the most from this course, you should have an administrator-level understanding of Azure Cloud services.</p>
 <p>Feedback on course content hosted by Cloud Academy is always appreciated and encouraged, as it allows us as trainers to improve, which helps all of our students taking courses in the future. If you have any feedback, positive or negative, it would be greatly appreciated if you could contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. When I created this course, all information was current. If you notice any updates or corrections, please reach out to us. Thank you.</p>
 <h1 id="Planning-and-Implementing-Conditional-Access-Policies-for-Connections-to-Azure-Virtual-Desktop"><a href="#Planning-and-Implementing-Conditional-Access-Policies-for-Connections-to-Azure-Virtual-Desktop" class="headerlink" title="Planning and Implementing Conditional Access Policies for Connections to Azure Virtual Desktop"></a>Planning and Implementing Conditional Access Policies for Connections to Azure Virtual Desktop</h1><p>Welcome to this module on planning and implementing conditional access policies for connections to <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/designing-azure-virtual-desktop-architecture-2046/azure-virtual-desktop-overview/">Azure Virtual Desktop</a> based on requirements. In this module, we’ll cover the following topics. What are the requirements to implement conditional access policies with Azure Virtual Desktop? We will then walk-through a demo to create a conditional access policy with session settings.</p>
@@ -379,7 +390,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

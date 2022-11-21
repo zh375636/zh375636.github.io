@@ -20,13 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="Azure Virtual Machine Availability and Scalability SolutionsVirtual machines have gone from being revolutionary to being a standard part of nearly every organization’s infrastructure. Now containers">
+<meta property="og:type" content="article">
 <meta property="og:title" content="AZ-900-Azure-Virtual-Machine-Availability-and-Scalability-Solutions-8">
 <meta property="og:url" content="https://example.com/2022/11/18/AZ-900-Azure-Virtual-Machine-Availability-and-Scalability-Solutions-8/index.html">
 <meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="Azure Virtual Machine Availability and Scalability SolutionsVirtual machines have gone from being revolutionary to being a standard part of nearly every organization’s infrastructure. Now containers">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-19T00:29:31.000Z">
-<meta property="article:modified_time" content="2022-11-19T00:29:32.000Z">
+<meta property="article:modified_time" content="2022-11-20T04:29:16.000Z">
 <meta property="article:author" content="Hang Zhang">
 <meta name="twitter:card" content="summary">
 
@@ -208,9 +210,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-18 20:29:31 / Modified: 20:29:32" itemprop="dateCreated datePublished" datetime="2022-11-18T20:29:31-04:00">2022-11-18</time>
+              <time title="Created: 2022-11-18 20:29:31" itemprop="dateCreated datePublished" datetime="2022-11-18T20:29:31-04:00">2022-11-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-20 00:29:16" itemprop="dateModified" datetime="2022-11-20T00:29:16-04:00">2022-11-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-900/" itemprop="url" rel="index"><span itemprop="name">AZ-900</span></a>
+                </span>
             </span>
 
           
@@ -238,7 +255,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <span id="more"></span>
+
+<h1 id="Azure-Virtual-Machine-Availability-and-Scalability-Solutions"><a href="#Azure-Virtual-Machine-Availability-and-Scalability-Solutions" class="headerlink" title="Azure Virtual Machine Availability and Scalability Solutions"></a>Azure Virtual Machine Availability and Scalability Solutions</h1><p>Virtual machines have gone from being revolutionary to being a standard part of nearly every organization’s infrastructure. Now containers are the revolutionary technology, but VMs are still very important. Virtual machines give you full control over not only the software that you want to run but also the operating system. This is especially useful when you’re migrating existing servers to the cloud. When you use VMs to run mission-critical applications, you need to architect the solution so that it will keep running even if there’s a hardware failure, a system update, or a spike in demand.</p>
+<p>First, let’s look at high availability, which means that an application will continue to run even if there’s a hardware failure or another event that would normally cause the application to go down. Microsoft offers a few different services to help with high availability. The first one is called an availability set. Microsoft doesn’t recommend using availability sets anymore because they have better offerings now, but I’ll still tell you about them because you’ll likely still see references to them.</p>
+<p>An availability set is a group of virtual machines that’s designed to handle both planned and unplanned VM downtime. Planned downtime is when Azure updates the infrastructure underlying your VMs, and this update requires a reboot of the VMs. Unplanned downtime is when a VM goes down unexpectedly, such as when it has a critical hardware failure.</p>
+<p>To handle planned downtime, an availability set groups its VMs into what are called update domains. Azure will only perform planned maintenance on one update domain at a time. That way, while the VMs in a particular update domain are being rebooted, the VMs in the other update domains will keep running. You can configure up to 20 update domains when you create an availability set.</p>
+<p>Unplanned downtime is handled in a similar way by using fault domains. Each fault domain has a separate power source and network switch. This limits the downtime caused by hardware failures. For example, if there’s a power failure in one fault domain, the VMs in the other fault domains should keep running because they don’t use the same power source. The maximum number of fault domains you can use depends on the region where your VMs reside. In many regions, the maximum is three, but in some, it’s only two.</p>
+<p>Each VM is in both an update domain and a fault domain. Azure will distribute your VMs into these domains automatically. To qualify for Microsoft’s 99.95 percent uptime guarantee under its service level agreement, you need to have at least two VMs, at least two fault domains, and at least two update domains. </p>
+<p>Using availability sets will give your applications a high level of availability, but they won’t protect against a data center failure. That’s where availability zones come in. They’re an alternative to availability sets. An availability zone is a physically separate zone within an Azure region. So, if one zone goes down, the other zones will likely stay up. Not every region offers availability zones, but in the ones that do, there are always three of them.</p>
+<p>To take advantage of this capability, you should deploy multiple replicas of your application’s VMs in different availability zones. You can specify a particular availability zone when you create each VM.</p>
+<p>However, even this level of redundancy won’t protect you against an outage that affects an entire region. Regional outages aren’t common, but they can happen. So, if you need higher availability than a single region can provide, you’ll have to use multiple regions. In most cases, it’d be sufficient to simply back up your VMs to another region. Then if the region where your VMs are deployed goes down, you can temporarily bring up replacement VMs in the second region by using your backups. If you can’t tolerate almost any downtime, then you could have VMs running in the backup region all the time.</p>
+<p>When choosing a backup region, you should take into account regional pairs. Nearly every one of Azure’s regions is paired with another region. Some <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> services replicate their data across regional pairs if you choose certain options. For example, if you choose the geo-redundant storage option for an Azure Storage account, then your data will be replicated to the paired region.</p>
+<p>Virtual machines don’t replicate across regional pairs, but you should still consider storing your VM backups in the paired region. That’s a best practice because Microsoft tries to ensure that at least one region in each pair is available. In the event of a multi-regional outage, Microsoft will prioritize the recovery of one region in each pair, so your safest option for a backup region is the paired region.</p>
+<p>All right, now that we’ve covered availability, let’s move on to how you can configure your application to handle spikes in demand. This is referred to as scalability.</p>
+<p>The simplest way to scale is to switch an individual VM to a larger size. This is known as vertical scaling. It’s easy to do, but there are limits to that approach. Horizontal scaling, on the other hand, is when you scale by adding more VMs. It’s more complicated to scale horizontally, though.</p>
+<p>First, you need to architect your application so it can run across multiple identical machines. Ideally, you should make that tier of your application stateless. That is, the VMs should not store any data locally. Otherwise, the application wouldn’t scale well because client requests would be tied to particular VMs. So the application should save data in a shared external datastore.</p>
+<p>Next, you need to create a scale set. This is similar to an availability set because the VMs are distributed across fault domains and update domains, but you can do a lot more with it.</p>
+<p>You can configure a scale set to automatically increase or decrease the number of VMs in it according to rules you define. For example, you can create a rule that says if the average CPU usage goes above 80%, then add 3 more VMs. You can also use disk and network metrics in your rules. If you need to scale based on guest operating system metrics, such as available memory or number of processes, then you can enable the diagnostics extension. This will even let you use custom metrics based on something specific in your application logs. </p>
+<p>You’ll also usually want to set limits on how far a scale set can scale up or down by configuring a maximum and minimum number of VMs. Considering that a scale set can have up to 1,000 VMs in it, setting a maximum is a good idea. Note that if you’re using custom VM images rather than Azure’s standard images, then the maximum is 600 VMs per scale set.</p>
+<p>By default, a scale set is deployed in a single zone. This is called a zonal scale set. But for the ultimate in availability and scalability, you can deploy a scale set across availability zones. This is called a regional scale set. It evenly distributes VMs across the three availability zones in a region. This distribution happens both when you create the scale set and also when it automatically adds or removes VMs during scaling operations. As you can see, combining scale sets with availability zones gives you the best of both worlds.</p>
+<p>And that’s it for virtual machine availability and scalability.</p>
+
     </div>
 
     
@@ -319,6 +357,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Azure-Virtual-Machine-Availability-and-Scalability-Solutions"><span class="nav-number">1.</span> <span class="nav-text">Azure Virtual Machine Availability and Scalability Solutions</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -341,7 +380,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

@@ -214,8 +214,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-15 00:32:02" itemprop="dateModified" datetime="2022-11-15T00:32:02-04:00">2022-11-15</time>
+                <time title="Modified: 2022-11-20 19:29:34" itemprop="dateModified" datetime="2022-11-20T19:29:34-04:00">2022-11-20</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-204/" itemprop="url" rel="index"><span itemprop="name">AZ-204</span></a>
+                </span>
+            </span>
 
           
   
@@ -242,7 +251,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Configuring-Azure-Blob-Storage-Lifecycle-Management"><a href="#Configuring-Azure-Blob-Storage-Lifecycle-Management" class="headerlink" title="Configuring Azure Blob Storage Lifecycle Management"></a>Configuring Azure Blob Storage Lifecycle Management</h1><p>Welcome to “Configuring Azure Blob Storage Lifecycle Management”. I’m Guy Hummel. To get the most from this course, you should already have some knowledge of Azure Blob Storage. In this short course, I’ll explain how you can save money by setting up lifecycle management policies to automatically move your blobs to less expensive access tiers when certain conditions are met.</p>
+          <span id="more"></span>
+
+<h1 id="Configuring-Azure-Blob-Storage-Lifecycle-Management"><a href="#Configuring-Azure-Blob-Storage-Lifecycle-Management" class="headerlink" title="Configuring Azure Blob Storage Lifecycle Management"></a>Configuring Azure Blob Storage Lifecycle Management</h1><p>Welcome to “Configuring Azure Blob Storage Lifecycle Management”. I’m Guy Hummel. To get the most from this course, you should already have some knowledge of Azure Blob Storage. In this short course, I’ll explain how you can save money by setting up lifecycle management policies to automatically move your blobs to less expensive access tiers when certain conditions are met.</p>
 <p>First, let’s review Azure Blob Storage access tiers. The Hot tier is designed for blobs that will be accessed frequently. This is the default tier. It has the most expensive storage costs but the lowest access costs.</p>
 <p>The Cool tier has lower storage costs but higher access costs. That’s why you should only put infrequently accessed blobs in the Cool tier. If you were to put frequently accessed blobs in this tier, then the access costs would very quickly outweigh the lower storage costs. Also, you have to leave data in the Cool tier for at least 30 days. If you delete it or move it to a different tier in less than 30 days, you’ll have to pay an early removal penalty.</p>
 <p>The Archive tier has the lowest storage costs and the highest access costs. It’s intended for data that you rarely need to access, such as long-term backups. To avoid an early deletion penalty, you need to leave data in the Archive tier for at least 180 days. It’s significantly different from the hot and cool tiers because you can’t access your data right away when you need it. That’s because it uses offline storage. So you have to wait for your data to be rehydrated before you can access it. This process can take up to 15 hours.</p>
@@ -321,8 +332,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-15 00:30:58" itemprop="dateModified" datetime="2022-11-15T00:30:58-04:00">2022-11-15</time>
+                <time title="Modified: 2022-11-20 19:28:58" itemprop="dateModified" datetime="2022-11-20T19:28:58-04:00">2022-11-20</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-204/" itemprop="url" rel="index"><span itemprop="name">AZ-204</span></a>
+                </span>
+            </span>
 
           
   
@@ -349,7 +369,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Managing-Azure-Storage-With-AzCopy-and-Azure-Storage-Explorer"><a href="#Managing-Azure-Storage-With-AzCopy-and-Azure-Storage-Explorer" class="headerlink" title="Managing Azure Storage With AzCopy and Azure Storage Explorer"></a>Managing Azure Storage With AzCopy and Azure Storage Explorer</h1><p>Welcome to Managing Azure Storage with AzCopy and Azure Storage Explorer. I’m Guy Hummel. To get the most from this course, you should already have some knowledge of Azure Storage. I’ll show you two different ways of working with Azure Storage. If you prefer a graphical user interface, then you can use Azure Storage Explorer, which is an application that runs on Windows, MacOS, and Linux. If you’re comfortable with the command line, then you can use AzCopy. Let’s start with Azure Storage Explorer. First you need to download it from Microsoft. The URL for this page is in the transcript below. Select your operating system and click the ‘Download’ button. On a Mac, you just need to open the zip file and then run the Storage Explorer application. On Windows and Linux, you need to run an installation program. The first thing you’ll need to do is sign into your Azure Storage account. Unless you’re using a special Azure environment, leave this set to Azure and click ‘Next’.</p>
+          <span id="more"></span>
+
+<h1 id="Managing-Azure-Storage-With-AzCopy-and-Azure-Storage-Explorer"><a href="#Managing-Azure-Storage-With-AzCopy-and-Azure-Storage-Explorer" class="headerlink" title="Managing Azure Storage With AzCopy and Azure Storage Explorer"></a>Managing Azure Storage With AzCopy and Azure Storage Explorer</h1><p>Welcome to Managing Azure Storage with AzCopy and Azure Storage Explorer. I’m Guy Hummel. To get the most from this course, you should already have some knowledge of Azure Storage. I’ll show you two different ways of working with Azure Storage. If you prefer a graphical user interface, then you can use Azure Storage Explorer, which is an application that runs on Windows, MacOS, and Linux. If you’re comfortable with the command line, then you can use AzCopy. Let’s start with Azure Storage Explorer. First you need to download it from Microsoft. The URL for this page is in the transcript below. Select your operating system and click the ‘Download’ button. On a Mac, you just need to open the zip file and then run the Storage Explorer application. On Windows and Linux, you need to run an installation program. The first thing you’ll need to do is sign into your Azure Storage account. Unless you’re using a special Azure environment, leave this set to Azure and click ‘Next’.</p>
 <p>It opens a browser tab and asks you to authenticate. I’m already logged in, so once I select my account, I’m authenticated and I can close this tab and go back to Storage Explorer. Over here, you can choose your subscription and your storage account. I have an account called camonthlyreports and a blob container in it called monthly-reports. When I click on the container, it shows me the blobs in it. I don’t have any blobs in this container which is why nothing shows up here. I’ll upload some files into it so we have something to work with. You can either upload a whole folder or individual files. If I were to choose folder, then it would create a virtual folder inside the container, which isn’t what I want in this case. So, I’m going to upload the files that are in the folder. I can select all of the files by holding down the ‘Shift’ key when I click the bottom one. That way they’ll all get uploaded at the same time.</p>
 <p>Now all of the files are in the container. If you right click on one of the files, you can see that there are lots of options for what we can do with it. For example, we could copy it, or delete it, or change its access tier, such as if we wanted to move it to the cool tier. I’ll show you how to copy a blob to another container. First, let’s create a second container so we have a place to copy the blob to. If we right-click on blob containers, there’s an option to create a blob container. Let’s call it Copies. Now, if we go back to the first container, we can right-click on a file and select ‘Copy’. It’s not obvious that we did anything, but if we go to the second container, we can click the ‘Paste’ button and it’ll copy that blob into this container. You might have noticed something interesting down here. It says ‘Copy AzCopy Command to Clipboard’. It turns out that Azure Storage Explorer uses the AzCopy command when it needs to copy blobs. And if you want to see the actual command, you can click here.</p>
 <p>Now it’s on the clipboard, so we have to paste it somewhere to see it. I’ll paste it to a text editor. It kind of looks like gibberish, doesn’t it? Well it’s not as bad as it looks. The basic command is just ‘azcopy copy’ then the URL of the source and the URL of the destination. So, why do you have to put ‘copy’ after ‘azcopy’? That’s because the AzCopy command can also do other things besides just copying files, so the name of the utility is a bit misleading. For example, if you wanted to delete a blob, you’d start the command with azcopy remove. Okay, so why are the URLs so long? That’s because the URL contains a shared access signature, or SAS. It’s the part after the question mark. A SAS gives access to resources in a storage account for a limited amount of time. You can generate a SAS yourself if you want to give someone access to a particular resource for, let’s say, the next week. But Storage Explorer generated a SAS for the source and a SAS for the destination for you.</p>
@@ -403,9 +425,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-14 11:13:27 / Modified: 19:32:32" itemprop="dateCreated datePublished" datetime="2022-11-14T11:13:27-04:00">2022-11-14</time>
+              <time title="Created: 2022-11-14 11:13:27" itemprop="dateCreated datePublished" datetime="2022-11-14T11:13:27-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-20 19:31:52" itemprop="dateModified" datetime="2022-11-20T19:31:52-04:00">2022-11-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-204/" itemprop="url" rel="index"><span itemprop="name">AZ-204</span></a>
+                </span>
             </span>
 
           
@@ -433,7 +470,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><object data="2.pdf" type="application/pdf" width="100%" height="600"></object></p>
+          <span id="more"></span>
+<p><object data="2.pdf" type="application/pdf" width="100%" height="600"></object></p>
 
       
     </div>
@@ -484,8 +522,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-15 00:29:10" itemprop="dateModified" datetime="2022-11-15T00:29:10-04:00">2022-11-15</time>
+                <time title="Modified: 2022-11-20 19:26:52" itemprop="dateModified" datetime="2022-11-20T19:26:52-04:00">2022-11-20</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-204/" itemprop="url" rel="index"><span itemprop="name">AZ-204</span></a>
+                </span>
+            </span>
 
           
   
@@ -512,8 +559,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Course-Introduction"><a href="#Course-Introduction" class="headerlink" title="Course Introduction"></a>Course Introduction</h1><p>Hi there. Welcome to Introduction to Azure Storage. My name is Thomas Mitchell and I’ll be taking you through this course.</p>
-<p>I’m an Azure instructor at Cloud Academy and I have over 25 years of IT experience, several of those with cloud technologies. If you have any questions about this course, feel free to connect with me on LinkedIn, or send an email to <a href="mailto:&#x73;&#x75;&#x70;&#112;&#111;&#114;&#116;&#64;&#99;&#108;&#x6f;&#117;&#x64;&#97;&#99;&#x61;&#100;&#x65;&#109;&#x79;&#46;&#99;&#x6f;&#x6d;">&#x73;&#x75;&#x70;&#112;&#111;&#114;&#116;&#64;&#99;&#108;&#x6f;&#117;&#x64;&#97;&#99;&#x61;&#100;&#x65;&#109;&#x79;&#46;&#99;&#x6f;&#x6d;</a>.</p>
+          <span id="more"></span>
+
+<h1 id="Course-Introduction"><a href="#Course-Introduction" class="headerlink" title="Course Introduction"></a>Course Introduction</h1><p>Hi there. Welcome to Introduction to Azure Storage. My name is Thomas Mitchell and I’ll be taking you through this course.</p>
+<p>I’m an Azure instructor at Cloud Academy and I have over 25 years of IT experience, several of those with cloud technologies. If you have any questions about this course, feel free to connect with me on LinkedIn, or send an email to <a href="mailto:&#x73;&#117;&#112;&#x70;&#x6f;&#x72;&#116;&#x40;&#99;&#108;&#x6f;&#x75;&#x64;&#x61;&#x63;&#x61;&#x64;&#x65;&#x6d;&#121;&#46;&#x63;&#x6f;&#x6d;">&#x73;&#117;&#112;&#x70;&#x6f;&#x72;&#116;&#x40;&#99;&#108;&#x6f;&#x75;&#x64;&#x61;&#x63;&#x61;&#x64;&#x65;&#x6d;&#121;&#46;&#x63;&#x6f;&#x6d;</a>.</p>
 <p>This course is intended for those who wish to learn about the basics of Microsoft Azure storage.</p>
 <p>We’re going to start things off with an introduction to azure storage. You’ll learn about the core storage services in Azure and about the different storage account types that are available. You also get to see a demonstration that shows you how to create a storage account in Microsoft Azure.</p>
 <p>We’ll then take a look at the different storage services in a little more detail. We will start with blob storage, where you will learn what it is and what it offers. Next, will dive into Azure Files.</p>
@@ -711,9 +760,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-14 11:12:15 / Modified: 11:12:16" itemprop="dateCreated datePublished" datetime="2022-11-14T11:12:15-04:00">2022-11-14</time>
+              <time title="Created: 2022-11-14 11:12:15" itemprop="dateCreated datePublished" datetime="2022-11-14T11:12:15-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-20 19:33:14" itemprop="dateModified" datetime="2022-11-20T19:33:14-04:00">2022-11-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-204/" itemprop="url" rel="index"><span itemprop="name">AZ-204</span></a>
+                </span>
             </span>
 
           
@@ -741,7 +805,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <span id="more"></span>
+
       
     </div>
 
@@ -791,8 +856,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-15 00:12:24" itemprop="dateModified" datetime="2022-11-15T00:12:24-04:00">2022-11-15</time>
+                <time title="Modified: 2022-11-20 19:27:08" itemprop="dateModified" datetime="2022-11-20T19:27:08-04:00">2022-11-20</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-204/" itemprop="url" rel="index"><span itemprop="name">AZ-204</span></a>
+                </span>
+            </span>
 
           
   
@@ -819,7 +893,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Course-Introduction"><a href="#Course-Introduction" class="headerlink" title="Course Introduction"></a>Course Introduction</h1><p>Aloha, I’m David Gaynes. And I have been developing .NET and cloud software for more than 20 years. I spent some time at Microsoft, and I’ve written a book or two in the past as well. This course is intended for software developers who want to learn how to implement <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/azure-functions-overview/">Azure Functions</a> as a part of their cloud software design. You don’t need any specific background to get something out of the course, but it will certainly help if you understand event driven programming, what servers and APIs are in general and if you have experience with C#, JSON and how to create a project in Visual Studio.</p>
+          <span id="more"></span>
+
+<h1 id="Course-Introduction"><a href="#Course-Introduction" class="headerlink" title="Course Introduction"></a>Course Introduction</h1><p>Aloha, I’m David Gaynes. And I have been developing .NET and cloud software for more than 20 years. I spent some time at Microsoft, and I’ve written a book or two in the past as well. This course is intended for software developers who want to learn how to implement <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-azure-functions-990/azure-functions-overview/">Azure Functions</a> as a part of their cloud software design. You don’t need any specific background to get something out of the course, but it will certainly help if you understand event driven programming, what servers and APIs are in general and if you have experience with C#, JSON and how to create a project in Visual Studio.</p>
 <p>Azure Functions are little bits of your application logic that live in the cloud. You can think of them in the same way that you think of any API endpoint, meaning you can get to an <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> Function using HTTP. You just call them whenever you need to run that logic. The course will include how to activate, or what we call trigger, your Azure Functions, how to pass data to and from them and also how to tie different Azure Functions together.</p>
 <p>Note that this course covers Azure Functions 2.0 and up. As is typical with Microsoft, there were several breaking changes from V1 to V2. So if you have used Azure Functions V1 in the past, then, obviously, there are some places where the material in this course won’t match what you are used to.</p>
 <p>For any additional help, just email <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. And please rate my course when you’re finished. Thanks! And on we go.</p>
@@ -963,9 +1039,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-14 11:10:37 / Modified: 11:10:38" itemprop="dateCreated datePublished" datetime="2022-11-14T11:10:37-04:00">2022-11-14</time>
+              <time title="Created: 2022-11-14 11:10:37" itemprop="dateCreated datePublished" datetime="2022-11-14T11:10:37-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-20 19:32:34" itemprop="dateModified" datetime="2022-11-20T19:32:34-04:00">2022-11-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-204/" itemprop="url" rel="index"><span itemprop="name">AZ-204</span></a>
+                </span>
             </span>
 
           
@@ -993,7 +1084,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <span id="more"></span>
+
       
     </div>
 
@@ -1035,9 +1127,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-14 11:09:43 / Modified: 23:56:20" itemprop="dateCreated datePublished" datetime="2022-11-14T11:09:43-04:00">2022-11-14</time>
+              <time title="Created: 2022-11-14 11:09:43" itemprop="dateCreated datePublished" datetime="2022-11-14T11:09:43-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-20 19:25:42" itemprop="dateModified" datetime="2022-11-20T19:25:42-04:00">2022-11-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-204/" itemprop="url" rel="index"><span itemprop="name">AZ-204</span></a>
+                </span>
             </span>
 
           
@@ -1065,7 +1172,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Greetings! Welcome to the Cloud Academy Microsoft Azure Design Solutions using Platform Services course! I am delighted to have you join me on what is bound to be yet another educational and delightful adventure into the world of Microsoft Azure. </p>
+          <span id="more"></span>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Greetings! Welcome to the Cloud Academy Microsoft Azure Design Solutions using Platform Services course! I am delighted to have you join me on what is bound to be yet another educational and delightful adventure into the world of Microsoft Azure. </p>
 <p>First I will let you know a bit about myself before I get into the course outline. My name is Jonathan. I am one of the course developers with Cloud Academy. I work professionally as a technical consultant specializing in DevOps, data engineering, and security. I am also a former high school teacher, so it is a treat to get back into teaching all you lovely people about technology.</p>
 <p>So enough about me, let’s get into this course. Who is this course for exactly? This course is also for anyone looking to improve their knowledge of Azure platform solutions in the fields mentioned above. If you happen to be a software engineer, a product manager, a CTO, or just someone who happens to be trying to build a product using Microsoft Azure, then this course could save you a lot of time and money as you discover Azure’s powerful product toolset.</p>
 <p>So what exactly are the prerequisites for this course then - what do I expect you to know in order to understand the material? Well, not too much actually. You don’t need to be a programmer or have a deep knowledge of computer science. The course will focus mostly on explaining Microsoft Azure systems and how to use the Azure user interface. You should have a general understanding of the domains related to each product category. You will need a basic understanding of terms like “Internet of Things,” “Machine Learning,” “Messaging Queue,” and, “File Encoder.” If you have no idea what any of these things are, this course may be premature for you.</p>
@@ -1267,9 +1376,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-14 11:08:32 / Modified: 11:08:34" itemprop="dateCreated datePublished" datetime="2022-11-14T11:08:32-04:00">2022-11-14</time>
+              <time title="Created: 2022-11-14 11:08:32" itemprop="dateCreated datePublished" datetime="2022-11-14T11:08:32-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-20 19:33:36" itemprop="dateModified" datetime="2022-11-20T19:33:36-04:00">2022-11-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-204/" itemprop="url" rel="index"><span itemprop="name">AZ-204</span></a>
+                </span>
             </span>
 
           
@@ -1297,7 +1421,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <span id="more"></span>
+
       
     </div>
 
@@ -1339,9 +1464,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-14 11:07:58 / Modified: 23:32:16" itemprop="dateCreated datePublished" datetime="2022-11-14T11:07:58-04:00">2022-11-14</time>
+              <time title="Created: 2022-11-14 11:07:58" itemprop="dateCreated datePublished" datetime="2022-11-14T11:07:58-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-20 19:28:10" itemprop="dateModified" datetime="2022-11-20T19:28:10-04:00">2022-11-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-204/" itemprop="url" rel="index"><span itemprop="name">AZ-204</span></a>
+                </span>
             </span>
 
           
@@ -1369,7 +1509,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Welcome to “Building Containers with Azure DevOps”. My name is Thomas Mitchell and I’ll be taking you through this course. </p>
+          <span id="more"></span>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Welcome to “Building Containers with Azure DevOps”. My name is Thomas Mitchell and I’ll be taking you through this course. </p>
 <p>I’m an Azure Instructor at Cloud Academy and I have over 25 years of IT experience, several of those with cloud technologies. If you have any questions, feel free to connect with me on LinkedIn, or send an email to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>.</p>
 <p>This course is intended for DevOps professionals who wish to learn how to design and implement, through the use of containers, strategies for developing application code and infrastructure that allow for continuous integration, testing, delivery, monitoring, and feedback.</p>
 <p>To get the most from this course, you should have a basic understanding of the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> platform and of container concepts.</p>
@@ -1582,7 +1724,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

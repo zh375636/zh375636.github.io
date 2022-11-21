@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="IntroductionWelcome to Implementing Azure Network Security. My name is Thomas Mitchell and I’ll be taking you through this course. I’m an Azure trainer at Cloud Academy and I have over 25 years of dee">
+  <meta name="description" content="IntroductionWelcome to Implementing Azure Network Security. My name is Thomas Mitchell and I’ll be taking you through this course. I’m an Azure trainer at Cloud Academy and I have over 25 years of d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AZ-500-Implementing-Azure-Network-Security-13">
 <meta property="og:url" content="https://example.com/2022/11/15/AZ-500-Implementing-Azure-Network-Security-13/index.html">
 <meta property="og:site_name" content="Hang&#39;s Blog">
-<meta property="og:description" content="IntroductionWelcome to Implementing Azure Network Security. My name is Thomas Mitchell and I’ll be taking you through this course. I’m an Azure trainer at Cloud Academy and I have over 25 years of dee">
+<meta property="og:description" content="IntroductionWelcome to Implementing Azure Network Security. My name is Thomas Mitchell and I’ll be taking you through this course. I’m an Azure trainer at Cloud Academy and I have over 25 years of d">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-15T14:11:39.000Z">
-<meta property="article:modified_time" content="2022-11-19T18:24:54.000Z">
+<meta property="article:modified_time" content="2022-11-20T23:11:36.000Z">
 <meta property="article:author" content="Hang Zhang">
 <meta name="twitter:card" content="summary">
 
@@ -218,8 +218,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-19 14:24:54" itemprop="dateModified" datetime="2022-11-19T14:24:54-04:00">2022-11-19</time>
+                <time title="Modified: 2022-11-20 19:11:36" itemprop="dateModified" datetime="2022-11-20T19:11:36-04:00">2022-11-20</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-500/" itemprop="url" rel="index"><span itemprop="name">AZ-500</span></a>
+                </span>
+            </span>
 
           
   
@@ -246,7 +255,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Welcome to Implementing Azure Network Security. My name is Thomas Mitchell and I’ll be taking you through this course. I’m an Azure trainer at Cloud Academy and I have over 25 years of deep IT experience, several of those with cloud technologies. If you have any questions on this course, feel free to connect with me on LinkedIn or send an email to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. This course is intended for IT professionals who are interested in earning Azure certification and for those who work with <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Microsoft Azure</a> on a daily basis. To get the most from this course, you should have at least a basic understanding of Azure network resources, such as <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/virtual-network/vnet-intro-1/">virtual networks</a>, Azure firewalls, and network security groups.</p>
+        <span id="more"></span>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Welcome to Implementing Azure Network Security. My name is Thomas Mitchell and I’ll be taking you through this course. I’m an Azure trainer at Cloud Academy and I have over 25 years of deep IT experience, several of those with cloud technologies. If you have any questions on this course, feel free to connect with me on LinkedIn or send an email to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. This course is intended for IT professionals who are interested in earning Azure certification and for those who work with <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Microsoft Azure</a> on a daily basis. To get the most from this course, you should have at least a basic understanding of Azure network resources, such as <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/virtual-network/vnet-intro-1/">virtual networks</a>, Azure firewalls, and network security groups.</p>
 <p>Throughout this course, we’ll cover topics such as virtual network connectivity, network security group configuration, and Azure firewall configuration. We’ll also cover the Azure Front Door Service and how to configure application security groups. We’ll round out the course by covering the configuration of remote access management via just-in-time access and we’ll cover tools that are used to configure baselines. By the time you complete this course, you should have a good understanding of how to implement Azure network security. We’d love to get your feedback on this course, so please give it a rating when you’re finished. If you’re ready to learn about implementing Azure network security, let’s get started.</p>
 <h1 id="Azure-Virtual-Networks"><a href="#Azure-Virtual-Networks" class="headerlink" title="Azure Virtual Networks"></a>Azure Virtual Networks</h1><p>The Azure virtual network, or VNET, is the key piece of <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-network-security/introduction/">Azure security services</a>. A virtual network is really just a logical isolation of Azure’s cloud network that’s been carved out and dedicated to your specific subscription. Virtual networks allow you to securely connect many different Azure resources to one another and VNETs can also be connected to physical on-prem networks over the internet via site-to-site VPNs.</p>
 <p><a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Microsoft Azure</a> also supports dedicated WAN link connectivity from Azure VNETs to on-prem networks through Azure’s ExpressEoute offering. With ExpressRoute, the connection between Azure and the on-prem site uses a dedicated connection that does not ride over the public internet. This creates a more secure and more robust connection between an Azure virtual network and the physical on-prem network.</p>
@@ -538,7 +549,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
