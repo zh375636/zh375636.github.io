@@ -20,13 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="IntroductionWelcome to “Configuring Azure Kubernetes Service”. My name’s Guy Hummel, and I’m a Microsoft Certified Azure Expert. If you have any questions, feel free to connect with me on LinkedIn and">
+<meta property="og:type" content="article">
 <meta property="og:title" content="AZ-104-Configuring-Azure-Kubernetes-Service-AKS-20">
 <meta property="og:url" content="https://example.com/2022/11/18/AZ-104-Configuring-Azure-Kubernetes-Service-AKS-20/index.html">
 <meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="IntroductionWelcome to “Configuring Azure Kubernetes Service”. My name’s Guy Hummel, and I’m a Microsoft Certified Azure Expert. If you have any questions, feel free to connect with me on LinkedIn and">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-19T00:22:11.000Z">
-<meta property="article:modified_time" content="2022-11-19T00:22:12.000Z">
+<meta property="article:modified_time" content="2022-11-22T15:42:04.000Z">
 <meta property="article:author" content="Hang Zhang">
 <meta name="twitter:card" content="summary">
 
@@ -208,9 +210,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-18 20:22:11 / Modified: 20:22:12" itemprop="dateCreated datePublished" datetime="2022-11-18T20:22:11-04:00">2022-11-18</time>
+              <time title="Created: 2022-11-18 20:22:11" itemprop="dateCreated datePublished" datetime="2022-11-18T20:22:11-04:00">2022-11-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-22 11:42:04" itemprop="dateModified" datetime="2022-11-22T11:42:04-04:00">2022-11-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-104/" itemprop="url" rel="index"><span itemprop="name">AZ-104</span></a>
+                </span>
             </span>
 
           
@@ -238,7 +255,61 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Welcome to “Configuring Azure Kubernetes Service”. My name’s Guy Hummel, and I’m a Microsoft Certified Azure Expert. If you have any questions, feel free to connect with me on LinkedIn and send me a message, or send an email to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>.</p>
+<p>This course is focused on how to get a Kubernetes cluster up and running on Azure. It does not cover all of the details of how Kubernetes works because that’s a very big topic, and it’s not necessary to know all of those details to configure a basic Kubernetes cluster.</p>
+<p>Having said that, this course does start with a brief overview of what Kubernetes does and what a Kubernetes cluster looks like. After that, I’ll give you a demo of how to create a cluster using AKS. Finally, I’ll show you how to manage a cluster using the kubectl command.</p>
+<p>To get the most from this course, you should have some general IT knowledge. It would also be helpful to have some experience with Linux. If you want to do the demos yourself, as well, then you’ll need to have an Azure account. If you don’t already have one, then you can create a free trial account.</p>
+<p>To save you the trouble of typing in the commands shown in this course, I’ve put them in a readme file in a GitHub <a target="_blank" rel="noopener" href="https://github.com/cloudacademy/configuring-aks">repository</a>. You can find a link to the repository at the bottom of the Overview tab below this video.</p>
+<p>We’d love to get your feedback on this course, so please give it a rating when you’re finished.</p>
+<p>Now, if you’re ready to learn how to create a Kubernetes cluster on Azure, then let’s get started.</p>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>As you probably know, containers are becoming the preferred way to build, test, and deploy applications. A container typically includes an application plus all of the third-party packages it needs. Containers are somewhat like virtual machines except they don’t include the operating system. This makes it easy to deploy them because they’re very lightweight compared to virtual machines. In fact, containers run on virtual machines.</p>
+<p>If your entire application is in a single container, then it’s very easy to run it on Azure. But running a single instance of a container is usually not sufficient. Most production applications need to be both scalable and highly available, so you need to run multiple copies of your container on multiple virtual machines.</p>
+<p>Furthermore, it’s becoming a common practice to break an application up into multiple microservices that run in separate containers. When you combine this with the need for high availability and scalability, the number of containers you need to manage can be overwhelming.</p>
+<p>The solution is to use a container orchestrator that takes care of the underlying technical details for you. By far the most popular orchestrator is Kubernetes, which is an open-source solution.</p>
+<p>Kubernetes lets you create clusters of virtual machines that run containers. Each virtual machine is called a node, and each node runs one or more pods. Each pod typically contains one container. The cluster also contains a control plane, which manages the nodes and pods.</p>
+<p>This is a very basic overview. Kubernetes has all kinds of features that help with storage, networking, security, and management. Despite the fact that Kubernetes is designed to simplify container deployments, it is quite a complex system, so it can take a bit of work to get it installed and running on a new cluster.</p>
+<p>Fortunately, Microsoft has made it much easier to do this by using Azure Kubernetes Service, or AKS for short. With AKS, you can create and configure a Kubernetes cluster quite easily. I’ll show you how in the next video.</p>
+<h1 id="Creating-a-Cluster"><a href="#Creating-a-Cluster" class="headerlink" title="Creating a Cluster"></a>Creating a Cluster</h1><p>Now, let’s create and configure a cluster using the Azure Kubernetes Service. The easiest way to get to the AKS section of the portal is to use the search bar. If you type “aks”, it will come back with “Kubernetes service”.</p>
+<p>Then click Add and select “Add Kubernetes cluster”. Let’s create a new resource group to put it in. I’ll call it “aks1”. And I’ll call the cluster “cluster1”.</p>
+<p>You’ll notice that the availability zones field is greyed out. That’s because this region doesn’t support availability zones. So if we create the cluster in this region, then it won’t be a highly available cluster since the nodes will all be in the same zone. If that zone were to go down, then the whole cluster would go down. If we change it to a region that supports availability zones, such as “Central US”, then we can put a node in each zone and make it highly available. By default, it selects all three zones.</p>
+<p>You can select a specific Kubernetes version if you want, but we’ll leave that with the default.</p>
+<p>Now we specify what kind of nodes we want. If you’ll recall, the nodes are virtual machines, so we need to give the specifications for those VMs. The default is a good choice, but you can change it if you want. You might be tempted to choose the smallest (and cheapest) one to save money, but this one is actually too underpowered for a Kubernetes cluster, so you’ll eventually get an error if you select this one. Let’s leave it with the default.</p>
+<p>Now we need to tell it how many nodes to provision. If we only needed this cluster for testing or development purposes, then we could get away with only having one node, but if we needed it for production, then we’d want to have at least three nodes. If you’re following along on your own Azure account, then you can change this to one to save money if you want.</p>
+<p>All three nodes will be the same type of VM. But suppose you needed a more powerful VM for one of your applications. You wouldn’t want to use that more expensive type of VM for all of your nodes just to accommodate that one application. Instead, you could create a separate node pool with bigger nodes. We don’t need to do that for this example, so we’ll stick with one node pool.</p>
+<p>Now we’ll configure authentication. First, the cluster itself needs to be able to access other Azure resources, such as disks, so it needs to have an identity that can be trusted by the other Azure resources. There are two options for doing this, a service principal or a system-assigned managed identity. The easiest option is the managed identity, which actually uses a service principal under the hood, but it takes care of all of the details of managing it for you. So we’ll use that one.</p>
+<p>The other authentication and authorization that’s required is for users who need to access the cluster, such as developers and system administrators. Authentication means verifying a user’s identity. The standard way to do authentication in Azure is to use Azure Active Directory. This option lets you give administrative access to the cluster to a particular group in Azure Active Directory. That would require some extra steps, so I’m going to leave this disabled. Don’t worry, though. Even without this option enabled, it’ll still restrict who can access the cluster.</p>
+<p>Authorization means giving permissions to a user to perform specific tasks. The standard way to do authorization is called role-based access control, so we should leave this option enabled.</p>
+<p>The next page is for network configuration. You can leave it with the defaults unless you need something specific, such as restricting cluster management access to a particular range of IP addresses.</p>
+<p>The Integrations page is where you can integrate your cluster with other services like Azure Container Registry and Azure Monitor. Azure Container Registry is a centralized place where you can keep all of your container images, so if you integrate it with your cluster, then it will be easier to deploy your containers to the cluster.</p>
+<p>Azure Monitor is enabled by default because it is the standard way to monitor the health and performance of your cluster.</p>
+<p>Azure Policy is a service that lets you set governance policies, such as only allowing specific container images to run on your cluster.</p>
+<p>Finally, the Tags page lets you create tags to categorize your cluster. Tags are often used for billing purposes in large organizations.</p>
+<p>Okay, now we can go to the “Review + create” page. It does a quick validation check to make sure our configuration will work, and then we can click the Create button.</p>
+<p>In the next demo, I’ll show you what we can do with the cluster.</p>
+<h1 id="Working-with-a-Cluster"><a href="#Working-with-a-Cluster" class="headerlink" title="Working with a Cluster"></a>Working with a Cluster</h1><p>Once your Kubernetes cluster is running, you can interact with it using the kubectl command. This command is preinstalled in Azure Cloud Shell, so that’s what we’re going to use.</p>
+<p>Before we can use the kubectl command, we need to tell it which cluster we want to connect to and which credentials to use. We do that by using this command. We give it the name of the cluster and the resource group that it’s in. We’re asking it to send us the credentials we need to access the cluster. The only reason I’m able to get credentials using this command is because I have the right permissions in Azure role-based access control. Those permissions gave me the ability to create the cluster in the first place and to access it.</p>
+<p>Okay, it downloaded the credentials to a configuration file in my home directory. Now we can run a simple command to make sure it’s working. This will give us a list of the nodes in the cluster. There are three nodes, which is what we expected. They all have a status of “Ready”, so it looks like we’re good to go.</p>
+<p>Now we can run an application by deploying some containers to the cluster. Microsoft has provided a simple application called Azure Vote. It consists of two containers, one with a web-based frontend and one with a backend database. These containers are available in the Microsoft Container Registry.</p>
+<p>To deploy them to our cluster, we need to create what’s called a Kubernetes manifest file. I’ve put a copy of this file in the GitHub repository. Let’s have a quick look. I won’t explain all of the details of this file, but notice that it references two containers. The one for the database backend is here, and the one for the web frontend is here.</p>
+<p>To download it to Cloud Shell, run this git clone command. Okay, it’s done. It created a directory called configuring-aks, so let’s go into that directory. There’s the manifest file. Now to get Kubernetes to make our cluster match what’s in the manifest file, we use the “kubectl apply” command, and we specify the name of the manifest file.</p>
+<p>All right, that seemed to work. Now to make sure, we can connect to the application. First, we need to get the IP address of where it’s running. In the manifest file, we told Kubernetes to create a service called azure-vote-front. This service makes it possible to access the application. To see the details of the service, we use the “kubectl get service” command.</p>
+<p>Here’s the external IP where it’s running. If we copy that and paste it in a new browser tab, we see the application. It’s a pretty simple app, but it does work. Once we had the cluster running, it was very easy to deploy the app to it.</p>
+<p>Before we go, we’d better delete this cluster so it doesn’t end up costing a lot of money. Fortunately, that’s very easy to do. Just go to “Resource groups”, then select “aks1” and click “Delete resource group”. This will delete both the resource group and the AKS cluster. You have to type “aks1” before you can click the Delete button.</p>
+<p>And that’s it for this demo.</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>I hope you enjoyed learning about Azure Kubernetes Service. Let’s do a quick review of what you learned.</p>
+<p>Containers are somewhat like virtual machines except they don’t include the operating system. The easiest way to run an application that includes many containers is to use a container orchestrator. The most popular orchestrator is Kubernetes.</p>
+<p>Kubernetes lets you create clusters of virtual machines that run containers. Each virtual machine is called a node, and each node runs one or more pods. Each pod typically contains one container. The cluster also contains a control plane, which manages the nodes and pods. Azure Kubernetes Service makes it easy to create a Kubernetes cluster on Azure.</p>
+<p>If you only need a cluster for testing or development purposes, then one node is usually sufficient, but if you’re going to run it in production, then you should have at least three nodes.</p>
+<p>All three nodes will be the same type of VM. If you need something different for one of your applications, then you can create a separate node pool with different nodes.</p>
+<p>To allow a cluster to access other Azure resources, you need to assign an identity to it. The best way to do this is to use a managed identity rather than a service principal.</p>
+<p>To authorize users to perform specific tasks on the cluster, you should enable role-based access control.</p>
+<p>It can be useful to integrate an AKS cluster with Azure Container Registry, Azure Monitor, and Azure Policy. At the very least, you should enable integration with Azure Monitor.</p>
+<p>Once a cluster is running, you can manage it with the kubectl command. Before you can use the kubectl command, you need to get credentials for it using the “az aks get-credentials” command.</p>
+<p>To see the nodes that are running in your cluster, use the “kubectl get nodes” command. To deploy an application to a cluster, first, you need to create a Kubernetes manifest file. This file includes details of the containers to use as well as the Kubernetes services to create to give access to the apps running in the containers. Then you can deploy the application using the “kubectl apply” command.</p>
+<p>To learn more about Kubernetes and AKS, you can take another one of our courses or labs, or you can read Microsoft’s documentation at this <a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/aks">URL</a>.</p>
+<p>Please give this course a rating, and if you have any questions or comments, please let us know. Thanks!</p>
+<h1 id="5Summary"><a href="#5Summary" class="headerlink" title="5Summary"></a>5<strong>Summary</strong></h1><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/aks/">Azure Kubernetes Service (AKS) documentation</a></p>
+
     </div>
 
     
@@ -319,6 +390,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">2.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Creating-a-Cluster"><span class="nav-number">3.</span> <span class="nav-text">Creating a Cluster</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Working-with-a-Cluster"><span class="nav-number">4.</span> <span class="nav-text">Working with a Cluster</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary"><span class="nav-number">5.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5Summary"><span class="nav-number">6.</span> <span class="nav-text">5Summary</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -334,14 +406,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2653</span>
+          <span class="site-state-item-count">2736</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

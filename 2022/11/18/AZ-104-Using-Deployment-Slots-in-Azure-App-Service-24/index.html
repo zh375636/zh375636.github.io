@@ -20,13 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="Using Deployment Slots in Azure App ServiceWelcome to “Using Deployment Slots in Azure App Service”. To get the most from this course, you should already have some basic experience using App Service.">
+<meta property="og:type" content="article">
 <meta property="og:title" content="AZ-104-Using-Deployment-Slots-in-Azure-App-Service-24">
 <meta property="og:url" content="https://example.com/2022/11/18/AZ-104-Using-Deployment-Slots-in-Azure-App-Service-24/index.html">
 <meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="Using Deployment Slots in Azure App ServiceWelcome to “Using Deployment Slots in Azure App Service”. To get the most from this course, you should already have some basic experience using App Service.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-19T00:22:17.000Z">
-<meta property="article:modified_time" content="2022-11-19T00:22:18.000Z">
+<meta property="article:modified_time" content="2022-11-22T15:43:44.000Z">
 <meta property="article:author" content="Hang Zhang">
 <meta name="twitter:card" content="summary">
 
@@ -208,9 +210,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-18 20:22:17 / Modified: 20:22:18" itemprop="dateCreated datePublished" datetime="2022-11-18T20:22:17-04:00">2022-11-18</time>
+              <time title="Created: 2022-11-18 20:22:17" itemprop="dateCreated datePublished" datetime="2022-11-18T20:22:17-04:00">2022-11-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-22 11:43:44" itemprop="dateModified" datetime="2022-11-22T11:43:44-04:00">2022-11-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-104/" itemprop="url" rel="index"><span itemprop="name">AZ-104</span></a>
+                </span>
             </span>
 
           
@@ -238,7 +255,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="Using-Deployment-Slots-in-Azure-App-Service"><a href="#Using-Deployment-Slots-in-Azure-App-Service" class="headerlink" title="Using Deployment Slots in Azure App Service"></a>Using Deployment Slots in Azure App Service</h1><p>Welcome to “Using Deployment Slots in Azure App Service”. To get the most from this course, you should already have some basic experience using App Service. If you don’t, then you can take our “Introduction to Azure App Service” course.</p>
+<p>App Service makes it easy to deploy a new version of an app to production. All you have to do is run the “az webapp up” command. But you’d normally want to test a new version thoroughly before putting it into production. So you need a testing environment that’s as close as possible to your production environment.</p>
+<p>App Service has a great solution. It’s called a deployment slot. By default, an app has one deployment slot called “Production”. But you can create other deployment slots, too, and give them names like “testing” and “staging”. Then when you deploy an app, you can choose which deployment slot to put it in.</p>
+<p>Here’s a typical way to do it. First, you clone your production slot to a staging slot. When you do this, you can choose to clone the production slot’s configuration, including app settings, connection strings, the language framework, and many other settings. That way your staging slot’s configuration will be as close as possible to your production slot’s configuration, which will make your testing more valid.</p>
+<p>Once you’ve cloned the slot to a new one, though, you can change any of those settings in the new slot if you need to. For example, you might change the version of the language framework to a newer version, such as going from Java 8 to Java 11.</p>
+<p>You might expect it to clone the actual app as well, and not just the settings, but it doesn’t. That’s because it expects you to upload a new version of the app to the staging slot, so there’s no point in cloning the production app.</p>
+<p>Note that if you use the command line to upload the app to the staging slot, you can’t use the “az webapp up” command. Instead, you have to use the “az webapp deployment source” command, which takes a bit more work. The most common deployment source is a git repository.</p>
+<p>Once you’ve tested the new version in your staging slot, the next step is to swap the staging slot with the production slot. You start by setting the source slot and the target slot. The source slot contains the new version of the app, so it’s the staging slot. The target slot is the one that will be running the new version once the swap has been completed, so it’s the production slot.</p>
+<p>When you tell it to swap the source and target slots, it swaps not only the two different versions of your app but also any settings that you changed in the staging slot, such as the language framework if you changed that.</p>
+<p>However, there is an exception to this. You can create slot-specific settings. For example, it’s usually a good idea to have a separate test database so you don’t mess up the production one when you’re testing a new version of your app in the staging slot. In this case, you’d need to have a different connection string for the database in each slot, and you wouldn’t want this setting to be swapped. It would need to stay with the slot rather than the app, which is why it’s called slot-specific. So when you add or change an application setting or a connection string in a non-production slot, you have the option of making it a slot-specific setting.</p>
+<p>Aside from giving you the ability to properly test a new version before putting it into production, there are a couple of other big advantages to using a swap to deploy an app. First, when you deploy a new version of an app, it will often cause a reboot of the virtual machines that are used to host the app. During the warm-up period when the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/getting-started-with-azure-virtual-machines-988/what-is-a-virtual-machine/">VM instances</a> are spinning up, the app is not available, so if you were to simply deploy the new version of the app to production, it would cause downtime. But if you deploy to a staging slot first, then the VM instances have a chance to warm up before you swap the slot with production.</p>
+<p>Second, if there’s a problem after you swap the new version into production, you can easily roll back and revert to the previous version. All you have to do is swap the two slots again. If you’ve ever had to quickly roll back a new version that you’ve deployed, then I’m sure you can appreciate how helpful this feature is.</p>
+<p>There’s also an option that makes the swap even safer if you have slot-specific settings. It’s called “swap with preview”. This does the swap in two phases. First, it temporarily copies the slot-specific settings from the target slot (that is, the production slot) to the source slot (that is, the staging slot). It then gives you a chance to test the new version of the app with all of the settings it will have after the swap is completed.</p>
+<p>If it doesn’t work, then you can cancel the swap. If it does work, then you can tell it to complete the swap. At that point, it swaps the app and the other settings between the two slots. But it leaves the slot-specific settings with each slot. So the version of the app that was previously in production and is now in the staging slot has the connection string for the test database, for example.</p>
+<p>There’s also a riskier option for doing a swap. If you enable “auto swap” on a slot, then every time you push a new version of your app to that slot, it will automatically swap it with whichever slot you specify. So, for example, if you enable “auto swap” on the staging slot, and you set the “Auto swap deployment slot” to the Production slot, then every time you upload a new version of the app to the staging slot, it will automatically be swapped into Production.</p>
+<p>Why on earth would you do such a thing? Well, you might want to do this as part of an <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/introduction/">automated DevOps process</a>. If you have a continuous integration system that automatically tests your app every time you commit new changes to the source code repository, then you might feel comfortable putting new versions into production without doing any manual testing.</p>
+<p>So, if that’s the case, then why bother pushing it to the staging slot first and then auto-swapping it into production? Why not just push it straight to production? Well, as I mentioned earlier, when you push an app to the staging slot first, it has a chance to warm up before going into production.</p>
+<p>In fact, it’s even possible to create a custom warm-up. If your app needs to be initialized before it can serve requests from users, then you can create a custom warm-up that makes sure the initialization is complete before it performs the swap. There are two ways to set this up. If your app is running on an IIS web server, then you can configure the applicationInitialization element in the web.config file. Alternatively, regardless of the web server you’re using, you can set WEBSITE_SWAP_WARMUP_PING_PATH and WEBSITE_SWAP_WARMUP_PING_STATUSES in the app settings in <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/getting-started-with-azure-app-service-949/introduction/">Azure App Service</a>.</p>
+<p>So far, I’ve only talked about having two slots and having all of your end-user traffic go to the production slot. But you can have more complicated configurations if you want. First, you can have more than two slots. For example, you might want to have separate development, testing, staging, and production slots to handle the different stages of your software development process.</p>
+<p>Second, you can make things really interesting by sending some of your end-user traffic to non-production slots. For example, suppose you want to do canary testing, which means that you want to reduce the risk involved with deploying a new version of your app by releasing the new version to only a small percentage of your users. Then if those users don’t have any problems with it, you can release it to the rest of your users.</p>
+<p>App Service supports this type of testing by allowing you to set a different percentage of traffic for each slot. Normally, the production slot is set to take 100% of the traffic and all other slots are set to take 0%. But if you wanted to do a canary test, you could set the staging slot to 5% and the production slot to 95%. Then after you’ve done your testing, you could swap the two slots, which would put the staging version into production, and then set the production slot to take 100% of the traffic again.</p>
+<p>I should mention that the total number of slots you can use depends on the pricing tier of the App Service Plan you’re using. Deployment slots are only supported in the Standard, Premium, and Isolated tiers. The Standard tier supports up to 5 slots, but the Premium and Isolated tiers support up to 20. So if you’re using the Standard tier, and for some reason, you need more than 5 slots, you can just scale up your service plan to the Premium tier.</p>
+<p>And that’s it for deployment slots in Azure App Service. Please give this course a rating, and if you have any questions or comments, please let us know. Thanks!</p>
+
     </div>
 
     
@@ -319,6 +359,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Using-Deployment-Slots-in-Azure-App-Service"><span class="nav-number">1.</span> <span class="nav-text">Using Deployment Slots in Azure App Service</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -334,14 +375,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2653</span>
+          <span class="site-state-item-count">2736</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

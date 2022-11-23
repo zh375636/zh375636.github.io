@@ -20,13 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="IntroductionWelcome to “Introduction to Google Cloud SDK”. My name is Daniel Mease and I’ll be taking you through this course. I am a Google Cloud Platform instructor at Cloud Academy with over 20 yea">
+<meta property="og:type" content="article">
 <meta property="og:title" content="GCP-Cloud-Engineer-Introduction-to-Google-Cloud-SDK-5">
 <meta property="og:url" content="https://example.com/2022/11/19/GCP-Cloud-Engineer-Introduction-to-Google-Cloud-SDK-5/index.html">
 <meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="IntroductionWelcome to “Introduction to Google Cloud SDK”. My name is Daniel Mease and I’ll be taking you through this course. I am a Google Cloud Platform instructor at Cloud Academy with over 20 yea">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-19T04:02:41.000Z">
-<meta property="article:modified_time" content="2022-11-19T04:02:42.000Z">
+<meta property="article:modified_time" content="2022-11-23T00:53:18.000Z">
 <meta property="article:author" content="Hang Zhang">
 <meta name="twitter:card" content="summary">
 
@@ -208,9 +210,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-19 00:02:41 / Modified: 00:02:42" itemprop="dateCreated datePublished" datetime="2022-11-19T00:02:41-04:00">2022-11-19</time>
+              <time title="Created: 2022-11-19 00:02:41" itemprop="dateCreated datePublished" datetime="2022-11-19T00:02:41-04:00">2022-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-22 20:53:18" itemprop="dateModified" datetime="2022-11-22T20:53:18-04:00">2022-11-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/GCP-Cloud-Engineer/" itemprop="url" rel="index"><span itemprop="name">GCP-Cloud-Engineer</span></a>
+                </span>
             </span>
 
           
@@ -238,7 +255,93 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Welcome to “Introduction to Google Cloud SDK”. My name is Daniel Mease and I’ll be taking you through this course. I am a Google Cloud Platform instructor at Cloud Academy with over 20 years of software and web development experience.</p>
+<p>In this course, you will learn what the Google Cloud Software Development Kit is, as well as how to install and use it to manage your GCP account.</p>
+<p>This course is intended for:</p>
+<ul>
+<li>GCP Developers</li>
+<li>People who want to get GCP certified (eg: Associate Cloud Engineer)</li>
+</ul>
+<p>After completing this course, you will be able to:</p>
+<ul>
+<li>Install and configure the Google Cloud SDK</li>
+<li>Be familiar with basic use cases for the SDK</li>
+<li>Install and update components</li>
+<li>Create and manage configurations</li>
+</ul>
+<p>The following prerequisites will be helpful for this course:</p>
+<ul>
+<li>While it is not strictly required, access to a GCP account will be helpful</li>
+</ul>
+<p>Feedback on our courses is valuable to both us as trainers and our future students. If you have any criticisms or suggestions for improvement, we would greatly appreciate it if you would share those with us.</p>
+<p>Please note, when this video was recorded, all course information was accurate. Google is constantly updating its products and services as part of its ongoing drive to innovate. As a result, over time, minor discrepancies may appear in the course content. Here at Cloud Academy, we strive to keep our content up to date in order to provide the best training available. </p>
+<p>So, if you notice any information that is outdated, please contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. This will allow us to make all necessary fixes to the course during its next release cycle.</p>
+<h1 id="Using-Google-Cloud-SDK"><a href="#Using-Google-Cloud-SDK" class="headerlink" title="Using Google Cloud SDK"></a>Using Google Cloud SDK</h1><p>The Google Cloud Console provides you an easy way to manage your account and make changes. However, this is not your only option. The Cloud Software Development Kit (or Cloud SDK) allows you to interact with your GCP account by running commands in a terminal. You can accomplish tasks that would otherwise take you multiple steps with just one command. Also, you can use the Cloud SDK to create custom scripts or programs to automate repeatable tasks such as deployments.</p>
+<p>Before I cover installation and set up, let me first show what you can do with the Cloud SDK by using Cloud Shell. Cloud Shell is an online terminal built right into the console. It already has the Cloud SDK preinstalled and preconfigured. So if you have a GCP account, you can jump right in and start using it.</p>
+<p>To access the Cloud Shell, login to the GCP console, and then click the icon in the top right part of the page labeled “Activate Cloud Shell”. It might take a little while to load if you are opening it up for the first time. To make things easier for you to see, let me open the Cloud Shell in it’s own tab, by clicking here.</p>
+<p>The Cloud SDK provides several commands that allow you to interact with various services. </p>
+<ul>
+<li><p>The first one is called GCLOUD</p>
+</li>
+<li><ul>
+<li><p>This is the main utility for performing common cloud tasks, including:</p>
+</li>
+<li><ul>
+<li>Installing and upgrading components</li>
+<li>Spinning up Compute Engine instances</li>
+<li>Deploying apps to App Engine</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>The second one is called GSUTIL</p>
+</li>
+<li><ul>
+<li>GSUTIL stands for “Google Storage Utility”</li>
+<li>This is used for interacting with Google Storage such as managing Cloud Storage buckets and objects</li>
+</ul>
+</li>
+<li><p>And the third is simply called BQ</p>
+</li>
+<li><ul>
+<li>This is used for interacting with BigQuery, so you would use it for things like running queries and manipulating datasets</li>
+</ul>
+</li>
+</ul>
+<p>Now, let me show you a few examples of what you can do with the SDK.</p>
+<p>First, you can use it to get basic information about your account. If you type “gcloud projects list” , you can list out all your current projects. You can use “gcloud projects get-aim-policy” to find all the IAM users for a specific project</p>
+<p>The SDK can do a lot more than just pull information. You can also use it to provision new resources. If you want to create a new Compute Engine instance by using the console, you will need to navigate to the correct screen. And then fill out a long form like this. You would enter a name, select a region, pick a machine type, and a bunch of other settings. Now this is fine if you only need to do this occasionally. But what if you need to start up many VMs per day? Or what if you need to be able to create a script to start up VMs for you? </p>
+<p>For that, you will need the Command line equivalent. Which you can actually get if you click on the button labeled “command line” at the bottom of the screen here. This will take all the settings you selected and generate the equivalent terminal command. Now you can copy and paste this into the terminal. Or you could use it to create a script or just save it for later. You also can easily modify any of these options, if you want something a little different. Like changing the boot disk size to 50 GB instead of 10. The gcloud command can create Compute Engine instances, GKE clusters, firewall rules, and much, much more.</p>
+<p>One of the problems with using the command line is that you often have to pass in a lot of options. This gets repetitive if you tend to work on the same project. So it also provides a way to set certain values such as the default project and default zone.</p>
+<p>And because you might need to work on multiple projects, you can even create multiple configurations and switch between them. So you can create one config for one project like this. And then another configuration for your second project.</p>
+<p>You can see that I now have two new configurations. I can select the configuration I want, and then set the project and zone for that config. I could also switch to the second config and set a different project and zone. There are other settings you add as well. But this makes it easy for you to work on multiple projects without having to manually enter the same values over and over again. It will also help you from getting confused and deploying resources for a project into the wrong region or zone.</p>
+<p>This was just a small taste of what the SDK can do. For a full list of options, refer to the following URLs:</p>
+<ul>
+<li>GCLOUD reference: <a target="_blank" rel="noopener" href="https://cloud.google.com/sdk/gcloud/reference">https://cloud.google.com/sdk/gcloud/reference</a></li>
+<li>GSUTILl Reference: <a target="_blank" rel="noopener" href="https://cloud.google.com/storage/docs/gsutil">https://cloud.google.com/storage/docs/gsutil</a></li>
+<li>BQ Reference: <a target="_blank" rel="noopener" href="https://cloud.google.com/bigquery/docs/reference/bq-cli-reference">https://cloud.google.com/bigquery/docs/reference/bq-cli-reference</a></li>
+</ul>
+<h1 id="Installing-the-Cloud-SDK"><a href="#Installing-the-Cloud-SDK" class="headerlink" title="Installing the Cloud SDK"></a>Installing the Cloud SDK</h1><p>The integrated Cloud Shell in the console is really handy. But there will be times when it will be more convenient to have the SDK installed on a development or production machine. In this lesson, I am going to show you how to do just that.</p>
+<p>You can find detailed installation instructions at <a target="_blank" rel="noopener" href="https://cloud.google.com/sdk/docs/install">https://cloud.google.com/sdk/docs/install</a>. The actual steps will depend upon your operating system. The normal installation method is to download an installer, run it, and then follow the prompts. For some operating systems, there are alternative ways to install the SDK as well. You should pick the method that best suits your needs.</p>
+<p>For this example, I will be following the instructions for Linux. </p>
+<p>Next, you will want to verify that the installation was successful. You should be able to run “gcloud help” at the command prompt. If you get an error message, or if it says it could not find the command, then the SDK was not installed properly. You will need to refer back to the installation instructions, and figure out how to fix the issue.</p>
+<p>If you get the help screen for the gcloud command, then you are ready to proceed. Next, run “gcloud init” to begin the setup process to authorize access to your account.</p>
+<p>When asked if you would like to log in, type “Y” for yes. You will need to open the provided URL in a browser and sign in with Google. Then you will need to choose the account to log in with. Allow the Cloud SDK to manage GCP by clicking the “Allow” button. You will then be given a verification code that you need to copy and paste back in the terminal. Now pick a default project to use. You don’t need to set a default region or zone if you don’t wish to.</p>
+<p>If you are behind a proxy, you might also need to perform a few extra steps to access GCP. Make sure to get your proxy settings from your network administrator, then follow the instructions here at <a target="_blank" rel="noopener" href="https://cloud.google.com/sdk/docs/proxy-settings">https://cloud.google.com/sdk/docs/proxy-settings</a>.</p>
+<p>At this point the SDK should be installed and working properly. But before I end this lesson, I want to show you a couple more things that will help you in the future.</p>
+<p>The SDK installs some components by default, but it also has optional components as well. You can enter “gcloud components list” to get a list of all components. You can also see which have been installed and which are available for install. For example, if you are going to be developing Java applications, you may want to install the Google App Engine Java component by entering: “gcloud components install app-engine-java”.</p>
+<p>New components usually have dependencies, and so those will need to be installed first. Accept the dependencies by typing “Y”. Then you will just need to wait for installation to complete. Later, if you no longer have any use for a component, you can also use the “components remove” command to delete it.</p>
+<p>Over time, all components will receive updates. To download and install these updates, you need to run the “components update” command. This command will go through all of your installed components and update any that have a newer version. It’s a good idea to run this command on a regular basis to ensure you have the latest features and fixes.</p>
+<p>So now you should have enough knowledge to install and set up the SDK on your own computer. Remember to check out the online command references for “gcloud”, “gsutil” and maybe even “bq”. Don’t be afraid to experiment and get familiar with the various options.</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>I hope you enjoyed learning about installing and using the Google Cloud SDK. </p>
+<p>I recommend you start with Cloud Shell first and get comfortable with the most common commands. Once you start building real systems, you will most likely want to install the SDK onto your local development environment. You may also want to install it on other machines to help automate deployments and service configuration. In either case, the SDK includes a lot of useful features to help you get the most out of your Google Cloud Platform account. While the console might be easier to use at first, the SDK can give you more options and can be faster and more reliable.</p>
+<p>Well, that is all I have for you today. Remember to give this course a rating, and if you have any questions or comments, please let us know. Thanks for watching, and make sure to check out our many other courses at Cloud Academy!</p>
+<h1 id="2Using-Google-Cloud-SDK"><a href="#2Using-Google-Cloud-SDK" class="headerlink" title="2Using Google Cloud SDK"></a>2<strong>Using Google Cloud SDK</strong></h1><p><a target="_blank" rel="noopener" href="https://cloud.google.com/sdk/gcloud/reference">GCLOUD reference</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.google.com/storage/docs/gsutil">GSUTILl Reference</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.google.com/bigquery/docs/reference/bq-cli-reference">BQ Reference</a></p>
+<h1 id="3Installing-the-Cloud-SDK"><a href="#3Installing-the-Cloud-SDK" class="headerlink" title="3Installing the Cloud SDK"></a>3<strong>Installing the Cloud SDK</strong></h1><p><a target="_blank" rel="noopener" href="https://cloud.google.com/sdk/docs/install">SDK installation instructions</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.google.com/sdk/docs/proxy-settings">Proxy settings installation instructions</a></p>
+
     </div>
 
     
@@ -319,6 +422,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Using-Google-Cloud-SDK"><span class="nav-number">2.</span> <span class="nav-text">Using Google Cloud SDK</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Installing-the-Cloud-SDK"><span class="nav-number">3.</span> <span class="nav-text">Installing the Cloud SDK</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary"><span class="nav-number">4.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2Using-Google-Cloud-SDK"><span class="nav-number">5.</span> <span class="nav-text">2Using Google Cloud SDK</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3Installing-the-Cloud-SDK"><span class="nav-number">6.</span> <span class="nav-text">3Installing the Cloud SDK</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -334,14 +438,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2653</span>
+          <span class="site-state-item-count">2736</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

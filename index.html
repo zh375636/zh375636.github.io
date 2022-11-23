@@ -183,7 +183,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/19/AZ-500-Implementing-Azure-Active-Directory-Privileged-Identity-Management-25/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/22/2021-3-8-%E6%9E%84%E5%BB%BAdocker%E5%AE%B9%E5%99%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -197,131 +197,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/19/AZ-500-Implementing-Azure-Active-Directory-Privileged-Identity-Management-25/" class="post-title-link" itemprop="url">AZ-500-Implementing-Azure-Active-Directory-Privileged-Identity-Management-25</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-11-19 10:56:04" itemprop="dateCreated datePublished" datetime="2022-11-19T10:56:04-04:00">2022-11-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-20 19:14:00" itemprop="dateModified" datetime="2022-11-20T19:14:00-04:00">2022-11-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/AZ-500/" itemprop="url" rel="index"><span itemprop="name">AZ-500</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2022/11/19/AZ-500-Implementing-Azure-Active-Directory-Privileged-Identity-Management-25/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/19/AZ-500-Implementing-Azure-Active-Directory-Privileged-Identity-Management-25/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <span id="more"></span>
-
-<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Welcome to Azure AD Privileged Identity Management. My name is Thomas Mitchell, and I’ll be taking you through this course on <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/pim-overview/">Privileged Identity Management</a>. Otherwise known as PIM. I’m an Azure content author at Cloud Academy, and I have over 25 years of deep IT experience. Several of those years with cloud technologies. If you have any questions, feel free to connect with me on LinkedIn or send an email to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>.</p>
-<p>This course is intended for IT professionals who need or want to attain Azure certification, those who wish to become Azure architects, and those who are simply tasked with managing and supporting Microsoft Azure. To get the most from this course, you should have a moderate understanding of Microsoft Azure and of security concepts and admin role management. We’ll start the course by touching on an overview of what Azure AD Privileged Identity Management is and what it offers. We will then work through the deployment of PIM, and how it works with multi-factor authentication.</p>
-<p>As we work through some demos, you will also learn how to enable PIM and how to navigate tasks in PIM. Next, we’ll cover the activation of roles and the assignment of those roles to users through lectures and some demos. We’ll cover the concepts of updating and removing role assignments, reinforcing these concepts through more demonstrations. We’ll round out the course with supported management scenarios, configuring PIM management access, and how to process requests. These concepts will be reinforced with a few demonstrations as well, so you can see how these tasks are completed.</p>
-<p>By the end of this course, you should be able to deploy Azure AD Privileged Identity Management and use it to manage access to roles and resources in Azure and in Azure Active Directory. You will also understand how just-in-time access is configured and how it mitigates threats to stolen admin credentials. We’d love to get your feedback on this course, so please give it a rating when you’re finished. If you’re ready to learn about Azure AD Privileged Identity Management and how to set it up, let’s get started.</p>
-<h1 id="PIM-Overview"><a href="#PIM-Overview" class="headerlink" title="PIM Overview"></a>PIM Overview</h1><p>Azure Active Directory Privileged Identity Management, otherwise known as PIM, is an <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> offering that allows you to manage and control access to resources within Azure and Azure AD as well as within other services such as Intune and Office 365. A valid Azure AD Premium P2 license is required for all users that will interact with or benefit from Privileged Identity Management before enabling the service on a tenant. Alternatively, you can assign an Enterprise Mobility + Security E5 license for each user that interacts with Privileged Identity Management. Generally speaking, licensing is required for users that are assigned to the Privileged Role Administrator role or who are assigned as eligible to other directory roles that are manageable through Privileged Identity Management. If a user can approve or reject requests in PIM, that user also requires a license. Users assigned to a role with time-based assignments such as just in time or direct or those assigned to an access review role also require licensing. With Azure AD Privileged Identity Management, an organization can see which users are assigned privileged roles that are used to manage Azure resources. </p>
-<p>Organizations can also see which users are assigned administrative roles within Azure Active Directory. PIM also offers the ability to enable on-demand or just in time administrative access to services such as Office 365 and Intune as well as to Azure resources, Azure subscriptions, resource groups and even individual Azure resources like virtual machines and such. Azure AD Privileged Identity Management offers the ability to view a history of administrator activation, along with a history of changes that administrators have made to Azure resources. Alerts can also be configured to notify you about changes in administrator assignments. PIM also allows you to require approval for activation of Azure AD privileged admin roles to review membership of such administrative roles and to force users to provide justification for ongoing membership in these roles. In Azure Active Directory, PIM can be used to manage users that are assigned to built-in Azure AD roles, such as global admin. In Azure itself, PIM can manage users and groups assigned via Azure RBAC roles such as the owner and contributor roles.</p>
-<h1 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h1><p>Azure AD Privileged Identity Management is included with Azure AD Premium P2 edition. While in the preview, <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/introduction/">Azure Active Directory Privileged Identity Management</a> provided no license checks. It allowed a tenant to try the service. With Azure AD PIM now in general availability, a trial or paid subscription must be present to continue using <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/pim-overview/">PIM</a>. The first person using PIM in a directory is automatically assigned two directory roles. The security administrator role and the privileged role administrator role. Only privileged role admins can manage the assignment of <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> AD directory roles for users. Additionally, you can run the security wizard which will walk you through the initial discovery process as well as the assignment process.</p>
-<h1 id="MFA"><a href="#MFA" class="headerlink" title="MFA"></a>MFA</h1><p><a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Microsoft</a> recommends that multi-factor authentication, also known as MFA, be required and enforced for all administrators. By leveraging multi-factor authentication, the risk of an attack due to a stolen password is mitigated. As such, you can force users to complete an MFA challenge whenever they log in. You can and should also require users to complete an MFA challenge whenever they activate a role in <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/introduction/">PIM</a>. Doing so ensures that even if a user doesn’t complete an MFA challenge when he logs in, he will still be prompted to do so by PIM. When a user activates a privileged role, there are two options for validating MFA for the user. The first option is to rely on Azure MFA for the user who activates the role. To leverage this first option for validating MFA, first ensure that the user is licensed if necessary and has registered for Azure MFA.</p>
-<p>Although it’s not required, it is recommended that Azure AD be configured to enforce MFA for the user when he logs in. This is because PIM itself will make the MFA check. If your users authenticate on-prem, you can leverage the second option by having the current identity provider be responsible for MFA. For example, let’s assume you’ve configured AD Federation Services or ADFS to require smart card-based authentication before accessing Azure AD. You could configure ADFS to send claims to Azure AD. In this scenario, whenever a user tries to activate a role, PIM will see that MFA has already been validated for the user and allow access.</p>
-<h1 id="Enable-PIM"><a href="#Enable-PIM" class="headerlink" title="Enable PIM"></a>Enable PIM</h1><p>To start using <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/introduction/">Azure AD Privileged Identity Management</a>, login to the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> portal as a global admin with an organizational account. An example of an organizational account would be something like <a href="mailto:&#x59;&#111;&#117;&#114;&#x4e;&#x61;&#x6d;&#101;&#x40;&#89;&#x6f;&#x75;&#114;&#68;&#x6f;&#109;&#x61;&#x69;&#110;&#x2e;&#x63;&#x6f;&#109;">&#x59;&#111;&#117;&#114;&#x4e;&#x61;&#x6d;&#101;&#x40;&#89;&#x6f;&#x75;&#114;&#68;&#x6f;&#109;&#x61;&#x69;&#110;&#x2e;&#x63;&#x6f;&#109;</a>. An organizational account is necessary to enable PIM for directory. As such, a Microsoft account, such as an Outlook.com account will not work, you must be a global administrator with an organizational account to enable PIM for directory. Once you’re signed into the portal as a global administrator for your directory, click all services and then find the Azure AD Privileged Identity Management Service. Click to open the PIM quick start and then in the list click consent to PIM. Go ahead and click verify my identity so that you can verify your identity with <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/mfa/">Azure MFA</a>. You’ll be asked to pick an account. If more information is requested for verification, you’ll be guided through the process of supplying such info. In our case here, we were asked to provide phone verification. Follow the wizard to provide the information that is requested. </p>
-<p>Once you’ve completed the verification process, click the consent button. In the message that appears, click yes to complete the consent process. Once you’ve enabled PIM for your directory, you’ll need to sign up for PIM to manage Azure AD roles. To do so, switch back over to the Azure AD Privileged Identity Management quick start dashboard and then click Azure AD roles. Click sign up PIM for Azure AD roles in the left pane and then click sign up in the top menu. In the message that appears, click yes to sign up for PIM to manage Azure AD roles. When the process completes, the Azure AD options will be enabled. However, you may need to refresh the portal to see these changes.</p>
-<h1 id="Onboarding-Resources"><a href="#Onboarding-Resources" class="headerlink" title="Onboarding Resources"></a>Onboarding Resources</h1><p><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/introduction/">Azure AD Privileged Identity Management</a> offers the ability to vastly improve the protection of <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> resources. For organizations that already use <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/enable-pim/">PIM</a> to protect Azure AD directory roles and to manage group and subscription owners, Azure AD Privileged Identity Management is also a great way to secure production resources. Before using PIM to protect resources in Azure, you first need to discover and select those resources that you wish to protect with PIM. Although there’s no limit to the number of resources that PIM can manage, Microsoft recommends starting with your most critical resources first.</p>
-<h1 id="Onboarding-a-Resource-in-PIM"><a href="#Onboarding-a-Resource-in-PIM" class="headerlink" title="Onboarding a Resource in PIM"></a>Onboarding a Resource in PIM</h1><p>To protect resources with <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/enable-pim/">PIM</a>, you first need to discover them. To do so, sign into the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> portal and open the Azure AD Privileged Identity Management dashboard. From here, click Azure resources. Now if this is the first time you’re using PIM to manage Azure resources, you’ll see a discover resources pane. However, if another resource or directory admin in your organization has already started managing Azure resources in PIM, you’ll see a list of the resources that are currently being managed by PIM. Click Discover resources to launch the discovery experience. Add a check mark next to any unmanaged resources you want to manage. To begin managing the resource, simply click Manage resource. One thing to note is that once a management group or subscription has been set to managed, it can no longer be unmanaged. This is in place to prevent another resource admin from removing PIM settings for it.</p>
-<h1 id="Viewing-and-Managing-Assignments"><a href="#Viewing-and-Managing-Assignments" class="headerlink" title="Viewing and Managing Assignments"></a>Viewing and Managing Assignments</h1><p>When it comes to Azure AD roles, the only user that can manage assignments for other administrators in Azure AD PIM, is a user who is in the Privileged Role Administrator role. I know that sounds redundant but the role is actually called Privileged Role Administrator. That said, it’s possible to provide other users in the directory the ability to manage directory roles in PIM. There are three groups that can view assignments to Azure AD roles in Azure AD PIM. These groups include Global Administrators, Security Administrators and Security Readers. </p>
-<p>As far as RBAC roles go, only certain users can manage assignments for other administrators in Azure AD PIM. They include any user that is a subscription administrator, any user that is a resource owner or any user who is a resource user access administrator. Privileged Role Administrators, Security Administrators and Security Readers do not have the necessary access, by default, to view assignments to Azure RBAC roles in <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/introduction/">Azure AD Privileged Identity Management</a>.</p>
-<h1 id="Navigating-Tasks-in-PIM"><a href="#Navigating-Tasks-in-PIM" class="headerlink" title="Navigating Tasks in PIM"></a>Navigating Tasks in PIM</h1><p>After <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/enable-pim/">setting up Privileged Identity Management</a>, use the PIM Quick start blade to perform identity management tasks. For example, the My roles pane provides a list of all eligible and active roles that are assigned to you. Use this pane to activate any assigned eligible roles. The My requests pane is used to display any of your pending requests and is also used to activate eligible role assignments. The Application access pane allows you to limit possible delays and use a role immediately after activation. Approve requests provides a list of requests that have been made to activate eligible roles by users in the directory. In the Review access pane, you are provided with a list of active access reviews that you are assigned to complete. Azure AD directory roles presents a dashboard and settings that are used by privileged role administrators for managing Azure AD directory role assignments. The Azure AD directory roles dashboard is disabled for users who are not a privileged role administrator.</p>
-<p>However, these users do have access instead to another dashboard called My view which only displays information about the user who is accessing the dashboard. It does not provide info for the entire tenant. The <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> resources dashboard displays settings for privileged role administrators so that they can manage Azure resource role assignments. In this case, as is the case with the Azure AD directory roles pane, this dashboard is also disabled for anyone who isn’t a privileged role administrator. However, as was the case with the Azure AD directory roles dashboard, users are offered a different dashboard again called My view. The My view dashboard only displays information about the user accessing the dashboard, not the entire tenant.</p>
-<h1 id="Assigning-Roles"><a href="#Assigning-Roles" class="headerlink" title="Assigning Roles"></a>Assigning Roles</h1><p><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/introduction/">Azure AD Privileged Identity Management</a> can manage built-in <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> resource roles, along with custom roles, such as Owner, User Access Administrator, Contributor, Security Admin, and Security Manager. Users who have been assigned Owner or User Access Administrator roles, either directly or via group membership, as well as Global Admins, are also Resource Administrators. These administrators can assign roles, configure role settings, and review access using PIM for Azure resources.</p>
-<h1 id="Assign-a-Role-in-PIM"><a href="#Assign-a-Role-in-PIM" class="headerlink" title="Assign a Role in PIM"></a>Assign a Role in PIM</h1><p>Making a user eligible for an Azure resource role requires just a few steps. To make a user eligible for an Azure resource role, make sure that you are logged in to the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> portal with an account that is already a member of the Privileged Role Administrator role. Open the Azure AD Privileged Identity Management Console. Click on Azure Resources and use the Resource Filter to filter the list of managed resources. From here, click on the resource that you want to manage. In this demonstration, we’ll select the entire subscription. Click Roles which can be found under Manage to view the list of roles for Azure Resources. Next, open the New Assignment pane by clicking Add member and then click Select a Role to open the Select a Role pane. Click on the role that you want to assign and then click Select. At this point, the Select a Member or Group pane will open.</p>
-<p> Click on the user or group that you want to assign to the role and then click Select. When the Membership Settings pane opens, go to the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/assignment-types/">Assignment Type</a> list and then click either Eligible or Active. An Eligible assignment will require the user who has been assigned the role to perform an action to actually use the role. Such actions might typically include successfully performing an <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/mfa/">MFA</a> check or simply providing a business justification. The user might also need to request approval from a designated approver before using the role. That said, an active assignment won’t require the user to perform any action to use the role. In our demo here, we’re going to make the user eligible and we are going to accept the default timeframe. Click Done. And to complete creation of the new role assignment, click Add.</p>
-<h1 id="Activating-Roles"><a href="#Activating-Roles" class="headerlink" title="Activating Roles"></a>Activating Roles</h1><p><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/introduction/">Azure Active Directory Privileged Identity Management</a> simplifies management of privileged access to resources in Azure AD and other services such as Office 365 and Intune. A user that has been made eligible for an administrative role can activate that role when he or she needs to perform privileged actions controlled by the role. A good example would be a user who on occasion manages Office 365 features. In such a case, the organization’s privileged role administrator, instead of making that user a permanent global admin, could opt to instead make the user eligible for an Azure AD role like Exchange Online Administrator. This user could then request to activate the role only when he or she needs its privileges. The administrative control would then last for a predetermined period of time.</p>
-<h1 id="Activate-a-PIM-Role"><a href="#Activate-a-PIM-Role" class="headerlink" title="Activate a PIM Role"></a>Activate a PIM Role</h1><p>When a user needs to take on an Azure AD PIM role that he has been made eligible for, that user can request activation via the my roles navigation option in PIM. The process is pretty straight forward. First, sign into the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> portal. As you can see on the screen here, I’ve logged into the Azure portal as Steve, whom we’ve just made eligible for a few roles. Next, open Azure AD Privileged Identity Management. In our example here, Steve can click on My roles, and then either Azure AD roles or Azure resource roles to see the list of his eligible roles. For this exercise, Steve wants to activate the BizTalk role. We can go ahead and click Activate, which opens the role activation details pane. Enter the reason for the activation request into the activation reason box. To activate, simply click Activate.</p>
-<h1 id="Assignment-Types"><a href="#Assignment-Types" class="headerlink" title="Assignment Types"></a>Assignment Types</h1><p>Privileged Identity Management for Azure offers the ability to create enhanced security for businesses with critical <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> resources in production. Leveraging PIM, resource admins can assign members as eligible for certain resource roles. The two assignment types available in <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/pim-overview/">PIM</a> for Azure resources are eligible and active. The eligible assignment type requires members of a particular role to perform an action before using the role. Actions that a user can perform in order to use a role include things like performing a successful <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/mfa/">MFA</a> check, requesting approval from an approver, or providing a business justification for the access being requested. The active assignment type does not require members to perform any sort of action to use the role. Essentially, users that are assigned active will have their assigned privileges at all times.</p>
-<h1 id="Assignment-Durations"><a href="#Assignment-Durations" class="headerlink" title="Assignment Durations"></a>Assignment Durations</h1><p>A resource administrator has two options to choose from for each <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/assignment-types/">assignment type</a> when configuring PIM settings for a role. For permanent assignment types, the admin can choose either Allow permanent eligible assignment or Allow permanent active assignment. For assignment types with an expiration, the administrator can choose either Expire eligible assignments after or Expire active assignments after. These options become the default maximum duration when a member is assigned to the role in <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/pim-overview/">PIM</a>. When a resource admin chooses either Allow permanent eligible assignment or Allow permanent active assignment, all administrators that subsequently assign users to the protected resource can assign permanent memberships. When a resource admin chooses either Expire eligible assignments after or Expire active assignments after, the resource admin controls the assignment lifecycle. This is because, by choosing one of the expire options, all assignments will require a specified start and end date. It’s important to note that assignments with a specified end date can be renewed by a resource admin as well as via a self-service request from the users with those assignments.</p>
-<h1 id="Assignment-States"><a href="#Assignment-States" class="headerlink" title="Assignment States"></a>Assignment States</h1><p><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/introduction/">Privileged Identity Management for Azure Resources</a> offers two different assignment states which appear on the active roles tab in the my roles, roles, and member views of <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/pim-overview/">PIM</a>. These two states include Assigned and Activated. When viewing a membership in Active roles, use the value in the State column to separate users that are assigned as active from those users that are now active after having activated an eligible assignment.</p>
-<h1 id="Approval-Workflow"><a href="#Approval-Workflow" class="headerlink" title="Approval Workflow"></a>Approval Workflow</h1><p>Approval workflow in <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/pim-overview/">PIM</a> for Azure resource roles offers administrators the ability to protect and restrict access to critical <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> resources by allowing them to require approval to activate <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/updating-and-removing-existing-role-assignments/">role assignments</a>. Resource hierarchy, which is unique to Azure resource roles, allows for the inheritance of role assignments from parent resources and objects down to child resources within the parent container. To illustrate the approval workflow process in PIM, I’ll use the following example. Let’s assume Steve is a resource administrator. Steve uses PIM to assign Jen as an eligible member to the owner role in the subscription for Blue Widget Co. Through this assignment, Steve makes Jen an eligible owner of all resource group containers within the Blue Widget Co Azure subscription. Because Jen is an eligible owner of all resource group containers, she is also an eligible owner of all resources residing within each resource group contained in the subscription. Now remember PIM settings, unlike assignments, are configured for each role of a resource. As such, the PIM settings that are configured for a resource are not inherited. They are applied strictly to the resource role. In our example, let’s imagine that there are three resource groups called finance test, finance dev, and finance prod, all located in the Azure subscription. </p>
-<p>Each resource group contains two virtual machines. Imagine that Steve uses PIM so that he can require that all owner role members of the Blue Widget Co subscription request approval to be activated. To further protect the resources in the finance prod resource group however, Steve also requires approval for members of the owner role of this resource. Steve is less worried about security on the finance test and finance dev resource groups so he does not require the owner roles in either to require approval for activation. Given the approval flow and hierarchy in our example, if Jen requests activation of her owner role for the Blue Widget Co subscription, she’s going to need an approver to either approve or deny her request before she becomes active in the role. Similarly, if Jen scopes her activation to just the finance prod resource group, an approver again will need to approve or deny this request. However, if Jen were to scope her activation to just finance test, just finance dev, or both, approval would not be required. This is because Steve did not require approval for members of the owner role for any of these two resource groups. So as our example demonstrates, Azure AD Privileged Identity Management provides a means of configuring granular and hierarchical security that can protect resources by limiting unnecessary administrative access while also allowing for consistent admin access when it’s required.</p>
-<h1 id="Updating-and-Removing-Existing-Role-Assignments"><a href="#Updating-and-Removing-Existing-Role-Assignments" class="headerlink" title="Updating and Removing Existing Role Assignments"></a>Updating and Removing Existing Role Assignments</h1><p>To update or remove an existing role assignment, open Azure AD Privileged Identity Management and then click Azure resources. Click a resource that you wish to manage and then under manage, click roles, so you can see a list of roles for Azure resources. Select a role that you wish to update or remove and then find the role assignment on the eligible roles tab or on the active roles tab. From here, click update or remove to either update the role assignment or to remove the role assignment altogether.</p>
-<h1 id="Supported-Management-Scenarios"><a href="#Supported-Management-Scenarios" class="headerlink" title="Supported Management Scenarios"></a>Supported Management Scenarios</h1><p>Until now, a user would typically be assigned to an admin role through the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> portal, some other Microsoft Online Service portal, or through Azure AD PowerShell cmdlets. Doing so would make the user a permanent administrator, which in turn meant that the user was always active in the assigned admin role. With <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/introduction/">Azure AD Privileged Identity Management</a> comes the idea of the Eligible admin. An Eligible admin is a user that needs some sort of privileged or admin-level access every now and again, but not all the time. In this scenario, the privileged role is inactive until the user needs the privileged access that it provides. The user then completes an activation process to become an admin for a preconfigured time frame. Many organizations prefer the strategy of granting admin access because it reduces or even eliminates permanent admin access to privileged roles. Some key terms to understand are eligible role user and delegated approver. An eligible role user is a user that’s been assigned as eligible to an Azure AD role. This requires the role to be activated when needed. </p>
-<p>A delegated approver is a user, or maybe even multiple users or groups, within Azure AD who is responsible for approving requests to activate such roles. An example of these roles in action would be a case where John is designated as a privileged role administrator. In such a case, John would have the ability to enable approval for specific roles, and he could also specify approver users and groups to approve requests. John would also be able to view the request and approval history for all privileged roles. In another scenario, Jen might be a designated approver. As a designated approver, Jen would be able to view pending requests and approvals, and she would also be able to approve and reject role elevation requests. She would also be responsible for providing justification for approvals and rejections. An example of an eligible role user would be Dave. As an eligible role user, Dave would be able to request activation of a role that requires approval. After the role activation is approved by Jen, he would then be able to complete his tasks in Azure AD. As you can probably tell by now, Privileged Identity Management offers streamlined, yet granular management scenario support.</p>
-<h1 id="Configuring-Management-Access"><a href="#Configuring-Management-Access" class="headerlink" title="Configuring Management Access"></a>Configuring Management Access</h1><p>A global admin who enables <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/introduction/">Azure AD Privileged Identity Management</a> for the organization automatically gets <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/assigning-roles/">role assignments</a> as well as access to PIM. Nobody else, by default, gets write access, and this even includes other global admins. Other global admins, security admins, and security readers all receive read-only access to Privileged Identity Management. To grant access to Privileged Identity Management, the first user can simply assign other users to the privileged role administrator role. Keep in mind that managing PIM requires <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/mfa/">Azure MFA</a>. As such, because Microsoft accounts can’t register for Azure MFA, any user that logs in with a Microsoft account will not be able to access PIM. Additionally, it’s best practice to ensure that there are always at least two different users assigned a privileged role administrator role. Doing so avoids the calamity in the event one user gets locked out or if an account is accidentally deleted.</p>
-<h1 id="Configuring-Permanent-PIM-Management-Access"><a href="#Configuring-Permanent-PIM-Management-Access" class="headerlink" title="Configuring Permanent PIM Management Access"></a>Configuring Permanent PIM Management Access</h1><p>There will be times when you need to grant access to someone so they can manage <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/pim-overview/">PIM</a>. To do this, sign into the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> portal and open the Azure AD Privileged Identity Management dashboard. Click Azure AD directory roles and then click Roles. Click on the privileged role administrator role to view the member’s page. Open the add managed members pane by clicking Add member. And then click Select members. Choose a member, and then click Select. From here, you make the member eligible for the privileged role administrator role by clicking OK. It’s important to note that when you assign a new role to someone in PIM, that person is automatically configured as eligible to activate the role. You can make the member permanent by clicking the user in the privileged role administrator member list, then clicking More, and then Make permanent. Doing so makes the assignment permanent. Removing access to manage PIM is an easy process. However, before removing someone from the privileged role administrator role, ensure that there will still be at least two users assigned to the role. To remove access, add a check mark next to the user you want to remove, and then click Remove member. You will typically see a message asking for confirmation. Click Yes, and with that, you have removed access from the user for managing PIM.</p>
-<h1 id="Process-Pending-Approval-Requests"><a href="#Process-Pending-Approval-Requests" class="headerlink" title="Process Pending Approval Requests"></a>Process Pending Approval Requests</h1><p>A strength of Azure AD Privileged Identity Management is the fact that it offers you the ability to configure roles so that they require approval for activation. You can then configure one or more users or groups as delegated approvers. In this demonstration, I’m going to show you how to view, approve and deny requests for <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> resource roles. If you are a delegated approver, you will receive an email notification whenever an Azure resource role request is pending your approval. To view pending requests in <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/pim-overview/">PIM</a>, sign into the Azure portal, and open the Azure AD Privileged Identity Management dashboard. From the PIM dashboard, click Approve Requests. Click on either Azure AD roles or on Azure resources to view requests for each. You’ll see a list of pending requests that need your approval. To approve a request, click the request that you want to approve so that the Approval pane opens. Provide justification in the Justification box and then click Approve. To deny a request, click the request that you want to deny. As was the case previously, the Approval pane opens. Provide justification in the Justification box and then click Deny instead. As you can see, the process for approving and denying requests is quite simple.</p>
-<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>I hope you’ve enjoyed learning about <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/introduction/">Azure AD Privileged Identity Management</a>. Let’s review what you’ve learned. Azure AD Privileged Identity Management or <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/pim-overview/">PIM</a> for short is an <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> offering that allows you to manage and control access to resources within Azure and within Azure AD as well as within other services such as Intune and Office 365. To leverage PIM, a valid Azure AD Premium P2 license is required for all users that will interact with the service or benefit from it. However, you can instead assign an Enterprise Mobility + Security E5 license for each user that interacts with Privileged Identity Management. In this course, you learned how to enable PIM for an Azure subscription and how to configure it to use multi-factor authentication. You learned how to view and manage assignments using PIM and how to navigate the PIM console to manage tasks. During the course, you also saw how to <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-azure-active-directory-privileged-identity-management/activating-roles/">leverage PIM to activate roles</a> that provide administrative access to certain resources for only a predetermined amount of time. </p>
-<p>You also learned during this course about the differences between the eligible assignment type and the active assignment type. After covering assignment types, we looked at what assignment duration is used for and how they are used to provide limited admin access. We also touched on the two different assignment states that are available. Later in the course, we covered approval workflow in PIM as well as the role assignment process. You learned how Azure AD Privileged Identity Management can manage built-in Azure resource roles along with custom roles such as owner, user access administrator, contributor, security admin and security manager. You also learned how to make a user eligible for an Azure resource role and how to remove access. Closing out the course, you learned about supported management scenarios through various examples and how to configure management access in PIM. To learn more about Azure AD Privileged Identity Management you can and should review Microsoft’s published documentation on the topic. Be sure to also watch for new Microsoft Azure courses on Cloud Academy because we’re always publishing new courses. Please give this course a rating and if you have any questions or comments, please let us know. Thanks for watching and happy learning.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/19/DevOps-Engineer-Professional-Cert-Prep-Certified-DevOps-Engineer-Professional-for-AWS-67/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/123456.gif">
-      <meta itemprop="name" content="Hang Zhang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hang's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/19/DevOps-Engineer-Professional-Cert-Prep-Certified-DevOps-Engineer-Professional-for-AWS-67/" class="post-title-link" itemprop="url">DevOps-Engineer-Professional-Cert-Prep-Certified-DevOps-Engineer---Professional-for-AWS-67</a>
+            <a href="/2022/11/22/2021-3-8-%E6%9E%84%E5%BB%BAdocker%E5%AE%B9%E5%99%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">2021-3-8-构建docker容器监控系统</a>
         </h2>
 
         <div class="post-meta">
@@ -332,7 +208,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-11-19 10:15:24 / Modified: 10:15:26" itemprop="dateCreated datePublished" datetime="2022-11-19T10:15:24-04:00">2022-11-19</time>
+              <time title="Created: 2022-11-22 02:53:34 / Modified: 02:53:36" itemprop="dateCreated datePublished" datetime="2022-11-22T02:53:34-04:00">2022-11-22</time>
             </span>
 
           
@@ -344,8 +220,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/19/DevOps-Engineer-Professional-Cert-Prep-Certified-DevOps-Engineer-Professional-for-AWS-67/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/19/DevOps-Engineer-Professional-Cert-Prep-Certified-DevOps-Engineer-Professional-for-AWS-67/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/22/2021-3-8-%E6%9E%84%E5%BB%BAdocker%E5%AE%B9%E5%99%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/22/2021-3-8-%E6%9E%84%E5%BB%BAdocker%E5%AE%B9%E5%99%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -379,7 +255,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/19/DevOps-Engineer-Professional-AWS-Developer-Tools-Challenge-66/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/22/5-12ELK%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F-GlusterFS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -393,7 +269,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/19/DevOps-Engineer-Professional-AWS-Developer-Tools-Challenge-66/" class="post-title-link" itemprop="url">DevOps-Engineer-Professional-AWS-Developer-Tools-Challenge-66</a>
+            <a href="/2022/11/22/5-12ELK%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F-GlusterFS/" class="post-title-link" itemprop="url">5-12ELK日志分析系统-GlusterFS</a>
         </h2>
 
         <div class="post-meta">
@@ -404,7 +280,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-11-19 10:15:22 / Modified: 10:15:24" itemprop="dateCreated datePublished" datetime="2022-11-19T10:15:22-04:00">2022-11-19</time>
+              <time title="Created: 2022-11-22 02:53:32 / Modified: 02:53:34" itemprop="dateCreated datePublished" datetime="2022-11-22T02:53:32-04:00">2022-11-22</time>
             </span>
 
           
@@ -416,8 +292,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/19/DevOps-Engineer-Professional-AWS-Developer-Tools-Challenge-66/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/19/DevOps-Engineer-Professional-AWS-Developer-Tools-Challenge-66/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/22/5-12ELK%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F-GlusterFS/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/22/5-12ELK%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F-GlusterFS/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -451,7 +327,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/19/DevOps-Engineer-Professional-AWS-DevOps-Engineer-Professional-Summary-65/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/22/3-31Nginx%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%BC%98%E5%8C%96%E7%AA%81%E7%A0%B410%E4%B8%87%E5%B9%B6%E5%8F%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -465,7 +341,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/19/DevOps-Engineer-Professional-AWS-DevOps-Engineer-Professional-Summary-65/" class="post-title-link" itemprop="url">DevOps-Engineer-Professional-AWS-DevOps-Engineer-Professional---Summary-65</a>
+            <a href="/2022/11/22/3-31Nginx%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%BC%98%E5%8C%96%E7%AA%81%E7%A0%B410%E4%B8%87%E5%B9%B6%E5%8F%91/" class="post-title-link" itemprop="url">3-31Nginx生产环境优化突破10万并发</a>
         </h2>
 
         <div class="post-meta">
@@ -476,7 +352,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-11-19 10:15:21 / Modified: 10:15:22" itemprop="dateCreated datePublished" datetime="2022-11-19T10:15:21-04:00">2022-11-19</time>
+              <time title="Created: 2022-11-22 02:53:30 / Modified: 02:53:32" itemprop="dateCreated datePublished" datetime="2022-11-22T02:53:30-04:00">2022-11-22</time>
             </span>
 
           
@@ -488,8 +364,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/19/DevOps-Engineer-Professional-AWS-DevOps-Engineer-Professional-Summary-65/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/19/DevOps-Engineer-Professional-AWS-DevOps-Engineer-Professional-Summary-65/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/22/3-31Nginx%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%BC%98%E5%8C%96%E7%AA%81%E7%A0%B410%E4%B8%87%E5%B9%B6%E5%8F%91/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/22/3-31Nginx%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%BC%98%E5%8C%96%E7%AA%81%E7%A0%B410%E4%B8%87%E5%B9%B6%E5%8F%91/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -523,7 +399,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/19/DevOps-Engineer-Professional-Using-AWS-Storage-for-On-Premises-Backup-Disaster-Recovery-64/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/22/3-5%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -537,7 +413,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/19/DevOps-Engineer-Professional-Using-AWS-Storage-for-On-Premises-Backup-Disaster-Recovery-64/" class="post-title-link" itemprop="url">DevOps-Engineer-Professional-Using-AWS-Storage-for-On-Premises-Backup--Disaster-Recovery-64</a>
+            <a href="/2022/11/22/3-5%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">3-5操作系统安全配置</a>
         </h2>
 
         <div class="post-meta">
@@ -548,7 +424,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-11-19 10:15:19 / Modified: 10:15:20" itemprop="dateCreated datePublished" datetime="2022-11-19T10:15:19-04:00">2022-11-19</time>
+              <time title="Created: 2022-11-22 02:53:28 / Modified: 02:53:30" itemprop="dateCreated datePublished" datetime="2022-11-22T02:53:28-04:00">2022-11-22</time>
             </span>
 
           
@@ -560,8 +436,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/19/DevOps-Engineer-Professional-Using-AWS-Storage-for-On-Premises-Backup-Disaster-Recovery-64/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/19/DevOps-Engineer-Professional-Using-AWS-Storage-for-On-Premises-Backup-Disaster-Recovery-64/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/22/3-5%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/22/3-5%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -595,7 +471,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/19/DevOps-Engineer-Professional-Using-SQS-SNS-and-SES-in-a-Decoupled-and-Distributed-Environment-63/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/22/2-22%E6%9D%83%E9%99%90%E7%A1%AC%E7%9B%98%E7%BB%84%E6%88%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -609,7 +485,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/19/DevOps-Engineer-Professional-Using-SQS-SNS-and-SES-in-a-Decoupled-and-Distributed-Environment-63/" class="post-title-link" itemprop="url">DevOps-Engineer-Professional-Using-SQS-SNS-and-SES-in-a-Decoupled-and-Distributed-Environment-63</a>
+            <a href="/2022/11/22/2-22%E6%9D%83%E9%99%90%E7%A1%AC%E7%9B%98%E7%BB%84%E6%88%90/" class="post-title-link" itemprop="url">2-22权限硬盘组成</a>
         </h2>
 
         <div class="post-meta">
@@ -620,7 +496,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-11-19 10:15:18 / Modified: 10:15:20" itemprop="dateCreated datePublished" datetime="2022-11-19T10:15:18-04:00">2022-11-19</time>
+              <time title="Created: 2022-11-22 02:53:26 / Modified: 02:53:28" itemprop="dateCreated datePublished" datetime="2022-11-22T02:53:26-04:00">2022-11-22</time>
             </span>
 
           
@@ -632,8 +508,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/19/DevOps-Engineer-Professional-Using-SQS-SNS-and-SES-in-a-Decoupled-and-Distributed-Environment-63/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/19/DevOps-Engineer-Professional-Using-SQS-SNS-and-SES-in-a-Decoupled-and-Distributed-Environment-63/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/22/2-22%E6%9D%83%E9%99%90%E7%A1%AC%E7%9B%98%E7%BB%84%E6%88%90/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/22/2-22%E6%9D%83%E9%99%90%E7%A1%AC%E7%9B%98%E7%BB%84%E6%88%90/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -667,7 +543,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/19/DevOps-Engineer-Professional-When-to-use-RDS-Multi-AZ-Read-Replicas-62/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/22/2001-3-25-Kubernetes%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -681,7 +557,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/19/DevOps-Engineer-Professional-When-to-use-RDS-Multi-AZ-Read-Replicas-62/" class="post-title-link" itemprop="url">DevOps-Engineer-Professional-When-to-use-RDS-Multi-AZ--Read-Replicas-62</a>
+            <a href="/2022/11/22/2001-3-25-Kubernetes%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/" class="post-title-link" itemprop="url">2001-3-25-Kubernetes集群部署</a>
         </h2>
 
         <div class="post-meta">
@@ -692,7 +568,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-11-19 10:15:16 / Modified: 10:15:18" itemprop="dateCreated datePublished" datetime="2022-11-19T10:15:16-04:00">2022-11-19</time>
+              <time title="Created: 2022-11-22 02:53:25 / Modified: 02:53:26" itemprop="dateCreated datePublished" datetime="2022-11-22T02:53:25-04:00">2022-11-22</time>
             </span>
 
           
@@ -704,8 +580,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/19/DevOps-Engineer-Professional-When-to-use-RDS-Multi-AZ-Read-Replicas-62/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/19/DevOps-Engineer-Professional-When-to-use-RDS-Multi-AZ-Read-Replicas-62/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/22/2001-3-25-Kubernetes%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/22/2001-3-25-Kubernetes%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -739,7 +615,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/19/DevOps-Engineer-Professional-AWS-Global-Infrastructure-Availability-Zones-Regions-Edge-Locations-Regional-Edge-Caches-61/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/22/Docker-Consul-Registrator-%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0-Password-Removed/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -753,7 +629,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/19/DevOps-Engineer-Professional-AWS-Global-Infrastructure-Availability-Zones-Regions-Edge-Locations-Regional-Edge-Caches-61/" class="post-title-link" itemprop="url">DevOps-Engineer-Professional-AWS-Global-Infrastructure-Availability-Zones-Regions-Edge-Locations-Regional-Edge-Caches-61</a>
+            <a href="/2022/11/22/Docker-Consul-Registrator-%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0-Password-Removed/" class="post-title-link" itemprop="url">Docker-Consul-Registrator-实现服务注册与发现-Password-Removed</a>
         </h2>
 
         <div class="post-meta">
@@ -764,7 +640,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-11-19 10:15:15 / Modified: 10:15:16" itemprop="dateCreated datePublished" datetime="2022-11-19T10:15:15-04:00">2022-11-19</time>
+              <time title="Created: 2022-11-22 02:53:23 / Modified: 02:53:24" itemprop="dateCreated datePublished" datetime="2022-11-22T02:53:23-04:00">2022-11-22</time>
             </span>
 
           
@@ -776,8 +652,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/19/DevOps-Engineer-Professional-AWS-Global-Infrastructure-Availability-Zones-Regions-Edge-Locations-Regional-Edge-Caches-61/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/19/DevOps-Engineer-Professional-AWS-Global-Infrastructure-Availability-Zones-Regions-Edge-Locations-Regional-Edge-Caches-61/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/22/Docker-Consul-Registrator-%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0-Password-Removed/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/22/Docker-Consul-Registrator-%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0-Password-Removed/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -811,7 +687,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/19/DevOps-Engineer-Professional-Follow-Best-Practices-with-AWS-Trusted-Advisor-60/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/22/11-Kubernetes-Kubeadm-%E4%BC%81%E4%B8%9A%E7%BA%A7%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -825,7 +701,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/19/DevOps-Engineer-Professional-Follow-Best-Practices-with-AWS-Trusted-Advisor-60/" class="post-title-link" itemprop="url">DevOps-Engineer-Professional-Follow-Best-Practices-with-AWS-Trusted-Advisor-60</a>
+            <a href="/2022/11/22/11-Kubernetes-Kubeadm-%E4%BC%81%E4%B8%9A%E7%BA%A7%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B2/" class="post-title-link" itemprop="url">11-Kubernetes-Kubeadm-企业级高可用部署</a>
         </h2>
 
         <div class="post-meta">
@@ -836,7 +712,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-11-19 10:15:13 / Modified: 10:15:14" itemprop="dateCreated datePublished" datetime="2022-11-19T10:15:13-04:00">2022-11-19</time>
+              <time title="Created: 2022-11-22 02:53:21 / Modified: 02:53:22" itemprop="dateCreated datePublished" datetime="2022-11-22T02:53:21-04:00">2022-11-22</time>
             </span>
 
           
@@ -848,8 +724,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/19/DevOps-Engineer-Professional-Follow-Best-Practices-with-AWS-Trusted-Advisor-60/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/19/DevOps-Engineer-Professional-Follow-Best-Practices-with-AWS-Trusted-Advisor-60/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/22/11-Kubernetes-Kubeadm-%E4%BC%81%E4%B8%9A%E7%BA%A7%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/22/11-Kubernetes-Kubeadm-%E4%BC%81%E4%B8%9A%E7%BA%A7%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B2/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -883,7 +759,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/19/DevOps-Engineer-Professional-Using-AWS-Trusted-Advisor-to-Follow-and-Implement-Best-Practices-59/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/22/Kubernetes-Kubeadm-%E4%BC%81%E4%B8%9A%E7%BA%A7%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -897,7 +773,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/19/DevOps-Engineer-Professional-Using-AWS-Trusted-Advisor-to-Follow-and-Implement-Best-Practices-59/" class="post-title-link" itemprop="url">DevOps-Engineer-Professional-Using-AWS-Trusted-Advisor-to-Follow-and-Implement-Best-Practices-59</a>
+            <a href="/2022/11/22/Kubernetes-Kubeadm-%E4%BC%81%E4%B8%9A%E7%BA%A7%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B2/" class="post-title-link" itemprop="url">Kubernetes-Kubeadm-企业级高可用部署</a>
         </h2>
 
         <div class="post-meta">
@@ -908,7 +784,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-11-19 10:15:12 / Modified: 10:15:14" itemprop="dateCreated datePublished" datetime="2022-11-19T10:15:12-04:00">2022-11-19</time>
+              <time title="Created: 2022-11-22 02:53:19 / Modified: 02:53:20" itemprop="dateCreated datePublished" datetime="2022-11-22T02:53:19-04:00">2022-11-22</time>
             </span>
 
           
@@ -920,8 +796,80 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/19/DevOps-Engineer-Professional-Using-AWS-Trusted-Advisor-to-Follow-and-Implement-Best-Practices-59/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/19/DevOps-Engineer-Professional-Using-AWS-Trusted-Advisor-to-Follow-and-Implement-Best-Practices-59/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/22/Kubernetes-Kubeadm-%E4%BC%81%E4%B8%9A%E7%BA%A7%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/22/Kubernetes-Kubeadm-%E4%BC%81%E4%B8%9A%E7%BA%A7%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/22/43-%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B-%E4%BB%A3%E7%A0%81%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E5%8F%98%E6%9B%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/22/43-%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B-%E4%BB%A3%E7%A0%81%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E5%8F%98%E6%9B%B4/" class="post-title-link" itemprop="url">43-项目案例-代码版本控制系统变更</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-22 02:53:17 / Modified: 02:53:18" itemprop="dateCreated datePublished" datetime="2022-11-22T02:53:17-04:00">2022-11-22</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/22/43-%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B-%E4%BB%A3%E7%A0%81%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E5%8F%98%E6%9B%B4/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/22/43-%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B-%E4%BB%A3%E7%A0%81%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E5%8F%98%E6%9B%B4/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -954,7 +902,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/266/">266</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/274/">274</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1022,14 +970,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2653</span>
+          <span class="site-state-item-count">2736</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

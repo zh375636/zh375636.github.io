@@ -183,7 +183,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/CCNA%E5%AE%9E%E9%AA%8C%E6%89%8B%E5%86%8C/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/18/AZ-700-AZ-700-Introduction-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -197,7 +197,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/17/CCNA%E5%AE%9E%E9%AA%8C%E6%89%8B%E5%86%8C/" class="post-title-link" itemprop="url">CCNA实验手册</a>
+            <a href="/2022/11/18/AZ-700-AZ-700-Introduction-1/" class="post-title-link" itemprop="url">AZ-700-AZ-700-Introduction-1</a>
         </h2>
 
         <div class="post-meta">
@@ -207,15 +207,24 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-11-17 16:58:45" itemprop="dateCreated datePublished" datetime="2022-11-17T16:58:45-04:00">2022-11-17</time>
+              <time title="Created: 2022-11-18 20:10:32" itemprop="dateCreated datePublished" datetime="2022-11-18T20:10:32-04:00">2022-11-18</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-18 17:15:26" itemprop="dateModified" datetime="2022-11-18T17:15:26-04:00">2022-11-18</time>
+                <time title="Modified: 2022-11-22 21:35:52" itemprop="dateModified" datetime="2022-11-22T21:35:52-04:00">2022-11-22</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-700/" itemprop="url" rel="index"><span itemprop="name">AZ-700</span></a>
+                </span>
+            </span>
 
           
   
@@ -226,8 +235,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/17/CCNA%E5%AE%9E%E9%AA%8C%E6%89%8B%E5%86%8C/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/CCNA%E5%AE%9E%E9%AA%8C%E6%89%8B%E5%86%8C/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/18/AZ-700-AZ-700-Introduction-1/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/18/AZ-700-AZ-700-Introduction-1/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -242,7 +251,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><object data="CCNA实验手册.pdf" type="application/pdf" width="100%" height="600"></object></p>
+          <h1 id="AZ-700-Introduction"><a href="#AZ-700-Introduction" class="headerlink" title="AZ-700 Introduction"></a>AZ-700 Introduction</h1><p>Hello and welcome to Designing and Implementing Azure Network Solutions. The purpose of this learning path is to prepare you for Microsoft’s AZ-700 exam. If you pass the AZ-700 exam, then you’ll earn the Azure Network Engineer Associate certification.</p>
+<p>My name’s Guy Hummel and I’m a Microsoft Certified Azure Architect and Network Engineer. The AZ-700 exam tests your knowledge of five subject areas. Here’s how we’ll cover them in this learning path.</p>
+<p>We’ll start with hybrid networking. Most Microsoft customers already have existing infrastructure in on-premises locations and need to connect that infrastructure to Azure. There are two primary methods of doing this: Azure ExpressRoute and Azure VPN. ExpressRoute gives you a dedicated connection to Azure that doesn’t go over the internet.</p>
+<p>With Azure VPN, you create encrypted connections to Azure over the internet. There are two different kinds of Azure VPN implementations: site-to-site and point-to-site. With site-to-site, you connect an entire on-premises location to Azure. With point-to-site, you connect individual devices to Azure.</p>
+<p>The next section is about core networking infrastructure. The heart of Azure networking is the virtual network (or VNet). You’ll learn how to create VNets, set up name resolution using Azure DNS, connect two virtual networks together using VNet peering, and create a wide area network using Azure Virtual WAN.</p>
+<p>After that, we’ll cover routing. As you’d expect, Azure supports user-defined routes in its virtual networks, but this section includes far more than that. One big topic is load balancing. You’ll learn how to use Azure Load Balancer to distribute traffic to pools of virtual machines, which is a good way to scale up your compute resources for an application and make it highly available. </p>
+<p>Microsoft also offers another type of load balancer called Azure Application Gateway. It operates at the application layer of the networking stack because it routes HTTP or HTTPS traffic. This lets you do some cool things like route traffic based on keywords in an application’s URL.</p>
+<p>Those two services operate within a particular Azure region. If you need to load balance across multiple regions, then you need to use either Azure Traffic Manager or Azure Front Door to direct traffic to your regional load balancers. The difference between them is similar to the difference between Load Balancer and Application Gateway. Traffic Manager routes all types of traffic but in a simple way. Front Door operates at the HTTP layer, so it can route based on the URL and perform other optimizations for web-based applications.</p>
+<p>The final part of the routing section covers Azure Virtual Network NAT. You can use this service to do network address translation, which lets you put multiple private IP addresses behind a single public IP address.</p>
+<p>In the next section, you’ll learn how to secure and monitor your networks. For security, Microsoft offers several types of firewalls: Azure Firewall, network security groups (or NSGs), and Azure Web Application Firewall. Network monitoring is provided primarily by Azure Network Watcher.</p>
+<p>In the final section, you’ll learn how to configure private access to Azure services. This includes private endpoints, service endpoints, and VNet integration. These are all methods that let a VNet connect to Azure services over the Microsoft backbone network rather than over the internet.</p>
+<p>Now, are you ready to become an Azure network engineer? Then let’s get started! To get to the next course in this learning path, click on the Learning Path pullout menu on the left side of the page. But please remember to rate this introduction before you go on to the next course. Thanks!</p>
 
       
     </div>
@@ -262,7 +282,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/CCIE%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%8D%97%E7%AC%AC2%E5%8D%B7/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/Feature/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -276,7 +296,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/17/CCIE%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%8D%97%E7%AC%AC2%E5%8D%B7/" class="post-title-link" itemprop="url">CCIE实验指南第2卷</a>
+            <a href="/2022/11/17/Feature/" class="post-title-link" itemprop="url">Feature</a>
         </h2>
 
         <div class="post-meta">
@@ -286,14 +306,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-11-17 16:58:43" itemprop="dateCreated datePublished" datetime="2022-11-17T16:58:43-04:00">2022-11-17</time>
+              <time title="Created: 2022-11-17 17:00:47" itemprop="dateCreated datePublished" datetime="2022-11-17T17:00:47-04:00">2022-11-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-18 16:56:58" itemprop="dateModified" datetime="2022-11-18T16:56:58-04:00">2022-11-18</time>
+                <time title="Modified: 2022-11-18 16:59:32" itemprop="dateModified" datetime="2022-11-18T16:59:32-04:00">2022-11-18</time>
               </span>
 
           
@@ -305,8 +325,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/17/CCIE%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%8D%97%E7%AC%AC2%E5%8D%B7/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/CCIE%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%8D%97%E7%AC%AC2%E5%8D%B7/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/17/Feature/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/Feature/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -321,8 +341,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><object data="1_CCIE实验指南第2卷.pdf" type="application/pdf" width="100%" height="600"></object></p>
-<p><object data="361_CCIE实验指南第2卷.pdf" type="application/pdf" width="100%" height="600"></object></p>
+          <p><object data="Feature.pdf" type="application/pdf" width="100%" height="600"></object></p>
 
       
     </div>
@@ -342,7 +361,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/CCIE%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%8D%97%E7%AC%AC1%E5%8D%B7/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/BGP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -356,7 +375,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/17/CCIE%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%8D%97%E7%AC%AC1%E5%8D%B7/" class="post-title-link" itemprop="url">CCIE实验指南第1卷</a>
+            <a href="/2022/11/17/BGP/" class="post-title-link" itemprop="url">BGP</a>
         </h2>
 
         <div class="post-meta">
@@ -366,14 +385,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-11-17 16:58:42" itemprop="dateCreated datePublished" datetime="2022-11-17T16:58:42-04:00">2022-11-17</time>
+              <time title="Created: 2022-11-17 17:00:45" itemprop="dateCreated datePublished" datetime="2022-11-17T17:00:45-04:00">2022-11-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-18 17:15:06" itemprop="dateModified" datetime="2022-11-18T17:15:06-04:00">2022-11-18</time>
+                <time title="Modified: 2022-11-18 16:59:50" itemprop="dateModified" datetime="2022-11-18T16:59:50-04:00">2022-11-18</time>
               </span>
 
           
@@ -385,8 +404,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/17/CCIE%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%8D%97%E7%AC%AC1%E5%8D%B7/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/CCIE%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%8D%97%E7%AC%AC1%E5%8D%B7/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/17/BGP/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/BGP/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -401,9 +420,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><object data="1_CCIE实验指南第1卷.pdf" type="application/pdf" width="100%" height="600"></object></p>
-<p><object data="344_CCIE实验指南第1卷.pdf" type="application/pdf" width="100%" height="600"></object></p>
-<p><object data="663_CCIE实验指南第1卷.pdf" type="application/pdf" width="100%" height="600"></object></p>
+          <p><object data="BGP.pdf" type="application/pdf" width="100%" height="600"></object></p>
 
       
     </div>
@@ -423,7 +440,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/ccie-mplsvpn-qos-ipv6-multicast/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/Switching/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -437,7 +454,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/17/ccie-mplsvpn-qos-ipv6-multicast/" class="post-title-link" itemprop="url">ccie-mplsvpn-qos-ipv6-multicast</a>
+            <a href="/2022/11/17/Switching/" class="post-title-link" itemprop="url">Switching</a>
         </h2>
 
         <div class="post-meta">
@@ -447,14 +464,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-11-17 16:58:40" itemprop="dateCreated datePublished" datetime="2022-11-17T16:58:40-04:00">2022-11-17</time>
+              <time title="Created: 2022-11-17 17:00:44" itemprop="dateCreated datePublished" datetime="2022-11-17T17:00:44-04:00">2022-11-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-18 17:14:36" itemprop="dateModified" datetime="2022-11-18T17:14:36-04:00">2022-11-18</time>
+                <time title="Modified: 2022-11-18 17:00:18" itemprop="dateModified" datetime="2022-11-18T17:00:18-04:00">2022-11-18</time>
               </span>
 
           
@@ -466,8 +483,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/17/ccie-mplsvpn-qos-ipv6-multicast/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/ccie-mplsvpn-qos-ipv6-multicast/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/17/Switching/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/Switching/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -482,7 +499,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><object data="ccie-mplsvpn-qos-ipv6-multicast.pdf" type="application/pdf" width="100%" height="600"></object></p>
+          <p><object data="Switching.pdf" type="application/pdf" width="100%" height="600"></object></p>
 
       
     </div>
@@ -502,7 +519,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/ccie%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E7%AC%AC2%E5%8D%B7/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/Security/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -516,7 +533,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/17/ccie%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E7%AC%AC2%E5%8D%B7/" class="post-title-link" itemprop="url">ccie路由和交换认证考试指南第5版第2卷</a>
+            <a href="/2022/11/17/Security/" class="post-title-link" itemprop="url">Security</a>
         </h2>
 
         <div class="post-meta">
@@ -526,14 +543,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-11-17 16:58:39" itemprop="dateCreated datePublished" datetime="2022-11-17T16:58:39-04:00">2022-11-17</time>
+              <time title="Created: 2022-11-17 17:00:42" itemprop="dateCreated datePublished" datetime="2022-11-17T17:00:42-04:00">2022-11-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-18 17:14:56" itemprop="dateModified" datetime="2022-11-18T17:14:56-04:00">2022-11-18</time>
+                <time title="Modified: 2022-11-18 17:00:44" itemprop="dateModified" datetime="2022-11-18T17:00:44-04:00">2022-11-18</time>
               </span>
 
           
@@ -545,8 +562,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/17/ccie%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E7%AC%AC2%E5%8D%B7/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/ccie%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E7%AC%AC2%E5%8D%B7/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/17/Security/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/Security/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -561,7 +578,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><object data="ccie路由和交换认证考试指南第5版第2卷.pdf" type="application/pdf" width="100%" height="600"></object></p>
+          <p>​	<object data="Security.pdf" type="application/pdf" width="100%" height="600"></object></p>
 
       
     </div>
@@ -581,7 +598,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/ccie%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E7%AC%AC1%E5%8D%B7/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/QOS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -595,7 +612,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/17/ccie%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E7%AC%AC1%E5%8D%B7/" class="post-title-link" itemprop="url">ccie路由和交换认证考试指南第5版第1卷</a>
+            <a href="/2022/11/17/QOS/" class="post-title-link" itemprop="url">QOS</a>
         </h2>
 
         <div class="post-meta">
@@ -605,14 +622,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-11-17 16:58:37" itemprop="dateCreated datePublished" datetime="2022-11-17T16:58:37-04:00">2022-11-17</time>
+              <time title="Created: 2022-11-17 17:00:40" itemprop="dateCreated datePublished" datetime="2022-11-17T17:00:40-04:00">2022-11-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-18 17:14:26" itemprop="dateModified" datetime="2022-11-18T17:14:26-04:00">2022-11-18</time>
+                <time title="Modified: 2022-11-18 17:01:06" itemprop="dateModified" datetime="2022-11-18T17:01:06-04:00">2022-11-18</time>
               </span>
 
           
@@ -624,8 +641,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/17/ccie%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E7%AC%AC1%E5%8D%B7/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/ccie%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BA%A4%E6%8D%A2%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%8C%87%E5%8D%97%E7%AC%AC5%E7%89%88%E7%AC%AC1%E5%8D%B7/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/17/QOS/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/QOS/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -640,7 +657,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><object data="ccie路由和交换认证考试指南第5版第1卷.pdf" type="application/pdf" width="100%" height="600"></object></p>
+          <p><object data="QOS.pdf" type="application/pdf" width="100%" height="600"></object></p>
 
       
     </div>
@@ -660,7 +677,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/BGP%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/Multicast/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -674,7 +691,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/17/BGP%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/" class="post-title-link" itemprop="url">BGP设计与实现</a>
+            <a href="/2022/11/17/Multicast/" class="post-title-link" itemprop="url">Multicast</a>
         </h2>
 
         <div class="post-meta">
@@ -684,14 +701,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-11-17 16:58:36" itemprop="dateCreated datePublished" datetime="2022-11-17T16:58:36-04:00">2022-11-17</time>
+              <time title="Created: 2022-11-17 17:00:39" itemprop="dateCreated datePublished" datetime="2022-11-17T17:00:39-04:00">2022-11-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-18 15:46:24" itemprop="dateModified" datetime="2022-11-18T15:46:24-04:00">2022-11-18</time>
+                <time title="Modified: 2022-11-18 17:01:46" itemprop="dateModified" datetime="2022-11-18T17:01:46-04:00">2022-11-18</time>
               </span>
 
           
@@ -703,8 +720,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/17/BGP%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/BGP%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/17/Multicast/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/Multicast/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -719,9 +736,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><object data="1_BGP设计与实现.pdf" type="application/pdf" width="100%" height="600"></object></p>
-<p><object data="194_BGP设计与实现.pdf" type="application/pdf" width="100%" height="600"></object></p>
-<p><object data="406_BGP设计与实现.pdf" type="application/pdf" width="100%" height="600"></object></p>
+          <p><object data="Multicast.pdf" type="application/pdf" width="100%" height="600"></object></p>
 
       
     </div>
@@ -741,7 +756,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/Cisco%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BA%A4%E6%8D%A2%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/MPLS-MPLS-VPN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -755,7 +770,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/17/Cisco%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BA%A4%E6%8D%A2%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">Cisco局域网交换基础</a>
+            <a href="/2022/11/17/MPLS-MPLS-VPN/" class="post-title-link" itemprop="url">MPLS_MPLS-VPN</a>
         </h2>
 
         <div class="post-meta">
@@ -765,14 +780,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-11-17 16:58:34" itemprop="dateCreated datePublished" datetime="2022-11-17T16:58:34-04:00">2022-11-17</time>
+              <time title="Created: 2022-11-17 17:00:38" itemprop="dateCreated datePublished" datetime="2022-11-17T17:00:38-04:00">2022-11-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-18 17:14:14" itemprop="dateModified" datetime="2022-11-18T17:14:14-04:00">2022-11-18</time>
+                <time title="Modified: 2022-11-18 17:01:32" itemprop="dateModified" datetime="2022-11-18T17:01:32-04:00">2022-11-18</time>
               </span>
 
           
@@ -784,8 +799,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/17/Cisco%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BA%A4%E6%8D%A2%E5%9F%BA%E7%A1%80/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/Cisco%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BA%A4%E6%8D%A2%E5%9F%BA%E7%A1%80/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/17/MPLS-MPLS-VPN/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/MPLS-MPLS-VPN/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -800,7 +815,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><object data="Cisco局域网交换基础.pdf" type="application/pdf" width="100%" height="600"></object></p>
+          <p><object data="MPLS_MPLS-VPN.pdf" type="application/pdf" width="100%" height="600"></object></p>
 
       
     </div>
@@ -820,7 +835,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/Cisco-Software-Defined-Access/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/IPv6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -834,7 +849,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/17/Cisco-Software-Defined-Access/" class="post-title-link" itemprop="url">Cisco-Software-Defined-Access</a>
+            <a href="/2022/11/17/IPv6/" class="post-title-link" itemprop="url">IPv6</a>
         </h2>
 
         <div class="post-meta">
@@ -843,10 +858,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-17 16:58:33 / Modified: 16:58:34" itemprop="dateCreated datePublished" datetime="2022-11-17T16:58:33-04:00">2022-11-17</time>
+              <time title="Created: 2022-11-17 17:00:36" itemprop="dateCreated datePublished" datetime="2022-11-17T17:00:36-04:00">2022-11-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-18 17:01:58" itemprop="dateModified" datetime="2022-11-18T17:01:58-04:00">2022-11-18</time>
+              </span>
 
           
   
@@ -857,8 +878,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/17/Cisco-Software-Defined-Access/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/Cisco-Software-Defined-Access/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/17/IPv6/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/IPv6/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -873,7 +894,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <p><object data="IPv6.pdf" type="application/pdf" width="100%" height="600"></object></p>
+
       
     </div>
 
@@ -892,7 +914,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/CCIE-Practical-Studies-Volume1/">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/17/IGP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/123456.gif">
@@ -906,7 +928,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/17/CCIE-Practical-Studies-Volume1/" class="post-title-link" itemprop="url">CCIE-Practical-Studies-Volume1</a>
+            <a href="/2022/11/17/IGP/" class="post-title-link" itemprop="url">IGP</a>
         </h2>
 
         <div class="post-meta">
@@ -916,14 +938,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-11-17 16:58:31" itemprop="dateCreated datePublished" datetime="2022-11-17T16:58:31-04:00">2022-11-17</time>
+              <time title="Created: 2022-11-17 17:00:35" itemprop="dateCreated datePublished" datetime="2022-11-17T17:00:35-04:00">2022-11-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-18 17:14:00" itemprop="dateModified" datetime="2022-11-18T17:14:00-04:00">2022-11-18</time>
+                <time title="Modified: 2022-11-18 17:02:10" itemprop="dateModified" datetime="2022-11-18T17:02:10-04:00">2022-11-18</time>
               </span>
 
           
@@ -935,8 +957,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2022/11/17/CCIE-Practical-Studies-Volume1/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/CCIE-Practical-Studies-Volume1/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/11/17/IGP/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/17/IGP/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -951,7 +973,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><object data="CCIE-Practical-Studies-Volume1.pdf" type="application/pdf" width="100%" height="600"></object></p>
+          <p><object data="IGP.pdf" type="application/pdf" width="100%" height="600"></object></p>
 
       
     </div>
@@ -970,7 +992,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/75/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/75/">75</a><span class="page-number current">76</span><a class="page-number" href="/page/77/">77</a><span class="space">&hellip;</span><a class="page-number" href="/page/266/">266</a><a class="extend next" rel="next" href="/page/77/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/75/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/75/">75</a><span class="page-number current">76</span><a class="page-number" href="/page/77/">77</a><span class="space">&hellip;</span><a class="page-number" href="/page/274/">274</a><a class="extend next" rel="next" href="/page/77/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1038,14 +1060,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2653</span>
+          <span class="site-state-item-count">2736</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

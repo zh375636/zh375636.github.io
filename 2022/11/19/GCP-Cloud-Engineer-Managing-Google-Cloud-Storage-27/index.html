@@ -20,13 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="Storage ManagementOnce you’ve set up your Cloud Storage buckets and applied the right security settings to them, you’ll still need to manage them on an ongoing basis. One of your first tasks will like">
+<meta property="og:type" content="article">
 <meta property="og:title" content="GCP-Cloud-Engineer-Managing-Google-Cloud-Storage-27">
 <meta property="og:url" content="https://example.com/2022/11/19/GCP-Cloud-Engineer-Managing-Google-Cloud-Storage-27/index.html">
 <meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="Storage ManagementOnce you’ve set up your Cloud Storage buckets and applied the right security settings to them, you’ll still need to manage them on an ongoing basis. One of your first tasks will like">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-19T04:03:14.000Z">
-<meta property="article:modified_time" content="2022-11-19T04:03:16.000Z">
+<meta property="article:modified_time" content="2022-11-23T00:52:50.000Z">
 <meta property="article:author" content="Hang Zhang">
 <meta name="twitter:card" content="summary">
 
@@ -208,9 +210,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-19 00:03:14 / Modified: 00:03:16" itemprop="dateCreated datePublished" datetime="2022-11-19T00:03:14-04:00">2022-11-19</time>
+              <time title="Created: 2022-11-19 00:03:14" itemprop="dateCreated datePublished" datetime="2022-11-19T00:03:14-04:00">2022-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-22 20:52:50" itemprop="dateModified" datetime="2022-11-22T20:52:50-04:00">2022-11-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/GCP-Cloud-Engineer/" itemprop="url" rel="index"><span itemprop="name">GCP-Cloud-Engineer</span></a>
+                </span>
             </span>
 
           
@@ -238,7 +255,108 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="Storage-Management"><a href="#Storage-Management" class="headerlink" title="Storage Management"></a>Storage Management</h1><p>Once you’ve set up your Cloud Storage buckets and applied the right security settings to them, you’ll still need to manage them on an ongoing basis.</p>
+<p>One of your first tasks will likely be to get data into your Cloud Storage buckets. If you need to upload data from an on-premise location, then you have three options:</p>
+<ol>
+<li>The Cloud Storage console</li>
+<li>gsutil, or</li>
+<li>Offline media import &#x2F; export</li>
+</ol>
+<p>The easiest way is to click on a bucket in the Cloud Storage console and then click “Upload Files” or “Upload Folder”. You can even view the uploaded file from the console if it’s the type of file that a web browser knows how to display.</p>
+<p>The second way is to use the “gsutil” command. For example, to upload a folder called “example-folder” from your desktop, you would use “gsutil cp -r Desktop&#x2F;example-folder” and then put “gs:&#x2F;&#x2F;” and the name of the bucket. Now, if we go back to the Cloud Storage console, we can see the uploaded folder.</p>
+<p>If you have a slow or expensive Internet connection, then you may want to use the third option, which is to ship your data on offline media. One way is to send hard disks, storage arrays, tapes, or other media to a third-party provider, such as Iron Mountain, and let them upload your data. </p>
+<p>Another way is to use a Transfer Appliance supplied by <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/google/">Google</a>. Here’s how it works. You submit a request for a Transfer Appliance, which Google then ships to you. When you receive it, you install it in your data center and transfer your data to it. Then you ship it back to Google so they can upload it for you.</p>
+<p>There are still more steps to perform, though, because the data on the Transfer Appliance is encrypted. First, Google uploads your encrypted data to a staging bucket in Cloud Storage. Next, you have to launch and configure what’s called a rehydrator instance. Then you run a rehydrator job on the instance, which will decrypt the data and copy it to a Cloud Storage bucket of your choosing. Finally, you delete the instance and send Google a request to erase the data from the Transfer Appliance and the staging bucket.</p>
+<p>If you need to transfer data from another cloud provider, then you can use the Google Cloud Storage Transfer Service. I’ll show you how it works.</p>
+<p>Click “Transfer” in the left-hand menu. Then click the “Create transfer” button. Under “Select source”, there are three options: you can transfer from another Google Cloud Storage bucket, an Amazon S3 bucket, or from a URL. I’m going to transfer from another Cloud Storage bucket to simulate transferring from another cloud provider because it works the same way.</p>
+<p>Click the Browse button and select the bucket. Then say which files to include in the transfer by specifying their prefix, such as “example”. You can also exclude files in the same way. Another option is to specify that you only want files modified recently, say in the last 24 hours. Of course, if you want to copy the entire contents of the bucket, then you don’t need to put in any filters.</p>
+<p>Now choose the destination bucket. There are also some options for how it handles overwrites and deletions. By default, an object will only be overwritten when the source version is different from the destination version. Also by default, no objects will be deleted from either the source or the destination. I’ll just leave it with the default settings.</p>
+<p>Then you specify when you want the transfer to happen. You can either run it now or schedule it to run at a particular time every day. I’ll just run it now. The transfer is going to take a little while, so I’ll fast forward until it’s done. It’s a bit tedious to transfer files manually like this, which is why scheduled transfers are so nice. For example, you could have it run automatically every day to check for new files in the source bucket and transfer them to the destination bucket. Alternatively, you could do this with a cron job that runs the gsutil command, but it’s much cleaner to do it this way.</p>
+<p>If you have any experience with managing data, then you know that data just keeps growing and growing over time, and if you don’t implement something to keep that growth under control, then you will either run out of storage space or have runaway costs. Since Google Cloud has nearly unlimited storage resources, that means you could easily have runaway costs.</p>
+<p>To prevent that, you can use object lifecycle management. There are two ways to control costs using lifecycle management. Based on age, creation time, or number of newer versions, either:</p>
+<ul>
+<li>Delete objects, or</li>
+<li>Move objects to a cheaper storage class, such as Nearline or Coldline Storage</li>
+</ul>
+<p>You can manage object lifecycle policies through the Cloud Storage console, the “gsutil” command, or the Google API Client Libraries. I’ll show you how to do it with gsutil.</p>
+<p>First, you need to create a lifecycle config file that contains the rules you want to set. Here’s an example in JSON format:</p>
+<p>{</p>
+<p>“lifecycle”: {</p>
+<p> “rule”: [</p>
+<p> {</p>
+<p>  “action”: {“type”: “Delete”},</p>
+<p>  “condition”: {</p>
+<p>   “age”: 365,</p>
+<p>   “isLive”: true</p>
+<p>  }</p>
+<p> },</p>
+<p> {</p>
+<p>  “action”: {“type”: “Delete”},</p>
+<p>  “condition”: {</p>
+<p>   “isLive”: false,</p>
+<p>   “numNewerVersions”: 3</p>
+<p>  }</p>
+<p> }</p>
+<p>]</p>
+<p>}</p>
+<p>}</p>
+<p>The first rule says to delete any live object older than 365 days. This might seem like a short time to live, but it’s not as draconian as it looks because it won’t completely delete the object if you’ve enabled versioning on the bucket. It will archive it instead. However, if you don’t have versioning enabled, then a Delete action will completely delete objects matching the condition and there will be no way to get them back. This is why you should test your lifecycle rules on test data before applying them to production data.</p>
+<p>The “isLive” parameter only matters if you’ve turned on versioning. If an object is live, it means that it’s the most current version of that object. If it’s not live, then it is one of the archived versions of that object.</p>
+<p>Let’s see if versioning is enabled on this bucket. I’ll use the gsutil command to check. It says it’s suspended. What the heck does that mean? It means versioning is disabled. I don’t know why they say suspended instead of disabled.</p>
+<p>To enable versioning, we just need to change “get” to “set on”. I have a file in the ca-example bucket called “examplefile” [Show that]. Now, I’ll upload a different version of “examplefile” and see if it archives the old version. OK, it’s uploaded, now I’ll run the “gsutil ls -la” command on that file. Yes, there are two versions of it now and they have different dates and sizes. Note that if you do an “ls -l” without the ‘a’ flag, then it won’t show the different versions, so make sure you include the ‘a’ flag.</p>
+<p>OK, let’s get back to the lifecycle policy. The second rule says to delete any object that has at least 3 newer versions of itself, including the live version. Unlike the first rule, this one really will delete the object because when you delete an archived object, it gets deleted forever. Although this rule has an explicit condition that the object must not be live, you don’t actually need to put in that condition because if an object has three newer versions, then it can’t be live. It has to be an archived version.</p>
+<p>So, looking at the big picture for these two rules, there are two possible scenarios, depending on whether versioning is enabled or not. If versioning is enabled, then the first rule will archive any object that is more than one year old, and the second rule will delete any object that has at least three newer versions of itself. If versioning is not enabled, then the first rule will delete any object that is more than one year old, and the second rule will not do anything.</p>
+<p>Suppose that instead of deleting objects older than one year, you’d like to send them to Nearline Storage, which is significantly cheaper, and send objects in Nearline Storage that are older than 3 years to Coldline Storage, which is even less expensive.</p>
+<p>Here’s a lifecycle config file that will implement this policy.</p>
+<p>{</p>
+<p>“lifecycle”: {</p>
+<p> “rule”: [</p>
+<p> {</p>
+<p>  “action”: {</p>
+<p>   “type”: “SetStorageClass”,</p>
+<p>   “storageClass”: “NEARLINE”</p>
+<p>  },</p>
+<p>  “condition”: {</p>
+<p>   “age”: 365,</p>
+<p>   “matchesStorageClass”: [“MULTI_REGIONAL”]</p>
+<p>  }</p>
+<p> },</p>
+<p> {</p>
+<p>  “action”: {</p>
+<p>   “type”: “SetStorageClass”,</p>
+<p>   “storageClass”: “COLDLINE”</p>
+<p>  },</p>
+<p>  “condition”: {</p>
+<p>   “age”: 1095,</p>
+<p>   “matchesStorageClass”: [“NEARLINE”]</p>
+<p>  }</p>
+<p> }</p>
+<p>]</p>
+<p>}</p>
+<p>}</p>
+<p>The first rule moves objects that are older than one year from Multi_Regional Storage to Nearline Storage. </p>
+<p>The second rule says that if an object is in Nearline Storage and it is at least 1,095 days old (which is 3 years), then it should be moved to Coldline Storage.</p>
+<p>To apply this lifecycle policy, you type “gsutil lifecycle set”, then the name of the config file, which is “lc2.json” in this case, and then the URL for the bucket, which is “gs:&#x2F;&#x2F;ca-example” in this case. Again, make sure you apply a lifecycle policy to test data before you put it into production or you risk losing valuable data.</p>
+<p>Once you’ve set up a lifecycle policy, you can monitor what it’s doing in two ways:</p>
+<ul>
+<li>Expiration time metadata</li>
+<li>Access logs</li>
+</ul>
+<p>To see the metadata for an object, use “gsutil ls -La” on the object. I’ll just show you the first dozen or so lines of the output because it prints all of the access control list information, which we’re not interested in right now. The output from this command may or may not contain expiration time metadata (and it doesn’t for this file), but the lifecycle policy should add that metadata when it knows the date and time that an object will be deleted.</p>
+<p>Bear in mind that updates to your lifecycle configuration may take up to 24 hours to go into effect. Not only will it take up to 24 hours before your new rules kick in, but your old rules may still be active for up to 24 hours, so if you discover a mistake in your rules, that bug can still be active for another 24 hours after you fix it, which is another reason why testing your rules on test data first is so important.</p>
+<p>Expiration time metadata is useful to see when your lifecycle policy is planning to delete an object, but it won’t show any of the other potential operations, such as moving an object to another storage class. If you want to see all of the operations that your lifecycle policy has actually performed, then you can look at the logs.</p>
+<p>If you haven’t already set up access logs for your bucket, then here are the commands you need to use. First create a bucket to hold the logs. Remember to change “ca-example-logs” to your own log bucket name.</p>
+<p>gsutil mb gs:&#x2F;&#x2F;ca-example-logs</p>
+<p>Then you have to give Google Cloud Storage WRITE permission so it can put logs in this bucket.</p>
+<p>gsutil acl ch -g <a href="mailto:&#99;&#108;&#111;&#117;&#x64;&#45;&#x73;&#x74;&#x6f;&#114;&#97;&#x67;&#101;&#45;&#97;&#110;&#97;&#108;&#x79;&#x74;&#x69;&#99;&#x73;&#x40;&#x67;&#x6f;&#111;&#x67;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#99;&#108;&#111;&#117;&#x64;&#45;&#x73;&#x74;&#x6f;&#114;&#97;&#x67;&#101;&#45;&#97;&#110;&#97;&#108;&#x79;&#x74;&#x69;&#99;&#x73;&#x40;&#x67;&#x6f;&#111;&#x67;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a>:W gs:&#x2F;&#x2F;ca-example-logs</p>
+<p>Next, you can set the default object ACL to, for example, “project-private”. You don’t have to do this, but it’s a good idea for security purposes to keep your logs private.</p>
+<p>gsutil defacl set project-private gs:&#x2F;&#x2F;ca-example-logs</p>
+<p>And finally, you enable logging with the “gsutil logging set on” command.</p>
+<p>gsutil logging set on -b gs:&#x2F;&#x2F;ca-example-logs gs:&#x2F;&#x2F;ca-example</p>
+<p>Once you have logging set up, then you can go into your logging bucket in the console and the access logs will show up there after the lifecycle policy has made changes.</p>
+<p>And that’s it for this lesson.</p>
+<h3 id="Lectures"><a href="#Lectures" class="headerlink" title="Lectures"></a>Lectures</h3><p><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-your-google-cloud-infrastructure/course-introduction-10/">Course Introduction</a> - <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-your-google-cloud-infrastructure/monitoring-3/">Monitoring</a> - <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-your-google-cloud-infrastructure/logging/">Logging</a> - <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-your-google-cloud-infrastructure/error-reporting-and-debugging/">Error Reporting and Debugging</a> - <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-your-google-cloud-infrastructure/tracing/">Tracing</a> - <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-your-google-cloud-infrastructure/testing-1/">Testing</a> - <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-your-google-cloud-infrastructure/cloud-sql-configuration/">Cloud SQL Configuration</a> - <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-your-google-cloud-infrastructure/cloud-cdn-configuration/">Cloud CDN Configuration</a> - <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-your-google-cloud-infrastructure/instance-startup-failures/">Instance Startup Failures</a> - <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-your-google-cloud-infrastructure/ssh-errors/">SSH Errors</a> - <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-your-google-cloud-infrastructure/network-traffic-dropping/">Network Traffic Dropping</a> - <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-your-google-cloud-infrastructure/conclusion-19/">Conclusion</a> </p>
+
     </div>
 
     
@@ -319,6 +437,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Storage-Management"><span class="nav-number">1.</span> <span class="nav-text">Storage Management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lectures"><span class="nav-number">1.0.1.</span> <span class="nav-text">Lectures</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -334,14 +453,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2653</span>
+          <span class="site-state-item-count">2736</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

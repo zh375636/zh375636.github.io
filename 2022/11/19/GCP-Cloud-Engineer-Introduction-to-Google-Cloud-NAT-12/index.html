@@ -20,13 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="IntroductionHello, and welcome to “Introduction to Google Cloud NAT”. My name is Daniel Mease and I’ll be taking you through this course. I am a trainer at Cloud Academy with over 20 years of software">
+<meta property="og:type" content="article">
 <meta property="og:title" content="GCP-Cloud-Engineer-Introduction-to-Google-Cloud-NAT-12">
 <meta property="og:url" content="https://example.com/2022/11/19/GCP-Cloud-Engineer-Introduction-to-Google-Cloud-NAT-12/index.html">
 <meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="IntroductionHello, and welcome to “Introduction to Google Cloud NAT”. My name is Daniel Mease and I’ll be taking you through this course. I am a trainer at Cloud Academy with over 20 years of software">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-19T04:02:51.000Z">
-<meta property="article:modified_time" content="2022-11-19T04:02:52.000Z">
+<meta property="article:modified_time" content="2022-11-23T00:52:40.000Z">
 <meta property="article:author" content="Hang Zhang">
 <meta name="twitter:card" content="summary">
 
@@ -208,9 +210,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-19 00:02:51 / Modified: 00:02:52" itemprop="dateCreated datePublished" datetime="2022-11-19T00:02:51-04:00">2022-11-19</time>
+              <time title="Created: 2022-11-19 00:02:51" itemprop="dateCreated datePublished" datetime="2022-11-19T00:02:51-04:00">2022-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-22 20:52:40" itemprop="dateModified" datetime="2022-11-22T20:52:40-04:00">2022-11-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/GCP-Cloud-Engineer/" itemprop="url" rel="index"><span itemprop="name">GCP-Cloud-Engineer</span></a>
+                </span>
             </span>
 
           
@@ -238,7 +255,61 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Hello, and welcome to “Introduction to Google Cloud NAT”. My name is Daniel Mease and I’ll be taking you through this course. I am a trainer at Cloud Academy with over 20 years of software and web development experience.</p>
+<p>This course is intended for GCP Network Engineers, GCP Security Engineers, and anyone preparing for a Google Cloud certification (such as the Professional Data Engineer exam).</p>
+<p>After completing this course, you will be able to answer the following questions:</p>
+<ul>
+<li>What is Google Cloud NAT?</li>
+<li>What configuration options are available?</li>
+<li>How do you set up logging and monitoring for it?</li>
+</ul>
+<p>The following prerequisites will be helpful:</p>
+<ul>
+<li>Basic knowledge about networking and TCP&#x2F;IP.</li>
+<li>Access to a Google Cloud Platform account.</li>
+</ul>
+<p>Feedback on our courses is valuable, both to us as trainers and our future students. If you have any criticisms or suggestions for improvement, we would greatly appreciate it if you would share those with us.</p>
+<p>Please note that, when this video was recorded, all course information was accurate. Google is constantly updating its products and services as part of its ongoing drive to innovate. As a result, over time, minor discrepancies may appear in the course content. Here at Cloud Academy, we strive to keep our content up to date in order to provide the best training available. </p>
+<p>If you notice any information that is outdated, please contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. This will allow us to make all necessary fixes to the course during its next release cycle.</p>
+<h1 id="Features-of-Google-Cloud-NAT"><a href="#Features-of-Google-Cloud-NAT" class="headerlink" title="Features of Google Cloud NAT"></a>Features of Google Cloud NAT</h1><p>Securing cloud resources can be a challenge. As your systems grow and become more complex, the total number of potential vulnerabilities increases. If you allow your attack surface to grow too large, eventually even the most talented security professional will miss something. That is why it is important to try to minimize your attack surface as much as possible.</p>
+<p>Physically securing a room with a single door is much easier than trying to secure an entire building with many entrances. In much the same way, securing a private network is much easier than trying to secure a public one. That is why it is recommended to only assign public IPs when it is absolutely necessary.</p>
+<p>Now of course, this strategy does have some drawbacks. Cutting your VMs and Kubernetes clusters off from the internet also means cutting them off from a lot of updates and patches. Luckily, it is possible to get the best of both worlds using Network Address Translation. Network Address Translation (or NAT for short) allows you to assign a single IP address to a group of computers. This allows those machines to make requests out to the internet, but (by default) prevents incoming requests to resolve to any specific machine. So essentially, requests that originate from your internal network can reach the internet. But requests from the internet to your internal network will fail.</p>
+<p>Now there are several ways to set up a NAT in GCP, but the easiest is to use Google Cloud NAT. Cloud NAT works with both your Compute Engine VMs as well as with Google Kubernetes Engine (GKE).  It is fully managed and does not require you to maintain your own NAT Gateways. It is also extremely scalable and reliable.  Cloud NAT can automatically manage the NAT IPs for you, if you wish. And if a zone ever goes down, Cloud NAT will continue to stay available across the region. </p>
+<p>Just because the service is managed, it doesn’t mean that your options are limited. You can use manual mode to manage the settings yourself. Or you can just leave it on auto mode and Cloud NAT will handle everything for you. With Google Cloud NAT, you have an easy way to help keep your VMs both secure and up-to-date.</p>
+<h1 id="Google-Cloud-NAT-Configuration"><a href="#Google-Cloud-NAT-Configuration" class="headerlink" title="Google Cloud NAT Configuration"></a>Google Cloud NAT Configuration</h1><p>Now that you understand what Cloud NAT can do, I want to show you how to actually set it up. So for this demo, I have already created a couple of Virtual Machines. Let me show you those. I’ll navigate to Compute Engine.</p>
+<p>Here you can see I have a public VM that has both an internal and external IP address. And I have a private VM with just an internal IP address. They both exist in the same VPC but in separate subnets. So you can think of my public VM as representing some internet-facing service, like a web server. The private VM could be an internal database or application server, something you would NOT want to be publicly accessible. </p>
+<p>Let’s verify that the public VM does indeed have internet access. I can quickly test this out using the curl command. This first website will return my public IP address. And I will also try to get the Apple homepage as well. So, you can see my public VM is connected to the internet.</p>
+<p>Next, let’s verify the private VM. Here we see that when I try to run a curl command it’s just going to time out. That is because there is no valid route between my private VM and the internet.</p>
+<p>So no one is able to directly attack my private VM without first gaining access to my GCP account. However, downloading patches and updates is going to be pretty difficult. So now I am going to show you how easy it is to create a NAT Gateway using Cloud NAT. This will allow me to download updates from the internet, without assigning an external IP address to the VM.</p>
+<p>So to get started, I need to navigate to Cloud NAT and then click on “Get Started”.  When creating a NAT Gateway, you need to specify a name. I’m going to call this “nat-demo-gateway”. In order to be able to route to the public internet, I am going to need a router. You can select one here, or if you don’t already have one, you can create a new one. In this case, I will select the network my VPC is in, select the region, and then pick “Create a new router”.</p>
+<p>So this will open a new side window where I can create a router. This screen has several options, but for a basic working router, all I have to do is to give it a name. The network and region are already set to what I picked on the previous form so I don’t have to change those. And now I can click “Create” to create my new router. So now my gateway has a Cloud router assigned to it.</p>
+<p>There are two more sections I could make changes to if I wanted. However, for this first example, I am going to leave the defaults. This will automatically handle all the details for me. It’s going to map all subnets in the VPC to the NAT gateway and it will automatically assign NAT IP addresses. If you just need basic internet access, this works best. There are other options available under “Advanced configurations’’ but we will look at those later. I will go ahead and click on “Create” to create a new NAT Gateway.</p>
+<p>Ok, now at this point I just have to wait for the gateway to be created. So now I should have a working router and NAT gateway. My private VM should be able to connect to the internet. Let me try running those curl commands again to verify.</p>
+<p>So now when I connect, I am getting a response. I can also see that my NAT public IP address has been assigned to 104.155.143.187. Because I am using automatic mode, this address can change. But if I just want to download updates, then that will not be an issue at all. Cloud NAT is going to manage everything. It will add, remove and update the IPs as needed.</p>
+<p>If I try to download the Apple homepage, we now see that it is successful as well. So, as you can see, it is actually quite simple to use Cloud NAT.</p>
+<p>Let me go back and show you some of the more advanced features.  I can click on my gateway to see the details. And if I want to change anything, I just need to click on the “Edit” button at the top. </p>
+<p>So first I’ll show you how to set your own IP addresses. Maybe you need a specific IP for creating a firewall rule or to add to a whitelist. To manage it myself, I can simply click on NAT-IP Addresses and set it to “Manual” mode. Now I can add my IP addresses. </p>
+<p>The addresses used will be reserved public IPs. Since I don’t have any IP addresses reserved already, I’ll just pick “Create IP address”. I have to give this IP address a name. This is so I can later remember what I plan to use it for. So it looks like it reserved 34.72.21.122.</p>
+<p>I could add more addresses if I wanted. If you have a lot of VMs, you might need more than one IP. But a single address will work fine for several VMs. The exact number depends on how many connections each VM will require.</p>
+<p>So let me go ahead and save this. Now I have to wait for the changes to propagate. And now I should see that the public IP address for my private VM has changed from a 104 address to a 34. There we go. The change happens pretty quickly. You won’t have to wait long at all to see the new IP.</p>
+<p>Let’s look at some of the other things you can change. I’ll open up Advanced Configurations this time. The first option allows you to enable logging. You can tell it to either log errors or network translations or both. Error logging is useful for debugging issues. Translations might also be useful to look at if you are doing something more advanced. So if you are experiencing intermittent errors, both could be useful. Just remember the more you log, the higher your storage costs will be. I’ll go ahead and enable both for this example.</p>
+<p>So now everything that happens in Cloud NAT will be written to the logs. I’ll demonstrate a little later how to view the logs and what the entries look like. I want to show you a few more options first. You can change the minimum assigned ports per instance. By default, my VM can create 64 connections at once. This is usually more than enough. If you need more you can increase it here. Just remember that increasing this number means you are also decreasing the number of VMs that can share this IP. If you don’t need 64 simultaneous connections, you can decrease this number.</p>
+<p>You also can change the timeout values for TCP, UDP, and ICMP protocols. This is definitely more advanced stuff. If you are running into timeout issues, you can probably fix those by tweaking these values. If too many connections are timing out, you might want to increase these. However, making these too high means it will take longer for connections to fail. Make sure you know what you are doing before messing with these values.</p>
+<p>There are a few more options here, but I covered the main ones. You can hover your mouse cursor over the question marks to get details on any of them. Again, it’s pretty easy to make any changes, so feel free to experiment on your own.</p>
+<p>I previously showed you how to enable logging. Now it’s time I show you how to access the logs. The easiest way is to go to your gateway in Cloud NAT and click on the Logs tab. Then I just have to click on the “Cloud Logging” link and it will take me to Logs Explorer. You can also directly navigate to Logs Explorer, but then you have to set up the filters to show you the NAT logs. If you use the link I showed you, it automatically selects the correct filters for you.</p>
+<p>Now at this point I don’t have any logs because I haven’t actually done anything since I enabled logging. Let me run a few more curl commands and then refresh the page. Now we can see three entries for the three curl commands I just ran. And if you start opening up the different parts of the logs you can access the details for each entry. So that’s how you view the Logs for Cloud NAT.</p>
+<p>The last thing I wanted to show you is how to access the pre-built monitoring graphs. You get to them in a similar way to the logs. Just select your gateway and then click on the “Monitoring” tab here. This will give you information on the number of open connections, the amount of egress data, and a bunch of other things. If you want something else, you can (of course) go to Cloud Monitoring and build your own custom dashboards as well. But the prebuilt dashboards are usually enough, especially when you are just starting out.</p>
+<p>And that is pretty much it. That gives you enough details to start using Cloud NAT on your own.</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>At this point, you should understand what Google Cloud NAT is and how to use it. You saw how to enable internet connectivity to VMs without using an external IP. You also saw how to enable logging, and monitor for any issues.</p>
+<p>There is one last thing I wanted to show you before I wrap things up. If you are planning to use NAT to protect your VMs and Kubernetes Clusters, you might also want to consider setting some Organization Policy Constraints.</p>
+<p>So let’s say that you decide to only allow your web servers to have public IPs. Everything else should use NAT. And you make a bunch of changes to enforce that. Now, how will you guarantee that it will stay like this in the future? What is preventing another employee from spinning up a database VM with a public IP. Well, you can actually prevent this wIth a Policy Constraint.</p>
+<p>You can access your list of current policies by searching for “Organizational Policies”. As you can see, there are quite a few. So let’s look at a couple of policies you might find useful.</p>
+<p>First, search for “external IP” and choose “Defined allowed external IPs for VM instances”. This policy allows you to limit which VMs can get an external IP. So you could specify your web servers here. And that way, all other VMs will be forced to use NAT instead.</p>
+<p>Another useful policy can be found by searching for “Cloud NAT”. The “Restrict Cloud NAT usage” policy can dictate which networks are allowed to use Cloud NAT. So maybe you want to prevent any internet connection at all in certain networks. You can enforce that with this policy.</p>
+<p>Changing a policy is pretty simple. Just click on the name and then (if you have the correct permission) you can change them to the values you wish. As you can see, in this account I do not have permission to make any changes.</p>
+<p>Organization Policies are not directly related to Cloud NAT but can be used in conjunction to enhance your overall security.</p>
+<p>Well, that’s all I have for you today. Remember to give this course a rating, and if you have any questions or comments, please let us know. Thanks for watching, and make sure to check out our many other courses on Cloud Academy!</p>
+
     </div>
 
     
@@ -319,6 +390,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Features-of-Google-Cloud-NAT"><span class="nav-number">2.</span> <span class="nav-text">Features of Google Cloud NAT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Google-Cloud-NAT-Configuration"><span class="nav-number">3.</span> <span class="nav-text">Google Cloud NAT Configuration</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary"><span class="nav-number">4.</span> <span class="nav-text">Summary</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -334,14 +406,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2653</span>
+          <span class="site-state-item-count">2736</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
