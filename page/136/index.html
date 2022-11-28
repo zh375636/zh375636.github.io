@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hang&#39;s Blog">
+<meta property="og:url" content="https://example.com/page/136/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://example.com/page/136/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Hang's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AWS-Security-Specialty-Lab-Amazon-EC2-Instance-Isolation-Challenge-13/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/14/AWS-Security-Specialty-Lab-Amazon-EC2-Instance-Isolation-Challenge-13/" class="post-title-link" itemprop="url">AWS-Security-Specialty-Lab-Amazon-EC2-Instance-Isolation-Challenge-13</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-14 13:52:02" itemprop="dateCreated datePublished" datetime="2022-11-14T13:52:02-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-19 23:02:06" itemprop="dateModified" datetime="2022-11-19T23:02:06-04:00">2022-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AWS-Security-Specialty/" itemprop="url" rel="index"><span itemprop="name">AWS-Security-Specialty</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/AWS-Security-Specialty-Lab-Amazon-EC2-Instance-Isolation-Challenge-13/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AWS-Security-Specialty-Lab-Amazon-EC2-Instance-Isolation-Challenge-13/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AWS-Security-Specialty-AWS-Incident-Response-Isolating-your-EC2-instances-12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/14/AWS-Security-Specialty-AWS-Incident-Response-Isolating-your-EC2-instances-12/" class="post-title-link" itemprop="url">AWS-Security-Specialty-AWS-Incident-Response:-Isolating-your-EC2-instances-12</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-14 13:52:00" itemprop="dateCreated datePublished" datetime="2022-11-14T13:52:00-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-19 22:57:10" itemprop="dateModified" datetime="2022-11-19T22:57:10-04:00">2022-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AWS-Security-Specialty/" itemprop="url" rel="index"><span itemprop="name">AWS-Security-Specialty</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/AWS-Security-Specialty-AWS-Incident-Response-Isolating-your-EC2-instances-12/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AWS-Security-Specialty-AWS-Incident-Response-Isolating-your-EC2-instances-12/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Hello, my name is Will Meadows and in this course, we are going to go over a few strategies for isolating your EC2 instances in response to a security event. Although this might be a very rare occurrence, I think this course is beneficial to anyone looking to get a deeper understanding of network security.</p>
+<p>If you have any questions about anything I cover in this series please let me know at <a href="mailto:will.meadows@cloudacademy.com">will.meadows@cloudacademy.com</a>.</p>
+<p>Alternatively, you can always get in touch with us here at Cloud Academy by sending an email to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a> and one of our cloud experts will reply to your question, concern, or comment. </p>
+<p>I would recommend this course for any solutions architects, developers, system administrators, and network administrators who are responsible for security of their architectures.</p>
+<p>Our learning objectives for this course are: To understand how to isolate an EC2 instances’ network communication with various levels of granularity. We will also look to understand the positives and negatives associated with each technique we are about to cover.</p>
+<p>Finally, you will be able to perform this isolation and know the steps required to isolate an EC2 instance at each network level.</p>
+<p>You should have a decent understanding of cloud computing and cloud architectures, specifically with Amazon Web Services. You should know about VPC, Security groups, NACLS, and all the basic level networking concepts for AWS. It would be helpful if you have some background in IT or network security, but not required.</p>
+<p>Feedback on our courses here at Cloud Academy are valuable to both us as trainers and any students looking to take the same course in the future. If you have any feedback, positive or negative, it would be greatly appreciated if you could send an email to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>.</p>
+<p>Please note that, at the time of writing this content, all course information was accurate. AWS implements hundreds of updates every month as part of its ongoing drive to innovate and enhance its services.</p>
+<p>As a result, minor discrepancies may appear in the course content over time. Here at Cloud Academy, we strive to keep our content up to date in order to provide the best training available. </p>
+<h1 id="Isolation-of-Your-EC2-Instances"><a href="#Isolation-of-Your-EC2-Instances" class="headerlink" title="Isolation of Your EC2 Instances"></a>Isolation of Your EC2 Instances</h1><p>When you develop and create an incident response strategy, it is crucial that containment is one of your primary focuses. Appropriately containing compromised resources, such as EC2 instances, allows you to perform forensic investigations, removal of harmful elements from your architectures, and recovery of any important data that may be on that instance.</p>
+<p>That is why it is very important to have an understanding of what you should do before an incident occurs. This means having a game plan ready. I would recommend having an incident response playbook already created for these kinds of situations. Having a step-by-step guide of what to do when an incident occurs, can greatly increase recovery time, reduce human error, and return a little bit of your peace of mind that everything will be ok.</p>
+<p>For this lecture, we are going to cover isolation as a containment mechanism. Isolation of affected instances is fairly easy to understand for people just starting their incident response journey and provides a great deal of actual security when implemented well. Isolation is the concept of limiting the visibility and scope of an element so that its actions only affect itself. This means the instance will not be able to see other instances or nodes on the network, as well as not having the ability to reach out to the internet. It is a lot like putting the EC2 instance in a padded room so that it can’t hurt itself or others.</p>
+<p>Starting off, in order to actually isolate an instance, we first need to detect that something is wrong.</p>
+<p>AWS has created and implemented a number of very powerful services that can help you detect when something is wrong with your environment. The two obvious services that can help you detect issues with your EC2 instances are Amazon Guard duty and amazon inspector.</p>
+<p>Amazon guard duty is a threat detection service that continually monitors and protects your AWS accounts, workloads, and data. It functions by monitoring and analyzing your metadata streams that come from AWS CloudTrail Events and VPC flow logs. Using this data, with the help of some machine learning, guard duty is able to watch for anomalies within your architectures. As an example, Guard duty is able to detect compromised EC2 instances that have been set up to serve malware to your users, or to mine for bitcoin.</p>
+<p>If guard duty detects such a threat, it will notify you through detailed and actionable alerts that can be integrated into event management and other workflow systems.</p>
+<p>Amazon inspector is another automated security service that can assess your network and the accessibility of your amazon EC2 instances. Additionally, Amazon Inspector can also assess the security state of your applications running on those instances. you can automate security testing against your fleets to make sure they are all running according to plan, and if it does find any issues Inspector can notify you directly by email, or it can message any service that accepts SNS notifications.</p>
+<p>If you want some more education on Guard duty, please take a look at this course over here: <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/understanding-amazon-guardduty/introduction-60/">https://cloudacademy.com/course/understanding-amazon-guardduty/introduction-60/</a></p>
+<p>And if you want to learn more about amazon inspector, please check out this course: <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/amazon-inspector/introduction-82/">https://cloudacademy.com/course/amazon-inspector/introduction-82/</a></p>
+<p>I just wanted to point out a few services that will help you detect when something is wrong with an instance, and that it might be time to isolate it. With that out of the way, let’s talk about what we should do when we find out something is wrong with an instance.</p>
+<p>When you have determined that it is time to isolate an EC2 instance, there are a number of ways we can complete this task. Each of them have their pros and cons which include things like how easy they are to implement, the scope of their isolation, and use case specific hang ups.</p>
+<p>Let’s start off this part of the conversation by looking at isolating an EC2 instance with a security group.</p>
+<p>This method of isolation is probably the one you would think of first when building out your incident response playbook. Security groups are quite easy to add onto an existing EC2 instance, and can be configured to limit traffic ingress quite easily - seeing as how their default state is an implicit deny all for traffic. There are however a number of things to keep in mind when using security groups in this manner.</p>
+<p>First off, when using security groups, you have to explicitly allow traffic using rules. These rules tell the security group what type of traffic and on what ports should be allowed out of the system. Now if an instance has multiple security groups active that overlap in their coverage, Amazon EC2 will apply the most permissive rule to that instance. Security groups are also stateful, which means they remember their connection and allow responses back to the EC2 instances or out of the instance automatically (regardless of any outbound or inbound rules)</p>
+<p>So what that inherently means is that you can never shut off traffic to an instance by adding a security group. You can only allow specific traffic with these means. So in order to begin isolation of an instance, it would be very important to remove any existing security groups from the instance or delete all the rules from any security groups attached to the affected instance. And these Rule changes can happen at any time and take effect immediately.</p>
+<p>You could then attach an isolation security group, a blank security group ( with no rules), to that instance to enforce its lack of connectivity. </p>
+<p>However, we still have a problem. Since security groups are stateful, they keep track of certain connections to allow traffic back into the network. This helps with the whole implementation stateful connections business that everyone loves about security groups. </p>
+<p>So now I get to introduce you to the horrid problem of tracked vs untracked connections.</p>
+<p>Untracked connections are from traffic that come from a 0.0.0.0&#x2F;0 (all traffic) rule AND a 0.0.0.0&#x2F;0 (all traffic) from (0-65535) ports in the other direction. And this includes both inbound and outbound ways this rule can be written.</p>
+<p>Any traffic that fits this category will be immediately interrupted when a rule from a security group changes that would normally stop the flow of traffic. Aka removing a rule, updating a rule, or deleting a security group.</p>
+<p>However, there are some types of connections that security groups track, and these do not follow that president. Tracked connections apply to any traffic that has a specific IP or CIDR rule within the security group. This would be something like allowing 203.0.113.1&#x2F;32 for example. This is a specific IP address that has been allowed on the security group to do a thing.</p>
+<p>This type of traffic will NOT be immediately interrupted if a rule that has previously allowed its traffic to flow is removed.</p>
+<p>So you could imagine that if a bad actor had access to an instance with this specific type of tracked connection available to it, even if you removed all the old security groups and placed your instance in the isolation security group, they could still maintain access to that affected unit, through that connection.</p>
+<p>In order to be 100% sure that there are no tracked connections still available to the instance using security groups, you will have to do the following.</p>
+<ul>
+<li>Create a dedicated “isolation” security group.</li>
+<li>Create a single rule of 0.0.0.0&#x2F;0 for all traffic in both the inbound and outbound rules.</li>
+<li>Remove any existing security groups attached to the instance.</li>
+<li>Associate the Isolation security group to the instance.</li>
+<li>Finally, delete both the inbound and outbound rules you created for the isolation security group.</li>
+</ul>
+<p>This will convert all traffic to untracked and then terminate those untracked connections from the instances.</p>
+<p>You could also break this up into steps and have these as security groups ready to deploy instead of having to add and remove rules on the fly.</p>
+<p>This would involve having a Step1 security group that already has the 0.0.0.0&#x2F;0 all traffic all ports rules applied to it. You will also need a Step2 security group with zero rules applied to it.</p>
+<p>The order of operations would be to remove any existing rules on the affected instances. Then add the step 1 security group. Then you would remove the step 1 security group. Then you would associate the step 2 security group to that instance.</p>
+<p>Either way is not very pretty, but it does work - and quite frankly it’s all we have. It would be nice if AWS were to implement a 1 button solution for this.</p>
+<p>The next level on the EC2 network isolation chain would have to be the NACL (the network ACL). This handy security device helps you direct traffic into and out of your network at the subnet level.</p>
+<p>NACLs work by explicitly allowing or denying access to a subnet based on rules you establish. NACLs are stateless, which means that there must be an explicit rule that allows response traffic back into the network or out of the network (unlike Security groups) which are stateful and do this for you.</p>
+<p>All NACL rules are based on external IP addresses or CIDR blocks, and are not relative to any internal destinations. For example, we could allow all traffic from an IP address like 209.78.158.37 which exists outside our network. However we are unable to, for example, Deny all traffic to 192.168.0.1 which exists inside our network.</p>
+<p>It is also important to note that a NACL and its associated rules can only be added to one subnet at a time.</p>
+<p>Just like with subnets, I am going to go over a few of the benefits of using a NACL to isolate an EC2 instance, as well as some of the problems</p>
+<p>First off, it is extremely easy to stop both inbound and outbound communications using a NACL. With just a single inbound and outbule rule, you can terminate both existing connections as well as prevent any future connections to the affected instance. There is no multiple step process involved here like you will have with a security group.</p>
+<p>Unfortunately using a NACL like this is very much like trying to cut butter with an axe. You will most assuredly chop through your diary adversary, however you will also hit the table below it in the process. What I mean with this analogy is that NACLs can not be used in a targeted way like the security group. </p>
+<p>When you change a NACL it will hit every single instance within that subnet. Which is good I suppose if you want that kind of thing, but if you only have one affected instance it will obviously cause issues.</p>
+<p>Those thoughts aside, how do you actually go about isolating your EC2 instances within a subnet using a NACL?</p>
+<p>Well, if you are already using a NACL Simply add a DENY ALL rule to your NACL on both the inbound and outbound rules as the very first rule - rule number 1 - for all traffic (0.0.0.0&#x2F;0)</p>
+<p>If for some reason your NACL is already full, then you will have to delete an existing rule to make room for this new one. You should record the details of that rule so you can restore it sometime down the road.</p>
+<p>If you are creating a new NACL, Add the rules as stated earlier, and just associate your new NACL with the subnet that hosts the EC2 instance that you wish to isolate.</p>
+<p>We can now move up the network chain to the next logical level which is the route table. A route table lives &#x2F; is connected to a subnet, just like the Network ACLs we just spoke about.</p>
+<p>The route table helps the subnet direct traffic around your VPC. You will have one route table per VPC, and if you do not create one yourself, a default one will be applied. </p>
+<p>Now if you have a public subnet, your route table is connected to an internet gateway which allows external communication outside of your VPC. Since we are concerned about isolation, this is probably an important thing to remove.</p>
+<p>In order to provide isolation from the outside world, or anything else for that matter, we simply need to remove all routes within a route table ( these could be internet gateway, Direct connections, or VPN connections) Whatever it is we need to get rid of them.</p>
+<p>Now you could go through and obliterate your beautiful route tables that are already set up the way you like them, or you could simply create a new route table (these come empty by default) and just associate it with your subnet that you wish to isolate. </p>
+<p>This will stop all external subnet communications, isolating all of your EC2 instances within. However, be warned the instances will still be able to communicate with each other within that VPC.</p>
+<p>As we have worked our way up the network chain, we have seen how each piece of the puzzle might be shut down or limited in order to isolate an affected EC2 instance. Now we have reached the top of the chain, the internet gateway. </p>
+<p>So if all else fails, could we just remove the internet gateway from the VPC to stop all outside communication with our affected instance? No. No you can’t. AWS will not let you remove an internet gateway from your VPC if there are any EC2 dependencies within your VPC that require the internet gateway. You would have to first remove each and every dependency from the network (aka shut down every instance) in order to actually remove the internet gateway.</p>
+<p>However if you would like the same effectiveness as removing the internet gateway, you would need to remove all the internet gateway routes from all your route tables like we just discussed in the previous section or attach a custom route table with no routes to all those subnets.</p>
+<p>Overall this isn’t a real answer to your problem, I would recommend using any of the previous ones we discussed, but I guess it’s still technically available.</p>
+<h1 id="Wrap-Up"><a href="#Wrap-Up" class="headerlink" title="Wrap Up"></a>Wrap Up</h1><p>If you find yourself in need of isolating an EC2 instance it is important to have a plan going in. As we have discussed through this course, It is not necessarily an easy task to stop all communication to a compromised instance. There are a number of gotchas that could get you into trouble if you were not aware of how network communication truly works.</p>
+<p>For example, security groups might seem fairly transparent and easy to stop network traffic with, however, dealing with both tracked and untracked connections incorrectly will leave any existing connections running on the affected instance. This vulnerability could leave attackers with an open door to a system you thought was isolated - giving them even more time to deal damage and steal information.</p>
+<p>The level of isolation you use will also affect greater and greater amounts of your architecture as you work your way up the network chain. Although simpler than using a security group, isolating your instances at the NACL level will leave all instances within the subnet equally isolated even though they might not be affected in the same way. </p>
+<p>If you are running production workloads on those instances that get isolated via this NACL collateral damage, you will of course worsen the experience for any customers who might have been using those servers to begin with. This might be the right course of action, however, so you will need to weigh the positives and negatives for this solution. I recommend doing that kind of soul searching ahead of time, and have your answers already written down in a playbook to speed up your decision-making.</p>
+<p>Overall isolation of your EC2 instances is fairly easy to accomplish once you know what you need to do. It will give you some amount of relief and provide valuable time for your security teams to figure out how to deal with the problem both now and in the future. Isolation is but one part of a robust incident response strategy, but I think you can see how valuable this one piece is.</p>
+<p>That’s all I have for you in this lecture. My name is Will Meadows and I’d like to thank you for spending your time here learning about isolating your EC2 instances. If you have any feedback, positive or negative, please contact us at <a href="mailto:&#x73;&#x75;&#112;&#112;&#x6f;&#x72;&#116;&#x40;&#99;&#108;&#111;&#117;&#100;&#97;&#99;&#x61;&#100;&#101;&#x6d;&#x79;&#46;&#99;&#x6f;&#109;">&#x73;&#x75;&#112;&#112;&#x6f;&#x72;&#116;&#x40;&#99;&#108;&#111;&#117;&#100;&#97;&#99;&#x61;&#100;&#101;&#x6d;&#x79;&#46;&#99;&#x6f;&#109;</a>, your feedback is greatly appreciated, thank you!</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AWS-Security-Specialty-Using-AWS-Identity-Federation-to-Simplify-Access-at-Scale-11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/14/AWS-Security-Specialty-Using-AWS-Identity-Federation-to-Simplify-Access-at-Scale-11/" class="post-title-link" itemprop="url">AWS-Security-Specialty-Using-AWS-Identity-Federation-to-Simplify-Access-at-Scale-11</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-14 13:51:58" itemprop="dateCreated datePublished" datetime="2022-11-14T13:51:58-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-19 22:58:42" itemprop="dateModified" datetime="2022-11-19T22:58:42-04:00">2022-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AWS-Security-Specialty/" itemprop="url" rel="index"><span itemprop="name">AWS-Security-Specialty</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/AWS-Security-Specialty-Using-AWS-Identity-Federation-to-Simplify-Access-at-Scale-11/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AWS-Security-Specialty-Using-AWS-Identity-Federation-to-Simplify-Access-at-Scale-11/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+<h1 id="Using-AWS-Identity-Federation-to-Simplify-Access-at-Scale"><a href="#Using-AWS-Identity-Federation-to-Simplify-Access-at-Scale" class="headerlink" title="Using AWS Identity Federation to Simplify Access at Scale"></a>Using AWS Identity Federation to Simplify Access at Scale</h1><p>Hello, my name is Stuart Scott and today I want to speak to you about AWS Identity Federation. I want to explain what it is, some of the AWS services that can be involved in federation and also highlight some scenarios where you might want to implement it.</p>
+<p>If you have any feedback on this course, positive or negative, it would be greatly appreciated if you can contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>.</p>
+<p>So, firstly, what is Identity Federation? </p>
+<p>It’s basically a method where two different providers can establish a level of trust allowing users to authenticate from one, which authorizes them to access resources in the other. During the federation process, one party would act as an Identity Provider, known as an IdP, and the other would be the Service Provider, an SP.  The identity provider authenticates the user, and the service provider controls access to their service or resources based on IdPs authentication.</p>
+<p>You’ve probably all been to websites where it presents you with a log in page, where you can either log in using existing credentials native for that service, or you might have an option to authenticate using credentials from a 3rd party provider, such as Facebook, Google, Twitter or LinkedIn etc. </p>
+<p>On the screen here you can see the login page for medium.com you can use existing credentials from identity providers including Google, Facebook, Apple, Twitter and Gmail to create a new Medium account, or log back in to Medium if you’ve already created an account. In this scenario, Medium would be the Service Provider.</p>
+<p>So if you didn’t have an account with Medium already, you could select one of these providers to create one. So as an example if you already had a Google account and were signed in with it, and selected ‘Sign in with Google’ you’d be presented with the following screen</p>
+<p>Now here Medium has detected that I didn’t have a Medium account associated with my current Google Account, you can see it says “Sorry, we didn’t recognize that account’, and so you are asked if you would like to create one. By selecting Sign up with Google, Medium authenticates my access via my Google credentials, and so trusting the Google IdP, and this enables me to create a new Medium account based off of that authentication. </p>
+<p>So in this example, Google was used as the Identity Provider to authenticate you to Medium with a new account. The next time I then need to log in to Medium, all I would have to do is select ‘Sign in with Google’ and as long as I were logged in to my Google account already, I would be logged straight into Medium with 1-click, and this directly correlates to the term ‘Single-Sign on’, or SSO. SSO relates to the method of signing in to one system, which can then be used to authenticate you into another without having to resupply additional credentials. </p>
+<p>Now, the process behind this is fairly simple, when the identity provider has been selected, and the user is authenticated by that provider, an assertion is sent back to the service provider, in this case Medium. And this assertion is a message that contains metadata and attributes about the user such as their username. This assertion allows the service provider to authorize access to their services.**<br>**</p>
+<p>So identity federation provides a great way to easily set up access control systems with flexibility and ease for the users and service providers. </p>
+<p>So using this same principle AWS has a variety of services and methods that allows you to access your AWS services via federated access, meaning you don’t need to have a specific identity &amp; access Management user configured in AWS if you already have a user directory that is managed elsewhere that could be used as an Identity Provider. </p>
+<p>Using many different identity standards, including OAuth 2.0, OIDC, which is OpenID Connect, and SAML 2.0, (Security Assertion Markup Language), AWS enables you to easily configure access for contractors and other 3rd parties, in addition to allowing scalable access to authenticate to your mobile and web applications.</p>
+<p>Let’s take a quick look at the definitions of these standards according to Wikipedia:</p>
+<p><strong>“OAuth</strong> <em>is an open standard for access delegation, commonly used as a way for Internet users to grant websites or applications access to their information on other websites but without giving them the passwords”</em> - Wikipedia</p>
+<p><strong>“OpenID Connect</strong> <em>is a simple identity layer on top of the OAuth 2.0 protocol, which allows computing clients to verify the identity of an end-user based on the authentication performed by an authorization server, as well as to obtain basic profile information about the end-user.”</em> - Wikipedia</p>
+<p><em>“</em><strong>Security Assertion Markup Language 2.0</strong> <em>(<em><strong>SAML 2.0</strong></em>) is a standard for exchanging authentication and authorization identities between security domains. SAML 2.0 is an XML-based protocol that uses security tokens containing assertions to pass information about a principal (usually an end user) between a SAML authority, named an Identity Provider, and a SAML consumer, named a Service Provider.” -</em> Wikipedia</p>
+<p>Now we have more of an understanding of federation, I want to take a high level look at some of the services offered by AWS and how they fit into AWS Identity Federation, including</p>
+<ul>
+<li>AWS Single Sign-On, known as SSO</li>
+<li>AWS Identity &amp; Access Management (IAM)</li>
+<li>And Amazon Cognito</li>
+</ul>
+<p>Now, by the name alone we can safely assume that this has something to do with federated access. </p>
+<p>This service has primarily been designed for users to easily access multiple accounts within their AWS Organization enabling a single sign-on approach negating the need to provide credentials for each account. For those unfamiliar with AWS Organizations, they provide a means of centrally managing and categorizing multiple AWS accounts that you own, bringing them together into a single organization, helping to maintain your AWS environment from a security, compliance, and account management perspective.</p>
+<p>You can either use the AWS SSO own built in user directory which allows you to create unique users based on e-mail addresses, or alternatively connect AWS SSO to one of the supporting identity providers, such as your own corporate MS Active Directory if you are using one. </p>
+<p>Either way, AWS SSO enables you to create different groups while leveraging the power of IAM roles and permissions allowing you to control what access users or groups have in specific AWS Accounts within your organization. </p>
+<p>When Users have been configured, they can connect via their own portal which will list all AWS accounts they have access to, along with roles they have access to adopt, and if they would like to access the Management console or use temporary credentials for AWS CLI access.</p>
+<p>AWS SSO can also be used to manage access to cloud-based apps using SAML 2.0 such as Office 365 and Salesforce. </p>
+<p>As I mentioned previously, Identity federation allows you to access and manage AWS resources even if you don’t have a user account within IAM. </p>
+<p>Whereas AWS SSO allows you to create a single sign-on approach to multiple accounts in your AWS organization using the in-built user directory or MS-AD, AWS IAM allows you to configure federated access to your AWS accounts and resources using different identity providers for each AWS account. Examples include both SAML 2.0 for enterprise federation using MS-AD, and OpenID Connect, classed as web identity federation, such as Google, PayPal and Amazon. As a result you could allow access to your environment using these Identity Providers instead of setting up users with a new identity within AWS IAM.</p>
+<p>The benefits of this is twofold. It minimizes the amount of administration required within IAM and it allows for a single sign-on solution. </p>
+<p>As a part of the configuration process to implement federated authentication, a trust relationship between the identity provider and your AWS account is established. AWS supports two types of identity providers, OpenID Connect, also often referred to as web identity federation, and SAML 2.0.</p>
+<p>Amazon Cognito has been built purely to enable the simplification of enabling secure authentication and access control for new and existing users accessing your web or mobile applications, rather than your AWS account. It not only integrates well with SAML 2.0 but also web identity federation as well. One of the biggest features of Amazon Cognito is that it has the capability to scale to millions of new users which is great when working with mobile applications.</p>
+<p>Cognito also allows you to use a custom portal allowing you to add a personalized sign-in page with branding and your own logo.</p>
+<p>There are 2 main components of Amazon Cognito, these being ‘User Pools’ and ‘Identity Pools’ and they perform different actions.</p>
+<p>User Pools are essentially a scalable user directory that allows new users to sign up, or existing users to log in to your mobile application using their native credentials from the user pool, or they can alternatively federate their access via a web or enterprise IdP. </p>
+<p>Identity Pools are different to user pools in that they actually provide you with the ability of accessing AWS resources called upon by your web or mobile app by using temporary credentials and the Security token service.</p>
+<p>So let me summarize the key difference between these 3 AWS options to implement federated access to AWS.</p>
+<ul>
+<li>AWS SSO allows you to create a Single sign-on approach to access multiple AWS accounts within an AWS Organization using a single identity provider for all.</li>
+<li>AWS IAM allows you to configure different OpenID or SAML identity providers for each of your AWS accounts.</li>
+<li>Amazon Cognito enables secure authentication to your web or mobile applications using both SAML 2.0 and web identity federation.</li>
+</ul>
+<p>That brings me to the end of this introductory course covering AWS identity Federation. You should now have a greater understanding of what it is and some of the services that can be used to implement different kinds of federated Access.</p>
+<p>If you have any feedback on this course, positive or negative, please send an e-mail to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>, your feedback is greatly appreciated. Thank you for your time and good luck with your continued learning of cloud computing. Thank you.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AWS-Security-Specialty-AWS-Authentication-Mechanisms-10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/14/AWS-Security-Specialty-AWS-Authentication-Mechanisms-10/" class="post-title-link" itemprop="url">AWS-Security-Specialty-AWS-Authentication-Mechanisms-10</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-14 13:51:56" itemprop="dateCreated datePublished" datetime="2022-11-14T13:51:56-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-19 22:56:26" itemprop="dateModified" datetime="2022-11-19T22:56:26-04:00">2022-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AWS-Security-Specialty/" itemprop="url" rel="index"><span itemprop="name">AWS-Security-Specialty</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/AWS-Security-Specialty-AWS-Authentication-Mechanisms-10/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AWS-Security-Specialty-AWS-Authentication-Mechanisms-10/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Hello, and welcome to this course where I shall be looking at how AWS provides a variety of different means of authentication. My name is Stuart Scott and I’m the AWS Content Director here at Cloud Academy. Feel free to connect with me to ask any questions using the details shown on the screen. Alternatively, you can always get in touch with us here at Cloud Academy by sending an email to <a href="mailto:&#x73;&#117;&#x70;&#x70;&#x6f;&#114;&#116;&#64;&#99;&#108;&#111;&#x75;&#x64;&#x61;&#x63;&#97;&#100;&#x65;&#x6d;&#121;&#x2e;&#x63;&#111;&#x6d;">&#x73;&#117;&#x70;&#x70;&#x6f;&#114;&#116;&#64;&#99;&#108;&#111;&#x75;&#x64;&#x61;&#x63;&#97;&#100;&#x65;&#x6d;&#121;&#x2e;&#x63;&#111;&#x6d;</a>, where one of our cloud experts will reply to your question. </p>
+<p>This course has been created for those who are AWS administrators, security engineers, security architects, and anyone who is looking to increase their knowledge of security and authentication within AWS. By the end of this course, you will have a greater understanding of the different methods of authentication that can be implemented when using AWS. The difference between username and password and multi-factor authentication. How to configure MFA authentication. </p>
+<p>The process in which programmatic authentication is managed. How IAM roles can be used to authenticate and authorize EC2 instances to access resources. How key pairs are used to authenticate you to newly created EC2 instances, and the different options available with regard to Federated authentication. As a prerequisite to this course, you should have a basic understanding of AWS IAM and what the service is used for. It would also be advantageous if you had some basic hands-on experience of Amazon EC2, but this is not essential. </p>
+<p>Feedback on our courses here at Cloud Academy is valuable to us as trainers and any students looking to take the same course in the future. If you have any feedback, positive or negative, it would be greatly appreciated if you can contact <a href="mailto:&#115;&#117;&#x70;&#112;&#x6f;&#114;&#x74;&#x40;&#99;&#108;&#111;&#x75;&#100;&#x61;&#x63;&#97;&#x64;&#101;&#109;&#x79;&#x2e;&#x63;&#x6f;&#x6d;">&#115;&#117;&#x70;&#112;&#x6f;&#114;&#x74;&#x40;&#99;&#108;&#111;&#x75;&#100;&#x61;&#x63;&#97;&#x64;&#101;&#109;&#x79;&#x2e;&#x63;&#x6f;&#x6d;</a>. </p>
+<p>Please note that at the time of writing this content, all course information was accurate. AWS implements hundreds of updates every month as a part of its ongoing drive and innovation to enhance its services. As a result, minor discrepancies may appear in the course content over time, but here at Cloud Academy we strive to keep our content up to date in order to provide the best training available. So, if you notice any information that is outdated, please contact <a href="mailto:&#115;&#117;&#x70;&#x70;&#x6f;&#x72;&#116;&#x40;&#99;&#x6c;&#x6f;&#x75;&#x64;&#97;&#x63;&#x61;&#x64;&#101;&#x6d;&#121;&#x2e;&#x63;&#x6f;&#109;">&#115;&#117;&#x70;&#x70;&#x6f;&#x72;&#116;&#x40;&#99;&#x6c;&#x6f;&#x75;&#x64;&#97;&#x63;&#x61;&#x64;&#101;&#x6d;&#121;&#x2e;&#x63;&#x6f;&#109;</a>, and this will allow us to update the course during its next release cycle. Thank you.</p>
+<h1 id="Username-Password-amp-MFA"><a href="#Username-Password-amp-MFA" class="headerlink" title="Username-Password &amp; MFA"></a>Username-Password &amp; MFA</h1><p>To begin with, I want to start talking about the AWS Identity and Access Management service. IAM is used to securely manage users who require access to your AWS account and resources. During the creation of user identities, there are components and features that you can use that affect how these users authenticate. The most basic is that of a simple username and password. These usernames must be unique as they identify you as an individual and therefore can’t be duplicated within the same account. The password however can be duplicated between different users. </p>
+<p>For example, you can create 10 new IAM users, and as the administrator issue all of them with the same password. To enforce security at a greater and more granular level, IAM allows you to create and specify your own password policy for your users. This provides you with the opportunity to govern how secure you want your passwords in your environment to be. As you can see in this image, there are a variety of parameters that you can configure to adjust the policy to meet your own security standards and requirements. I would always recommend enforcing a tight security policy and adopting as many as these parameters as possible.</p>
+<p>Using a username and password as your authentication mechanism, the username will be used to determine your identity, followed by verification in the form of the associated password, which must conform with your IAM password policy. On submission of the credentials, IAM will then verify if the authentication is successful and if the credentials do not match those held by IAM, access will be refused and you’ll be asked to re-enter the correct information. </p>
+<p>If the authentication is successful, then the user will be authorized to access your AWS environment via the management console based on the permissions specified and associated with the IAM user. Just using a username and password for authentication is not generally considered very secure, and additional measures should be put in place, especially for those with elevated privileges. Within your IAM password policy, you might allow users to set their own passwords, and this can lead to the potential of the introduction of standard and weak passwords being entered, such as password in all lowercase, or 123456, qwerty, and letmein.</p>
+<p>Although AWS allows you to enforce password policies, combinations of the above weak passwords still make their way in, such as password 123!, which is both upper and lowercase letters along with numeric and non-alphanumeric characters. However, from a security perspective, these common patterns should still be avoided. So, with this in mind, tighter security can be achieved with the use of additional authentication methods, which requires an additional level of authentication. IAM allows for Multi-Factor Authentication, MFA. This means that any user-configured to sign in with MFA must use a second step of authentication after entering the password as the first level to be authenticated, therefore giving a multi-factor layer of security. The additional authentication utilizes a random six-digit number that is generated by an MFA device that is displayed for a very short time period before the number changes again.</p>
+<p>You must enter the digits displayed when prompted to verify this final step of authentication. There is no additional charge for this level of authentication, however you will need your own MFA device which can be a physical token or a virtual device. And AWS provides a summary of all supported devices here. Personally, I use Google Authenticator on my phone because it’s simple and easy to set up and configure. Before a user can authenticate with MFA, it must be configured and associated with the user. As we know as a part of the authentication process, we need to ensure that the verification part conforms the identity of the user. This configuration and association is done from within IAM. </p>
+<p>And I will now show you how quick and easy this is to do via a quick demonstration. So, as you can see I’ve signed into my AWS Management Console and I’m within the AWS IAM dashboard. I’ve selected one of my users and then this is the screen I’m presented with from there. As you can see, we can manage the MFA device here. So, if I click on ‘Manage MFA’ for this user. We have a couple of options here: Virtual MFA device, U2F security key, or another hardware MFA device.</p>
+<p>For this, I’m just going to use a virtual MFA device, and I’ll use the Google Authenticator app on my phone to do this, so click on ‘Continue.’ So, first of all, you need to make sure you have an app on your mobile phone or your computer. Like I said, I’m going to use the Google Authenticator app on my phone. So, what I need to do is to show the QR code. And now on my phone I’m going to add this as a new entry in my Google Authenticator app, so I’m going to click on ‘Scan QR Code.’ And then we can see at the bottom there is added the user, Patricia. </p>
+<p>And then, we add in that code, so 074720. And then what we need to do is to add the second code that comes in when it appears on the Google Authenticator app. So, we just wait for that to come around then I can add in the second code, and then it will be synchronized and configured. So, this is about to change. And now I can add in the next code, 185887. And then, I click on ‘Assign MFA.’ And that’s it. So, you have successfully assigned a virtual MFA device to that user. Click on ‘Close,’ and now we can see here that there’s an assigned MFA device.</p>
+<h1 id="Programmatic-Authentication"><a href="#Programmatic-Authentication" class="headerlink" title="Programmatic Authentication"></a>Programmatic Authentication</h1><p>Sometimes, if a user wants to access AWS resources, they don’t have to log into the AWS management console first. Instead, access can be gained from a programmatic perspective for a user who may be using the AWS command-line interface, the CLI, AWS API tools, tools for Windows PowerShell, or Software Development Kits, SDKs. When using any of these methods to access AWS resources, access is not granted via the AWS management console using your username and password. Instead, you’re accessing the resources programmatically and so you must authenticate differently. This is also typical of any application that calls upon functions of other services. When an identity is making programmatic calls to your AWS resources, their identity is not prompted to log into the environment first via the console. So, how do you authenticate to AWS resources?</p>
+<p>But as we know, this has to happen before being authorized to perform any actions. What credentials are used and how is this authentication achieved? Identities, human or system, requiring this type of programmatic access to the AWS environment use access keys to authenticate. These access keys are composed of two elements: an Access Key ID and a Secret Access Key. The Access Key ID is made up of 20 random uppercase alphanumeric characters such as the one displayed on screen. The Secret Access Key is made up of 40 random upper and lowercase alphanumeric and non-alphanumeric characters as displayed. </p>
+<p>These access keys can be created for any IAM user who requires programmatic authentication. When the keys are created, you are prompted to download and save the details as the Secret Access Key will only be displayed once. And if you lose it, then you’ll have to delete the associated Access Key ID and recreate new keys for the user. It’s worth noting that it’s not possible to retrieve lost access keys as AWS does not retain copies of these for security reasons to prevent them from being compromised. The access keys must then be applied and associated with your system or application that you require for the relevant access. </p>
+<p>For example, if you’re using the AWS CLI to access AWS resources, you would first have to instruct the AWS CLI to use these access keys to authenticate and provide authorization for any programmatic API calls. The method of performing this association varies based on the application and system that you’re using. However, once this association has taken place, it ensures that all API requests made to AWS are signed with this digital signature. Before we move on, I want to give a quick demo on how we apply access keys to the AWS command-line interface using specific user’s credentials. To do this, you need to create a new access key from the security credentials tab of your IAM user and copy the access key ID and secret access key values. </p>
+<p>In the following demonstration, Danny Jessee, our AWS certification specialist will now demonstrate how to use these keys to configure the AWS CLI. Once the CLI is installed, it adds a command called AWS to the system path, which I can then run from a Command Prompt along with various arguments corresponding to different AWS services, such as S3 or EC2. But before I can run any of these commands, I need to perform a one-time action to configure the credentials and default preferences I would like to use with the CLI. And to do that, I’m going to type aws configure, and first it’s going to ask me for an AWS access key ID. And so I’m going to use an access key ID from an IAM user who has already been assigned programmatic access credentials. And don’t worry, by the time you see this video, I’ll have long since deleted these credentials so they won’t be valid. </p>
+<p>So, I’ll paste the access key ID here and then the secret access key. And now it’s asking me for a default region. So, you can add a – region parameter to your CLI commands to specify the exact region where you want to execute that command. But if you don’t supply this parameter, the region you specify here as your default will be used instead. So, I’ll enter us-east-1, and finally, it’s going to ask me for a default output format. And your choice here will depend on whether you prefer to see output in some sort of more friendly human-readable text format. So, my options are JSON, yaml, yaml-stream, text, or table. But for the purposes of this demo, I’ll choose text. And now that I’ve completed this initial configuration, I can begin to enter CLI commands, and these commands will execute using the credentials I just specified. </p>
+<p>So, to interact with S3, I can run the command aws s3. And to list the buckets of my account, I can type ls. And here you see I have two demo buckets, but let’s say I want to add a third. So, now I can enter the command aws s3 then mb for make bucket. And the name of my new bucket will be s3:&#x2F;&#x2F;cloudacademydemobucket3. And since my IAM user has permission to create an S3 bucket, this command will succeed. So, if I run aws s3 ls again, we see my newly created bucket now appears on this list. So, you see how I was able to create an S3 bucket by just running that one simple command. Now imagine if I needed to create 30 or 40 more buckets, it’s obviously much simpler and less tedious to leverage something like the AWS CLI to automate this process, rather than having to repeatedly walk through the various screens in the console.</p>
+<p>As we discussed earlier when talking about passwords and how it’s best practice to change the password after set period of time, the same principle applies when it comes to access keys. By rotating your access keys, you’re decreasing the likelihood of your environment or identities being compromised and gaining access to your environment. When rotating these keys, you should follow a simple five-point process to ensure you don’t lose access to your resources. Firstly, you should create a second access key. </p>
+<p>Now, that includes both the access key ID and a secret access key for the same user. So, now the user has two access keys associated to them. Next, download these access keys when prompted as you won’t get the opportunity to do so again. Then associate these access keys with your application to start using the new access keys depending on what you’re using will depend on how you do this. For example, if you’re using the AWS CLI, then you would issue the command aws configure to add the new key information as we have just seen in the demonstration. Now, at this point you need to mark the existing access keys as inactive. </p>
+<p>Before deleting this now inactive key, you should test your new access keys and verify that programmatic access is being allowed as expected. And then finally, delete the old access keys. As an authentication method from a programmatic perspective, access keys are a great solution. However, if you are applying access keys to applications running on EC2 instances to gain access to other AWS resources within your environment, then there is a more efficient and secure solution available. And in this instance, you should use IAM Roles.</p>
+<h1 id="IAM-Roles"><a href="#IAM-Roles" class="headerlink" title="IAM Roles"></a>IAM Roles</h1><p>IAM roles provide an efficient and secure solution in authenticating and authorizing access. And their usage is considered a best practice when associated with applications running on EC2 instances that require access to other resources instead of embedding credentials into the application itself. IAM roles are objects created within IAM and have a defined set of permissions associated to them, much like a normal user or user group would have. </p>
+<p>However, they do not represent an identity like users do, they are simply an object with a list of authorized permissions associated. When working with Amazon EC2 instances, you can either associate a role to the instance during its creation or when it’s up and running. Once you have associated an EC2 instance with your IAM role, your application instances can then access and make API calls within AWS that are authorized by the permissions given by the role. </p>
+<p>By having a role associated to the EC2 instance, there’s no need to apply access key IDs as we did previously. Instead, when your application attempts to access an AWS resource, dynamic temporary access keys will be supplied by the role to determine if access is authorized. Roles are not just for instances, they can also be assumed by a user, allowing them to switch from their current set of permissions to take the permissions given by the role. It’s important to note that permissions from the user and the IAM role are not amalgamated. </p>
+<p>The permissions are swapped from the user to the IAM role. To switch to a role, permissions must first be given to the user allowing them to switch to that role, which authorizes them to use this new set of temporary permissions. Roles also take care of access key rotation as well, so there’s no need to perform your own rotation of access keys. </p>
+<p>It’s more efficient to use roles for EC2 instances when requiring programmatic access over an IAM access key ID. This is because if you have multiple applications running on multiple EC2 instances, then when it comes to key rotation, you have a number of applications to associate the new keys to. To learn more about IAM roles, please see our existing course here.</p>
+<h1 id="Key-Pairs"><a href="#Key-Pairs" class="headerlink" title="Key Pairs"></a>Key Pairs</h1><p>And now I want to talk about how you can authenticate to newly created instances. And the process is slightly different for Linux and Windows Operating Systems. But the underlying method is fundamentally the same through the use of key pairs. So, when you create an EC2 instance, you are asked to select an existing or create an EC2 key pair. So, what is a key pair and what does it do?</p>
+<p>A key pair as the name implies is made up of two components: a public key and a private key. These keys can either be ED25519 or 2048-bit SSH-2 RSA keys. However, please note that ED25519 keys are not supported for Windows instances, EC2 Instance Connect, or EC2 Serial Console. The function of key pairs is to encrypt the login information for Linux and Windows EC2 instances and then decrypt the same information allowing you to authenticate onto the instance. </p>
+<p>The public key uses public key cryptography to encrypt data such as the username and password. For Windows instances, the private key is used to decrypt the administrative password allowing you to gain access to the login credentials including the password using RDP. For Linux instances, the private key is used to SSH onto the instance, and the public key is held and kept by AWS. The private key is our responsibility to keep and to ensure that it is not lost. </p>
+<p>So, going back to when you create your EC2 instance, you’re given the opportunity to download the key pair in the form of a pem file. Once you’ve done this, you must keep that file safe until you’re ready to log into the associated instance. It’s worth noting that you can use the same key pair on multiple instances. To understand the differences between connecting to a Windows instance and a Linux instance, please take a look at the following two labs where you will be shown how to create an instance and then connect to them using the key pairs.</p>
+<h1 id="Federation"><a href="#Federation" class="headerlink" title="Federation"></a>Federation</h1><p>AWS allows you to access and manage AWS resources even if you don’t have a user account within IAM through the use of identity federation. Put simply, identity federation allows users from identity providers, IDPs, which are external to AWS to access AWS resources securely without having to supply AWS user credentials from a valid IAM user account. An example of an identity provider can be your own corporate Microsoft Active directory. </p>
+<p>Federated access would then allow the users within it to access AWS. Other forms of identity providers can be any OpenID Connect Web Provider. Common examples of these are Facebook, Google, and Amazon. So, what does this mean? Well, this means that if you need users to access AWS resources that already have identities that fit into these categories, then you could allow access to your environment using these existing accounts, instead of setting up each of them with a new identity within AWS IAM, effectively allowing for a single sign-on solution. </p>
+<p>As the vast majority of organizations today are using Microsoft Active Directory, this is an effective way of granting access to your AWS resources without going through the additional burden of creating IAM user accounts. As a part of the configuration process to implement federated authentication, a trust relationship between the identity provider and your AWS account must be established. AWS supports two types of identity providers, web identity federation and SAML 2.0 based federation. </p>
+<p>Web identity federation allows authentication between AWS resources and any public OpenID Connect Provider, such as Facebook, Google, or Amazon. When it’s set up and configured and access is requested by a user to an AWS resource, then the identity provider will exchange an authentication token for temporary authentication credentials. And these credentials are associated to an IAM Role with pre-configured permissions allowing authorized access to the resource as defined by that role. SAML 2.0 based federations can allow your existing Active Directory users to authenticate to your AWS resources, allowing for a single sign-on approach. </p>
+<p>SAML stands for Security Assertion Markup Language, and allows for the exchange of security data, including authentication authorization tokens to take place between an identity provider and a service provider. In this case, the identity provider is Microsoft Active Directory service and the service provider is AWS. </p>
+<p>To learn more about AWS Federation and SSO, please see your exiting course here. Also, if you’re looking to provide a means of authentication to your mobile web applications, then please see our existing course which covers Amazon Cognito here. It explores Amazon Cognito and how it can be used to manage authentication and authorization to your applications. And starts with a general overview of Amazon Cognito and when to use it. It then moves on to user pools and identity pools, and how Cognito can be integrated with your mobile and web apps to sync your application’s user data across various platforms.</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>If you have a look at security from an identity and authentication perspective, you could leave yourself open to security loopholes, which in turn can lead to abuse from not only internal users but external as well. Security remains high on the list for importance when it comes to cloud computing, and having an understanding of it is beneficial to your whole company. It’s the one key topic that consistently gains attention and requires constant and considerable amount of effort to get right and implement efficiently. </p>
+<p>In order to do this correctly, a clear understanding and definition of security terms are essential, such as the clear differences between authentication, authorization, and access control. If you want to be an effective security engineer, you need to know the differences between these terms to allow you to select an architect the right solution to meet your needs. There are so many different methods of authentication and granting permissions. </p>
+<p>It can get a little overwhelming when selecting the most effective mechanism. However, when doing so, implement the most appropriate solution that meets the security level of the data and resources that you’re protecting. If the data resource is highly sensitive, then you would implement multiple levels of authentication, such as MFA, in addition to multiple levels of authorization. The more restrictions that are in place, the harder it is to breach. I would recommend you take a look at the labs we have here at Cloud Academy as there are a number of AWS labs covering security from introduction to IAM to setting and configuring advanced roles. </p>
+<p>So, feel free to take a look at these in your own time to become more familiar on how to set these up within the real environment. That now brings me to the end of this lecture and to the end of this course, and so you should now have a greater understanding of some of the different authentication mechanisms that are available for users within AWS. Feedback on our courses here at Cloud Academy is valuable to both us as trainers and any students looking to take the same course in the future. If you have any feedback, positive or negative, it would be greatly appreciated if you can contact <a href="mailto:&#115;&#117;&#112;&#x70;&#111;&#114;&#x74;&#x40;&#99;&#108;&#111;&#117;&#100;&#97;&#x63;&#97;&#x64;&#101;&#x6d;&#121;&#46;&#99;&#x6f;&#x6d;">&#115;&#117;&#112;&#x70;&#111;&#114;&#x74;&#x40;&#99;&#108;&#111;&#117;&#100;&#97;&#x63;&#97;&#x64;&#101;&#x6d;&#121;&#46;&#99;&#x6f;&#x6d;</a>. Thank you for your time and good luck with your continued learning of cloud computing, thank you.</p>
+<h1 id="2Username-Password-amp-MFA"><a href="#2Username-Password-amp-MFA" class="headerlink" title="2Username-Password &amp; MFA"></a>2<strong>Username-Password &amp; MFA</strong></h1><p><a target="_blank" rel="noopener" href="https://aws.amazon.com/iam/features/mfa/">MFA</a></p>
+<h1 id="4IAM-Roles"><a href="#4IAM-Roles" class="headerlink" title="4IAM Roles"></a>4<strong>IAM Roles</strong></h1><p><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/managing-access-using-iam-user-groups-roles-2175/">Managing Access using IAM User Groups &amp; Roles</a></p>
+<h1 id="5Key-Pairs"><a href="#5Key-Pairs" class="headerlink" title="5Key Pairs"></a>5<strong>Key Pairs</strong></h1><p><a target="_blank" rel="noopener" href="https://cloudacademy.com/lab/create-your-first-amazon-ec2-instance-windows/">Create Your First Amazon EC2 Instance (Windows)</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloudacademy.com/lab/create-your-first-amazon-ec2-instance/">Create Your First Amazon EC2 Instance (Linux)</a></p>
+<h1 id="6Federation"><a href="#6Federation" class="headerlink" title="6Federation"></a>6<strong>Federation</strong></h1><p><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/using-aws-identity-federation-simplify-access-scale-1549/">Using AWS Identity Federation to Simplify Access at Scale</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/">Using Amazon Cognito to Manage Authentication &amp; Authorization to your Mobile and Web Apps</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AWS-Security-Specialty-Authorization-Controls-in-AWS-9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/14/AWS-Security-Specialty-Authorization-Controls-in-AWS-9/" class="post-title-link" itemprop="url">AWS-Security-Specialty-Authorization-Controls-in-AWS-9</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-14 13:51:54" itemprop="dateCreated datePublished" datetime="2022-11-14T13:51:54-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-19 22:56:10" itemprop="dateModified" datetime="2022-11-19T22:56:10-04:00">2022-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AWS-Security-Specialty/" itemprop="url" rel="index"><span itemprop="name">AWS-Security-Specialty</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/AWS-Security-Specialty-Authorization-Controls-in-AWS-9/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AWS-Security-Specialty-Authorization-Controls-in-AWS-9/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Hello and welcome to this course where I shall be looking at just some of the different methods that AWS implements to authorize access within your AWS account, whether this is a user requiring access to an AWS service, or a network packet trying to reach its destination.</p>
+<p>My name is Stuart Scott, and I am the AWS content Director here at Cloud Academy. Feel free to connect with me to ask any questions using the details shown on the screen, alternatively you can always get in touch with us here at Cloud Academy by sending an e-mail to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a> where one of our Cloud experts will reply to your question.</p>
+<p>This course has been created for those who are:</p>
+<ul>
+<li>AWS Administrators</li>
+<li>Security Engineers</li>
+<li>Security Architects</li>
+<li>And anyone who is looking to increase their knowledge of security and how authorization is governed within AWS</li>
+</ul>
+<p>By the end of this course you will have a greater understanding of authorization controls across the following services and features:</p>
+<ul>
+<li>AWS Identity &amp; Access Management (IAM)</li>
+<li>Amazon S3</li>
+<li>Network Access Control Lists</li>
+<li>Security Groups</li>
+</ul>
+<p>To get the most out of this course you should have a basic understanding of AWS IAM, Amazon S3, VPCs and EC2, but this is not essential.</p>
+<p>Feedback on our courses here at Cloud Academy is valuable to both us as trainers and any students looking to take the same course in the future. If you have any feedback, positive or negative, it would be greatly appreciated if you could contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>.</p>
+<p>Please note that, at the time of writing this content, all course information was accurate. AWS implements hundreds of updates every month as part of its ongoing drive to innovate and enhance its services. As a result, minor discrepancies may appear in the course content over time. Here at Cloud Academy, we strive to keep our content up to date in order to provide the best training available. So, if you notice any information that is outdated, please contact <a href="mailto:&#x73;&#x75;&#x70;&#x70;&#x6f;&#x72;&#116;&#x40;&#x63;&#x6c;&#x6f;&#117;&#x64;&#x61;&#x63;&#97;&#100;&#101;&#x6d;&#x79;&#x2e;&#x63;&#111;&#109;">&#x73;&#x75;&#x70;&#x70;&#x6f;&#x72;&#116;&#x40;&#x63;&#x6c;&#x6f;&#117;&#x64;&#x61;&#x63;&#97;&#100;&#101;&#x6d;&#x79;&#x2e;&#x63;&#111;&#109;</a>. This will allow us to update the course during its next release cycle.</p>
+<p>Thank you!</p>
+<h1 id="AWS-IAM"><a href="#AWS-IAM" class="headerlink" title="AWS IAM"></a>AWS IAM</h1><p>Hello and welcome to this lecture, discussing how authorization is granted when working within your AWS account. Before we start, let me just highlight the difference between authentication and authorization to ensure we are clear on these two security terms which are often interchanged with one another. Authentication is the process of defining an identity and the verification of the identity. For example, a username and password. Authorization determines what identity can access within the system once it’s been authenticated. An example of this would be an identities’ permissions to access specific AWS resources.</p>
+<p>As you may know, the main service responsible for managing and maintaining what an AWS identity is authorized to access is governed by the IAM service, identity and access management. So, let’s start with IAM and how these permissions are implemented and associated with different identities, allowing the authorization of using specific services to carry out certain functions. When an identity is authenticated to AWS, the way in which permissions are given to the identity varies depending on the identities own user permissions and its association with other IAM groups and roles.</p>
+<p>Let’s take a quick recap on users groups and roles. The IAM users are account objects that allow an individual user to access your AWS environment with a set of credentials. You can issue user accounts to anyone who needs to view or administer objects and resources within your AWS environment. Permissions can be applied individually to a user, but the best practice for permission assignments is to add the user to an IAM user group. IAM user groups are objects that have permissions assigned to them via policies, allowing the members of the group to access specific resources.</p>
+<p>Having users assigned to these groups allows for a uniformed approach to managing access and control. IAM roles are objects which have policy permissions associated to them. However, instead of just being associated with users as groups are, roles can be associated to EC2 instances or other AWS services as service controls. If associated with an EC2 instance, this allows the instance to adopt permissions given by the role without the need to have access keys stored locally.</p>
+<p>Permissions are granted to users, users groups, and roles by means of an AWS IAM policy written as a JSON script. There are a number of privates in AWS policies which are classed as AWS managed policies, but you can also create your own custom-managed policies as well. AWS managed policies cover a huge range of AWS services which authorize you to carry out different tasks through varied levels of access, from read-only to full access and everything in between. If your security requirements fit with one of these AWS managed policies, then that’s great and you can start using it right away by associating users, user groups, or roles to it. However, if it’s more likely that these AWS-managed policies are not a perfect match for permissions you want to assign to an authenticated user, then in this instance you can copy and tweak the policy and make it fit for your requirements exactly.</p>
+<p>When it comes to security, you cannot be lazy as this leads to mistakes and vulnerabilities. You can’t afford to take shortcuts and you need to define your permissions ensuring they only allow authorized access to services and features that are required, also known as the principle of least privilege.</p>
+<p>IAM policies are made up of statements following a set syntax for allowing or denying permissions to resources within AWS. And each policy will have at least one statement within the structure that resembles the following. So, the statement: This defines the main element of the policy and groups together the permissions defined within it via the following attributes. Effect: This will either be set to Allow or Deny, and these are explicit. By default, access to your resources are denied, and so therefore, if this is set to Allow, it replaces the default Deny. Similarly, if this was configured as Deny, it would override any previous Allow.</p>
+<p>Action: This corresponds to API calls to AWS services. This example represents an API call to delete a bucket, an action within S3. You are able to list multiple actions if required by using a comma to separate them as shown here. Wildcards are also allowed. So, for example, you could create an action to carry out all APIs relating to S3. Resources: This specifies the actual resource you wish the permissions to be applied to. AWS uses unique identifiers known as ARNs, Amazon Resource Names, to specify resources. Typically, ARNs follow the following syntax. Let’s break this down and take a look at each of these segments.</p>
+<p>Partition: This relates to the partition that the resources found in. For standard AWS regions, this section would be AWS.</p>
+<p>Service: This reflects the specific AWS service, for example, S3 or EC2.</p>
+<p>Region: This is the region where the resource is located. Now remember, some services do not need a region specified. So, this can sometimes be left blank in no circumstances.</p>
+<p>Account ID: This is your AWS account ID without hyphens. Again, there are some services that do not need this information and so it can be left blank.</p>
+<p>Resource: The value of this field will depend on the AWS service you are using. For example, if I were using the action s3:DeleteBucket, then I could use the bucket name that I wanted the permission to delete, and in this example cloudacademy is the name of the bucket.</p>
+<p>Condition: This element of the IAM policy is an optional element that allows you to specify when the permissions will be activated based upon set conditions. Conditions use key value pairs and all conditions must be met for the permission to be activated. For example, there may be a condition only permitting requests from a specific source IP address.</p>
+<p>Now, we have a basic understanding of how JSON scripts are put together and their general flow, I want to show you how to create and modify AWS IAM policies using a variety of different methods. Okay, so I’ve logged into my AWS management console and I’m at the IAM dashboard and I’ve gone into Policies. So, from here, we can create a number of different IAM policies. And the first method I’m going to show you is how to copy and import an existing AWS managed policy to create your own if you need to make a few changes to it. So, let’s go ahead and do that now.</p>
+<p>So, from here, we need to go across to Create policy. Now from here, we have an option on the top right here called Import managed policy, and that’s what we want to do. I want to import an AWS managed policy and then make a couple of small changes to it. So, if I select Import managed policy and then find the policy that I want to find. So, let’s for example look at Amazon S3 full access, import that. And we can see here that it’s imported the data. And if we look at the JSON tab, we can actually see the JSON format of that policy, and from here we can directly make changes.</p>
+<p>So, for this quick demonstration, I want to copy this existing policy, but instead of allowing any resource, I want to specify my own resource for this, which would mean instead of this policy being allowed full access to Amazon S3, it allows full access to a specific bucket on Amazon S3. So, let me go ahead and make those changes now. So, I’m going to change the Asterix from resource and put in my own specific ARN of a bucket. So, now I’ve changed the resource to my own ARN.</p>
+<p>So now, all I need to do is click on ‘Next’, go to Tags and I can add any optional tags if I want to, I’m just going to leave that blank for this demonstration. Go across to Review, and here I can give this new policy a name. So, I can call S3FullAccessToMyBucket, and description this allows for full S3 access to CA bucket UK. And it gives you a summary of the policy here, so we can see the service that it’s using, the access level, and also the resource. Once we’re happy with that, we can simply click on ‘Create policy’. And we can see that that policy has now been created. Now, if we have a look at that policy just by clicking on it there will take us straight to it and we can see the JSON version of the policy. So, that’s a very quick and easy way if you want to save yourself some time by copying existing S3 managed policies that are already there.</p>
+<p>Now, I chose a fairly simple policy just for a demonstration, but there are some quite complex policies that AWS already have that you might need to just tweak a few changes to so you can simply import those existing managed policies, make your changes, and then save it as a new customer managed policy. Okay, so that’s the first method covered.</p>
+<p>Now, next I want to show you how to create a policy using something called the AWS policy generator. Now, if you simply go to Google and type in the AWS policy generator, then it will come up straight away, and you’ll be brought to a page like this. Now, the actual URL of this policy generator, if you’d prefer to type it in is awspolicygen.s3.amazonaws.com&#x2F;policygen.html. So, this is a policy generator and it allows you to easily create different types of AWS policies.</p>
+<p>So, if we look at this drop down list here, we can create an SQS queue policy, an S3 bucket policy, which as we know is a resource based policy, a VPC endpoint policy, an IAM policy, and an SNS topic policy. We’re interested in the IAM policy. So, if we select that, now in Step 2 we can add our statement. Now here, we have our effect which can be allow or deny. So, let’s say allow for this example. And then we can select the service that we’re interested in. Let’s select Amazon S3 to keep it nice and simple. Now, we can select our actions.</p>
+<p>Now, we can select individual actions here just through these tick boxes for any actions that we’re interested in. So, I’ll just select a number of different ones there. And you can see here, that it’s selected five actions. If you wanted all actions, you would simply tick this box and then you’d put in the ARN in the bucket. So, let’s just put in that same bucket that we used in the previous example, and then here we can also add in any conditions that we’d like. So, just through a series of dropdown boxes you can specify any conditions that you’d like in there as well. And then once you’re happy with your policy, simply select ‘Add statement’. And here it breaks down a summary as well. So, it shows the effect, the action, and the actions that we selected, the resource, and if there’s any conditions which we didn’t specify any.</p>
+<p>Now, if you wanted to we can now add an additional statement. So, for example, if we wanted to add some RDS elements in here as well, we can select AWS service, select a load of actions, put in the ARN of your RDS database, and also add that statement to the same policy. Now, once you’re happy with your policy and the number of statements that you’ve added, simply click ‘Generate Policy’. And here it shows you the JSON view of the policy that you would need based on your dropdown selection. So, what we can do now is simply copy that, go back to IAM, go to your policies, create policy, go to the JSON tab, and simply paste it in. So, it’s a very quick way of creating a policy through a series of dropdown boxes. And again, you can just progress through adding any tags that you need to do, give this a name, ThisIsMyPolicy, and then click ‘Create policy’. And again, you can see that this is been created. You can select that, and again we can see that the JSON statement there.</p>
+<p>So, now we’ve looked at how to create a policy by copying an existing AWS managed policy, we’ve looked at how to use the policy generator. Now, let’s just quickly review how to create a policy from scratch. So again, go back to Policies and then Create policy. Now, you can either use this visual editor or go straight to JSON and you can start typing out your policy in here as and how you need it, or you can use the visual editor which is very similar to the policy generator we just looked at, where, again, you can choose a service then the specific actions, say all S3 actions. Then you can specify the resources, whether you want this against an access point, a bucket, a job, an object. So, you can say any object, then you can specify any conditions if you need MFA or specific source IP for example. And again, you can also add additional permissions here.</p>
+<p>So, almost like another statement, it’s very similar to the policy generator, but for me personally I think the policy generator is slightly easier to understand. And then once you have your settings as you want them, and this has all been prefilled from the options from the visual editor, and again click ‘Tags’, and then ‘Review’, and then give this a name; MyPolicy. And then go to Create policy. If we take a look at the policy, we can just see its details again. And again, this shows the JSON view etc. And if we wanted to edit the policy directly here, then we can click on ‘Edit’, and you can either edit through the visual editor or you can directly edit the JSON view as well. So, that’s just a couple of ways of creating your IAM policies in a few very simple steps. There are many commands that can be applied and controlled through an IAM policy, but they’re a bit beyond the scope of this course. However, AWS does provide great API listings for the different services through their extensive documentation for advanced policy writers.</p>
+<h1 id="Amazon-S3"><a href="#Amazon-S3" class="headerlink" title="Amazon S3"></a>Amazon S3</h1><p>Amazon S3 is one of AWS’ most common storage services for customers in addition to being integrated with a multitude of other AWS services. So it’s worth devoting some time to see how S3 handles its own authorization mechanisms. There are multiple ways identities can be authorized to access an object within S3, some of which overlap with the IAM mechanisms we have already discussed. </p>
+<p>So how does a user or service get authorization to access S3 without using IAM policies? First, let’s define the different methods that permissions can be applied from within S3.</p>
+<ul>
+<li>S3 bucket policies </li>
+<li>And S3 ACLs, Access Control Lists</li>
+</ul>
+<p>Bucket policies are similar to IAM policies, in that they allow access to resources via a JSON script. However, as the name implies, these bucket policies are only applied to buckets within S3 and act as resource-based policies, whereas IAM policies can be assigned to users, groups, or roles as we previously discussed, and are classed as identity-based policies.</p>
+<p>When a bucket policy is applied, the permissions assigned apply to all objects within that bucket. This policy introduces a new attribute called principals. These principals can be IAM users, federated users, another AWS account, or even other AWS services, and it defines which principals should be allowed or denied access to various S3 resources. Principals are not used within IAM identity-based policies as the principal element is defined by who is associated to that policy via the user, group, or role association. As bucket policies are assigned to buckets, we need to have this additional parameter of principals within the policy to ensure the policy is being checked against the correct person or service.</p>
+<p>As you can see from this example a bucket policy is very similar in terms of layout and syntax to that of an IAM policy. However, we do have the Principal attribute added. This value refers to the ARN of the principal, and in this example, we can see that it points to cloudacademy as a user within IAM, and this user is allowed to delete objects and put objects within the cloudacademy bucket identified under the resource parameter. </p>
+<p>S3 bucket policies also allow you to set conditions within the policy, allowing a fine-grain permission set to be defined. For example, you could allow or deny specific IP subnets to access the bucket, or perhaps even restrict a specific IP address. This is another level of access control taking place at the network level that helps to tighten access, ensuring only authorized access is permitted.</p>
+<p>S3 Access control lists, or ACLs allow you to control access to buckets, in addition to specific objects within a bucket by groupings and AWS accounts. One advantage of being able to use ACLs is that you can set different permissions per object.</p>
+<p>ACLs do not follow the same JSON format as the policies defined by IAM and bucket policies. Instead, they are far less granular, and different permissions can be applied depending if you are applying an ACL at the bucket level or the object level. Due to the basic structure of an ACL it is not possible to implicitly deny access using ACLs, neither are you able to implement conditional elements like we saw earlier when I mentioned identity-based access. </p>
+<p>An example of a default ACL for a bucket looks as shown. As you can see here, you can specify different permissions for different predefined S3 groups defined by the Grantee column.</p>
+<p>Permissions are based on the Grantee, of which there are 4:</p>
+<ul>
+<li>The Bucket Owner, this will be your own AWS account and will have full control over all objects and the bucket itself</li>
+<li>Everyone (public access), permissions set against this grantee would mean anyone can access the content using the permissions applied, providing the object had been made public. These requests can be signed (authenticated) or unsigned (unauthenticated)</li>
+<li>Authenticated Users - This option will allow IAM users from any AWS account to access the object, via signed requests (authenticated)</li>
+<li>S3 Log delivery group - This is a group used to deliver log files when server access logs has been configured and the bucket is used to store and WRITE log files to</li>
+</ul>
+<p>By editing the ACL at the bucket level you will be presented with the following.</p>
+<p>This shows you the different levels of permissions that can be applied to the Bucket. It will show you the permissions given to the grantee groups for the bucket, which are either List or Write. You can also see what permissions have been given to enable the grantees access to either Read or Write against the Bucket ACL. </p>
+<p>For clarification about what these permissions actually grant, they are as follows:</p>
+<ul>
+<li>List: (Allows the grantee to list objects in the bucket)</li>
+<li>Write: (Allows grantee to create, overwrite, and delete objects in the bucket)</li>
+<li>Bucket ACL Read (Allows the grantee to read the ACL of the bucket)</li>
+<li>Bucket ACL Write: (Allows the grantee to write the ACL for the bucket)</li>
+</ul>
+<p>You may have noticed that you can also add access for another account as a Grantee. To configure this access you will be required to enter the Canonical ID of the AWS account that you would like to have access.</p>
+<p>So we have seen what the ACL Looks like at the Bucket level, let’s now take a quick look at what it looks like at the object level. </p>
+<p>Here is an ACL of an object within a bucket. </p>
+<p>As you can see, again by default the resource owner has full control over the object. Also, you will also notice that you can add access for another account, again you will need to add the appropriate canonical AWS Account ID and the relevant permissions.</p>
+<p>You can also specify Public access (if you have Public access enabled). In this example, we can see that the ‘Everyone’ Group has Read access to the Object. To modify this permission I could simply click on the radio button next to the group and modify the settings as shown: </p>
+<p>Note there is no WRITE permission when working with object ACLs, unlike Bucket ACLs.</p>
+<p>Again, let’s take a closer look at what actual permissions are being applied depending on the option chosen for the object:</p>
+<ul>
+<li>Read Object: (Allows the grantee to read the object data and its metadata)</li>
+<li>Read object permissions: (Allows grantee to read the object ACL)</li>
+<li>Write object permissions (Allows the grantee to write the ACL for the object)</li>
+</ul>
+<p>We have spoken about a number of ways an identity or principal can be authorized access to a resource or object within AWS, but what happens if a principal who belongs to an IAM group and accesses an object in a bucket with S3 ACLs, bucket permissions and their own IAM permissions? With all of this authorization, how is this access governed if there are conflicting permissions to the object in the bucket that they are trying to access?</p>
+<p>Well, AWS handles this permission conflict in accordance with the basis of least privilege. Essentially, by default, AWS dictates that access is denied to an object, even without an explicit Deny within any policy. To gain access, there has to be an Allow within a policy that the principal is associated to or defined by within a bucket policy or ACL. If there are no Denies defined, but there is an Allow within a policy, then access will be authorized. However, if there is a single Deny associated with a principal to a specific object, then even if an Allow does exist, this explicit Deny will always take precedence, overruling the Allow, and access will not be authorized.</p>
+<h1 id="Network-Access-Control-Lists-NACLs"><a href="#Network-Access-Control-Lists-NACLs" class="headerlink" title="Network Access Control Lists (NACLs)"></a>Network Access Control Lists (NACLs)</h1><p>If you have been working with VPCs for any length of time then you would have come across AWS Network Access Control Lists, also known as NACLs, and these can be considered a way of authorizing network packets to enter and leave different parts of your VPC. Operating the Network layer, NACLs provide a rule-based security feature for permitting ingress and egress network traffic at the protocol and subnet level. In other words, ACLs monitor and filter traffic moving in and out of your subnet, either allowing or denying access dependent on rule permissions. </p>
+<p>NACLs can be attached to one or more subnets within your virtual private cloud. If you haven’t created a custom NACL, then your subnets will automatically be associated with your VPC’s default NACL, and in this instance, the default allows all traffic to flow in and out of the network, as opposed to denying it.</p>
+<p>The rule set itself is very simple, and has both an inbound and outbound list of rules, and these rules are comprised of just six different fields; these being </p>
+<ol>
+<li>Rule Number: ACL rules are read in ascending order, and as soon as a network packet is received, it reads each rule in ascending order until a match is found. For this reason, you’ll want to carefully sequence your rules with an organized numbering system. I would suggest that you leave a gap of at least 50 between each of your rules to allow you to easily add new rules in sequence later if it becomes necessary. </li>
+<li>Type: this dropdown list allows you to select from a list of common protocol types, including SSH, RDP, HTTP, and POP3. You can alternatively specify custom protocols, such as varieties of ICMP. </li>
+<li>Protocol: based on your choice of ‘Type’, the protocol option might be grayed out. For custom rules like TCP and UDP, however, you should provide a value. </li>
+<li>Port Range: If you create a custom rule, you’ll need to specify the port range for the protocol to use. </li>
+<li>Source: this can be a net or a subnet range, a specific IP address, or even left open to traffic from anywhere. </li>
+<li>Allow&#x2F;Deny: Each rule must include an action specifying whether to Allow or Deny the traffic that meets the parameters of the rule.</li>
+</ol>
+<p>So NACLs are not used to authorize an identity as such, instead, they are used to effectively authorize the network packet itself to enter or leave a specific subnet. It’s important to note that NACLs are stateless. Therefore, when creating your rules, you’ll need to apply an outbound reply rule to permit responses to inbound requests.</p>
+<h1 id="Security-Groups"><a href="#Security-Groups" class="headerlink" title="Security Groups"></a>Security Groups</h1><p>AWS security groups are associated with EC2 instances, and provide security at the protocol and port access level, much like Network Access Control Lists (NACLs), and as a result, they also work much the same way. Containing a set of rules that filter traffic coming into and out of an EC2 instance, authorizing which communication can occur between instances. However, unlike NACLs, with security groups, there isn’t a Deny action for a rule. Instead, if there isn’t a rule that explicitly permits a particular packet, it will simply be dropped. The rule set is made up of two rule sets, inbound and outbound.</p>
+<p>Security groups are stateful, meaning you do not need the same rules for both inbound and outbound traffic for response traffic, unlike, NACLs, which are stateless. Therefore, any rule that authorizes traffic into an EC2 instance will allow any response to be returned without an explicit rule in the outbound ruleset.</p>
+<p>Each rule is comprised of 8 fields: </p>
+<ol>
+<li>Name: As expected this allows you to add a name for the rule up to 255 characters in length</li>
+<li>Security Group Rule ID: This is automatically created and set a unique identifier for the security group rule</li>
+<li>IP Version: Here you can select which IP version that the security group apples to, V4 or V6</li>
+<li>Type: This dropdown list allows you to select common protocols like SSH, RDP, HTTP. You can also choose custom protocols. </li>
+<li>Protocol: This is typically grayed out, as it’s covered by most type choices. However, if you create a custom rule, you can specify your protocol here</li>
+<li>Port range: This value will also usually be pre-filled, reflecting the default port range for your chosen protocol. However, there might be times when you prefer to use custom ports. </li>
+<li>Source: This can be a net or subnet range, a specific IP address, or another AWS security group. You can also leave access open to the entire internet using the Anywhere value. </li>
+<li>Description: This simply allows you to add a description for the rule itself</li>
+</ol>
+<p>In this screenshot, we can clearly see that authorization is permitted if the source IP address is 94.118.90.66&#x2F;32 and is using SSH across TCP on port 22. Security groups are a great way to authorize the use of particular ports for communication, whilst restricting all other communication over denied ports.</p>
+<p>For example, you could have a number of SQL RDS instances that you want to write to from a group of EC2 instances. In this case, you could create a security group for the SQL RDS instances and another security group for the EC2 instances. You could then authorize communication to happen over specified permitted ports, such as 1433 and 1434, used by SQL, between the two groups. All other communication will be dropped and denied, which in turn enhances security on your AWS infrastructure.</p>
+<p>That now brings me to the end of this lecture and to the end of this course. You should now have a greater understanding of the different methods that AWS implements to authorize access within your AWS account.</p>
+<p>If you have any feedback, positive or negative, please send an e-mail to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>, your feedback is greatly appreciated.</p>
+<p>Thank you for your time and good luck with your continued learning of cloud computing. Thank you.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AWS-Security-Specialty-The-Difference-Between-Authentication-Authorization-and-Access-Control-in-AWS-8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/14/AWS-Security-Specialty-The-Difference-Between-Authentication-Authorization-and-Access-Control-in-AWS-8/" class="post-title-link" itemprop="url">AWS-Security-Specialty-The-Difference-Between-Authentication,-Authorization,-and-Access-Control-in-AWS-8</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-14 13:51:53" itemprop="dateCreated datePublished" datetime="2022-11-14T13:51:53-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-19 22:58:52" itemprop="dateModified" datetime="2022-11-19T22:58:52-04:00">2022-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AWS-Security-Specialty/" itemprop="url" rel="index"><span itemprop="name">AWS-Security-Specialty</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/AWS-Security-Specialty-The-Difference-Between-Authentication-Authorization-and-Access-Control-in-AWS-8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AWS-Security-Specialty-The-Difference-Between-Authentication-Authorization-and-Access-Control-in-AWS-8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+<h1 id="The-Difference-Between-Authentication-Authorization-and-Access-Control"><a href="#The-Difference-Between-Authentication-Authorization-and-Access-Control" class="headerlink" title="The Difference Between Authentication, Authorization, and Access Control"></a>The Difference Between Authentication, Authorization, and Access Control</h1><p>When talking about security, I find that there can be a lot of confusion around the definition and meaning of the words authentication, authorization, and access control. Many people believe they all mean the same thing with no clear distinction between them. This is, however, untrue, and as a result people often use the wrong term to describe a security mechanism. So in this course, I want to cover each of these to help you understand the differences. It’s important to know these differences in order to control access to your cloud resources effectively and with the appropriate level of security. </p>
+<p>My name is Stuart Scott, and I am the AWS content Director here at Cloud Academy. Feel free to connect with me to ask any questions using the details shown on the screen, alternatively you can always get in touch with us here at Cloud Academy by sending an e-mail to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a> where one of our Cloud experts will reply to your question.</p>
+<p>So getting back to the topic in question, let’s start by looking at Authentication in more detail. </p>
+<p>The authentication process is comprised of two parts of information. The first part of this process is to define who you are, effectively presenting your identity. An example of this would be your login username to your AWS account. This identification is a unique value within your AWS account that you are trying to authenticate to, and so as a result of it being unique, AWS would not allow two identical usernames to be created within the same single AWS account.</p>
+<p>The second part of the authentication process is to verify that you are who you say you are in the first step. This is achieved by providing additional information which should be kept private and secret for security purposes. However, unlike the username, this private information does not have to be a unique value within your AWS account. So in the example I just gave whereby you provide your identity in the form of a username to your AWS account, which will be a unique value, the next step would be to verify that identity by providing a password.</p>
+<p>Putting AWS and the cloud to one side for a moment, usernames and passwords are just one form of authentication used in an identity and verification process. In our everyday lives, we are presented with multiple forms of authentication methods without even thinking about it. For example, credit and debit cards and pin numbers. So, when we use these to pay for something we authenticate to our banks. In this process, we first identify ourselves by providing the credit card details with our personal information on it and then verify this identification by entering a private pin number. This combination then allows us to authenticate to our banks. </p>
+<p>Another example might be with the use of biometrics, you might need to gain access to a secure room in your building, firstly you can present your identification card as your identity, and then this is authorized by presenting your fingerprint or retina scan, and therefore confirming you are who you say you are with the identity you provided.  </p>
+<p>Authentication is not just for verifying human access to systems or areas. Authentication takes place by IT services and applications that require access to other systems. For example, an EC2 instance might require access to Amazon S3 to perform routine tasks. In this instance, the same authentication principles and process is followed. Identity first, and then verification of that identity.</p>
+<p>Now that we have a clear definition of authentication, let’s take a look at authorization and see how authentication and authorization differ from each other. Authorization only takes place once an identity has been authenticated, so there is a clear order as to which these two operate. </p>
+<p>Authentication takes place before the correct level of authorization can be attained. Authorization is the process in which an identity that has been authenticated establishes what level of access can and can’t be achieved. So here, we are really looking at access privileges and permissions. </p>
+<p>Staying with an AWS example, let’s assume we have an authenticated user that has entered their username and password. AWS security features, and in this case, AWS IAM, identity and access management service, defines the level of authorized access assigned to that identity within the AWS environment. Each identity can have a different level of authorization permissions associated to it. It’s these properties that determine what that identity can then access.</p>
+<p>Let’s say we have four identities within our AWS account. Stuart, Will, Jorge, and Andy. Once authenticated, AWS will then determine their authorization levels.</p>
+<p>This table shows the high-level authorization information. From this, we can see that Stuart is authorized to have full access to the complete AWS S3 service. Will is authorized to only Create instances from within Amazon EC2. Jorge is authorized to only create volumes within Amazon EBS. And Andy is authorized to both create and delete users within IAM.</p>
+<p>So there is a clear distinction between authentication and authorization. Authentication identifies and verifies who you are. Authorization determines what an identity can access within a system once it has been authenticated to it.</p>
+<p>Now how does access control fit into all this? Specifically logical access controls. Again, access control is defined as something different from authentication and authorization. When looking at Logical Access Control, we can hone in on the mechanisms or methods of accessing a secured resource. </p>
+<p>Let’s put some examples in context around this to make it a little clearer. So when a user logs on with a username and password, as per our previous example, this mechanism of logical access control, in its most simple form, can be classed as a username&#x2F;password method. If we were to enforce tighter security controls and introduce Multi-Factor authentication, MFA, then this would be an enhanced level of access control as it uses an additional token to complete the authentication process. So you can look at logical access control in the eyes of the entire process of how access is granted to a resource. </p>
+<p>There are of course many other logical access control mechanisms within the AWS environment that you may come across. So another method of access control within AWS can be that of IAM roles, where roles are used to grant permissions to perform specific functions which can be associated to users or other resources and services.</p>
+<p>Another example is Federation, this is where access is granted to users that do not have identities within AWS IAM, instead, temporary credentials are supplied to gain access. For example, a user account within a corporate on-site Microsoft active directory can be federated to access AWS resources. </p>
+<p>Network access control lists or NACLs. This method is performed at the network level restricting data dependent on specific network parameters such as IP address, protocols, and ports. For example, only allowing SSH access to a particular subnet from a specific network range. </p>
+<p>Security groups: similar principles to NACLs, but they operate at the instance level. So, again access control is based on IP address and port information. </p>
+<p>So, as you can see, access control is not always related to a human activity whereby usernames and passwords are used to simply log into a system or application.</p>
+<p>Access control is very closely related to both authentication and authorization as the access control mechanism typically is used for both authentication and authorization to gain access to a resource.</p>
+<p>So, to reiterate, I feel it’s important to really understand the difference between the three terms we have just covered. </p>
+<p>Authentication: the process of defining an identity and the verification of that identity. An example would be a username and password. </p>
+<p>Authorization: determines what an identity can access within a system once it’s been authenticated to it. An example of this would be an identity’s permissions to access specific AWS services. </p>
+<p>Access control: the method and process of how access is granted to a secure resource. An example, multi-factor authentication.</p>
+<p>That now brings me to the end of this lecture and to the end of this course, and so you should now have a greater understanding of the difference between each of these terms and that you see the clear difference between them. AWS has services and features for the three mechanisms we have just learned, and so it’s important we use these in the correct context and not confuse ourselves and others between their meaning.</p>
+<p>Feedback on our courses here at Cloud Academy is valuable to both us as trainers and any students looking to take the same course in the future. If you have any feedback, positive or negative, it would be greatly appreciated if you could contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. </p>
+<p>Thank you for your time, and good luck with your continued learning of cloud computing. Thank you.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AWS-Security-Specialty-Knowledge-Check-Overview-of-AWS-Identity-and-Access-Management-IAM-7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/14/AWS-Security-Specialty-Knowledge-Check-Overview-of-AWS-Identity-and-Access-Management-IAM-7/" class="post-title-link" itemprop="url">AWS-Security-Specialty-Knowledge-Check:-Overview-of-AWS-Identity-and-Access-Management-IAM-7</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-14 13:51:51" itemprop="dateCreated datePublished" datetime="2022-11-14T13:51:51-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-19 22:59:30" itemprop="dateModified" datetime="2022-11-19T22:59:30-04:00">2022-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AWS-Security-Specialty/" itemprop="url" rel="index"><span itemprop="name">AWS-Security-Specialty</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/AWS-Security-Specialty-Knowledge-Check-Overview-of-AWS-Identity-and-Access-Management-IAM-7/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AWS-Security-Specialty-Knowledge-Check-Overview-of-AWS-Identity-and-Access-Management-IAM-7/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+<p><object data="Knowledge-Check-Overview-of-AWS-Identity-and-Access-Management-IAM.pdf" type="application/pdf" width="100%" height="600"></object></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AWS-Security-Specialty-Lab-Advanced-Roles-and-Groups-Management-Using-IAM-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/14/AWS-Security-Specialty-Lab-Advanced-Roles-and-Groups-Management-Using-IAM-6/" class="post-title-link" itemprop="url">AWS-Security-Specialty-Lab-Advanced-Roles-and-Groups-Management-Using-IAM-6</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-14 13:51:49" itemprop="dateCreated datePublished" datetime="2022-11-14T13:51:49-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-19 23:02:34" itemprop="dateModified" datetime="2022-11-19T23:02:34-04:00">2022-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AWS-Security-Specialty/" itemprop="url" rel="index"><span itemprop="name">AWS-Security-Specialty</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/AWS-Security-Specialty-Lab-Advanced-Roles-and-Groups-Management-Using-IAM-6/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AWS-Security-Specialty-Lab-Advanced-Roles-and-Groups-Management-Using-IAM-6/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AWS-Security-Specialty-Lab-Introduction-to-IAM-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/14/AWS-Security-Specialty-Lab-Introduction-to-IAM-5/" class="post-title-link" itemprop="url">AWS-Security-Specialty-Lab-Introduction-to-IAM-5</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-14 13:51:48" itemprop="dateCreated datePublished" datetime="2022-11-14T13:51:48-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-19 23:01:54" itemprop="dateModified" datetime="2022-11-19T23:01:54-04:00">2022-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AWS-Security-Specialty/" itemprop="url" rel="index"><span itemprop="name">AWS-Security-Specialty</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/AWS-Security-Specialty-Lab-Introduction-to-IAM-5/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AWS-Security-Specialty-Lab-Introduction-to-IAM-5/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/14/AWS-Security-Specialty-Using-IAM-Policies-to-Define-and-Manage-Permissions-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/14/AWS-Security-Specialty-Using-IAM-Policies-to-Define-and-Manage-Permissions-4/" class="post-title-link" itemprop="url">AWS-Security-Specialty-Using-IAM-Policies-to-Define-and-Manage-Permissions-4</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-14 13:51:45" itemprop="dateCreated datePublished" datetime="2022-11-14T13:51:45-04:00">2022-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-19 22:55:28" itemprop="dateModified" datetime="2022-11-19T22:55:28-04:00">2022-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AWS-Security-Specialty/" itemprop="url" rel="index"><span itemprop="name">AWS-Security-Specialty</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/14/AWS-Security-Specialty-Using-IAM-Policies-to-Define-and-Manage-Permissions-4/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/14/AWS-Security-Specialty-Using-IAM-Policies-to-Define-and-Manage-Permissions-4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Hello, and welcome to this course, where I shall be looking at how IAM Policies can be used to allow you to both grant and restrict access to your resources within your AWS account. I shall be looking at the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/using-iam-policies-define-manage-permissions-2256/iam-aws-policy-types/">different types of policies</a>, in addition to the syntax of them, and how to interpret a policy. My name is Stuart Scott, and I’m the AWS Content Director here, at Cloud Academy. Feel free to connect with me to ask any questions, using the details shown on the screen. Alternatively, you can always get in touch with us, here at Cloud Academy, by sending an email to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>, where one of our Cloud Experts will reply to your question.</p>
+<p>The information set out in this course has been designed for those who may be in one of the following roles; an AWS administrator, security engineer, security architect, and anyone who is looking to increase their knowledge of the IAM service in preparation for an AWS certification. By the end of this course, you will have a greater understanding of the different types of IAM policies you can expect to see when working within IAM; <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/using-iam-policies-define-manage-permissions-2256/creating-an-aws-iam-policy/">how to implement policies</a> effectively to build secure and robust access controls for your users; how to read IAM policies to understand the permissions they are granting and restricting; and how <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/using-iam-policies-define-manage-permissions-2256/policy-evaluation-logic/">policy evaluation logic</a> operates.</p>
+<p>As an intermediate course, you should already have a basic understanding of AWS IAM and what the service is used for. It would also be advantageous if you had some basic hands-on experience of AWS and some of its core services, but this is not essential.</p>
+<p>Feedback on our courses, here at Cloud Academy, is valuable to both us as trainers, and any students looking to take the same course in the future. If you have any feedback, positive or negative, it would be greatly appreciated if you can contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. Please note that, at the time of writing this content, all course information was accurate. AWS implements hundreds of updates every month as a part of its ongoing drive to innovate and enhance its services. As a result, minor discrepancies may appear in the course content over time. But here, at Cloud Academy, we strive to keep our content up to date, in order to provide the best training available. So, if you notice any information that is outdated, please contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>, and this will allow us to update the course during its next release cycle. Thank you.</p>
+<h1 id="IAM-AWS-Policy-Types"><a href="#IAM-AWS-Policy-Types" class="headerlink" title="IAM AWS Policy Types"></a>IAM AWS Policy Types</h1><p>Hello and welcome to this lecture where I want to talk about four different policy types that you can expect to see when working with <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/overview-of-aws-identity-and-access-management-iam/introduction-81/">AWS IAM</a>. Identity-based policies. These policies can be attached to users, user groups or roles within IAM. Essentially, any entity that depicts an identity. Resource-based policies. Instead of being associated with an identity, these policies are attached in line to resources themselves. An example of a resource-based policy in IAM will be that of a role trust policy where the policy defines the principle that can assume the role.</p>
+<p>Permission boundaries. These policies can be associated with a role or user, but they don’t actually grant permissions themselves, instead they define the maximum level of permissions that can be granted to an entity. Organization service control policies, SCPs. These are very similar to permission boundaries in the fact that they do not grant permissions. They define a boundary of maximum permissions. However, these service control policies are associated with an AWS account or organizational unit, an OU, when working with AWS organizations and govern the maximum permissions to the members of those accounts.</p>
+<p>With all of these policy types, it’s easy to see why some people can get confused as to which type of policy is being used or should be used. So let me run through each of these policies in greater detail, starting with the identity-based policies.</p>
+<p>As already highlighted, these policies can be attached to users, user groups, or roles and they control what permissions each of those entities have. Identity-based policies can either be managed or inline policies, but what does this mean? Well, managed policies are saved within the IAM library of policies and can be attached to any user, user group or role as and when required, and the same policy can be attached to multiple entities.</p>
+<p>Managed policies also come in two different flavors, AWS managed policies and customer managed policies. AWS managed policies are policies that have been pre-configured by AWS and made available to you to help you manage some of the most common permissions that you may wish to assign. Some examples of AWS managed policies can be seen here. From the policy name, you can usually tell what access is being given, although you can expand upon each policy to see the JSON document that is associated.</p>
+<p>Customer managed policies are those that you have created yourself, which can then be associated with a user, user group or role. You might want to create customer managed policies when the AWS managed policies do not meet your security requirements. For example, you might want to add additional granularity to the policy to restrict access at a specific API call level.</p>
+<p>Let me now explain how inline policies contrast against managed policies. So inline policies are embedded directly into the entity, either the user, user group or role. The policy is not saved and stored in the IAM library policy, its only existence is within the associated entity. As a result, it can’t easily be replicated to other entities, it’s specific to that one user, user group or role, creating a one-to-one relationship. It’s not always best practice to use inline policies as they take a lot of administration to keep on top of and should only be used if absolutely necessary. For example, you might have some elevated permissions that you don’t want to have mistakenly given to someone else that they weren’t intended for.</p>
+<p>Okay, let me now move onto resource-based policies. So resource-based policies are effectively inline policies that are associated with a resource instead of an identity. If you have been using <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/introduction-to-amazon-s3/introduction/">Amazon S3</a> for any extended period of time, then you may have come across S3 bucket policies, which is a common resource-based policy where permissions to the bucket are defined at the resource level and defined which principle or principles can access the bucket based upon different actions.</p>
+<p>When using roles within IAM, the role has a trust relationship policy, which is a resource-based policy. As a result, the permissions of the trust are embedded inline within the role itself. So in this instance, the resource is the role and the resource-based policy is the trust relationship. This example shows the resource-based policy of the trust relationship of one of my roles. In this policy, the user, Stuart is the principle and has the ability to assume the role. It is this parameter of principle which signifies the difference between an identity-based policy and a resource-based policy.</p>
+<p>Identity-based policies don’t have that principle parameter as the policy is already associated within the identity. Resource-based policies must have the principle parameter to determine which identity that the policy permissions relate to. Next up, we have permission boundaries. So permission boundaries can only be associated with a user or role. It’s not possible to add a boundary to a group. They differ from both identity-based and resource-based policies in the fact that permission boundaries don’t grant permissions themselves. They act as a guide rail to limit the maximum level of permissions that the user or role can be given. The policy configured for the boundary can be an AWS managed or customer managed policy.</p>
+<p>So let’s assume for example, that our user, Stuart has an identity-based policy associated with him that allows full access to S3 and full access to <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/amazon-elastic-compute-cloud-ec2/amazon-ec2/">EC2</a> using the following AWS managed policies. However, if a permission boundary was also configured for Stuart using the following AWS managed policies, which only grants read only access to S3, but still full access to EC2, then the resulting access for the user, Stuart would be full access to EC2, but only read only to Amazon S3 as the maximum permission defining by the permissions boundary was limited to read only despite the user having an identity-based policy associated granting full S3 access.</p>
+<p>So the last policy I want to reference are the SCPs, the service control policies. So service control policies are used by AWS organizations and attached to AWS accounts or organizational units, OUs, to define the maximum permissions allowed for the members of the associated account or OU. So in a way they act in a similar fashion to that of permission boundaries, but at the account level and affect all members of those accounts.</p>
+<p>For example, let’s say a user within an AWS account had full access to S3, RDS and EC2 via an identity-based policy. If the SCP associated with that AWS account denied access to the S3 service, then that user would only be able to access RDS and EC2 despite having full access to S3. The SCP would serve to prevent service from being used within the AWS account and so have the overriding precedence and determine the maximum level of permissions allowed.</p>
+<p>So to be clear, an SCP does not grant access, they add a guide route to define what is allowed. You’ll still need to configure your identity-based or resource-based policies to identities, granting permission to carry out actions within your accounts. If you want to use service control policies to help you manage your security at an account level, then you need to ensure that you deploy AWS organizations using the enable all feature setting.</p>
+<p>Within IAM, you have the ability to view any SCPs that are applicable to your AWS account, the policy statement itself, it’s ARN, the number of entities it affects and you can also review access activity to learn when a principal within the organization last accessed a service. However, if you wanted to update or edit the SCP, then you’d have to do that from within the AWS organization service itself. The SCP can’t be edited from within IAM. For more information relating to how to implement, manage and secure AWS organizations using SCPs, then please see our existing course here.</p>
+<h1 id="Examining-the-JSON-Policy-Structure"><a href="#Examining-the-JSON-Policy-Structure" class="headerlink" title="Examining the JSON Policy Structure"></a>Examining the JSON Policy Structure</h1><p>In this lecture, I will be taking a deep look at the syntax and structure of IAM policies. For both identity-based and resource-based policies, the syntax is the same, but you might use slightly different parameters. If you’ve worked with IAM at all before, then I am sure you have come across an IAM policy. After all, it is the component that defines what an identity can or can’t access. But what do these policies actually look like? IAM policies are formatted as JSON documents, JavaScript Object Notation, and each policy will have at least one statement where the structure may look like this example.</p>
+<p>Let me break the structure of this policy down to allow you to understand each element. Version. This specifies the policy language version and specifies the language syntax used, and at the time of writing this course, the current policy version is 2012-10-17. Statement. This defines the main element of the policy, which will includes other sub-elements, including the Sid, Effect, Action, Resource, and Condition. These elements will identify the level of access granted or denied and to which resource. A policy must contain at least one statement, but it can also contain an array of statements. For each statement block, it must be enclosed within curly braces, but if you use an array of statements, then you must enclose the entire array within square brackets. And we shall look at an example of this during this lecture.</p>
+<p>Sid. This is the statement ID, and it’s an optional parameter that allows you to set a unique identifier within the statement. As you add more arrays within your policy, it can be a good idea to include a Sid for each one, allowing you to name them appropriately, making them more easily identifiable. For example, AllowGetObjectForS3. Without reading the rest of the statement, you can get a good idea of what the permissions in this statement allows.</p>
+<p>Effect. This element can be set to either Allow or Deny, which either grant or restrict access for the actions defined in the statement. By default, all access to your resources are denied and so, therefore, if this is set to Allow, it replaces the default denied access. Similarly, if this was set to Deny, it would override any previous Allow. An explicit Deny in a policy will always take precedence over any Allow.</p>
+<p>Principal. This parameter defines which principal the policy relates to. The Principal is only used for resource-based policies, for example, those policies attached to S3 Buckets. When using identity-based policies, this parameter is not required within the policy as the policy itself is associated with the principal and not a resource. As an alternative to the Principal parameter, this could be replaced with the NotPrincipal parameter, which would specify the user, role, or AWS account that is not allowed or denied access to the associated resource.</p>
+<p>Action. This is the action that will either be allowed or denied, depending on the value entered for the Effect parameter. Actions are effectively API calls for different services. As a result, different actions are used for each service. For example the DeleteBucket action is available for S3 but not EC2, and likewise, the CreateKeyPair action is available for EC2 but not S3. The action is prefixed with the associated AWS service. This example defines two actions, CreateTrail and DeleteTrail, for the CloudTrail service. As another example, you can see this one here with the asterisk, and this acts as a wildcard which represents all actions for the CloudTrail service, essentially granting full access to the service.</p>
+<p>Similarly, as we had with the Principal parameter, we could replace the Action parameter with the NotAction instead, and this could help you optimize your policy by creating a shorter version, listing just a limited set of actions that should not match instead of creating a longer policy listing all that actions that should. An example of using the NotAction is shown here. This policy essentially allows all actions for CloudTrail apart from the DeleteTrail API, and this is because the NotAction parameter is being used.</p>
+<p>Resource. This element specifies the actual resource you wish the Action and Effect to be applied to. AWS uses identifiers known as ARNs, Amazon Resource Names, to specify specific resources. Typically, ARNs follow a syntax of, arn, partition, service, region, account-id, and then resource. So the Partition element, this relates to the partition that the resource is found in. For standard AWS regions, this would be AWS. Service. This reflects the specific AWS service, for example, S3 or EC2.</p>
+<p>Region. This is the region where the resource is located. Some services do not need a region specified, so this can sometimes be left blank. Account-ID. This is your AWS Account ID, without hyphens. Again, some services do not need this information and so can be left blank. Resource. The value of this field will depend on the AWS service you are using. For example, if I were using the action, Action:s3:PutObject, then I could use the bucket name that I wanted those permissions to apply to. Again, we also have a NotResource parameter that can be used to explicitly match all other resources except those specified. For example, this policy will allow access to all S3 buckets other than those specified by the NotResource parameter.</p>
+<p>Condition. This is an optional element that allows you to control when the permissions will be effective based upon set criteria. The element itself is made up of a condition and a key value pair and all elements of the condition must be met for the permissions to be active. Let’s take a look at an example condition. In the example, the IP address is the condition itself, which the key value pair will be effective against. The aws:SourceIp is the Key and the 10.10.0.0&#x2F;16 is the value element of the key. So effectively, what this is saying is, if the Source IP address of the user who is requesting access via the policy is within the 10.10.0.0&#x2F;16 network range, then implement the permissions in the policy statement.</p>
+<p>Now that I’ve gone through the core parameters of an IAM policy, let’s take a look at a couple of examples to ensure we can understand the permissions that are being presented within the policy. As I mentioned previously, you can have multiple Sids within a statement, each granting a different level of access. The example below demonstrates this, and I have highlighted each a different color to show the separation.</p>
+<p>So looking at this example policy, let’s determine what access is being granted. So in StatementBlock1, this allows any resource full access to CloudTrail on the condition that their source IP address is within the 10.10.0.0&#x2F;16 network range. StatementBlock2. This allows full access to all RDS databases using all API calls except for that of the rds:DeleteDBInstance due to the NotAction parameter being used instead of the Action being used. And in StatementBlock3, this allows the creation and deletion of S3 Buckets within the cloudacademy bucket on S3.</p>
+<p>Let’s take a look at another example policy, this time, a resource-based policy, and in this instance, it’s from an S3 bucket. So in this policy, it allows the user, Stuart, as highlighted by the Principal parameter, to create and delete buckets in addition to deleting the bucket policy. Stuart can also delete and put objects within the bucket, and the bucket that this policy refers to is the bucket named ca-bucket-uk, as defined by the Resource parameter. However, there is a condition bound to this policy that states that Stuart can only do this if he was authenticated via Multi-Factor Authentication, MFA. That should now give you more of an understanding of how JSON IAM policies work and what they look like.</p>
+<h1 id="Creating-an-AWS-IAM-Policy"><a href="#Creating-an-AWS-IAM-Policy" class="headerlink" title="Creating an AWS IAM Policy"></a>Creating an AWS IAM Policy</h1><p>Hello and welcome to this lecture where I will show you how to create your IAM policies. Let’s start by creating an identity-based, customer managed policy, and there are a number of ways to create a customer managed policy, these being, copy an existing AWS Managed Policy. So we can copy an existing policy and then edit that policy to ensure it meets the requirements we need, and this can save us some time.</p>
+<p>We can use the Policy Generator, and this allows you to create a customer managed policy by selecting options from a series of dropdown boxes. And we can also create our own policy. So if you’re proficient in JSON and the syntax of IAM policy writing, then you can write your own policies from scratch or paste in a JSON policy from another source. So I now want to give you a quick demonstration on how to create a policy in each of these three ways. And the demonstration will include, how to create a customer managed policy by editing an existing AWS managed policy, how to create a customer managed policy using the Policy Generator, and how to create a customer managed policy from scratch. So let’s take a look.</p>
+<p>Okay, so I’ve logged into my AWS Management Console, and I’m at the IAM dashboard, and I’ve gone into Policies. So from here, we can create a number of different IAM policies. And the first method I’m going to show you is how to copy and import an existing AWS managed policy to create your own, if you need to make a few changes to it. So let’s go ahead and do that now. So from here, we need to go across to Create Policy.</p>
+<p>Now, from here, we have an option on the top right here called Import Managed Policy, and that’s what we want to do. I want to import an AWS managed policy and then make a couple of small changes to it. So if I select Import Managed Policy and then find the policy that I want to find. So let’s, for example, look at AmazonS3FullAccess, import that, and we can see here that it’s imported the data. And if we look at the JSON tab, we can actually see the JSON format of that policy, and from here, we can directly make changes.</p>
+<p>So for this quick demonstration, I want to copy this existing policy, but instead of allowing any resource, I want to specify my own resource for this, which will mean instead of this policy being, allow full access to Amazon S3, it allow full access to a specific bucket on Amazon S3. So let me go ahead and make those changes now. So I’m gonna change the asterisks from Resource and put in my own specific ARN of a bucket. So now, I’ve changed the resource to my own ARN.</p>
+<p>So now, all I need to do is click on Next, go to Tags, and I can add any optional tags if I want. I’m just gonna leave that blank for this demonstration. Go across to Review, and here I can give this new policy a name. So I can call it S3FullAccessToMyBucket. And description, this allows full S3 access to ca-bucket-uk. And it gives you a summary of the policy here. So we can see the service that it’s using, the access level, and also the resource. Once we’re happy with that, we can simply click on Create Policy. And we can see that that policy has now been created.</p>
+<p>Now, if we have a look at that policy, just by clicking on it there, it’ll take us straight to it, and we can see the JSON version of the policy. So that’s a very quick and easy way if you want to save yourself some time by copying existing S3 managed policies that are already there. Now, I chose a fairly simple policy just for demonstration, but there are some quite complex policies that AWS already have that you might need to just tweak a few changes to so you can simply import those existing managed policies, make your changes, and then save it as a new customer managed policy.</p>
+<p>Okay, so that’s the first method covered. Now, next, I want to show you how to create a policy using something called the AWS Policy Generator. Now, if you simply go to Google and type in the AWS Policy Generator, then it’ll come up straight away, and you’ll be brought to a page like this. Now, the actual URL of this Policy Generator, if you’d prefer to type it in, is awspolicygen.s3.amazonasw.com&#x2F;policygen.html. So this is a Policy Generator, and it allows you to easily create different types of AWS policies.</p>
+<p>So if we look at this drop down list here, we can create an SQS policy, an S3 bucket policy, which, as we know, is a resource-based policy, a VPC endpoint policy, an IAM policy, and an SNS topic policy. We’re interested in the IAM policy. So if we select that, now, in step two, we can add our statements. Now, here, we have our effect, which can be allow or deny. So let’s say allow for this example. And then, we can select the service that we’re interested in. Let’s select Amazon S3 to keep it nice and simple. And now, we can select our actions.</p>
+<p>Now, we can select individual actions here just through these tick boxes for any actions that we’re interested in. So I’ll just select a number of different ones there. And you can see here that it’s selected five actions. If you wanted all actions, you would simply tick this box. And then, you’d put in the ARN of the bucket. So let’s just put in that same bucket that we used in the previous example. And then, here, we can also add in any conditions that we’d like. So just through a series of dropdown boxes, you can specify any conditions that you’d like in there as well. And then, once you’re happy with your policy, simply select Add Statement. And here, it breaks down a summary as well. So it shows the effect, the action, the actions that we selected, the resource, and if there’s any conditions, which we didn’t specify any.</p>
+<p>Now, if you wanted to, we can now add an additional statement. So for example, if we wanted to add some RDS elements in here as well, we can select AWS Service, select a load of actions, put in the ARN of your RDS database, and also add that statement to the same policy. Then, once you’re happy with your policy and the number of statements that you’ve added, simply click Generate Policy. And here, it shows you the JSON view of the policy that you would need based on your dropdown selection. So what you can do now is simply copy that, go back to IAM, go to your policies, Create Policy, go to the JSON tab, and simply paste it in. So it’s a very quick way of creating a policy through a series of dropdown boxes. And again, you can just progress through, adding any tags that you need to do, give this a name, ThisIsMyPolicy, and then click Create Policy. And again, you can see that this has been created. You can select that. And again, we can see the JSON statement there.</p>
+<p>So now, we’ve looked at how to create a policy by copying an existing AWS managed policy. We’ve looked at how to use the AWS Policy Generator. Now, let’s just quickly review how to create a policy from scratch. So again, go back to Policies and then Create Policy. Now, you can either use this visual editor or go straight to JSON, and you can start typing out your policy in here as and how you need it, or you can use the visual editor, which is very similar to the Policy Generator we just looked at, where, again, you can choose a service, then the specific actions, say all S3 actions, then you can specify the resources, whether you want this, again, as an access point, a bucket, a job, an object. So you can say any object. Then, you can specify any conditions, if you need MFA or specific source IP, for example. And again, you can also add additional permissions here.</p>
+<p>So almost like another statement. It’s very similar to the Policy Generator. But for me, personally, I think the Policy Generator is slightly easier to understand. And then, once you have your settings as you want them, and this has all been pre-filled from the options from the visual editor, and, again, click Tags, then Review, and then give this a name, MyPolicy, and then go to Create Policy. And if we take a look at the policy, we can just see its details again. And again, this shows the JSON view, et cetera. And if we wanted to edit the policy directly here, then we can. Click on Edit. Then, we can either edit through the visual editor, or we can directly edit the JSON view as well. So that’s just a couple of ways of creating your IAM policies in a few very simple steps.</p>
+<h1 id="Policy-Evaluation-Logic"><a href="#Policy-Evaluation-Logic" class="headerlink" title="Policy Evaluation Logic"></a>Policy Evaluation Logic</h1><p>Every time someone tries to access a resource within AWS, the request is processed through a series of steps. One of which involves evaluating the level of permissions based upon the policies that are used. So let’s take a look at the whole process to understand how access is either granted or denied. And we can start with a simple four step process. So firstly authentication. We must first ensure that the principle sending the request is authenticated as a valid user.</p>
+<p>Next, the context. Once authentication of the principle has been established, AWS then needs to determine the context of the request that is being asked, for example, what service or action is being requested. And this ensures that the relevant policies can be highlighted based on the request. We then have policy evaluation, and this is the part that we are interested in. Based on the request, there may be multiple policy types that need to be reviewed to determine the level of access, and I shall cover this in greater detail as we go through this lecture. And then finally, the result. AWS will determine if access is allowed or denied based upon the evaluation of all policies used.</p>
+<p>So for this lecture, I want to focus purely on the third point, the policy evaluation and how that process is carried out. The rules for reviewing permissions across multiple policies in a single account is actually quite simple and can be summarized like this: by default, all access to a resource is denied. Access will only be allowed if an Allow has been specified within a policy associated with the principle. If a single Deny exists within any policy associated with the same principle against the same resource then that Deny will overrule any previous Allow that might exist for the same resource and action. So to reiterate, an explicit Deny will always take precedence over an Allow.</p>
+<p>Now, there is an order in which policies are evaluated, and the following list of policies are shown in the order of evaluation. So firstly, we have any Organizational Service Control Policies. Then any Resource-based policies, then IAM permission boundaries, and then finally Identity-based policies. So let’s look at an example scenario. Let’s assume that the user, Stuart, is requesting to upload an object to the s3 bucket of ca-bucket-uk using the s3:PutObject API.</p>
+<p>With this in mind, let’s assume we have the following policies in place to see what happens at each step of the evaluation. So firstly, the evaluation will review any organization SCPs in place, and here is our example SCP. So this SCP will simply deny all access to RDS. So there is no Deny in place that affects the s3:PutObject requested by Stuart so the evaluation continues. Next, the evaluation will identify any resource-based policies, and here we have a Bucket Policy associated with the ca-bucket-uk as shown.</p>
+<p>Again, there is no Deny here for the request in question, so the evaluation continues. Next, we have IAM Permission Boundaries. And this IAM Permission Boundary Policy is set on the user, Stuart. So this policy sets out a maximum permission boundary of full access to s3. Remember, permission boundaries do not actually grant permissions, they set the maximum privilege level, as full access to s3 allowed, the evaluation continues.</p>
+<p>Finally, we have the evaluation of any Identity-based Policies, and this policy is associated to the group that the user, Stuart, belongs to. So as we can see, this policy allows any s3 action to the ca-bucket-uk. As a result, this permits Stuart to upload an object using s3:PutObject to the s3 bucket of ca-bucket-uk. So the final decision upon the policy evaluation is to allow the request.</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>Welcome to the final lecture of this course where I shall summarize the key points taken from the previous lectures. I began by looking at the different IAM policy types, and here I covered the following. And I started with Identity-based policies. These policies can be attached to Users, User Groups or Roles. They can be managed or inline policies. The managed policies can be AWS managed or customer managed. AWS managed policies are pre-configured by AWS and customer managed policies are created by us as customers. And inline policies are embedded directly into the entity, either the User, User Group or Role, creating a 1-2-1 relationship.</p>
+<p>Then we have Resource-based policies. And these are policies associated with a resource instead of an identity. So, S3 bucket policies are a common resource-based policy. Trust relationship policies are also a resource-based policy and resource-based policies must have the ‘Principal’ parameter to determine which identity that the policy relates to. Permission boundaries. Permission boundaries can only be associated with a User or Role. They do not grant permissions, they act as a guardrail to limit the maximum level of permissions that the User or Role can be given. And the policy can be an AWS managed or customer managed policy. And then we have Organization Service Control Policies, SCPs. And these are used by AWS Organizations and attached to AWS accounts or Organizational Units, OUs, to define the maximum permissions allowed for the members of the associated account or OU. And they operate at the account level. SCPs do not grant access, they add a guardrail to define what is allowed. And don’t forget, you still need to configure your identity-based policies or resource-based policies.</p>
+<p>To use SCPs you need to ensure that you deploy AWS Organizations using the enable all features setting. Next I looked at the JSON policy structure and broke down the different parameters of the policy which included the following. Version, this specifies the policy language version. Statement, this defines that main element of the policy. The Sid, the Statement ID, and this is an optional parameter that allows you to set a unique identifier within the Statement. Effect, this element can be set to either Allow or Deny.</p>
+<p>The Principal, this parameter defines which principal the policy relates to. And the Principal is only used for resource-based policies. Action, this is the action that will either be allowed or denied. Resource, this element specifies the actual resource you wish the Action and Effect to be applied to. Condition, and this is an optional element that allows you to control when the permissions will be effective based upon set criteria. I then gave a demonstration showing you how to create different IAM policies using a variety of different methods. Then finally I broke down the process of how IAM evaluates permissions when multiple different types of policies are involved. And in this lecture we learnt that when a request to access a resource is triggered, AWS will ensure that the identity is authenticated, it will then determine the context of the request, at which point policy evaluation will take place before determining if the request is allowed or denied.</p>
+<p>By default all access is to a resource is denied. Access will only be allowed if an Allow has been specified within a policy associated with the principal, and a Deny will overrule any previous Allow. IAM Policy types are evaluated in the following order. Organizational Service Control Policies, Resource-based Policies, IAM Permission Boundaries, and then finally, Identity-based Policies. That now brings me to the end of this lecture and to the end of this course, and so you should now have a greater understanding of how you can use IAM Policies to define and manage permissions across your account. </p>
+<p>Feedback on our courses here at Cloud Academy is valuable to both us as trainers and any students looking to take the same course in the future. If you have any feedback, positive or negative, it would be greatly appreciated if you can contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. Thank you for your time and good luck with your continued learning of cloud computing. Thank you.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/135/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/135/">135</a><span class="page-number current">136</span><a class="page-number" href="/page/137/">137</a><span class="space">&hellip;</span><a class="page-number" href="/page/274/">274</a><a class="extend next" rel="next" href="/page/137/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2736</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">72</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

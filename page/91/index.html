@@ -1,0 +1,2056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hang&#39;s Blog">
+<meta property="og:url" content="https://example.com/page/91/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://example.com/page/91/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Hang's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">zutuanxue-计算机网络基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-15 12:19:35" itemprop="dateCreated datePublished" datetime="2022-11-15T12:19:35-04:00">2022-11-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-28 09:57:34" itemprop="dateModified" datetime="2022-11-28T09:57:34-04:00">2022-11-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/zutuanxue/" itemprop="url" rel="index"><span itemprop="name">zutuanxue</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="计算机网络介绍"><a href="#计算机网络介绍" class="headerlink" title="计算机网络介绍"></a>计算机网络介绍</h1><p> 阅读 (224944) </p>
+<p> 分享</p>
+<h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><p>计算机网络是由通信介质将地理位置不同的且相互独立的计算机连接起来，实现数据通信与资源共享</p>
+<h2 id="网络分类"><a href="#网络分类" class="headerlink" title="网络分类"></a>网络分类</h2><h4 id="按照网络拓扑分类"><a href="#按照网络拓扑分类" class="headerlink" title="按照网络拓扑分类"></a>按照网络拓扑分类</h4><p>总线型：一般传输介质为同轴电缆，需要T型头和信号终结器</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023369025.png" alt="总线型.png"></p>
+<p>环形：需要申请令牌才可以通信。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023390144.png" alt="环型.png"></p>
+<p>星型：中央节点压力大，单点故障</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023413168.png" alt="星型.png"></p>
+<p>网型：效率高，网络复杂</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023426070.png" alt="网型.png"></p>
+<h4 id="按地域分类：参照物不同，类型不同"><a href="#按地域分类：参照物不同，类型不同" class="headerlink" title="按地域分类：参照物不同，类型不同"></a>按地域分类：参照物不同，类型不同</h4><p>局域网(LAN)：一个公司、一个家庭</p>
+<p>城域网(MAN)：一个区、一个城市、一个国家</p>
+<p>广域网(WAN)：一个国家、全世界</p>
+<h2 id="网络设备"><a href="#网络设备" class="headerlink" title="网络设备"></a>网络设备</h2><p>交换机：负责组建局域网，研究的是MAC地址</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023466761.jpeg" alt="交换机.jpeg"></p>
+<p>路由器：负责组建广域网，研究的是IP地址</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023483245.jpeg" alt="路由器.jpeg"></p>
+<h2 id="传输介质"><a href="#传输介质" class="headerlink" title="传输介质"></a>传输介质</h2><p>同轴电缆、双绞线、光纤</p>
+<p>目前常用的就是双绞线和光纤</p>
+<h3 id="1）双绞线"><a href="#1）双绞线" class="headerlink" title="1）双绞线"></a>1）双绞线</h3><p>双绞线（twisted pair，TP）是一种综合布线工程中最常用的传输介质，是由两根具有绝缘保护层的铜导线组成的。把两根绝缘的铜导线按一定密度互相绞在一起，每一根导线在传输中辐射出来的电波会被另一根线上发出的电波抵消，有效降低信号干扰的程度。双绞线理论最大传输距离是100米，<strong>树明建议不要超过90米</strong>。如果两台设备超过这个距离，建议中间放一个中继器或者交换机。</p>
+<p><strong>双绞线分为屏蔽双绞线和非屏蔽双绞线两种。</strong></p>
+<p>屏蔽双绞线：抗静电干扰性强，价格稍高一些，一般室外用的多一些。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023511681.jpeg" alt="屏蔽双绞线.jpeg"></p>
+<p>非屏蔽双绞线：重量轻，易弯曲，易安装，一般用在室内。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023533094.png" alt="非屏蔽双绞线.png"></p>
+<p><strong>按照传输速度分类</strong></p>
+<ul>
+<li>1类 100KHz 主要用于传输语音</li>
+<li>2类 1MHz 用于语音传输和最高传输速率4Mbps的数据传输</li>
+<li>3类 16MHz 指目前在ANSI和EIA&#x2F;TIA568标准中指定的电缆，该电缆的传输频率16MHz，用于语音传输及最高传输速率为10Mbps的数据传输主要用于10BASE–T。</li>
+<li>4类 20MHz 该类电缆的传输频率为20MHz，用于语音传输和最高传输速率16Mbps的数据传输主要用于基于令牌的局域网和 10BASE-T&#x2F;100BASE-T。</li>
+<li>5类 100MHz 该类电缆增加了绕线密度，外套一种高质量的绝缘材料，传输率为100MHz，用于语音传输和最高传输速率为10Mbps的数据传输，主要用于100BASE-T和10BASE-T网络。这是最常用的以太网电缆。</li>
+<li>5e类 100MHz 超5类具有衰减小，串扰少，并且具有更高的衰减与串扰的比值(ACR)和信噪比(Structural Return Loss)、更小的时延误差，性能得到很大提高。超5类线主要用于千兆位以太网（1000Mbps）。</li>
+<li>6类 250MHz 六类线：该类电缆的传输频率为1MHz～250MHz，六类布线系统在200MHz时综合衰减串扰比（PS-ACR）应该有较大的余量，它提供2倍于超五类的带宽。六类布线的传输性能远远高于超五类标准，最适用于传输速率高于1Gbps的应用。六类与超五类的一个重要的不同点在于：改善了在串扰以及回波损耗方面的性能，对于新一代全双工的高速网络应用而言，优良的回波损耗性能是极重要的。六类标准中取消了基本链路模型，布线标准采用星形的拓扑结构，要求的布线距离为：永久链路的长度不能超过90m，信道长度不能超过100m。</li>
+<li>6A类 500MHz</li>
+<li>7类 600MHz</li>
+</ul>
+<p><strong>按照品牌分类</strong></p>
+<ul>
+<li>安普</li>
+<li>西蒙</li>
+<li>朗讯</li>
+<li>丽特</li>
+<li>IBM</li>
+</ul>
+<h3 id="2）光纤"><a href="#2）光纤" class="headerlink" title="2）光纤"></a>2）光纤</h3><p>光纤是光导纤维的简写，是一种由玻璃或塑料制成的纤维，可作为光传导工具。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023556171.jpg" alt="光纤.jpg"></p>
+<p><strong>光纤分类</strong></p>
+<p>单模光纤：只能传输一种模式的光，传输距离远，是多模光纤的几十倍以上，单模光纤外面护套线颜色一般为黄色</p>
+<p>多模光纤：可以传输多种模式的光，多模光纤传输的距离比较近，一般只有几千米，多模光纤外面颜色一般为橘红色</p>
+<p><strong>光纤速度</strong></p>
+<p>光纤的极限传输家用的普通光纤就可达到10Gbps以上。</p>
+<p>实验室中单条光纤最大速度已达到了26Tbps，有消息说通过石墨烯制造的新光调制器，还可继续提高10000倍，即260Pbps。</p>
+<h1 id="OSI七层网络模型"><a href="#OSI七层网络模型" class="headerlink" title="OSI七层网络模型"></a>OSI七层网络模型</h1><p> 阅读 (322693) </p>
+<p> 分享</p>
+<h2 id="ISO介绍"><a href="#ISO介绍" class="headerlink" title="ISO介绍"></a>ISO介绍</h2><p>国际标准化组织（International Organization for Standardization，ISO）简称ISO，是一个全球性的非政府组织，是国际标准化领域中一个十分重要的组织。ISO国际标准组织成立于1946年，</p>
+<p>ISO负责目前绝大部分领域（包括军工、石油、船舶等垄断行业）的标准化活动。ISO现有117个成员，包括117个国家和地区。中国是ISO的正式成员，代表中国参加ISO的国家机构是中国国家技术监督局（CSBTS）。</p>
+<h2 id="网络模型介绍"><a href="#网络模型介绍" class="headerlink" title="网络模型介绍"></a>网络模型介绍</h2><p>在上世纪70年代，不同的厂商的计算机之间采用的都是本厂的通信协议，不同厂商间的计算机是无法通信的，为了解决这个问题，ISO组织专门成立了一个小组，目的是写出一套公共通信协议，实现不同厂商计算机之间通信互联。</p>
+<p>实际上只是Honeywell Information System公司的一个小组完成的，小组的技术负责人是Charlie Bachman，这个小组主要是为了开发一些原型系统而成立的，主要关注数据库系统的设计。70年代中，为了支持数据库系统的访问，需要一个结构化的分布式通信系统体系结构。</p>
+<p>在1977年提出了一个七层的体系结构模型，他们内部称之为分布式系统体系结构（DSA）</p>
+<p>与此同时，1977年英国标准化协会向国际标准化组织（ISO）提议，为了定义分布处理之间的通信基础设施，需要一个标准的体系结构。结果，ISO就开放系统互联（OSI）问题成立了一个专委会（TC 97, Subcomittee 16），指定由美国国家标准协会（ANSI）开发一个标准草案，在专委会第一次正式会议之前提交。</p>
+<p>Bachman [1] 参加了ANSI早期的会议，并提交了他的七层模型，这个模型就成了提交ISO专委会的唯一的一份草案。1978年发布了这个临时版本，1979年稍作细化之后，成了最终的版本。</p>
+<h2 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h2><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023863056.png" alt="osi七层模型简图.png"></p>
+<h2 id="OSI七层模型介绍"><a href="#OSI七层模型介绍" class="headerlink" title="OSI七层模型介绍"></a>OSI七层模型介绍</h2><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601023885728.gif" alt="osi七层.gif"></p>
+<p>应用层</p>
+<p>网络服务与最终用户的一个接口。</p>
+<p>协议有：HTTP FTP TFTP SMTP SNMP DNS TELNET HTTPS POP3 DHCP</p>
+<p>表示层</p>
+<p>数据的表示、安全、压缩。（在五层模型里面已经合并到了应用层）</p>
+<p>格式有，JPEG、ASCll、DECOIC、加密格式等</p>
+<p>会话层</p>
+<p>建立、管理、终止会话。（在五层模型里面已经合并到了应用层）</p>
+<p>对应主机进程，指本地主机与远程主机正在进行的会话</p>
+<p>传输层</p>
+<p>定义传输数据的协议端口号，以及流控和差错校验。</p>
+<p>协议有：TCP UDP，数据包一旦离开网卡即进入网络传输层</p>
+<p>网络层</p>
+<p>进行逻辑地址寻址，实现不同网络之间的路径选择。</p>
+<p>协议有：ICMP IGMP IP（IPV4 IPV6） ARP RARP</p>
+<p>数据链路层</p>
+<p>建立逻辑连接、进行硬件地址寻址、差错校验 [2] 等功能。（由底层网络定义协议）</p>
+<p>将比特组合成字节进而组合成帧，用MAC地址访问介质，错误发现但不能纠正。</p>
+<p>物理层</p>
+<p>建立、维护、断开物理连接。（由底层网络定义协议）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">关于设备工作在哪一层！</span><br><span class="line"></span><br><span class="line">一个设备工作在哪一层，关键看它工作时利用哪一层的数据头部信息。网桥工作时，是以MAC头部来决定转发端口的，</span><br><span class="line">因此显然它是数据链路层的设备。</span><br><span class="line">具体说:</span><br><span class="line">物理层：网卡，网线，集线器，中继器，调制解调器</span><br><span class="line"></span><br><span class="line">数据链路层：网桥，交换机</span><br><span class="line"></span><br><span class="line">网络层：路由器</span><br></pre></td></tr></table></figure>
+
+<h2 id="OSI七层特点"><a href="#OSI七层特点" class="headerlink" title="OSI七层特点"></a>OSI七层特点</h2><p>OSI七层由于太过严格，所以并没有应用在计算机中，而是基于其衍生了一个TCP&#x2F;IP四层模型，被广大操作系统所应用。</p>
+<h1 id="TCP-x2F-IP四层网络模型"><a href="#TCP-x2F-IP四层网络模型" class="headerlink" title="TCP&#x2F;IP四层网络模型"></a>TCP&#x2F;IP四层网络模型</h1><p> 阅读 (230877) </p>
+<p> 分享</p>
+<h2 id="一、TCP-x2F-IP四层模型介绍"><a href="#一、TCP-x2F-IP四层模型介绍" class="headerlink" title="一、TCP&#x2F;IP四层模型介绍"></a>一、TCP&#x2F;IP四层模型介绍</h2><p>OSI的七层协议体系结构的概念清楚，理论也比较完整，但它既复杂又不实用，ISO制定的OSI参考模型的过于庞大、复杂招致了许多批评。由技术人员自己开发的TCP&#x2F;IP协议栈获得了更为广泛的应用。TCP&#x2F;IP体系结构则不同，它现在已经得到了非常广泛的应用，TCP&#x2F;IP是一个四层的体系结构。</p>
+<p>它包含应用层、运输层、网际层和网络接口层（用网际层这个名字是强调这一层是为了解决不同网络的互连问题 ），不过从实质来讲，TCP&#x2F;IP只有最上面的三层，因为最下面的网络接口层基本上和一般的通信链路的功能上没有多大差别.</p>
+<h2 id="二、TCP-x2F-IP四层模型"><a href="#二、TCP-x2F-IP四层模型" class="headerlink" title="二、TCP&#x2F;IP四层模型"></a>二、TCP&#x2F;IP四层模型</h2><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024106315.png" alt="tcp:ip四层.png"></p>
+<p>每一层负责不同的功能:</p>
+<p>链路层：有时也称作数据链路层或网络接口层，</p>
+<p>通常包括操作系统中的设备驱动程序和计算机</p>
+<p>中对应的网络接口卡。它们一起处理与电缆(或其他任何传输媒介)的物理接口细节。</p>
+<p>网络层：有时也称作互联网层，处理分组在网络中的活动，例如分组的选路。在TCP&#x2F;IP协议族中，网络层协议包括IP协议(网际协议)，ICMP协议(Internet互联网控制报文协议 ，以及IGMP协议(Internet组管理协议 )。</p>
+<p>运输层：主要为两台主机上的应用程序提供端到端的通信。在TCP&#x2F;IP 协议族中 ， 有两个互不相同的传输协议 : TCP (传输控制协议) 和UDP (用户数据报协议)。</p>
+<p>TCP 为两台主机提供高可靠性的数据通信。它所做的工作包括把应用程序交给它的数据分 成合适的小块交给下面的网络层，确认接收到的分组，设置发送最后确认分组的超时时钟等。由于运输层提供了高可靠性的端到端的通信，因此应用层可以忽略所有这些细节。</p>
+<p>而另一方面， UDP则为应用层提供一种非常简单的服务 。 它只是把称作数据报的分组从一台主机发送到另一台主机，但并不保证该数据报能到达另一端。任何必需的可靠 性必须由应用层来提供。 这两种运输层协议分别在不同的应用程序中有不同的用途，这一点将在后面看到。</p>
+<p>应用层：负责处理特定的应用程序细节。几乎各种不同的 TCP&#x2F;IP实现都会提供下面这些通用的应用程序:</p>
+<p>Telnet 远程登录。</p>
+<p>FTP 文件传输协议。</p>
+<p>SMTP 简单邮件传送协议。</p>
+<p>SNMP 简单网络管理协议。</p>
+<h3 id="TCP-x2F-IP协议簇"><a href="#TCP-x2F-IP协议簇" class="headerlink" title="TCP&#x2F;IP协议簇"></a>TCP&#x2F;IP协议簇</h3><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024134979.png" alt="TCP:IP协议.png"></p>
+<h3 id="一次C-x2F-S通信"><a href="#一次C-x2F-S通信" class="headerlink" title="一次C&#x2F;S通信"></a>一次C&#x2F;S通信</h3><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024158331.png" alt="tcp:ip通信机制.png"></p>
+<h1 id="传输层协议"><a href="#传输层协议" class="headerlink" title="传输层协议"></a>传输层协议</h1><p> 阅读 (318213) </p>
+<p> 分享</p>
+<p>TCP 和 UDP 是两种最为著名的传输层协议，二者都使用 I P 作 为 网 络 层 协 议</p>
+<p>尽管 TCP 和 UDP 都使用相同的网络层( IP )， TCP 却向应用层提供与 UDP 完全不同的服务。 TCP 提供一种面向连接的、可靠的字节流服务。</p>
+<p>TCP: 传输控制协议,面向连接的协议</p>
+<p>面向连接意味着两个使用 TCP 的 应 用 ( 通 常 是 一 个 客 户 和 一 个 服 务 器 ) 在 彼 此 交 换 数 据 之前必须先建立一个 TCP 连 接 。</p>
+<p>一对一传输</p>
+<h3 id="tcp三次握手"><a href="#tcp三次握手" class="headerlink" title="tcp三次握手"></a>tcp三次握手</h3><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024398414.jpeg" alt="TCP三次握手.jpeg"></p>
+<h3 id="TCP四次断开"><a href="#TCP四次断开" class="headerlink" title="TCP四次断开"></a>TCP四次断开</h3><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024418282.png" alt="tcp四次断开.png"></p>
+<h3 id="TCP包头"><a href="#TCP包头" class="headerlink" title="TCP包头"></a>TCP包头</h3><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024479086.jpeg" alt="tcp包头.jpeg"></p>
+<h3 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h3><p>UDP（User Datagram Protocol），用户数据报协议，是OSI(Open System Interconnection，开放式系统互联) 参考模型中一种无连接的传输层协议，提供面向事务的简单不可靠信息传送服务,UDP提供了无连接通信，适合于一次传输少量数据,UDP报文没有可靠性保证、顺序保证和流量控制字段等，可靠性较差。但是正因为UDP协议的控制选项较少，在数据传输过程中延迟小、数据传输效率高，适合对可靠性要求不高的应用程序，或者可以保障可靠性的应用程序，如DNS、TFTP、SNMP等。</p>
+<p>可以一对一、一对多传输、多对一和多对多的交互通信</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024457747.jpeg" alt="UDP包头.jpeg"></p>
+<h3 id="TCP与UDP区别："><a href="#TCP与UDP区别：" class="headerlink" title="TCP与UDP区别："></a>TCP与UDP区别：</h3><p>1、TCP面向连接（如打电话要先拨号建立连接）;UDP是无连接的，即发送数据之前不需要建立连接</p>
+<p>2、TCP提供可靠的服务。也就是说，通过TCP连接传送的数据，无差错，不丢失，不重复，且按序到达;UDP尽最大努力交付，即不保证可靠交付，Tcp通过校验和，重传控制，序号标识，滑动窗口、确认应答实现可靠传输。如丢包时的重发控制，还可以对次序乱掉的分包进行顺序控制。</p>
+<p>3、UDP具有较好的实时性，工作效率比TCP高，适用于对高速传输和实时性有较高的通信或广播通信。</p>
+<p>4.每一条TCP连接只能是点到点的;UDP支持一对一，一对多，多对一和多对多的交互通信</p>
+<p>5、TCP对系统资源要求较多，UDP对系统资源要求较少。</p>
+<h1 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h1><p> 阅读 (450309) </p>
+<p> 分享</p>
+<h2 id="一、IP介绍"><a href="#一、IP介绍" class="headerlink" title="一、IP介绍"></a>一、IP介绍</h2><p>IP是英文Internet Protocol的缩写，意思是“网络之间互连的协议”，也就是为计算机网络相互连接进行通信而设计的协议。在因特网中，它是能使连接到网上的所有计算机网络实现相互通信的一套规则，规定了计算机在因特网上进行通信时应当遵守的规则。任何厂家生产的计算机系统，只要遵守IP协议就可以与因特网互连互通。正是因为有了IP协议，因特网才得以迅速发展成为世界上最大的、开放的计算机通信网络。因此，IP协议也可以叫做“因特网协议”。</p>
+<p>IP地址是指互联网协议地址，IP地址是IP协议提供的一种统一的地址格式，它为互联网上的每一个网络和每一台主机分配一个逻辑地址。大家日常见到的情况是每台联网的PC上都需要有IP地址，才能正常通信。我们可以把“个人电脑”比作“一台电话”，那么“IP地址”就相当于“电话号码”，而Internet中的路由器，就相当于电信局的“程控式交换机”。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">IP是一个协议，是计算机在网络中互联互通的规则</span><br><span class="line">IP地址是IP实现互联互通的一个策略</span><br></pre></td></tr></table></figure>
+
+<h3 id="IP地址和Mac地址"><a href="#IP地址和Mac地址" class="headerlink" title="IP地址和Mac地址"></a>IP地址和Mac地址</h3><p>IP地址是软件地址，而不是硬件地址。硬件地址被硬编码到网络接口卡(NIC)中，用于在本地 网络中寻找主机。 IP地址让一个网络中的主机能够与另一个网络中的主机通信，而不管这些主机所属的LAN是什么类型的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MAC用于局域网中通信，交换机通过mac地址将数据包转发到正确的计算机</span><br><span class="line">IP用于网络间通信</span><br></pre></td></tr></table></figure>
+
+<h3 id="IP地址分类"><a href="#IP地址分类" class="headerlink" title="IP地址分类"></a>IP地址分类</h3><p>IPV4:32位二进制 以点分割，分为4段十进制数 a.b.c.d</p>
+<p>IPV6:128位二进制 以冒号分割,分为8段十六进制数 a🅱️c:d:e:f:g:h</p>
+<h2 id="二、IPV4地址"><a href="#二、IPV4地址" class="headerlink" title="二、IPV4地址"></a>二、IPV4地址</h2><p>IPV4地址长 32位，这些位被划分成 4组(称为字节或八位组)，每组8位,每组最大不超过255，我们可使用下面3种方法描述IP地址:</p>
+<p>点分十进制表示，如 192.168.0.1。</p>
+<p>二进制，如 11000000.10101000.00000000.00000001</p>
+<p>十六进制，如 c0.a8.0.1。</p>
+<p>上述示例表示的是同一个IP地址。对于IP编址时，十六进制表示没有点分十进制和二进制那样常用，但某些程序确实以十六进制形式存储IP地址， Windows注册表就将机器的IP地址存储为十六进制。</p>
+<h3 id="IPV4地址分类"><a href="#IPV4地址分类" class="headerlink" title="IPV4地址分类"></a>IPV4地址分类</h3><p>按照第一段的范围分类</p>
+<p>A 1-126</p>
+<p>B 128-191</p>
+<p>C 192-223</p>
+<p>D 224-239</p>
+<p>E 240-255</p>
+<p>设计因特网的人决定根据网络规模创建网络类型。对于少量包含大量节点的网络，他们创建了A类网络;对于另一种极端情况的网络，他们创建了C类网络，用来指示大量只包含少量节点的网络; 介于超大型和超小型网络之间的是B类网络。所以IPV4五类地址中只有前三类可以分给用户试用，D类是多播地址，E类为保留地址，用于研究。</p>
+<p>网络的类型决定了 IP地址将如何划分成网络部分和节点部分</p>
+<h3 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h3><p>子网掩码：区分IP地址的网络位和主机位</p>
+<p>255.0.0.0</p>
+<p>255.255.0.0</p>
+<p>255.255.255.0</p>
+<p>255.255.255.255</p>
+<p>网络位:掩码对应的IP位的二进制部分，全为1的部分是网络位</p>
+<p>主机位:掩码对应的IP位的二进制部分，不全为1的部分是主机位</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601024638647.png" alt="网络位与主机位.png"></p>
+<h3 id="进制转换方法"><a href="#进制转换方法" class="headerlink" title="进制转换方法"></a>进制转换方法</h3><p>十进制转二进制: 除2取余倒着念</p>
+<p>十进制转八进制: 除8取余倒着念</p>
+<p>十进制转十六进制: 除16取余倒着念</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601026468125.png" alt="进制转换.png"></p>
+<h3 id="8421法则转换法"><a href="#8421法则转换法" class="headerlink" title="8421法则转换法"></a>8421法则转换法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">把要转换的十进制数按照下列数累加，用的的写1没用的的写0</span><br><span class="line">128      64      32      16    8     4   2   1</span><br><span class="line"></span><br><span class="line">比如：十进制数132转换为二进制</span><br><span class="line">128      64      32      16    8     4   2   1</span><br><span class="line">1         0      0       0     0     1   0   0</span><br><span class="line"></span><br><span class="line">因为132=128+4</span><br><span class="line">所以十进制数132转换为二进制是&quot;10000100</span><br></pre></td></tr></table></figure>
+
+<h3 id="私网地址"><a href="#私网地址" class="headerlink" title="私网地址"></a>私网地址</h3><p>由于互联网的蓬勃发展，IP位址的需求量愈来愈大，使得IP位址的发放愈趋严格，各项资料显示全球IPv4位址可能在2005至2010年间全部发完(实际情况是在2011年2月3日IPv4位地址分配完毕）。</p>
+<p>为了解决IP地址不足，又设计了私有地址，这样就可以重复在局域网中使用了，LAN中的用户想上网只需通过PNAT的方式通过地址转换技术就可以上网，保证了公网地址的最大化、最高效应用。</p>
+<p>A类地址中私网10.0.0.0–10.255.255.255</p>
+<p>B类地址中私网172.16.0.0.0–172.31.255.255</p>
+<p>C类地址中私网192.168.0.0–192.168.255.255</p>
+<h3 id="PNAT技术"><a href="#PNAT技术" class="headerlink" title="PNAT技术"></a>PNAT技术</h3><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601026081212.png" alt="LAN_NAT_WAN.png"></p>
+<h3 id="IP分配原则"><a href="#IP分配原则" class="headerlink" title="IP分配原则"></a>IP分配原则</h3><p>只有A、B、C三类地址可以分配给计算机和网络设备</p>
+<p>网络地址相同主机地址必须唯一</p>
+<p>网络地址的第一个数字不能为127，保留用来测试连接</p>
+<p>网络地址不能全为0，也不能全为1.</p>
+<p>主机地址中不能全为0，也不能全为1：主机地址全为0用来表示网络地址，全为1用作广播</p>
+<p><strong>ipv4特殊IP，不能使用的IP：</strong></p>
+<p>0.0.0.0</p>
+<p>255.255.255.255</p>
+<p>127.x.x.x</p>
+<p>A.0.0.0、A.255.255.255</p>
+<p>169.254.0.0–168.254.255.255</p>
+<h2 id="三、IPv6地址"><a href="#三、IPv6地址" class="headerlink" title="三、IPv6地址"></a>三、IPv6地址</h2><p>由于IPv4最大的问题在于网络地址资源有限，严重制约了互联网的应用和发展。IPv6的使用，不仅能解决网络地址资源数量的问题，而且也解决了多种接入设备连入互联网的障碍</p>
+<p>互联网数字分配机构（IANA）在2016年已向国际互联网工程任务组（IETF）提出建议，要求新制定的国际互联网标准只支持IPv6，不再兼容IPv4。</p>
+<h3 id="IPV6组成"><a href="#IPV6组成" class="headerlink" title="IPV6组成"></a>IPV6组成</h3><p>IPv6的地址长度为128位，是IPv4地址长度的4倍。于是IPv4点分十进制格式不再适用，采用十六进制表示。</p>
+<h3 id="IPV6分类"><a href="#IPV6分类" class="headerlink" title="IPV6分类"></a>IPV6分类</h3><p>单播地址（Unicast Address）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用来唯一标识一个接口，类似于IPv4中的单播地址。发送到单播地址的数据报文将被传送给此地址所标识的一个接口。</span><br></pre></td></tr></table></figure>
+
+<p>组播地址（Multicast Address）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用来标识一组接口（通常这组接口属于不同的节点），类似于IPv4中的组播地址。发送到组播地址的数据报文被传送给此</span><br><span class="line">地址所标识的所有接口。</span><br></pre></td></tr></table></figure>
+
+<p>任播地址（Anycast Address）</p>
+<p>用来标识一组接口（通常这组接口属于不同的节点）。发送到任播地址的数据报文被传送给此地址所标识的一组接口中距离源节点最近（根据使用的路由协议进行度量）的一个接口，一对最近。</p>
+<p>单播地址</p>
+<p>可聚合的全球单播地址（Aggregatable Global Unicast Addresses）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">可在全球范围内路由和到达的，相当于IPv4里面的global addresses。前三个bit是001</span><br><span class="line"></span><br><span class="line">例如：2000::1:2345:6789:01ab</span><br></pre></td></tr></table></figure>
+
+<p>链路本地地址（Link-Local Addresses）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">用于同一个链路上的相邻节点之间通信，相当于IPv4里面的169.254.0.0/16地址。Ipv6的路由器不会转发链路本地地址</span><br><span class="line">的数据包。前10个bit是1111 1110 10，由于最后是64bit的interface ID，所以它的前缀总是FE80::/64</span><br><span class="line"></span><br><span class="line">例如：FE80::1/10</span><br></pre></td></tr></table></figure>
+
+<p>站点本地地址（Site-Local Addresses）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对于无法访问internet的本地网络，可以使用站点本地地址，这个相当于IPv4里面的private address（10.0.0.0/8,</span><br><span class="line"> 172.16.0.0/12, and 192.168.0.0/16）。它的前10个bit是1111 1110 11，它最后是16bit的Subnet ID和</span><br><span class="line">64bit的interface ID，所以它的前缀是FEC0::/48。</span><br></pre></td></tr></table></figure>
+
+<p>未指定地址（Unspecified address）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0:0:0:0:0:0:0:0 或者::</span><br><span class="line"></span><br><span class="line">当一个有效地址还不能确定，一般用未指定地址作为源地址。未指定地址不能作为一个目标地址来使用。</span><br></pre></td></tr></table></figure>
+
+<p>回环地址（Loopback address）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">回环地址::1用于标识一个回环接口，可以使一个节点可以给自己发送数据包。相当于IPv4的回环地址127.0.0.1</span><br></pre></td></tr></table></figure>
+
+<p>唯一的本地单播地址（ULA，Unique Local IPv6 Unicast Address）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在RFC4193中标准化了一种用来在本地通信中取代单播站点本地地址的地址。ULA拥有固定前缀FC00::/7，后面跟一个</span><br><span class="line">被称为全局ID的40bit随机标识符</span><br></pre></td></tr></table></figure>
+
+<h3 id="IPV6特殊地址"><a href="#IPV6特殊地址" class="headerlink" title="IPV6特殊地址"></a>IPV6特殊地址</h3><p>下面列出一些绝对应该牢记的地址范围，因为我们总是会用到它们。它们都是特殊地址或保留用 于特定目的的地址，但不同于 IPv4， IPv6提供的地址非常多，因此保留一些不会有任何害处。</p>
+<p>0:0:0:0:0:0:0:0 (::)相当于 IPv4地址 0.0.0札通常在使用有状态 DHCP配置时，用作主机 的源地址。</p>
+<p>0:0:0:0:0:0:0:1 (::1) 相当于 IPv4地址 127.0.0.10</p>
+<p>0:0:0:0:0:0:192.168.100.1 在同时支持 IP4和IPv6的网络中，从 IPv4地址转换而来的IPv6地址通常这样书写。</p>
+<p>2000::&#x2F;3 全局单播地址范围。</p>
+<p>FCOO::厅唯一的本地单播地址范围。</p>
+<p>FE80::&#x2F;10 链路本地单播地址范围。</p>
+<p>FFOO::&#x2F;8 组播地址范围。</p>
+<p>3FFF:FFFF::&#x2F;32 保留举例和编写文档时使用。</p>
+<p>2001:0088::&#x2F;32 保留举例和编写文档时使用。</p>
+<p>2002::&#x2F;16 保留供 6t04隧道技术使用。 6t04隧道技术是一种从IPv4迁移到IPv6的方法，让IPv6分组能够通过IPv4 网络进行传输，而无需配置显式的隧道。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">IPV6为啥这么多年没广泛应用</span><br><span class="line"></span><br><span class="line">网络黑白名单需要时间去建立，否则网络威胁无法解决。</span><br><span class="line"></span><br><span class="line">目前骨干线路已经全部使用了IPV6地址，随着物联网的出现，IPV6会更快完成替换。</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、VLSM可变长子网掩码"><a href="#四、VLSM可变长子网掩码" class="headerlink" title="四、VLSM可变长子网掩码"></a>四、VLSM可变长子网掩码</h2><p>VLSM(可变长子网掩码) 提供了在一个主类(A类、B类、C类)网络内包含多个子网的能力，可以对一个子网再进行子网划分,使IP地址得到最充分的利用.</p>
+<h3 id="划分子网"><a href="#划分子网" class="headerlink" title="划分子网"></a>划分子网</h3><p>就是借用主机号的位充当网络号来扩大网络的个数</p>
+<h3 id="VLSM优点"><a href="#VLSM优点" class="headerlink" title="VLSM优点"></a>VLSM优点</h3><p>VLSM技术可以避免固定长度子网掩码浪费地址空间的问题。</p>
+<p>提高带宽利用率</p>
+<p>实现LAN中的网络隔离，更加安全。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601026370058.png" alt="VLSM.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BB%8B%E7%BB%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">zutuanxue-计算机介绍</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-15 12:19:34" itemprop="dateCreated datePublished" datetime="2022-11-15T12:19:34-04:00">2022-11-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-28 09:57:42" itemprop="dateModified" datetime="2022-11-28T09:57:42-04:00">2022-11-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/zutuanxue/" itemprop="url" rel="index"><span itemprop="name">zutuanxue</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BB%8B%E7%BB%8D/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/zutuanxue-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BB%8B%E7%BB%8D/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="3分钟了解计算机发展历史"><a href="#3分钟了解计算机发展历史" class="headerlink" title="3分钟了解计算机发展历史"></a>3分钟了解计算机发展历史</h1><p> 阅读 (1051376) </p>
+<p> 分享</p>
+<hr>
+<h2 id="一、计算机定义"><a href="#一、计算机定义" class="headerlink" title="一、计算机定义"></a>一、计算机定义</h2><p>计算机（computer）俗称电脑，是现代一种用于高速计算的电子计算机器，可以进行数值计算，又可以进行逻辑计算，还具有存储记忆功能。是能够按照程序运行，自动、高速处理海量数据的现代化智能电子设备。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">计算机光有硬件是没法工作的，因为人无法和硬件(CPU/硬盘/光驱等)交流的，你说的它也听不懂，所以需要一个媒介来</span><br><span class="line">帮助你管理这些硬件，驱动硬件干活，能听懂的的指令，管理你的所有app。这个媒介就是操作系统，比如windows</span><br><span class="line"> Linux Unix Android ios等这些都是操作系统，所以一个可以让人使用的完整的计算机必须包括干活的硬件和辅助</span><br><span class="line">人类使用的操作系统软件</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、计算机分类"><a href="#二、计算机分类" class="headerlink" title="二、计算机分类"></a>二、计算机分类</h2><ul>
+<li>超级计算机</li>
+</ul>
+<p>超级计算机是计算机中功能最强、运算速度最快、存储容量最大的一类计算机，多用于国家高科技领域和尖端技术研究，是一个国家科研实力的体现，它对国家安全，经济和社会发展具有举足轻重的意义。是国家科技发展水平和综合国力的重要标志。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">中国超级计算机: 天河2号 神威蓝光 曙光星云等</span><br></pre></td></tr></table></figure>
+
+<p>超级计算机一般用在科研、超级运算、航天等领域，因为价格超级昂贵(注意我的措辞：昂贵，大家脑补吧)，一般不会被企业和个人购买和使用，所以我们一般是看不到这样的机器的，大家了解这种神一样的机器是存在的就可以了。有的小伙伴问过我，像阿里云、京东云等这样的云计算公司会不会用到这样的机器呢？<br>答案是肯定的：不会<br>原因是：</p>
+<ol>
+<li>价格是第一要素</li>
+<li>弹性伸缩很难实现</li>
+<li>运营成本太高</li>
+</ol>
+<ul>
+<li>工业控制计算机</li>
+</ul>
+<p>工控机（Industrial Personal Computer，IPC）即工业控制计算机，是一种采用总线结构，对生产过程及机电设备、工艺装备进行检测与控制的工具总称。工控机具有重要的计算机属性和特征，如具有计算机主板、CPU、硬盘、内存、外设及接口，并有操作系统、控制网络和协议、计算能力、友好的人机界面。工控行业的产品和技术非常特殊，属于中间产品，是为其他各行业提供稳定、可靠、嵌入式、智能化的工业计算机。</p>
+<p>工控机的主要类别有：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">IPC（PC总线工业电脑）</span><br><span class="line">PLC（可编程控制系统）</span><br><span class="line">DCS（分散型控制系统）</span><br><span class="line">FCS（现场总线系统）</span><br><span class="line">CNC（数控系统）</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>网络计算机<br>网络计算机的特点是无盘，是瘦版的计算机，数据由由服务器提供网络上的程序或存储。网络计算机具有自己的处理能力，但除核心软件之外，其他软件都需从网络服务器下载，节省了频繁的软件升级和维护，也降低了成本。</li>
+<li>个人计算机<br>个人计算机由硬件系统和软件系统组成，是一种能独立运行，完成特定功能的设备。</li>
+<li>嵌入式计算机<br>嵌入式技术就是”专用”计算机技术，这个专用，是指针对某个特定的应用，如针对网络、针对通信、针对音频、针对视频，针对工业控制等，从学术的角度，嵌入式系统是以应用为中心，以计算机技术为基础，并且软硬件可裁剪，适用于应用系统对功能、可靠性、成本、体积、功耗有严格要求的专用计算机系统，它一般由嵌入式微处理器、外围硬件设备、嵌入 式操作系统以及用户的应用程序等四个部分组成。</li>
+</ul>
+<h2 id="三、计算机的发展史"><a href="#三、计算机的发展史" class="headerlink" title="三、计算机的发展史"></a>三、计算机的发展史</h2><p><strong>第1代：电子管数字机（1946—1958年）</strong></p>
+<p>世界上第一台电脑硬件方面，逻辑元件采用的是真空电子管，主存储器采用汞延迟线、阴极射线示波管静电存储器、磁鼓、磁芯；外存储器采用的是磁带。软件方面采用的是机器语言、汇编语言。应用领域以军事和科学计算为主。特点是体积大、功耗高、可靠性差。速度慢（一般为每秒数千次至数万次）、价格昂贵，但为以后的计算机发展奠定了基础。</p>
+<p><strong>第2代：晶体管数字机（1958—1964年）</strong></p>
+<p>硬件方的操作系统、高级语言及其编译程序。应用领域以科学计算和事务处理为主，并开始进入工业控制领域。特点是体积缩小、能耗降低、可靠性提高、运算速度提高（一般为每秒数10万次，可高达300万次）、性能比第1代计算机有很大的提高。</p>
+<p><strong>第3代：集成电路数字机（1964—1970年）</strong></p>
+<p>硬件方面，逻辑元件采用中、小规模集成电路（MSI、SSI），主存储器仍采用磁芯。软件方面出现了分时操作系统以及结构化、规模化程序设计方法。特点是速度更快（一般为每秒数百万次至数千万次），而且可靠性有了显著提高，价格进一步下降，产品走向了通用化、系列化和标准化等。应用领域开始进入文字处理和图形图像处理领域。</p>
+<p><strong>第4代：大规模集成电路机（1970年至今）</strong></p>
+<p>硬件方面，逻辑元件采用大规模和超大规模集成电路（LSI和VLSI）。软件方面出现了数据库管理系统、网络管理系统和面向对象语言等。特点是1971年世界上第一台微处理器在美国硅谷诞生，开创了微型计算机的新时代。应用领域从科学计算、事务管理、过程控制逐步走向家庭。</p>
+<p>推动计算机高速发展的重要人物–冯.诺依曼<br>1944年，美籍匈牙利数学家 冯·诺依曼 提出计算机基本结构和工作方式的设想，为计算机的诞生和发展提供了理论基础。时至今日，尽管计算机软硬件技术飞速发展，但计算机本身的体系结构并没有明显的突破，当今的计算机仍属于冯·诺依曼架构。</p>
+<p><strong>计算机快速发展的贡献者–冯.诺依曼，提出了计算机的冯.诺依曼体系。</strong></p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/8/26/1598403420332.jpeg" alt="冯.诺依曼.jpeg"></p>
+<p><strong>冯.诺依曼计算机体系的部分内容：</strong><br>1）计算机硬件设备由存储器、运算器、控制器、输入设备和输出设备5部分组成。<br>2）采用二进制形式表示数据和指令。<br>3） 将程序（数据和指令序列）预先存放在主存储器中，使计算机在工作时能够自动高速地从存储器中取出指令，并加以执行。</p>
+<h1 id="快速选购适合自己的CPU"><a href="#快速选购适合自己的CPU" class="headerlink" title="快速选购适合自己的CPU"></a>快速选购适合自己的CPU</h1><p> 阅读 (353157) </p>
+<p> 分享</p>
+<hr>
+<h2 id="一、CPU介绍"><a href="#一、CPU介绍" class="headerlink" title="一、CPU介绍"></a>一、CPU介绍</h2><p>计算机的核心部件，负责程序控制和运算，是计算机组成的最重要部分。选购计算机时的重要指标部件，决定计算机运算速度的快慢。个人电脑CPU目前最著名的有：intel 和 AMD两大家，其中Intel以稳定著称，AMD以速度快著称。所以一般工作的机器用Intel的多一些，玩游戏的玩家机器一般选购AMD CPU。这个没有绝对的界限，看个人需求和爱好。</p>
+<h2 id="二、CPU分类"><a href="#二、CPU分类" class="headerlink" title="二、CPU分类"></a>二、CPU分类</h2><ul>
+<li>按厂商: intel AMD</li>
+<li>按接口: LGA PGA</li>
+</ul>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/8/26/1598403814356.jpeg" alt="intel_cpu_LGA.jpeg"></p>
+<p>LGA触点式：新式接口类型 现在Intel的CPU基本使用该接口<br><img src="https://www.zutuanxue.com:8000/static/media/images/2020/8/26/1598403862582.jpg" alt="AMD_AM4_PGA接口.jpg"><br>PGA针式： 老的接口类型，AMD一直在使用该接口</p>
+<h2 id="三、选购CPU的指标"><a href="#三、选购CPU的指标" class="headerlink" title="三、选购CPU的指标"></a>三、选购CPU的指标</h2><p>参考指标：主频、缓存、核数<br><img src="https://www.zutuanxue.com:8000/static/media/images/2020/8/26/1598403946021.png" alt="CPU_参数.png"></p>
+<h2 id="四、CPU常见故障"><a href="#四、CPU常见故障" class="headerlink" title="四、CPU常见故障"></a>四、CPU常见故障</h2><ul>
+<li>电脑无法开机<br>CPU针脚和主板接口接触不良[intel CPU是触点的会氧化]或者确针[AMD的CPU是针式]</li>
+<li>故障表象：计算机死机，重启</li>
+</ul>
+<p>故障原因：<br>温度过高造成，一般原因是天气、散热器老化、长时间高负荷运行、超频造成的。</p>
+<p>附录：2020 CPU发展天梯图<br><img src="https://www.zutuanxue.com:8000/static/media/images/2020/8/26/1598404302669.jpg" alt="cpu天梯图.jpg"></p>
+<h1 id="计算机硬件-内存"><a href="#计算机硬件-内存" class="headerlink" title="计算机硬件-内存"></a>计算机硬件-内存</h1><p> 阅读 (472635) </p>
+<p> 分享</p>
+<h2 id="一、内存介绍"><a href="#一、内存介绍" class="headerlink" title="一、内存介绍"></a>一、内存介绍</h2><p>内存是计算机中最重要的部件，它是计算机中的一个中间件。解决了CPU和硬盘之间速度严重不对等的问题，是CPU和硬盘数据交互的桥梁。默认情况下，CPU从内存读写数据，内存从硬盘读写数据。为了提升效率，一般在开机或者软件在运行的时候，会将常用数据直接从硬盘直接读入内存，以待后续CPU使用，提高计算机运行效率。</p>
+<h2 id="二、内存工作原理"><a href="#二、内存工作原理" class="headerlink" title="二、内存工作原理"></a>二、内存工作原理</h2><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/22/1600754779576.png" alt="内存工作原理.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">计算机在开机加载系统的时候，会把系统常用的数据从硬盘调入内存，方便CPU直接从内存获取数据，避免了从低速的硬盘</span><br><span class="line">拿数据造成用户等待，给用户不好的体验；当然用户在使用APP的时候也是同样的道理，所需数据都是优先存入到内存中。</span><br><span class="line">这是内存的读操作。当然，写操作也是一样的道理，也需要经过内存在到硬盘，用户在计算机操作过程中临时产生的数据</span><br><span class="line">也是暂存内存，通过用户保存或者内存数据刷新机制写入到硬盘。</span><br><span class="line"></span><br><span class="line">比如: 你创建了一个word文件，你往word文档写数据其实是先写到内存然后在由内存写到硬盘的。</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、内存分类"><a href="#三、内存分类" class="headerlink" title="三、内存分类"></a>三、内存分类</h2><p>内存条分为：笔记本、台式机两种</p>
+<p>当然如果按厂商的话会有很多，这里推荐金士顿的，老牌子靠得住。</p>
+<ul>
+<li>台式机内存</li>
+</ul>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/22/1600754846309.jpg" alt="台式机内存.jpg"></p>
+<ul>
+<li>笔记本内存</li>
+</ul>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/22/1600754863320.jpg" alt="笔记本内存.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">误区解读：内存越大越好吗？</span><br><span class="line">其实理论上是这样的，同时也需要你的金钱支撑，因为买很多大容量内存还是需要花很多钱的，同时还得主板支持。</span><br><span class="line">但是，还是需要根据自己的电脑运行业务的情况去定，很多家用电脑购买了只是简单的游戏或者办公，购买满配的内存其实</span><br><span class="line">真正的内存使用率确不到30%</span><br><span class="line">				浪费了钱也浪费了资源，你懂了吗？</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、内存选购"><a href="#四、内存选购" class="headerlink" title="四、内存选购"></a>四、内存选购</h2><p>选购参数：容量、频率</p>
+<p>选购多条内存或者升级计算机内存的时候，最好选购同品牌，同频率的产品，否则会有兼容问题，会造成蓝屏或重启。</p>
+<h2 id="五、内存常见故障"><a href="#五、内存常见故障" class="headerlink" title="五、内存常见故障"></a>五、内存常见故障</h2><p>台式机开机点不亮显示器</p>
+<p>台式机运行了一段后突然一天开机显示器不亮(点不亮)的情况，一般是由于内存条上的金手指（内存和主板插槽接触的铜片）氧化，拔下来用橡皮或者粗糙的纸擦擦就好了，如果条件允许就换个槽插上就行了。</p>
+<h1 id="计算机硬件-硬盘"><a href="#计算机硬件-硬盘" class="headerlink" title="计算机硬件-硬盘"></a>计算机硬件-硬盘</h1><p> 阅读 (263679) </p>
+<p> 分享</p>
+<h2 id="一、硬盘介绍"><a href="#一、硬盘介绍" class="headerlink" title="一、硬盘介绍"></a>一、硬盘介绍</h2><p>硬盘是计算机中最重要的存储设备，负责永久性数据存储。目前常用的硬盘分为<strong>机械硬盘</strong>和<strong>固态硬盘</strong>两种，相比来说，固态硬盘速度快但是容量较小，价格高；机械硬盘速度慢但是容量大，价格便宜。</p>
+<h3 id="机械硬盘"><a href="#机械硬盘" class="headerlink" title="机械硬盘"></a>机械硬盘</h3><p>机械硬盘是由磁盘片、磁头、马达、电路板等部件组成，分为2.5和3.5英寸两种，转速为5400转&#x2F;分、7200转&#x2F;分、10000转&#x2F;分、15000转&#x2F;分.笔记本采用的是2.5英寸的，台式机常用3.5英寸的。数据写在磁盘片的正反面的磁道上，磁盘片和光盘类似！</p>
+<p>由于机械硬盘价格相对较低、容量大、技术稳定，所以深受广大计算机用户的喜爱。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/22/1600755663926.jpeg" alt="机械硬盘结构.jpeg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">脑补：</span><br><span class="line">机械硬盘读写速度最快有多快</span><br><span class="line">机械硬盘最快的当属15000转/分的scsi接口磁盘，理论读写220MB/S</span><br></pre></td></tr></table></figure>
+
+<h3 id="固态硬盘"><a href="#固态硬盘" class="headerlink" title="固态硬盘"></a>固态硬盘</h3><p>固态硬盘是一种新型硬盘，采用电信号存储，速度更快，深受广大计算机用户的喜爱，但是目前固态硬盘容量相对较小，价格较贵，还没有深度普及，又因为其存储的颗粒受擦写次数的限制，所以只是用在擦写不是很频繁的环境中。</p>
+<ul>
+<li>固态硬盘有sata固态、m.2固态、pci-e固态三种</li>
+<li>m.2固态又有nvme的m.2和sata的m.2两种</li>
+</ul>
+<p>STAT接口的固态硬盘，目前很多笔记本电脑厂商使用这种固态硬盘，价格相对较低。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/22/1600756354053.jpg" alt="固态硬盘2.5英寸.jpg"></p>
+<p>M.2 NVME接口硬盘，俗称口香糖硬盘，苹果笔记本大部分采用这种硬盘，价格相对较高。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/22/1600756385862.jpg" alt="固态硬盘口香糖.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">脑补：</span><br><span class="line">固态硬盘速度有多快</span><br><span class="line">目前不同厂家的固态硬盘读写速度不同，最快的nvme.m2 告诉SSD磁盘理论读写速度为3400MB/S</span><br></pre></td></tr></table></figure>
+
+<h3 id="磁盘类型"><a href="#磁盘类型" class="headerlink" title="磁盘类型"></a>磁盘类型</h3><p>按接口分类:IDE、SCSI、SATA、SAS</p>
+<h2 id="二、硬盘的选购"><a href="#二、硬盘的选购" class="headerlink" title="二、硬盘的选购"></a>二、硬盘的选购</h2><p>参考指标:容量、缓存、【转速】、读写速度</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/22/1600755992921.png" alt="硬盘选购.png"></p>
+<h2 id="三、硬盘常见故障"><a href="#三、硬盘常见故障" class="headerlink" title="三、硬盘常见故障"></a>三、硬盘常见故障</h2><ul>
+<li>磁盘坏道<br>硬盘属于计算机中的耗材设备，如果磁盘出现坏道会造成蓝屏或者数据读写慢，甚至数据无法读出。应该尽快更换硬盘。</li>
+<li>电脑越用越慢<br>很多小伙伴的windows电脑越用越慢，常常抱怨，重装系统后感觉就好多了，这是为啥？<br>一般情况下windows电脑越用越慢的原因是因为windows系统在运行的时候会把运行日志都存储在安装系统的那个分区，随着时间推移，越存越多，自然该分区就越来越小了，每次在使用这个分区上的空间时都需要长时间寻找空闲空间造成等待，还因为数据量太大，从该分区找系统所使用的文件时间也会越来越长，所以用户体验特别不好。定期清理系统盘的垃圾是很有必要的。</li>
+<li>家里电脑年代长了，升级内存后依然很慢<br>电脑年头久了，想升级一下电脑，所以加装了大内存，但是感觉提升很小。原因是可能同学对电脑的运行原理还不是很了解，可以看看上一节的内存工作原理。<br>其实电脑工作涉及的核心部件就三个：CPU、内存、硬盘<br>CPU一般是不会用完的，因为个人电脑CPU再老也能满足个人的日常使用，除非你玩很大的游戏或者高负荷运算。<br>内存是CPU连接硬盘的桥梁，只要日常查看内存监控的时候使用率到不了80%以上完全没必要投资升级<br>硬盘其实是电脑慢的罪魁祸首，因为CPU的数据得从硬盘读出或存入。读是硬盘交给内存，内存交给CPU；写是CPU交给内存，内存存入硬盘。当你发现CPU使用率不高，内存的也不高，但是电脑特慢，不用在找原因了，肯定是硬盘出问题了，一般是因为长时间的使用硬盘中的盘片有划伤了，所以在读数据时，读到划伤区域会读的特变慢！<br>兄台，换块固态吧！努一努，单车变摩托。</li>
+</ul>
+<h1 id="计算机硬件-主板"><a href="#计算机硬件-主板" class="headerlink" title="计算机硬件-主板"></a>计算机硬件-主板</h1><p> 阅读 (441922) </p>
+<p> 分享</p>
+<h2 id="主板介绍"><a href="#主板介绍" class="headerlink" title="主板介绍"></a>主板介绍</h2><p>主板是计算机中最重要的平台部件，也是电脑中最大的集成电路板，它直接或间接的将所有的设备连接在一起。主板的好坏直接决定了计算机速度的快慢和运行稳定。同时主板也提供了大量的设备接口，为计算机扩展功能提供了可能。</p>
+<p>主板一般为矩形电路板，上面安装了组成计算机的主要电路系统，一般有BIOS芯片、I&#x2F;O控制芯片、键和面板控制开关接口、指示灯插接件、扩充插槽、主板及插卡的直流电源供电接插件等元件。</p>
+<p>现在主板一般情况下都集成了三卡(显卡、网卡、声卡)，也有的只集成了声卡和网卡。</p>
+<p>主板分为大板和小板两种，如果不是空间的限制，建议大家一律选择大板。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601026904041.png" alt="主板.png"></p>
+<h2 id="主板选购"><a href="#主板选购" class="headerlink" title="主板选购"></a>主板选购</h2><p>参考指标：CPU平台、接口数量、支持的技术</p>
+<h2 id="主板故障"><a href="#主板故障" class="headerlink" title="主板故障"></a>主板故障</h2><p>主板是高精密的集成电路板，出厂经过严格的检测，使用过程中如果不是外力，基本上不会被损坏。</p>
+<h1 id="计算机硬件-显卡"><a href="#计算机硬件-显卡" class="headerlink" title="计算机硬件-显卡"></a>计算机硬件-显卡</h1><p> 阅读 (407031) </p>
+<p> 分享</p>
+<h2 id="显卡介绍"><a href="#显卡介绍" class="headerlink" title="显卡介绍"></a>显卡介绍</h2><p>显卡是计算机中最重要的图像输出设备，是将计算机系统所需要的显示信息进行转换驱动显示器，并向显示器提供逐行或隔行扫描信号，控制显示器的正确显示，是连接显示器和个人计算机主板的重要组件，是“人机对话”的重要设备之一。</p>
+<p>显卡按照接口分类</p>
+<ol>
+<li>ISA</li>
+<li>PCI</li>
+<li>AGP</li>
+<li>PCI-E</li>
+</ol>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601027000625.png" alt="显卡.png"></p>
+<h2 id="显卡选购"><a href="#显卡选购" class="headerlink" title="显卡选购"></a>显卡选购</h2><p>显卡参考指标: 显存、位宽、频率</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601027009241.png" alt="显卡参数.png"></p>
+<h1 id="计算机硬件-机箱电源"><a href="#计算机硬件-机箱电源" class="headerlink" title="计算机硬件-机箱电源"></a>计算机硬件-机箱电源</h1><p> 阅读 (517711) </p>
+<p> 分享</p>
+<h2 id="机箱介绍与选购"><a href="#机箱介绍与选购" class="headerlink" title="机箱介绍与选购"></a>机箱介绍与选购</h2><p>机箱是用来装载计算机硬件的容器，可以起到对计算机硬件的保护作用。此外，电脑机箱具有屏蔽电磁辐射的重要作用。在购买机箱的时候，建议大家参考以下的指标：</p>
+<p>1）抗静电</p>
+<p>2）机箱质量</p>
+<p>3）机箱散热</p>
+<p>4）机箱质量不易变形</p>
+<p>5）机箱空间能满足扩展需求</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601027153719.jpg" alt="机箱.jpg"></p>
+<p>机箱分类</p>
+<ol>
+<li>E-ATX加大型</li>
+<li>ATX标准型</li>
+<li>M-ATX紧凑型</li>
+<li>MINI mini型</li>
+</ol>
+<h4 id="机箱选购"><a href="#机箱选购" class="headerlink" title="机箱选购"></a>机箱选购</h4><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601027132863.png" alt="机箱选购.png"></p>
+<h2 id="电源介绍与选购"><a href="#电源介绍与选购" class="headerlink" title="电源介绍与选购"></a>电源介绍与选购</h2><p>计算机属于弱电产品，也就是说部件的工作电压比较低，一般在正负12伏以内，并且是直流电。而普通的市电为220伏（有些国家为110伏）交流电，不能直接在计算机部件上使用。因此计算机和很多家电一样需要一个电源部分，负责将普通市电转换为计算机可以使用的电压，一般安装在计算机内部。计算机的核心部件工作电压非常低，并且由于计算机工作频率非常高，因此对电源的要求比较高。目前计算机的电源为开关电路，将普通交流电转为直流电，再通过斩波控制电压，将不同的电压分别输出给主板、硬盘、光驱等计算机部件。</p>
+<p>电源是所有计算机获得电力的设备，是计算机的心脏部件。电源工作的稳定直接决定了电脑的稳定，所以在选购电源时，建议大家不要选购杂牌，一定选择正规的大厂品牌，同时要考虑电源的功率，要为后续升级硬件预留空间。</p>
+<p>电源选购时应该注意以下指标:</p>
+<p>1）品牌</p>
+<p>2）提供的电源接口</p>
+<p>3）电源功率</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601027175857.jpg" alt="电源.jpg"></p>
+<h4 id="电源选购"><a href="#电源选购" class="headerlink" title="电源选购"></a>电源选购</h4><p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601027189126.png" alt="电源选购.png"></p>
+<h1 id="计算机硬件-网卡声卡"><a href="#计算机硬件-网卡声卡" class="headerlink" title="计算机硬件-网卡声卡"></a>计算机硬件-网卡声卡</h1><p> 阅读 (217991) </p>
+<p> 分享</p>
+<h2 id="一、网卡介绍"><a href="#一、网卡介绍" class="headerlink" title="一、网卡介绍"></a>一、网卡介绍</h2><p>网卡又叫网络接口卡，是计算机联网的设备。之前一直是独立存在的，后来被主板商集成在主板上。目前集成的网卡基本上都是10&#x2F;100&#x2F;1000M自适应网卡。</p>
+<p>网卡分为有线网卡和无线网卡两种。</p>
+<p>无线网卡遵循了IEEE802.11ac、a、b、g、n标准，标准不同速度不同，标准之间是向下兼容的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">不同标准的无线网卡速度</span><br><span class="line">11Mbps（802.11b）</span><br><span class="line">22Mbps（802.11 Super b）</span><br><span class="line">54Mbps（802.11g/802.11a）</span><br><span class="line">108Mbps（802.11 Super G）</span><br><span class="line">125Mbps（802.11 High Speed-G）</span><br><span class="line">300Mbps（802.11n）</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601027380743.png" alt="主板集成网卡.png"></p>
+<h2 id="二、声卡介绍"><a href="#二、声卡介绍" class="headerlink" title="二、声卡介绍"></a>二、声卡介绍</h2><p>声卡 (Sound Card)也叫音频卡：声卡是多媒体技术中最基本的组成部分，是实现声波&#x2F;数字信号相互转换的一种硬件。</p>
+<p>声卡的基本功能是把来自话筒、磁带、光盘的原始声音信号加以转换，输出到耳机、扬声器、扩音机、录音机等声响设备，或通过音乐设备数字接口(MIDI)使乐器发出美妙的声音。</p>
+<p>现在电脑声卡基本上是集成在主板上的，除非特殊需要采购专业声卡，比如唱歌、影视频处理等。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/9/25/1601027395258.png" alt="主板集成声卡.png"></p>
+<h1 id="服务器品牌、型号介绍"><a href="#服务器品牌、型号介绍" class="headerlink" title="服务器品牌、型号介绍"></a>服务器品牌、型号介绍</h1><p> 阅读 (230656) </p>
+<p> 分享</p>
+<h2 id="一、服务器品牌介绍"><a href="#一、服务器品牌介绍" class="headerlink" title="一、服务器品牌介绍"></a>一、服务器品牌介绍</h2><p>1、戴尔（Dell），是一家总部位于美国德克萨斯州朗德罗克的世界五百强企业，由迈克尔·戴尔于1984年创立。戴尔以生产、设计、销售家用以及办公室电脑而闻名，不过它同时也涉足高端电脑市场，生产与销售服务器、数据储存设备、网络设备等</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321471498.png" alt="clip_image001.png"></p>
+<p>2、惠普已经拆分成了两家独立的世界五百强。一个叫HPI 沿用惠普的名字主营pc和打印机，一个叫HPE也就是慧与，主营服务器。拆分主要是让两家公司对这两块业务更加专注，独立运营，惠普（HP）是世界最大的信息科技（IT）公司之一，成立于1939年，总部位于美国加利福尼亚州帕洛阿尔托市。惠普下设三大业务集团：信息产品集团、打印及成像系统集团和企业计算机专业服务集团。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321488450.png" alt="clip_image002.png"></p>
+<p>3、浪潮集团有限公司，即浪潮集团，是中国本土综合实力强大的大型IT企业之一，中国领先的云计算、大数据服务商。浪潮集团旗下拥有浪潮信息、浪潮软件、浪潮国际、华光光电四家上市公司，业务涵盖云数据中心、云服务大数据、智慧城市、智慧企业四大产业群组，为全球100多个国家和地区提供IT产品和服务</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321512313.png" alt="image20191029172806677.png"></p>
+<p>4、ThinkServer是2012年6月5日联想从全球向中国引进的全新服务器品牌，与Think一脉相承，恪守对品质的坚持，传承Think“品质”、“创新”、“易用”三大基因，共享联想全球研发和制造资源，并汲取全球用户对品质的要求，以精密的设计、业界最全面的质量标准、严苛的测试流程打造全球品质的产品</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321551590.png" alt="clip_image003.png"></p>
+<p>5、华为技术有限公司是一家生产销售通信设备的民营通信科技公司，于1987年正式注册成立，是全球领先的信息与通信技术（ICT）解决方案供应商，专注于ICT领域，坚持稳健经营、持续创新、开放合作，在电信运营商、企业、终端和云计算等领域构筑了端到端的解决方案优势</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321571550.png" alt="clip_image004.png"></p>
+<p>6、IBM（International Business Machines Corporation）。总公司在纽约州阿蒙克市。1911年托马斯·沃森创立于美国，是全球最大的信息技术和业务解决方案公司，拥有全球雇员31多万人，业务遍及160多个国家和地区。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321593255.png" alt="clip_image005.png"></p>
+<p>以上的公司都是一个综合类型公司，生产和销售服务器只是他们的一项业务，除了上面介绍的几家公司之外还有思科，新华三，宝德等有服务器生产销售业务的公司。</p>
+<h2 id="二、服务器规格介绍"><a href="#二、服务器规格介绍" class="headerlink" title="二、服务器规格介绍"></a>二、服务器规格介绍</h2><p>我们以机架式服务器为例来给各位介绍一下服务器规格，通常机架式服务器都有1U、2U、4U、6U、8U这几种规格，这里面提到了一个U的概念，U指的是高度也就是1U&#x3D;4.445cm高，所以机架式服务器对应的高度你就可以用1、2、4、6、8去乘以4.445去进行计算，而服务器的高度越大对应的可扩展性就越好，支持的硬件就越多，当然价格也就越高一些。通常企业中选购的服务器以2U的居多</p>
+<h2 id="三、服务器型号介绍"><a href="#三、服务器型号介绍" class="headerlink" title="三、服务器型号介绍"></a>三、服务器型号介绍</h2><p>我们以典型的戴尔服务器和IBM的服务器为例来给大家介绍一下这两个厂商的服务器型号以及他们的命名规则</p>
+<p>首先，我们来看下戴尔的服务器，从第十代服务器开始，戴尔重新规范的了服务器的名字，以PowerEdge R640为例</p>
+<p>第一位是字母，R代表的是机架式服务器，除了R之外还有</p>
+<ul>
+<li>R：Rack，机架式服务器</li>
+<li>T：Tower 塔式服务器</li>
+<li>M：Modular 模块化服务器（刀片服务器）</li>
+</ul>
+<p>另外还有一个比较特别的系列，这个系列是为数据中心等提出的高密度服务器，也称为为服务器就是C</p>
+<p>第二位是数字，这个数字代表此服务器在整个产品线中的位置</p>
+<ul>
+<li>1,2系列为基础入门级的单路CPU服务器，这个系列是中小型企业的首选</li>
+<li>3,4,5系列为中高端的单路CPU和入门级的双路CPU服务器，包含有可选的高级系统管理功能，适合远程站点和较大的公司使用</li>
+<li>6,7,8系列是主流的双路CPU和入门级四路CPU服务器，拥有强大的性能，能够满足大部分企业级应用需求</li>
+<li>9系列是最高端的四路CPU服务器，用用强大的计算能力，支持超大内存，适合需要最高性能，可靠性以及I&#x2F;O可扩展的关键任务应用程序</li>
+</ul>
+<p>第三位是数字，代表的是第几代产品</p>
+<ul>
+<li>目前戴尔最新的服务器是第十四代产品所以这个数字是4</li>
+</ul>
+<p>最后一位是数字</p>
+<ul>
+<li>0代表的是intel的CPU，5代表的是AMD的CPU</li>
+</ul>
+<p>接下来我们看下IBM的服务器</p>
+<p>IBM服务器，主要包括i系列、p系列、x系列、z系列。</p>
+<ul>
+<li>i系列的服务器产品一直被大家命名为“小型机“，i系列服务器一般是终端产品，该系列产品用户主要是将众多的小型服务器合并到更少量的i系列产品中，i系列采用IBM POWER微处理器技术。</li>
+<li>p系列也是基于POWER处理器的服务器，运行AIX（IBM版Unix）和Linux，p系列是IBM Unix服务器产品线的根基，有机架式和机柜式。</li>
+<li>x系列全部基于X86架构处理器，也和DELL、HP一样包括塔式服务器、机架式服务器和刀片服务器。如IBM X3850 X5服务器来说明命名规则，x3表明是x3架构下的服务器，第二位的8表明性能，数字越大表示性能越强，第三位的5表示机架式，如果是2或者3也表示机架式，如果第三位是0则表示塔式，如X3500服务器即为塔式服务器，第四位的0表示采用的是intel的CPU，5表示用的是AMD的CPU，最后的两位x5则是表示内存技术、内存扩展能力。</li>
+<li>z系列为大型机，都为机柜式结构，该系列产品相当高端，是IBM的支柱产品。</li>
+</ul>
+<h2 id="四、如何购买"><a href="#四、如何购买" class="headerlink" title="四、如何购买"></a>四、如何购买</h2><p>对于服务器产品的购买，现在的渠道相对来说比较多，可以去京东，淘宝，或者各家服务器的官网，货比三家之后购买会有惊喜</p>
+<h2 id="五、服务器内部结构"><a href="#五、服务器内部结构" class="headerlink" title="五、服务器内部结构"></a>五、服务器内部结构</h2><p>对于刀片式服务器，从大体上为存储模块，散热模块，计算模块（包含CPU，内存等）供电模块和其他扩展模块这几部分组成，不同类型的布局上会稍微有些差异，下面的两张图片分别是戴尔和IBM的产品</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321618840.png" alt="clip_image006.png"></p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321631447.png" alt="clip_image007.png"></p>
+<h2 id="六、机柜介绍"><a href="#六、机柜介绍" class="headerlink" title="六、机柜介绍"></a>六、机柜介绍</h2><p>机柜一般是冷轧钢板或合金制作的用来存放计算机和相关控制设备的物件，可以提供对存放设备的保护，屏蔽电磁干扰，有序、整齐地排列设备，方便以后维护设备。机柜一般分为服务器机柜、网络机柜、控制台机柜等。我们以服务器机柜为例，服务器机柜在机柜的深度、高度、承重等方面均有要求。高度有2.2米、2.0米、1.8米、1.6米、1.4米、1.2米等高度；宽度为800mm、700mm或600mm三种；深度为800mm、900mm和1000mm三种，对应的是47U、42U、37U、32U、27U、22U，可以配置：专用固定托盘、专用滑动托盘、电源支架、地脚轮、地脚钉、理线环、理线架、L支架、扩展横梁等。主体框架、前后门、左右侧门可以快速拆装。</p>
+<p><img src="https://www.zutuanxue.com:8000/static/media/images/2020/10/10/1602321650329.png" alt="clip_image008.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/IPV6%E5%9C%A8%E4%BC%81%E4%B8%9A%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E9%83%A8%E7%BD%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/IPV6%E5%9C%A8%E4%BC%81%E4%B8%9A%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E9%83%A8%E7%BD%B2/" class="post-title-link" itemprop="url">IPV6在企业网络中的部署</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-15 11:40:28" itemprop="dateCreated datePublished" datetime="2022-11-15T11:40:28-04:00">2022-11-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-27 21:35:00" itemprop="dateModified" datetime="2022-11-27T21:35:00-04:00">2022-11-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IPv6/" itemprop="url" rel="index"><span itemprop="name">IPv6</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/IPV6%E5%9C%A8%E4%BC%81%E4%B8%9A%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E9%83%A8%E7%BD%B2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/IPV6%E5%9C%A8%E4%BC%81%E4%B8%9A%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E9%83%A8%E7%BD%B2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><object data="IPV6在企业网络中的部署.pdf" type="application/pdf" width="100%" height="600"></object></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/AZ-500-Cert-Prep-Microsoft-Azure-Security-Technologies-AZ-500-24/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/AZ-500-Cert-Prep-Microsoft-Azure-Security-Technologies-AZ-500-24/" class="post-title-link" itemprop="url">AZ-500-Cert-Prep:-Microsoft-Azure-Security-Technologies-AZ-500-24</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-15 10:11:58" itemprop="dateCreated datePublished" datetime="2022-11-15T10:11:58-04:00">2022-11-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-20 19:16:26" itemprop="dateModified" datetime="2022-11-20T19:16:26-04:00">2022-11-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-500/" itemprop="url" rel="index"><span itemprop="name">AZ-500</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/AZ-500-Cert-Prep-Microsoft-Azure-Security-Technologies-AZ-500-24/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/AZ-500-Cert-Prep-Microsoft-Azure-Security-Technologies-AZ-500-24/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+<p><object data="Cert-Prep-Microsoft-Azure-Security-Technologies-AZ-500.pdf" type="application/pdf" width="100%" height="600"></object></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/AZ-500-AZ-500-Exam-Preparation-Summary-23/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/AZ-500-AZ-500-Exam-Preparation-Summary-23/" class="post-title-link" itemprop="url">AZ-500-AZ-500-Exam-Preparation:-Summary-23</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-15 10:11:57" itemprop="dateCreated datePublished" datetime="2022-11-15T10:11:57-04:00">2022-11-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-20 19:16:06" itemprop="dateModified" datetime="2022-11-20T19:16:06-04:00">2022-11-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-500/" itemprop="url" rel="index"><span itemprop="name">AZ-500</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/AZ-500-AZ-500-Exam-Preparation-Summary-23/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/AZ-500-AZ-500-Exam-Preparation-Summary-23/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+<p>Congratulations! You’ve made it all the way through this learning path! If you’re preparing to sit the <a target="_blank" rel="noopener" href="https://cloudacademy.com/learning-paths/az-500-exam-preparation-microsoft-azure-security-technologies-650/">AZ-500 exam</a>, keep in mind that, although this learning path covered most of the key learning objectives for the exam, there are a few details that weren’t covered. I’ll list them for you and show you where you can learn more about them. </p>
+<p>Applications that integrate with the Microsoft identity platform follow an authorization model that provides users and admins with control over how data can be accessed. For more information on configuring App registration permission scopes and managing App registration permission consent, visit the URL that you see on your screen. </p>
+<p>[<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent]">https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent]</a></p>
+<p>Security Playbook is an offering that helps automate and orchestrate an organization’s response to certain security alerts that are detected by Security Center. You can learn more about configuring a playbook for a security event by visiting the URL that you see on your screen. </p>
+<p>[<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/security-center/security-center-playbooks]">https://docs.microsoft.com/en-us/azure/security-center/security-center-playbooks]</a></p>
+<p>After deploying a key vault to store keys and secrets you can update your keys and secrets without affecting application behavior. For more information about configuring key rotation, visit this URL. </p>
+<p>[<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/key-vault/key-vault-key-rotation-log-monitoring]">https://docs.microsoft.com/en-us/azure/key-vault/key-vault-key-rotation-log-monitoring]</a></p>
+<p>If you’d like to learn more about transferring <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Microsoft Azure</a> subscriptions between Microsoft Azure AD tenants, visit this URL. </p>
+<p>[<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/billing/billing-subscription-transfer]">https://docs.microsoft.com/en-us/azure/billing/billing-subscription-transfer]</a></p>
+<p>Lastly, you may want to checkout this URL to learn more about managing API access to Microsoft Azure subscriptions and resources. </p>
+<p>[<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-api-authentication]">https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-api-authentication]</a></p>
+<p>If you have any questions or comments, please let us know. Thanks for watching, and <a target="_blank" rel="noopener" href="https://cloudacademy.com/learning-paths/microsoft-certified-azure-security-engineer-associate-cloud-certification-in-a-box-1-843/">good luck on the exam</a>!</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/AZ-500-Lab-Azure-Key-Vault-and-Disk-Encryption-22/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/AZ-500-Lab-Azure-Key-Vault-and-Disk-Encryption-22/" class="post-title-link" itemprop="url">AZ-500-Lab-Azure-Key-Vault-and-Disk-Encryption-22</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-15 10:11:54" itemprop="dateCreated datePublished" datetime="2022-11-15T10:11:54-04:00">2022-11-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-20 19:17:36" itemprop="dateModified" datetime="2022-11-20T19:17:36-04:00">2022-11-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-500/" itemprop="url" rel="index"><span itemprop="name">AZ-500</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/AZ-500-Lab-Azure-Key-Vault-and-Disk-Encryption-22/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/AZ-500-Lab-Azure-Key-Vault-and-Disk-Encryption-22/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/AZ-500-Lab-Enabling-Microsoft-Defender-for-Azure-SQL-Database-21/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/AZ-500-Lab-Enabling-Microsoft-Defender-for-Azure-SQL-Database-21/" class="post-title-link" itemprop="url">AZ-500-Lab-Enabling-Microsoft-Defender-for-Azure-SQL-Database-21</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-15 10:11:53" itemprop="dateCreated datePublished" datetime="2022-11-15T10:11:53-04:00">2022-11-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-20 19:17:08" itemprop="dateModified" datetime="2022-11-20T19:17:08-04:00">2022-11-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-500/" itemprop="url" rel="index"><span itemprop="name">AZ-500</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/AZ-500-Lab-Enabling-Microsoft-Defender-for-Azure-SQL-Database-21/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/AZ-500-Lab-Enabling-Microsoft-Defender-for-Azure-SQL-Database-21/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/AZ-500-Microsoft-Azure-Security-Solutions-20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/AZ-500-Microsoft-Azure-Security-Solutions-20/" class="post-title-link" itemprop="url">AZ-500-Microsoft-Azure-Security-Solutions-20</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-15 10:11:51" itemprop="dateCreated datePublished" datetime="2022-11-15T10:11:51-04:00">2022-11-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-20 19:13:16" itemprop="dateModified" datetime="2022-11-20T19:13:16-04:00">2022-11-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-500/" itemprop="url" rel="index"><span itemprop="name">AZ-500</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/AZ-500-Microsoft-Azure-Security-Solutions-20/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/AZ-500-Microsoft-Azure-Security-Solutions-20/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Welcome to “Microsoft Azure Security Solutions”. My name is Thomas Mitchell and I’ll be taking you through this course. </p>
+<p>I’m a Content Author at Cloud Academy and I have over 25 years of IT experience, several of those with cloud technologies. If you have any questions, feel free to connect with me on LinkedIn, or send an email to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>.</p>
+<p>This course is intended for IT Professionals who need to develop an understanding of the security solutions that are available in <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Microsoft Azure</a>. To get the most from this course, you should have a basic understanding of Microsoft Azure and its offerings.</p>
+<p>We’re going to kick things off by taking a look at the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/microsoft-azure-security-solutions-975/what-is-shared-responsibility/">shared responsibility model</a>. You’ll learn what the shared responsibility model is and how responsibilities are split between Microsoft and the customer.</p>
+<p>After covering the shared responsibility model, we’ll move on to azure security services and technologies. We’ll cover general azure security features, including azure security center, azure key vault, and azure monitor logs.</p>
+<p>We’ll then move on to storage security, where you’ll learn about Azure storage service encryption, shared access signatures, storage account keys, and Azure Storage Analytics.</p>
+<p>Next, we’ll look at database security, where you’ll learn about Azure SQL firewall rules, Azure SQL Always Encrypted, Transparent Data Encryption, and Azure SQL Database Auditing.</p>
+<p>Later on, in the course, we’ll dive into identity and access management. You’ll learn about role-based access control, Azure Active Directory, Azure AD B2B, Azure AD B2C, Azure AD Domain Services, and Azure Multi-Factor Authentication.</p>
+<p>We’ll wrap things up with network security options and features, including Network Security Groups, Azure Firewall, Azure DDoS Protection, and more.</p>
+<p>By the time you finish this course, you should have a basic understanding of all of the key security options and features available in Microsoft Azure.</p>
+<p>We’d love to get your feedback on this course, so please give it a rating when you’re finished. So, if you’re ready to learn about Microsoft Azure Security Solutions, let’s get started.</p>
+<h1 id="What-is-Shared-Responsibility"><a href="#What-is-Shared-Responsibility" class="headerlink" title="What is Shared Responsibility?"></a>What is Shared Responsibility?</h1><p>Hi there. In this lecture, we’re going to talk about the shared responsibility model. This is important to understand because, if you are an organization considering a move to the cloud, you need to understand which <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/microsoft-azure-security-solutions-975/introduction/">security tasks</a> the cloud provider is responsible for handling and which tasks are handled by you. These responsibilities will vary depending on the workload. For example, the responsibilities for SaaS workloads will differ from IaaS workloads, which will differ from PaaS workloads, which will differ from on-prem responsibilities.</p>
+<p>When you host your workloads in an on-prem datacenter, you own everything. However, as you move to the cloud, some of your security responsibilities are handed over to <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Microsoft</a>.</p>
+<p>The graphic on your screen details the general areas of responsibility for you and for Microsoft, based on where the workloads are hosted.</p>
+<p>As you can see, whether your workloads run on-prem or in the cloud, you always own your data and identities, so you are responsible for the security of them. You are also responsible for your on-prem resources, along with any cloud components you control. Whether your workloads are hosted in the cloud or on-prem, you always retain the <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/microsoft-azure-security-solutions-975/responsibilities-by-platform/">responsibility</a> for your data, your endpoints, your accounts, and access management.</p>
+<h1 id="Responsibilities-by-Platform"><a href="#Responsibilities-by-Platform" class="headerlink" title="Responsibilities by Platform"></a>Responsibilities by Platform</h1><p>Let’s break things down by platform. </p>
+<p>For on-premises <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/microsoft-azure-security-solutions-975/introduction/">solutions</a>, the customer will always be responsible for all aspects of <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/microsoft-azure-security-solutions-975/general-azure-security/">security</a> and operations. </p>
+<p>For IaaS solutions, the cloud provider will be responsible for the tangible aspects – things like servers and network hardware. The hypervisor is also managed by the cloud provider – as are the physical datacenters that host the hardware. The customer will typically be responsible for securing and managing operating systems on servers, network configurations, applications that are deployed, identity management, and, of course, data. </p>
+<p>Solutions built on the PaaS platform push more <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/microsoft-azure-security-solutions-975/what-is-shared-responsibility/">responsibility</a> onto the cloud provider. In addition to the same things that the cloud provider is responsible for in an IaaS deployment, the provider is additionally responsible for managing and securing the network controls. The customer, however, is still at least partially responsible for securing and managing its applications, user identities, and data. </p>
+<p>SaaS solutions push even more responsibility onto the provider. This is because the cloud provider provides the application to the customer as a service. This removes the customer’s responsibility for ANY underlying components. That said, the customer is still responsible for ensuring that its data is properly classified. The provider and customer will share the responsibility for managing users and end-point devices.</p>
+<p>It’s critical to understand that, while cloud providers can offer significant security and compliance advantages over an on-prem solution, these advantages do not, in any way, absolve the customer from protecting its users, applications, and service offerings. </p>
+<h1 id="General-Azure-Security"><a href="#General-Azure-Security" class="headerlink" title="General Azure Security"></a>General Azure Security</h1><p>Hi there. Welcome to General Azure Security. In this lesson, we’re going to look at the many <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/microsoft-azure-security-solutions-975/introduction/">security-related services</a> and technologies that are available in <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Microsoft Azure</a>. We’ll take a look at Azure Security Center, Azure Key Vault, and Azure Monitor logs.</p>
+<p>Azure Security Center is a unified infrastructure security management system. It’s used to improve the security of not only Azure resources, but also of your data centers. Security Center provides advanced threat protection for workloads in the cloud and for on-prem workloads by providing you with tools that you can use to harden your network and to secure your services.</p>
+<p>Organizations will typically use Azure Security Center to address common security challenges, including things like workloads that are constantly changing and sophisticated security threats. </p>
+<p>Quickly changing workloads, for example, present unique security challenges because it can be difficult to ensure that, despite the constant changes, these workloads remain compliant with your security standards and that they follow security best practices.</p>
+<p>Regardless of where your workloads are hosted – whether in the cloud or on-prem, security threats are becoming more and more sophisticated. That being the case, you need to ensure that you are effectively securing your public cloud workloads. This is because anything in the public cloud is directly or indirectly Internet-facing. Because of this, these workloads can leave you open to attacks if you don’t follow security best practices.</p>
+<p>Azure Security Center helps address these challenges by assessing your environment for you. These assessments help you better understand the status and security of your resources. Security Center will then make recommendations that you can follow to better secure those resources.</p>
+<p>Azure Key Vault is a cloud solution that allows organizations to centrally store and manage secrets, keys, and certificates. </p>
+<p>By leveraging Azure Key Vault, an organization can not only securely store things like tokens, passwords, and certificates, but it can also tightly control access to them.</p>
+<p>Azure Key Vault can also be used as a Key Management solution because of how easy it makes it to create and control encryption keys that are used to encrypt your data.</p>
+<p>You can also use Azure Key Vault to provision, manage, and deploy public and private TLS and SSL certificates that you plan to use with Azure and with internal connected resources.</p>
+<p>I should also mention that you can use Key Vault to store secrets that are backed by Hardware Security Modules, or HSMs. They can be protected either by software or by FIPS 140-2 Level 2 validated HSMs.</p>
+<p>Accessing an Azure Key Vault requires proper authentication and authorization. The authentication, which establishes the identity of the user or app, is performed by Azure Active Directory. Authorization, which determines the operations that the user or app is allowed to perform, is typically handled via role-based access control or via a Key Vault access policy.</p>
+<p>It’s also important to note that Azure Key Vault is designed in such a way that Microsoft cannot, and does not, see or extract your data.</p>
+<p>Azure Monitor collects data that you can use to monitor your environment. This data fits into one of two fundamental types. They include Metrics and Logs. Since this course focuses on security, we’ll key in on the log data that Azure Monitor collects, rather than the metrics data. </p>
+<p>The Logs in Azure Monitor can be used to perform complex analysis across data that’s collected from many different sources. However, it important to understand the difference between Azure Monitor Logs and different sources of log data in Azure. </p>
+<p>Let’s take subscription-level events in Azure, for example. These types of events are written to an activity log, which can be viewed from the Azure Monitor menu. While most Azure resources will record detailed operational information resource logs that can be forwarded to different locations, Azure Monitor Logs is actually a log data platform. This log data platform collects resource and activity logs, along with other monitoring data that can be analyzed to provide information on all resources across your entire environment.</p>
+<p>Events are one of the more common types of log entry collected by Azure Monitor. Such events are typically created by applications or services that you are running – and they usually provide information that indicates when a specific resource was created or modified, or when an error was detected in an application.</p>
+<p>The table on your screen shows the different ways that you can use Azure Monitor Logs.</p>
+<p>You can use Log Analytics to write log queries, and the Data Explorer analysis engine to interactively analyze the data. The Application Insights analytics console in the Azure portal can also be used to write log queries. Using Application Insights, you can interactively analyze the log data.</p>
+<p>You can visualize your Azure Monitor Logs by rendering the data as tables or charts and pinning them to your Azure dashboard. You can also create workbooks that combine several sets of data into a single report. There are many other ways to visualize your data as well.</p>
+<p>You can even configure log alert rules that can either send out notifications or perform automated actions whenever a query produces results that match a defined result.</p>
+<p>You can access log query results using multiple tools, including the Azure CLI and PowerShell. You can even access them from a custom application using REST API.</p>
+<p>Azure Monitor Logs can also be used to build workflows. To do this, you could retrieve the log data and copy it to an external location, using Logic Apps.</p>
+<p>Azure Sentinel is a cloud-based security information event management solution that provides intelligent security analytics and threat intelligence across the enterprise. It’s an all-in-one solution for alert detection, threat visibility, proactive hunting, and threat response.</p>
+<p>Azure Sentinel provides you with a 30,000-foot view of the enterprise while helping you identify and mitigate even the most sophisticated attacks. It’s intelligence helps you deal with the never-ending stream of alerts.</p>
+<p>Using Azure Sentinel, you can collect data on all users, devices, applications, and infrastructure – whether they reside on-prem or in other clouds. The service can even detect threats that were previously considered undetectable while minimizing false positives through the use of Microsoft’s analytics and threat intelligence. </p>
+<p>By leveraging artificial intelligence, Azure Sentinel allows you to investigate threats and to actively hunt for suspicious activities at scale. Its built-in orchestration and automation of common tasks allows you to respond quickly to incidents.</p>
+<p>Azure Sentinel incorporates existing Azure technologies, like Logic Apps, Log Analytics, and AI. This brings robust investigation and detection capabilities to organizations that deploy Azure Sentinel.</p>
+<p>To onboard Azure Sentinel, you need to first connect it to your existing data sources. Sentinel comes with numerous connectors right out of the box, including connectors for Microsoft solutions like Microsoft Threat Protection, Microsoft 365, Azure AD, and more.</p>
+<p>After connecting to your data sources, you can begin monitoring your data via Azure Sentinel’s integration with Azure Monitor Workbooks. </p>
+<p>Azure Sentinel offers automation and orchestration solutions that can handle new technologies and even the newest threats that emerge.</p>
+<p>Azure Sentinel’s investigation tools help you determine the scope of potential security threats while helping you find the root causes of them.</p>
+<p>The hunting search-and-query tools that Azure Sentinel provides allow you to proactively hunt for security threats across your data sources before an alert is ever triggered.</p>
+<p>The Sentinel community even offers community-provided workbooks, playbooks, and hunting queries that you can use in your own environment. </p>
+<p>To read more about Azure Sentinel, visit the URL that you see on your screen:</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/sentinel/overview">https://docs.microsoft.com/azure/sentinel/overview</a></p>
+<h1 id="Storage-Security"><a href="#Storage-Security" class="headerlink" title="Storage Security"></a>Storage Security</h1><p>Hi there! Welcome to Storage Security! In this lecture, we’re going to take a look at a few of the different storage <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/microsoft-azure-security-solutions-975/introduction/">security</a> options that are available in <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Microsoft Azure</a>. We’ll look at Azure Storage Service Encryption, Shared Access Signatures, Storage Account Keys, and Storage Analytics.</p>
+<p>Data that is persisted to the cloud is automatically encrypted by Azure, through Azure Storage encryption. This process protects the data you store and helps you meet organizational security and compliance commitments.</p>
+<p>Data stored in Azure Storage is encrypted and decrypted transparently using 256-bit AES encryption. </p>
+<p>When a new storage account is provisioned, Azure Storage encryption is automatically enabled for it – and this encryption cannot be disabled. Since data in Azure is secured by default, organizations don’t need to bother with code modifications or application changes in order to leverage Azure Storage encryption.</p>
+<p>I should also point out that all storage accounts, whether they are standard or premium tiers, are encrypted. It’s also important to note that all Azure Storage redundancy options support encryption. Azure Storage resources, including blobs, disks, files, queues, and tables are also encrypted – along with all object metadata.</p>
+<p>These encryption services have no effect Azure Storage performance, nor is there any additional cost for Azure Storage encryption.</p>
+<p>For more information on Azure Storage Encryption, visit the URL that you see on your screen.</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/storage/common/storage-service-encryption">https://docs.microsoft.com/azure/storage/common/storage-service-encryption</a></p>
+<p>Shared Access Signatures are another storage security feature in Azure. Shared access signatures, or SAS, provide secure delegated access to resources in a storage account - and they do so without compromising data security. Shared access signatures provide granular control over how your data can be accessed, and they allow you to control which resources can be accessed by an entity, what permissions that entity has on those resources, and how long the shared access signature is valid.</p>
+<p>There are three types of shared access signatures that are supported by Azure Storage. They include user delegation SAS, service SAS, and account SAS.</p>
+<p>A user delegation SAS, which applies to Blob storage only, is secured with Azure AD credentials and by the permissions specified for the SAS. </p>
+<p>A service SAS is secured with the storage account key and is used to delegate access to a resource in either Blob storage, Queue storage, Table storage, or Azure Files. It delegates access to a resource in just one of the services.</p>
+<p>An account SAS is also secured with the storage account key. However, unlike a service SAS, it delegates access to resources in one or more of the storage services. The same operations that are available via a service SAS or a user delegation SAS are also available via an account SAS. </p>
+<p>Microsoft recommends as a best practice that you use Azure AD credentials, rather than the account key, whenever possible. They make this recommendation because the account key can be more easily compromised.</p>
+<p>So, how exactly does a shared access signature work? Well, it’s actually rather simple.</p>
+<p>A shared access signature, or SAS, is a signed URI that includes a special token and a set of query parameters, which includes a signature. This signed URI points to a storage resource, and the token dictates how the resource can be accessed by the client. The signature is built from the SAS parameters and then signed with the key that was originally used to create the SAS. </p>
+<p>When a SAS URI is presented to Azure Storage as part of a request, Azure checks the SAS parameters and signature to determine their validity for authorizing the request. Assuming the signature is valid, the request is then authorized. If the signature is NOT valid, the request is declined with a 403 “forbidden” error code.</p>
+<p>The sample service SAS URI that you see on your screen shows the resource URI and the SAS token.</p>
+<p>Storage Account Keys are generated by Azure when you create a storage account. Azure generates two of them – and each is 512-bits. You use these keys to authorize access to data that resides in your storage account. This is done via Shared Key authorization.</p>
+<p>Once your storage account keys are created, you should use Azure Key Vault to manage them. You should rotate and regenerate your keys on a regular basis. Azure Key Vault simplifies this process and even allows you to perform the rotation without interrupting the applications that use them. You can also manually rotate your keys if needed.</p>
+<p>You need to understand that storage account access keys are essentially root passwords for your storage account. That being the case, you need to ensure they are protected at all times. You should not distribute them to users, save them anywhere in plain text, nor hard code them in apps. If you think your keys may have been compromised, rotate them immediately.</p>
+<p>Azure Storage Analytics is a service that performs logging for storage accounts. It provides metrics data for storage accounts as well. This data is typically used to trace storage requests and to analyze usage trends. It can also be used to diagnose issues with storage accounts.</p>
+<p>Before using Azure Storage Analytics, it needs to first be enabled for each service that you wish to monitor. This can be done manually right from the Azure portal OR programmatically through the REST API or the client library.</p>
+<p>There is a 20TB limit on the amount of data Storage Analytics can store. This limit is separate and independent from the total limit for your storage account. </p>
+<p>Visit the URL that you see on your screen for more information on Azure Storage Analytics.</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-analytics">https://docs.microsoft.com/en-us/azure/storage/common/storage-analytics</a></p>
+<h1 id="Database-Security"><a href="#Database-Security" class="headerlink" title="Database Security"></a>Database Security</h1><p>Hi there. Welcome to Database Security. In this lecture, we’re going to review the different database security options and services that are available. We’ll look at <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> SQL Firewall Rules, Azure SQL Always Encrypted, Azure SQL Transparent Data Encryption, and Azure SQL Database Auditing.</p>
+<p>Let’s talk a little bit about Azure SQL firewall rules. When you create a new Azure SQL server, the SQL Database firewall will automatically block all access to the public endpoint for the server. Connection attempts that originate from the internet will have to pass through the firewall before hitting the SQL server or database. The diagram on your screen shows the flow of traffic through the firewall.</p>
+<p>As you can see in the diagram, you can define server-level IP firewall rules and database-level IP firewall rules.</p>
+<p>Server-level IP firewall rules allow clients to access the entire Azure SQL server, which includes all databases hosted on it. The master database holds these rules. I should mention that you can configure a maximum of 128 server-level IP firewall rules for an Azure SQL Server.</p>
+<p>Database-level IP firewall rules are used to allow access to specific databases on a SQL Database server. You create database-level IP firewall rules each database (including the master database), rather than for the entire server. These rules are stored in the database that they are created for.</p>
+<p>As is the case for server-level IP firewall rules, you can define a maximum of 128 database-level IP firewall rules for a database. </p>
+<p>For more information about configuring SQL firewall rules, visit the URL that you see on your screen:</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure">https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure</a></p>
+<p>The Always Encrypted feature is designed to protect sensitive data like credit card numbers or social security numbers, that are stored in an Azure SQL Database or even in a traditional SQL Server database.</p>
+<p>With Always Encrypted, clients can encrypt sensitive data inside the client applications without revealing the encryption keys to the SQL Server, ensuring separation between the owners of the data and those who manage it. This is important because those who manage this sensitive data shouldn’t be able to see the data. </p>
+<p>Always Encrypted ensures unauthorized users, including database admins, can’t access sensitive data. This means customers can confidently store sensitive data, even when it’s outside of their direct control. </p>
+<p>To ensure encryption is transparent to applications, an Always Encrypted-enabled driver has to be installed on the client computer. This driver automatically encrypts and decrypts sensitive data in the client application before sending the data off to the SQL Server. In a similar fashion, the driver also transparently decrypts the data contained in query results.</p>
+<p>I should mention that Always Encrypted is available in all editions of Azure SQL Database, starting with SQL Server 2016. It’s also available in all service tiers of SQL Database. </p>
+<p>To learn more about Always Encrypted, visit the URL that you see on your screen:</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine">https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine</a></p>
+<p>Transparent data encryption, or TDE, is used to protect Azure SQL Databases, Azure SQL Managed Instances, and even Azure Synapse from malicious offline activities. It provides this protection by encrypting the data at rest. TDE performs real-time encryption and decryption of the database, associated backups, and the transaction log files at rest – and it does so without the need for any changes to the application. </p>
+<p>I should point out though, that while TDE, by default, is enabled for all newly deployed Azure SQL databases, it cannot be used to encrypt the logical master database. This is because the master database contains objects that TDE needs to perform its encryption operations on the user databases.</p>
+<p>It’s also important to note that you’ll need to manually enable TDE for older databases of Azure SQL Database, Azure SQL Managed Instance, and Azure Synapse. </p>
+<p>To learn how Transparent Data Encryption works under the hood, visit the URL that you see on your screen:</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-sql">https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-sql</a></p>
+<p>Auditing is a core part of <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/microsoft-azure-security-solutions-975/introduction/">security</a> in any environment. Auditing for Azure SQL Database, along with Azure Synapse Analytics, will track database events and writes them to an audit log that you can host in an Azure storage account, a Log Analytics workspace, or in Event Hubs. </p>
+<p>Auditing your SQL databases helps organizations to not only maintain regulatory compliance, but to also understand what’s going on within the database. It also helps track down information on anomalies that may or may not be related to suspected security violations or business concerns. By analyzing audit reports on a regular basis, it becomes easier to identify unusual activity and suspicious events.</p>
+<p>It’s important to understand that, while audit policies can be defined for a specific database, they can also be defined in a default server policy that applies to all new and existing databases on the server.</p>
+<p>If you enable server blob auditing, the auditing will always apply to the databases on the server, meaning the database will always be audited, regardless of the database auditing settings. In situations where you enable both blob auditing on the database AND on the server, both audits will exist separately. You will essentially be auditing the databases twice at the same time - once by the server policy and once by the database policy.</p>
+<p>That said, Microsoft recommends that you avoid simultaneously enabling both server blob auditing and database blob auditing unless you plan to use a different storage account for each, or if you plan to define a different retention period for a specific database. The only other time you might want to enable both is if you need to audit certain event types for a specific database that differ from the other databases hosted on the server. </p>
+<p>Your best bet, in most cases, is to enable server-level blob auditing only. Leave database-level auditing disabled for all databases, unless there is a specific need for it.</p>
+<h1 id="Dynamic-Data-Masking"><a href="#Dynamic-Data-Masking" class="headerlink" title="Dynamic Data Masking"></a>Dynamic Data Masking</h1><p>Hello and welcome to Dynamic Data Masking. Azure SQL Database, Azure SQL Managed Instance, and Azure Synapse Analytics all support a technology called dynamic data masking. What dynamic data masking does is limit the exposure of sensitive data by masking it for users who shouldn’t see it. Dynamic data masking is used to prevent unauthorized access to sensitive data. It allows customers to decide how much sensitive data should be revealed, without any significant impact on the application layer. Dynamic data masking is a policy-based security feature that’s used to hide certain sensitive data that’s returned as a result of a query of certain database fields. Data masking hides the sensitive data without changing it in the database. An example use case for dynamic data masking would be a scenario where a front-line worker at a call center might have to identify the caller by confirming the last four digits of the caller’s social security number. In such a scenario, the call center employee doesn’t need to see the entire social security number. That being the case, a masking rule can be defined to mask all the social security numbers in the result set of any query made against the database. This allows the customer service rep to perform his or her tasks without having access to more data than is necessary. To setup a dynamic data masking policy, you use the Dynamic Data Masking blade that’s found under Security in the SQL Database configuration pane. I should mention, however, that this feature can’t be set for a SQL Managed Instance using the Portal. You have to use PowerShell or REST API. When you configure a data masking policy, you need to configure several settings. You need to specify SQL users that should be excluded from masking, you need to define the masking rules themselves, and you need to define the masking functions. When you specify SQL users excluded from masking, what you’re really doing is defining a set of SQL users or Azure AD identities that are allowed to view the full, unmasked data in SQL query results. I should also point out that users with administrator privileges are always excluded from masking, so they can always see the original data without any masking. The Masking rules that you configure are a set of rules that defines which fields should be masked, along with which masking function should be used. The fields to be masked can be defined using a database schema name, a table name, and a column name. The Masking functions I mentioned are a set of different methods that controls which data is exposed, and under what conditions. The table on your screen shows the different masking functions that are available. To read more about dynamic data masking, visit the URL that you see on your screen.</p>
+<h1 id="Identity-and-Access-Management"><a href="#Identity-and-Access-Management" class="headerlink" title="Identity and Access Management"></a>Identity and Access Management</h1><p>Hi there. Welcome to Identity and Access Management. In this lecture, you are going to learn about several features and services that you can use to manage identity and access in <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a>. We’re going to cover role-based access control (or RBAC), Azure Active Directory, Azure Active Directory B2C, Azure Active Directory Domain Services, and Azure Multi-Factor Authentication. We’ll start with Role-Based Access Control.</p>
+<p>Because access management is so important for organizations using the cloud, there needs to be a robust way to manage access. Role-based access control, also known as RBAC, is the tool of choice. Using RBAC, you can effectively manage which users have access to what Azure resources, what those users can do with those resources, and what areas in Azure they have access to.</p>
+<p>RBAC is an authorization system built on Azure Resource Manager. It offers fine-grained access management of you Azure resources.</p>
+<p>For example, you can allow one user or group to manage your VMs in your Azure subscription, while allowing another user or group to manage your virtual <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/microsoft-azure-security-solutions-975/networking-security/">networks</a>. Perhaps you need to assign a group of DBAs to manage your SQL <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/microsoft-azure-security-solutions-975/database-security/">databases</a> without giving them access to your VMs. You can do this with RBAC.</p>
+<p>You can even allow a user or group of users to manage all resources in a specific resource group, while allowing another user or group to manage the resources in a separate resource group.</p>
+<p>Segregating duties within your organization, using RBAC, allows you to grant your users only the amount of access they need to perform their jobs. By granting users least privilege to get their work done, you minimize the chances of a <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/microsoft-azure-security-solutions-975/introduction/">security</a> incident or a mistake that could take down production.</p>
+<p>The diagram on your screen depicts a Microsoft-recommend usage pattern for using RBAC.</p>
+<p>Now, let’s shift to Azure AD. Azure AD is Microsoft’s cloud-based identity and access management service. You use this to allow users to sign in and access resources in. You can use Azure AD to control access to both internal and external resources.</p>
+<p>For example, you can use it to control access to things like Microsoft Office 365, the Azure portal, and even to all kinds of external SaaS applications. You can also control access to internal resources, like applications that reside on your corporate network or to home-grown cloud apps.</p>
+<p>Azure AD is intended for IT Admins, App Developers, and for subscribers to services such as Microsoft 365, Office 365, Azure, and others.</p>
+<p>IT Admins will typically use Azure AD to control access to applications and to app resources. They will also often use Azure AD to enforce multi-factor authentication and to automate user provisioning.</p>
+<p>App developers will often use Azure AD to add single sign-on to their apps. This makes logons easier for the app users since it then allows them to authenticate with their existing credentials. </p>
+<p>Subscribers to services like Microsoft 365, Office 365, and Azure are already using Azure AD – sometimes without even knowing it – because these tenants are automatically Azure AD tenants. Azure AD is how provisioning and access to these services is handled.</p>
+<p>Azure Active Directory business-to-business collaboration is also known as Azure AD B2B. This offering allows organizations to securely share their apps and services with guest users from other external organizations, while allowing them to retain control over their data. </p>
+<p>This is a great solution for organizations that need to work with external partners. </p>
+<p>Azure AD B2B provides an easy-to-use invitation and redemption process that allows external users to use their own credentials to access partner resources. </p>
+<p>Azure Active Directory business to customer, or B2C, provides business-to-customer identity as a service. Leveraging Azure AD B2C allows an organization’s customers to access the organization’s applications via single sign-on that uses their existing social, enterprise, or local account identities.</p>
+<p>Azure AD B2C uses standards-based authentication protocols. Supported protocols include OpenID Connect, OAuth 2.0, and SAML – and it integrates with most modern app and commercial software.</p>
+<p>The image on your screen represents the possibilities offered by Azure AD B2C.</p>
+<p>Using Azure AD B2C, you can build a single sign-on solution for your organization’s web apps, mobile apps, and even APIs. </p>
+<p>Azure Active Directory Domain Services, or Azure AD DS, is a cloud offering that provides managed domain services to organizations who leverage it. It offers features like domain join, LDAP, and even Kerberos and NTLM authentication that’s fully compatible with traditional on-prem Active Directory. Azure AD Domain Services also offers group policy support.</p>
+<p>The key benefit of Azure AD Domain Services is the fact that you can use them to get many of the benefits of Active Directory, without having to deploy, manage, or patch domain controllers. Because Azure AD DS integrates with your existing Azure AD tenant, you can allow your users to sign in with their existing credentials. Access to resources can be controlled through existing groups and user accounts as well.</p>
+<p>Azure AD DS replicates identity information from Azure AD and can also synchronize user account info from an existing on-prem Active Directory. However, if you wish to run a cloud-only environment, you don’t even need a traditional on-prem AD.</p>
+<p>If you need to run a hybrid environment with an on-prem AD and Azure AD Domain Services, you can synchronize your on-prem user accounts, group memberships, and credentials to Azure AD via Azure AD Connect. These synchronized objects are then available within the Azure AD DS managed domain.</p>
+<p>Azure Multi-Factor Authentication offers organizations two-step verification. The strength of multi-factor authentication is its layered approach. And this only makes sense when you think about it. It’s far more difficult to compromise multiple authentication factors than it is to compromise a username&#x2F;password combination. </p>
+<p>MFA works by requiring two or more authentication methods, including something your users know (which is usually a password), something they possess – maybe a smartphone for example, and something they are. This could include a fingerprint or some other sort of biometrics.</p>
+<p>Think about, even if a bad guy gets access to a user’s password, that password really is useless without also having access to the additional authentication method that’s been configured. </p>
+<p>Organizations typically use MFA to protect data and applications without making things difficult for end users.</p>
+<p>Azure Multi-Factor Authentication comes as part of Azure Active Directory Premium or Microsoft 365 Business. These offerings include full-featured use of Azure MFA, including Conditional Access policies that can be configured to require multi-factor authentication.</p>
+<p>Azure AD Free and standalone Office 365 licenses will also allow you to require multi-factor authentication for users and administrators.</p>
+<p>A subset of Azure MFA capabilities is also available to protect global administrator accounts in all Azure and O365 subscriptions.</p>
+<h1 id="Networking-Security"><a href="#Networking-Security" class="headerlink" title="Networking Security"></a>Networking Security</h1><p>Hi there. Welcome to “Networking Security”. In this lecture, you are going to learn about several key offerings designed to help you secure your networks in <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Microsoft Azure</a>. We’re going to cover Network Security Groups, Azure VPN Gateway, Azure ExpressRoute, and Azure Firewall. We’ll also look at Web Application Firewall, Azure DDoS Protection, and Virtual Network Service Endpoints.</p>
+<p>Network Security Groups are used to filter network traffic to and from Azure resources that are connected to an Azure virtual network. When you create a network security group, several default security rules are created. These rules, in turn, allow or deny inbound network traffic to, or outbound network traffic from, many kinds of Azure resources. In addition to the default rules that are created, you can create as many custom rules as you need to control traffic and secure your resources. While you can’t delete the default rules, you can create rules that override them.</p>
+<p>To learn about which Azure resources can have network security groups associated to them, visit the URL that you see on your screen.</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services">https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services</a></p>
+<p>An VPN gateway is a virtual network gateway that Azure uses to send and receive encrypted traffic between an Azure virtual network and an on-prem network. This traffic is sent over the public Internet. VPN gateways can also be used to send encrypted traffic between Azure virtual networks over the Microsoft network. </p>
+<p>I should mention that, although a virtual network can have only one VPN gateway, you can create multiple connections to a single VPN gateway. When you do this, all of the VPN tunnels that are created will share the available gateway bandwidth.</p>
+<p>When a virtual network gateway is deployed, Azure provisions two or more specialized VMs under the covers. These specialized VMs, which are not accessible, are deployed to a special subnet that you create. This special subnet is called the gateway subnet. The specialized VMs that get deployed contain routing tables and they run specific gateway services. </p>
+<p>You can deploy VPN gateways in Azure Availability Zones so they can benefit from the resiliency, scalability, and higher availability that Availability Zones provide. </p>
+<p>Once you’ve deployed a VPN gateway, you can create an IPsec&#x2F;IKE VPN connection between the VPN gateway and another endpoint, which could be another VPN gateway (to form a VNet-to-VNet connection), or an on-prem VPN device (to create a Site-to-Site connection). You could also create a Point-to-Site VPN connection that allows you or your users to connect to the virtual network from a remote location.</p>
+<p>To learn more about VPN gateways in Azure, visit the URL you see on your screen.</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways">https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways</a></p>
+<p>Another, more secure and robust, way to connect you on-prem network to Azure is to use ExpressRoute. Using ExpressRoute lets you connect your on-prem network to the Microsoft cloud via a private connection rather than the public internet. This private connection is facilitated by a connectivity provider. You can use ExpressRoute to establish connectivity to Microsoft cloud services, like Microsoft Azure and Office 365.</p>
+<p>The diagram on your screen shows what a typical ExpressRoute configuration looks like.</p>
+<p>ExpressRoute offers several benefits, including layer 3 connectivity between your on-prem network and the Microsoft Cloud. This connectivity can be from an any-to-any network, a point-to-point Ethernet connection, or through a virtual cross-connection via an Ethernet exchange.</p>
+<p>ExpressRoute also provides connectivity to Microsoft’s cloud services across all regions in the geopolitical region. Leveraging the ExpressRoute premium add-on, you can get global connectivity to Microsoft services across all regions.</p>
+<p>Other benefits of ExpressRoute include dynamic BGP routing between your network and Microsoft and built-in redundancy.</p>
+<p>Visit the URL on your screen to read more about ExpressRoute.</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/expressroute/expressroute-faqs">https://docs.microsoft.com/azure/expressroute/expressroute-faqs</a></p>
+<p>Web Application Firewall (or WAF) is included with the Application Gateway service and with the Front Door service. Because web applications are targeted more and more frequently with malicious attacks, WAF is used to provide centralized protection of those web applications. </p>
+<p>While such attacks CAN be prevented within the application code, this strategy can be difficult to implement and maintain. That being the case, leveraging a centralized web application firewall can help simplify security management, because such a solution can more quickly react to security threats by centrally patching whatever known vulnerability exists, instead of securing each individual web application.</p>
+<p>To learn more about Web Application Firewall, visit the URL that you see on your screen.</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/web-application-firewall/overview">https://docs.microsoft.com/azure/web-application-firewall/overview</a></p>
+<p>Azure Firewall is another cloud-based network <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/microsoft-azure-security-solutions-975/introduction/">security service</a> available in Azure. This managed service is used to protect Azure Virtual Network resources. This fully stateful firewall as a service comes with built-in high availability and also offers unrestricted cloud scalability.</p>
+<p>Azure Firewall allows you to centrally create, enforce, and log application policies as well as network connectivity policies across multiple subscriptions and virtual networks. Because it uses a static public IP address to represent all of your underlying virtual network resources, Azure Firewall allows outside firewalls to easily identify traffic that comes from your virtual network. </p>
+<p>The tight integration of Azure Firewall with Azure Monitor allows for robust logging and analytics as well.</p>
+<p>A distributed denial of service attack, or DDoS attack, can wreak havoc on an internet-facing application. It’s a real concern for organizations who are considering moving their workloads to the cloud because DDoS attacks can be leveled at any internet-facing endpoint.</p>
+<p>To help mitigate these threats, you can leverage Azure DDoS Protection. By combining this service with solid application design, you can protect yourself from dangerous DDoS attacks</p>
+<p>Azure DDoS protection comes in two tiers: Basic and Standard.</p>
+<p>The Basic Azure DDoS tier is automatically enabled as part of the Azure platform. It provides always-on traffic monitoring as well as real-time mitigation of many common network-level attacks. </p>
+<p>The Standard tier comes with more bells and whistles. It offers additional mitigation capabilities over and above what the Basic tier provides. </p>
+<p>Enabling DDoS Protection Standard is easy and doing so requires no changes to your applications. The protection policies offered in the standard tier are tuned through dedicated traffic monitoring and even leverage machine learning algorithms. </p>
+<p>To use Azure DDoS Protection, you apply protection policies to the public IP addresses that are associated with resources deployed in virtual networks. These resources include things like Azure Load Balancer, Azure Application Gateway, and even Azure Service Fabric instances.</p>
+<p>Azure DDoS Protection Standard can mitigate volumetric attacks, protocol attacks, and application-layer attacks.</p>
+<p>To learn more about Azure DDoS Protection and detailed information on the attacks that it can mitigate, visit the URL that you see on your screen:</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview">https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview</a></p>
+<p>The last topic I want to cover here is Virtual Network Service Endpoints. Service endpoints are used to extend the private address space of an Azure virtual network. They are also used to extend the identity of a virtual network to Azure services over a direct connection. </p>
+<p>By leveraging service endpoints, you can lock down your Azure service resources to only your virtual networks. Traffic originating from your virtual network and headed toward your Azure service never leaves the Microsoft Azure backbone network.</p>
+<p>Service endpoints provide improved security for Azure resources as well as optimal routing of Azure service traffic from your virtual network because they allow you to route service traffic directly from your virtual network to your service on the Microsoft Azure backbone network. Because the traffic remains on the Azure backbone network, you can audit and monitor your outbound Internet traffic from your virtual networks, through forced-tunneling - without impacting service traffic. </p>
+<p>To learn more about Virtual Network Service Endpoints, visit the URL that you see on your screen:</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview">https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview</a></p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>Congratulations! You’ve come to the end of “<a target="_blank" rel="noopener" href="https://cloudacademy.com/course/microsoft-azure-security-solutions-975/introduction/">Microsoft Azure Security Solutions</a>“. Let’s review what you’ve learned.</p>
+<p>We kicked things off by taking a look at the shared responsibility model. You learned what the shared responsibility model is and how responsibilities are split between Microsoft and the customer.</p>
+<p>After covering the shared responsibility model, we moved on to azure security services and technologies. We looked at several general azure security features, including azure security center, azure key vault, and azure monitor logs.</p>
+<p>We then moved on to storage security, where you learned about Azure storage service encryption, shared access signatures, storage account keys, and Azure Storage Analytics.</p>
+<p>Next, we looked at database security. You learned about Azure SQL firewall rules, Azure SQL Always Encrypted, Transparent Data Encryption, and Azure SQL Database Auditing.</p>
+<p>Later on, in the course, we dove into identity and access management. You learned about role-based access control, Azure Active Directory, Azure AD B2B, Azure AD B2C, Azure AD Domain Services, and Azure Multi-Factor Authentication.</p>
+<p>We wrapped up with <a target="_blank" rel="noopener" href="https://cloudacademy.com/course/microsoft-azure-security-solutions-975/networking-security/">network security</a> options and features. </p>
+<p>At this point, you should have a basic understanding of all of the key security options and features available in <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Microsoft Azure</a>.</p>
+<p>To learn more about Microsoft Azure security solutions, you can, and should, read Microsoft’s published documentation. Be sure to also watch for new courses on Cloud Academy, because we’re always publishing new ones. Be sure to give this course a rating, and if you have any questions or comments, please let us know. Thanks for watching and happy learning!</p>
+<h1 id="4General-Azure-Security"><a href="#4General-Azure-Security" class="headerlink" title="4General Azure Security"></a>4<strong>General Azure Security</strong></h1><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/sentinel/overview">Azure Sentinel Security</a></p>
+<h1 id="5Storage-Security"><a href="#5Storage-Security" class="headerlink" title="5Storage Security"></a>5<strong>Storage Security</strong></h1><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/storage/common/storage-service-encryption">Azure Storage Encryption</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-analytics">Azure Storage Analytics</a></p>
+<h1 id="6Database-Security"><a href="#6Database-Security" class="headerlink" title="6Database Security"></a>6<strong>Database Security</strong></h1><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure">SQL Firewall Rules</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine">Always Encrypted overview</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/azure-sql/database/transparent-data-encryption-tde-overview?tabs=azure-portal">Transparent Data Encryption overview</a></p>
+<h1 id="7Dynamic-Data-Masking"><a href="#7Dynamic-Data-Masking" class="headerlink" title="7Dynamic Data Masking"></a>7<strong>Dynamic Data Masking</strong></h1><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/azure-sql/database/dynamic-data-masking-overview">Dynamic Data Masking overview</a></p>
+<h1 id="9Networking-Security"><a href="#9Networking-Security" class="headerlink" title="9Networking Security"></a>9<strong>Networking Security</strong></h1><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services">Virtual Network for Azure Services</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways">VPN Gateways in Azure</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/expressroute/expressroute-faqs">ExpressRoute overview</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/web-application-firewall/overview">Web Application Firewall overview</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview">Azure DDoS Protection</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview">Virtual Network Service Endpoints</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/AZ-500-Lab-Securing-Azure-Storage-Account-using-Private-Endpoints-19/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/AZ-500-Lab-Securing-Azure-Storage-Account-using-Private-Endpoints-19/" class="post-title-link" itemprop="url">AZ-500-Lab-Securing-Azure-Storage-Account-using-Private-Endpoints-19</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-15 10:11:49" itemprop="dateCreated datePublished" datetime="2022-11-15T10:11:49-04:00">2022-11-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-20 19:16:46" itemprop="dateModified" datetime="2022-11-20T19:16:46-04:00">2022-11-20</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/AZ-500-Lab-Securing-Azure-Storage-Account-using-Private-Endpoints-19/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/AZ-500-Lab-Securing-Azure-Storage-Account-using-Private-Endpoints-19/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/11/15/AZ-500-Designing-an-Azure-Network-Implementation-18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/AZ-500-Designing-an-Azure-Network-Implementation-18/" class="post-title-link" itemprop="url">AZ-500-Designing-an-Azure-Network-Implementation-18</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-15 10:11:47" itemprop="dateCreated datePublished" datetime="2022-11-15T10:11:47-04:00">2022-11-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-20 19:13:46" itemprop="dateModified" datetime="2022-11-20T19:13:46-04:00">2022-11-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-500/" itemprop="url" rel="index"><span itemprop="name">AZ-500</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/11/15/AZ-500-Designing-an-Azure-Network-Implementation-18/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/15/AZ-500-Designing-an-Azure-Network-Implementation-18/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Welcome to “Designing an Azure Network Implementation”. My name’s Guy Hummel and I’ll be helping you with the network aspects of architecting an Azure solution. I’m the Azure Content Lead at Cloud Academy and I have over 10 years of experience with cloud technologies. If you have any questions, feel free to connect with me on LinkedIn and send me a message, or send an email to <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>.</p>
+<p>This course is intended for people who want to become Azure cloud architects.</p>
+<p>To get the most from this course, you should have a general knowledge of networking.</p>
+<p>We’ll start with an overview of virtual networks, which are the fundamental building blocks of Azure networking. Then I’ll go over the different options for load balancing traffic to applications. Next, you’ll see how to connect Azure virtual networks to external networks, such as in your own datacenter. After that, I’ll explain how to secure your Azure networks. Finally, I’ll show you how to design connectivity for hybrid applications that access on-premises data.</p>
+<p>By the end of this course, you should be able to design Azure virtual networks; design external connectivity for Azure virtual networks; design network security strategies for Azure; and design connectivity for hybrid Azure applications.</p>
+<p>We’d love to get your feedback on this course, so please give it a rating when you’re finished.</p>
+<p>Now, if you’re ready to learn how to get the most out of Azure’s network services, then let’s get started.</p>
+<h1 id="Azure-Virtual-Networks"><a href="#Azure-Virtual-Networks" class="headerlink" title="Azure Virtual Networks"></a>Azure Virtual Networks</h1><p>As soon as you deploy more than one virtual machine in Azure, you’ll probably have to get them to communicate with each other. You can do that easily by putting them in the same Azure virtual network (or vnet). You can put lots of other Azure services in vnets, too, such as Service Fabric, Kubernetes Service, and HDInsight. You can also create multiple vnets and they will all be isolated from each other.</p>
+<p>When you create a virtual network, you specify what IP address space to use. You also need to create at least one subnet that uses a portion of the vnet’s IP address space. Then an Azure DHCP server will assign addresses from that subnet’s IP address range to the network interfaces on the VMs.</p>
+<p>If you need name resolution so the VMs in a virtual network can communicate with each other more easily, then the easiest solution is to use Azure-provided name resolution, which doesn’t require any configuration. If you need additional capabilities, such as name resolution for your on-premises servers, then you can provision your own DNS server in the vnet. You can still let Azure take care of the name resolution for your VMs by having your DNS server forward those types of queries to Azure.</p>
+<p>If you want to use custom domain names or if you need name resolution between virtual networks, then one option is to use the Private Zones feature of Azure DNS. It’s specifically designed for these scenarios.</p>
+<p>By default, all resources in a virtual network can send outbound requests to the internet. If you need any of your resources to accept <em>inbound</em> connections from the internet, then you can assign public IP addresses to them. Bear in mind that there’s an hourly charge for reserving public IP addresses, whether you’re using them or not.</p>
+<p>Not every type of Azure service can reside in a virtual network, particularly storage and databases. You can get a secure connection between those services and your vnets, though, by using a virtual network service endpoint. This lets you extend the address space in your vnet to the other service and it ensures that the traffic between them stays on the Azure backbone network. Service endpoints are configured on specific subnets. The services supported by service endpoints are Azure Storage, SQL Database, Cosmos DB, and SQL Data Warehouse.</p>
+<p>And that’s it for virtual network design.</p>
+<h1 id="Load-Balancing"><a href="#Load-Balancing" class="headerlink" title="Load Balancing"></a>Load Balancing</h1><p>Scaling an application horizontally by adding more VMs is a great solution, but how do you distribute requests to all of those VMs? You have two options: Azure Load Balancer and Azure Application Gateway.</p>
+<p>Azure Load Balancer is the right choice for the most common scenarios. It acts as a frontend that distributes incoming traffic to a pool of backend VMs. It supports TCP and UDP applications. By default, it distributes requests equally to the VMs. If the application layer served by these VMs is stateless, then this distribution method will work well. If it’s stateful, though, then you’ll need to use source IP affinity mode. In this mode, all requests from the same IP address will always go to the same VM. You should avoid designing this sort of solution, though, because if a VM goes down, then all of its clients will be down.</p>
+<p>If you have a stateless application layer and a VM goes down, then a health probe will detect that the instance is no longer available and it will remove it from the pool. Since no client sessions are tied to that specific instance, all of their requests will go to healthy instances.</p>
+<p>A health probe is typically an HTTP request to an instance. By default, the load balancer sends a probe every 15 seconds, but you can change the timing if you want. If your VMs are hosting something other than a web application, then you can configure the health probe to try to establish a TCP session on a specific port.</p>
+<p>If you’re using the load balancer for an internet-facing application, then you need to assign a public IP address to it. In this scenario, it’s called a public load balancer. All of the VMs behind it still use private IP addresses, though, and all incoming traffic from the internet must go through the load balancer.</p>
+<p>When a VM initiates an <em>outbound</em> connection, then the load balancer performs network address translation (or NAT). In other words, it translates the VM’s private IP address to the public IP address on the load balancer plus a port that it maps to that VM. Because it has this capability, the load balancer can be useful even in situations where you don’t need load balancing. If you need a NAT gateway on Azure, then you can just deploy a public load balancer that only manages outbound connections.</p>
+<p>If you have an internal application that shouldn’t be exposed to the internet, then don’t assign a public IP address to the load balancer. Instead, it will use a private IP address. In this configuration, it’s known as an internal load balancer.</p>
+<p>You can also use both types of load balancers for the same application. For example, you could use a public load balancer for the web tier and a private load balancer for the business logic tier.</p>
+<p>The other way to provide load balancing is to use Azure Application Gateway. Unlike Azure Load Balancer, which operates at layer 4 of the network stack, Application Gateway operates at layer 7. This gives you more flexibility in how you can route requests. Instead of just routing based on IP addresses and ports, it can route based on the URL. For example, if the URL of the request begins with the path to your videos folder, then you could tell the application gateway to route the request to your pool of video servers.</p>
+<p>You can do lots of other handy things with it too. A few examples are redirecting all HTTP requests to HTTPS, serving traffic to multiple websites, and supporting websockets.</p>
+<p>One especially useful feature is SSL or TLS termination. Because encrypting and decrypting traffic is computationally expensive, you can offload that task to the application gateway so the web servers don’t have to do it. However, if your security requirements won’t allow any unencrypted traffic, then you shouldn’t do this, because the traffic between the gateway and the backend web servers would be unencrypted.</p>
+<p>Speaking of security, one of the biggest reasons for using an application gateway is the built-in web application firewall. It protects your applications from common exploits, such as SQL injection and cross-site scripting attacks.</p>
+<p>Both of Azure’s load balancing options work within a single region. If you want to provide load balancing for VMs or web apps that are distributed across multiple regions, then you’ll need to use Azure Traffic Manager. This service redirects traffic at the DNS level. It <em>doesn’t</em> act as a gateway—it simply tells the client which address it should connect to.</p>
+<p>For example, suppose you have an application that’s deployed in 3 regions: East US, West Europe, and Southeast Asia. To minimize the network latency for every user, you could configure Traffic Manager to check where each request is coming from and direct it to the closest region. This is called performance routing. If one of the regions goes down, then Traffic Manager can redirect requests to the next nearest region. This is called priority routing.</p>
+<p>There are also two other routing methods available. With weighted routing, it will distribute requests either evenly among the endpoints or according to weights, such as 50% to endpoint 1, 30% to endpoint 2, and 20% to endpoint 3. Geographic routing is similar to performance routing because it looks at the client’s location. The difference is that you can specify exactly which region you want a client to connect to based on their location. For example, if your European customers require that their data stays in Europe, then you could always route them to a European region.</p>
+<p>In most cases, you’ll want to use Traffic Manager in conjunction with one of the other two load balancing solutions. You could even use all three of them together. For example, within each region, you could have an application gateway for SSL offloading and an Azure load balancer to distribute requests to the VMs.</p>
+<p>Traffic Manager will also work with non-Azure endpoints, such as applications that are on-premises or in another public cloud.</p>
+<p>And that’s it for load balancing.</p>
+<h1 id="External-Connectivity"><a href="#External-Connectivity" class="headerlink" title="External Connectivity"></a>External Connectivity</h1><p>When most organizations migrate to the cloud, they continue to have a significant amount of infrastructure on-premises and they need to connect those local resources with what they’ve deployed in the cloud. Microsoft provides several ways to do this.</p>
+<p>The first decision to make is whether you’ll connect them over the internet. You might not want to do this if you’re concerned about the reliability, performance, or security of this method. If any or all of those concerns are deal-breakers for your organization, then you should choose ExpressRoute.</p>
+<p>There are four ways to connect to Azure using ExpressRoute. If your infrastructure is colocated in a datacenter that has a cloud exchange, then you can get an Azure cross-connection through the colocation provider. If you’re not in that sort of facility, but you use a WAN provider, then they can make the Azure cloud look like one of your branch offices. The third option is to use a point-to-point ethernet provider.</p>
+<p>All three of these methods use a service provider to connect your infrastructure to Azure. Alternatively, if your infrastructure is located in what Microsoft calls an ExpressRoute location, then you can use ExpressRoute Direct. With this method, you connect to Azure directly without going through a service provider. One advantage of ExpressRoute Direct is that it can support connections up to 100 gigabits per second, which is 10 times as much as you can get through a service provider.</p>
+<p>Regardless of which of these methods you use, you’ll have a redundant layer 3 connection that doesn’t go over the internet. Routing is handled using BGP.</p>
+<p>If you’re okay with using encrypted connections over the internet instead of taking on the expense of a direct connection, then you can put an Azure VPN Gateway in a virtual network. Once you’ve set that up, there are two ways to to create an encrypted connection to it.</p>
+<p>For a site-to-site connection, you install a VPN device with a public IP address at your on-premises location. Then you deploy a VPN gateway in your Azure virtual network. It must be in a gateway subnet that doesn’t have any VMs in it. You also have to make sure that the IP address space of the virtual network doesn’t overlap with the address space of your on-premises network. When both sides are ready, you can set up an IPsec tunnel between the two networks.</p>
+<p>If you want to connect multiple sites to the same virtual network, you can set up a VPN device at each location and connect them all to the same VPN gateway. You can only have one VPN gateway per virtual network. This is known as a multi-site configuration. All connections to the same VPN gateway share its available bandwidth.</p>
+<p>The second way to connect is called point-to-site. With this method, you connect individual computers to the VPN gateway in your virtual network. You don’t have to use a VPN device, so this is suitable for remote workers and telecommuters. It uses the Secure Socket Tunneling Protocol (or SSTP) on Windows devices and IKEv2 VPN on Macs.</p>
+<p>Point-to-site connections use certificate-based authentication. To set this up, first you need either a root certificate from a certificate authority or a self-signed root certificate that you create yourself. Next, you generate client certificates from the root certificate. Then you need to install a client certificate on each client device that will be using a point-to-site connection.</p>
+<p>You can connect to the same VPN gateway with both site-to-site and point-to-site methods as long as you can use the same configuration for both. The main issue is what type of routing you configure the VPN gateway to use. Site-to-site connections can use either route-based or policy-based routing. For most scenarios, route-based is the best option, because it’s dynamic, requires less maintenance, and can tolerate failures in the network path. Policy-based routing is static, so you have to maintain all of the routes manually. You’d only want to choose this option is you require strict control of your routing.</p>
+<p>Multi-site and point-to-site configurations have to use route-based routing, so they can’t share a VPN gateway with a site-to-site configuration that uses policy-based routing, because a VPN gateway can only be configured to support one type of routing.</p>
+<p>Even when you’re using ExpressRoute to connect to your Azure virtual networks, there’s still a reason to use a VPN gateway. You can set up a site-to-site connection as a failover in case your ExpressRoute connection goes down. Traffic would only go through the VPN tunnel if the ExpressRoute connection is not available.</p>
+<p>You can also use VPN gateways to connect two virtual networks, but it’s much easier to use virtual network peering, which is a newer feature. To do it, go into one of the virtual networks in the portal, select Peerings from the menu, and click Add. Give it a name. I’ll use the name of the first virtual network dash and the name of the second virtual network. To complete the connection, you also need to create a peering in the other direction in the second virtual network. Then choose the subscription where the second virtual network resides, and finally, choose the second VNet.</p>
+<p>Okay, it’s done. The peering from vnet1 to vnet2 is showing a status of “Connected”. Let’s check the second peering as well. It’s connected, too. Once the status of both peerings is “Connected”, instances in the two VNets will be able to communicate with each other as if they were in the same VNet.</p>
+<p>You can even do this with virtual networks that are in different regions, which is known as global vnet peering. Traffic between them still goes through the Microsoft backbone network rather than the internet, so the connection is private and has high bandwidth and low latency.</p>
+<p>When you create a virtual network, Azure automatically creates a route table for each of the subnets. It then adds system default routes to each table. For example, it creates routes so all of the instances within the virtual network can connect to each other. It also creates a catch-all route that sends traffic to the internet if no other route is applicable. If you don’t want traffic to go to the internet, then you need to override it with a custom route, also known as a user-defined route.</p>
+<p>Another example of when you’d use a custom route is if you set up a virtual appliance, such as a firewall, and you need to route traffic through it. In this case, in addition to adding a custom route to the table, you’d also need to enable IP forwarding on the network interface that’s attached to the virtual appliance. Otherwise, Azure would prevent it from forwarding traffic.</p>
+<p>So far, I’ve been talking about connectivity for VM instances, but it’s also possible to get the same networking benefits with containers. When you create an Azure Kubernetes Service cluster, you can select the advanced networking option and specify a virtual network and subnet to put the cluster in. Then the nodes in the cluster will use the Azure Container Networking Interface plugin to connect to the virtual network. With this setup, Kubernetes pods can communicate with the rest of your network, including your on-premises network through ExpressRoute or a VPN gateway.</p>
+<p>And that’s it for external connectivity.</p>
+<h1 id="Security-Strategies"><a href="#Security-Strategies" class="headerlink" title="Security Strategies"></a>Security Strategies</h1><p>When you put an application on the web, you can be sure that hackers and bots will probe it for weaknesses soon afterward. If they find weaknesses, then they’ll likely compromise it in either an obvious way, or even worse, in a way that you don’t notice. So before you deploy any web applications, you need to architect a security solution.</p>
+<p>The first step is for your application developers to design secure code. That’s a good start, but it’s difficult to ensure that every application can withstand attacks. So you’ll need to put some type of centralized protection in front of all of your applications.</p>
+<p>Azure provides a lot of great network security features to help with this, such as DDoS protection, virtual network isolation, and network security groups (which we’ll talk about more in a minute), but you should also add a layer that’s designed to combat a broad array of threats to web apps.</p>
+<p>One good option is the Web Application Firewall that comes with the Azure Application Gateway. It’s based on the well-known Open Web Application Security Project (or OWASP) core rule sets. It protects against attacks like:</p>
+<ul>
+<li>SQL injection</li>
+<li>Cross-site scripting</li>
+<li>HTTP request smuggling</li>
+<li>Remote file inclusion, and</li>
+<li>HTTP protocol violations and anomalies</li>
+</ul>
+<p>It also detects common misconfigurations in web servers like Apache or IIS.</p>
+<p>You can run it in either detection or prevention mode. In detection mode, it simply logs all security alerts. In prevention mode, it actually blocks the attacks that it detects. To monitor the firewall’s activities in either mode, you can look in Azure Monitor, Azure Security Center, and Log Analytics, because they’re all integrated with it.</p>
+<p>Although Microsoft’s Web Application Firewall is very capable, you may still want to use a different solution, either because your organization has standardized on a third-party security product or because you need a firewall with additional features. Fortunately, a number of vendors, such as Barracuda and Palo Alto Networks, provide pre-built virtual machines that you can get from the Azure Marketplace. These are known as network virtual appliances.</p>
+<p>Ideally, these appliances should be put in a demilitarized zone (or DMZ). This is a perimeter network that keeps unwanted traffic, including attacks, from getting through to your backend network. In this example, the perimeter network and the backend network are two subnets within the same virtual network.</p>
+<p>To control the flow of traffic between these two subnets, you can use an NSG (which stands for network security group). An NSG contains security rules that allow or deny traffic to resources in a subnet of a virtual network. They’re similar to firewall rules. You can also apply NSGs to the network interfaces of specific VMs (if they were deployed using Resource Manager) or to all of the traffic to and from specific VMs (if they were deployed using the classic model), but it’s usually better to apply them to an entire subnet.</p>
+<p>Here’s an example NSG. It has inbound and outbound rules. The most important are the inbound rules. The first inbound rule allows DNS traffic over port 53 from anything inside the virtual network to the DNS server, which has this address.</p>
+<p>Notice that I didn’t have to specify an address range for the source. That’s because Microsoft lets you use service tags instead. This greatly simplifies your rules and makes them easier to read and understand. For example, the VirtualNetwork tag includes the virtual network address space, all connected on-premises address spaces, and all peered virtual networks or virtual networks connected through a VPN gateway. If you had to specify all of those address ranges yourself, the rule would be pretty complicated and it would be easy to make a mistake when creating the rule. Another advantage is that the addresses in a service tag are automatically updated when something changes, so you don’t need to update your rules. In case you’re wondering, you can’t create your own service tags. You can only use the predefined ones.</p>
+<p>The second rule allows RDP traffic over port 3389 from the internet to this virtual network so you can remotely administer the VMs. Notice that “Internet” is also a service tag again. The third rule allows traffic to the firewall, which has this address. The next one allows traffic between the web server and the app servers. The destination is a list of both addresses.</p>
+<p>After all of these allow rules, we add deny rules. The first one denies all traffic from the internet to this virtual network. Since it has a lower priority than this allow rule, it will only be applied for traffic that doesn’t match the allow rule. Finally, we deny all traffic between the frontend and backend subnets that wasn’t explicitly allowed above. These three rules at the bottom are added by default. You can’t change or delete them, but you can override them with the rules above, which is what we’ve done. To activate this NSG, you’d need to associate it with both the frontend and backend subnets.</p>
+<p>By default, the outbound rules allow all outgoing internet traffic. This could be dangerous as your VMs might accidentally leak sensitive information to the internet. You can add a security layer by using forced tunneling.</p>
+<p>With this configuration, all internet-bound traffic has to go through your on-premises network before going out to the internet. This gives you the opportunity to run this traffic through an inspection and auditing system that’s installed on-premises.</p>
+<p>The way to do this is pretty straightforward. You create a user-defined default route that points to the VPN gateway in your virtual network. Then, on the VPN gateway, you set the default site to the on-premises location where you want to redirect the traffic. If you’re using ExpressRoute rather than a site-to-site VPN, then instead you advertise a default route via the BGP peering sessions.</p>
+<p>Since forced tunneling can significantly slow down internet-bound traffic, you usually shouldn’t use it on frontend web servers. It’s more suitable for backend servers.</p>
+<p>And that’s it for security strategies.</p>
+<h1 id="Connectivity-for-Hybrid-Applications"><a href="#Connectivity-for-Hybrid-Applications" class="headerlink" title="Connectivity for Hybrid Applications"></a>Connectivity for Hybrid Applications</h1><p>In an earlier lesson, you learned how to make external connections from Azure, especially using ExpressRoute or a VPN. Those solutions are great, but if you only need external connectivity for a single application, then they’re probably overkill, because you need to modify your network to use them. Fortunately, there are much simpler, more focused solutions that you can use instead.</p>
+<p>Azure provides many services to help you build hybrid applications that combine Azure and on-premises resources. Which one you use depends on what you’re trying to do. Azure WCF Relay lets you expose Windows Communication Foundation services in on-premises applications to Azure. Azure Relay Hybrid Connections is a newer service that does the same thing for WebSockets and HTTP rather than WCF. You can also use Hybrid Connections from within Azure App Service. The Azure Data Management Gateway, now known as the Self-hosted Integration Runtime, lets you copy data between Azure and on-premises data stores. Finally, the Azure On-Premises Data Gateway connects on-premises data sources with Azure Analysis Services.</p>
+<p>I have to admit that I get the Data Management Gateway and the On-Premises Data Gateway confused sometimes, because their names sound very similar, even though they’re totally different. Maybe that’s why Microsoft renamed Data Management Gateway to Self-hosted Integration Runtime. Of course, the new name doesn’t really help you remember what it does either. Oh well, after you’ve worked with them for a while, you’ll remember which one is which.</p>
+<p>Azure Relay service allows you to expose on-premises applications to Azure without having to open a port on your firewall. The way this works is the server and the client communicate through an Azure Service Bus namespace. The on-premises application communicates with Service Bus over HTTP or HTTPS. Since these ports are already open on most firewalls, no changes are needed. Of course, both the server and the client need to include code that connects to Azure Relay.</p>
+<p>Originally, Azure Relay was called Service Bus Relay and it only worked with Windows Communication Foundation services. Microsoft renamed it WCF Relay, because they created an alternative feature that doesn’t use WCF. It’s called Hybrid Connections and it works with WebSockets and HTTP. WCF Relay and Hybrid Connections exist as side-by-side alternatives in the Azure Relay service.</p>
+<p>Microsoft considers WCF Relay to be a legacy service, though. If you have existing WCF-based applications, then WCF Relay is the way to go, but if you’re developing new applications, you should write them with WebSockets or HTTP instead and use Hybrid Connections. The biggest advantage of using WebSockets or HTTP is that they’re open standards, so you can use them in any language on any platform that supports them.</p>
+<p>Azure App Service has a Hybrid Connections feature as well, but it works slightly differently. Suppose you have an Azure app that needs to access an on-premises database. You’d have to install a Hybrid Connection Manager (or HCM) in the network where the database resides. It runs on Windows Server 2012 and higher. Both sides would still connect to Service Bus, but the on-premises side would connect through the HCM to get to Service Bus. This would set up a TCP tunnel between the app and the database. The connection would be over HTTPS. Authentication and authorization would be done using a shared access signature.</p>
+<p>By the way, if you already have a VPN connection between an Azure virtual network and an on-premises location, then App Service can use it through its VNet Integration feature. OK, on to the Self-hosted Integration Runtime (formerly known as the Data Management Gateway). This is an on-premises client that works with Azure Data Factory, so let’s go over how Data Factory works before diving into the Integration Runtime client.</p>
+<p>Data Factory is used to move and transform data. For example, suppose that every night you want to copy records from SQL Database to Data Lake Store, then run a Spark job on an HDInsight cluster to process that data, and finally, store the processed data in SQL Data Warehouse. You could automate this process by creating a Data Factory pipeline that consists of three activities, one for each step.</p>
+<p>Before creating the pipeline and activities, you’d need to define the data sources and sinks. First, you’d create a linked service for each data source. A linked service contains the connection information Data Factory will use to access the data. For example, the linked service for the input data would give the connection string for the SQL Database instance. Then you’d create a dataset that tells Data Factory which data to access. In this case, it would be the name of the table. You’d also need to create linked services and datasets for Data Lake Store and SQL Data Warehouse.</p>
+<p>Now you could create a pipeline with 3 activities in it, one to copy the data from SQL Database to Data Lake Store, one to spin up an HDInsight cluster and run a Spark job, and one to copy the output data to SQL Data Warehouse. Once the pipeline is ready, you could run it manually, but it would be much easier to schedule it to run every night automatically, which you could do by setting a schedule trigger.</p>
+<p>OK, so that’s how Data Factory normally works, but how do you get it to work with external data? That’s where the Self-hosted Integration Runtime comes in. You install it in your on-premises environment, register it with Azure, and connect it to your SQL Server instance. Then, when you create the linked service for the data source, you give it the connection details for the SQL Server instance, but you tell it to connect using the integration runtime.</p>
+<p>Data Factory supports two other integration runtimes as well. The Azure Integration Runtime is the default, so you don’t normally need to explicitly create it. The Azure-SSIS Integration Runtime lets you run SQL Server Integration Services packages on Azure. An SSIS package is actually kind of like a Data Factory pipeline. It contains a series of tasks to transform data. If you already have SSIS packages that you’ve been running locally, then this is a great way to lift and shift them to Azure.</p>
+<p>When you create an SSIS Integration Runtime, you are provisioning a cluster that can run SSIS packages. Once it’s provisioned, you can even use SQL Server Data Tools or SQL Server Management Studio to deploy packages to it. However, the SSIS integration runtime incurs charges while it’s running, so to save money, you can use Data Factory to start it, execute an SSIS package, and stop it. This is similar to how Data Factory spins up an HDInsight cluster to process data. If your SSIS packages need to access on-premises data, then you have to connect the integration runtime to a virtual network that’s connected to your on-premises environment.</p>
+<p>Alright, now we’ll move on to the Azure On-Premises Data Gateway. This is something you install onsite that will let Azure Analysis Services retrieve on-premises data. First, you install it as a Windows service. Then you register it with the Gateway Cloud Service. Next, you create a gateway resource in Azure. Finally, you connect your Azure Analysis Services servers to your gateway resource.</p>
+<p>Once you have it set up, your data models can access your on-premises data sources through the gateway resource, which goes through Azure Service Bus to reach the On-Premises Data Gateway, which connects to your data sources.</p>
+<p>As you’ve seen, there are usually better ways to connect specific on-premises resources to Azure than using a VPN or ExpressRoute. Another example of this is with domain services. Most Azure customers already have a locally-installed Active Directory Domain, so if you have a direct connection to Azure, then it might seem like a good idea to just connect your Azure VMs to your on-premises domain servers. Although that would work, it could potentially be unreliable or slow, especially over a VPN.</p>
+<p>A better solution is to use Azure Active Directory Domain Services. I won’t go into the details of synchronizing it with your on-premises domain, because that’s covered in our Active Directory course. I do want to point out a couple of things to watch out for when you’re joining an Azure VM to a domain, though. First, the VM needs to be in a virtual network that’s connected to the one where your managed domain resides. Otherwise, it won’t be able to join. Second, the user whose credentials you specify for joining the VM to the domain has to be a member of the Azure AD domain controller administrators group or it won’t work.</p>
+<p>And that’s it for hybrid application connectivity.</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>I hope you enjoyed learning about Azure’s network services. Let’s do a quick review of what you learned.</p>
+<p>An Azure virtual network has an IP address space and at least one subnet. IP addresses are assigned by an Azure DHCP server. VMs in a virtual network can communicate with each other using Azure-provided name resolution. You can provision your own DNS server in the vnet to resolve other addresses. Use Azure DNS Private Zones if you need custom domain names or name resolution between virtual networks. To accept inbound connections from the internet, assign public IP addresses to resources in a vnet. A virtual network service endpoint lets you extend the address space in your vnet to services that can’t reside in a vnet, such as Azure Storage and Azure SQL Database.</p>
+<p>Azure Load Balancer acts as a frontend that distributes incoming traffic to a pool of backend VMs. It supports TCP and UDP applications. By default, the load balancer sends a probe to each backend VM every 15 seconds. If a health probe fails, then the VM is removed from the pool. A public load balancer has a public IP address for internet-facing applications. When a VM initiates an outbound connection, the load balancer performs network address translation. An internal load balancer doesn’t have a public IP address.</p>
+<p>The other way to provide load balancing is to use Azure Application Gateway, which operates at layer 7 of the network stack. It can route based on the URL, redirect all HTTP requests to HTTPS, serve traffic to multiple websites, support WebSockets, and handle SSL offloading.</p>
+<p>To provide load balancing across multiple regions, use Azure Traffic Manager, which redirects traffic at the DNS level. Performance routing directs a request to the closest region. Priority routing redirects requests to the next best region if there’s an outage. Weighted routing distributes requests either evenly among the endpoints or according to weights. Geographic routing directs a request to a specific region based on the client’s location.</p>
+<p>ExpressRoute provides a redundant layer 3 connection between your on-premises location and Azure. You can connect using a colocation provider, a WAN provider, or a point-to-point ethernet provider. Routing is handled using BGP.</p>
+<p>To connect over the internet instead, deploy an Azure VPN Gateway in a virtual network. In a site-to-site configuration, you create an IPsec tunnel to the gateway through an on-premises VPN device. In a multi-site configuration, there’s a VPN device at each remote location, but still only one VPN Gateway in the Azure virtual network. Point-to-site connections use certificate-based authentication instead of a VPN device. This configuration is intended for individual computers or devices.</p>
+<p>Multi-site and point-to-site configurations have to use route-based routing, which is dynamic. Site-to-site connections can use either route-based or policy-based routing, which is static. Policy-based routing requires more maintenance, so it should only be used when necessary. Also, a VPN gateway can only be configured to support one type of routing, so a site-to-site configuration that uses policy-based routing can’t share a VPN gateway with multi-site or point-to-site configurations. If you have an ExpressRoute connection, you can set up a site-to-site connection as a failover in case your primary connection goes down.</p>
+<p>Virtual network peering allows instances in two virtual networks to communicate with each over the Microsoft backbone network, even if they’re in different regions.</p>
+<p>Each subnet in a virtual network has a route table with system default routes in it. You can override these routes with custom routes, also known as user-defined routes.</p>
+<p>If you put an Azure Kubernetes Service cluster in a subnet of a virtual network, then the nodes in the cluster can use the Azure Container Networking Interface plugin to communicate with the rest of the network.</p>
+<p>The Web Application Firewall that comes with the Azure Application Gateway protects against attacks, such as SQL injection and cross-site scripting. You can run it in either detection or prevention mode. Alternatively, you could use a network virtual appliance from a third-party vendor. These appliances should be put in a demilitarized zone that keeps unwanted traffic from getting through to your backend network.</p>
+<p>A network security group contains rules that allow or deny traffic to resources in a subnet of a virtual network. You can also apply NSGs to the network interfaces of specific VMs if they were deployed using Resource Manager.</p>
+<p>Service tags simplify your rules. For example, the VirtualNetwork tag includes the virtual network address space, all connected on-premises address spaces, and all peered virtual networks or virtual networks connected through a VPN gateway.</p>
+<p>By default, the outbound rules allow all outgoing internet traffic. To force all internet-bound traffic to go through an inspection and auditing system first, use forced tunneling to your on-premises network.</p>
+<p>Azure WCF Relay lets you expose Windows Communication Foundation (or WCF) services in on-premises applications to Azure without having to open a port on your firewall. Azure Relay Hybrid Connections is a newer service that does the same thing for WebSockets and HTTP rather than WCF. You can also use Hybrid Connections from within Azure App Service, but you have to install a Hybrid Connection Manager in the network where the database resides. The Azure Data Management Gateway, now known as the Self-hosted Integration Runtime, lets Azure Data Factory copy data between Azure and on-premises data stores. The Azure On-Premises Data Gateway connects on-premises data sources with Azure Analysis Services.</p>
+<p>To copy on-premises data using Data Factory, first install the Self-hosted Integration Runtime on-premises, register it with Azure, and connect it to your local data source. Next, create a linked service that accesses the data source via the integration runtime. Also create a linked service for the Azure data sink. Then create datasets for the data source and data sink. Finally, create a pipeline and a copy activity.</p>
+<p>An Azure-SSIS Integration Runtime is an Azure cluster that lets you run SQL Server Integration Services packages.</p>
+<p>To join a VM to a domain, make sure it’s in a virtual network that’s connected to the one where your Azure Active Directory managed domain resides.</p>
+<p>Now you know how to design Azure virtual networks; design external connectivity for Azure virtual networks; design network security strategies for Azure; and design connectivity for hybrid Azure applications.</p>
+<p>To learn more about Azure’s network services, you can read Microsoft’s documentation. Also watch for new Microsoft Azure courses on Cloud Academy, because we’re always publishing new courses. Please give this course a rating, and if you have any questions or comments, please let us know. Thanks and keep on learning!</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/90/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/90/">90</a><span class="page-number current">91</span><a class="page-number" href="/page/92/">92</a><span class="space">&hellip;</span><a class="page-number" href="/page/274/">274</a><a class="extend next" rel="next" href="/page/92/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2736</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">72</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
