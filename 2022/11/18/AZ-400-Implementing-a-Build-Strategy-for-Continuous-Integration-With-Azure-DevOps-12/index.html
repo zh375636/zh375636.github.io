@@ -20,13 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="IntroductionWelcome to the Implementing a Build Strategy for Continuous Integration With Azure DevOps course. My name is Cory W. Cordell and I’ll be your instructor for this course. I’ve worked as a D">
+<meta property="og:type" content="article">
 <meta property="og:title" content="AZ-400-Implementing-a-Build-Strategy-for-Continuous-Integration-With-Azure-DevOps-12">
 <meta property="og:url" content="https://example.com/2022/11/18/AZ-400-Implementing-a-Build-Strategy-for-Continuous-Integration-With-Azure-DevOps-12/index.html">
 <meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="IntroductionWelcome to the Implementing a Build Strategy for Continuous Integration With Azure DevOps course. My name is Cory W. Cordell and I’ll be your instructor for this course. I’ve worked as a D">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-19T00:37:45.000Z">
-<meta property="article:modified_time" content="2022-11-19T00:37:46.000Z">
+<meta property="article:modified_time" content="2022-11-27T15:15:58.000Z">
 <meta property="article:author" content="Hang Zhang">
 <meta name="twitter:card" content="summary">
 
@@ -208,9 +210,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-18 20:37:45 / Modified: 20:37:46" itemprop="dateCreated datePublished" datetime="2022-11-18T20:37:45-04:00">2022-11-18</time>
+              <time title="Created: 2022-11-18 20:37:45" itemprop="dateCreated datePublished" datetime="2022-11-18T20:37:45-04:00">2022-11-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-27 11:15:58" itemprop="dateModified" datetime="2022-11-27T11:15:58-04:00">2022-11-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AZ-400/" itemprop="url" rel="index"><span itemprop="name">AZ-400</span></a>
+                </span>
             </span>
 
           
@@ -238,7 +255,219 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Welcome to the Implementing a Build Strategy for Continuous Integration With Azure DevOps course.</p>
+<p>My name is Cory W. Cordell and I’ll be your instructor for this course. I’ve worked as a DevOps engineer and architect on both greenfield and existing DevOps integrations for small to large companies across the globe in an effort to establish DevOps culture and best practices.</p>
+<p>I’ve also worked with <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> DevOps for the past four years and have experienced firsthand its trials and growth as it continues to develop into a robust end-to-end planning and automation tool.</p>
+<p>I look forward to accompanying you along your endeavor to learn more about Azure DevOps.</p>
+<p>If you have a desire to utilize Azure DevOps for your CI builds, this is a course for you.</p>
+<p>This course is designed to teach you about some of the Azure DevOps concepts in order to optimize end-to-end continuous integration.</p>
+<p>In this course, you will learn triggering builds for various use cases, making parallel build work for you, and setting up automated builds.</p>
+<p>To follow along in this course you will need an active Azure DevOps account, a good understanding of the software development lifecycle, to know how pull requests work, an understanding of continuous integration and continuous development best practices, knowledge of creating an Azure DevOps Pipeline, familiarity with Azure Pipelines YAML files, and Azure Pipelines stages, jobs, tasks, and conditions.</p>
+<p>If you need help for any reason, please contact <a href="mailto:support@cloudacademy.com">support@cloudacademy.com</a>. After completing, don’t forget to rate the course.</p>
+<h3 id="Lectures"><a href="#Lectures" class="headerlink" title="Lectures"></a>Lectures</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/build-tools/">Build Tools</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/build-triggers/">Build Triggers</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/parallel-builds/">Parallel Builds</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/hybrid-builds/">Hybrid Builds</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/conclusion/">Conclusion</a></li>
+</ul>
+<h1 id="Build-Tools"><a href="#Build-Tools" class="headerlink" title="Build Tools"></a>Build Tools</h1><p>In this section, we will take a look at some popular build tools and then some recommendations on how to choose a build tool.</p>
+<p>Build tools are invaluable when it comes to automating repeatable processes associated with a continuous integration. There are several options to choose from and the number of options is increasing.</p>
+<p>The first question that may come to mind is what is the best build tool? That depends a lot on the use case and preference. No build tool is perfect but considering the tools that check off the majority of your criteria is a good place to start. Perhaps the most defining characteristic of a build tool is whether it is entirely cloud-based or can be hosted on-premise.</p>
+<p>Let’s take a quick look at some of the more popular build tools out there today.</p>
+<p>Jenkins has been around a long time and offers the ability to run the tool just about anywhere even as a docker container on your local system as we’ll see later. Jenkins has a portal base interface and has the option of using declarative style or pile-on definitions via Groovy.</p>
+<p>Bamboo is an Atlassian product which is a paid platform. It has good integration with some of their other popular tools, Jira and Bitbucket.</p>
+<p>Circle CI offers options between a cloud-based platform or on-premise and has good support.</p>
+<p>Drone is a relatively new tool with some innovative features such as easy plugins.</p>
+<p>Azure DevOps is truly an end-to-end dev ops tool. It also provides a lot of integration with <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> services as well as planning and testing frameworks.</p>
+<p>There are many more build tools out there. I urge you to explore and see what works best for your use cases.</p>
+<p>Let’s go over some guidelines that may help you pick a build tool.</p>
+<p>When it comes to build tools, like most things, it isn’t necessarily all about the tool but also about what else these tools have to offer. Take into consideration the peripheral features of the tool.</p>
+<p>Do you need a build tool that is quick to learn so that other teams can come up to speed quickly? Or do you need something that is more robust with plenty of options and flexibility at the expense of a greater time investment?</p>
+<p>Also consider professional support. It may be well worth the investment.</p>
+<p>There are many cloud-based CI tools but if you need something that works on-premise then make sure to factor that in.</p>
+<p>Greenfield DevOps or revamping may be a good time to consider a tool with top planning integration.</p>
+<p>It may also be beneficial to consider the monetary investment or at least try a tool for free in order to make a better-informed choice.</p>
+<p>Whatever the case, it’s up to you to determine the requirements and find a tool that satisfies as many of those as possible.</p>
+<h3 id="Lectures-1"><a href="#Lectures-1" class="headerlink" title="Lectures"></a>Lectures</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/introduction/">Introduction</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/build-triggers/">Build Triggers</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/parallel-builds/">Parallel Builds</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/hybrid-builds/">Hybrid Builds</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/conclusion/">Conclusion</a></li>
+</ul>
+<h1 id="Build-Triggers"><a href="#Build-Triggers" class="headerlink" title="Build Triggers"></a>Build Triggers</h1><p>Build triggers initiate builds when some designated action or actions are performed and any required criteria is met.</p>
+<p>We will cover triggers in detail over the next several minutes. For context, here is a trigger example. The snippet shows all of the types of triggers that can be defined in the azure-pipelines.yml file, branch triggers, tag triggers, path triggers, and pull request triggers.</p>
+<p>Triggers are evaluated before the build runtime since they determine if the build is run at all. Thus, variables and other event data are not available when the build is triggered.</p>
+<p>There are two categories of triggers, automated and manual.</p>
+<p>Automated triggers are event or schedule based and are essential when automation is desired. Automated triggers are usually accompanied by supporting criteria, such as a specific branch or directory being updated.</p>
+<p>Manual triggers are a way to start a CI build process without using an automated trigger. Manual triggers can be performed at will and without meeting automated trigger criteria. Builds can be manually started from the <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> DevOps Pipelines portal, the Azure CLI, or the Azure DevOps API.</p>
+<p>Automated build triggers can be further refined into types:</p>
+<ul>
+<li>Repository triggers start a build based on a repository commit, or a pull request being initiated or updated.</li>
+<li>Schedule triggers can be planned to start builds at a predetermined time or interval.</li>
+<li>Pipeline triggers can kick off another pipeline upon completion with optional criteria such as successful or failed.</li>
+</ul>
+<p>Triggers can also have criteria defined that will further refine when a trigger kicks off a build:</p>
+<ul>
+<li>Branch or tag is used to include or exclude branches and&#x2F;or tags that can trigger the build.</li>
+<li>Path is used to include or exclude a directory or file path that can trigger a build.</li>
+<li>Pull request is used to specify a list of branches as the pull request target to include or exclude to determine whether to kick off a build when a pull request is opened or updated.</li>
+</ul>
+<p>There are also some additional options that can be associated with triggers:</p>
+<ul>
+<li>Batch is a boolean value indicating whether to start another build while another is running for the same branch.</li>
+<li>None will disable any automatic triggers, making the only way to run a build, manually.</li>
+</ul>
+<p>There are some important distinctions between what triggers can be used in conjunction with the resources being used as the trigger. Most notably are the differences between the pull request triggers when used with the various version control systems and Git hosts.</p>
+<p>For instance, Azure Git Repositories use branch policies to control pull request triggers. Pull requests do not apply to Team Foundation Version Control.</p>
+<p>Next, we will look at strategy around using build triggers. Careful design of trigger strategy can greatly impact overall goals. What does that mean exactly?</p>
+<p>Begin by asking a simple question, when should this build run? Most commonly, the answer is when the code changes.</p>
+<p>Another often-used trigger is when a pull request is initiated or updated. This helps ensure that code passes checks prior to merging to a main branch, provided the pipeline is set up properly.</p>
+<p>A somewhat less common scenario is to start a build at a certain time or interval. This could be used to run daily tasks or to bulk build all repository changes at the end of day.</p>
+<p>It is also possible to trigger a loosely coupled build based off of the completion of another pipeline. A good example would be to have a build that serves as a base for other builds, and then all upstream builds could use the dependency in a new build.</p>
+<p>Whatever the need, there is a way to automate the CI build to ensure code quality and availability is always on par.</p>
+<p>Branch triggers are the most common type of repository trigger. Triggers are specified in the azure-pipelines.yml file with the keyword trigger. Branch triggers specify which branches should start a build when updated.</p>
+<p>The default configuration for a branch trigger is all branches. This means that a push to any branch will start a build for the branch. This will also trigger on branches when they are first created. For example, if a new branch is created from master on the git host or locally and pushed, a build will be started for the new branch.</p>
+<p>This default behavior can also explicitly be defined using an asterisk. Since an asterisk is a reserved character in YAML, any text beginning with an asterisk will need to be quoted.</p>
+<p>Trigger definitions are defined as an array of branches. This allows multiple branches to be included with this syntax.</p>
+<p>This simplified syntax works only when we only want to include branches. More verbose syntax can be used to configure more options.</p>
+<p>Adding the keyword branches under triggers and then include under branches is equivalent to what we just had.</p>
+<p>The exclude keyword can also be used in the more verbose syntax. This works well when all branches except the ones listed should trigger a build.</p>
+<p>Include and exclude can be used in conjunction, but specifying either include or exclude, implies that any branches not listed are excluded if include is used, and included if exclude is used in the filter.</p>
+<p>For instance, if master, dev, and feature branches exist and only the master branch is listed under include, then dev and feature branches are implicitly excluded. The same goes for master being listed under exclude, dev and feature branches are implicitly included.</p>
+<p>Using include and exclude appropriately allows us to use the shortest path, but it also allows for flexibility when used in conjunction with wildcards. Wildcards allow specifying branches where more than one possibility may exist.</p>
+<p>There are two wildcards, an asterisk is used for zero or more characters, and a question mark, a single character.</p>
+<p>It’s a common practice to name all feature branches with the prefix feature&#x2F;. All branches that begin with the prefix feature&#x2F; can be specified using an asterisk wildcard.</p>
+<p>The question mark can be used to stand in for a single character. For instance, if there are multiple branches that begin with wip- followed by a single digit then the filter could match on wip-?.</p>
+<p>The wildcards can also be used in the middle or the beginning of a branch name. Just remember that the text will need to be quoted if beginning with a special character.</p>
+<p>Let’s look at more advanced use case where both include and exclude are used with wildcards. All feature branches are included in the branch triggers except the excluded branches that match features&#x2F;wip-?-signin-form-*.</p>
+<p>Tags can also serve as triggers. They can be specified under the branches keyword and included or excluded just like branch names using Git syntax for tags.</p>
+<p>As an alternative, tags can be included and excluded under their own keyword at the same level as branches without the Git syntax.</p>
+<p>In either case, the same rules apply to using wildcards with tags as they do with branches.</p>
+<p>By default, tags do not trigger pipelines. So, they must have a definition, or the default behavior will stand. Being able to include or exclude branches as triggers is a powerful feature, but it doesn’t allow for filtering across branches. It is very useful to be able to trigger or not trigger a build based on what files were changed.</p>
+<p>For instance, triggering a build when only the README file is updated may be a waste of resources. The README is at the root of the repository, so it can be added without a directory path. Paths are also case sensitive.</p>
+<p>Now changes to the README on any branch, will not trigger a build, however, if any files outside the exclusion are changed in the same push, then the build will still trigger, and that’s more often what we want.</p>
+<p>The default behavior for paths is to include the root of the repository. This is equivalent to using the asterisk wildcard under include. This means that any files that change will trigger a build, provided that the branch requirement is met.</p>
+<p>In fact, one requirement of using paths is that branch triggers are defined.</p>
+<p>Entire directories can also be included or excluded. For example, a directory called development can be added to the include path.</p>
+<p>Wildcard rules are different for paths than that of tags and branches. An optional asterisk can be added to the end of the path, however, it is equivalent to just specifying the directory. The asterisk is only allowed to be the last character and question marks are not allowed at all.</p>
+<p>Include and exclude can be used together. A path can be excluded and child paths included since the path reaches deeper into the file structure. For instance, a directory named development can be excluded but its subdirectory named main can be included.</p>
+<p>Branches, tags, and paths can be used together but special consideration must be applied.</p>
+<p>Tags and paths are evaluated as an or when used with branch filters, thus, if a branch is a trigger and either a tag or path is included, either implicitly or explicitly, then the build is run, provided the criteria is met.</p>
+<p>For instance, if the branch master is updated with tag version 3.1, then the build is run regardless of the path criteria. The same goes for the development&#x2F;main path being met and the tag criteria not.</p>
+<p>In another scenario, if the master branch is updated and neither the path or the tag criteria is met then the build will not run.</p>
+<p>Lastly, in the case that the branch criteria is not met, like the test branch is updated, then the build will not run because the test branch is excluded regardless of any tag or path criteria. </p>
+<p>Paths defined for Azure DevOps Repos must be done in the portal. Although GitHub is being used for this course, it is worth showing the Azure path configuration.</p>
+<p>I’ll traverse over to the Branches page for the project git repository that was created with the project. Clicking on the Options menu and then selecting the branch policies item will take us to the branch policies for the master branch on this repository. A build policy can be added to the build validation. Path filters can be added to the Path filter textbox. All paths are relative to the root, just like in the YAML. Separate paths with a semicolon and exclude paths with the exclamation point before the path. Remember that paths are case sensitive.</p>
+<p>I can’t save the changes because a build pipeline is required in which to apply the policy. Since I have not made a pipeline that utilizes the Azure Git repository, then I won’t be able to save my changes. This is something to be aware of before trying to define paths.</p>
+<p>Pull request triggers are used to start a build when the pull request target branch matches the PR trigger criteria. Pull request triggers and normal triggers can be defined in the same Azure pipelines file, but it isn’t required.</p>
+<p>Pull request triggers help ensure that the branch intended to be merged with the target branch doesn’t break the build. This is done by merging the branch into the target branch outside of the git host, and then running that through the build process. By default, if the build does not fail then it will be deemed as valid, and can be permanently merged to the target branch, provided that review criteria is met.</p>
+<p>As a safeguard against allowing non-validated code to be merged, any updates will invalidate the pull request build. In regard to the build, it will need to be run again in order to become valid.</p>
+<p>The PR trigger structure is very similar to the normal trigger structure.</p>
+<p>By default, all pull requests are triggers. This is equivalent to placing an asterisk under the pr keyword.</p>
+<p>A PR can be set to include or exclude branches and paths but not tags, and the same wildcard rules also apply.</p>
+<p>One difference between normal triggers and pull request triggers is the autoCancel boolean.</p>
+<p>The default autoCancel value is true, which will invalidate any builds where the code has changed. The autoCancel keyword can be specified with a false value so that changes to files after the pull request is opened won’t invalidate the build. In other words, if the pull request build passes and then changes are made to the pull request code, then the source branch will still be able to merge with the target. Leaving this as the default will help ensure the integrity of the target branch.</p>
+<p>For reviewers of pull requests, it may be convenient to perform some actions within the pull request’s detail page, such as manually running a build by issuing a comment on the pull request.</p>
+<p>For example, a command to run a pull request’s associated Azure Pipeline can be accomplished with &#x2F;AzurePipelines run in the pull request’s comments. &#x2F;azp can be used in place of &#x2F;AzurePipelines for brevity.</p>
+<p>There are a few other commands and use cases that I urge you to explore.</p>
+<p>Unfortunately, these are specific to the Git host, so if available and you would like to use them, then further research is warranted.</p>
+<p>It may be that a build should never be run automatically.</p>
+<p>Specifying trigger none will disable automatic triggers, effectively making this pipeline a manual only start regardless of the branch, tag, or path.</p>
+<p>Pull request triggers can also be set to none, so regardless of the pull request target, the build will not start automatically.</p>
+<p>You may have foreseen an issue where starting a build every time code is pushed can tax resources. This is especially wasteful when not all code pushes need to run through the build process.</p>
+<p>There are a couple of ways to mitigate this scenario, skip comments and batch builds.</p>
+<p>Builds can be skipped by adding special text to the commit comment. Here are the possible variations.</p>
+<p>For instance, within the message for the git commit, adding the bracketed skip ci text will skip the build.</p>
+<p>This is very useful for work in progress, also known as WIP, pushes.</p>
+<p>Another way to take better advantage of resources is to batch them. Normally, each push that matches the trigger criteria for a branch starts a new build. This is great for individualized feedback but if pushes are made in rapid succession, it could fill the build queue, depending on the number of agents and the build time required.</p>
+<p>Builds on the same branch can be batched to conserve resources by using the keyword batch. By default, batch is false. Specifying a value of true will enable batch builds.</p>
+<p>Once enabled, if a build for a branch is not in progress, then one will be started, provided the branch trigger criteria is met. If code is pushed again before the prior build completes, then the build will not start until the prior one finishes. So far, this may be a disadvantage if more than one agent is available. The potential resource conservation comes into play when more pushes are made before the initial build completes.</p>
+<p>Once the blocking build has completed, then all pushes that have accumulated for the branch will be run together. Effectively, this will run the last push on the branch.</p>
+<p>This may not be the desired behavior if build feedback is needed for each push. Using skip ci may be a better option in this case.</p>
+<h3 id="Lectures-2"><a href="#Lectures-2" class="headerlink" title="Lectures"></a>Lectures</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/introduction/">Introduction</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/build-tools/">Build Tools</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/parallel-builds/">Parallel Builds</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/hybrid-builds/">Hybrid Builds</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/conclusion/">Conclusion</a></li>
+</ul>
+<h1 id="Parallel-Builds"><a href="#Parallel-Builds" class="headerlink" title="Parallel Builds"></a>Parallel Builds</h1><p>Proper utilization of multi-agent or parallel builds is one of the most effective optimizations that can be performed. With careful strategy, significant time can be saved. However, as often the case, such efficiency comes at the cost of greater complexity and more stringent requirements. In this section, we will cover the criteria that needs to be met to enable parallel builds and the application of parallelism in <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> DevOps pipelines.</p>
+<p>Azure Pipelines wants to run builds in parallel and will do so unless the conditions are not agreeable.</p>
+<p>Let’s look at what criteria must be met to allow parallelism.</p>
+<p>Since build agents do the heavy lifting, more than one build agent is required if parallelism is desired. In fact, not only can’t a build be optimized to run in parallel, only one build or deployment can be run at one time with a single agent.</p>
+<p>In relation to having more than one agent for an account, more than one agent must be available for the build to run in parallel. For example, an account could have five agents, but if four are busy running other builds or deployments, then only one is available for the build.</p>
+<p>Also, the Azure Pipelines YAML file must be structured to run in parallel. This means that the build steps must be able to be broken into distinct jobs.</p>
+<p>Furthermore, the number of jobs that can be run in parallel are limited by the availability of agents to run those jobs. For instance, if a build has four jobs that can be run concurrently, but only three agents are available, then only three jobs will be run in parallel at one given time unless another agent becomes free.</p>
+<p>Given that jobs run in parallel when the agent availability criteria is met, breaking the pipeline down into multiple jobs is the only direct correlation between the Azure Pipelines’ YAML and parallelism.</p>
+<p>Simply adding more jobs, each with at least one step, is enough to support multi-agent builds for a pipeline.</p>
+<p>Adding more than one stage will also accomplish parallelism since, inherently, a stage has at least one job.</p>
+<p>Stages and jobs can be added to further optimize the pipeline where it makes sense to do so.</p>
+<p>There are often times when parallelism isn’t desired. This could be due to a dependency or the overhead of running a job in parallel.</p>
+<p>Simply adding the dependsOn syntax under the job will prevent the job from running before the dependency. For example, adding dependsOn under the test job and specifying the validate job will ensure that the validate job is completed prior to running the test job.</p>
+<p>The same can be accomplished when using stages. Just make sure the syntax is at the proper level.</p>
+<p>Typically, the dependsOn syntax is placed close to the top of the job or stage to make the code logic more clear.</p>
+<h3 id="Lectures-3"><a href="#Lectures-3" class="headerlink" title="Lectures"></a>Lectures</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/introduction/">Introduction</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/build-tools/">Build Tools</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/build-triggers/">Build Triggers</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/hybrid-builds/">Hybrid Builds</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/conclusion/">Conclusion</a></li>
+</ul>
+<h1 id="Hybrid-Builds"><a href="#Hybrid-Builds" class="headerlink" title="Hybrid Builds"></a>Hybrid Builds</h1><p>Hybrid builds make it possible to perform parts of a build on one or more platforms. This may be due to security requirements, proprietary software, resource allocation, tooling availability, compliance requirements, optimization strategy, or any multitude of other reasons.</p>
+<p>For example, security concerns may prevent building sensitive code outside of private infrastructure. However, the cloud would be beneficial for platform testing. With hybrid builds, application code can be built on-premise and the artifact pushed to storage. From there, public infrastructure can be utilized for further testing and deployment.</p>
+<p>Having a good design is paramount with any build, but hybrid builds require more planning due to the complexity of using more than one platform.</p>
+<p>Isolating what parts of the build should be done on which platform is a good first step. The primary consideration for segregation is the level of interdependence. Each build will need to achieve a finish state that results in some complete action or artifact.</p>
+<p>For example, a scenario where an application pipeline needs to start on-premises for security reasons but for optimization, the build process utilizes the public cloud to perform testing and deployment is a good use case. The build process starts the application build on-premises and produces an artifact as a docker image. The image is pushed into a private docker registry. From there, the public cloud is engaged to do integration, stress, and platform testing. If successful, the docker image is promoted for deployment.</p>
+<p>Breaking down this process and identifying definite stages of transition is a good start. The other consideration is the trigger to start the testing process. For this example, there are multiple options for triggering the testing phase. The docker registry could be set to initiate upon a new push; a specific branch, tag, or comment could be used in conjunction with a Git repository; or triggering the pipeline directly using an API call at the end of the build phase.</p>
+<p>There are many ways to accomplish hybrid builds. One such way is to use a pipeline tool, like Jenkins, on-premise. The tool can be configured to trigger on a push to a specific branch or branches. The result from that build could then further be processed in <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> DevOps.</p>
+<p>Let’s look at how this may be implemented. I’ve created a Jenkins file with some mock stages and steps to illustrate how a build might be configured. The Jenkins file will test the code, build the artifact, and then store the artifact. The last stage is to kick off any downstream automation.</p>
+<p>In this case, an Azure pipeline’s kickoff is being locked. Typically, any failure at any point would result in a terminated failed build. This pipeline is counting on that behavior. The downstream automation should never occur if an error exists prior to this stage. The trigger for the succeeding build is usually the most technical part of a hybrid build. Careful consideration must be given in order to execute the handoff properly. Here, the Azure DevOps API or the Azure CLI could be used to kick off the Azure pipeline’s build.</p>
+<p>Let’s look at the Azure Pipelines file to round out this hybrid design. The Azure Pipelines file contains the trigger specification, the pool, and the testing stage with parallel capable jobs for integration and stress testing. Of course, this is only an example. Much more can be done here.</p>
+<h3 id="Lectures-4"><a href="#Lectures-4" class="headerlink" title="Lectures"></a>Lectures</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/introduction/">Introduction</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/build-tools/">Build Tools</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/build-triggers/">Build Triggers</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/parallel-builds/">Parallel Builds</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/conclusion/">Conclusion</a></li>
+</ul>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>Automation build tools are extremely powerful but can be complex. Putting forth the effort in learning to use <a target="_blank" rel="noopener" href="https://cloudacademy.com/library/azure/">Azure</a> DevOps and developing the ability to design and implement effective and efficient pipelines to automate tasks will pay dividends.</p>
+<p>Let’s do a brief review of what was covered and pull the individual pieces together.</p>
+<p>A good place to start is with build tools. There are many pipeline tools available today. Each has associated characteristics that may or may not be desirable. Some can be run on-premises. Others may have professional support. Whatever criteria must be met, due diligence will need to be done to find one that fits your use case the best.</p>
+<p>Azure DevOps is a robust, end-to-end planning, testing, and pipeline tool. Azure DevOps Pipelines subscribes to the configuration as code convention by using an Azure Pipelines YAML file to declare the build criteria and implementation.</p>
+<p>Let’s take a look at an Azure Pipelines YAML file that has been prepared.</p>
+<p>At the top of the file, we can find the trigger declaration. The pipeline is configured to trigger on the master and release branches. Specifying branches to include overrides the default of including all branches.</p>
+<p>Triggers allow builds to be automatically started or excluded from starting based on matching criteria.</p>
+<p>The branches syntax is not required if simply including branches to trigger on, however, it is required when options are desired such as exclude for branches and the use of paths and tags. </p>
+<p>Wildcards can be used for pattern matching. The asterisk matches zero or more characters and the question mark, which is not used in this example, matches a single character.</p>
+<p>By using include, implicitly all other branches not listed or matched are excluded. The same goes for exclude when used. All other branches not listed are implicitly included.</p>
+<p>Paths allow file paths to be included or excluded. Any specified path also encompasses children of the specified directory, if specifying a directory. The default is to include root but this declaration has excluded development. By reaching deeper into the file structure, the directory main under development can be included. Everything else under development is excluded. </p>
+<p>Tags can also be specified either under branches using git syntax or under the tags object. All tags are included here, which is converse to the default.</p>
+<p>Keep in mind that branch conditions must be a match for the build to run and if tags or paths are specified, one of those must have criteria that matches for the build to run.</p>
+<p>Pull request triggers allow branches and paths to be specified. This only applies to builds when pull requests are involved. Branches that are the target of the pull request, meaning the branch being merged into, can be specified to include or exclude. Although wildcards are not used here, they are very much applicable.</p>
+<p>Paths are specified to include or exclude as well. The pull request paths are not required to be the same as the ones specified under normal trigger paths. It just happens to be the case in this example. The default is to include all pull request branches and the root path. Tags are not allowed in the pull request trigger specification.</p>
+<p>Further down the file are the declared steps to be run. These steps can be logically grouped under jobs. Those jobs can be further grouped into stages. By default, every pipeline has one stage and one job. Although not the case in this example, if only one stage and job are needed then the syntax to explicitly define those can be omitted.</p>
+<p>Here, there are two stages: validate_and_test and build_and_archive. Since there are multiple jobs, this would run in parallel if more than one agent is available and the dependsOn syntax wasn’t used to force the builds_and_archive job to wait for the validate_and_test job to successfully complete.</p>
+<p>The dependsOn syntax can be used for jobs or stages. It is useful for not only establishing dependencies but to also optimize the build. For example, there may be a case where a job could be run in parallel but the overhead of doing so is a detriment to the build. In that case, forcing the build to be sequential would conserve resources.</p>
+<p>Chain of result is also a consideration. Build steps typically use the results from prior steps to operate upon. Using more than one build agent means that jobs would either need to be completely independent or some other mechanism must be used to provide context from one job to another.</p>
+<p>For example, the initial job for a pipeline tests and builds code, the next step may be to run integration tests on the built code. That could be done within the same job or it could be done in a separate job. If done in a separate job then the built application artifact would need to be made available to the downstream jobs. This could be easily done by storing the artifact at the end of the initial build job and then retrieving the artifact for each successive build.</p>
+<p>In fact, often, not only does the code artifact need to be stored, configuration details and metadata need to be promoted. Artifact storage is certainly applicable to these details also. This data can be written to one or more files and then stored as one or more artifacts for later consumption.</p>
+<p>These principles also apply to hybrid builds since hybrid builds are essentially build jobs performed across multiple platforms.</p>
+<p>Hybrid builds can be started on one platform and then finished on another platform, such as using Jenkins to build the artifact and then using Azure DevOps to thoroughly test the artifact. </p>
+<p>The build process needs to be broken into distinct jobs, while keeping in mind the criteria that needs to be met that prompted the utilization of hybrid builds.</p>
+<p>There are several reasons for hybrid builds. This may be due to security requirements, proprietary software, resource allocation, tooling availability, compliance requirements, optimization strategy, or any multitude of other reasons.</p>
+<p>One of the most important design items for hybrid builds is how the builds will be triggered. Most commonly this is done with hooks, Git triggers, or API calls.</p>
+<p>Careful consideration must be given to what criteria defines a trigger, when it should trigger, how it should trigger, and what actions, if any, need to be performed upon failure of the build at critical points. This will ensure that the build process runs smoothly between platforms.</p>
+<p>By understanding the advantages and limitations of build tools and applying the principles and techniques covered with build triggers, parallel builds, and hybrid builds, you will be well on your way to providing a foundation for a secure, repeatable, auditable, and complete continuous integration solutions for your projects.</p>
+<h3 id="Lectures-5"><a href="#Lectures-5" class="headerlink" title="Lectures"></a>Lectures</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/introduction/">Introduction</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/build-tools/">Build Tools</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/build-triggers/">Build Triggers</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/parallel-builds/">Parallel Builds</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloudacademy.com/course/implementing-a-build-strategy-for-continuous-integration-with-azure-devops/hybrid-builds/">Hybrid Builds</a></li>
+</ul>
+
     </div>
 
     
@@ -319,6 +548,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lectures"><span class="nav-number">1.0.1.</span> <span class="nav-text">Lectures</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Build-Tools"><span class="nav-number">2.</span> <span class="nav-text">Build Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lectures-1"><span class="nav-number">2.0.1.</span> <span class="nav-text">Lectures</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Build-Triggers"><span class="nav-number">3.</span> <span class="nav-text">Build Triggers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lectures-2"><span class="nav-number">3.0.1.</span> <span class="nav-text">Lectures</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Parallel-Builds"><span class="nav-number">4.</span> <span class="nav-text">Parallel Builds</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lectures-3"><span class="nav-number">4.0.1.</span> <span class="nav-text">Lectures</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hybrid-Builds"><span class="nav-number">5.</span> <span class="nav-text">Hybrid Builds</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lectures-4"><span class="nav-number">5.0.1.</span> <span class="nav-text">Lectures</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">6.</span> <span class="nav-text">Conclusion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lectures-5"><span class="nav-number">6.0.1.</span> <span class="nav-text">Lectures</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -341,13 +571,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">72</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

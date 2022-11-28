@@ -348,7 +348,7 @@
 <p>If you haven’t already set up access logs for your bucket, then here are the commands you need to use. First create a bucket to hold the logs. Remember to change “ca-example-logs” to your own log bucket name.</p>
 <p>gsutil mb gs:&#x2F;&#x2F;ca-example-logs</p>
 <p>Then you have to give Google Cloud Storage WRITE permission so it can put logs in this bucket.</p>
-<p>gsutil acl ch -g <a href="mailto:&#99;&#108;&#111;&#117;&#x64;&#45;&#x73;&#x74;&#x6f;&#114;&#97;&#x67;&#101;&#45;&#97;&#110;&#97;&#108;&#x79;&#x74;&#x69;&#99;&#x73;&#x40;&#x67;&#x6f;&#111;&#x67;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#99;&#108;&#111;&#117;&#x64;&#45;&#x73;&#x74;&#x6f;&#114;&#97;&#x67;&#101;&#45;&#97;&#110;&#97;&#108;&#x79;&#x74;&#x69;&#99;&#x73;&#x40;&#x67;&#x6f;&#111;&#x67;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a>:W gs:&#x2F;&#x2F;ca-example-logs</p>
+<p>gsutil acl ch -g <a href="mailto:&#99;&#x6c;&#x6f;&#117;&#100;&#x2d;&#115;&#x74;&#111;&#114;&#97;&#103;&#x65;&#x2d;&#x61;&#110;&#97;&#x6c;&#x79;&#x74;&#x69;&#99;&#x73;&#x40;&#103;&#111;&#x6f;&#x67;&#108;&#101;&#46;&#x63;&#111;&#x6d;">&#99;&#x6c;&#x6f;&#117;&#100;&#x2d;&#115;&#x74;&#111;&#114;&#97;&#103;&#x65;&#x2d;&#x61;&#110;&#97;&#x6c;&#x79;&#x74;&#x69;&#99;&#x73;&#x40;&#103;&#111;&#x6f;&#x67;&#108;&#101;&#46;&#x63;&#111;&#x6d;</a>:W gs:&#x2F;&#x2F;ca-example-logs</p>
 <p>Next, you can set the default object ACL to, for example, “project-private”. You don’t have to do this, but it’s a good idea for security purposes to keep your logs private.</p>
 <p>gsutil defacl set project-private gs:&#x2F;&#x2F;ca-example-logs</p>
 <p>And finally, you enable logging with the “gsutil logging set on” command.</p>
@@ -460,13 +460,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">72</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
