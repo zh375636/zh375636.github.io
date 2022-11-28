@@ -11657,7 +11657,7 @@
   </url>
   
   <url>
-    <loc>https://example.com/2022/11/19/DevOps-Engineer-Professional-Introduction-to-Containers-13/</loc>
+    <loc>https://example.com/2022/11/19/DevOps-Engineer-Professional-Getting-Started-with-Amazon-Aurora-Database-Engine-12/</loc>
     
     <lastmod>2022-11-19</lastmod>
     
@@ -11666,7 +11666,7 @@
   </url>
   
   <url>
-    <loc>https://example.com/2022/11/19/DevOps-Engineer-Professional-Getting-Started-with-Amazon-Aurora-Database-Engine-12/</loc>
+    <loc>https://example.com/2022/11/19/DevOps-Engineer-Professional-Introduction-to-Containers-13/</loc>
     
     <lastmod>2022-11-19</lastmod>
     
@@ -11783,7 +11783,7 @@
   </url>
   
   <url>
-    <loc>https://example.com/2022/11/19/AWS-Solutions-Architect-ProfessionalOverview-of-Machine-Learning-Services-in-AWS-38/</loc>
+    <loc>https://example.com/2022/11/19/AWS-Solutions-Architect-ProfessionalOptimize-a-Deployed-AWS-Web-Application-37/</loc>
     
     <lastmod>2022-11-19</lastmod>
     
@@ -11792,7 +11792,7 @@
   </url>
   
   <url>
-    <loc>https://example.com/2022/11/19/AWS-Solutions-Architect-ProfessionalOptimize-a-Deployed-AWS-Web-Application-37/</loc>
+    <loc>https://example.com/2022/11/19/AWS-Solutions-Architect-ProfessionalOverview-of-Machine-Learning-Services-in-AWS-38/</loc>
     
     <lastmod>2022-11-19</lastmod>
     
@@ -12854,7 +12854,7 @@
   </url>
   
   <url>
-    <loc>https://example.com/2022/11/18/AWS-Developer-Associate-Management-Governance-DVA-C01-28/</loc>
+    <loc>https://example.com/2022/11/18/AWS-Developer-Associate-Knowledge-Check-Management-Governance-DVA-C01-29/</loc>
     
     <lastmod>2022-11-19</lastmod>
     
@@ -12863,7 +12863,7 @@
   </url>
   
   <url>
-    <loc>https://example.com/2022/11/18/AWS-Developer-Associate-Knowledge-Check-Management-Governance-DVA-C01-29/</loc>
+    <loc>https://example.com/2022/11/18/AWS-Developer-Associate-Management-Governance-DVA-C01-28/</loc>
     
     <lastmod>2022-11-19</lastmod>
     
@@ -13511,7 +13511,7 @@
   </url>
   
   <url>
-    <loc>https://example.com/2022/11/18/AZ-305-Integrating-Redis-Cache-and-CDN-on-Azure-34/</loc>
+    <loc>https://example.com/2022/11/18/AZ-305-Managing-Azure-Storage-Accounts-33/</loc>
     
     <lastmod>2022-11-19</lastmod>
     
@@ -13520,7 +13520,7 @@
   </url>
   
   <url>
-    <loc>https://example.com/2022/11/18/AZ-305-Managing-Azure-Storage-Accounts-33/</loc>
+    <loc>https://example.com/2022/11/18/AZ-305-Integrating-Redis-Cache-and-CDN-on-Azure-34/</loc>
     
     <lastmod>2022-11-19</lastmod>
     
@@ -24697,14 +24697,14 @@
 
   
   <url>
-    <loc>https://example.com/categories/Kubernetes/</loc>
+    <loc>https://example.com/categories/Docker/</loc>
     <lastmod>2022-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://example.com/categories/SWITCH/</loc>
+    <loc>https://example.com/categories/Kubernetes/</loc>
     <lastmod>2022-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -24718,21 +24718,14 @@
   </url>
   
   <url>
+    <loc>https://example.com/categories/SWITCH/</loc>
+    <lastmod>2022-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://example.com/categories/Linux/</loc>
-    <lastmod>2022-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://example.com/categories/Docker/</loc>
-    <lastmod>2022-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://example.com/categories/Web%E6%9E%B6%E6%9E%84/</loc>
     <lastmod>2022-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -24746,7 +24739,7 @@
   </url>
   
   <url>
-    <loc>https://example.com/categories/docker/</loc>
+    <loc>https://example.com/categories/Web%E6%9E%B6%E6%9E%84/</loc>
     <lastmod>2022-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -24754,6 +24747,13 @@
   
   <url>
     <loc>https://example.com/categories/Zabbix/</loc>
+    <lastmod>2022-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/docker/</loc>
     <lastmod>2022-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -24802,14 +24802,14 @@
   </url>
   
   <url>
-    <loc>https://example.com/categories/ELK/</loc>
+    <loc>https://example.com/categories/MongoDB/</loc>
     <lastmod>2022-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://example.com/categories/MongoDB/</loc>
+    <loc>https://example.com/categories/ELK/</loc>
     <lastmod>2022-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -24914,13 +24914,6 @@
   </url>
   
   <url>
-    <loc>https://example.com/categories/CCDA/</loc>
-    <lastmod>2022-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://example.com/categories/BGP/</loc>
     <lastmod>2022-11-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -24928,7 +24921,7 @@
   </url>
   
   <url>
-    <loc>https://example.com/categories/Cisco-Security/</loc>
+    <loc>https://example.com/categories/CCDA/</loc>
     <lastmod>2022-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -24936,6 +24929,13 @@
   
   <url>
     <loc>https://example.com/categories/CCIE/</loc>
+    <lastmod>2022-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/Cisco-Security/</loc>
     <lastmod>2022-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -24970,14 +24970,14 @@
   </url>
   
   <url>
-    <loc>https://example.com/categories/ROUTER/</loc>
+    <loc>https://example.com/categories/Cisco-Wireless/</loc>
     <lastmod>2022-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://example.com/categories/Cisco-Wireless/</loc>
+    <loc>https://example.com/categories/ROUTER/</loc>
     <lastmod>2022-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -25012,14 +25012,14 @@
   </url>
   
   <url>
-    <loc>https://example.com/categories/SDWAN/</loc>
+    <loc>https://example.com/categories/LAN/</loc>
     <lastmod>2022-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://example.com/categories/LAN/</loc>
+    <loc>https://example.com/categories/SDWAN/</loc>
     <lastmod>2022-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
