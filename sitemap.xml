@@ -18175,14 +18175,14 @@
   </url>
   
   <url>
-    <loc>https://example.com/categories/Jenkins/</loc>
+    <loc>https://example.com/categories/Linux/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://example.com/categories/Linux/</loc>
+    <loc>https://example.com/categories/Jenkins/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -18385,14 +18385,14 @@
   </url>
   
   <url>
-    <loc>https://example.com/categories/Cisco-Data/</loc>
+    <loc>https://example.com/categories/LAN/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://example.com/categories/LAN/</loc>
+    <loc>https://example.com/categories/Cisco-Data/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

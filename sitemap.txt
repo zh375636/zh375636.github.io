@@ -2019,8 +2019,8 @@ https://example.com/tags/navigation/
 https://example.com/categories/Docker/
 https://example.com/categories/Kubernetes/
 https://example.com/categories/SWITCH/
-https://example.com/categories/Jenkins/
 https://example.com/categories/Linux/
+https://example.com/categories/Jenkins/
 https://example.com/categories/Server/
 https://example.com/categories/Web%E6%9E%B6%E6%9E%84/
 https://example.com/categories/docker/
@@ -2049,8 +2049,8 @@ https://example.com/categories/Cisco-ISP/
 https://example.com/categories/OSPF/
 https://example.com/categories/SDA/
 https://example.com/categories/SDWAN/
-https://example.com/categories/Cisco-Data/
 https://example.com/categories/LAN/
+https://example.com/categories/Cisco-Data/
 https://example.com/categories/IP/
 https://example.com/categories/QoS/
 https://example.com/categories/IS-IS/
