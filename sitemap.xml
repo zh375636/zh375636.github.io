@@ -17416,13 +17416,6 @@
 
   
   <url>
-    <loc>https://example.com/categories/Docker/</loc>
-    <lastmod>2022-12-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://example.com/categories/Kubernetes/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -17452,6 +17445,13 @@
   
   <url>
     <loc>https://example.com/categories/Server/</loc>
+    <lastmod>2022-12-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/Docker/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -17535,6 +17535,13 @@
   </url>
   
   <url>
+    <loc>https://example.com/categories/Git/</loc>
+    <lastmod>2022-12-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://example.com/categories/Ansible/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -17542,7 +17549,7 @@
   </url>
   
   <url>
-    <loc>https://example.com/categories/Git/</loc>
+    <loc>https://example.com/categories/Portable-Command-Guide/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -17577,13 +17584,6 @@
   </url>
   
   <url>
-    <loc>https://example.com/categories/Portable-Command-Guide/</loc>
-    <lastmod>2022-12-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://example.com/categories/CCNA/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -17605,14 +17605,14 @@
   </url>
   
   <url>
-    <loc>https://example.com/categories/IPv6/</loc>
+    <loc>https://example.com/categories/ROUTER/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://example.com/categories/ROUTER/</loc>
+    <loc>https://example.com/categories/IPv6/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
