@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hang&#39;s Blog</title>
+  
+  
+  <link href="https://example.com/atom.xml" rel="self"/>
+  
+  <link href="https://example.com/"/>
+  <updated>2023-01-14T06:11:52.000Z</updated>
+  <id>https://example.com/</id>
+  
+  <author>
+    <name>Hang Zhang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://example.com/2023/01/14/test/"/>
+    <id>https://example.com/2023/01/14/test/</id>
+    <published>2023-01-14T05:50:38.000Z</published>
+    <updated>2023-01-14T06:11:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="09综合布线案例.pptx" target="_blank"></a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;09综合布线案例.pptx&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="test" scheme="https://example.com/categories/test/"/>
+    
+    
+    <category term="test" scheme="https://example.com/tags/test/"/>
+    
+  </entry>
+  
+</feed>
