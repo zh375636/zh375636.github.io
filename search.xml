@@ -1,32 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>test</title>
-      <link href="/2023/01/14/test/"/>
-      <url>/2023/01/14/test/</url>
-      
-        <content type="html"><![CDATA[<p><a href="09综合布线案例.pptx" target="_blank"></a></p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>test</title>
+    <url>/2023/01/14/test/</url>
+    <content><![CDATA[<p><a href="09综合布线案例.pptx" target="_blank">xiazaipptx</a></p>
+]]></content>
       <categories>
-          
-          <category> test </category>
-          
+        <category>test</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> test </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
 </search>
