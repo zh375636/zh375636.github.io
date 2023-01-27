@@ -6,7 +6,7 @@
   <link href="https://example.com/atom.xml" rel="self"/>
   
   <link href="https://example.com/"/>
-  <updated>2023-01-27T18:59:54.000Z</updated>
+  <updated>2023-01-27T19:08:54.000Z</updated>
   <id>https://example.com/</id>
   
   <author>
@@ -21,16 +21,12 @@
     <link href="https://example.com/2023/01/14/test/"/>
     <id>https://example.com/2023/01/14/test/</id>
     <published>2023-01-14T05:50:38.000Z</published>
-    <updated>2023-01-27T18:59:54.000Z</updated>
+    <updated>2023-01-27T19:08:54.000Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="09综合布线案例.pptx" target="_blank">xiazaipptx</a></p>]]></content>
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="c76d656dbe0c664448339c608d48df929ce2aae31333dfb61bf9b35fcba327a8">27edae6880a9a4b80230d83258d808fa3033210abb16ece30b734c54ce468d26c2c81cf995c78d9a8ce66fa96d6f4fda8a47bd89222eb51148a00553b435108c9bf22c0a7a1c4134aa180b13a1380eec5e33982f181acecaf9758f6f7e6b6f32981dc440ba279ed8c005da184f3c0448</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
     
     
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;09综合布线案例.pptx&quot; target=&quot;_blank&quot;&gt;xiazaipptx&lt;/a&gt;&lt;/p&gt;
-</summary>
-      
+    <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
     
     
     
