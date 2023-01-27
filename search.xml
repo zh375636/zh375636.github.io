@@ -3,8 +3,18 @@
   <entry>
     <title>test</title>
     <url>/2023/01/14/test/</url>
-    <content><![CDATA[<p><a href="09综合布线案例.pptx" target="_blank">xiazaipptx</a></p>
-]]></content>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="4e8475206076d4a117a520a62a7c3242fa2f72c03ecad12526da62f865c4695a">472f0d2124ee617a2f29ff331422d5d3e4de105e53aa5ac79c378fd7bf67c7b184216ba08c92be3fa5b4dc30cafa10e63c1bb982af1f8f5c3ef1624cfeadf1baaeda1b6fb033f5e8338a780e36a42cb438975ba7982ceb87fd891c4a9847d27fa0d0f10300ea3ef1de32991298074704</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
       <categories>
         <category>test</category>
       </categories>
