@@ -4,7 +4,7 @@
   <url>
     <loc>https://example.com/2023/01/14/test/</loc>
     
-    <lastmod>2023-01-27</lastmod>
+    <lastmod>2023-02-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -31,7 +31,7 @@
 
   <url>
     <loc>https://example.com/</loc>
-    <lastmod>2023-01-27</lastmod>
+    <lastmod>2023-02-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -39,7 +39,7 @@
   
   <url>
     <loc>https://example.com/tags/test/</loc>
-    <lastmod>2023-01-27</lastmod>
+    <lastmod>2023-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -48,7 +48,7 @@
   
   <url>
     <loc>https://example.com/categories/test/</loc>
-    <lastmod>2023-01-27</lastmod>
+    <lastmod>2023-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
