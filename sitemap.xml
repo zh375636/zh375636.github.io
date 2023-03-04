@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://example.com/2023/03/04/CKA-cloudacedemy/</loc>
+    
+    <lastmod>2023-03-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/2023/02/28/%E8%80%81%E6%AE%B5-%E9%B8%9F%E5%93%A5linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AF%87/</loc>
+    
+    <lastmod>2023-03-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/2023/02/27/%E7%8E%8B%E8%BE%BE-%E6%80%9D%E7%A7%91%E8%B7%AF%E7%94%B1%E5%99%A8%E5%AE%8C%E5%85%A8%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C/</loc>
+    
+    <lastmod>2023-02-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/2023/02/27/%E7%BA%A2%E5%B8%BD-RH124-%E5%AD%A6%E7%94%9F%E6%89%8B%E5%86%8C/</loc>
+    
+    <lastmod>2023-02-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://example.com/2023/01/14/test/</loc>
     
     <lastmod>2023-02-23</lastmod>
@@ -49,15 +85,36 @@
 
   <url>
     <loc>https://example.com/</loc>
-    <lastmod>2023-02-23</lastmod>
+    <lastmod>2023-03-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
+    <loc>https://example.com/tags/router/</loc>
+    <lastmod>2023-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/cisco/</loc>
+    <lastmod>2023-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://example.com/tags/test/</loc>
-    <lastmod>2023-02-23</lastmod>
+    <lastmod>2023-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/redhat/</loc>
+    <lastmod>2023-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -65,8 +122,22 @@
 
   
   <url>
+    <loc>https://example.com/categories/cisco/</loc>
+    <lastmod>2023-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://example.com/categories/test/</loc>
-    <lastmod>2023-02-23</lastmod>
+    <lastmod>2023-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/linux/</loc>
+    <lastmod>2023-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
