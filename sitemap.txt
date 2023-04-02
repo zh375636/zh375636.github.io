@@ -1,3 +1,5 @@
+https://example.com/2023/04/02/%E7%8E%8B%E8%BE%BE-H3C%E8%B7%AF%E7%94%B1%E5%99%A8%E5%AE%8C%E5%85%A8%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C/
+https://example.com/2023/03/05/%E7%8E%8B%E8%BE%BE-%E6%80%9D%E7%A7%91%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%8C%E5%85%A8%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C/
 https://example.com/2023/03/04/CKA-cloudacedemy/
 https://example.com/2023/02/28/%E8%80%81%E6%AE%B5-%E9%B8%9F%E5%93%A5linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AF%87/
 https://example.com/2023/02/27/%E7%8E%8B%E8%BE%BE-%E6%80%9D%E7%A7%91%E8%B7%AF%E7%94%B1%E5%99%A8%E5%AE%8C%E5%85%A8%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C/
@@ -8,10 +10,10 @@ https://example.com/2023/02/17/hcip-%E8%87%A7%E5%AE%B6%E6%9E%97-2022/
 https://example.com/categories/index.html
 https://example.com/tags/index.html
 https://example.com/
+https://example.com/tags/test/
 https://example.com/tags/router/
 https://example.com/tags/cisco/
-https://example.com/tags/test/
 https://example.com/tags/redhat/
-https://example.com/categories/cisco/
 https://example.com/categories/test/
+https://example.com/categories/cisco/
 https://example.com/categories/linux/
