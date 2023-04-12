@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="天啊！看完这篇STP（思科）别在说不会生成树了_思科快速生成树_无法长大的小熊猫的博客-CSDN博客 生成树简介-参数网桥ID（BID）：网桥优先级	Mac地址2字节	6字节网桥优先级范围为：0~65535；其中前4bit表示优先级，后12bit为扩展系统ID，其中，优先级取值为4096的倍数，网桥优先级越小越优先 端口ID（PID）：端口ID由一个字节的端口优先级和一个字节的端口组成；表示形式如">
+<meta property="og:type" content="article">
+<meta property="og:title" content="路由交换面试关键词stp">
+<meta property="og:url" content="https://example.com/2023/04/13/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dstp/index.html">
+<meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="天啊！看完这篇STP（思科）别在说不会生成树了_思科快速生成树_无法长大的小熊猫的博客-CSDN博客 生成树简介-参数网桥ID（BID）：网桥优先级	Mac地址2字节	6字节网桥优先级范围为：0~65535；其中前4bit表示优先级，后12bit为扩展系统ID，其中，优先级取值为4096的倍数，网桥优先级越小越优先 端口ID（PID）：端口ID由一个字节的端口优先级和一个字节的端口组成；表示形式如">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-04-12T18:22:43.000Z">
+<meta property="article:modified_time" content="2023-04-12T18:43:32.000Z">
+<meta property="article:author" content="Hang Zhang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://example.com/2023/04/13/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dstp/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>路由交换面试关键词stp | Hang's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Hang's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2023/04/13/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dstp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          路由交换面试关键词stp
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-04-13 02:22:43 / Modified: 02:43:32" itemprop="dateCreated datePublished" datetime="2023-04-13T02:22:43+08:00">2023-04-13</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2023/04/13/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dstp/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2023/04/13/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dstp/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_45851211/article/details/120307061">天啊！看完这篇STP（思科）别在说不会生成树了_思科快速生成树_无法长大的小熊猫的博客-CSDN博客</a></p>
+<p>生成树简介-参数<br>网桥ID（BID）：<br>网桥优先级	Mac地址<br>2字节	6字节<br>网桥优先级范围为：0~65535；其中前4bit表示优先级，后12bit为扩展系统ID，其中，优先级取值为4096的倍数，网桥优先级越小越优先</p>
+<p>端口ID（PID）：<br>端口ID由一个字节的端口优先级和一个字节的端口组成；表示形式如：128.1、128.2<br>端口优先级范围0~255，越小越优先，IOS交换机默认为128；Catalyst交换机默认为32；<br>————————————————<br>版权声明：本文为CSDN博主「无法长大的小熊猫」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_45851211/article/details/120307061">https://blog.csdn.net/m0_45851211/article/details/120307061</a></p>
+<p>路径开销</p>
+<ul>
+<li><p>本交换机到达根交换机路径的总开销，越小越好，开销与接口带宽有关。</p>
+<table>
+<thead>
+<tr>
+<th>端口速率</th>
+<th>开销（old）</th>
+<th>开销（new）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>10Gb/s</code></td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>1Gb/s</code></td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>100Mb/s</code></td>
+<td>10</td>
+<td>19</td>
+</tr>
+<tr>
+<td><code>10Mb/s</code></td>
+<td>100</td>
+<td>100</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<p>BPDU<br>网桥协议数据单元（Bridge Protocol Data Unit），是一种生成树协议<br>数据包，它可以配置的发送的间隔，用来在网络的网桥间进行信息交换。生成树的所有信息交互都需要依靠BPDU.</p>
+<p>STP使用BPDU来交换信息，默认情况下交换机每2秒发送一次BPDU，BPDU分为两种：<br>配置BPDU:用来计算STP<br>TCN BPDU:用来通告网络拓扑发生变化<br>BPDU与STP：<br>在网络运行最初，所有的交换机认为自己是根桥，并向邻居发送BPDU，其中包含自身的桥ID（BID），同时也会收到邻居发送过来的BPDU报文，这个过程为BPDU的泛洪。<br>交换机每收到一个BPDU报文就会和自己的进行比较，如果优于自身的，交换机意识到自己不是根桥，否则它还会持续发送自己的BPDU。最后所有的交换机会选举出一台作为生成树的根桥，我们称之为Root。<br>根桥选举出来后，根桥默认每2s发送BPDU。非根桥的交换会根据根桥的BPDU选举自己的根端口。它从自己的根端口接收BPDU，再从自己其他具有发送功能的端口转发出去。<br>部分交换机的端口会被阻塞，阻塞端口不转发流量，但是会侦听BPDU，如果一段时间内没有收到，则认为链路出现了问题。<br>————————————————<br>版权声明：本文为CSDN博主「无法长大的小熊猫」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_45851211/article/details/120307061">https://blog.csdn.net/m0_45851211/article/details/120307061</a></p>
+<p>STP端口类型</p>
+<p>端口类型	描述<br>根端口RP	该端口属于非根网桥（root）交换机。它到达root的路径最优，每台非根交换机只有一个根端口。<br>指定端口DP	每台链路上只有一个指定端口，根网桥的所有接口都是指定端口，指定端口处于转发状态，可以发送和接收数据帧<br>非指定端口	非指定端口是处于阻塞状态的交换机端口，它不会转发数据帧。<br>禁用端口	指被手工关闭的交换机端口<br>STP工作原理</p>
+<p>在交换网络中选举一个root bridge：<br>具有<strong>最低BID的交</strong>换机将成为根网桥<br>既具有最小网桥优先级的交换机成为root，如果网桥优先级一致，则具有最小MAC地址的交换机成为root。<br>在每个非根网桥上选举出一个接口<br>根端口是交换机到达根网桥Cost最小的端口；<br><strong>如果多个端口Cost相同，则选择BPDU发送者BID最小的端口；</strong><br><strong>如果Cost和BID都相同，则选择BPDU发送者端口ID最小的一个；</strong><br>为每个链路选举一个指定端口：<br>root的所有端口都是指定端口；<br>非根交换机比较它们的端口到root的Cost，小的为指定端口；<br>如果两个端口的COst相同，则比较BID，小的为指定端口。<br>阻塞非指定端口<br>既不是根端口，又不是指定端口的端口会被阻塞<br>举例分析端口角色</p>
+<h2 id="STP端口状态"><a href="#STP端口状态" class="headerlink" title="STP端口状态"></a>STP端口状态</h2><p>状态	描述<br><strong>Disable	不发送任何报文</strong><br><strong>Blocking	不接收也不转发帧，接收但是不转发BPDU，不学习MAC地址</strong><br><strong>Listening	不接收也不转发帧，接收且转发BPDU，不学习MAC地址</strong><br><strong>Learning	不接收也不转发帧，接收且转发BPDU，学习MAC地址</strong><br><strong>Forwarding	接收并且转发帧，接收并且转发BPDU，学习MAC地址</strong><br>计时器<br>网络中的生成树拓扑依附于网桥的计时器，root将BPDU中的计时器传递给第二层的所有交换机。</p>
+<p>Hello时间：根网桥发送配置BPDU的时间间隔，默认为2s；<br>转发延迟时间：侦听到学习状态，或者学习状态所需要经过的时间，默认为15s；<br>最大存活时间：在丢弃BPDU之前，网桥用来存储BPDU的时间，默认为20s。如果连续收不到10个BPDU开始进入listening状态；<br>注意：当一个拥塞的端口进入到转发状态通常需要30-50秒时间。</p>
+<p>STP端口状态转化过程<br>————————————————<br>版权声明：本文为CSDN博主「无法长大的小熊猫」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_45851211/article/details/120307061">https://blog.csdn.net/m0_45851211/article/details/120307061</a></p>
+<p>1-Port Fast<br>正常情况，端口从启动进入到转发默认需要30秒时间。<br>Portfast端口一旦接了设备，接口可绕过listening和learning状态直接进入forwarding状态。<br>Portfast不能直接配置在Trunk模式的端口上，即使配置上去了思科IOS也不会生效。<br>注意：配置了portfast的接口，如果连的是交换机，这个接口仍然要接受生成树的计算结果。如果计算结果是block，那么这个接口仍然被block。这就是为什么你在CISCO IOS上敲入该条命令，IOS会提示你，说可能会造成短暂的桥接环路。<br>————————————————<br>版权声明：本文为CSDN博主「无法长大的小熊猫」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_45851211/article/details/120307061">https://blog.csdn.net/m0_45851211/article/details/120307061</a></p>
+<p>-BPDUguard:<br>该接口在收到BPDU报文后，会立即切换到err-disable状态。<br>通常与Portfast配合使用，防止交换机错误连接后产生环路。<br>可以全局配置开启，也可以在单个端口上配置，起到的效果不同。<br>端口进入的err-disable状态需要手动关闭在打开才能使用，但是可以使用方法让其自动恢复，默认恢复间隔为300s。<br>全局配置模式：<br>Switch(config):spanning-tree portfast bpduguard default<br>1<br>2<br>接口配置模式：<br>Switch(config)#int f0&#x2F;1<br>Switch(config-if)#spanning-tree bpduguard enable<br>1<br>2<br>3<br>全局模式配置err-disable自动恢复<br>Switch(config)#errdisable recovery cause bpduguard<br>Switch(config)#reedisable recovery interval 100<br>1<br>2<br>3<br>3-BPDUFilter:<br>BPDUFilter又称为BPDU过滤。在一些情况下，可以实现阻止向外发送BPDU。<br>开启BPDUFilter之后，对应端口接收到的配置BPDU都会被丢弃。<br>在运营商环境中非常有用。如果为用户提供二层接入，可以过滤自身的BPDU，忽略用户的BPDU，保持内部生成树拓扑的稳定。<br>————————————————<br>版权声明：本文为CSDN博主「无法长大的小熊猫」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_45851211/article/details/120307061">https://blog.csdn.net/m0_45851211/article/details/120307061</a></p>
+<p>RSTP简介<br>RSTP即为快速生成树协议，在网络拓扑变更时能显著提升STP重新计算的速度<br>RSTP将端口状态缩短为三种：<br>状态	描述<br>Learning	不接收也不转发帧，接收且转发BPDU，学习MAC地址<br>Forwarding	接收并转发帧，接收并且转发BPDU，学习MAC地址<br>Discarding	阻止数据帧的转发，可以理解为禁用、拥塞、侦听的合并<br>RSTP额外定义了两种端口角色：代替端口（alternate）、备份端口（backup）<br>思科PVST+也有快速的版本，称为RPVST+。可以理解为每个VLAN生成树的RSTP版本。所以对于RSTP+我们不做过多的讨论<br>————————————————<br>版权声明：本文为CSDN博主「无法长大的小熊猫」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_45851211/article/details/120307061">https://blog.csdn.net/m0_45851211/article/details/120307061</a></p>
+<ul>
+<li><code>RSTP</code>额外定义了两种端口角色：代替端口（<code>alternate</code>）、备份端口（<code>backup</code>）</li>
+</ul>
+<p>边缘端口edge port<br>RSTP可以将端口分为边缘端口与非边缘端口。<br>边缘端口的类型与Portfast十分相似，可以直接过渡到转发状态。主要用于连接主机、服务器等终端设备；<br>边缘端口一旦收到BPDU，立即失去边缘端口特征，变成一个普通的生成树端口；<br>边缘端口可以使用portfast命令中的关键字来手工配置。<br>链路类型Link types：<br>RSTP能过在边缘端口及point-to-point链路上快速过渡；<br>如果链路状态是全双工工作的，会假设此链路即为点对点链路；<br>链路类型是通过接口的双工状态是自动获取的，也可以通过命令进行修改。</p>
+<p>————————————————<br>版权声明：本文为CSDN博主「无法长大的小熊猫」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_45851211/article/details/120307061">https://blog.csdn.net/m0_45851211/article/details/120307061</a></p>
+<p>MST<br>MST简介<br>传统生成树CST是所有的VLAN运行一个生成树实例，PVST+为每一个VLAN单独配置一个生成树实例。这两种方式一个无法基于物理拓扑进行区分效率太低；另一个过于极端，需要消耗较多的系统资源。</p>
+<p>MST多实例生成树则正好介于两者之间。它可以将一个或多个VLAN放入一个生成树实例进行计算。这样减少了拓扑中生成树实例的数量，降低了交换机CPU的开销<br>————————————————<br>版权声明：本文为CSDN博主「无法长大的小熊猫」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_45851211/article/details/120307061">https://blog.csdn.net/m0_45851211/article/details/120307061</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/04/13/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8DMPLS/" rel="prev" title="路由交换面试关键词MPLS">
+      <i class="fa fa-chevron-left"></i> 路由交换面试关键词MPLS
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/04/13/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dospf/" rel="next" title="路由交换面试关键词ospf">
+      路由交换面试关键词ospf <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#STP%E7%AB%AF%E5%8F%A3%E7%8A%B6%E6%80%81"><span class="nav-number">1.</span> <span class="nav-text">STP端口状态</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang Zhang"
+      src="/images/123456.gif">
+  <p class="site-author-name" itemprop="name">Hang Zhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zh375636" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zh375636" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hang.zhang.network@gmail.com" title="E-Mail → mailto:hang.zhang.network@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hang Zhang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+// 在最后添加
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '40GUvOAaitQh1SZe7ua9cvss-MdYXbMMI',
+      appKey     : 'iUO2yON0j55WMdu59zx12dCG',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

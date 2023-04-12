@@ -20,13 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="ipsec学习IPSec笔记总结（一）———IPSec的基础知识_ipsec协议中算法标识_Zero_Knight的博客-CSDN博客 IPSecVPN(Internet Protocl Security):是一组基于网络层的，应用密码学的安全通信协议族。与TCP&#x2F;IP协议簇一样，IPSec不是指具体的哪个协议，而是一个开放的协议簇。 IPSec协议的设计目标：是在IPV4和IPV6环境">
+<meta property="og:type" content="article">
 <meta property="og:title" content="安全面试关键词">
 <meta property="og:url" content="https://example.com/2023/04/12/%E5%AE%89%E5%85%A8%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8D/index.html">
 <meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="ipsec学习IPSec笔记总结（一）———IPSec的基础知识_ipsec协议中算法标识_Zero_Knight的博客-CSDN博客 IPSecVPN(Internet Protocl Security):是一组基于网络层的，应用密码学的安全通信协议族。与TCP&#x2F;IP协议簇一样，IPSec不是指具体的哪个协议，而是一个开放的协议簇。 IPSec协议的设计目标：是在IPV4和IPV6环境">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-04-12T14:10:38.000Z">
-<meta property="article:modified_time" content="2023-04-12T14:10:52.000Z">
+<meta property="article:modified_time" content="2023-04-12T19:07:58.000Z">
 <meta property="article:author" content="Hang Zhang">
 <meta name="twitter:card" content="summary">
 
@@ -209,10 +211,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-04-12 22:10:38 / Modified: 22:10:52" itemprop="dateCreated datePublished" datetime="2023-04-12T22:10:38+08:00">2023-04-12</time>
+              <time title="Created: 2023-04-12 22:10:38" itemprop="dateCreated datePublished" datetime="2023-04-12T22:10:38+08:00">2023-04-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-04-13 03:07:58" itemprop="dateModified" datetime="2023-04-13T03:07:58+08:00">2023-04-13</time>
+              </span>
 
           
   
@@ -239,7 +247,95 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="ipsec"><a href="#ipsec" class="headerlink" title="ipsec"></a>ipsec</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Zero_Knight/article/details/104652021">学习IPSec笔记总结（一）———IPSec的基础知识_ipsec协议中算法标识_Zero_Knight的博客-CSDN博客</a></p>
+<p>IPSecVPN(Internet Protocl Security):是一组基于网络层的，应用密码学的安全通信协议族。与TCP&#x2F;IP协议簇一样，IPSec不是指具体的哪个协议，而是一个开放的协议簇。</p>
+<p>IPSec协议的设计目标：是在IPV4和IPV6环境中为网络层流量提供灵活的安全服务（综合了密码技术，和协议安全机制）</p>
+<p>IPSec V皮N:是基于IPSec协议簇构建的在IP层实现的数据安全虚拟专用网。通过在数据包中插入一个预定义头部的方式，来保障OSI上层协议数据的安全，主要用于保护TCP,UDP,ICMP和隧道的IP数据包（如：GRE over IPSec后面会有文章介绍在思科设备上的配置方法）。V皮N只是IPSec协议簇的一种应用方式，V皮N也不知IPSec一种实现方式，还有2层（数据链路层），第四层（传输层）等实现方式<br>————————————————<br>版权声明：本文为CSDN博主「Zero_Knight」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Zero_Knight/article/details/104652021">https://blog.csdn.net/Zero_Knight/article/details/104652021</a></p>
+<p>加密算法：</p>
+<pre><code>    DES算法：56位加密算法
+
+     3DES：168位加密算法
+</code></pre>
+<p>密钥交换算法：</p>
+<pre><code>    DH（Diffie-Hellman密钥协议）
+
+     RSA（不对称密钥算法）
+</code></pre>
+<p>验证算法：</p>
+<pre><code>     MD5（消息摘要）
+
+     SHA-1(安全哈希算法)
+</code></pre>
+<p>IKE（internet Key Exchange）</p>
+<pre><code>     用于验证IPSec的对端体，协商IKE SA和IPSec SA的安全策略，验证加密材料的建立。
+</code></pre>
+<p>SA（Security Association）</p>
+<pre><code>    两个通信实体经协商建立起来的一种协定，规定了通信实体将如何利用安全服务来实现安全的通讯。
+</code></pre>
+<p>————————————————<br>版权声明：本文为CSDN博主「Zero_Knight」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Zero_Knight/article/details/104652021">https://blog.csdn.net/Zero_Knight/article/details/104652021</a></p>
+<p>IKE定义了安全参数如何协商,以及共享密钥如何建立,但它没有定义的是协商内容。这方面的定义是由”解释域(doi)”文档来进行的</p>
+<p>IPSec V皮N体系结构主要由AH、ESP和IKE协议套件组成。</p>
+<p>IPSec通过ESP来保障IP数据传输过程的机密性，使用AH&#x2F;ESP提供数据完整性、数据源验证和抗报文重放功能。</p>
+<p>ESP和AH定义了协议和载荷头的格式及所提供的服务，但却没有定义实现以上能力所需具体转码方式，转码方式包括对数据转换方式，如算法、密钥长度等。</p>
+<p>为简化IPSec的使用和管理，IPSec还可以通过IKE进行自动协商交换密钥、建立和维护安全联盟的服务。具体介绍如下：</p>
+<p>AH协议：AH是报文头验证协议，主要提供的功能有数据源验证、数据完整性校验和防报文重放功能。然而，AH并不加密所保护的数据报。</p>
+<p>ESP协议：ESP是封装安全载荷协议。它除提供AH协议的所有功能外（但其数据完整性校验不包括IP头），还可提供对IP报文的加密功能。</p>
+<p>IKE协议：IKE协议用于自动协商AH和ESP所使用的密码算法。<br>————————————————<br>版权声明：本文为CSDN博主「Zero_Knight」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Zero_Knight/article/details/104652021">https://blog.csdn.net/Zero_Knight/article/details/104652021</a></p>
+<p>1.IPSec协议定义了两种通信保护机制：封装安全载荷(ESP，Encapsulating Security Payload)和鉴别头(AH，Authentication Header)。其中ESP机制为通信提供机密性和完整性；AH机制为通信提供完整性保护。ESP机制和AH机制都能为通信提供抗重放(Anti-replay)攻击。</p>
+<p>2.IPSec协议可以设置成在两种工作模式下运行：一种是隧道(tunnel)模式，另一种是传输(transport)模式。</p>
+<ol start="3">
+<li>IPSec协议使用IKE协议实现安全协议的自动安全参数协商。IKE协商的安全参数包括加密与鉴别算法、 加密与鉴别密钥、通信的保护模式(传输或隧道模式)、密钥的生存期等。IKE将这些安全参数构成的集合称为安全关联(SA，security Association)，还负责这些安全参数的刷新。</li>
+</ol>
+<p>4.两个数据库：安全策略数据库SPD，安全关联数据库SAD 5.DOI将所有的IPSec小组的文献捆绑在一起。它可以被认为是所有IPSec安全参数的主数据库。 IKE定义了安全参数如何协商,以及共享密钥如何建立,但它没有定义的是协商内容。这方面的定义是由”解释域(doi)”文档来进行的<br>————————————————<br>版权声明：本文为CSDN博主「Zero_Knight」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Zero_Knight/article/details/104652021">https://blog.csdn.net/Zero_Knight/article/details/104652021</a></p>
+<h3 id="传输模式："><a href="#传输模式：" class="headerlink" title="传输模式："></a>传输模式：</h3><p>​    应用场景：经常用于主机和主机之间端到端通信数据保护。</p>
+<p>​     封装方式：不改变原有的IP包头，在原数据包头后面插入IPSec包头，将原来的数据封装成被保护的数据。</p>
+<h3 id="隧道模式："><a href="#隧道模式：" class="headerlink" title="隧道模式："></a>隧道模式：</h3><p>​    应用场景：经常用于私网与私网之间通过公网进行通信，建立安全VPN通道。</p>
+<p>与传输模式不同，在隧道模式下，原始IP分组被封装成一个新的IP报文，在内部报头以及外部报头之间插入一个IPSec报头，原IP地址被当作有效载荷的一部分收到IPSec的保护。另外，通过对数据加密，还可以隐藏原数据包中的IP地址，这样更有利于保护端到端通信中数据的安全性。</p>
+<p>IPSec通信协议：<br>AH（Authentication Header，认证报头）<br>1、无连接数据完整性：通过哈希函数（如MD5、SHA1）产生的校验来保证；</p>
+<p>2、数据源认证：通过在计算验证码时加入一个共享密钥来实现；</p>
+<p>3、抗重放服务：AH报头中的序列号可以防止重放攻击。</p>
+<p>不论是传输模式还是隧道模式下，AH提供对数据包的保护时，它保护的是整个IP数据包（易变的字段除外，如IP头中的TTL和TOS字段）。</p>
+<p>注：AH分配到的协议号是51。也就是说，使用AH协议进行安全保护的IPv4数据报文的IP头部中协议字段将是51，表明IP头之后是一个AH头。AH头比ESP头简单得多，因为它没有提供机密性。由于不需要填充和一个填充长度指示器，因此也不存在尾部字段。另外，也不需要一个初始化向量。</p>
+<p>AH Header：<br>————————————————<br>版权声明：本文为CSDN博主「Zero_Knight」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Zero_Knight/article/details/104652021">https://blog.csdn.net/Zero_Knight/article/details/104652021</a></p>
+<p>ESP（Encapsulating Security Payload，封装安全有效载荷）：<br>1、无连接数据完整性：通过哈希函数（如MD5、SHA1）产生的校验来保证；</p>
+<p>2、数据源认证：通过在计算验证码时加入一个共享密钥来实现；</p>
+<p>3、抗重放服务：AH报头中的序列号可以防止重放攻击。</p>
+<p>4、数据保密</p>
+<p>5、有限的数据流保护</p>
+<p>注：包含AH提供的服务，并比AH多出两种安全服务。</p>
+<p>保密服务通过使用密码算法加密 IP 数据包的相关部分来实现。</p>
+<p>数据流保密由隧道模式下的保密服务提供。</p>
+<p>ESP通常使用DES、3DES、AES等加密算法实现数据加密，使用MD5或SHA1来实现数据完整性认证。</p>
+<p>注：ESP同样被当作一种IP协议对待，紧贴在ESP头前的IP头，以协议号50标志ESP头，ESP之前的IP头中的协议字段将是50，以表明IP头之后是一个ESP头。 并且，ESP不仅具备ESP头，还有一个包含有用信息的ESP尾。</p>
+<p>在隧道模式中，ESP保护整个IP包，整个原始IP包将会以ESP载荷的方式加入新建的数据包，同时，系统根据隧道起点和终点等参数，建立一个隧道IP头，作为这个数据包的新IP头，ESP头夹在隧道IP头和原始IP包之间，并点缀ESP尾。 而ESP提供加密服务，会以原始IP包和ESP尾以密文的形式出现。 ESP在验证过程中，只对ESP头部、原始数据包IP包头、原始数据包数据进行验证；只对原始的整个数据包进行加密，而不加密验证数据。 作为一个IPSec头，ESP头中必然包含一个SPI字段。这个值，和IP头之前的目标地址以及协议结合在一起，用来标识特定的安全联盟。SPI本身是个任意数，可以是使用者自己指定，也可交由一些密钥管理技术自行协商决定。需要注意的是， SPI可以经过了验证，但却无法被加密。这是必不可少的一种做法，因为SPI用于SA的标识，指定了采用的加密算法以及密钥，并用于对包进行解密。如果SPI本身已被加了密，我们会碰到一个非常严重的问题——“先有鸡，还是先有蛋”。<br>————————————————<br>版权声明：本文为CSDN博主「Zero_Knight」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Zero_Knight/article/details/104652021">https://blog.csdn.net/Zero_Knight/article/details/104652021</a></p>
+<p>IKE协商阶段<br>SA（安全联盟）</p>
+<pre><code>  定义：是通信对等体间对某些要素的约定，通信的双方符合SA约定的内容，就可以建立SA。
+</code></pre>
+<p>SA由三元组来唯一标识，包括：</p>
+<pre><code>  安全参数索引       目的IP地址      安全协议号
+</code></pre>
+<p>IPSec是在两个端点之间提供安全通信，端点被称为IPSec对等体。</p>
+<p>IPSec能够允许系统、网络的用户或管理员控制对等体间安全服务的粒度。例如，某个组织的安全策略可能规定来自特定子网的数据流应同时使用AH和ESP进行保护，并使用3DES（Triple Data Encryption Standard）进行加密；另一方面，策略可能规定来自另一个站点的数据流只使用ESP保护，并仅使用DES加密。通过SA（SecurityAssociation），IPSec能够对不同的数据流提供不同级别的安全保护。</p>
+<p>安全联盟是IPSec的基础，也是IPSec的本质。SA是通信对等体间对某些要素的约定，例如，使用哪种安全协议、协议的操作模式（传输模式和隧道模式）、加密算法（DES和3DES）、特定流中保护数据的共享密钥以及密钥的生存周期等。</p>
+<p>安全联盟是单向的，在两个对等体之间的双向通信，最少需要两个安全联盟来分别对两个方向的数据流进行安全保护。入站数据流和出站数据流分别由入站SA和出站SA进行处理。同时，如果希望同时使用AH和ESP来保护对等体间的数据流，则分别需要两个SA，一个用于AH，另一个用于ESP。</p>
+<p>安全联盟由一个三元组来唯一标识，这个三元组包括安全参数索引（SPI, Security Parameter Index）、目的IP地址、安全协议号（AH 或ESP）。SPI 是为唯一标识SA而生成的一个32 比特的数值，它在IPSec头中传输。 IPSec设备会把SA的相关参数放入SPD（Security Policy Database）里面，SPD里面存放着“什么数据应该进行怎样的处理”这样的消息，在IPSec数据包出站和入站的时候会首先从SPD数据库中查找相关信息并做下一步处理。</p>
+<p>IKE的产生背景：</p>
+<p>用IPSec保护一个IP包之前，必须先建立安全联盟（SA）</p>
+<p>IPSec的安全联盟可以通过手工配置的方式建立。但是当网络中节点较多时，手工配置将非常困难，而且难以保证安全性。这时就可以使用IKE（Internet Key Exchange）自动进行安全联盟建立与密钥交换的过程。Internet密钥交换（IKE）就用于动态建立SA，代表IPSec对SA进行协商</p>
+<p>IKE的用途：</p>
+<p>IKE为IPSec协商生成密钥，供AH&#x2F;ESP加解密和验证使用。</p>
+<p>在IPSec通信双方之间，动态地建立安全关联（SA：Security Association），对SA进行管理和维护</p>
+<p>IKE是UDP之上的一个应用层协议，是IPSec的信令协议。<strong>IKE为IPSec协商生成密钥,供AH&#x2F;ESP加解密和验证使用。AH协议和ESP协议有自己的协议号，分别是51和50</strong>。 SA(Security Association)：是两个IPSec通信实体之间经协商建立起来的一种共同协定，它规定了通信双方使用哪种IPSec协议保护数据安全、应用的算法标识、加密和验证的密钥取值以及密钥的生存周期等等安全属性值。 通过使用安全关联(SA) ， IPSec能够区分对不同的数据流提供的安全服务。</p>
+<p>IKE工作过程<br>KE经过两个阶段为IPSec进行密钥协商并建立安全联盟：</p>
+<p>第一阶段交换：通信各方彼此间建立了一个已通过身份验证和安全保护的通道，此阶段的交换建立了一个ISAKMP安全联盟，即ISAKMP SA（也可称为IKE SA）。 第一阶段交换有两种协商模式：                                    </p>
+<pre><code>                       主模式协商    
+
+                       野蛮模式协商
+
+   一般情况下，IKE的主模式适用于两设备的公网IP固定、且要实现设备之间点对点的环境。 对于例如ADSL拨号用户，其获得的公网IP不是固定的，且可能存在NAT设备的情况下，采用野蛮模式做NAT穿越，同时，由于IP不是固定的，用name作为id-type，总部采用模板的方式接收分支的IPSEC 接入。 
+</code></pre>
+<p>第二阶段交换：用已经建立的安全联盟（IKE SA）为IPSec协商安全服务，即为IPSec协商具体的安全联盟，建立IPSec SA，产生真正可以用来加密数据流的密钥，IPSec SA用于最终的IP数据安全传送。<br>————————————————<br>版权声明：本文为CSDN博主「Zero_Knight」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Zero_Knight/article/details/104652021">https://blog.csdn.net/Zero_Knight/article/details/104652021</a></p>
+
     </div>
 
     
@@ -320,6 +416,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ipsec"><span class="nav-number">1.</span> <span class="nav-text">ipsec</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E6%A8%A1%E5%BC%8F%EF%BC%9A"><span class="nav-number">1.0.1.</span> <span class="nav-text">传输模式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%A7%E9%81%93%E6%A8%A1%E5%BC%8F%EF%BC%9A"><span class="nav-number">1.0.2.</span> <span class="nav-text">隧道模式：</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -335,7 +432,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

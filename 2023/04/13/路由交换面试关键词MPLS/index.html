@@ -20,15 +20,23 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;26061634 MPLS and VPN第一章 MPLS架构概述1. 什么是数据层，什么是控制层？ 数据层：转发部分，作用是查看数据包携带的标签，然后使用标签交换机所维护的标签转发数据库，来执行数据包的转发。 控制层：负责在一组相互连接的标签交换机之间，创建并维护标签转发信息。 2. MPLS节点在执行IP路由时的基本架构 3. TDP&amp;">
+<meta property="og:type" content="article">
 <meta property="og:title" content="路由交换面试关键词MPLS">
 <meta property="og:url" content="https://example.com/2023/04/13/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8DMPLS/index.html">
 <meta property="og:site_name" content="Hang&#39;s Blog">
+<meta property="og:description" content="https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;26061634 MPLS and VPN第一章 MPLS架构概述1. 什么是数据层，什么是控制层？ 数据层：转发部分，作用是查看数据包携带的标签，然后使用标签交换机所维护的标签转发数据库，来执行数据包的转发。 控制层：负责在一组相互连接的标签交换机之间，创建并维护标签转发信息。 2. MPLS节点在执行IP路由时的基本架构 3. TDP&amp;">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-b3de84ecbcece2576eb6af5b07df3354_1440w.webp">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-8f93cb9484bb7aa105c19077491e1570_1440w.webp">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-ed513527df4c63cf5ce47f99880e517f_1440w.webp">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-666c11edc3a8eb8b2c1cb25f26f95cdf_1440w.webp">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-ad1002c28f8f882eb588c0ecd7f5eaf7_1440w.webp">
 <meta property="article:published_time" content="2023-04-12T17:31:11.000Z">
-<meta property="article:modified_time" content="2023-04-12T17:31:12.000Z">
+<meta property="article:modified_time" content="2023-04-12T18:14:36.000Z">
 <meta property="article:author" content="Hang Zhang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic1.zhimg.com/80/v2-b3de84ecbcece2576eb6af5b07df3354_1440w.webp">
 
 <link rel="canonical" href="https://example.com/2023/04/13/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8DMPLS/">
 
@@ -211,7 +219,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-04-13 01:31:11 / Modified: 01:31:12" itemprop="dateCreated datePublished" datetime="2023-04-13T01:31:11+08:00">2023-04-13</time>
+              <time title="Created: 2023-04-13 01:31:11 / Modified: 02:14:36" itemprop="dateCreated datePublished" datetime="2023-04-13T01:31:11+08:00">2023-04-13</time>
             </span>
 
           
@@ -239,7 +247,115 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26061634">https://zhuanlan.zhihu.com/p/26061634</a></p>
+<h1 id="MPLS-and-VPN"><a href="#MPLS-and-VPN" class="headerlink" title="MPLS and VPN"></a>MPLS and VPN</h1><h2 id="第一章-MPLS架构概述"><a href="#第一章-MPLS架构概述" class="headerlink" title="第一章 MPLS架构概述"></a>第一章 MPLS架构概述</h2><p><strong>1.</strong> <strong>什么是数据层，什么是控制层？</strong></p>
+<p>数据层：转发部分，作用是查看数据包携带的标签，然后使用标签交换机所维护的标签转发数据库，来执行数据包的转发。</p>
+<p>控制层：负责在一组相互连接的标签交换机之间，创建并维护标签转发信息。</p>
+<p><strong>2.</strong> <strong>MPLS节点在执行IP路由时的基本架构</strong></p>
+<p><strong>3.</strong> <strong>TDP&#x2F;LDP.</strong></p>
+<p>用来为基于目的的单播路由执行标签绑定交换的协议。</p>
+<p><strong>4.</strong> <strong>LSR&#x2F;边缘LSR</strong></p>
+<p>LSR是指实施了标签转发机制，并且能够基于标签来转发数据包的路由器和交换机。</p>
+<p><strong>5.</strong> <strong>边界LSR架构。</strong></p>
+<p>边缘LSR是指在MPLS网络边缘执<strong>行标签压入（push）或标签弹出（pop）的路由器。</strong></p>
+<p><strong>6.</strong> <strong>为IP数据包选择下一跳的工作由哪两个功能组成？</strong></p>
+<p>第一个功能是将全部发来的数据包根据IP目的前缀进行分类。</p>
+<p>第二个功能是将每个IP目的前缀分别与IP下一跳地址之间建立映射。</p>
+<p><strong>7.</strong> <strong>FEC</strong></p>
+<p>由第一个功能所得到的结果称为转发等价类(Forwarding Equivalence Class)</p>
+<p><strong>8.</strong> <strong>MPLS标签添加与转发步骤。</strong></p>
+<p><strong>9.</strong> <strong>LSP及其重要作用。</strong></p>
+<p>LSP负责为某个FEC描述一个打上了标签的数据包在从入站LSR穿越MPLS网络最终到达出站LSR的过程中，所需要通过的那一系列LSR。LSR是单向的，也就是说，由一特定的FEC返回的流量需要使用一条不同的LSP。</p>
+<p><strong>10.</strong> <strong>创建路径的原则。</strong></p>
+<p>LSP的创建以连接为准，连接是基于拓扑而不是流量本身的需要而建立起来的。</p>
+<p><strong>11.</strong> <strong>TIB&#x2F;LIB</strong></p>
+<p>他会保存所有该LSR所有分配的标签信息，以及将这些标签与从各邻居发来标签之间所存在的对应关系。</p>
+<p><strong>12.</strong> <strong>TFIB&#x2F;LFIB</strong></p>
+<p>在转发数据包的过程中，记录那些当前正在由MPLS设备用来执行数据包转发的标签。</p>
+<h2 id="第二章-帧模式MPLS操作"><a href="#第二章-帧模式MPLS操作" class="headerlink" title="第二章 帧模式MPLS操作"></a>第二章 帧模式MPLS操作</h2><p><strong>13.</strong> <strong>IP数据包穿越MPLS骨干网络的过程。</strong></p>
+<p><img src="https://pic1.zhimg.com/80/v2-b3de84ecbcece2576eb6af5b07df3354_1440w.webp" alt="img"></p>
+<p><strong>14.</strong> <strong>12MPLS标签栈头部。</strong></p>
+<p><img src="https://pic1.zhimg.com/80/v2-8f93cb9484bb7aa105c19077491e1570_1440w.webp" alt="img"></p>
+<p><strong>15. 栈底位的作用。</strong><br>MPLS标签栈定义为在一个数据包上粘贴的，由两个以上的标签头部所构成的组合，而栈底（Bottom-of-Stack）位的作用就是实现这种标签盏的设计。</p>
+<p><strong>16.</strong> <strong>在帧模式MPLS环境中充当MPLS LSR的路由器能够对带有标签的数据包执行哪些操作？</strong></p>
+<p><strong>Pop Tag</strong></p>
+<p>移除MPLS标签栈中最顶部的标签并将其余部分作为带有标签的数据包（若栈底比特位为0）或者作为不带有标签的数据包（LFIB中的Tag Stack字段为空）转发出去。</p>
+<p><strong>Swap tag</strong></p>
+<p>将MPLS标签栈顶部标签替换为另一个值（LFIB中的Tag Stack字段长度为一个标签）</p>
+<p><strong>Push tag</strong></p>
+<p>用一系列标签替换MPLS标签栈中最顶部的标签（LFIB中的Tag Stack字段长度为多个标签）</p>
+<p><strong>Aggregate</strong></p>
+<p>移除MPLS标签栈最顶部的标签，并对去除了这个标签之后的IP数据包执行第三层查找。被移除的标签应是MPLS标签栈最底部的标签，否则，设备就会删除这个数据包。</p>
+<p><strong>Untag</strong></p>
+<p>移除MPLS标签栈最顶部的标签，并将去除了这个标签之后的IP数据包转发给特定的下一跳设备。被移除的标签应是MPLS标签栈最底部的标签，否则，设备就会删除这个数据包。</p>
+<p><strong>17.</strong> <strong>执行标签交换的LSR只会对标签栈</strong>顶部 <strong>的数据包进行操作。</strong></p>
+<p><strong>18.</strong> <strong>LDP&#x2F;TDP会话的建立过程。</strong></p>
+<p><strong>邻居发现：</strong></p>
+<p><img src="https://pic4.zhimg.com/80/v2-ed513527df4c63cf5ce47f99880e517f_1440w.webp" alt="img"></p>
+<p><strong>LDP会话建立</strong></p>
+<p><img src="https://pic4.zhimg.com/80/v2-666c11edc3a8eb8b2c1cb25f26f95cdf_1440w.webp" alt="img"></p>
+<p><strong>19.</strong> <strong>LSR发送 TDP hello 数据包来发现其他MPLS邻居，数据包会以</strong>广播<strong>或者</strong>多播<strong>的形式进行分发。</strong></p>
+<p><strong>20.</strong> <strong>由于收到hello数据包的接口没有配置MPLS会出现怎样的报文？</strong></p>
+<p>1d20h: tdp: Ignore Hello from 172.16.3.1, Serial0&#x2F;0&#x2F;1; no intf</p>
+<p><strong>21.</strong> <strong>显示LDP hello数据包的命令：</strong></p>
+<p>debug mpls tdp transport event</p>
+<p><strong>22.</strong> <strong>显示MPLS邻居的命令：</strong></p>
+<p>show mpls tdp neighbor</p>
+<p><strong>23.</strong> <strong>显示子网与标签绑定信息的命令：</strong></p>
+<p>show mpls tdp bindings</p>
+<p><strong>24.</strong> <strong>为什么标签分配是独立控制的？</strong></p>
+<p>路由器在进行标签分配的时候，不考虑是否已经从下一跳路由器收到过同一前缀对应的标签。</p>
+<p><strong>25.</strong> <strong>为什么标签分发是主动提供的？</strong></p>
+<p>LSR在分配标签并向上游邻居通告绑定信息的时候，不考虑其他LSR是否需要这个标签。</p>
+<p><strong>26.</strong> <strong>TDP&#x2F;LDP 是否支持split-horizon?</strong></p>
+<p>不支持。</p>
+<p><strong>27.</strong> <strong>下游的标签分发方式。</strong></p>
+<p>当LSR分配的标签可以被其他LSR用来向其邻居转发打上了标签的数据包以及转发绑定信息时，这种分发方式是下游的。</p>
+<p><strong>28.</strong> <strong>自由保留方式。</strong></p>
+<p>邻接的LSR会接收这些前缀到标签的绑定信息，并将这些信息储存在自己的LIB中，如果绑定信息是从自己的下游邻居那里收到的，邻接LSR还会在自己的FIB或LFIB中使用这些信息，所谓下游路由器也就是该FEC的下一跳设备。这种储存方式叫做自由保留方式。</p>
+<p><strong>29.</strong> <strong>哪些条目会进入FIB和LFIB？</strong></p>
+<p>从下一跳设备收到的标签绑定消息会进入相应的FIB条目。</p>
+<p>从下一跳设备收到的标签绑定消息，则本地标签和下一跳标签就会进入LFIB。</p>
+<p><strong>30.</strong> <strong>使用哪种组合可以将LDP收敛延迟降到最低？</strong></p>
+<p>自由保留模式、独立标签控制和主动提供的下游标签分发。</p>
+<p><strong>31.</strong> <strong>MPLS网络收敛过程</strong></p>
+<p><img src="https://pic4.zhimg.com/80/v2-ad1002c28f8f882eb588c0ecd7f5eaf7_1440w.webp" alt="img"></p>
+<p><strong>32.</strong> <strong>引入PHP的影响。</strong></p>
+<p>解决设备性能不足以及高硬件实施难度的问题。</p>
+<p><strong>33.</strong> <strong>PHP只用于直连的</strong>子网和汇总的<strong>路由。</strong></p>
+<p><strong>34.</strong> <strong>PHP如何标记</strong></p>
+<p>PHP需要通过TDP&#x2F;LDP的特定标签值（在TDP中是1，在LDP中是3）来进行请求，这也被称为隐含空（implicit null）值</p>
+<p>当出站LSR为一个IP前缀请求PHP时，出站LSR的本地LIB条目以及上游LSR的远程LIB条目都会被设为imp-null值，而倒数第二跳的LSR的LFIB条目则要求设备执行标记弹出操作。</p>
+<h2 id="第四章-在交换WAN媒介中运行帧模式MPLS"><a href="#第四章-在交换WAN媒介中运行帧模式MPLS" class="headerlink" title="第四章 在交换WAN媒介中运行帧模式MPLS"></a>第四章 在交换WAN媒介中运行帧模式MPLS</h2><p><strong>35.</strong> <strong>通过接口的标签分发是一种</strong>主动提供的下游独立控制的机制<strong>。</strong></p>
+<h2 id="第五章-高级MPLS主题"><a href="#第五章-高级MPLS主题" class="headerlink" title="第五章 高级MPLS主题"></a>第五章 高级MPLS主题</h2><p><strong>36.</strong> <strong>有序模式和独立模式。</strong></p>
+<p><strong>有序模式</strong>是ATM-LSR的默认模式，在部署有序LSP控制时，只有当LSR是FEC的出站LSR或该LSR已经从这个FEC的下一跳LSR收到了标签的绑定信息时，LSR才会为这个FEC绑定一个标签。</p>
+<p><strong>独立模式</strong>是使用帧模式MPLS的默认模式，无论LSR是否已经从下一跳LSR收到了标签，它都会为FEC绑定标签。</p>
+<p><strong>37.</strong> <strong>为何要对标签进行过滤？</strong></p>
+<p>如果交换给某个FEC的标签并非必不可少，那么就需要有一种机制能够对标签映射的通告消息进行过滤。</p>
+<p><strong>38.</strong> <strong>mpls advertise-tags使用条件。</strong></p>
+<p>只在运行帧模式MPLS时才应该是用。原因是，当路由器通过LC-ATM接口运行时，路由器使用的是有序LSP控制模式，及下游按需的标签分发机制。</p>
+<p><strong>39.</strong> <strong>最大帧字节数量。</strong></p>
+<p>1518字节。</p>
+<p><strong>40.</strong> <strong>MTU为什么会过大，会引发什么问题？</strong></p>
+<p>MPLS需要在标签栈中添加标签，每个标签头部条目的大小是4个字节，这就是说如果收到了一个载荷为1500字节的数据包，并且往其中押入了一个标签，那么需要转发的数据帧就变成了1504.</p>
+<p><strong>41.</strong> <strong>IP MTU路径发现机制。</strong></p>
+<p>IP主机能够动态的发现从源到目的的这条路径中的最大MTU值。</p>
+<p><strong>42.</strong> <strong>如何让接口支持大于1500bit的MPLS数据包？</strong></p>
+<p>将以太网端口的MTU值设置为1526字节，也就是1518字节的标准最大以太帧加上8字节的双层MPLS标签。</p>
+<p><strong>43.</strong> <strong>帧模式的环路检测与防范基础。</strong></p>
+<p>设备使用独立控制模式来将标签分配给某个FEC，使用这种模式时，设备会根据该FEC是否存在自己的路由表中，来决定是否将标签分配给这个FEC。使用这种标签分配机制，就可以在MPLS网络中建立标签交换路径。</p>
+<p><strong>44.</strong> <strong>帧模式的环路检测和防范技术。</strong></p>
+<p>检测：每当LSP中的LSR转发入站MPLS帧时，它均会降低MPLS头部的TTL字段值，当TTL为0时，他就会丢弃这些数据包。</p>
+<p>防范：帧模式MPLS环境可以依靠路由协议来确保LSR路由表中的信息是没有环路的，这种方式和IP 路由网络中采用的方式完全一致。</p>
+<p><strong>45.</strong> <strong>MPLS架构中的路由追踪过程。</strong></p>
+<p>(1) 路由追踪的源向特定目的发送一个TTL值为1的IP数据包（第一步）</p>
+<p>(2) 数据包路径中第一台路由器向数据包源发送一跳ICMP“超时”消息。这是因为这台路由器会将IP数据包中的TTL值减1，于是其TTL值成为了0（第二步）</p>
+<p>(3) 源发送第二个数据包，这一次TTL值设置为2。第一条路由器将这个数据包路由出去。当他到达路径中第二台路由器时，这台路由器也会发送ICMP“消息”（第三步和第四步）</p>
+<p>(4) 这个步骤会持续进行（每次交互后，源都会把数据包的TTL值加1）直到数据包到达他的目的地址或者最大跳数（默认值30跳）为止。最终目的路由器或者主机会向源发送一条ICMP“端口不可达”消息。通过ICMP相应消息，源就可以分辨出这个消息是来自路径当中的转发设备还是数据包的最终目的设备。（第五步和第六步）</p>
+<p><strong>46.</strong> 在MPLS网络中不使用外部路由信息时路由追踪如何进行？</p>
+<p><strong>47.</strong> 路由汇总的作用。</p>
+<p>能够将一系列的前缀打包进一个不是很具体的路由中，以此为削减3层路由表提供了必要的机制减少了网络设备的内存消耗，而且减少了计算网络拓扑路径所需的开销。</p>
+
     </div>
 
     
@@ -257,7 +373,10 @@
     <a href="/2023/04/13/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dbgp/" rel="prev" title="路由交换面试关键词">
       <i class="fa fa-chevron-left"></i> 路由交换面试关键词
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2023/04/13/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dstp/" rel="next" title="路由交换面试关键词stp">
+      路由交换面试关键词stp <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -317,6 +436,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MPLS-and-VPN"><span class="nav-number">1.</span> <span class="nav-text">MPLS and VPN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-MPLS%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">第一章 MPLS架构概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%B8%A7%E6%A8%A1%E5%BC%8FMPLS%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.</span> <span class="nav-text">第二章 帧模式MPLS操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%9C%A8%E4%BA%A4%E6%8D%A2WAN%E5%AA%92%E4%BB%8B%E4%B8%AD%E8%BF%90%E8%A1%8C%E5%B8%A7%E6%A8%A1%E5%BC%8FMPLS"><span class="nav-number">1.3.</span> <span class="nav-text">第四章 在交换WAN媒介中运行帧模式MPLS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E9%AB%98%E7%BA%A7MPLS%E4%B8%BB%E9%A2%98"><span class="nav-number">1.4.</span> <span class="nav-text">第五章 高级MPLS主题</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -332,7 +452,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
