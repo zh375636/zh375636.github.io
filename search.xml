@@ -11,27 +11,6 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>test</title>
-    <url>/2023/01/14/test/</url>
-    <content><![CDATA[<p><a href="09综合布线案例.pptx" target="_blank">xiazaipptx</a></p>
-<span id="more"></span>
-
-<p><img src="c602a947c50cea237554d700dbcbadf5.png" alt="1"></p>
-<p>aaaaaaaaaaaaaa</p>
-<p>aaaaaaaa</p>
-<p>aaaaaaaaaaa</p>
-<p>aaaaaaaa</p>
-<p>aaaaaaaaaa</p>
-<p><object data="鸿鹄论坛_Juniper高可用性技术白皮书HA.pdf" type="application/pdf" width="100%" height="600"></object></p>
-]]></content>
-      <categories>
-        <category>test</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>itexam-ccna1-reading-note</title>
     <url>/2023/02/18/itexam-ccna1-reading-note/</url>
     <content><![CDATA[<p>source: <a href="https://itexamanswers.net/ccna-1-v7-exam-answers-introduction-to-networks-v7-0-itn.html">https://itexamanswers.net/ccna-1-v7-exam-answers-introduction-to-networks-v7-0-itn.html</a></p>
@@ -82,6 +61,32 @@
 
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">R1# show ipv6 route</span><br><span class="line">IPv6 Routing Table – 5 entries</span><br><span class="line">Codes: C – Connected, L – Local, S – Static, R – RIP, B – BGP</span><br><span class="line">U – Per-user Static route, M – MIPv6</span><br><span class="line">I1 – ISIS L1, I2 – ISIS L2, IA – ISIS interarea, IS – ISIS summary</span><br><span class="line">ND – ND Default, NDp – ND Prefix, DCE – Destination, NDr – Redirect</span><br><span class="line">O – OSPF intra, OI – OSPF inter, OE1 – OSPF ext 1, OE2 – OSPF ext 2</span><br><span class="line">ON1 – OSPF NSSA ext 1, ON2 – OSPF NSSA ext 2</span><br><span class="line">D – EIGRP, EX – EIGRP external</span><br><span class="line">C2001:DB8:ACAD::/64 [0/0]</span><br><span class="line">via GigabitEthernet0/0/0, directly connected</span><br><span class="line">L2001:DB8:ACAD::1/128 [0/0]</span><br><span class="line">via GigabitEthernet0/0/0, receive</span><br><span class="line">C2001:DB8:ACAD:1::/64 [0/0]</span><br><span class="line">via GigabitEthernet0/0/1, directly connected</span><br><span class="line">L2001:DB8:ACAD:1::1/128 [0/0]</span><br><span class="line">via GigabitEthernet0/0/1, receive</span><br><span class="line">LFF00::/8 [0/0]</span><br><span class="line">via Null0, receive</span><br></pre></td></tr></table></figure>
 ]]></content>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2023/01/14/test/</url>
+    <content><![CDATA[<p><a href="09综合布线案例.pptx" target="_blank">xiazaipptx</a></p>
+<span id="more"></span>
+
+<p><img src="c602a947c50cea237554d700dbcbadf5.png" alt="1"></p>
+<p>aaaaaaaaaaaaaa</p>
+<p>aaaaaaaa</p>
+<p>aaaaaaaaaaa</p>
+<p>aaaaaaaa</p>
+<p>aaaaaaaaaa</p>
+<p><object data="鸿鹄论坛_Juniper高可用性技术白皮书HA.pdf" type="application/pdf" width="100%" height="600"></object></p>
+]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安全面试关键词</title>
+    <url>/2023/04/12/%E5%AE%89%E5%85%A8%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8D/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>王达-H3C路由器完全配置手册</title>
@@ -157,6 +162,30 @@
       </tags>
   </entry>
   <entry>
+    <title>红帽-RH124-学生手册</title>
+    <url>/2023/02/27/%E7%BA%A2%E5%B8%BD-RH124-%E5%AD%A6%E7%94%9F%E6%89%8B%E5%86%8C/</url>
+    <content><![CDATA[<h1 id="第三章-命令行管理文件"><a href="#第三章-命令行管理文件" class="headerlink" title="第三章 命令行管理文件"></a>第三章 命令行管理文件</h1><span id="more"></span>
+
+<p>&#x2F;usr 安装的软件，共享的库 &#x2F;usr&#x2F;bin, &#x2F;usr&#x2F;sbin, &#x2F;usr&#x2F;local</p>
+<p>&#x2F;etc配置文件</p>
+<p>&#x2F;var可变数据，数据库，缓存目录，日志文件，打印机后台处理文档</p>
+<p>&#x2F;run 进程id</p>
+<p>ls -la -R</p>
+<p>cd - 进入之前的目录</p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>redhat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>路由交换面试关键词MPLS</title>
+    <url>/2023/04/13/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8DMPLS/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>老段-鸟哥linux服务器篇</title>
     <url>/2023/02/28/%E8%80%81%E6%AE%B5-%E9%B8%9F%E5%93%A5linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AF%87/</url>
     <content><![CDATA[<h1 id="456-1-第四章网络"><a href="#456-1-第四章网络" class="headerlink" title="456-1 第四章网络"></a>456-1 第四章网络</h1><p>1:31</p>
@@ -183,22 +212,217 @@
 ]]></content>
   </entry>
   <entry>
-    <title>红帽-RH124-学生手册</title>
-    <url>/2023/02/27/%E7%BA%A2%E5%B8%BD-RH124-%E5%AD%A6%E7%94%9F%E6%89%8B%E5%86%8C/</url>
-    <content><![CDATA[<h1 id="第三章-命令行管理文件"><a href="#第三章-命令行管理文件" class="headerlink" title="第三章 命令行管理文件"></a>第三章 命令行管理文件</h1><span id="more"></span>
-
-<p>&#x2F;usr 安装的软件，共享的库 &#x2F;usr&#x2F;bin, &#x2F;usr&#x2F;sbin, &#x2F;usr&#x2F;local</p>
-<p>&#x2F;etc配置文件</p>
-<p>&#x2F;var可变数据，数据库，缓存目录，日志文件，打印机后台处理文档</p>
-<p>&#x2F;run 进程id</p>
-<p>ls -la -R</p>
-<p>cd - 进入之前的目录</p>
+    <title>路由交换面试关键词</title>
+    <url>/2023/04/13/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dbgp/</url>
+    <content><![CDATA[<h1 id="BGP"><a href="#BGP" class="headerlink" title="BGP"></a>BGP</h1><p>tcp port 179</p>
+<p>按组打包</p>
+<h2 id="路由策略和策略路由区别"><a href="#路由策略和策略路由区别" class="headerlink" title="路由策略和策略路由区别"></a>路由策略和策略路由区别</h2><p>区别于一个进路由表，一个不进路由表</p>
+<p>路由策略修改路由，选择最优路径达到控制路由的选路路径</p>
+<p>策略路由不改变路由，直接以命令方式告诉路由往哪走</p>
+<h2 id="BGP特征"><a href="#BGP特征" class="headerlink" title="BGP特征"></a>BGP特征</h2><p>两个建立BGP会话的路由器为对等体Peer，对等体之间交换BGP路由表</p>
+<p>BGP路由器只发送增量的BGP路由更新，或进行触发式更新，不会周期性更新</p>
+<p>每条BGP路由都携带多种路径属性（Path attribute），BGP可以通过这些路径属性控制路径选择</p>
+<p>EBGP：运行于不同AS之间的BGP称为EBGP。为了防止AS间产生环路，当BGP设备接收EBGP对等体发送的路由时，会将带有本地AS号的路由丢弃。</p>
+<p>IBGP：运行于同一AS内部的BGP称为IBGP。为了防止AS内产生环路，BGP设备不将从IBGP对等体学到的路由通告给其他IBGP对等体，并与所有IBGP对等体建立全连接。为了解决IBGP对等体的连接数量太多的问题，BGP设计了<a href="https://link.zhihu.com/?target=http://localhost:7890/pages/AZK03187/04/AZK03187/04/resources/dc/dc_feature_bgp_0008.html">路由反射器</a>和<a href="https://link.zhihu.com/?target=http://localhost:7890/pages/AZK03187/04/AZK03187/04/resources/dc/dc_feature_bgp_0009.html">BGP联盟</a>。</p>
+<h2 id="BGP的5种报文格式"><a href="#BGP的5种报文格式" class="headerlink" title="BGP的5种报文格式"></a><strong>BGP的5种报文格式</strong></h2><p>BGP对等体间通过以下5种报文进行交互，其中Keepalive报文为周期性发送，其余报文为触发式发送：</p>
+<ul>
+<li>Open报文：用于建立BGP对等体连接。</li>
+<li>Update报文：用于在对等体之间交换路由信息。</li>
+<li>Notification报文：用于中断BGP连接。</li>
+<li>Keepalive报文：用于保持BGP连接。</li>
+<li>Route-refresh报文：用于在改变路由策略后请求对等体重新发送路由信息。只有支持路由刷新（Route-refresh）能力的BGP设备会发送和响应此报文。</li>
+</ul>
+<p>说明：5种BGP报文都拥有相同的报文头</p>
+<h2 id="路由属性的类型号列表"><a href="#路由属性的类型号列表" class="headerlink" title="路由属性的类型号列表"></a><strong>路由属性的类型号列表</strong></h2><table>
+<thead>
+<tr>
+<th>属性类型</th>
+<th>属性值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1：Origin</td>
+<td>IGP</td>
+</tr>
+<tr>
+<td>EGP</td>
+<td></td>
+</tr>
+<tr>
+<td>Incomplete</td>
+<td></td>
+</tr>
+<tr>
+<td>2：As_Path</td>
+<td>AS_SET</td>
+</tr>
+<tr>
+<td>AS_SEQUENCE</td>
+<td></td>
+</tr>
+<tr>
+<td>AS_CONFED_SET</td>
+<td></td>
+</tr>
+<tr>
+<td>AS_CONFED_SEQUENCE</td>
+<td></td>
+</tr>
+<tr>
+<td>3：Next_Hop</td>
+<td>下一跳的IP地址</td>
+</tr>
+<tr>
+<td>4：Multi_Exit_Disc</td>
+<td>MED用于判断流量进入AS时的最佳路由</td>
+</tr>
+<tr>
+<td>5：Local_Pref</td>
+<td>Local_Pref用于判断流量离开AS时的最佳路由</td>
+</tr>
+<tr>
+<td>6：Atomic_Aggregate</td>
+<td>BGP Speaker选择聚合后的路由，而非具体的路由</td>
+</tr>
+<tr>
+<td>7：Aggregator</td>
+<td>发起聚合的Router ID和AS号</td>
+</tr>
+<tr>
+<td>8：Community</td>
+<td>团体属性</td>
+</tr>
+<tr>
+<td>9：Originator_ID</td>
+<td>反射路由发起者的Router ID</td>
+</tr>
+<tr>
+<td>10：Cluster_List</td>
+<td>反射路由经过的反射器列表</td>
+</tr>
+<tr>
+<td>14：MP_REACH_NLRI</td>
+<td>多协议可达NLRI</td>
+</tr>
+<tr>
+<td>15：MP_UNREACH_NLRI</td>
+<td>多协议不可达NLRI</td>
+</tr>
+<tr>
+<td>16：Extended Communtities</td>
+<td>扩展团体属性</td>
+</tr>
+</tbody></table>
+<h2 id="BGP的6种状态机"><a href="#BGP的6种状态机" class="headerlink" title="BGP的6种状态机"></a>BGP的6种状态机</h2><p>如图所示，BGP对等体的交互过程中存在6种状态机：空闲（Idle）、连接（Connect）、活跃（Active）、Open报文已发送（OpenSent）、Open报文已确认（OpenConfirm）和连接已建立（Established）。在BGP对等体建立的过程中，通常可见的3个状态是：Idle、Active和Established。</p>
+<h3 id="1-Idle"><a href="#1-Idle" class="headerlink" title="1.Idle"></a>1.Idle</h3><p>Idle状态是BGP初始状态。在Idle状态下，BGP拒绝邻居发送的连接请求。只有在收到本设备的Start事件后，BGP才开始尝试和其它BGP对等体进行TCP连接，并转至Connect状态。</p>
+<p>说明：</p>
+<p>Start事件是由一个操作者配置一个BGP过程，或者重置一个已经存在的过程或者路由器软件重置BGP过程引起的。</p>
+<p>任何状态中收到Notification报文或TCP拆链通知等Error事件后，BGP都会转至Idle状态。</p>
+<h3 id="2-Connect"><a href="#2-Connect" class="headerlink" title="2.Connect"></a>2.Connect</h3><p>在Connect状态下，BGP启动连接重传定时器（Connect Retry），等待TCP完成连接。</p>
+<ul>
+<li>如果TCP连接成功，那么BGP向对等体发送Open报文，并转至OpenSent状态。</li>
+<li>如果TCP连接失败，那么BGP转至Active状态。</li>
+<li>如果连接重传定时器超时，BGP仍没有收到BGP对等体的响应，那么BGP继续尝试和其它BGP对等体进行TCP连接，停留在Connect状态。</li>
+</ul>
+<h3 id="3-Active"><a href="#3-Active" class="headerlink" title="3.Active"></a>3.Active</h3><p>在Active状态下，BGP总是在试图建立TCP连接。</p>
+<ul>
+<li>如果TCP连接成功，那么BGP向对等体发送Open报文，关闭连接重传定时器，并转至OpenSent状态。</li>
+<li>如果TCP连接失败，那么BGP停留在Active状态。</li>
+<li>如果连接重传定时器超时，BGP仍没有收到BGP对等体的响应，那么BGP转至Connect状态。</li>
+</ul>
+<h3 id="4-OpenSen"><a href="#4-OpenSen" class="headerlink" title="4.OpenSen"></a>4.OpenSen</h3><p>在OpenSent状态下，BGP等待对等体的Open报文，并对收到的Open报文中的AS号、版本号、认证码等进行检查。</p>
+<ul>
+<li>如果收到的Open报文正确，那么BGP发送Keepalive报文，并转至OpenConfirm状态。</li>
+<li>如果发现收到的Open报文有错误，那么BGP发送Notification报文给对等体，并转至Idle状态。</li>
+</ul>
+<h3 id="5-OpenConfirm"><a href="#5-OpenConfirm" class="headerlink" title="5.OpenConfirm"></a>5.OpenConfirm</h3><p>在OpenConfirm状态下，BGP等待Keepalive或Notification报文。如果收到Keepalive报文，则转至Established状态，如果收到Notification报文，则转至Idle状态。</p>
+<h3 id="6-Established"><a href="#6-Established" class="headerlink" title="6.Established"></a>6.Established</h3><p>在Established状态下，BGP可以和对等体交换Update、Keepalive、Route-refresh报文和Notification报文。</p>
+<ul>
+<li>如果收到正确的Update或Keepalive报文，那么BGP就认为对端处于正常运行状态，将保持BGP连接。</li>
+<li>如果收到错误的Update或Keepalive报文，那么BGP发送Notification报文通知对端，并转至Idle状态。</li>
+<li>Route-refresh报文不会改变BGP状态。</li>
+<li>如果收到Notification报文，那么BGP转至Idle状态。</li>
+<li>如果收到TCP拆链通知，那么BGP断开连接，转至Idle状态。</li>
+</ul>
+<h3 id="BGP对等体交互5原则"><a href="#BGP对等体交互5原则" class="headerlink" title="BGP对等体交互5原则"></a>BGP对等体交互5原则</h3><p>BGP设备将最优路由加入BGP路由表，形成BGP路由。BGP设备与对等体建立邻居关系后，采取以下交互原则：</p>
+<ul>
+<li>从IBGP对等体获得的BGP路由，BGP设备只发布给它的EBGP对等体。</li>
+<li>从EBGP对等体获得的BGP路由，BGP设备发布给它所有EBGP和IBGP对等体。</li>
+<li>当存在多条到达同一目的地址的有效路由时，BGP设备只将最优路由发布给对等体。</li>
+<li>路由更新时，BGP设备只发送更新的BGP路由。</li>
+<li>所有对等体发送的路由，BGP设备都会接收。</li>
+</ul>
+<p>1、从 IBGP 对等体获得的 BGP 路由， BGP 设备只发布给它的 EBGP 对等体。</p>
+<p>2、从 EBGP 对等体获得的 BGP 路由， BGP 设备发布给它所有 EBGP 和 IBGP 对等体。</p>
+<p>3、当存在多条到达同一目的地址的有效路由时， BGP 设备只将最优路由发布给对等体。</p>
+<p>4、路由更新时， BGP 设备只发送更新的 BGP 路由。</p>
+<p>5、所有对等体发送的路由， BGP 设备都会接收。</p>
+<h3 id="建立连接关系时源地址建议"><a href="#建立连接关系时源地址建议" class="headerlink" title="建立连接关系时源地址建议"></a>建立连接关系时源地址建议</h3><ul>
+<li>缺省情况下，BGP使用报文出接口作为TCP连接的本地接口。</li>
+<li>在部署IBGP对等体关系时，建议使用Loopback地址作为更新源地址。Loopback接口非常稳定，而且可以借助AS内的IGP和冗余拓扑来保证可靠性。</li>
+<li>在部署EBGP对等体关系时，通常使用直连接口的IP地址作为源地址，如若使用Loopback接口建立EBGP对等体关系，则应注意EBGP多跳问题。<br><strong>三、BGP路由的产生及通告原则</strong><br><strong>BGP路由的生成（BGP与IGP交互）</strong><br>BGP与IGP在设备中使用不同的路由表，为了实现不同AS间相互通讯，BGP需要与IGP进行交互，即BGP路由表和IGP路由表相互引入。<br><strong>BGP引入IGP路由</strong><br>BGP协议本身不发现路由，因此需要将其他路由引入到BGP路由表，实现AS间的路由互通。当一个AS需要将路由发布给其他AS时，AS边缘路由器会在BGP路由表中引入IGP的路由。为了更好的规划网络，BGP在引入IGP的路由时，可以使用路由策略进行路由过滤和路由属性设置，也可以设置MED值指导EBGP对等体判断流量进入AS时选路。<br><strong>BGP引入路由时支持Import和Network两种方式：</strong></li>
+<li>Import方式是按协议类型，将RIP、OSPF、ISIS等协议的路由引入到BGP路由表中。为了保证引入的IGP路由的有效性，Import方式还可以引入静态路由和直连路由。</li>
+<li>Network方式是逐条将IP路由表中已经存在的路由引入到BGP路由表中，比Import方式更精确。<br><strong>IGP引入BGP路由</strong><br>当一个AS需要引入其他AS的路由时，AS边缘路由器会在IGP路由表中引入BGP的路由。为了避免大量BGP路由对AS内设备造成影响，当IGP引入BGP路由时，可以使用路由策略，进行路由过滤和路由属性设置。<br><strong>BGP路由通告原则</strong><br><strong>BGP通告遵循以下原则：</strong></li>
+<li>只发布最优路由。</li>
+<li>从EBGP对等体获取的路由，会发布给所有对等体。</li>
+<li>IBGP水平分割：从IBGP对等体获取的路由，不会发送给IBGP对等体。</li>
+<li>BGP同步规则指的是：当一台路由器从自己的IBGP对等体学习到一条BGP路由时（这类路由被称为IBGP路由），它将不能使用该条路由或把这条路由通告给自己的EBGP对等体，除非它又从IGP协议（例如OSPF等，此处也包含静态路由）学习到这条路由，也就是要求IBGP路由与IGP路由同步。同步规则主要用于规避BGP路由黑洞问题。</li>
+</ul>
+<h1 id="BGP属性"><a href="#BGP属性" class="headerlink" title="BGP属性"></a><strong>BGP属性</strong></h1><p>路由属性是对路由的特定描述，所有的 BGP 路由属性都可以分为以下 4 类</p>
+<p>1、公认必须遵循（Well-known mandatory）：所有 BGP 设备都可以识别此类属性，且必须存<strong>在于 Update 报文中</strong>。如果缺少这类属性，路由信息就会出错。</p>
+<p>2、公认任意（Well-known discretionary）：所有 BGP 设备都可以识别此类属性，但不要求必须存在于 Update 报文中，即就算缺少这类属性，路由信息也不会出错。</p>
+<p>3、可选过渡（Optional transitive）：BGP 设备可以不识别此类属性，如果 BGP 设备不识别此类属性，但它仍然会接收这类属性，并通告给其他对等体。</p>
+<p>4、可选非过渡（Optional non-transitive）：BGP 设备可以不识别此类属性，如果 BGP 设备不识别此类属性，则会被忽略该属性，且不会通告给其他对等体。</p>
+<h2 id="属性详细"><a href="#属性详细" class="headerlink" title="属性详细"></a>属性详细</h2><p><a href="https://zhuanlan.zhihu.com/p/126754314">https://zhuanlan.zhihu.com/p/126754314</a></p>
+<h1 id="BGP选择路由的策略"><a href="#BGP选择路由的策略" class="headerlink" title="BGP选择路由的策略"></a><strong>BGP选择路由的策略</strong></h1><p>当到达同一目的地存在多条路由时， BGP 依次对比下列属性来选择路由：</p>
+<p>1、优选协议首选值（PrefVal）最高的路由。</p>
+<p>协议首选值（PrefVal）是华为设备的特有属性，该属性仅在本地有效。</p>
+<p>2、优选本地优先级（Local_Pref）最高的路由。</p>
+<p>如果路由没有本地优先级， BGP 选路时将该路由按缺省的本地优先级 100 来处理。</p>
+<p>\3. 依次优选手动聚合路由、自动聚合路由、 network 命令引入的路由、 import-route 命令引入的路由、从对等体学习的路由。</p>
+<p>\4. 优选 AS 路径（AS_Path）最短的路由。</p>
+<p>\5. 依次优选 Origin 类型为 IGP、 EGP、 Incomplete 的路由。</p>
+<p>\6. 对于来自同一 AS 的路由，优选 MED（Multi Exit Discriminator）值最低的路由。</p>
+<p>\7. 依次优选 EBGP 路由、 IBGP 路由、 LocalCross 路由、 RemoteCross 路由。</p>
+<p>PE上某个 VPN实例的 VPNv4路由的 ERT匹配其他 VPN实例的IRT后复制到该 VPN实例，称为 LocalCross；从远端 PE 学习到的 VPNv4 路由的 ERT 匹配某个 VPN 实例的 IRT 后复制到该 VPN 实例，称为 RemoteCross。</p>
+<p>8．优选到 BGP 下一跳 IGP 度量值（metric）最小的路由。</p>
+<p>说明：</p>
+<p>在IGP中，对到达同一目的地址的不同路由， IGP根据本身的路由算法计算路由的度量值。</p>
+<p>\9. 优选 Cluster_List 最短的路由。</p>
+<p>\10. 优选 Router ID 最小的设备发布的路由。</p>
+<p>说明：</p>
+<p>如果路由携带Originator_ID属性，选路过程中将比较Originator_ID的大小（不再比较RouterID），并优选Originator_ID最小的路由。</p>
+<p>\11. 优选从具有最小 IP Address 的对等体学来的路由。</p>
+<h1 id="六、路由反射器"><a href="#六、路由反射器" class="headerlink" title="六、路由反射器"></a><strong>六、路由反射器</strong></h1><p>为保证 IBGP 对等体之间的连通性，需要在 IBGP 对等体之间建立全连接关系。假设在一个 AS 内部有 n 台设备，那么建立的 IBGP 连接数就为 n(n-1)&#x2F;2。当设备数目很多时，设备配置将十分复杂，而且配置后网络资源和 CPU 资源的消耗都很大。在 IBGP 对等体间使用路由反射器可以解决以上问题。</p>
+<p><strong>路由反射器 RR（Route Reflector）</strong>：允许把从 IBGP 对等体学到的路由反射到其他 IBGP 对等体的 BGP 设备，类似 OSPF 网络中的 DR。</p>
+<p><strong>客户机（Client）</strong>：与 RR 形成反射邻居关系的 IBGP 设备。在 AS 内部客户机只需要与 RR直连。</p>
+<p><strong>非客户机（Non-Client）：</strong>既不是 RR 也不是客户机的 IBGP 设备。在 AS 内部非客户机与 RR之间，以及所有的非客户机之间仍然必须建立全连接关系。</p>
+<p><strong>始发者（Originator）：</strong>在 AS 内部始发路由的设备。Originator_ID 属性用于防止集群内产生路由环路。</p>
+<p><strong>集群（Cluster）</strong>：路由反射器及其客户机的集合。Cluster_List 属性用于防止集群间产生路由环路。</p>
+<p><strong>路由反射器原理</strong></p>
+<p>同一集群内的客户机只需要与该集群的 RR 直接交换路由信息，因此客户机只需要与 RR 之间建立IBGP 连接，不需要与其他客户机建立 IBGP 连接，从而减少了 IBGP 连接数量。如图所示，在AS65000 内一台设备作为 RR，三台设备作为客户机，形成 Cluster1。此时 AS65000 中 IBGP 的连接数从配置 RR 前的 10 条减少到 4 条，不仅简化了设备的配置，也减轻了网络和 CPU 的负担。</p>
+<p>RR 突破了“从 IBGP 对等体获得的 BGP 路由， BGP 设备只发布给它的 EBGP 对等体。”的限制，并采用独有的 Cluster_List 属性和 Originator_ID 属性防止路由环路。RR 向 IBGP 邻居发布路由规则如下：</p>
+<p>1、从非客户机学到的路由，发布给所有客户机。</p>
+<p>2、从客户机学到的路由，发布给所有非客户机和客户机（发起此路由的客户机除外）。</p>
+<p>3、从 EBGP 对等体学到的路由，发布给所有的非客户机和客户机。</p>
+<p><strong>Cluster_List属性</strong></p>
+<p>路由反射器和它的客户机组成一个集群（Cluster），使用 AS 内唯一的 Cluster ID 作为标识。为了防止集群间产生路由环路，路由反射器使用 Cluster_List 属性，记录路由经过的所有集群的 ClusterID。</p>
+<p>当一条路由第一次被 RR 反射的时候， RR 会把本地 Cluster ID 添加到 Cluster List 的前面。如果没有 Cluster_List 属性， RR 就创建一个。</p>
+<p>当 RR 接收到一条更新路由时， RR 会检查 Cluster List。如果 Cluster List 中已经有本地 ClusterID，丢弃该路由；如果没有本地 Cluster ID，将其加入 Cluster List，然后反射该更新路由。</p>
+<p><strong>Originator_ID属性</strong></p>
+<p>Originator ID 由 RR 产生，使用的 Router ID 的值标识路由的始发者，用于防止集群内产生路由环路。</p>
+<p>当一条路由第一次被 RR 反射的时候， RR 将 Originator_ID 属性加入这条路由，标识这条路由的发起设备。如果一条路由中已经存在了 Originator_ID 属性，则 RR 将不会创建新的Originator_ID 属性。</p>
+<p>当设备接收到这条路由的时候，将比较收到的 Originator ID 和本地的 Router ID，如果两个 ID相同，则不接收此路由。</p>
+<h1 id="七、BGP-联盟"><a href="#七、BGP-联盟" class="headerlink" title="七、BGP 联盟"></a><strong>七、BGP 联盟</strong></h1><p>解决 AS 内部的 IBGP 网络连接激增问题，除了使用路由反射器之外，还可以使用联盟（Confederation）。联盟将一个 AS 划分为若干个子 AS。每个子 AS 内部建立 IBGP 全连接关系，</p>
+<p>子 AS 之间建立联盟 EBGP 连接关系，但联盟外部 AS 仍认为联盟是一个 AS。配置联盟后，原 AS号将作为每个路由器的联盟 ID。这样有两个好处：一是可以保留原有的 IBGP 属性，包括 Local Preference 属性、 MED 属性和 NEXT_HOP 属性等；二是联盟相关的属性在传出联盟时会自动被删除，即管理员无需在联盟的出口处配置过滤子 AS 号等信息的操作。</p>
+<h1 id="八、路由聚合"><a href="#八、路由聚合" class="headerlink" title="八、路由聚合"></a><strong>八、路由聚合</strong></h1><p>在大规模的网络中， BGP 路由表十分庞大，给设备造成了很大的负担，同时使发生路由振荡的几率也大大增加，影响网络的稳定性。</p>
+<p>路由聚合是将多条路由合并的机制，它通过只向对等体发送聚合后的路由而不发送所有的具体路由的方法，减小路由表的规模。并且被聚合的路由如果发生路由振荡，也不再对网络造成影响，从而提高了网络的稳定性。</p>
+<p>BGP 在 IPv4 网络中支持自动聚合和手动聚合两种方式，而 IPv6 网络中仅支持手动聚合方式：</p>
+<p><strong>自动聚合：</strong>对 BGP 引入的路由进行聚合。配置自动聚合后， BGP 将按照自然网段聚合路由（例如非自然网段 A 类地址 10.1.1.1&#x2F;24 和 10.2.1.1&#x2F;24 将聚合为自然网段 A 类地址 10.0.0.0&#x2F;8），并且 BGP 向对等体只发送聚合后的路由。</p>
+<p><strong>手动聚合</strong>：对 BGP 本地路由表中存在的路由进行聚合。手动聚合可以控制聚合路由的属性，以及决定是否发布具体路由。</p>
+<p>为了避免路由聚合可能引起的路由环路， BGP 设计了 AS_Sst 属性。AS_Sst 属性是一种无序的AS_Path 属性，标明聚合路由所经过的 AS 号。当聚合路由重新进入 AS_Sst 属性中列出的任何一个 AS 时， BGP 将会检测到自己的 AS 号在聚合路由的 AS_Sst 属性中，于是会丢弃该聚合路由，从而避免了路由环路的形成。</p>
+<h1 id="九、路由衰减"><a href="#九、路由衰减" class="headerlink" title="九、路由衰减"></a><strong>九、路由衰减</strong></h1><p>当 BGP 应用于复杂的网络环境时，路由振荡十分频繁。为了防止频繁的路由振荡带来的不利影响，BGP 使用路由衰减来抑制不稳定的路由。</p>
+<p>路由振荡指路由表中添加一条路由后，该路由又被撤销的过程。当发生路由振荡时，设备就会向邻居发布路由更新，收到更新报文的设备需要重新计算路由并修改路由表。所以频繁的路由振荡会消耗大量的带宽资源和 CPU 资源，严重时会影响到网络的正常工作。</p>
 ]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>redhat</tag>
-      </tags>
   </entry>
 </search>
