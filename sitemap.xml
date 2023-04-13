@@ -11,6 +11,42 @@
   </url>
   
   <url>
+    <loc>https://example.com/2023/04/13/%E8%BD%BB%E8%BD%BB%E6%9D%BE%E6%9D%BEv7%E9%98%B2%E7%81%AB%E5%A2%99/</loc>
+    
+    <lastmod>2023-04-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/2023/04/13/%E5%AE%89%E5%85%A8%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dpaloalto/</loc>
+    
+    <lastmod>2023-04-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/2023/04/13/%E6%96%87%E5%8C%96/</loc>
+    
+    <lastmod>2023-04-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/2023/04/13/%E5%AE%89%E5%85%A8%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dfortigate/</loc>
+    
+    <lastmod>2023-04-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://example.com/2023/04/12/%E5%AE%89%E5%85%A8%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8D/</loc>
     
     <lastmod>2023-04-12</lastmod>

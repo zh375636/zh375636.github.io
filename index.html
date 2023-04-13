@@ -184,6 +184,352 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2023/04/13/%E8%BD%BB%E8%BD%BB%E6%9D%BE%E6%9D%BEv7%E9%98%B2%E7%81%AB%E5%A2%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/13/%E8%BD%BB%E8%BD%BB%E6%9D%BE%E6%9D%BEv7%E9%98%B2%E7%81%AB%E5%A2%99/" class="post-title-link" itemprop="url">轻轻松松v7防火墙</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-04-13 16:12:40 / Modified: 20:12:36" itemprop="dateCreated datePublished" datetime="2023-04-13T16:12:40+08:00">2023-04-13</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2023/04/13/%E8%BD%BB%E8%BD%BB%E6%9D%BE%E6%9D%BEv7%E9%98%B2%E7%81%AB%E5%A2%99/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2023/04/13/%E8%BD%BB%E8%BD%BB%E6%9D%BE%E6%9D%BEv7%E9%98%B2%E7%81%AB%E5%A2%99/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="3-Telnet"><a href="#3-Telnet" class="headerlink" title="3 Telnet"></a>3 Telnet</h1><p>开启telnet服务，管理员开启telnet</p>
+<h1 id="4-用户登录权限"><a href="#4-用户登录权限" class="headerlink" title="4 用户登录权限"></a>4 用户登录权限</h1><p>不允许用户登录后对admin账号修改，undo,reset,shutdown,save,三层协议</p>
+<p>解：不建network-admin level-15用户</p>
+<p>角色规则</p>
+<p>display role feature-group</p>
+<p>配置角色策略</p>
+<h1 id="5-防火墙三权分立账号创建方法"><a href="#5-防火墙三权分立账号创建方法" class="headerlink" title="5 防火墙三权分立账号创建方法"></a>5 防火墙三权分立账号创建方法</h1><p>admin,audit,security</p>
+<p>系统管理员新建ssh https telnet</p>
+<p>角色策略 </p>
+<p>系统管理员—管理员角色</p>
+<h1 id="6-SSH"><a href="#6-SSH" class="headerlink" title="6 SSH"></a>6 SSH</h1><p>生成RSA秘钥对</p>
+<p>生成DSA秘钥对</p>
+<p>line vty 0 63</p>
+<p>authentication-mode scheme</p>
+<p>创建对象策略</p>
+<p>object-policy ip pass</p>
+<p>rule 0 pass</p>
+<p>quit</p>
+<h1 id="7-透明部署"><a href="#7-透明部署" class="headerlink" title="7 透明部署"></a>7 透明部署</h1><p>网络接口—工作模式–二层模式</p>
+<p>策略—-安全策略</p>
+<p>放通trust到untrust</p>
+<p>系统—维护—-系统设置—-配置文件—-保存当前配置</p>
+<h1 id="9-PPPoE"><a href="#9-PPPoE" class="headerlink" title="9 PPPoE"></a>9 PPPoE</h1><p>接口—IP地址—-pppoe</p>
+<p>接口1&#x2F;0&#x2F;4  ip地址—内网网关 192.168.10.1</p>
+<p>策略—NAT—-出方向动态转换基于acl—-dial0（转换后源地址—接口ip地址）</p>
+<p>网络接口安全域untrust</p>
+<p>安全策略</p>
+<p>网络dhcp服务</p>
+<p>网络dhcp地址池</p>
+<h1 id="13防火墙外网固定ip地址上网"><a href="#13防火墙外网固定ip地址上网" class="headerlink" title="13防火墙外网固定ip地址上网"></a>13防火墙外网固定ip地址上网</h1><h1 id="L2TP-VPN"><a href="#L2TP-VPN" class="headerlink" title="L2TP VPN"></a>L2TP VPN</h1><p>用户ppp</p>
+<p>VT1 接口已经加入了“Untrust”安全域。</p>
+<p> 配置安全策略将Untrust到Local域目的端口为UDP1701端口放通。</p>
+<p>#在”策略”&gt;“安全策略”&gt;中添加安全策略，名称定义为“l2tp”、源安全区域选择为”untrust”、目的安全区域选择为”local”、服务选择”l2tp”。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2023/04/13/%E6%96%87%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/13/%E6%96%87%E5%8C%96/" class="post-title-link" itemprop="url">文化</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-04-13 14:17:23 / Modified: 14:48:54" itemprop="dateCreated datePublished" datetime="2023-04-13T14:17:23+08:00">2023-04-13</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2023/04/13/%E6%96%87%E5%8C%96/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2023/04/13/%E6%96%87%E5%8C%96/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>美的始终坚持通过技术创新提升产品品质和服务，并以此贡献人类，提高人类生活质量，促进人类生活更舒适、更轻松、更美好。</p>
+<p>美的集团营造了一种开放，公正，公平的工作环境，提供平台和资源激励员工创造价值，成就自我，与企业共同发展。</p>
+<p>美的集团的企业文化。<br>“为人类创造美好生活”为客户创造价值、为员工创造机会、为股东创造利润、为社会创造财富。</p>
+<ul>
+<li>美的使命</li>
+<li>为人类创造美好生活</li>
+<li>我们始终坚持通过技术创新提升产品品质和服务，并以此贡献人类，提高人类生活质量，促进人类生活更舒适、更轻松、更美好。</li>
+<li>我们努力践行“为客户创造价值，为员工创造机会，为股东创造利润，为社会创造财富”的信念，并为此努力不懈，奋斗不止，创造和谐的生存空间，实现伟大理想。</li>
+<li>美的愿景</li>
+<li>做世界的美的</li>
+<li>我们致力于成为国内家电行业的领导者，跻身全球家电综合实力前三强，使“美的”成为全球知名的品牌。</li>
+<li>我们将不断提升境界、放眼全球，以全球化经营的理念为指引，瞄准国际领先企业，不断创新、深化改革、培养人才，打造具有全球优势的企业价值链。</li>
+</ul>
+<p>2、企业文化：</p>
+<p>①美的愿景</p>
+<p>科技尽善 生活尽美；</p>
+<p>②美的使命</p>
+<p>联动人与万物，启迪美的世界；</p>
+<p>③美的价值观</p>
+<p>敢知未来——志存高远、务实奋进、包容共协、变革创新；</p>
+<p>④经营准则</p>
+<p>理性追求：宁慢两步、不错半步；</p>
+<p>授权经营：充分授权、业绩导向；</p>
+<p>协作共享：价值为尊、利益共享。<br>应答时间：2020-11-18，最新业务变化请以平安银行官网公布为准。<br>[平安银行我知道]想要知道更多？快来看“平安银行我知道”吧~</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2023/04/13/%E5%AE%89%E5%85%A8%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dpaloalto/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/13/%E5%AE%89%E5%85%A8%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dpaloalto/" class="post-title-link" itemprop="url">安全面试关键词paloalto</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-04-13 11:38:14 / Modified: 15:01:02" itemprop="dateCreated datePublished" datetime="2023-04-13T11:38:14+08:00">2023-04-13</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2023/04/13/%E5%AE%89%E5%85%A8%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dpaloalto/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2023/04/13/%E5%AE%89%E5%85%A8%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dpaloalto/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><p>Walk me through your daily activities as a Palo Alto Firewall AdministratorAns: <strong>Administering firewall, creating rules,</strong> policies, zones, interface, <strong>monitortraffic,</strong> bug patch fixes, software upgrades and build new VPN solution</p>
+<h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2023/04/13/%E5%AE%89%E5%85%A8%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dfortigate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123456.gif">
+      <meta itemprop="name" content="Hang Zhang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/13/%E5%AE%89%E5%85%A8%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dfortigate/" class="post-title-link" itemprop="url">安全面试关键词fortigate</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-04-13 11:38:05 / Modified: 11:38:06" itemprop="dateCreated datePublished" datetime="2023-04-13T11:38:05+08:00">2023-04-13</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2023/04/13/%E5%AE%89%E5%85%A8%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dfortigate/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2023/04/13/%E5%AE%89%E5%85%A8%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dfortigate/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://example.com/2023/04/13/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E9%9D%A2%E8%AF%95%E5%85%B3%E9%94%AE%E8%AF%8Dospf/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -209,7 +555,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-04-13 03:12:37 / Modified: 09:56:40" itemprop="dateCreated datePublished" datetime="2023-04-13T03:12:37+08:00">2023-04-13</time>
+              <time title="Created: 2023-04-13 03:12:37 / Modified: 22:20:20" itemprop="dateCreated datePublished" datetime="2023-04-13T03:12:37+08:00">2023-04-13</time>
             </span>
 
           
@@ -644,6 +990,78 @@
 <h1 id="11-拨打华为400热线求助"><a href="#11-拨打华为400热线求助" class="headerlink" title="11  拨打华为400热线求助"></a>11  拨打华为400热线求助</h1><p>拨打华为4008229999</p>
 <p><object data="1OSPF协议基础.pdf" type="application/pdf" width="100%" height="600"></object></p>
 <p><object data="2OSPF域内路由.pdf" type="application/pdf" width="100%" height="600"></object><br><object data="3OSPF域间路由.pdf" type="application/pdf" width="100%" height="600"></object><br><object data="4OSPF外部路由.pdf" type="application/pdf" width="100%" height="600"></object><br><object data="5OSPF特殊区域及其他特性.pdf" type="application/pdf" width="100%" height="600"></object></p>
+<ul>
+<li>OSPF是一种链路状态协议，采用SPF（最短路径）算法，是一个最常用的IGP动态路由协议</li>
+<li>OSPF协议从所有可用的路由器中搜集链路状态（Link-state）信息，从而构建该网络的拓扑图，由此决定提交的路由表</li>
+</ul>
+<h3 id="OSPF特点"><a href="#OSPF特点" class="headerlink" title="OSPF特点"></a><strong>OSPF特点</strong></h3><ol>
+<li>无路由自环</li>
+<li>可适应大规模网络</li>
+<li>路由收敛速度快</li>
+<li>支持区域划分</li>
+<li>支持认证</li>
+<li>组播发送协议报文</li>
+</ol>
+<h2 id="OSPF术语"><a href="#OSPF术语" class="headerlink" title="OSPF术语"></a><strong>OSPF术语</strong></h2><h3 id="Router-id"><a href="#Router-id" class="headerlink" title="Router-id"></a><strong>Router-id</strong></h3><p>必须给每一个OSPF路由器定义一个身份，这就是Router-ID，并且<strong>Router-ID在网络中绝对不可以有重名</strong>，否则路由器收到的链路状态，就无法确定发起者的身份，也就无法通过链路状态信息确定网络位置，OSPF路由器发出的链路状态都会写上自己的Router-ID，可以理解为该链路状态的签名，不同路由器产生的链路状态，签名绝不会相同。 每一台OSPF路由器只有一个Router-ID，Router-ID使用IP地址的形式来表示，确定Router-ID的方法为：</p>
+<ol>
+<li>手工指定</li>
+<li>路由器的loopback接口中，IP地址最大者</li>
+<li>物理接口IP最大者</li>
+</ol>
+<h3 id="Cost（成本）"><a href="#Cost（成本）" class="headerlink" title="Cost（成本）"></a><strong>Cost（成本）</strong></h3><p>OSPF使用接口的带宽来计算Metric，例如一个10 Mbit&#x2F;s的接口，计算Coast的方法为： 将10 Mbit换算成bit，为10 000 000 bit，然后用10000 0000除以该带宽，结果为 10000 0000&#x2F;10 000 000 bit &#x3D; 10，所以一个10 Mbit&#x2F;s的接口，OSPF认为该接口的Metric值为10，需要注意的是，计算中，带宽的单位取bit&#x2F;s，而不是Kbit&#x2F;s，例如一个100 Mbit&#x2F;s的接口，Cost 值为 10000 0000 &#x2F;100 000 000&#x3D;1，因为Cost值必须为整数，所以即使是一个1000 Mbit&#x2F;s（1GBbit&#x2F;s）的接口，Cost值和100Mbit&#x2F;s一样，为1。如果路由器要经过两个接口才能到达目标网络，那么很显然，两个接口的Cost值要累加起来，才算是到达目标网络的Metric值，所以OSPF路由器计算到达目标网络的Metric值，必须将沿途中所有接口的Cost值累加起来，在累加时，同EIGRP一样，只计算出接口，不计算进接口。</p>
+<ul>
+<li>OSPF会自动计算接口上的Cost值，但也可以通过手工指定该接口的Cost值，手工指定的优先于自动计算的值。</li>
+<li>OSPF计算的Cost，同样是和接口带宽成反比，带宽越高，Cost值越小。到达目标相同Cost值的路径，可以执行负载均衡，最多6条链路同时执行负载均衡。</li>
+</ul>
+<h3 id="链路（Link）"><a href="#链路（Link）" class="headerlink" title="链路（Link）"></a><strong>链路（Link）</strong></h3><p>就是路由器上的接口，在这里，应该指运行在OSPF进程下的接口。</p>
+<h3 id="链路状态（Link-State）"><a href="#链路状态（Link-State）" class="headerlink" title="链路状态（Link-State）"></a><strong>链路状态（Link-State）</strong></h3><p>链路状态信息（LSA）就是OSPF接口上的描述信息，例如接口上的IP地址，子网掩码，网络类型，Cost值等等，<strong>OSPF路由器之间交换的并不是路由表，而是链路状态（LSA）</strong>，OSPF通过获得网络中所有的链路状态信息，从而计算出到达每个目标精确的网络路径。OSPF路由器会将自己所有的链路状态毫不保留地全部发给邻居，邻居将收到的链路状态全部放入链路状态数据库（Link-State Database），邻居再发给自己的所有邻居，并且在传递过程种，绝对不会有任何更改。通过这样的过程，最终，<strong>网络中所有的OSPF路由器都拥有网络中所有的链路状态</strong>，并且所有路由器的链路状态应该能描绘出相同的网络拓朴。</p>
+<h3 id="OSPF区域"><a href="#OSPF区域" class="headerlink" title="OSPF区域"></a><strong>OSPF区域</strong></h3><p>因为OSPF路由器之间会将所有的链路状态（LSA）相互交换，毫不保留，当网络规模达到一定程度时，LSA将形成一个庞大的数据库，势必会给OSPF计算带来巨大的压力；为了能够降低OSPF计算的复杂程度，缓存计算压力，OSPF采用分区域计算，将<strong>网络中所有OSPF路由器划分成不同的区域，每个区域负责各自区域精确的LSA传递与路由计算</strong>，然后再将一个区域的LSA简化和汇总之后转发到另外一个区域，这样一来，在区域内部，拥有网络精确的LSA，而在不同区域，则传递简化的LSA。区域的划分为了能够尽量设计成无环网络，所以采用了Hub-Spoke的拓朴架构，也就是采用核心与分支的拓朴。</p>
+<p><img src="https://pic3.zhimg.com/v2-bf105d87224ed57c3b654b7bef3f8f2a_b.jpg" alt="动图封面"></p>
+<p>区域的命名可以采用整数数字，如1、2、3、4，也可以采用IP地址的形式，0.0.0.1、0.0.0.2，因为采用了Hub-Spoke的架构，所以必须定义出一个核心，然后其它部分都与核心相连，<strong>OSPF的区域0就是所有区域的核心，称为BackBone 区域（骨干区域）</strong>，而其它区域称为Normal 区域（常规区域），在理论上，所有的常规区域应该直接和骨干区域相连，<strong>常规区域只能和骨干区域交换LSA</strong>，常规区域与常规区域之间即使直连也无法互换LSA，如上图中Area 1、Area 2、Area 3、Area 4只能和Area 0互换LSA，然后再由Area 0转发，<strong>Area 0就像是一个中转站</strong>，两个常规区域需要交换LSA，只能先交给Area 0，再由Area 0转发，而常规区域之间无法互相转发。 <strong>OSPF区域是基于路由器的接口划分的</strong>，而不是基于整台路由器划分的，一台路由器可以属于单个区域，也可以属于多个区域。</p>
+<p><img src="https://pic2.zhimg.com/v2-a5ab3f97294212e610b37cb384b95221_b.jpg" alt="动图封面"></p>
+<p>如果一台OSPF路由器属于单个区域，即该路由器所有接口都属于同一个区域，那么这台路由器称为Internal Router（IR），如上图中的R2，R3和R4；如果一台OSPF路由器属于多个区域，即该路由器的接口不都属于一个区域，那么这台路由器称为Area Border Router （ABR），如上图中的R1，ABR可以将一个区域的LSA汇总后转发至另一个区域；如果一台OSPF路由器将外部路由协议重分布进OSPF，那么这台路由器称为Autonomous System Boundary Router （ASBR），如上图中，R5将EIGRP重分进OSPF，那么R5就是ASBR，但是如果只是将OSPF重分布进其它路由协议，则不能称为ASBR。</p>
+<p>由于OSPF有着多种区域，所以OSPF的路由在路由表中也以多种形式存在，共分以下几种：</p>
+<ul>
+<li>如果是同区域的路由，叫做Intra-Area Route，在路由表中使用O来表示；</li>
+<li>如果是不同区域的路由，叫做Inter-Area Route或Summary Route，在路由表中使用O IA来表示；</li>
+<li>如果并非OSPF的路由，或者是不同OSPF进程的路由，只是被重分布到OSPF的，叫做External Route，在路由表中使用O E2或O E1来表示。</li>
+</ul>
+<p>当存在多种路由可以到达同一目的地时，OSPF将根据先后顺序来选择要使用的路由，所有路由的先后顺序为： Intra-Area — Inter-Area — External E1 — External E2，即 O — O IA — O E1 — O E2。</p>
+<h3 id="邻居（Neighbor）"><a href="#邻居（Neighbor）" class="headerlink" title="邻居（Neighbor）"></a><strong>邻居（Neighbor）</strong></h3><p>OSPF只有邻居之间才会交换LSA，路由器会将链路状态数据库中所有的内容毫不保留地发给所有邻居，要想在OSPF路由器之间交换LSA，必须先形成OSPF邻居，OSPF邻居靠发送Hello包来建立和维护，Hello包会在启动了OSPF的接口上周期性发送，在不同的网络中，发送Hello包的间隔也会不同，当超过4倍的Hello时间，也就是Dead时间过后还没有收到邻居的Hello包，邻居关系将被断开。 两台OSPF路由器必须满足4个条件，才能形成OSPF邻居，4个必备条件如下： <strong>1.Area-id（区域号码）</strong> 即路由器之间必须配置在相同的OSPF区域，否则无法形成邻居。 <strong>2.Hello and Dead Interval（Hello时间与Dead时间）</strong> 即路由器之间的Hello时间和Dead时间必须一致，否则无法形成邻居。 <strong>3.Authentication（认证）</strong> 路由器之间必须配置相同的认证密码，如果密码不同，则无法形成邻居。 <strong>4.Stub Area Flag（末节标签）</strong> 路由器之间的末节标签必须一致，即处在相同的末节区域内，否则无法形成邻居。</p>
+<h3 id="邻接（Adjacency）"><a href="#邻接（Adjacency）" class="headerlink" title="邻接（Adjacency）"></a><strong>邻接（Adjacency）</strong></h3><p>两台OSPF路由器能够形成邻居，但并不一定能相互交换LSA，只要能交换LSA，关系则称为邻接（Adjacency）。邻居之间只交换Hello包，而邻接（Adjacency）之间不仅交换Hello包，还要交换LSA。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-d0b3da8aad5aa52fad1b7bc1720f3027_1440w.webp" alt="img"></p>
+<h3 id="DR-x2F-BDR"><a href="#DR-x2F-BDR" class="headerlink" title="DR&#x2F;BDR"></a><strong>DR&#x2F;BDR</strong></h3><p>当多台OSPF路由器连到同一个多路访问网段时，如果每两台路由器之间都相互交换LSA，那么该网段将充满着众多LSA条目，为了能够尽量减少LSA的传播数量，通过在多路访问网段中选择出一个核心路由器，称为DR（Designated Router），<strong>网段中所有的OSPF路由器都和DR互换LSA</strong>，这样一来，DR就会拥有所有的LSA，并且将所有的LSA转发给每一台路由器；<strong>DR就像是该网段的LSA中转站，所有的路由器都与该中转站互换LSA</strong>，如果DR失效后，那么就会造成LSA的丢失与不完整，所以在多路访问网络中除了选举出DR之外，还会选举出一台路由器作为DR的备份，称为BDR（Backup Designated Router），<strong>BDR在DR不可用时，代替DR的工作</strong>，而既不是DR，也不是BDR的路由器称为Drother，事实上，Dother除了和DR互换LSA之外，同时还会和BDR互换LSA。</p>
+<p><img src="https://pic1.zhimg.com/v2-d01321ad51a453931a5f92283938a754_b.jpg" alt="动图封面"></p>
+<p>上图中R1被选为DR，R2被选为BDR，而R3和R4为Drother，R3同时和R1与R2互换LSA，R4也同时和R1与R2互换LSA，但R3与R4却不能互换LSA。 其实不难看出，DR与BDR并没有任何本质与功能的区别，只有在多路访问的网络环境，才需要DR和BDR，DR与BDR的选举是在一个二层网段内选举的，即在多个路由器互连的接口范围内，与OSPF区域没有任何关系，一个区域可能有多个多路访问网段，那么就会存在多个DR和BDR，但一个多路访问网段，只能有一个DR和BDR；选举DR和BDR的规则为：</p>
+<p><strong>比较接口优先级</strong> 选举优先级最高的成为DR，优先级数字越大，表示优先级越高，被选为DR的几率就越大，次优先级的为BDR，优先级范围是0-255，默认为1，优先级为0表示没有资格选举DR和BDR。</p>
+<p><strong>Route-Id大小</strong> 如果在优先级都相同的情况下，Route-Id 最大的成为DR，其次是BDR，数字越大，被选为DR的几率就越大。 在一个多路访问网络中，选举DR和BDR是有时间限制的，该时间为Wait时间，默认为4倍的Hello时间，即与Dead时间相同，如果OSPF路由器在超过Wait时间后也没有其它路由器与自己竞争DR与BDR的选举，那么就选自己为DR；当一个多路访问网络中选举出DR与BDR之后，在DR与BDR没有失效的情况下，不会进行重新选举，也就是在选举出DR与BDR之后，即使有更高优先级的路由器加入网络，也不会影响DR与BDR的角色，在越出选举时间（Wait时间）后，只有DR与BDR失效后，才会重新选举。DR失效后，会同时重新选举DR与BDR，而在BDR失效后，只会重新选举BDR。</p>
+<p><strong>DR和BDR与Drother的数据包处理会有所不同</strong> 所有OSPF路由器，包括DR与BDR，都能够接收和传递目标地址为224.0.0.5的数据包。 只有DR和BDR才能接收和传递目标地址为224.0.0.6的数据包。 由此可见，Drother路由器将数据包发向目标地址224.0.0.6，只能被DR和BDR接收，其它Drother不能接收；而DR和BDR将数据包发向目标地址224.0.0.5，可以被所有路由器接收。</p>
+<h2 id="OSPF数据包"><a href="#OSPF数据包" class="headerlink" title="OSPF数据包"></a><strong>OSPF数据包</strong></h2><h3 id="Hello"><a href="#Hello" class="headerlink" title="Hello"></a><strong>Hello</strong></h3><p>Hello包是用来建立和维护OSPF邻居的，要交换LSA，必须先通过Hello包建立OSPF邻居。</p>
+<h3 id="Database-Description-Packets-（DBD）"><a href="#Database-Description-Packets-（DBD）" class="headerlink" title="Database Description Packets （DBD）"></a><strong>Database Description Packets （DBD）</strong></h3><p>邻居建立之后，并不会立刻就将自己链路状态数据库中所有的LSA全部发给邻居，而是将LSA的基本描述信息发给邻居，这就是Database Description Packets （DBD），是LSA的目录信息，相当于书的目录，邻居在看完DBD之后，就能知道哪些LSA是需要邻居发送给自己的。</p>
+<h3 id="Link-state-Request-（LSR）"><a href="#Link-state-Request-（LSR）" class="headerlink" title="Link-state Request （LSR）"></a><strong>Link-state Request （LSR）</strong></h3><p>邻居在看完发来的LSA描述信息（DBD）之后，就知道哪些LSA是需要邻居发送给自己的，自己就会向邻居发送LSA请求（LSR），告诉邻居自己需要哪些LSA。</p>
+<h3 id="Link-state-update（LSU）"><a href="#Link-state-update（LSU）" class="headerlink" title="Link-state update（LSU）"></a><strong>Link-state update（LSU）</strong></h3><p>当邻居收到其它路由器发来的LSA请求（LSR）之后，就知道对方需要哪些LSA，然后根据LSR，将完整的LSA内容全部发给邻居，以供计算路由表。</p>
+<h3 id="LS-Ack"><a href="#LS-Ack" class="headerlink" title="LS-Ack"></a><strong>LS-Ack</strong></h3><p>就是已经收到了所有需要邻居发给自己的LSA，这时的链路状态数据库已经达到收敛状态。</p>
+<h2 id="OSPF状态机"><a href="#OSPF状态机" class="headerlink" title="OSPF状态机"></a><strong>OSPF状态机</strong></h2><p>路由器从启动OSPF进程，到根据链路状态数据库计算出路由表，同样需要经历一系列的启动过程，总共有8种可能的启动过程，但并不是一定会经历这8个过程，具体过程如下： <strong>Down → Attempt → Init → Two-way → Exstart → Exchange → Loading → Full</strong></p>
+<p>每个过程详细情况如下：</p>
+<h3 id="Down"><a href="#Down" class="headerlink" title="Down"></a><strong>Down</strong></h3><p>路由器刚刚启动OSPF进程，还没有从任何路由器收到任何数据包，Hello包也没有收到，在此进程，可以向外发送Hello包，以试图发现邻居。</p>
+<h3 id="Attempt"><a href="#Attempt" class="headerlink" title="Attempt"></a><strong>Attempt</strong></h3><p>因为OSPF使用组播发送数据包，如使用组播发送Hello包，如果Hello包不能发出去被其它路由器收到，就不能和其它路由器建立OSPF邻居；在一些组播不能发送的网络中，例如帧中继这样的非广播网络环境，组播不能够传递，在这种情况下，就需要指定OSPF使用单播向邻居发送Hello包，以此试图和指定的邻居建立OSPF邻居关系，在此状态下，OSPF称为Attempt状态。</p>
+<h3 id="Init"><a href="#Init" class="headerlink" title="Init"></a><strong>Init</strong></h3><p>只是OSPF路由器一方收到了另一方的Hello，但并没有双方都交换Hello，也就是对方的Hello中还没有将自己列为邻居。</p>
+<h3 id="Two-way"><a href="#Two-way" class="headerlink" title="Two-way"></a><strong>Two-way</strong></h3><p>双方都已经交换了Hello信息，并且从Hello中看到对方已经将自己列为邻居，此状态，就表示OSPF邻居关系已经建立，并且如果是需要选举DR和BDR的话，也已经选举出来，但OSPF邻居之间并不一定就会交换LSA，如果不需要交换LSA，则永远停留在此状态，如果需要形成邻接并互相交换LSA，则状态继续往下进行。（比如Drother与Drother之间将永远停留在Two-way状态，因为Drother与Drother之间不需要交换LSA。）</p>
+<h3 id="Exstart"><a href="#Exstart" class="headerlink" title="Exstart"></a><strong>Exstart</strong></h3><p>因为在OSPF邻居之间交换完整的LSA之前，会先发送Database Description Packets （DBD），Link-state Request （LSR）等数据包，邻居之间是谁先发，谁后发，需要确定顺序，在Exstart状态，就是确定邻居之间的主从关系（Master—Slave关系），Router-ID数字大的为主路由器，另一端为从路由器，由主路由器先向从路由器发送信息。在选举DR与BDR的网络环境中，并不一定DR就是主路由器，BDR就是从路由器，因为DR和BDR可以通过调整接口优先级来控制，所以DR也许是因为优先级比BDR高，而Router-ID并不比BDR高。</p>
+<blockquote>
+<p>在任何网络环境下，OSPF在交换LSA之前，都需要确定主从关系。</p>
+</blockquote>
+<h3 id="Exchange"><a href="#Exchange" class="headerlink" title="Exchange"></a><strong>Exchange</strong></h3><p>就是交换Database Description Packets （DBD）的过程，DBD只是LSA的简单描述，只包含LSA的一些头部信息，收到DBD的路由器会和自己的链路状态数据库作对比，确定需要哪些LSA的完整信息，就会发送LSR请求给邻居。</p>
+<h3 id="Loading"><a href="#Loading" class="headerlink" title="Loading"></a><strong>Loading</strong></h3><p>邻居根据收到的LSR（Link-State Request），向对方回复Link-state update（LSU）。</p>
+<h3 id="Full"><a href="#Full" class="headerlink" title="Full"></a><strong>Full</strong></h3><p>等到OSPF都收到了邻居回复的所有Link-state update（LSU），那么此时的数据库状态就变成了收敛状态，此状态就是Full状态，但此时只是数据库已经同步，但路由表却还在计算当中。</p>
+<h2 id="OSPF-LSA类型"><a href="#OSPF-LSA类型" class="headerlink" title="OSPF LSA类型"></a><strong>OSPF LSA类型</strong></h2><p>OSPF由于有着多种区域类型，多种网络类型，多种链路类型，多种路由器身份，所以LSA（Link-State Advertisements）也是多样的。 在详细讲解LSA之前，需要重点说明，只有同一个区域内的LSA，才是精确的，区域外的LSA，并不一定包含所有必备的信息，因此，所有LSA知识信息，并不一定可以套用到每一类LSA。</p>
+<p>OSPF中共有11类LSA，而在CCIE的要求中，只需要理解1、2、3、4、5、7共6类即可，这些LSA会因为区域类型，网络类型，链路类型，路由器身份的不同而不同，以下是详细介绍：</p>
+<h3 id="类型-1-（Router-Link）"><a href="#类型-1-（Router-Link）" class="headerlink" title="类型 1 （Router Link）"></a><strong>类型 1 （Router Link）</strong></h3><p>类型1的LSA是任何一台OSPF路由器都会产生的，每一台OSPF路由器的每一个OSPF接口都会有自己的链路状态，但是每台OSPF路由器只能产生一条类型1的LSA，即使有多个OSPF接口，也只有一条类型1的LSA，因为所有OSPF接口的链路状态是被打包成一条类型1的LSA发送的。 一个区域正是由于LSA 1的存在，才有精确的路由表，一个区域如果只有LSA 1，同样可以正常通信。LSA 1 只能在单个区域内传递，ABR不能将LSA 1转到发另外一个区域，并且没有任何权利修改LSA 1。</p>
+<h3 id="类型-2-（Network-Link）"><a href="#类型-2-（Network-Link）" class="headerlink" title="类型 2 （Network Link）"></a><strong>类型 2 （Network Link）</strong></h3><p>类型2的LSA只有在需要选举DR&#x2F;BDR的网络类型中才会产生，并且只是DR产生，BDR没有权利产生，LSA 2与LSA 1没有任何关联，没有任何依存关系，是相互独立的。</p>
+<h3 id="类型-3-（Summary-Link）"><a href="#类型-3-（Summary-Link）" class="headerlink" title="类型 3 （Summary Link）"></a><strong>类型 3 （Summary Link）</strong></h3><p>类型3的LSA就是将一个区域的LSA发向另一个区域时的汇总和简化，ABR其实就是将LSA 1汇总和简化，变成LSA 3后再发到另一个区域的，如果是详细完整的LSA 1，是绝不允许的，LSA 3是LSA 1的缩略版。</p>
+<h3 id="类型-4-（ASBR-Summary-Link）"><a href="#类型-4-（ASBR-Summary-Link）" class="headerlink" title="类型 4 （ASBR Summary Link）"></a><strong>类型 4 （ASBR Summary Link）</strong></h3><p>对于外部路由，执行重分布的路由器ASBR在LSA中写上自己的Router-ID，然后传递到多个OSPF区域，所以会被多个ABR转发，而ABR在转发外部路由的LSA时，是没有权限修改LSA的Router-ID，这样一来，外部路由的Router-ID在所有OSPF路由器上都不会改变，永远是ASBR的Router-ID，最终造成的结果是只有与ASBR同在一个区域的路由器才能到达外部路由，因为只有与ASBR同在一个区域的路由器才知道如何到达ASBR的Router-ID，而其它区域的路由器对此却无能为力；为了能够让OSPF所有区域都能与外部路由连通，在ABR将外部路由从ASBR所在的区域转发至其它区域时，需要发送单独的LSA来告知如何到达ASBR的Router-ID，因为ABR将外部路由的LSA告诉了其它区域，是有义务让它们与外部路由可达的，所以额外发送了单独的LSA来告知如何到达ASBR的Router-ID；这个单独的LSA就是类型4的LSA，LSA 4是包含的ASBR 的Router-ID，只要不是ASBR所在的区域，都需要ABR发送LSA 4来告知如何去往ASBR。</p>
+<h3 id="类型-5-（External-Link）"><a href="#类型-5-（External-Link）" class="headerlink" title="类型 5 （External Link）"></a><strong>类型 5 （External Link）</strong></h3><p>类型5的LSA就是外部路由重分布进OSPF时产生的，并且是由ASBR产生的，LSA中包含ASBR的Router-ID，任何路由器都不允许更改该Router-ID，LSA 5中还包含Forward Address，对于LSA 5 的Metric值计算与选路规则也有所不同，详细信息请见OSPF外部路由部分。</p>
+<h3 id="类型-7-（NSSA-Link）"><a href="#类型-7-（NSSA-Link）" class="headerlink" title="类型 7 （NSSA Link）"></a><strong>类型 7 （NSSA Link）</strong></h3><p>因为NSSA区域可以将外部路由重分布进OSPF进程，而NSSA不是一般的常规区域，所以在NSSA将外部路由重分布进OSPF时，路由信息使用类型7来表示，LSA 7由NSSA区域的ASBR产生，LSA 7也只能在NSSA区域内传递，如果要传递到NSSA之外的其它区域，需要同时连接NSSA与其它区域的ABR将LSA 7 转变成LSA 5后再转发。</p>
 </r4></r4>
       
     </div>
@@ -1485,350 +1903,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2023/03/05/%E7%8E%8B%E8%BE%BE-%E6%80%9D%E7%A7%91%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%8C%E5%85%A8%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/123456.gif">
-      <meta itemprop="name" content="Hang Zhang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hang's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/05/%E7%8E%8B%E8%BE%BE-%E6%80%9D%E7%A7%91%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%8C%E5%85%A8%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C/" class="post-title-link" itemprop="url">王达-思科交换机完全配置手册</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-03-05 22:02:01" itemprop="dateCreated datePublished" datetime="2023-03-05T22:02:01+08:00">2023-03-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-03-06 10:02:02" itemprop="dateModified" datetime="2023-03-06T10:02:02+08:00">2023-03-06</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2023/03/05/%E7%8E%8B%E8%BE%BE-%E6%80%9D%E7%A7%91%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%8C%E5%85%A8%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2023/03/05/%E7%8E%8B%E8%BE%BE-%E6%80%9D%E7%A7%91%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%8C%E5%85%A8%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2023/03/04/CKA-cloudacedemy/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/123456.gif">
-      <meta itemprop="name" content="Hang Zhang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hang's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/04/CKA-cloudacedemy/" class="post-title-link" itemprop="url">CKA-cloudacedemy</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-03-04 08:22:42 / Modified: 20:23:08" itemprop="dateCreated datePublished" datetime="2023-03-04T08:22:42+08:00">2023-03-04</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2023/03/04/CKA-cloudacedemy/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2023/03/04/CKA-cloudacedemy/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2023/02/28/%E8%80%81%E6%AE%B5-%E9%B8%9F%E5%93%A5linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AF%87/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/123456.gif">
-      <meta itemprop="name" content="Hang Zhang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hang's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/02/28/%E8%80%81%E6%AE%B5-%E9%B8%9F%E5%93%A5linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AF%87/" class="post-title-link" itemprop="url">老段-鸟哥linux服务器篇</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-02-28 14:23:30" itemprop="dateCreated datePublished" datetime="2023-02-28T14:23:30+08:00">2023-02-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-03-02 00:52:18" itemprop="dateModified" datetime="2023-03-02T00:52:18+08:00">2023-03-02</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2023/02/28/%E8%80%81%E6%AE%B5-%E9%B8%9F%E5%93%A5linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AF%87/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2023/02/28/%E8%80%81%E6%AE%B5-%E9%B8%9F%E5%93%A5linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AF%87/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="456-1-第四章网络"><a href="#456-1-第四章网络" class="headerlink" title="456-1 第四章网络"></a>456-1 第四章网络</h1><p>1:31</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">dmesg</span><br><span class="line"></span><br><span class="line">dmesg | grep -i eth看网卡类型</span><br><span class="line"></span><br><span class="line">lspci | grep -i nat</span><br><span class="line"></span><br><span class="line">tar zxvf  xx.tar.gz</span><br><span class="line"></span><br><span class="line">make install安装智能网卡</span><br><span class="line">lsmod | grep 1000(dmesg得到的网卡名字)</span><br><span class="line">modprobe eth1000加载模块</span><br><span class="line">cd /etc/modprobe.d/</span><br><span class="line">vim eth.conf</span><br></pre></td></tr></table></figure>
-
-<p>eth.conf</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias eth0 e1000</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service NetworkManager start</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setup</span><br><span class="line">网络配置</span><br><span class="line">网卡配置中的dns服务器会生效</span><br><span class="line">ifconfig eth0</span><br></pre></td></tr></table></figure>
-
-<p>25:00</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">整个网络</span><br><span class="line">vim /etc/sysconfig/network</span><br><span class="line">NETWORKING=yes是否启用ipv4</span><br><span class="line">NETWORKING_ipv6=no</span><br><span class="line">HOSTNAME=server.thce.cc</span><br><span class="line">网卡</span><br><span class="line">cd /etc/sysconfig/network-scripts/</span><br><span class="line">vim ifcfg-eth0</span><br><span class="line">BOOTPROTO=none/static/dhcp 获得ip方式</span><br><span class="line">UUID设备id</span><br><span class="line">service network restart</span><br><span class="line">iwconfig</span><br></pre></td></tr></table></figure>
-
-<p>38:02</p>
-<h2 id="第五章-网络命令"><a href="#第五章-网络命令" class="headerlink" title="第五章 网络命令"></a>第五章 网络命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ifconfig eth0 1.1.1.1 netmask 255.255.255.0 up</span><br><span class="line">service network restart (ip地址恢复成原来)</span><br><span class="line">ifdown eth0（启动后ip会恢复原来）</span><br><span class="line">ip addr show eth0</span><br><span class="line">ip link show eth0</span><br><span class="line">ip link set eth0 down</span><br><span class="line">ip link set eth0 name eth</span><br><span class="line">ip link set eth up</span><br><span class="line">service network restart(eth0不存在)</span><br><span class="line">vim /etc/udev/rules.d/70-persistent-net.rules(永久修改网卡名称)</span><br><span class="line">ip link set eth0 mtu 2000</span><br><span class="line">ip addr add 192.168.30.101/24 dev eth0 label eth0:1</span><br><span class="line">ifconfig eth0:2 192.168.30.102 netmask 255.255.255.0 up</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">route -n(不用反向解析)</span><br><span class="line">route add default gw 192.168.30.2</span><br><span class="line">route add default gw 192.168.30.2 dev eth1</span><br><span class="line">iwlist或iwconfig搜索无线信号</span><br><span class="line">dhclient eth0</span><br><span class="line">netstat -ntulp(tcp,udp,list,process)</span><br><span class="line">netstat -ntulp | grep :22</span><br><span class="line">netstat -r</span><br><span class="line">host server.rhce.cc</span><br><span class="line">nslookup server(查dns服务器)</span><br><span class="line">nslookup www.baidu.com</span><br><span class="line">vim /etc/resolv.conf</span><br><span class="line">nameserver 192.168.30.1(dns服务器）</span><br></pre></td></tr></table></figure>
-
-<p>1：28：00</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/cdrom /mnt</span><br><span class="line">yum list telnet-server</span><br><span class="line">yum install telnet-server -y</span><br><span class="line">chkconfig telnet on</span><br><span class="line">service xinetd restart</span><br><span class="line">netstat -ntulp | grep :23</span><br><span class="line">iptables -F</span><br><span class="line">另一端装客户端</span><br><span class="line">mount /dev/cdrom /mnt</span><br><span class="line">yum list telnet</span><br><span class="line">yum install telnet -y</span><br><span class="line">hostname</span><br><span class="line">telnet bbs.rhce.cc 80</span><br><span class="line">yum install lftp -y</span><br><span class="line">lftp 192.168.30.250 -u ftp</span><br><span class="line">iptables -F</span><br><span class="line">yum install pidgin</span><br><span class="line">pidgin</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2023/02/27/%E7%BA%A2%E5%B8%BD-RH124-%E5%AD%A6%E7%94%9F%E6%89%8B%E5%86%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/123456.gif">
-      <meta itemprop="name" content="Hang Zhang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hang's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/02/27/%E7%BA%A2%E5%B8%BD-RH124-%E5%AD%A6%E7%94%9F%E6%89%8B%E5%86%8C/" class="post-title-link" itemprop="url">红帽-RH124-学生手册</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-02-27 19:13:35" itemprop="dateCreated datePublished" datetime="2023-02-27T19:13:35+08:00">2023-02-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-28 08:32:50" itemprop="dateModified" datetime="2023-02-28T08:32:50+08:00">2023-02-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2023/02/27/%E7%BA%A2%E5%B8%BD-RH124-%E5%AD%A6%E7%94%9F%E6%89%8B%E5%86%8C/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2023/02/27/%E7%BA%A2%E5%B8%BD-RH124-%E5%AD%A6%E7%94%9F%E6%89%8B%E5%86%8C/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="第三章-命令行管理文件"><a href="#第三章-命令行管理文件" class="headerlink" title="第三章 命令行管理文件"></a>第三章 命令行管理文件</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/02/27/%E7%BA%A2%E5%B8%BD-RH124-%E5%AD%A6%E7%94%9F%E6%89%8B%E5%86%8C/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1900,7 +1974,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
